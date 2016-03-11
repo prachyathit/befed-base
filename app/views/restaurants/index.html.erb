@@ -15,7 +15,7 @@
   <tbody>
     <% @restaurants.each do |restaurant| %>
       <tr>
-        <td><%= restaurant.name %></td>
+        <td><%= link_to restaurant.name, restaurant_foods_path(restaurant_id: restaurant.id) %></td>
         <td><%= restaurant.desc %></td>
         <td><%= restaurant.image_url %></td>
         <td><%= link_to 'Show', restaurant %></td>
