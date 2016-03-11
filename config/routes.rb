@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  
+  resources :restaurants do
+    resources :foods
+  end
   get 'password_resets/new'
 
   get 'password_resets/edit'
