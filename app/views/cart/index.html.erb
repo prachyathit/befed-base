@@ -1,0 +1,26 @@
+<h1>Your Cart</h1>
+<% if @cart.empty? %>
+  <p>Your cart is currently empty.</p>
+<% else %>
+  <%= link_to 'Empty Your Cart', cart_clear_path %>
+<% end %>
+<br></br>
+
+<% total = 0 %>
+
+<ul>
+<% @cart.each do |id, quantity| %>
+  <% food = Food.find(id) %>
+
+
+    <li>
+      <p><%= food.name %></p>
+      <p><%= number_to_currency(food.price, :unit => 'THB ') %></p>
+      <p>Quantity: <%= quantity %></p>
+    </li>
+
+    <% total += quantity * food.price %>
+
+<% end %>
+</ul>
+<p><b>Total: <%= number_to_currency(total, :unit => 'THB ') %></b></p>

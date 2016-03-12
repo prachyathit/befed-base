@@ -3,6 +3,11 @@ Rails.application.routes.draw do
   resources :restaurants do
     resources :foods
   end
+
+  get '/cart' => 'cart#index'
+  get '/cart/clear' => 'cart#clear_cart'
+  get '/cart/:id' => 'cart#add'
+
   get 'password_resets/new'
 
   get 'password_resets/edit'
