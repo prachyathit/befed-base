@@ -1,13 +1,5 @@
-<h1>Your Cart</h1>
-<% if @cart.empty? %>
-  <p>Your cart is currently empty.</p>
-<% else %>
-  <%= link_to 'Empty Your Cart', cart_clear_path %>
-<% end %>
-<br></br>
-
+<h1>Checkout</h1>
 <% total = 0 %>
-
 <ul>
 <% @cart.each do |id, quantity| %>
   <% food = Food.find(id) %>
@@ -22,9 +14,13 @@
     <% total += quantity * food.price %>
 
 <% end %>
-</ul>
+  <li>
+    <p>Delivery fee: 50 THB</p>
+  </li>
+  <li>
+    <p>Service fee: 10 THB</p>
+  </li>
+  <% total += 60 %>
 <p><b>Total: <%= number_to_currency(total, :unit => 'THB ') %></b></p>
 
-<% unless @cart.empty? %>
-  <%= link_to "Checkout", checkout_path %>
-<% end %>
+</ul>

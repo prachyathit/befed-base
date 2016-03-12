@@ -5,6 +5,7 @@ class FoodsController < ApplicationController
   # GET /foods.json
   def index
     @foods = current_restaurant.foods.all
+    reset_cart
   end
 
   # GET /foods/1
@@ -75,5 +76,17 @@ class FoodsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def food_params
       params.require(:food).permit(:name, :price, :image_url, :restaurant_id)
+    end
+
+    # If user changes restaurant, empty cart
+    def reset_cart
+      if session[:restaurant_id]
+        unless session[:restaurant_id] == params[:restaurant_id]
+          session[:cart] = nil
+          session[:restaurant_id] = params[:restaurant_id]
+        end
+      else
+        session[:restaurant_id] = params[:restaurant_id]
+      end
     end
 end
