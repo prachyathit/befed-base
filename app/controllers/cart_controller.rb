@@ -48,7 +48,7 @@ before_action :logged_in_user, only: :checkout
       @cart = session[:cart]
       @user = current_user
       UserMailer.delivery_confirmation(@user,@cart).deliver_now
-      flash.now[:info] = "Email confirmation has been sent to your email"
+      flash.now[:info] = "Email confirmation will be sent to you shortly"
       session[:cart] = nil
       UserMailer.order_placed(@user,@cart).deliver_now
   end
