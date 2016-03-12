@@ -1,5 +1,6 @@
 class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
+  before_action :check_admin, only: [:edit, :update, :destroy]
 
   # GET /restaurants
   # GET /restaurants.json
@@ -70,5 +71,10 @@ class RestaurantsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def restaurant_params
       params.require(:restaurant).permit(:name, :desc, :image_url)
+    end
+
+    # Only admin can do anything with resturants
+    def check_admin
+        redirect_to(root_url) unless user_admin?
     end
 end

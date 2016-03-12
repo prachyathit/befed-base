@@ -36,9 +36,21 @@ before_action :logged_in_user, only: :checkout
     # If there is a cart pass it to the page to display, else pass an empty value
     if session[:cart]
       @cart = session[:cart]
+      @user = current_user
     else
-      @cart = {}
+      flash[:danger] = "Your cart is empty"
+      render 'index'
     end
+  end
+
+  def submit
+    # Submit order
+      @cart = session[:cart]
+      @user = current_user
+      UserMailer.delivery_confirmation(@user,@cart).deliver_now
+      flash.now[:info] = "Email confirmation has been sent to your email"
+      session[:cart] = nil
+      UserMailer.order_placed(@user,@cart).deliver_now
   end
 
   private
@@ -53,4 +65,6 @@ before_action :logged_in_user, only: :checkout
         redirect_to login_url
       end
     end
+
+
 end

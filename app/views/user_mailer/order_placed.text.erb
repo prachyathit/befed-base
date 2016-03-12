@@ -1,0 +1,28 @@
+Customer Info
+
+Name: <%= @user.name %>
+
+Phone number: <%= @user.phone %>
+
+Address: <%= @user.address %>
+
+Order Info
+<% total = 0 %>
+<% @cart.each do |id, quantity| %>
+  <% food = Food.find(id) %>
+
+      <%= food.name %>
+      <%= number_to_currency(food.price, unit: "THB", format: "%n %u") %>
+      Quantity: <%= quantity %>
+
+    <% total += quantity * food.price %>
+
+<% end %>
+
+    Delivery fee: 50 THB
+
+    Service fee: 10 THB
+
+  <% total += 60 %>
+Total: <%= number_to_currency(total, unit: "THB", format: "%n %u") %>
+

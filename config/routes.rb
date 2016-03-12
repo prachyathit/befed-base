@@ -3,8 +3,9 @@ Rails.application.routes.draw do
   resources :restaurants do
     resources :foods
   end
-  
+
   get '/checkout' => 'cart#checkout'
+  get '/checkout/complete' => 'cart#submit'
 
   get '/cart' => 'cart#index'
   get '/cart/clear' => 'cart#clear_cart'

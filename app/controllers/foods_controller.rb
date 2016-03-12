@@ -1,5 +1,6 @@
 class FoodsController < ApplicationController
   before_action :set_food, only: [:show, :edit, :update, :destroy]
+  before_action :check_admin, only: [:edit, :update, :destroy]
 
   # GET /foods
   # GET /foods.json
@@ -88,5 +89,10 @@ class FoodsController < ApplicationController
       else
         session[:restaurant_id] = params[:restaurant_id]
       end
+    end
+
+    # Only admin can do anything with foods
+    def check_admin
+        redirect_to(root_url) unless user_admin?
     end
 end
