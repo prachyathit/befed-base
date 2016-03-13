@@ -24,7 +24,7 @@ end
 5.times do |n|
   name = "Test restaurant #{n+1}"
   description = Faker::Lorem.sentence(2)
-  image_url = "http://i.imgur.com/Ox6fvZh.png"
+  image_url = "http://i.imgur.com/Ox6fvZhm.png"
   Restaurant.create!( name: name,
                 desc: description,
                 image_url: image_url )
@@ -47,7 +47,7 @@ restaurants = Restaurant.order(:created_at).take(6)
 10.times do
   name = Faker::Lorem.word
   price = Faker::Number.number(2)
-  image_url = "http://i.imgur.com/xcd5k92.png"
+  image_url = "http://i.imgur.com/xcd5k92m.png"
 
   restaurants.each do |restaurant|
     restaurant.foods.create!( name: name,

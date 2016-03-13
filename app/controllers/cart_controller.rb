@@ -1,5 +1,6 @@
 class CartController < ApplicationController
-before_action :logged_in_user, only: :checkout
+before_action :logged_in_user, only: [:checkout, :submit]
+before_action :check_cart_status, only: [:checkout, :submit]
   def add
     id = params[:id]
     # If the card has already been created, use an existing cart else creates a new cart
@@ -63,6 +64,13 @@ before_action :logged_in_user, only: :checkout
         store_location
         flash[:danger] = "Please log in"
         redirect_to login_url
+      end
+    end
+
+    # Cart is empty?
+    def check_cart_status
+      unless session[:cart]
+        redirect_to root_url
       end
     end
 

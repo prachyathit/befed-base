@@ -1,36 +1,70 @@
 <h1>Checkout</h1>
 <% total = 0 %>
-<ul>
-<% @cart.each do |id, quantity| %>
-  <% food = Food.find(id) %>
+<div class="container">
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @cart.each do |id, quantity| %>
+          <% food = Food.find(id) %>
+          <tr>
+            <td class="col-md-3"><%= food.name %></td>
+            <td class="col-md-1"><%= quantity %></td>
+            <td class="col-md-1"><%= number_to_currency(food.price * quantity, unit: "THB", format: "%n %u") %></td>
+            <% total += quantity * food.price %>
+          </tr>
+        <% end %>
+          <tr>
+            <td class="col-md-3"></td>
+            <td class="col-md-1"><b>Subtotal:</b></td>
+            <td class="col-md-1"><b><%= number_to_currency(total, unit: "THB", format: "%n %u") %></b></td>
+          </tr>
+           <tr>
+            <td class="col-md-3"></td>
+            <td class="col-md-1">Delivery Fee:</td>
+            <td class="col-md-1">50 THB</td>
+          </tr>
+           <tr>
+            <td class="col-md-3"></td>
+            <td class="col-md-1">Service Fee:</td>
+            <td class="col-md-1">10 THB</td>
+          </tr>
+          <tr>
+            <td class="col-md-3"></td>
+            <td class="col-md-1"><strong>Total Price:</strong></td>
+            <td class="col-md-1"><strong><%= number_to_currency(total+60, unit: "THB", format: "%n %u") %></strong></td>
+          </tr>
+      </tbody>
+    </table>
+    <table class="table">
+      <tr>
+        <td class="col-md-2"></td>
+        <td class="col-md-2">Payment Method:</td>
+        <td class="col-md-4">Cash on delivery</td>
+      </tr>
+      <tr>
+        <td class="col-md-2"></td>
+        <td class="col-md-2">Name:</td>
+        <td class="col-md-4"><%= @user.name %></td>
+      </tr>
+      <tr>
+        <td class="col-md-2"></td>
+        <td class="col-md-2">Contact Number:</td>
+        <td class="col-md-4"><%= @user.phone %></td>
+      </tr>
+      <tr>
+        <td class="col-md-2"></td>
+        <td class="col-md-2">Delivery Address:</td>
+        <td class="col-md-4"><%= @user.address %></td>
+      </tr>
+    </table>
+  </div>
+</div>
 
-
-    <li>
-      <p><%= food.name %></p>
-      <p><%= number_to_currency(food.price, unit: "THB", format: "%n %u") %></p>
-      <p>Quantity: <%= quantity %></p>
-    </li>
-
-    <% total += quantity * food.price %>
-
-<% end %>
-  <li>
-    <p>Delivery fee: 50 THB</p>
-  </li>
-  <li>
-    <p>Service fee: 10 THB</p>
-  </li>
-  <% total += 60 %>
-<p><b>Total: <%= number_to_currency(total, unit: "THB", format: "%n %u") %></b></p>
-
-<p>Payment method: Cash on delivery</p>
-
-<p>Please confirm your delivery address and contact phone number.</p>
-<p>Deliver to</p>
-<p><%= @user.name %></p>
-<p><%= @user.phone %></p>
-<p><%= @user.address %></p>
-
-<%= link_to "Submit Order", checkout_complete_path %>
-
-</ul>
+<h2><%= link_to "Submit Order", checkout_complete_path, class: "btn btn-primary" %></h2>

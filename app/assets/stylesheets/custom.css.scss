@@ -263,11 +263,21 @@ input {
       margin-bottom: 5px;
     }
   }
-  
+
   span.picture {
     margin-top: 10px;
     input {
       border: 0;
     }
   }
+}
+
+/* Glyphicon logo */
+.logo {
+  font-size: 30px;
+}
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
 }

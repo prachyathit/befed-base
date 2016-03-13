@@ -1,34 +1,22 @@
-<p id="notice"><%= notice %></p>
-
 <h1>Listing Restaurants</h1>
 
-<table>
-  <!--<thead>-->
-  <!--  <tr>-->
-  <!--    <th>Name</th>-->
-  <!--    <th>Desc</th>-->
-  <!--    <th>Image url</th>-->
-  <!--    <th colspan="3"></th>-->
-  <!--  </tr>-->
-  <!--</thead>-->
-
-  <tbody>
+  <div class="container">
+    <div class="row">
     <% @restaurants.each do |restaurant| %>
-      <tr>
-        <td><%= link_to restaurant.name, restaurant_foods_path(restaurant_id: restaurant.id) %></td>
-        <td><%= restaurant.desc %></td>
-        <td><%= restaurant.image_url %></td>
+      <div class="col-md-4">
+        <%= link_to image_tag(restaurant.image_url, alt: "image"), restaurant_foods_path(restaurant_id: restaurant.id) %>
+        <p><%= link_to restaurant.name, restaurant_foods_path(restaurant_id: restaurant.id) %></p>
+        <p><%= restaurant.desc %></p>
+
         <% if user_admin? %>
         <td><%= link_to 'Show', restaurant %></td>
         <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
         <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
-      </tr>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
-<br>
+    </div>
+  </div>
 
 <% if user_admin? %>
 <%= link_to 'New Restaurant', new_restaurant_path %>

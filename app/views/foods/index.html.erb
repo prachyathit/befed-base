@@ -1,35 +1,28 @@
-<p id="notice"><%= notice %></p>
-<p><%= link_to 'Back to Lists of Restaurants', root_path %></p>
+<div class="pull-left">
+  <p><%= link_to image_tag('back.png', alt: 'Back to Lists of Restaurants', size: '30'), root_path %></p>
+</div>
 <h1><%= @foods.first.restaurant.name %></h1>
 
-<table>
-  <!--<thead>-->
-  <!--  <tr>-->
-  <!--    <th>Name</th>-->
-  <!--    <th>Price</th>-->
-  <!--    <th>Image url</th>-->
-  <!--    <th colspan="3"></th>-->
-  <!--  </tr>-->
-  <!--</thead>-->
-
-  <tbody>
+<div class="container">
+  <div class="row">
     <% @foods.each do |food| %>
-      <tr>
-        <td><%= food.name %></td>
-        <td><%= food.price %></td>
-        <td><%= food.image_url %></td>
-        <% if user_admin? %>
-        <td><%= link_to 'Show', restaurant_food_path(id: food.id) %></td>
-        <td><%= link_to 'Edit', edit_restaurant_food_path(id: food.id) %></td>
-        <td><%= link_to 'Destroy', restaurant_food_path(id: food.id), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-        <td><a href="/cart/<%= food.id %>"> Add To Cart </a></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <div class="col-md-4">
 
-<br>
+        <p><%= image_tag(food.image_url, alt: "image2") %></p>
+        <%= food.name %>
+        <%= number_to_currency(food.price, unit: "THB", format: "%n %u") %>
+        <a href="/cart/<%= food.id %>"><%= image_tag('plus.png', size: "30", alt: "Add to cart") %></a>
+
+        <% if user_admin? %>
+          <%= link_to 'Show', restaurant_food_path(id: food.id) %>
+          <%= link_to 'Edit', edit_restaurant_food_path(id: food.id) %>
+          <%= link_to 'Destroy', restaurant_food_path(id: food.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
+
 <% if user_admin? %>
 <%= link_to 'New Food', new_restaurant_food_path %>
 <% end %>

@@ -1,31 +1,50 @@
-<p><%= link_to 'Back to Menu', restaurant_foods_path(session[:restaurant_id]) %></p>
+<div class="pull-left">
+  <%= link_to image_tag('back.png', alt: 'Back to Menu', size: '30'), restaurant_foods_path(session[:restaurant_id]) %>
+</div>
 <h1>Your Cart</h1>
 <% if @cart.empty? %>
   <p>Your cart is currently empty.</p>
 <% else %>
-  <%= link_to 'Empty Your Cart', cart_clear_path %>
+  <%= link_to 'Empty Your Cart', cart_clear_path, class: "btn btn-warning" %>
 <% end %>
 <br></br>
 
 <% total = 0 %>
-
-<ul>
-<% @cart.each do |id, quantity| %>
-  <% food = Food.find(id) %>
-
-
-    <li>
-      <p><%= food.name %></p>
-      <p><%= number_to_currency(food.price, unit: "THB", format: "%n %u") %></p>
-      <p>Quantity: <%= quantity %></p>
-    </li>
-
-    <% total += quantity * food.price %>
-
-<% end %>
-</ul>
-<p><b>Total: <%= number_to_currency(total, unit: "THB", format: "%n %u") %></b></p>
-
-<% unless @cart.empty? %>
-  <%= link_to "Checkout", checkout_path %>
-<% end %>
+<div class="container">
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @cart.each do |id, quantity| %>
+          <% food = Food.find(id) %>
+          <tr>
+            <td class="col-md-3"><%= food.name %></td>
+            <td class="col-md-1"><%= quantity %></td>
+            <td class="col-md-1"><%= number_to_currency(food.price * quantity, unit: "THB", format: "%n %u") %></td>
+            <% total += quantity * food.price %>
+          </tr>
+        <% end %>
+          <tr>
+            <td class="col-md-3"></td>
+            <td class="col-md-1"><b>Subtotal:</b></td>
+            <td class="col-md-1"><b><%= number_to_currency(total, unit: "THB", format: "%n %u") %></b></td>
+          </tr>
+           <tr>
+            <td class="col-md-3"></td>
+            <td class="col-md-1"><b></b></td>
+            <td class="col-md-1">
+              <% unless @cart.empty? %>
+                <%= link_to "Checkout", checkout_path, class: "btn btn-success" %>
+              <% end %>
+            </td>
+          </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
