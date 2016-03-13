@@ -20,22 +20,34 @@ User.create!( name: "Example User",
                 password_confirmation: password )
 end
 
-# restaurants
-10.times do |n|
-  name = Faker::Name.name
-  description = Faker::Lorem.sentence(5)
-  image_url = Faker::Internet.url
+# Test restaurant
+5.times do |n|
+  name = "Test restaurant #{n+1}"
+  description = Faker::Lorem.sentence(2)
+  image_url = "http://i.imgur.com/Ox6fvZh.png"
   Restaurant.create!( name: name,
                 desc: description,
                 image_url: image_url )
 end
+
+# Test foods
+
+# restaurants
+# 10.times do |n|
+#   name = Faker::Name.name
+#   description = Faker::Lorem.sentence(5)
+#   image_url = Faker::Internet.url
+#   Restaurant.create!( name: name,
+#                 desc: description,
+#                 image_url: image_url )
+# end
 
 # foods
 restaurants = Restaurant.order(:created_at).take(6)
 10.times do
   name = Faker::Lorem.word
   price = Faker::Number.number(2)
-  image_url = Faker::Internet.url
+  image_url = "http://i.imgur.com/xcd5k92.png"
 
   restaurants.each do |restaurant|
     restaurant.foods.create!( name: name,
