@@ -8,10 +8,11 @@
     <% @foods.each do |food| %>
       <div class="col-md-4">
 
-        <p><%= image_tag(food.image_url, alt: "image2") %></p>
-        <%= food.name %>
-        <%= number_to_currency(food.price, unit: "THB", format: "%n %u") %>
-        <a href="/cart/<%= food.id %>"><%= image_tag('plus.png', size: "30", alt: "Add to cart") %></a>
+        <%= link_to add_new_path(id: food.id), remote: true do %>
+          <p><%= image_tag(food.image_url, alt: "image2") %></p>
+          <p><%= food.name %></p>
+          <p><%= number_to_currency(food.price, unit: "THB", format: "%n %u") %></p>
+        <% end %>
 
         <% if user_admin? %>
           <%= link_to 'Show', restaurant_food_path(id: food.id) %>
@@ -26,3 +27,5 @@
 <% if user_admin? %>
 <%= link_to 'New Food', new_restaurant_food_path %>
 <% end %>
+
+<div id="product-modal" class="modal fade"></div>

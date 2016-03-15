@@ -1,27 +1,35 @@
 class CartController < ApplicationController
 before_action :logged_in_user, only: [:checkout, :submit]
 before_action :check_cart_status, only: [:checkout, :submit]
-  def add
-    id = params[:id]
-    # If the card has already been created, use an existing cart else creates a new cart
-    if session[:cart]
-      cart = session[:cart]
-    else
+
+  def add_new
+    @food_id = params[:id]
+    # # If the card has already been created, use an existing cart else creates a new cart
+    unless session[:cart]
       session[:cart] = {}
-      cart = session[:cart]
     end
-    # If the product has already been added to the cart, increment the value else set to 1
-    if cart[id]
-      cart[id] += 1
-    else
-      cart[id] = 1
-    end
-    redirect_to :action => :index
+
+    # @cart = session[:cart]
+    # @cart[id] = [0, ""]
+  end
+
+  def add_create
+    line_id = session[:cart].size + 1
+    session[:cart][line_id] = {}
+    session[:cart][line_id][:food_id] = params[:food_id]
+    session[:cart][line_id][:quantity] = params[:cart][:quantity]
+    session[:cart][line_id][:special] = params[:cart][:special]
   end
 
   def clear_cart
     session[:cart] = nil
     redirect_to :action => :index
+  end
+
+  def line_delete
+
+    session[:cart].delete(params[:id])
+    redirect_to cart_url
   end
 
   def index

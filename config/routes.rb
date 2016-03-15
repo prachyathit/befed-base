@@ -9,7 +9,9 @@ Rails.application.routes.draw do
 
   get '/cart' => 'cart#index'
   get '/cart/clear' => 'cart#clear_cart'
-  get '/cart/:id' => 'cart#add'
+  get '/cart/:id' => 'cart#add_new', :as => :add_new
+  post '/addcart' => 'cart#add_create', :as => :add_create
+  get '/cart/line_delete/(:id)' => 'cart#line_delete', :as => :line_delete
 
   get 'password_resets/new'
 

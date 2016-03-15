@@ -16,33 +16,49 @@
       <thead>
         <tr>
           <th>Item</th>
+          <th>Special Instruction</th>
           <th>Quantity</th>
           <th>Price</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
-        <% @cart.each do |id, quantity| %>
-          <% food = Food.find(id) %>
+        <% @cart.each do |id, order_info| %>
+          <% food_id = order_info["food_id"] %>
+          <% quantity = order_info["quantity"].to_i %>
+          <% special = order_info["special"] %>
+          <% food = Food.find(food_id) %>
+
           <tr>
             <td class="col-md-3"><%= food.name %></td>
-            <td class="col-md-1"><%= quantity %></td>
-            <td class="col-md-1"><%= number_to_currency(food.price * quantity, unit: "THB", format: "%n %u") %></td>
+            <td class="col-md-5"><%= special %></td>
+            <td class="col-md-2"><%= quantity %></td>
+            <td class="col-md-2"><%= number_to_currency(food.price * quantity, unit: "THB", format: "%n %u") %></td>
+            <td class="col-md-1">
+              <%= link_to line_delete_path(id: id), class: "btn btn-default" do %>
+                <span class="glyphicon glyphicon-remove-circle"></span>
+              <% end %>
+            </td>
             <% total += quantity * food.price %>
           </tr>
         <% end %>
           <tr>
             <td class="col-md-3"></td>
-            <td class="col-md-1"><b>Subtotal:</b></td>
-            <td class="col-md-1"><b><%= number_to_currency(total, unit: "THB", format: "%n %u") %></b></td>
+            <td class="col-md-5"></td>
+            <td class="col-md-2"><b>Subtotal:</b></td>
+            <td class="col-md-2"><b><%= number_to_currency(total, unit: "THB", format: "%n %u") %></b></td>
+            <td class="col-md-1"></td>
           </tr>
            <tr>
             <td class="col-md-3"></td>
-            <td class="col-md-1"><b></b></td>
-            <td class="col-md-1">
+            <td class="col-md-5"></td>
+            <td class="col-md-2"><b></b></td>
+            <td class="col-md-2">
               <% unless @cart.empty? %>
                 <%= link_to "Checkout", checkout_path, class: "btn btn-success" %>
               <% end %>
             </td>
+            <td class="col-md-1"></td>
           </tr>
       </tbody>
     </table>
