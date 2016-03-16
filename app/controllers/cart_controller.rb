@@ -4,6 +4,7 @@ before_action :check_cart_status, only: [:checkout, :submit]
 
   def add_new
     @food_id = params[:id]
+    @food = Food.find(params[:id])
     # # If the card has already been created, use an existing cart else creates a new cart
     unless session[:cart]
       session[:cart] = {}

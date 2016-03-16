@@ -8,8 +8,8 @@
     <% @foods.each do |food| %>
       <div class="col-md-4">
 
-        <%= link_to add_new_path(id: food.id), remote: true do %>
-          <p><%= image_tag(food.image_url, alt: "image2") %></p>
+        <%= link_to add_new_path(id: food.id), remote: true, class: "thumbnail center" do %>
+          <p><%= image_tag(food.image_url, alt: "image2", class: "max-width") %></p>
           <p><%= food.name %></p>
           <p><%= number_to_currency(food.price, unit: "THB", format: "%n %u") %></p>
         <% end %>

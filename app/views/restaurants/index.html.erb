@@ -4,9 +4,12 @@
     <div class="row">
     <% @restaurants.each do |restaurant| %>
       <div class="col-md-4">
-        <%= link_to image_tag(restaurant.image_url, alt: "image"), restaurant_foods_path(restaurant_id: restaurant.id) %>
-        <p><%= link_to restaurant.name, restaurant_foods_path(restaurant_id: restaurant.id) %></p>
-        <p><%= restaurant.desc %></p>
+
+        <%= link_to restaurant_foods_path(restaurant_id: restaurant.id), class: "thumbnail center" do %>
+          <p><%= image_tag(restaurant.image_url, alt: "image") %></p>
+          <p><%= restaurant.name %></p>
+          <p><%= restaurant.desc %></p>
+        <% end %>
 
         <% if user_admin? %>
         <td><%= link_to 'Show', restaurant %></td>
