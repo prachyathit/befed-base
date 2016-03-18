@@ -20,6 +20,7 @@ before_action :check_cart_status, only: [:checkout, :submit]
     session[:cart][line_id][:food_id] = params[:food_id]
     session[:cart][line_id][:quantity] = params[:cart][:quantity]
     session[:cart][line_id][:special] = params[:cart][:special]
+    @cart_size = session[:cart].size
   end
 
   def clear_cart
@@ -40,6 +41,7 @@ before_action :check_cart_status, only: [:checkout, :submit]
     else
       @cart = {}
     end
+    get_cart_size
   end
 
   def checkout
@@ -51,6 +53,7 @@ before_action :check_cart_status, only: [:checkout, :submit]
       flash[:danger] = "Your cart is empty"
       render 'index'
     end
+    get_cart_size
   end
 
   def submit

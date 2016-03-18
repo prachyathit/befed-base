@@ -202,3 +202,35 @@ a, a:hover {
     color: black;
 }
 
+.thumbnail:hover {
+  border-color: white;
+}
+
+.badge-danger {
+  background-color: #d43f3a;
+}
+
+.color-hover {
+  &:hover{
+    background-color: #fc8c99;
+  }
+
+}
+
+.container {
+  max-width: 800px;
+}
+
+.jumbotron {
+    color: #FFF; // change text color
+    text-align: center;
+    height: 200px;
+    color: white;
+    text-shadow: #444 0 3px 3px;
+    background:transparent;
+}
+
+.center-norep {
+  background-position: center;
+  background-repeat: no-repeat;
+}

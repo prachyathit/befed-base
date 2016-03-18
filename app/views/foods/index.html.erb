@@ -1,24 +1,31 @@
 <div class="pull-left">
   <p><%= link_to image_tag('back.png', alt: 'Back to Lists of Restaurants', size: '30'), root_path %></p>
 </div>
-<h1><%= @foods.first.restaurant.name %></h1>
+<div class="jumbotron" style="background-image: url(<%= @foods.first.restaurant.image_url %>);">
+  <h1><%= @foods.first.restaurant.name %></h1>
+</div>
+
+<% cat_number = 0 %>
 
 <div class="container">
   <div class="row">
     <% @foods.each do |food| %>
-      <div class="col-md-4">
+        <% unless food.cat_id == cat_number %>
 
-        <%= link_to add_new_path(id: food.id), remote: true, class: "thumbnail center" do %>
-          <p><%= image_tag(food.image_url, alt: "image2", class: "max-width") %></p>
-          <p><%= food.name %></p>
-          <p><%= number_to_currency(food.price, unit: "THB", format: "%n %u") %></p>
+          <div class="col-md-12"><b><%= food.cat %></b></div>
+          <% cat_number = food.cat_id %>
+        <% end %>
+      <div class="col-md-6 color-hover">
+
+        <%= link_to add_new_path(id: food.id), remote: true do %>
+          <p><%= food.name %> -- <%= food.price %> THB</p>
         <% end %>
 
-        <% if user_admin? %>
+        <p><% if user_admin? %>
           <%= link_to 'Show', restaurant_food_path(id: food.id) %>
           <%= link_to 'Edit', edit_restaurant_food_path(id: food.id) %>
           <%= link_to 'Destroy', restaurant_food_path(id: food.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-        <% end %>
+        <% end %></p>
       </div>
     <% end %>
   </div>

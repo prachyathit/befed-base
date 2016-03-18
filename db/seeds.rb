@@ -50,8 +50,23 @@ restaurants = Restaurant.order(:created_at).take(6)
   image_url = "http://i.imgur.com/xcd5k92m.png"
 
   restaurants.each do |restaurant|
+    cat_id = (1..4).to_a.sample
+    case cat_id
+    when 1
+      cat = :Appetizer
+    when 2
+      cat = :Main
+    when 3
+      cat = :Dessert
+    when 4
+      cat = :Drinks
+    else
+      cat = ""
+    end
     restaurant.foods.create!( name: name,
                               price: price,
-                              image_url: image_url)
+                              image_url: image_url,
+                              cat_id: cat_id,
+                              cat: cat)
   end
 end

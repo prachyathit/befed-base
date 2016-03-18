@@ -68,4 +68,13 @@ module SessionsHelper
   def store_location
     session[:forwarding_url] = request.url if request.get?
   end
+
+  # Get cart size
+  def get_cart_size
+    if session[:cart]
+      @cart_size = session[:cart].size
+    else
+      @cart_size = 0
+    end
+  end
 end

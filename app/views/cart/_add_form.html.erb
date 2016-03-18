@@ -6,7 +6,10 @@
     <%= form_for(:cart, url: add_create_path, remote: true) do |f| %>
       <div class="modal-body">
         <ul class="errors"></ul>
-        <div class="center"><b><%= @food.name %></b></div>
+        <div class="center"><h2><%= @food.name %></h2></div>
+        <% unless @food.image_url.empty? %>
+          <div class="jumbotron center-norep" style="background-image: url(<%= @food.image_url %>); "></div>
+        <% end %>
         <%= hidden_field_tag :food_id, @food_id %>
 
         <div class="form-group">

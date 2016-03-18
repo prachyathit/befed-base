@@ -5,8 +5,9 @@ class FoodsController < ApplicationController
   # GET /foods
   # GET /foods.json
   def index
-    @foods = current_restaurant.foods.all
+    @foods = current_restaurant.foods.by_cat
     reset_cart
+    get_cart_size
   end
 
   # GET /foods/1
@@ -95,4 +96,5 @@ class FoodsController < ApplicationController
     def check_admin
         redirect_to(root_url) unless user_admin?
     end
+
 end

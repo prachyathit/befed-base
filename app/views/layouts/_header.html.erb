@@ -4,7 +4,14 @@
     <nav>
       <ul class = "nav navbar-nav navbar-right">
         <li><%= link_to "Restaurants", root_path %></li>
-        <li><%= link_to "Cart", cart_path %></li>
+        <li>
+          <%= link_to cart_path do %>
+            Cart
+              <span class="badge badge-danger">
+                <div id="cartnum"><%= @cart_size %></div>
+              </span>
+          <% end %>
+        </li>
         <% if user_admin? %>
           <li><%= link_to "Users", users_path%></li>
         <% end %>
