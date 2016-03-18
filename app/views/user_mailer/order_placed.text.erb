@@ -6,23 +6,24 @@ Phone number: <%= @user.phone %>
 
 Address: <%= @user.address %>
 
-Order Info
 <% total = 0 %>
-<% @cart.each do |id, quantity| %>
-  <% food = Food.find(id) %>
 
-      <%= food.name %>
-      <%= number_to_currency(food.price, unit: "THB", format: "%n %u") %>
-      Quantity: <%= quantity %>
+Order Info
 
-    <% total += quantity * food.price %>
-
+<% @cart.each do |id, order_info| %>
+  <% food_id = order_info["food_id"] %>
+  <% quantity = order_info["quantity"].to_i %>
+  <% special = order_info["special"] %>
+  <% food = Food.find(food_id) %>
+  <%= food.name %>  <%= special %>  <%= quantity %>  <%= food.price * quantity %>
+  <% total += quantity * food.price %>
 <% end %>
-
-    Delivery fee: 50 THB
-
-    Service fee: 10 THB
-
-  <% total += 60 %>
-Total: <%= number_to_currency(total, unit: "THB", format: "%n %u") %>
+Subtotal:  <%= total %>
+Delivery Fee: 50 THB
+Service Fee: 10 THB
+Total Price: <% total+60 %>
+Payment Method: Cash on delivery
+Name: <%= @user.name %>
+Contact Number: <%= @user.phone %>
+Delivery Address: <%= @user.address %>
 

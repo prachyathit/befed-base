@@ -5,27 +5,76 @@
 <p>Phone number: <%= @user.phone %></p>
 
 <p>Address: <%= @user.address %></p>
-
-<h1>Order Info</h1>
 <% total = 0 %>
-<ul>
-<% @cart.each do |id, quantity| %>
-  <% food = Food.find(id) %>
-    <li>
-      <p><%= food.name %></p>
-      <p><%= number_to_currency(food.price, unit: "THB", format: "%n %u") %></p>
-      <p>Quantity: <%= quantity %></p>
-    </li>
-
-    <% total += quantity * food.price %>
-
-<% end %>
-  <li>
-    <p>Delivery fee: 50 THB</p>
-  </li>
-  <li>
-    <p>Service fee: 10 THB</p>
-  </li>
-  <% total += 60 %>
-<p><b>Total: <%= number_to_currency(total, unit: "THB", format: "%n %u") %></b></p>
-
+<h1>Order Info</h1>
+ <table class="table">
+      <thead>
+        <tr>
+          <th>Item</th>
+          <th>Special Instruction</th>
+          <th>Quantity</th>
+          <th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @cart.each do |id, order_info| %>
+          <% food_id = order_info["food_id"] %>
+          <% quantity = order_info["quantity"].to_i %>
+          <% special = order_info["special"] %>
+          <% food = Food.find(food_id) %>
+          <tr>
+            <td class="col-md-2"><%= food.name %></td>
+            <td class="col-md-3"><%= special %></td>
+            <td class="col-md-1"><%= quantity %></td>
+            <td class="col-md-1"><%= number_to_currency(food.price * quantity, unit: "THB", format: "%n %u") %></td>
+            <% total += quantity * food.price %>
+          </tr>
+        <% end %>
+          <tr>
+            <td class="col-md-2"></td>
+            <td class="col-md-3"></td>
+            <td class="col-md-1"><b>Subtotal:</b></td>
+            <td class="col-md-1"><b><%= number_to_currency(total, unit: "THB", format: "%n %u") %></b></td>
+          </tr>
+           <tr>
+            <td class="col-md-2"></td>
+            <td class="col-md-3"></td>
+            <td class="col-md-1">Delivery Fee:</td>
+            <td class="col-md-1">50 THB</td>
+          </tr>
+           <tr>
+            <td class="col-md-2"></td>
+            <td class="col-md-3"></td>
+            <td class="col-md-1">Service Fee:</td>
+            <td class="col-md-1">10 THB</td>
+          </tr>
+          <tr>
+            <td class="col-md-2"></td>
+            <td class="col-md-3"></td>
+            <td class="col-md-1"><strong>Total Price:</strong></td>
+            <td class="col-md-1"><strong><%= number_to_currency(total+60, unit: "THB", format: "%n %u") %></strong></td>
+          </tr>
+      </tbody>
+    </table>
+    <table class="table">
+      <tr>
+        <td class="col-md-2"></td>
+        <td class="col-md-2">Payment Method:</td>
+        <td class="col-md-4">Cash on delivery</td>
+      </tr>
+      <tr>
+        <td class="col-md-2"></td>
+        <td class="col-md-2">Name:</td>
+        <td class="col-md-4"><%= @user.name %></td>
+      </tr>
+      <tr>
+        <td class="col-md-2"></td>
+        <td class="col-md-2">Contact Number:</td>
+        <td class="col-md-4"><%= @user.phone %></td>
+      </tr>
+      <tr>
+        <td class="col-md-2"></td>
+        <td class="col-md-2">Delivery Address:</td>
+        <td class="col-md-4"><%= @user.address %></td>
+      </tr>
+    </table>

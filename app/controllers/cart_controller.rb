@@ -64,6 +64,7 @@ before_action :check_cart_status, only: [:checkout, :submit]
       flash.now[:info] = "Email confirmation will be sent to you shortly"
       session[:cart] = nil
       UserMailer.order_placed(@user,@cart).deliver_now
+      get_cart_size
   end
 
   private
