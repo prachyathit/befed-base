@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   before_action :get_cart_size
-  
+
   def new
   end
 
@@ -18,6 +18,7 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out if logged_in?
+    session[:cart] = nil
     redirect_to root_url
   end
 end
