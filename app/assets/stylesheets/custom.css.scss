@@ -191,6 +191,8 @@ a, a:hover {
 
 .max-width {
   max-width: 100%;
+  height: 200px;
+  max-height: 200px;
 }
 
 .navbar-custom {
@@ -218,7 +220,7 @@ a, a:hover {
 }
 
 .container {
-  max-width: 800px;
+  max-width: 960px;
 }
 
 .jumbotron {
@@ -233,4 +235,8 @@ a, a:hover {
 .center-norep {
   background-position: center;
   background-repeat: no-repeat;
+}
+
+p.medium {
+  line-height: 80%;
 }

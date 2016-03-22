@@ -3,11 +3,12 @@
   <div class="container">
     <div class="row">
     <% @restaurants.each do |restaurant| %>
-      <div class="col-md-4">
+      <div class="col-sm-6 col-md-4">
 
         <%= link_to restaurant_foods_path(restaurant_id: restaurant.id), class: "thumbnail center" do %>
           <p><%= image_tag(restaurant.image_url, alt: "image", class: "max-width") %></p>
-          <p><%= restaurant.name %></p>
+          <p class="medium"><b><%= restaurant.name %></b></p>
+          <p class="medium"><%= restaurant.desc %></p>
         <% end %>
 
         <% if user_admin? %>
