@@ -77,7 +77,7 @@ class FoodsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def food_params
-      params.require(:food).permit(:name, :price, :image_url, :restaurant_id)
+      params.require(:food).permit(:name, :price, :image_url, :restaurant_id, :cat_id, :cat)
     end
 
     # If user changes restaurant, empty cart

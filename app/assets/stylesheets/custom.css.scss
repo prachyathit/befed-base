@@ -214,9 +214,14 @@ a, a:hover {
 
 .color-hover {
   &:hover{
-    background-color: #fc8c99;
+    background-color: #f5dadf;
+    border-right: solid 2px;
+    border-color: #f9b5c4;
   }
+}
 
+.food-cat {
+  color: #ef6079;
 }
 
 .container {
@@ -239,4 +244,8 @@ a, a:hover {
 
 p.medium {
   line-height: 80%;
+}
+
+hr {
+  margin: 5px;
 }

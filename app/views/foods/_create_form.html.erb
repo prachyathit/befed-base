@@ -23,6 +23,14 @@
     <%= f.label :image_url %><br>
     <%= f.text_field :image_url %>
   </div>
+  <div class="field">
+    <%= f.label :cat_id %><br>
+    <%= f.number_field :cat_id %>
+  </div>
+  <div class="field">
+    <%= f.label :cat, "Category" %><br>
+    <%= f.text_field :cat %>
+  </div>
 
   <div class="actions">
     <%= f.submit %>

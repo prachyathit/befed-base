@@ -12,7 +12,7 @@
     <% @foods.each do |food| %>
         <% unless food.cat_id == cat_number %>
 
-          <div class="col-md-12"><b><%= food.cat %></b></div>
+          <div class="col-md-12 food-cat"><b><%= food.cat %></b><hr></div>
           <% cat_number = food.cat_id %>
         <% end %>
       <div class="col-md-6 color-hover">

@@ -20,9 +20,17 @@ User.create!( name: "Example User",
                 password_confirmation: password )
 end
 
+# First Restaurant
+  name = "ร้านอาหารไทย"
+  description = "ข้าวผัด ผัดไทย"
+  image_url = "http://i.imgur.com/JuF96zV.jpg"
+  Restaurant.create!( name: name,
+                desc: description,
+                image_url: image_url )
+
 # Test restaurant
-5.times do |n|
-  name = "Test restaurant #{n+1}"
+4.times do |n|
+  name = "Test restaurant #{n+2}"
   description = Faker::Lorem.sentence(2)
   image_url = "http://i.imgur.com/Ox6fvZhm.png"
   Restaurant.create!( name: name,
@@ -42,8 +50,75 @@ end
 #                 image_url: image_url )
 # end
 
-# foods
-restaurants = Restaurant.order(:created_at).take(6)
+# menus for first restaurant
+first_restaurant = Restaurant.first
+    first_restaurant.foods.create!( name: "ทอดมันกุ้ง",
+                              price: 80,
+                              image_url: "http://i.imgur.com/IACZyI2.jpg",
+                              cat_id: 1,
+                              cat: "Appetizer")
+    first_restaurant.foods.create!( name: "เอ็นข้อไก่ทอด",
+                              price: 65,
+                              image_url: "http://i.imgur.com/pmHhIJo.jpg",
+                              cat_id: 1,
+                              cat: "Appetizer")
+    first_restaurant.foods.create!( name: "เฟร้นช์ฟราย",
+                              price: 70,
+                              image_url: "http://i.imgur.com/mf8Bw9v.jpg",
+                              cat_id: 1,
+                              cat: "Appetizer")
+    first_restaurant.foods.create!( name: "ถั่วทอด",
+                              price: 60,
+                              image_url: "http://i.imgur.com/P42ocKJ.jpg",
+                              cat_id: 1,
+                              cat: "Appetizer")
+    first_restaurant.foods.create!( name: "ข้าวกะเพราไก่ไข่ดาว",
+                              price: 60,
+                              image_url: "http://i.imgur.com/kgFexop.jpg",
+                              cat_id: 2,
+                              cat: "Main")
+    first_restaurant.foods.create!( name: "ข้าวผัดปู",
+                              price: 85,
+                              image_url: "http://i.imgur.com/P42ocKJ.jpg",
+                              cat_id: 2,
+                              cat: "Main")
+    first_restaurant.foods.create!( name: "ก๋วยเตี๋ยวคั่วไก่",
+                              price: 50,
+                              image_url: "http://i.imgur.com/p9CN3OT.jpg",
+                              cat_id: 2,
+                              cat: "Main")
+    first_restaurant.foods.create!( name: "ผัดไทย",
+                              price: 65,
+                              image_url: "http://i.imgur.com/gQCT7de.jpg",
+                              cat_id: 2,
+                              cat: "Main")
+    first_restaurant.foods.create!( name: "ผัดซีอิ้ว",
+                              price: 55,
+                              image_url: "http://i.imgur.com/DC9dXR9.jpg",
+                              cat_id: 2,
+                              cat: "Main")
+    first_restaurant.foods.create!( name: "ราดหน้า",
+                              price: 60,
+                              image_url: "http://i.imgur.com/vSUipNJ.jpg",
+                              cat_id: 2,
+                              cat: "Main")
+    first_restaurant.foods.create!( name: "ฮันนี่โทสต์",
+                              price: 70,
+                              image_url: "http://i.imgur.com/3eYz596.jpg",
+                              cat_id: 3,
+                              cat: "Dessert")
+    first_restaurant.foods.create!( name: "ครีมบรูเล่",
+                              price: 60,
+                              image_url: "http://i.imgur.com/woNzoGQ.jpg",
+                              cat_id: 3,
+                              cat: "Dessert")
+    first_restaurant.foods.create!( name: "คัสตาร์ด",
+                              price: 50,
+                              image_url: "http://i.imgur.com/SWHQIwB.jpg",
+                              cat_id: 3,
+                              cat: "Dessert")
+# menu for other restaurants
+restaurants = Restaurant.where( :id => 2..5 )
 10.times do
   name = Faker::Lorem.word
   price = Faker::Number.number(2)
