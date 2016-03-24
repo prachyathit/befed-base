@@ -1,0 +1,25 @@
+<h1>Listing Categories</h1>
+
+  <div class="container">
+    <div class="row">
+    <% @categories.each do |category| %>
+      <div class="col-sm-6 col-md-4">
+
+        <%= link_to category_path(category), class: "thumbnail center" do %>
+          <p><%= image_tag(category.image_url, alt: "image", class: "max-width") %></p>
+          <p class="medium"><b><%= category.name %></b></p>
+        <% end %>
+
+        <% if user_admin? %>
+          <%= link_to 'Show', category %>
+          <%= link_to 'Edit', edit_category_path(category) %>
+          <%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      </div>
+    <% end %>
+    </div>
+  </div>
+
+<% if user_admin? %>
+<%= link_to 'New Category', new_category_path %>
+<% end %>

@@ -1,13 +1,13 @@
 class FoodsController < ApplicationController
   before_action :set_food, only: [:show, :edit, :update, :destroy]
-  before_action :check_admin, only: [:edit, :update, :destroy]
+  before_action :check_admin, only: [:new, :edit, :update, :destroy]
+  before_action :get_cart_size
 
   # GET /foods
   # GET /foods.json
   def index
     @foods = current_restaurant.foods.by_cat
     reset_cart
-    get_cart_size
   end
 
   # GET /foods/1

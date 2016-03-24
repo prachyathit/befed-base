@@ -1,12 +1,12 @@
 class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
-  before_action :check_admin, only: [:edit, :update, :destroy]
+  before_action :check_admin, only: [:new, :edit, :update, :destroy]
+  before_action :get_cart_size
 
   # GET /restaurants
   # GET /restaurants.json
   def index
     @restaurants = Restaurant.all
-    get_cart_size
   end
 
   # GET /restaurants/1
@@ -71,7 +71,7 @@ class RestaurantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def restaurant_params
-      params.require(:restaurant).permit(:name, :desc, :image_url)
+      params.require(:restaurant).permit(:name, :desc, :image_url, category_ids: [])
     end
 
     # Only admin can do anything with resturants

@@ -1,8 +1,8 @@
-<h1>Listing Restaurants</h1>
+<h1><%= @category.name %></h1>
 
   <div class="container">
     <div class="row">
-    <% @restaurants.each do |restaurant| %>
+    <% @category_restaurants.each do |restaurant| %>
       <div class="col-sm-6 col-md-4">
 
         <%= link_to restaurant_foods_path(restaurant_id: restaurant.id), class: "thumbnail center" do %>
@@ -16,17 +16,14 @@
             </p>
           <% end %>
         <% end %>
-
-        <% if user_admin? %>
-          <%= link_to 'Show', restaurant %>
-          <%= link_to 'Edit', edit_restaurant_path(restaurant) %>
-          <%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %>
-        <% end %>
       </div>
     <% end %>
     </div>
   </div>
 
 <% if user_admin? %>
-<%= link_to 'New Restaurant', new_restaurant_path %>
+  <%= link_to 'Edit', edit_category_path(@category) %> |
+  <%= link_to 'Back', categories_path %>
 <% end %>
+
+

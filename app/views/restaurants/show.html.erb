@@ -15,5 +15,9 @@
   <%= @restaurant.image_url %>
 </p>
 
+<% if @restaurant.categories.any? %>
+  <p><%= render @restaurant.categories %></p>
+<% end %>
+
 <%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
 <%= link_to 'Back', restaurants_path %>

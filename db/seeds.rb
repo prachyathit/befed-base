@@ -145,3 +145,16 @@ restaurants = Restaurant.where( :id => 2..5 )
                               cat: cat)
   end
 end
+
+# Create some categories
+Category.create!( name: "ไทย",
+                  image_url: "http://i.imgur.com/k2Q0rRv.jpg")
+Category.create!( name: "ฮาลาล",
+                  image_url: "http://i.imgur.com/bUxrlBe.jpg")
+Category.create!( name: "อีสาน",
+                  image_url: "http://i.imgur.com/fZ3itxr.jpg")
+Category.create!( name: "เวียดนาม",
+                  image_url: "http://i.imgur.com/0Fo30Rv.jpg")
+Category.create!( name: "ก๋วยเตี๋ยว",
+                  image_url: "http://i.imgur.com/ZiPkZSd.jpg")
+
