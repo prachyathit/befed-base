@@ -1,17 +1,16 @@
 class CartController < ApplicationController
 before_action :logged_in_user, only: [:checkout, :submit]
 before_action :check_cart_status, only: [:checkout, :submit]
+after_action :get_cart_size
 
   def add_new
     @food_id = params[:id]
     @food = Food.find(params[:id])
+    @options = @food.options
     # # If the card has already been created, use an existing cart else creates a new cart
     unless session[:cart]
       session[:cart] = {}
     end
-
-    # @cart = session[:cart]
-    # @cart[id] = [0, ""]
   end
 
   def add_create
@@ -20,7 +19,9 @@ before_action :check_cart_status, only: [:checkout, :submit]
     session[:cart][line_id][:food_id] = params[:food_id]
     session[:cart][line_id][:quantity] = params[:cart][:quantity]
     session[:cart][line_id][:special] = params[:cart][:special]
-    @cart_size = session[:cart].size
+    session[:cart][line_id][:options] = params[:value]
+    get_cart_size
+
   end
 
   def clear_cart
@@ -29,7 +30,6 @@ before_action :check_cart_status, only: [:checkout, :submit]
   end
 
   def line_delete
-
     session[:cart].delete(params[:id])
     redirect_to cart_url
   end
@@ -42,6 +42,7 @@ before_action :check_cart_status, only: [:checkout, :submit]
       @cart = {}
     end
     get_cart_size
+
   end
 
   def checkout
@@ -54,6 +55,7 @@ before_action :check_cart_status, only: [:checkout, :submit]
       render 'index'
     end
     get_cart_size
+
   end
 
   def submit
@@ -64,12 +66,9 @@ before_action :check_cart_status, only: [:checkout, :submit]
       flash.now[:info] = "Email confirmation will be sent to you shortly"
       session[:cart] = nil
       UserMailer.order_placed(@user,@cart).deliver_now
-      get_cart_size
   end
 
   private
-
-  # Before filter
 
     # Confirms a logged-in user.
     def logged_in_user
@@ -86,6 +85,5 @@ before_action :check_cart_status, only: [:checkout, :submit]
         redirect_to root_url
       end
     end
-
 
 end

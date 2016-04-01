@@ -6,7 +6,6 @@
       <thead>
         <tr>
           <th>Item</th>
-          <th>Special Instruction</th>
           <th>Quantity</th>
           <th>Price</th>
         </tr>
@@ -16,38 +15,29 @@
           <% food_id = order_info["food_id"] %>
           <% quantity = order_info["quantity"].to_i %>
           <% special = order_info["special"] %>
+          <% options = order_info["options"] %>
           <% food = Food.find(food_id) %>
           <tr>
             <td class="col-md-2"><%= food.name %></td>
-            <td class="col-md-3"><%= special %></td>
             <td class="col-md-1"><%= quantity %></td>
-            <td class="col-md-1"><%= number_to_currency(food.price * quantity, unit: "THB", format: "%n %u") %></td>
+            <td class="col-md-1"><%= food.price * quantity %> ฿</td>
             <% total += quantity * food.price %>
           </tr>
         <% end %>
           <tr>
             <td class="col-md-2"></td>
-            <td class="col-md-3"></td>
             <td class="col-md-1"><b>Subtotal:</b></td>
-            <td class="col-md-1"><b><%= number_to_currency(total, unit: "THB", format: "%n %u") %></b></td>
+            <td class="col-md-1"><b><%= total %> ฿</b></td>
           </tr>
            <tr>
             <td class="col-md-2"></td>
-            <td class="col-md-3"></td>
             <td class="col-md-1">Delivery Fee:</td>
-            <td class="col-md-1">50 THB</td>
-          </tr>
-           <tr>
-            <td class="col-md-2"></td>
-            <td class="col-md-3"></td>
-            <td class="col-md-1">Service Fee:</td>
-            <td class="col-md-1">10 THB</td>
+            <td class="col-md-1">50 ฿</td>
           </tr>
           <tr>
             <td class="col-md-2"></td>
-            <td class="col-md-3"></td>
             <td class="col-md-1"><strong>Total Price:</strong></td>
-            <td class="col-md-1"><strong><%= number_to_currency(total+60, unit: "THB", format: "%n %u") %></strong></td>
+            <td class="col-md-1"><strong><%= total + 50 %> ฿</strong></td>
           </tr>
       </tbody>
     </table>

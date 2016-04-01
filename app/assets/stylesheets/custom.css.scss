@@ -4,6 +4,8 @@
 /* mixins, variables, etc.. */
 
 $gray-medium-light: #eaeaea;
+$red-main: #ff4444;
+$red-hilight: #ffc1c1;
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -204,28 +206,41 @@ a, a:hover {
     color: black;
 }
 
+.navbar-nav > li {
+  float: left;
+}
+
+.dropdown-menu {
+  min-width: 0px;
+}
+
 .thumbnail:hover {
   border-color: white;
 }
 
 .badge-danger {
-  background-color: #d43f3a;
+  background-color: $red-main;
 }
 
 .color-hover {
   &:hover{
-    background-color: #f5dadf;
+    background-color: $red-hilight;
     border-right: solid 2px;
-    border-color: #f9b5c4;
+    border-color: $red-main;
+    padding-right: 13px;
   }
 }
 
 .food-cat {
-  color: #ef6079;
+  color: $red-main;
+  margin-top: 10px;
+  padding-bottom: 5px;
+  border-bottom: solid 1.5px;
+  border-color: $red-main;
 }
 
 .container {
-  max-width: 960px;
+  max-width: 800px;
 }
 
 .jumbotron {
@@ -252,4 +267,41 @@ hr {
 
 .input_checkbox input {
   width: auto !important;
+}
+
+.food-item {
+  padding: 10px 15px 10px 10px;
+}
+
+.food-group {
+  padding-bottom: 10px;
+}
+
+.food-price {
+  float: right;
+}
+
+.hide-mobile {
+  display: inline;
+}
+
+@media only screen and (max-width: 600px) {
+  .hide-mobile {
+        display: none;
+  }
+}
+
+ul {
+  margin: 0;
+}
+ul.option-lists {
+  list-style-type: none;
+}
+ul.option-lists > li {
+  text-indent: -35px;
+  color: #A9A9A9;
+}
+ul.option-lists > li:before {
+  content: "- ";
+  text-indent: -35px;
 }

@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :options do
+    resources :option_values, only: [:create, :destroy]
+  end
+
   resources :categories
   resources :restaurants do
     resources :foods

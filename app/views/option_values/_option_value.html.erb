@@ -1,0 +1,7 @@
+<div class="row">
+  <div class="col-md-4">Name: <%= option_value.name %></div>
+  <div class="col-md-4">Price: <%= option_value.price %></div>
+  <div class="col-md-4">
+    <%= link_to "delete", option_option_value_path(option_id: params[:id], id: option_value.id), method: :delete, data: { confirm: "You sure?" } %>
+  </div>
+</div>
