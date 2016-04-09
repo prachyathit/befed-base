@@ -13,17 +13,17 @@
 
         <% unless food.cat_id == cat_number %>
 
-          <div class="col-md-12">
+          <div class="col-sm-12">
             <div class="food-cat">
               <strong><%= food.cat %></strong>
             </div>
           </div>
           <% cat_number = food.cat_id %>
         <% end %>
-      <div class="col-md-6">
+      <div class="col-sm-6">
 
         <%= link_to add_new_path(id: food.id), remote: true do %>
-          <div class="food-item  color-hover">
+          <div class="food-item color-hover">
             <div class="food-price"><%= food.price %> ฿</div>
             <div class="food-name"><%= food.name %></div>
           </div>

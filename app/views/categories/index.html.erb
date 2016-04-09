@@ -1,13 +1,28 @@
 <h1>Listing Categories</h1>
-
+<% numi = 1 %>
   <div class="container">
     <div class="row">
+    <div class="col-xs-12 col-sm-6">
+      <%= link_to restaurants_path, class: "thumbnail center" do %>
+          <p><%= image_tag('http://i.imgur.com/8gADhc0.jpg', alt: "image", class: "rest-image center-block") %></p>
+          <div class="medium">
+            <strong>ทั้งหมด</strong>
+            <span class="badge badge-danger">
+              <div id="cartnum"><%= @restaurants.size %></div>
+            </span>
+          </div>
+      <% end %>
+    </div>
     <% @categories.each do |category| %>
-      <div class="col-sm-6 col-md-4">
+    <% numi += 1 %>
+      <div class="col-xs-12 col-sm-6">
 
         <%= link_to category_path(category), class: "thumbnail center" do %>
-          <p><%= image_tag(category.image_url, alt: "image", class: "max-width") %></p>
-          <p class="medium"><b><%= category.name %></b></p>
+          <p><%= image_tag(category.image_url, alt: "image", class: "rest-image center-block") %></p>
+            <strong><%= category.name %></strong>
+            <span class="badge badge-danger">
+              <div id="cartnum"><%= category.restaurants.size %></div>
+            </span>
         <% end %>
 
         <% if user_admin? %>
@@ -16,6 +31,9 @@
           <%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %>
         <% end %>
       </div>
+      <% if numi.even? %>
+        <div class="clearfix"></div>
+      <% end %>
     <% end %>
     </div>
   </div>

@@ -6,10 +6,8 @@
 <h1>Your Cart</h1>
 <% if @cart.empty? %>
   <p>Your cart is currently empty.</p>
-<% else %>
-  <%= link_to 'Empty Your Cart', cart_clear_path, class: "btn btn-warning" %>
 <% end %>
-<br></br>
+<br>
 
 <% total = 0 %>
 <div class="container">
@@ -87,10 +85,14 @@
           </tr>
           <tr>
             <td class="col-md-3"></td>
-            <td class="col-md-2"><b></b></td>
             <td class="col-md-2">
               <% unless @cart.empty? %>
-                <%= link_to "Checkout", checkout_path, class: "btn btn-success" %>
+                <%= link_to 'Empty Your Cart', cart_clear_path, class: "btn btn-default" %>
+              <% end %>
+            </td>
+            <td class="col-md-2">
+              <% unless @cart.empty? %>
+                <%= link_to "Checkout", checkout_path, class: "btn btn-danger" %>
               <% end %>
             </td>
           </tr>

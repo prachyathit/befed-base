@@ -24,7 +24,7 @@ Rails.application.routes.draw do
 
   get 'sessions/new'
 
-  root                  'restaurants#index'
+  root                  'categories#index'
   get     'help'    =>  'static_pages#help'
   get     'about'   =>  'static_pages#about'
   get     'contact' =>  'static_pages#contact'
