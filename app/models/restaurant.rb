@@ -3,4 +3,5 @@ class Restaurant < ActiveRecord::Base
   has_many :restaurant_categories
   has_many :categories, through: :restaurant_categories
   validates :name, presence: true
+  default_scope -> { order(:id) }
 end

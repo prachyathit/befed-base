@@ -19,10 +19,12 @@
 
         <%= link_to category_path(category), class: "thumbnail center" do %>
           <p><%= image_tag(category.image_url, alt: "image", class: "rest-image center-block") %></p>
+          <div class="medium">
             <strong><%= category.name %></strong>
             <span class="badge badge-danger">
               <div id="cartnum"><%= category.restaurants.size %></div>
             </span>
+          </div>
         <% end %>
 
         <% if user_admin? %>
