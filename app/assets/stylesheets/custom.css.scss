@@ -25,25 +25,21 @@ textarea {
 }
 .center {
   text-align: center;
-  h1 {
-  margin-bottom: 10px;
-  }
 }
 
 /* typography */
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
+  margin-bottom: 20px;
 }
 h1 {
   font-size: 3em;
   letter-spacing: -2px;
-  margin-bottom: 30px;
   text-align: center;
 }
 h2 {
   font-size: 1.2em;
   letter-spacing: -1px;
-  margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
   color: $gray-light;
@@ -63,6 +59,19 @@ p {
   letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
+  &:hover {
+  color: black;
+  text-decoration: none;
+  }
+}
+
+#sublogo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.2em;
+  color: $gray-light;
+  letter-spacing: -1px;
+  padding-top: 9px;
   &:hover {
   color: black;
   text-decoration: none;
@@ -189,6 +198,7 @@ a, a:hover {
 
 .rest-image {
   width: 100%;
+  max-height: 280px;
 }
 
 .navbar-custom {
@@ -234,14 +244,23 @@ a, a:hover {
 }
 
 .jumbotron {
-    color: #FFF; // change text color
-    text-align: center;
-    height: 200px;
-    color: white;
-    text-shadow: #444 0 3px 3px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50%;
+  color: #FFF; // change text color
+  height: 280px;
+  color: white;
+  text-shadow: #444 0 3px 3px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+  padding-top: 90px;
+}
+
+.rest-col {
+  padding: 5px;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+  padding-top: 90px;
 }
 
 .center-norep {
@@ -305,8 +324,8 @@ ul.option-lists > li:before {
 }
 
 div.container {
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: 4px;
+  padding-right: 4px;
 }
 
 .thumbnail {
@@ -315,3 +334,9 @@ div.container {
 	   -moz-box-shadow: 0 8px 6px -6px  #999;
 	        box-shadow: 0 8px 6px -6px #999;
 }
+
+#goback {
+  margin-left: 5px;
+  color: white;
+}
+

@@ -1,4 +1,4 @@
-<h1>Listing Categories</h1>
+<h1>Select Category</h1>
 <% numi = 1 %>
   <div class="container">
     <div class="row">
@@ -6,7 +6,7 @@
       <%= link_to restaurants_path, class: "thumbnail center" do %>
           <p><%= image_tag('http://i.imgur.com/8gADhc0.jpg', alt: "image", class: "rest-image center-block") %></p>
           <div class="medium">
-            <strong>ทั้งหมด</strong>
+            <strong>All</strong>
             <span class="badge badge-danger">
               <div id="cartnum"><%= @restaurants.size %></div>
             </span>
