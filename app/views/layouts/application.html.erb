@@ -4,9 +4,14 @@
     <title><%= full_title(yield(:title)) %></title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application','reg_maps.js', 'data-turbolinks-track' => true %>
+    <script src="//maps.googleapis.com/maps/api/js?key=AIzaSyBLod8mAcjj-5mmficTg-cu2W-BhEu6Cgs&libraries=places" type="text/javascript"></script>
+    <script src="//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js" type="text/javascript"></script>
     <%= csrf_meta_tags %>
     <%= render 'layouts/shim' %>
+    <head>
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+
   </head>
   <body>
     <%= render 'layouts/header' %>

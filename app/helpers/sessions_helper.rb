@@ -77,4 +77,13 @@ module SessionsHelper
       @cart_size = 0
     end
   end
+
+  # Get Address
+  def get_address
+    if session[:saddress]
+      @saddress = session[:saddress]["faddress"]
+    else
+      @saddress = ""
+    end
+  end
 end

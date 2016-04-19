@@ -6,7 +6,7 @@ class RestaurantsController < ApplicationController
   # GET /restaurants
   # GET /restaurants.json
   def index
-    @restaurants = Restaurant.all
+    @restaurants = Restaurant.near(session[:saddress]["faddress"], 5, :units => :km)
   end
 
   # GET /restaurants/1
@@ -71,7 +71,9 @@ class RestaurantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def restaurant_params
-      params.require(:restaurant).permit(:name, :desc, :image_url, category_ids: [])
+      params.require(:restaurant).permit( :name, :desc, :image_url,
+                                          :address, :latitude, :longitude,
+                                          category_ids: [])
     end
 
     # Only admin can do anything with resturants

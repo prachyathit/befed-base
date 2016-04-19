@@ -6,29 +6,41 @@
     </div>
     <nav>
       <ul class = "nav navbar-nav navbar-right">
+        <!--CATEGORY-->
+        <% unless ["Landing", "Sign up", "Edit user", "clearmap"].include? yield(:hidden_title)%>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <span class="glyphicon glyphicon-cutlery"></span>
-              Categories
+              <span class="glyphicon glyphicon-flag"></span>
+              <div class="address_header"><%= session[:saddress]["faddress"] %></div>
               <b class="caret"></b>
             </a>
             <ul class="dropdown-menu">
-              <li><%= link_to "All", restaurants_path %></li>
-              <li class="divider"></li>
-              <% Category.all.each do |category| %>
-                <li><%= link_to "#{category.name}", category_path(category) %></li>
+              <%= form_for(:saddress, url: submit_saddress_path, html: {class: 'form-inline'}) do |f| %>
+                <%= f.text_field :faddress, class: "location form-control" %>
+                <%= f.hidden_field :latitude , class: "longitude" %>
+                <%= f.hidden_field :longitude ,  class: "latitude" %>
+                <div id="map-container" class="geomap">
+                  <div id="map" class="geomap"></div>
+                </div>
+                <%= f.submit "I'm here!", class: "btn btn-danger" %>
               <% end %>
             </ul>
           </li>
+        <% end %>
+        <!--CATEGORY END-->
+        <!--CART -->
+        <% if session[:cart] %>
+        <% get_cart_size %>
           <li>
             <%= link_to cart_path do %>
               <span class="glyphicon glyphicon-shopping-cart"></span>
-              Cart
                 <span class="badge badge-danger">
                   <div id="cartnum"><%= @cart_size %></div>
                 </span>
             <% end %>
           </li>
+        <% end %>
+        <!--CART END-->
         <% if user_admin? %>
           <li><%= link_to "Users", users_path%></li>
           <li><%= link_to "Options", options_path %></li>
@@ -58,4 +70,5 @@
       </ul>
     </nav>
   </div>
+
 </header>

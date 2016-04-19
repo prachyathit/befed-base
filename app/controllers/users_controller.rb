@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :correct_user, only: [:edit, :update]
   before_action :admin_user, only: [:index, :destroy]
   before_action :get_cart_size
-  
+
   def index
     @users = User.paginate(page: params[:page])
   end
@@ -50,7 +50,9 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit(:name, :email, :phone, :address, :password, :password_confirmation)
+      params.require(:user).permit( :name, :email, :phone, :address,
+                                    :latitude, :longitude,
+                                    :password, :password_confirmation)
     end
 
     # Before filters

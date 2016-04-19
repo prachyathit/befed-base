@@ -1,8 +1,11 @@
+<%= javascript_include_tag("reg_maps.js") %>
+
 <% provide(:title, 'Edit user') %>
+<% provide(:hidden_title, 'Edit user') %>
 <h1>Update your profile</h1>
 
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-8 col-md-offset-2">
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages' %>
 
@@ -16,7 +19,13 @@
       <%= f.text_field :phone, class: 'form-control' %>
 
       <%= f.label :address %>
-      <%= f.text_field :address, class: 'form-control' %>
+      <%= f.text_field :address, class: "location form-control" %>
+      <div id="map-container" class="geomap">
+        <div id="map" class="geomap"></div>
+      </div>
+
+      <%= f.hidden_field :latitude , class: "longitude" %>
+      <%= f.hidden_field :longitude ,  class: "latitude" %>
 
       <%= f.label :password %>
       <%= f.password_field :password, class: 'form-control' %>
@@ -24,7 +33,7 @@
       <%= f.label :password_confirmation %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
-      <%= f.submit "Save changes", class: "btn btn-primary" %>
+      <%= f.submit "Save changes", class: "btn btn-danger" %>
     <% end %>
   </div>
 </div>

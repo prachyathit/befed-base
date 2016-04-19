@@ -11,6 +11,14 @@ class User < ActiveRecord::Base
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
+  #Geolocation
+  validates :address , presence: true
+  # after_validation :reverse_geocode
+  # reverse_geocoded_by :latitude, :longitude, :address => :location
+  geocoded_by :address
+  reverse_geocoded_by :latitude, :longitude
+  after_validation :geocode, :reverse_geocode
+
   # Returns the hash digest of the given string
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :

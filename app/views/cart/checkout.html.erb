@@ -1,3 +1,7 @@
+<% provide(:hidden_title, 'clearmap') %>
+<div class="pull-left">
+  <%= link_to image_tag('back.png', alt: 'Back to Menu', size: '30'), cart_path %>
+</div>
 <h1>Checkout</h1>
 <% total = 0 %>
 <div class="container">
@@ -78,19 +82,6 @@
             <td class="col-md-2"><b>Subtotal:</b></td>
             <td class="col-md-2"><b><%= total+70 %> ฿</b></td>
           </tr>
-          <tr>
-            <td class="col-md-3"></td>
-            <td class="col-md-2">
-              <% unless @cart.empty? %>
-                <%= link_to 'Empty Your Cart', cart_clear_path, class: "btn btn-default" %>
-              <% end %>
-            </td>
-            <td class="col-md-2">
-              <% unless @cart.empty? %>
-                <%= link_to "Checkout", checkout_path, class: "btn btn-danger" %>
-              <% end %>
-            </td>
-          </tr>
       </tbody>
     </table>
     <table class="table">
@@ -115,7 +106,34 @@
         <td class="col-md-4"><%= @user.address %></td>
       </tr>
     </table>
+            <div class="geomap">
+          <div id="googleMap" class="geomap"></div>
+        </div>
   </div>
 </div>
 
 <h2><%= link_to "Submit Order", checkout_complete_path, class: "btn btn-danger" %></h2>
+
+<script>
+var myCenter=new google.maps.LatLng(<%= @user.latitude %>,<%= @user.longitude %>);
+
+function initialize()
+{
+var mapProp = {
+  center:myCenter,
+  zoom:17,
+  mapTypeId:google.maps.MapTypeId.ROADMAP,
+  scrollwheel:false
+  };
+
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+var marker=new google.maps.Marker({
+  position:myCenter,
+  });
+
+marker.setMap(map);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>

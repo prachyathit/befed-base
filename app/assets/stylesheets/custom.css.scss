@@ -302,12 +302,6 @@ hr {
   display: inline;
 }
 
-@media only screen and (max-width: 600px) {
-  .hide-mobile {
-        display: none;
-  }
-}
-
 ul {
   margin: 0;
 }
@@ -340,3 +334,47 @@ div.container {
   color: white;
 }
 
+.geomap {
+  height: 280px;
+  width: 100%;
+}
+
+.jumbotron-landing {
+  padding: 80px;
+  background-size: 100% auto;
+  // background-color: red;
+  background-image: url("http://i.imgur.com/lJgDM9N.jpg");
+  background-repeat: repeat-y;
+}
+
+.tagline {
+  margin-bottom: 10px;
+  font-size: 1.4em;
+}
+@media only screen and (max-width: 768px) {
+  .hide-mobile {
+    display: none;
+  }
+  .jumbotron-landing {
+    padding: 20px;
+  }
+}
+
+.geomap {
+  margin-bottom: 15px;
+}
+
+.pac-container, .pac-item {
+    width: inherit !important;
+    z-index: 100000;
+}
+
+.address_header {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}

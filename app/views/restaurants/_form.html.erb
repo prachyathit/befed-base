@@ -1,3 +1,7 @@
+<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyBLod8mAcjj-5mmficTg-cu2W-BhEu6Cgs&libraries=places" type="text/javascript"></script>
+<script src="//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js" type="text/javascript"></script>
+<%= javascript_include_tag("reg_maps.js") %>
+
 <%= form_for(@restaurant) do |f| %>
   <% if @restaurant.errors.any? %>
     <div id="error_explanation">
@@ -23,6 +27,17 @@
     <%= f.label :image_url %><br>
     <%= f.text_field :image_url %>
   </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_field :address, class: "location" %>
+  </div>
+  <div id="map-container" class="geomap">
+    <div id="map" class="geomap"></div>
+  </div>
+
+  <%= f.hidden_field :latitude , class: "longitude" %>
+  <%= f.hidden_field :longitude ,  class: "latitude" %>
+
   <div class="form-group">
     <div class="row">
       <div class="col-sm-8">

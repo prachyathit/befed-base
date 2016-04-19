@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  post '/submitsaddress' => 'saddress#create', :as => :submit_saddress
+  get 'saddress/new'
 
   resources :options do
     resources :option_values, only: [:create, :destroy]
@@ -24,7 +26,7 @@ Rails.application.routes.draw do
 
   get 'sessions/new'
 
-  root                  'categories#index'
+  root                  'saddress#new'
   get     'help'    =>  'static_pages#help'
   get     'about'   =>  'static_pages#about'
   get     'contact' =>  'static_pages#contact'

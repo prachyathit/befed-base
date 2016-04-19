@@ -1,4 +1,9 @@
+<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyBLod8mAcjj-5mmficTg-cu2W-BhEu6Cgs&libraries=places" type="text/javascript"></script>
+<script src="//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js" type="text/javascript"></script>
+<%= javascript_include_tag("reg_maps.js") %>
+
 <% provide(:title, 'Sign up') %>
+<% provide(:hidden_title, 'Sign up') %>
 <h1>Sign up</h1>
 
 <div class="row">
@@ -16,7 +21,13 @@
       <%= f.text_field :phone, class: 'form-control' %>
 
       <%= f.label :address %>
-      <%= f.text_field :address, class: 'form-control' %>
+      <%= f.text_field :address, class: "location" %>
+      <div id="map-container" class="geomap">
+        <div id="map" class="geomap"></div>
+      </div>
+
+      <%= f.hidden_field :latitude , class: "longitude" %>
+      <%= f.hidden_field :longitude ,  class: "latitude" %>
 
       <%= f.label :password %>
       <%= f.password_field :password, class: 'form-control' %>
@@ -24,7 +35,7 @@
       <%= f.label :password_confirmation %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
-      <%= f.submit "Create my account", class: "btn btn-primary" %>
+      <%= f.submit "Create my account", class: "btn btn-danger" %>
     <% end %>
   </div>
 </div>
