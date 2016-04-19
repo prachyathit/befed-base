@@ -6,7 +6,7 @@ User.create!( name: "Example User",
               password_confirmation: "foobar",
               admin: true )
 
-99.times do |n|
+5.times do |n|
   name = Faker::Name.name
   email = "example-#{n+1}@railstutorial.org"
   phone = Faker::PhoneNumber.cell_phone
@@ -21,22 +21,54 @@ User.create!( name: "Example User",
 end
 
 # First Restaurant
-  name = "ร้านอาหารไทย"
-  description = "ข้าวผัด ผัดไทย"
-  image_url = "http://i.imgur.com/JuF96zV.jpg"
+  name = "Mara Thai Cuisine"
+  description = "Best of Wongnok 2020"
+  image_url = "http://i.imgur.com/PJGw1VT.png?1"
+  Restaurant.create!( name: name,
+                desc: description,
+                image_url: image_url )
+
+# 2 Restaurant
+  name = "Ruen Goompa"
+  description = "100 years authentic Thai Fine cuisine"
+  image_url = "http://i.imgur.com/xDXuIiQ.jpg?1"
+  Restaurant.create!( name: name,
+                desc: description,
+                image_url: image_url )
+
+# 3 Restaurant
+  name = "Healthy Avenue"
+  description = "Eat healthy now"
+  image_url = "http://i.imgur.com/FALUKWt.jpg?1"
+  Restaurant.create!( name: name,
+                desc: description,
+                image_url: image_url )
+
+# 4 Restaurant
+  name = "Georgetown Cupcake"
+  description = "Number 1 cupcake in town"
+  image_url = "http://i.imgur.com/XAjdLvS.jpg?1"
+  Restaurant.create!( name: name,
+                desc: description,
+                image_url: image_url )
+
+# 4 Restaurant
+  name = "Lifestyle Juicery"
+  description = "100% cold pressed juice on demand"
+  image_url = "http://i.imgur.com/5eKvfqY.jpg?1"
   Restaurant.create!( name: name,
                 desc: description,
                 image_url: image_url )
 
 # Test restaurant
-4.times do |n|
-  name = "Test restaurant #{n+2}"
-  description = Faker::Lorem.sentence(2)
-  image_url = "http://i.imgur.com/Ox6fvZhm.png"
-  Restaurant.create!( name: name,
-                desc: description,
-                image_url: image_url )
-end
+# 4.times do |n|
+#   name = "Test restaurant #{n+2}"
+#   description = Faker::Lorem.sentence(2)
+#   image_url = "http://i.imgur.com/Ox6fvZhm.png"
+#   Restaurant.create!( name: name,
+#                 desc: description,
+#                 image_url: image_url )
+# end
 
 # Test foods
 
@@ -148,14 +180,14 @@ end
 
 # Create some categories
 Category.create!( name: "Healthy",
-                  image_url: "http://i.imgur.com/k2Q0rRv.jpg")
+                  image_url: "http://i.imgur.com/lVGYkOW.jpg?1")
 Category.create!( name: "Thai",
-                  image_url: "http://i.imgur.com/bUxrlBe.jpg")
+                  image_url: "http://i.imgur.com/nMzNKxo.jpg?1")
 Category.create!( name: "Noodles",
-                  image_url: "http://i.imgur.com/fZ3itxr.jpg")
+                  image_url: "http://i.imgur.com/R2s7oM5.jpg?1")
 Category.create!( name: "Japanese",
-                  image_url: "http://i.imgur.com/0Fo30Rv.jpg")
+                  image_url: "http://i.imgur.com/RR3A02c.jpg?1")
 Category.create!( name: "Desserts",
-                  image_url: "http://i.imgur.com/ZiPkZSd.jpg")
+                  image_url: "http://i.imgur.com/GrNPRhU.jpg?1")
 Category.create!( name: "Drinks",
-                  image_url: "http://i.imgur.com/ZiPkZSd.jpg")
+                  image_url: "http://i.imgur.com/cf7SXbV.jpg?1")
