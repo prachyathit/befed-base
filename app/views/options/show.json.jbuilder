@@ -1,5 +1,6 @@
 json.id @option.id
 json.name @option.name
+json.option_type @option.option_type
 
 json.option_values do
     json.array!(@option.option_values) do |option_value|

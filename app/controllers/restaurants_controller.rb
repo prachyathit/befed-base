@@ -6,7 +6,7 @@ class RestaurantsController < ApplicationController
   # GET /restaurants
   # GET /restaurants.json
   def index
-    @restaurants = Restaurant.near(session[:saddress]["faddress"], 5, :units => :km)
+    @restaurants = Restaurant.all
   end
 
   # GET /restaurants/1
