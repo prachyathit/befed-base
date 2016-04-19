@@ -52,10 +52,17 @@ end
                 desc: description,
                 image_url: image_url )
 
-# 4 Restaurant
+# 5 Restaurant
   name = "Lifestyle Juicery"
   description = "100% cold pressed juice on demand"
   image_url = "http://i.imgur.com/5eKvfqY.jpg?1"
+  Restaurant.create!( name: name,
+                desc: description,
+                image_url: image_url )
+# 6 Restaurant
+  name = "Juniper Sushi"
+  description = "Cheap sushi"
+  image_url = "http://i.imgur.com/RR3A02c.jpg?1"
   Restaurant.create!( name: name,
                 desc: description,
                 image_url: image_url )
@@ -150,7 +157,7 @@ first_restaurant = Restaurant.first
                               cat_id: 3,
                               cat: "Dessert")
 # menu for other restaurants
-restaurants = Restaurant.where( :id => 2..5 )
+restaurants = Restaurant.where( :id => 2..6 )
 10.times do
   name = Faker::Lorem.word
   price = Faker::Number.number(2)
