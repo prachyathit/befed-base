@@ -8,13 +8,13 @@ class CategoriesController < ApplicationController
   # GET /categories.json
   def index
     @categories = Category.all
-    @restaurants = Restaurant.all
+    @restaurants = Restaurant..near(submitted_address, 5, :units => :km)
   end
 
   # GET /categories/1
   # GET /categories/1.json
   def show
-    @category_restaurants = @category.restaurants
+    @category_restaurants = @category.restaurants.near(submitted_address, 5, :units => :km)
   end
 
   # GET /categories/new
