@@ -15,7 +15,7 @@
     </div>
     <% @categories.each do |category| %>
 
-    <% num_res = category.restaurants.near(session[:saddress]["faddress"], 5, :units => :km).size %>
+    <% num_res = category.restaurants.size %>
     <% unless num_res == 0 %>
       <% numi += 1 %>
       <div class="col-xs-12 col-sm-6">
