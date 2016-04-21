@@ -17,6 +17,7 @@ $red-hilight: #ffc1c1;
 body {
   padding-top: 60px;
 }
+
 section {
   overflow: auto;
 }
@@ -210,8 +211,8 @@ a, a:hover {
     color: black;
 }
 
-.navbar-nav > li {
-  float: left;
+.navbar-header .navbar-toggle .icon-bar {
+    background-color: black;
 }
 
 .dropdown-menu {
@@ -377,4 +378,18 @@ div.container {
   overflow: hidden;
   text-overflow: ellipsis;
 
+}
+
+.container > .navbar-header,
+.container > .navbar-collapse,
+.container-fluid > .navbar-header,
+.container-fluid > .navbar-collapse {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+@media only screen and (min-width: 768px) {
+  .dropdown-location {
+    min-width: 300px;
+  }
 }

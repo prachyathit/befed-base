@@ -7,6 +7,7 @@ $(document).ready(function() {
         markerOptions: {
           draggable: true
         },
+        types: []
 
       };
       $(".location").geocomplete(options).bind("geocode:result", function(event, result){

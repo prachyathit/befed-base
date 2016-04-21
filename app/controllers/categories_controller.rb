@@ -2,13 +2,12 @@ class CategoriesController < ApplicationController
   before_action :set_category, only: [:show, :edit, :update, :destroy]
   before_action :check_admin, only: [:new, :edit, :update, :destroy]
   before_action :get_cart_size
-  before_action :submitted_address, only: [:index, :show]
 
   # GET /categories
   # GET /categories.json
   def index
     @categories = Category.all
-    @restaurants = Restaurant..near(submitted_address, 5, :units => :km)
+    @restaurants = Restaurant.near(submitted_address, 5, :units => :km)
   end
 
   # GET /categories/1

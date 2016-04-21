@@ -1,12 +1,18 @@
-<header class = "navbar navbar-fixed-top navbar-custom">
+<nav class = "navbar navbar-custom navbar-fixed-top">
   <div class = "container">
-    <div class="hide-mobile">
+    <div class="navbar-header">
       <%= link_to "Befed", root_path, id: "logo" %>
       <p id="sublogo">Bangkok Food Delivery</p>
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
     </div>
-    <nav>
+
+    <div class="collapse navbar-collapse" id="myNavbar">
       <ul class = "nav navbar-nav navbar-right">
-        <!--CATEGORY-->
+        <!--Address-->
         <% unless ["Landing", "Sign up", "Edit user", "clearmap"].include? yield(:hidden_title)%>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -14,8 +20,8 @@
               <div class="address_header"><%= session[:saddress]["faddress"] %></div>
               <b class="caret"></b>
             </a>
-            <ul class="dropdown-menu">
-              <%= form_for(:saddress, url: submit_saddress_path, html: {class: 'form-inline'}) do |f| %>
+            <ul class="dropdown-menu dropdown-location">
+              <%= form_for(:saddress, url: submit_saddress_path) do |f| %>
                 <%= f.text_field :faddress, class: "location form-control" %>
                 <%= f.hidden_field :latitude , class: "longitude" %>
                 <%= f.hidden_field :longitude ,  class: "latitude" %>
@@ -27,16 +33,18 @@
             </ul>
           </li>
         <% end %>
-        <!--CATEGORY END-->
+        <!--Address END-->
         <!--CART -->
-        <% if session[:cart] %>
-        <% get_cart_size %>
+        <% unless yield(:hidden_title) == "Landing" %>
+          <% if session[:cart] %>
+            <% get_cart_size %>
+          <% end %>
           <li>
             <%= link_to cart_path do %>
               <span class="glyphicon glyphicon-shopping-cart"></span>
-                <span class="badge badge-danger">
-                  <div id="cartnum"><%= @cart_size %></div>
-                </span>
+              <span class="badge badge-danger">
+                <div id="cartnum"><%= @cart_size %></div>
+              </span>
             <% end %>
           </li>
         <% end %>
@@ -68,7 +76,6 @@
           </li>
         <% end %>
       </ul>
-    </nav>
+    </div>
   </div>
-
-</header>
+</nav>
