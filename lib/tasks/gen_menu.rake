@@ -4,7 +4,8 @@ saladfactory_options = Rails.root + "app/csv/SaladFactoryOptions.csv"
 saladfactory_option_values = Rails.root + "app/csv/SaladFactoryOptionValues.csv"
 saladfactory_food_options = Rails.root + "app/csv/SaladFactoryFoodOptions.csv"
 namespace :gen_menu do
-  
+
+# Run these rake task in order to fill in all the menus and options for Salad Factory  
   desc "Generate Menu"
   task menu: :environment do
     Restaurant.all.each do |restaurant|
