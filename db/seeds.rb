@@ -1,7 +1,7 @@
 User.create!( name: "Example User",
               email: "example@railstutorial.org",
               phone: "0819999999",
-              address: "Latphrao 90 Rd. Bangkok 10310",
+              address: "ซอย ลาดพร้าว 90 แขวง พลับพลา เขต วังทองหลาง กรุงเทพมหานคร 10312 ประเทศไทย",
               password: "foobar",
               password_confirmation: "foobar",
               admin: true )
@@ -20,170 +20,70 @@ User.create!( name: "Example User",
                 password_confirmation: password )
 end
 
-# First Restaurant
-  name = "Mara Thai Cuisine"
-  description = "Best of Wongnok 2020"
-  image_url = "http://i.imgur.com/PJGw1VT.png?1"
+# Branch 1
+  name = "Salad Factory Beehive"
+  description = "At Salad Factory, only finest ingredients are user. Especially the
+                Quality of meat that is selected through the clean and state-of-the-art
+                feeding and production process. Every ingredient can be checked back to
+                its source to guarantee fresh, clean and safe food. We serve you only the
+                best as we always do for our family."
+  image_url = "http://i.imgur.com/4RZEYGB.jpg?1"
+  address = "Soi Mu Ban Mueang Thong Thani Khrongkan 6 Zone A, Tambon Ban Mai, Amphoe Pak Kret, Chang Wat Nonthaburi 11120, Thailand"
   Restaurant.create!( name: name,
                 desc: description,
-                image_url: image_url )
+                image_url: image_url,
+                address: address)
 
-# 2 Restaurant
-  name = "Ruen Goompa"
-  description = "100 years authentic Thai Fine cuisine"
-  image_url = "http://i.imgur.com/xDXuIiQ.jpg?1"
+# Branch 2
+  name = "Salad Factory Robinson Srisaman"
+  description = "At Salad Factory, only finest ingredients are user. Especially the
+                Quality of meat that is selected through the clean and state-of-the-art
+                feeding and production process. Every ingredient can be checked back to
+                its source to guarantee fresh, clean and safe food. We serve you only the
+                best as we always do for our family."
+  image_url = "http://i.imgur.com/4RZEYGB.jpg?1"
+  address = "Thanon Srisaman, Tambon Ban Mai, Amphoe Pak Kret, Chang Wat Nonthaburi 11120, Thailand"
   Restaurant.create!( name: name,
                 desc: description,
-                image_url: image_url )
+                image_url: image_url,
+                address: address)
 
-# 3 Restaurant
-  name = "Healthy Avenue"
-  description = "Eat healthy now"
-  image_url = "http://i.imgur.com/FALUKWt.jpg?1"
+# Branch 3
+  name = "Salad Factory The Crystal"
+  description = "At Salad Factory, only finest ingredients are user. Especially the
+                Quality of meat that is selected through the clean and state-of-the-art
+                feeding and production process. Every ingredient can be checked back to
+                its source to guarantee fresh, clean and safe food. We serve you only the
+                best as we always do for our family."
+  image_url = "http://i.imgur.com/4RZEYGB.jpg?1"
+  address = "205 Pradit Manutham Road, Khwaeng Lat Phrao, Khet Lat Phrao, Krung Thep Maha Nakhon 10230, Thailand"
   Restaurant.create!( name: name,
                 desc: description,
-                image_url: image_url )
+                image_url: image_url,
+                address: address)
 
-# 4 Restaurant
-  name = "Georgetown Cupcake"
-  description = "Number 1 cupcake in town"
-  image_url = "http://i.imgur.com/XAjdLvS.jpg?1"
-  Restaurant.create!( name: name,
-                desc: description,
-                image_url: image_url )
-
-# 5 Restaurant
-  name = "Lifestyle Juicery"
-  description = "100% cold pressed juice on demand"
-  image_url = "http://i.imgur.com/5eKvfqY.jpg?1"
-  Restaurant.create!( name: name,
-                desc: description,
-                image_url: image_url )
-# 6 Restaurant
-  name = "Juniper Sushi"
-  description = "Cheap sushi"
-  image_url = "http://i.imgur.com/RR3A02c.jpg?1"
-  Restaurant.create!( name: name,
-                desc: description,
-                image_url: image_url )
-
-# Test restaurant
-# 4.times do |n|
-#   name = "Test restaurant #{n+2}"
-#   description = Faker::Lorem.sentence(2)
-#   image_url = "http://i.imgur.com/Ox6fvZhm.png"
+# # 4 Restaurant
+#   name = "Georgetown Cupcake"
+#   description = "Number 1 cupcake in town"
+#   image_url = "http://i.imgur.com/XAjdLvS.jpg?1"
 #   Restaurant.create!( name: name,
 #                 desc: description,
 #                 image_url: image_url )
-# end
 
-# Test foods
-
-# restaurants
-# 10.times do |n|
-#   name = Faker::Name.name
-#   description = Faker::Lorem.sentence(5)
-#   image_url = Faker::Internet.url
+# # 5 Restaurant
+#   name = "Lifestyle Juicery"
+#   description = "100% cold pressed juice on demand"
+#   image_url = "http://i.imgur.com/5eKvfqY.jpg?1"
 #   Restaurant.create!( name: name,
 #                 desc: description,
 #                 image_url: image_url )
-# end
-
-# menus for first restaurant
-first_restaurant = Restaurant.first
-    first_restaurant.foods.create!( name: "ทอดมันกุ้ง",
-                              price: 80,
-                              image_url: "http://i.imgur.com/IACZyI2.jpg",
-                              cat_id: 1,
-                              cat: "Appetizer")
-    first_restaurant.foods.create!( name: "เอ็นข้อไก่ทอด",
-                              price: 65,
-                              image_url: "http://i.imgur.com/pmHhIJo.jpg",
-                              cat_id: 1,
-                              cat: "Appetizer")
-    first_restaurant.foods.create!( name: "เฟร้นช์ฟราย",
-                              price: 70,
-                              image_url: "http://i.imgur.com/mf8Bw9v.jpg",
-                              cat_id: 1,
-                              cat: "Appetizer")
-    first_restaurant.foods.create!( name: "ถั่วทอด",
-                              price: 60,
-                              image_url: "http://i.imgur.com/P42ocKJ.jpg",
-                              cat_id: 1,
-                              cat: "Appetizer")
-    first_restaurant.foods.create!( name: "ข้าวกะเพราไก่ไข่ดาว",
-                              price: 60,
-                              image_url: "http://i.imgur.com/kgFexop.jpg",
-                              cat_id: 2,
-                              cat: "Main")
-    first_restaurant.foods.create!( name: "ข้าวผัดปู",
-                              price: 85,
-                              image_url: "http://i.imgur.com/P42ocKJ.jpg",
-                              cat_id: 2,
-                              cat: "Main")
-    first_restaurant.foods.create!( name: "ก๋วยเตี๋ยวคั่วไก่",
-                              price: 50,
-                              image_url: "http://i.imgur.com/p9CN3OT.jpg",
-                              cat_id: 2,
-                              cat: "Main")
-    first_restaurant.foods.create!( name: "ผัดไทย",
-                              price: 65,
-                              image_url: "http://i.imgur.com/gQCT7de.jpg",
-                              cat_id: 2,
-                              cat: "Main")
-    first_restaurant.foods.create!( name: "ผัดซีอิ้ว",
-                              price: 55,
-                              image_url: "http://i.imgur.com/DC9dXR9.jpg",
-                              cat_id: 2,
-                              cat: "Main")
-    first_restaurant.foods.create!( name: "ราดหน้า",
-                              price: 60,
-                              image_url: "http://i.imgur.com/vSUipNJ.jpg",
-                              cat_id: 2,
-                              cat: "Main")
-    first_restaurant.foods.create!( name: "ฮันนี่โทสต์",
-                              price: 70,
-                              image_url: "http://i.imgur.com/3eYz596.jpg",
-                              cat_id: 3,
-                              cat: "Dessert")
-    first_restaurant.foods.create!( name: "ครีมบรูเล่",
-                              price: 60,
-                              image_url: "http://i.imgur.com/woNzoGQ.jpg",
-                              cat_id: 3,
-                              cat: "Dessert")
-    first_restaurant.foods.create!( name: "คัสตาร์ด",
-                              price: 50,
-                              image_url: "http://i.imgur.com/SWHQIwB.jpg",
-                              cat_id: 3,
-                              cat: "Dessert")
-# menu for other restaurants
-restaurants = Restaurant.where( :id => 2..6 )
-10.times do
-  name = Faker::Lorem.word
-  price = Faker::Number.number(2)
-  image_url = "http://i.imgur.com/xcd5k92m.png"
-
-  restaurants.each do |restaurant|
-    cat_id = (1..4).to_a.sample
-    case cat_id
-    when 1
-      cat = :Appetizer
-    when 2
-      cat = :Main
-    when 3
-      cat = :Dessert
-    when 4
-      cat = :Drinks
-    else
-      cat = ""
-    end
-    restaurant.foods.create!( name: name,
-                              price: price,
-                              image_url: image_url,
-                              cat_id: cat_id,
-                              cat: cat)
-  end
-end
+# # 6 Restaurant
+#   name = "Juniper Sushi"
+#   description = "Cheap sushi"
+#   image_url = "http://i.imgur.com/RR3A02c.jpg?1"
+#   Restaurant.create!( name: name,
+#                 desc: description,
+#                 image_url: image_url )
 
 # Create some categories
 Category.create!( name: "Healthy",
