@@ -6,7 +6,7 @@ Extra : เพิ่ม,4,2
 Fish : ปลา,5,1
 Veg : ผัก,6,1
 Doneness : ความสุก,7,1
-Sides : ไซด์,8,2
+Sides (Choose 2) : ไซด์ (เลือก 2),8,2
 1) Choose Topping (up to 5) : ท็อปปิ้ง (เลือกได้สูงสุด 5 อย่าง),9,2
 2) Choose Salad Dressing : เลือกนํ้าสลัด,10,1
 3) Extra Topping : ท็อปปิ้งเพิ่มเติม,11,2
