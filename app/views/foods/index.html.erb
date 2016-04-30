@@ -7,7 +7,9 @@
 
   <div class="row">
     <% @foods.each do |food| %>
-
+        <% full_name = food.name %>
+        <% eng_name = full_name.split(" : ")[0] %>
+        <% th_name = full_name.split(" : ")[1] %>
         <% unless food.cat_id == cat_number %>
 
           <div class="col-sm-12">
@@ -22,7 +24,8 @@
         <%= link_to add_new_path(id: food.id), remote: true do %>
           <div class="food-item color-hover">
             <div class="food-price"><%= food.price %> ฿</div>
-            <div class="food-name"><%= food.name %></div>
+            <div class="food-name"><%= th_name %></div>
+            <div><%=eng_name%></div>
           </div>
         <% end %>
 
