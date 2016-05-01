@@ -7,7 +7,7 @@ class RestaurantsController < ApplicationController
   # GET /restaurants.json
   def index
     # @restaurants = Restaurant.all
-    @restaurants = Restaurant.near([session[:saddress][:latitude], session[:saddress][:longitude]], 5, :units => :km)
+    @restaurants = Restaurant.near([session[:saddress]['latitude'], session[:saddress]['longitude']], 5, :units => :km)
   end
 
   # GET /restaurants/1
