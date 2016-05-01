@@ -19,7 +19,6 @@
         </div>
         <div class="form-group">
               <% @options.each do |option| %>
-
                 <% ovs = option.option_values %>
                 <% option_name = option.name %>
                 <%= f.label option_name %>
@@ -45,3 +44,15 @@
     <% end %>
   </div>
 </div>
+<script>
+  $('input[name="value[1) Choose Topping (up to 5) : ท็อปปิ้ง (เลือกได้สูงสุด 5 อย่าง)][option_value_ids][]"]').change(function(e){
+   if ($('input[name="value[1) Choose Topping (up to 5) : ท็อปปิ้ง (เลือกได้สูงสุด 5 อย่าง)][option_value_ids][]"]:checked').length > 5) {
+     $(this).prop('checked', false)
+   }
+})
+  $('input[name="value[Sides (Choose 2) : ไซด์ (เลือก 2)][option_value_ids][]"]').change(function(e){
+   if ($('input[name="value[Sides (Choose 2) : ไซด์ (เลือก 2)][option_value_ids][]"]:checked').length > 2) {
+     $(this).prop('checked', false)
+   }
+})
+</script>
