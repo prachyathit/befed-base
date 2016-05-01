@@ -165,13 +165,17 @@ input {
   }
 }
 
-.checkbox {
-  margin-top: -10px;
-  margin-bottom: 10px;
-  span {
-    margin-left: 20px;
-    font-weight: normal;
-  }
+// .checkbox {
+//   margin-top: -10px;
+//   margin-bottom: 10px;
+//   span {
+//     margin-left: 20px;
+//     font-weight: normal;
+//   }
+// }
+
+.checkbox, .radio {
+  padding-left: 20px;
 }
 
 #session_remember_me {

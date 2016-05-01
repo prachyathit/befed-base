@@ -13,7 +13,7 @@ class SaddressController < ApplicationController
         session[:saddress][:latitude] = latitude
         session[:saddress][:longitude] = longitude
       end
-      redirect_to categories_url
+      redirect_to restaurants_url
     end
   end
   def create
@@ -26,7 +26,7 @@ class SaddressController < ApplicationController
       session[:saddress][:latitude] = latitude
       session[:saddress][:longitude] = longitude
       get_cart_size
-      redirect_to categories_url
+      redirect_to restaurants_url
     else
       flash[:danger] = "Location can't be blank"
       redirect_to root_url

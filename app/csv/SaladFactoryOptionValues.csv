@@ -1,0 +1,130 @@
+name,position,option_id,price
+Pork : หมู,1,1,0
+Beef : เนื้อ (+50),2,1,50
+Iceberg : ผักกาดแก้ว,1,2,0
+Cabbage : กะหลํ่าปลี,2,2,0
+New Zealand Mussels : หอยแมลงภู่นิวซีแลนด์,1,3,0
+Blue Mussels : บลูมัซเซิ่ล,2,3,0
+Add Garlic Bread with Cheese : เพิ่มขนมปังกระเทียมชีส (+30),1,4,30
+Pan Fried : ย่างเกลือ,1,5,0
+Cheesy : ทอดชีส (+10),2,5,10
+Rocket Salad : สลัดร็อกเก็ต,1,6,0
+Baby Spinach : ต้นอ่อนผักโขม,2,6,0
+Rare : ดิบ,1,7,0
+Medium Rare : ค่อนข้างดิบ,2,7,0
+Medium : สุกปานกลาง,3,7,0
+Medium Well : เกือบสุก,4,7,0
+Well Done : สุก,5,7,0
+French Fries : เฟรนช์ฟรายส์,1,8,0
+Garlic Bread with Cheese : ขนมปังกระเทียมชีส,2,8,0
+Garlic Bread : ขนมปังกระเทียม,3,8,0
+Side Salad : ผักสลัด,4,8,0
+Rocket Salad : สลัดร็อกเก็ต,5,8,0
+Grilled Mixed Vegetables : ผักรวมย่าง,6,8,0
+Steamed Broccoli : บร็อคโคลี่นึ่ง,7,8,0
+Grilled Broccoli : บร็อคโคลี่ย่าง,8,8,0
+Steamed Spinach : ผักโขมนึ่ง,9,8,0
+Stir-Fried Spinach : ผักโขมผัดเนย,10,8,0
+Steamed Asparagus : หน่อไม้ฝรั่งนึ่ง,11,8,0
+Stir-Fried Asparagus : หน่อไม้ฝรั่งผัดเนย,12,8,0
+Grilled Mushroom : เห็ดรวมย่าง,13,8,0
+Organic Jasmine Rice : ข้าวหอมมะลิ,14,8,0
+Organic Hom-Nin Rice : ข้าวหอมนิล,15,8,0
+Pineapple Fried Rice: ข้าวผัดสัปปะรด,16,8,0
+Garlic Fried Rice : ข้าวผัดกระเทียม,17,8,0
+Onion : หอมหัวใหญ่,1,9,0
+Bell Pepper : พริกหวาน 3 สี,2,9,0
+Carrot : แครอท,3,9,0
+Red Bean : ถั่วแดง,4,9,0
+Olive : มะกอกดำ,5,9,0
+Japanese Pumpkin : ฟักทองญี่ปุ่น,6,9,0
+Spinach : ผักโขม,7,9,0
+Japanese Cucumber : แตงกวาญี่ปุ่น,8,9,0
+Grape Tomato : มะเขือเทศ ราชินี,9,9,0
+Broccoli : บร็อคโคลี่,10,9,0
+Red Cabbage : กะหลํ่าม่วง,11,9,0
+Asparagus : หน่อไม้ฝรั่ง,12,9,0
+Lettuce Iceberg : ผักกาดแก้ว,13,9,0
+Water Chestnut : แห้ว,14,9,0
+Rocket : ร็อกเก็ต,15,9,0
+Chinese Barley : ลูกเดือย,16,9,0
+Sweet Corn : ข้าวโพดหวาน,17,9,0
+Baby Corn : ข้าวโพดอ่อน,18,9,0
+Celery : เซเลรี่,19,9,0
+Beetroot : บีทรูท,20,9,0
+Pineapple : สัปปะรด,21,9,0
+Kaiware Sprouts : ถั่วงอกญี่ปุ่น,22,9,0
+Boiled Egg : ไข่ต้ม,23,9,0
+Sunflower Seeds : เมล็ดทานตะวัน,24,9,0
+Pumpkin Seeds : เมล็ดฟักทอง,25,9,0
+Bacon Bit : เบคอนบิท,26,9,0
+Almond : อัลมอนด์,27,9,0
+Raisin : ลูกเกด,28,9,0
+Croutons : ขนมปังกรอบ,29,9,0
+Cashew Nuts : เม็ดมะม่วงหิมพานต์,30,9,0
+Sunflower Sprouts : ต้นอ่อนทายตะวัน,31,9,0
+Radish : หัวไชเท้า,32,9,0
+Baby Spinach : ต้นอ่อนผักโขม,33,9,0
+Tomato Beef : มะเขือเทศเนื้อ,34,9,0
+Pea : ถั่วลันเตา,35,9,0
+Pasta : พาสต้า,36,9,0
+Red Onion : หอมแดง,37,9,0
+Konjac : เส้นบุก,38,9,0
+Cream Sesame : นํ้าสลัดงาญี่ปุ่น,1,10,0
+Seafood Dressing : นํ้าสลัดซีฟู้ด,2,10,0
+Caesar : นํ้าสลัดซีซ่าร์,3,10,0
+Sweet Basil : นํ้าสลัดโหระพา,4,10,0
+Balsamic : นํ้าใสบาลซามิค,5,10,0
+Beetroot : นํ้าสลัดบีทรูท,6,10,0
+Japanese Shoyu : ซีอิ๊วญี่ปุ่น,7,10,0
+Italian Dressing : นํ้าใสอิตาเลี่ยน,8,10,0
+Wasabi : นํ้าสลัดวาซาบิ,9,10,0
+Cream Dressing : นํ้าสลัดครีม,10,10,0
+Thousand Island : นํ้าสลัดเทาซั่นไอส์แลนด์,11,10,0
+Spicy Tamarind Dressing : แจ่ว,12,10,0
+Ponzu : พอนสึ,13,10,0
+Rice Berry : นํ้าสลัดไรซ์เบอรี่,14,10,0
+Japanese Pumpkin : นํ้าสลัดฟีกทอง,15,10,0
+Spicy Lime Dressing : นํ้ายำไทย,16,10,0
+Red Wine Vinegar Dressing : นํ้าสลัดไวน์แดง,17,10,0
+Guava : ฝรั่ง (+10),1,11,10
+Dried Tomato : มะเขือเทศอบแห้ง (+15),2,11,15
+Green Apple : แอปเปิ้ลเขียว (+15),3,11,15
+Red Apple : แอปเปิ้ลแดง (+15),4,11,15
+Grape : องุ่น (+15),5,11,15
+Asian Pear : สาลี่ (+15),6,11,15
+Ham : แฮม (+15),7,11,15
+Grilled Bacon : เบคอนย่าง (+20),8,11,20
+Grilled Japanese Pumpkin : ฟักทองญี่ปุ่น (+20),9,11,20
+Grilled Eringi Mushroom : เห็ดออเรนจิย่าง (+20),10,11,20
+Steamed Japanese Tofu : เต้าหู้ญี่ปุ่นนึ่ง (+20),11,11,20
+Fried Japanese Tofu : เต้าหู้ญี่ปุ่นทอด (+20),12,11,20
+Imitation Crab : ปูอัด (2)  (+20),13,11,20
+Tako Squid : ปลาหมึกทาโกะ (+20),14,11,20
+Mozzarella Cheese : มอสซาเรลล่าชีส (+20),15,11,20
+Parmesan Cheese : พาร์มีซานชีส (+20),16,11,20
+Dried Cranberries : แครนเบอร์รี่อบแห้ง (+20),17,11,20
+Grilled Mixed Vegetables : ผักรวมย่าง (+25),18,11,25
+Deep-Fried Thai Herbs : สมุนไพรทอด (+25),19,11,25
+Kimchi : กิมจิ (+25),20,11,25
+Navel Orange : ส้มนาเวล (+25),21,11,25
+Tobiko : ไข่กุ้ง (+25),22,11,25
+Sausage : ไส้กรอก (+25),23,11,25
+Cheddar Cheese : เชดดาร์ชีส (+25),24,11,25
+Chicken Sousvide : อกไก่ซูวีด (ต้ม) (+30),25,11,30
+Blue Cheese : บลูชีส (+30),26,11,30
+Fete Cheese : เฟต้าชีส (+30),27,11,30
+Boiled Shrimp : กุ้งลวก (3) (+35),28,11,35
+Quinoa : ควินัว (+35),29,11,35
+Grilled Mixed Mushrooms : เห็ดรวมย่าง (+35),30,11,35
+Japanese Seaweed Salad : ยำสาหร่าย (+35),31,11,35
+Grilled Shrimp : กุ้งย่าง (3) (+40),32,11,40
+Grilled Chicken Breast : อกไก่ย่าง (+40),33,11,40
+Grilled Slice Beef : เนื้อย่าง (+45),34,11,45
+Grilled Chicken : ไก่ย่างอบนํ้าผึ้ง (+45),35,11,45
+Grilled Pork : หมูย่าง (+45),36,11,45
+Deep-Fried Pork : หมูทอด (+45),37,11,45
+Tuna : ทูน่า (+45),38,11,45
+Avocado : อโวคาโด (+50),39,11,50
+Smoked Salmon : แซลมอนรมควัน (+55),40,11,55
+Deep-Fried Soft Shell Crab : ปูนิ่มทอด (+100),41,11,100

@@ -18,8 +18,6 @@
           <%= f.text_field :special, class: "form-control" %>
         </div>
         <div class="form-group">
-          <div class="row">
-            <div class="col-sm-8">
               <% @options.each do |option| %>
 
                 <% ovs = option.option_values %>
@@ -27,17 +25,16 @@
                 <%= f.label option_name %>
                 <% if option.option_type == 1 %>
                   <%= collection_radio_buttons "value[#{option.name}]", :option_value_ids, ovs, :id, :name, {checked: ovs.first.id} do |rb| %>
-                    <% rb.label(class: "radio-inline input_checkbox") {rb.radio_button(class: "radio-inline") + rb.text} %>
+                    <% rb.label(class: "radio input_checkbox") {rb.radio_button(class: "radio") + rb.text} %>
                   <% end %>
                 <% else %>
                   <%= collection_check_boxes "value[#{option.name}]", :option_value_ids, ovs, :id, :name do |cb| %>
-                    <% cb.label(class: "checkbox-inline input_checkbox") {cb.check_box(class: "checkbox") + cb.text} %>
+                    <% cb.label(class: "checkbox input_checkbox") {cb.check_box(class: "checkbox") + cb.text} %>
                   <% end %>
                 <% end %>
                 <br>
               <% end %>
-          </div>
-        </div>
+    
       </div>
     </div>
 
