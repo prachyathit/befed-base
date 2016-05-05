@@ -244,6 +244,17 @@ a, a:hover {
   border-color: $red-main;
 }
 
+.food-name {
+  color: gray;
+  padding-left: 10px;
+  padding-right: 50px;
+  font-size: 0.9em;
+}
+
+.recommend {
+  color: $red-main;
+}
+
 .container {
   max-width: 800px;
 }
