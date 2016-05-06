@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
 
   get '/checkout' => 'cart#checkout'
-  get '/checkout/complete' => 'cart#submit'
+  post '/checkout/complete' => 'cart#submit'
 
   get '/cart' => 'cart#index'
   get '/cart/clear' => 'cart#clear_cart'

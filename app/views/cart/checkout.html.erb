@@ -111,9 +111,13 @@
         </div>
   </div>
 </div>
-
-<h2><%= link_to "Submit Order", checkout_complete_path, class: "btn btn-danger" %></h2>
-
+<%= form_for(:submit, url: checkout_complete_path) do |f| %>
+  <div class="form-group">
+    <%= f.label "Delivery Instruction : คำแนะนำในการจัดส่ง", class: "control-label" %>
+    <%= f.text_field :delivery_instruction, placeholder:"(ตัวอย่าง) คอนโดไอดีโอสาทร ห้อง 750 ถึงแล้วกรุณาโทรมา" ,class: "form-control" %>
+  </div>
+  <h2><%= f.submit "Submit Order", class: "btn btn-danger" %></h2>
+<% end %>
 <script>
 var myCenter=new google.maps.LatLng(<%= @user.latitude %>,<%= @user.longitude %>);
 

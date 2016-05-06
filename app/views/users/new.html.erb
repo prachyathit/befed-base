@@ -5,22 +5,23 @@
 <% provide(:title, 'Sign up') %>
 <% provide(:hidden_title, 'Sign up') %>
 <h1>Sign up</h1>
+<h2>ลงทะเบียน</h2>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages' %>
 
-      <%= f.label :name %>
+      <%= f.label :name %> <%= f.label "ชื่อ", class:"subthai" %>
       <%= f.text_field :name, class: 'form-control' %>
 
-      <%= f.label :email %>
+      <%= f.label :email %> <%= f.label "อีเมล์", class:"subthai" %>
       <%= f.email_field :email, class: 'form-control' %>
 
-      <%= f.label :phone %>
+      <%= f.label :phone %> <%= f.label "โทรศัพท์", class:"subthai" %>
       <%= f.text_field :phone, class: 'form-control' %>
 
-      <%= f.label :address %>
+      <%= f.label :address %> <%= f.label "ที่อยู่", class:"subthai" %>
       <%= f.text_field :address, class: "location", value: prefill_address %>
       <div id="map-container" class="geomap">
         <div id="map" class="geomap"></div>
@@ -29,10 +30,10 @@
       <%= f.hidden_field :latitude , class: "longitude" %>
       <%= f.hidden_field :longitude ,  class: "latitude" %>
 
-      <%= f.label :password %>
+      <%= f.label :password %> <%= f.label "รหัสผ่าน", class:"subthai" %>
       <%= f.password_field :password, class: 'form-control' %>
 
-      <%= f.label :password_confirmation %>
+      <%= f.label :password_confirmation %> <%= f.label "ยืนยันรหัสผ่าน", class:"subthai" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
       <%= f.submit "Create my account", class: "btn btn-danger" %>
