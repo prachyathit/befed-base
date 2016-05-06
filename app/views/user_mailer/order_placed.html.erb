@@ -71,7 +71,7 @@
               </td>
               <td class="col-md-2"><%= quantity %></td>
               <td class="col-md-2">
-                
+                <strong><%= food_price * quantity %> ฿</strong>
               </td>
               <% total += quantity * food_price %>
             </tr>
@@ -110,8 +110,5 @@
         <td class="col-md-4"><%= @user.address %></td>
       </tr>
     </table>
-            <div class="geomap">
-          <div id="googleMap" class="geomap"></div>
-        </div>
   </div>
 </div>
