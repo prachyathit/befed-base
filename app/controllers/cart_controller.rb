@@ -72,6 +72,7 @@ after_action :get_cart_size
       flash[:danger] = "Delivery address is not within the service area : ที่อยู่ของคุณอยู่นอกพื้นที่จัดส่ง"
       redirect_to checkout_url
     end
+    get_cart_size
   end
 
   private
