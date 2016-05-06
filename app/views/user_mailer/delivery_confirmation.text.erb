@@ -2,7 +2,72 @@ Delivery Confirmation
 
 <%= @user.name %>, Thank you for choosing us
 
-Your order has been placed. Your order will arrive at your doorstep in less than 45 minutes.
+Your order has been placed. Your order will arrive at your doorstep in around 60 minutes.
 
 If you have any questions, please call 02-123-4567
 
+Order Info
+<% first_food_id = @cart["1"]["food_id"] %>
+<% first_food = Food.find(first_food_id) %>
+<% rest_id = first_food.restaurant_id %>
+<%= Restaurant.find(rest_id).name %>
+
+
+
+    <% @cart.each do |id, order_info| %>
+      <% food_id = order_info["food_id"] %>
+      <% quantity = order_info["quantity"].to_i %>
+      <% special = order_info["special"] %>
+      <% options = order_info["options"] %>
+      <% food = Food.find(food_id) %>
+      <% food_price = food.price %>
+
+         <%= food.name %>
+
+
+          <!--Option list start-->
+
+              <% unless options.nil? %>
+                <% options.each do |option| %>
+                  <% option_value_id = option[1]["option_value_ids"] %>
+                    <% unless option_value_id.first.empty? %>
+
+                      <!--Radio button-->
+                      <% if option_value_id.class == String %>
+                        <% option_value = OptionValue.find(option_value_id) %>
+                        <li><%= option_value.name %></li>
+                        <% food_price += option_value.price.to_i %>
+                      <!--Checkbox-->
+                      <% else %>
+                          <% option_value_id.each do |option_number| %>
+                            <% unless option_number.empty? %>
+                              <% option_value = OptionValue.find(option_number) %>
+                              <li><%= option_value.name %></li>
+                              <% food_price += option_value.price.to_i %>
+                            <% end %>
+                          <% end %>
+
+                      <% end %>
+
+                    <% end %>
+                  <% end %>
+                <% end %>
+                <% unless special.empty? %>
+                  <%= special %>
+                <% end %>
+              
+          <!--Option list end-->
+
+<%= quantity %>
+          
+            <%= food_price * quantity %> ฿
+         
+          <% total += quantity * food_price %>
+        
+      <% end %>
+Delivery Fee: 70 ฿
+Subtotal:<%= total+70 %> ฿
+Payment Method: Cash on delivery
+Name: <%= @user.name %>
+Contact Number: <%= @user.phone %>
+Delivery Address: <%= @user.address %>
