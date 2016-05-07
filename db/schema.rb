@@ -66,8 +66,12 @@ ActiveRecord::Schema.define(version: 20160507224721) do
     t.datetime "updated_at"
   end
 
-# Could not dump table "payments" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
+  create_table "payments", force: :cascade do |t|
+    t.integer  "user_id"
+    t.text     "omise_charge_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "restaurant_categories", force: :cascade do |t|
     t.integer "restaurant_id"
