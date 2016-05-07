@@ -19,6 +19,9 @@ class User < ActiveRecord::Base
   reverse_geocoded_by :latitude, :longitude
   after_validation :geocode, :reverse_geocode
 
+  has_many :payments
+  has_many :orders
+
   # Returns the hash digest of the given string
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
@@ -68,9 +71,9 @@ class User < ActiveRecord::Base
 
   private
 
-    # Converts email to all lower case
-    def downcase_email
-      self.email = email.downcase
-    end
+  # Converts email to all lower case
+  def downcase_email
+    self.email = email.downcase
+  end
 
 end
