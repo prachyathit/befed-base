@@ -15,6 +15,9 @@ gem 'geocoder'
 gem 'geocomplete_rails'
 gem 'sdoc', '0.4.0', group: :doc
 
+# for icons
+gem 'font-awesome-sass', '~> 4.6.2'
+
 # payment
 gem 'omise', github: 'omise/omise-ruby'
 

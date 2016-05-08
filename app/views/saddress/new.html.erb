@@ -1,37 +1,36 @@
 <% provide(:hidden_title, 'Landing') %>
 
 <div class='jumbotron-landing'>
-  <div class="tagline center">Food from Top Restaurants near you</div>
   <div class="tagline center">
-    Deliver with <span class="glyphicon glyphicon-heart", style="color:red"></span>
+    <p>Salad Factory</p>
+    <p>Deliver Healthy & Delicious Food</p>
+    <p>to Our Beloved Customers<span class="glyphicon glyphicon-heart" style="color:red"></span></p>
   </div>
-  <div class="row hide-mobile">
+
+  <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
+      <%= render partial: "shared/map", locals: { button_name: "Feed me now!" } %>
+    </div>
+  </div>
+
+</div>
+<h1>How it works</h1>
+<p class="subthai center">สั่งง่ายๆใน 3 ขั้นตอน</p>
+  <div class="row">
+
       <div class="col-sm-4 center">
         <span class="glyphicon glyphicon-map-marker"></span>
         <p>Locate</p>
+        <img src="http://i.imgur.com/2xy4V4A.png" alt="Locate" height="auto" width="100%">
       </div>
       <div class="col-sm-4 center">
         <span class="glyphicon glyphicon-hand-up"></span>
         <p>Choose</p>
+      <img src="http://i.imgur.com/R3bMVzz.png" alt="Locate" height="auto" width="100%">
       </div>
       <div class="col-sm-4 center">
         <span class="glyphicon glyphicon-cutlery"></span>
-        <p>Eat</p>
+        <p>We Deliver</p>
       </div>
-    </div>
+
   </div>
-  <div class="row">
-    <div class="col-sm-6 col-sm-offset-3">
-      <%= form_for(:saddress, url: submit_saddress_path) do |f| %>
-        <%= f.text_field :faddress, class: "location form-control" %>
-        <%= f.hidden_field :latitude , class: "longitude" %>
-        <%= f.hidden_field :longitude ,  class: "latitude" %>
-        <div id="map-container" class="geomap">
-          <div id="map" class="geomap"></div>
-        </div>
-        <%= f.submit "Feed me now!", class: "btn btn-danger" %>
-      <% end %>
-    </div>
-  </div>
-</div>

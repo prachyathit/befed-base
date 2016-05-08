@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20160507224721) do
     t.datetime "updated_at",    null: false
     t.integer  "cat_id"
     t.string   "cat"
+    t.integer  "rec"
   end
 
   add_index "foods", ["restaurant_id"], name: "index_foods_on_restaurant_id"

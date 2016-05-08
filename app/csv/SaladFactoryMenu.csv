@@ -1,128 +1,128 @@
-name,price,image_url,cat_id,cat
-Factory Wontons : เกี๊ยวทอดแฟคทอรี่,90,test.jpg,1,Appetizer
-Spicy Edamame : ถั่วแระญี่ปุ่นผัดซอส,75,test.jpg,1,Appetizer
-Money Bags : ถุงทอง,95,test.jpg,1,Appetizer
-Factory Spring Rolls : ปอเปี๊ยะทอด,85,test.jpg,1,Appetizer
-Factory Fresh Rolls : ปอเปี๊ยะผักสด,70,test.jpg,1,Appetizer
-New Orleans Chicken : ปีกไก่นิวออร์ลีน,90,test.jpg,1,Appetizer
-Salted Crispy Mushroom : เห็ดคั่วเกลือ,90,test.jpg,1,Appetizer
-The Crazy Fries : เครซี่ฟรายส์,130,test.jpg,1,Appetizer
-French Fries : เฟรนช์ฟรายส์,70,test.jpg,1,Appetizer
-Pork/Beef Jerky : หมู/เนื้อทอดแดดเดียว,100,test.jpg,1,Appetizer
-Baked Mussels with Garlic Butter Cheese : หอยแมลงภู่นิวซีแลนด์อบชีส,130,test.jpg,1,Appetizer
-Sautéed Iceberg/Cabbage : ผักกาดแก้ว/กะหลํ่าปลีผัดนํ้าปลา,80,test.jpg,1,Appetizer
-"""Tofu"" Pad Pik Kluae : เต้าหู้ผักพริกเกลือ",85,test.jpg,1,Appetizer
-Calamari : คาลามาริ,105,test.jpg,1,Appetizer
-Shrimp Morning Salad Rolls : ปอเปี๊ยะกุ้งสดทานตะวัน,110,test.jpg,1,Appetizer
-New Zealand or Blue Mussels Steam with Thai Herb : หอยแมลงภู่นิวซีแลนด์หรือบลูมัซเซิ่ลอบสมุนไพร,155,test.jpg,2,Tasty Starter
-New Zealand or Blue Mussels Steam in White Wine Sauce : หอยแมลงภู่นิวซีแลนด์หรือบลูมัซเซิ่ลอบซอสไวน์ขาว,155,test.jpg,2,Tasty Starter
-Smoked Salmon Carpaccio : แซลมอนคาร์ปาซิโอ,195,test.jpg,2,Tasty Starter
-Spicy Beef Carpaccio : เนื้อคาร์ปาซิโอ,195,test.jpg,2,Tasty Starter
-Naked Salmon on the Leaves : พล่าแซลมอน,110,test.jpg,2,Tasty Starter
-Leaf-Wrapped Spicy Mushrooms : เมี่ยงเห็ดเจ็ดอย่าง,90,test.jpg,2,Tasty Starter
-Lettuce-Wrapped with Spicy Cripsy Salmon : ลาบแซลมอนทอด,110,test.jpg,2,Tasty Starter
-Lettuce-Wrapped with Spicy Smoked Duck : ลาบอกเป็ดรมควัน,110,test.jpg,2,Tasty Starter
-Lettuce-Wrapped with Spicy Mushrooms : ลาบเห็ด,85,test.jpg,2,Tasty Starter
-Sweet Corn Cream Soup : ซุปข้าวโพด,75,test.jpg,3,Soup
-Cream of Mushroom Soup : ซุปเห็ด,75,test.jpg,3,Soup
-Onion Soup : ซุปหัวหอม,65,test.jpg,3,Soup
-Spinach Cream Soup : ซุปผักโขม,75,test.jpg,3,Soup
-Tom Yum Kung : ต้มยำกุ้ง,75,test.jpg,3,Soup
-Clam Chowder Soup : ซุปหอยลาย,75,test.jpg,3,Soup
-Egg Tofu Soup : เต้าหู้นํ้าแดง,95,test.jpg,3,Soup
-Grilled Salmon with Spicy Glass Noodle Salad : ยำวุ้นเส้นปลาแซลมอน,160,test.jpg,4,Spicy Salad
-Naked Shrimps on the Beach : ยำกุ้งย่าง,150,test.jpg,4,Spicy Salad
-Grilled Chicken Spicy Salad : ยำไก่ย่าง,125,test.jpg,4,Spicy Salad
-Spicy Fresh Salmon Salad : ยำแซลมอนแซ่บ,200,test.jpg,4,Spicy Salad
-Fishemen Salad : ยำทะเล,155,test.jpg,4,Spicy Salad
-Spicy Tuna Salad : ยำทูน่า,145,test.jpg,4,Spicy Salad
-Spicy Beef Salad : ยำเนื้อย่าง,185,test.jpg,4,Spicy Salad
-Spicy Spring Rolls Salad : ยำปอเปี๊ยะสด,100,test.jpg,4,Spicy Salad
-Spicy Soft Shell Crab Salad : ยำผลไม้ปูนิ่มทอด,185,test.jpg,4,Spicy Salad
-Crispy Fish with Spicy Mango Salad : ยำมะม่วงปลาทอด,130,test.jpg,4,Spicy Salad
-Spicy Glass Noodles with Grilled Pork Salad : นํ้าตกวุ้นเส้น,110,test.jpg,4,Spicy Salad
-Spicy Factory Pork Salad : ยำหมูทอด,125,test.jpg,4,Spicy Salad
-Spicy Grilled Pork Salad : ยำหมูย่าง,125,test.jpg,4,Spicy Salad
-Spicy Mushroom Salad : ยำเห็ด 7 อย่าง,95,test.jpg,4,Spicy Salad
-Spicy Papaya Salad : ส้มตำ Factory,95,test.jpg,4,Spicy Salad
-"Som tum ""Pol la mai"" : ส้มตำผลไม้",90,test.jpg,4,Spicy Salad
-Create Your Own Salad : สลัดแบบที่คุณต้องการ,75,test.jpg,5,Main Salad
-Honey Roasted Chicken Salad : สลัดไก่ย่างอบนํ้าผี้ง,125,test.jpg,5,Main Salad
-Japanese Style Grilled Chicken Breast Salad : สลัดอกไก่ย่างงาญี่ปุ่น,125,test.jpg,5,Main Salad
-Korean Beef Salad : สลัดดเนื้อย่างเกาหลี,140,test.jpg,5,Main Salad
-Thai Herb Beef Salad : สลัดเนื้อย่างสมุนไพร,140,test.jpg,5,Main Salad
-Japanese Style Crispy Pork Salad : สลัดหมูทอดงาญี่ปุ่น,125,test.jpg,5,Main Salad
-Sausage Salad : สลัดไส้กรอก,115,test.jpg,5,Main Salad
-The Healthy Salad : สลัดเพื่อสุขภาพ,110,test.jpg,5,Main Salad
-Japanese Style Grilled Pork Salad : สลัดอกหมูย่างงาญี่ปุ่น,125,test.jpg,5,Main Salad
-Grilled Pork with Thai Herb Salad : สลัดหมูย่างสมุนไพร,125,test.jpg,5,Main Salad
-Caesar Salad : ซีซ่าร์สลัด,145,test.jpg,5,Main Salad
-Deep Fried Shrimps or Fish Salad : สลัดกุ้งทอด หรือ ปลาทอด,160,test.jpg,5,Main Salad
-Tuna Salad : สลัดทูน่า,150,test.jpg,5,Main Salad
-Butter Garlic Shrimp Salad : สลัดกุ้งย่างเนยกระเทียม,170,test.jpg,5,Main Salad
-Fresh Salmon Salad : สลัดแซลมอนดิบ,200,test.jpg,5,Main Salad
-Grilled Salmon Salad : สลัดแซลมอนย่างเกลือ,220,test.jpg,5,Main Salad
-Pan Fried Grouper Fillet Salad : สลัดปลาเก๋า,160,test.jpg,5,Main Salad
-Seafood Wasabi Salad : สลัดซีฟู้ดวาซาบิ,160,test.jpg,5,Main Salad
-Pan Fried Cod Fillet Salad : สลัดปลาคอด,230,test.jpg,5,Main Salad
-Deep Fried Shrimp with Fruit Salad : สลัดผลไม้กุ้งทอด,140,test.jpg,5,Main Salad
-Hawaiian Salad : สลัดฮาวายเอี้ยน,145,test.jpg,5,Main Salad
-Pan Fired/Cheesy Dory Fish Salad : สลัดปลาดอรี่ย่างเกลือหรือทอดชีส,160,test.jpg,5,Main Salad
-Salmon Skin Salad : สลัดหนังปลาแซลมอน,145,test.jpg,5,Main Salad
-Greek Salad : กรีกสลัด,135,test.jpg,5,Main Salad
-Donald Duck on the Rocket/Baby Spinach : ร็อกเก็ตหรือต้นอ่อนผักโขมอกเป็ดรมควัน,190,test.jpg,6,Rocket or Baby Spinach Salad
-Grilled Beef on the Rocket/Baby Spinach : ร็อกเก็ตหรือต้นอ่อนผักโขมเนื้อย่าง,155,test.jpg,6,Rocket or Baby Spinach Salad
-Smoked Salmon with Rocket Salad/Baby Spinach : ร็อกเก็ตหรือต้นอ่อนผักโขมแซลมอนรมควัน,195,test.jpg,6,Rocket or Baby Spinach Salad
-Soft Shell Crab with Rocket Salad/Baby Spinach : ร็อกเก็ตหรือต้นอ่อนผักโขมปูนิ่ม,185,test.jpg,6,Rocket or Baby Spinach Salad
-Grilled Pork with Rocket Salad/Baby Spinach : ร็อกเก็ตหรือต้นอ่อนผักโขมหมูย่าง,150,test.jpg,6,Rocket or Baby Spinach Salad
-Rocket/Baby Spinach with Avocado Salad : ร็อกเก็ตหรือต้นอ่อนผักโขมอโวคาโด,135,test.jpg,6,Rocket or Baby Spinach Salad
-Grilled Shrimp with Rocket Salad/Baby Spinach : ร็อกเก็ตหรือต้นอ่อนผักโขมกุ้งย่าง,195,test.jpg,6,Rocket or Baby Spinach Salad
-Grilled Mushroom with Rocket Salad/Baby Spinach : ร็อกเก็ตหรือต้นอ่อนผักโขมเห็ดย่าง,125,test.jpg,6,Rocket or Baby Spinach Salad
-Summer Rocket Salad/Baby Spinach : ร็อกเก็ตหรือต้นอ่อนผักซัมเมอร์,150,test.jpg,6,Rocket or Baby Spinach Salad
-Rocket/Baby Spinach Salad : ร็อกเก็ตหรือต้นอ่อนผักโขมสลัด,100,test.jpg,6,Rocket or Baby Spinach Salad
-Rocket/Baby Spinach with Parma Ham and Melon : ร็อกเก็ตพาร์มาแฮมเมลอน,190,test.jpg,6,Rocket or Baby Spinach Salad
-Foie Gras with Rocket Salad,490,test.jpg,6,Rocket or Baby Spinach Salad
-Skirt Steak with Blue Cheese on the Rocket : ร็อกเก็ตหรือต้นอ่อนผักโขม,220,test.jpg,6,Rocket or Baby Spinach Salad
-Carbonara Shrimp and Ebiko : คาโบนาร่า กุ้งและไข่กุ้ง,185,test.jpg,7,Spaghetti
-Carbonara : คาโบนาร่า,140,test.jpg,7,Spaghetti
-Carbonara with Grilled Eringii Mushroom : คาโบนาร่าเห็ดออเรนจิย่าง,140,test.jpg,7,Spaghetti
-Spaghetti Seafood Stir-Fried with Dried Chili and Garlic Sauce : สปาเก็ตตี้ทะเลผัดพริกกระเทียม,145,test.jpg,7,Spaghetti
-Spaghetti Bacon Stir-Fried with Dried Chili and Garlic Sauce : สปาเก็ตตี้เบคอนผัดพริกกระเทียม,125,test.jpg,7,Spaghetti
-Spaghetti Thai Anchovy Stir-Fried with Dried Chili and Garlic Sauce : สปาเก็ตตี้ปลาเค็มผัดพริกกระเทียม,125,test.jpg,7,Spaghetti
-Spaghetti Clam Chowder & Bacon Stir-Fried with Dried Chili and Garlic Sauce : สปาเก็ตตี้หอยลายและเบคอนผัดพริกกระเทียม,135,test.jpg,7,Spaghetti
-Spaghetti Hotstuff Seafood : สปาเก็ตตี้ขี้เมาเจ้าสมุทร,145,test.jpg,7,Spaghetti
-Spaghetti Hotstuff Sausage and Bacon : สปาเก็ตตี้ขี้เมาไส้กรอกและเบคอน,140,test.jpg,7,Spaghetti
-Spaghetti Hotstuff with Combo Mushroom: สปาเก็ตตี้ขี้เมาเห็ด,125,test.jpg,7,Spaghetti
-Spaghetti Seafood with Fresh Chili Sauce : สปาเก็ตตี้ทะเลพริกสด,145,test.jpg,7,Spaghetti
-Spaghetti Clam Chowder with Fresh Chili Sauce : สปาเก็ตตี้หอยลายพริกสด,125,test.jpg,7,Spaghetti
-Spaghetti Seafood with Thai Chili Paste : สปาเก็ตตี้ทะเลพริกเผา,145,test.jpg,7,Spaghetti
-Spaghetti Clam Chowder with Thai Chili Paste : สปาเก็ตตี้หอยลายพริกเผา,125,test.jpg,7,Spaghetti
-Spaghetti Anchovy Bacon in Olive Oil : สปาเก็ตตี้แองโชวี้ในนํ้ามันมะกอก หรือ ผัดแห้ง,145,test.jpg,7,Spaghetti
-Spaghetti Seafood Bolognese : สปาเก็ตตี้โบโลเนสทะเล,145,test.jpg,7,Spaghetti
-Spaghetti Beef Bolognese : สปาเก็ตตี้โบโลเนสทะเล,135,test.jpg,7,Spaghetti
-Spaghetti Pork Bolognese : สปาเก็ตตี้โบโลเนสทะเล,135,test.jpg,7,Spaghetti
-Spaghetti Seafood with Pesto Sauce : สปาเก็ตตี้ซอสเพสโต้ทะเล,145,test.jpg,7,Spaghetti
-Baby Back Ribs BBQ : ซี่โครงหมูบาร์บีคิว,265,test.jpg,8,Steak
-Pork Chop : พอร์คชอพ,240,test.jpg,8,Steak
-Salmon Steak : สเต็กปลาแซลมอนย่างเกลือ,230,test.jpg,8,Steak
-Pork Chunk Loin : สเต็กหมูสันคอ,165,test.jpg,8,Steak
-Pork Tender Loin : สเต็กหมูสันใน,180,test.jpg,8,Steak
-Grilled Chicken Breast Steak : สเต็กอกไก่ย่าง,155,test.jpg,8,Steak
-Cod Fillet Steak : สเต็กปลาคอด,230,test.jpg,8,Steak
-Grilled Dory Steak : สเต็กปลาดอรี่ย่างเกลือ,160,test.jpg,8,Steak
-Pan-Fried Dory Steak with Cheese : สเต็กปลาดอรี่ย่างชีส,170,test.jpg,8,Steak
-House Beef Steak : เสต็กเนื้อ [250g],235,test.jpg,8,Steak
-Chuck Eye Steak : สเต็กเนื้อชั๊คอาย [250g],380,test.jpg,8,Steak
-T-Bone Steak : สเต็กเนื้อทีโบน [300g],595,test.jpg,8,Steak
-Rib Eye Steak : สเต็กเนื้อริบอาย [300g],595,test.jpg,8,Steak
-New York Steak : สเต็กเนื้อสันนอก ,595,test.jpg,8,Steak
-Hotstuff With Mushroom on Rice : ข้าวกะเพราเห็ด,90,test.jpg,9,Rice is Nice
-Hotstuff With Fried Pork on Rice : ข้าวกะเพราหมูทอด,95,test.jpg,9,Rice is Nice
-Hotstuff With Sliced Beef on Rice : ข้าวกะเพราเนื้อ,95,test.jpg,9,Rice is Nice
-Hotstuff With Seafood on Rice : ข้าวกะเพราทะเล,115,test.jpg,9,Rice is Nice
-Spicy Shrimp and Eringii Mushroom on Rice : ข้าวกุ้งผัดเห็ดออเรนจิพริกขี้หนู,100,test.jpg,9,Rice is Nice
-Stir-Fried Clam Chowder with Chili Paste on Rice : ข้าวหอยลายผักโขมพริกเผา,95,test.jpg,9,Rice is Nice
-Crispy Pork on Rice : ข้าวหมูทอดจิ้มแจ่ว,90,test.jpg,9,Rice is Nice
-Grilled Pork on Rice : ข้าวหมูย่างจิ้มแจ่ว,90,test.jpg,9,Rice is Nice
-Pork Zabb on Rice : ข้าวหมูแซ่บ,95,test.jpg,9,Rice is Nice
-Honey Roasted Chicken on Rice : ข้าวไก่ย่างอบนํ้าผึ้ง,90,test.jpg,9,Rice is Nice
+name,price,image_url,cat_id,cat,rec
+Factory Wontons : เกี๊ยวทอดแฟคทอรี่,90,test.jpg,1,Appetizer,1
+Spicy Edamame : ถั่วแระญี่ปุ่นผัดซอส,75,test.jpg,1,Appetizer,0
+Money Bags : ถุงทอง,95,test.jpg,1,Appetizer,0
+Factory Spring Rolls : ปอเปี๊ยะทอด,85,test.jpg,1,Appetizer,0
+Factory Fresh Rolls : ปอเปี๊ยะผักสด,70,test.jpg,1,Appetizer,0
+New Orleans Chicken : ปีกไก่นิวออร์ลีน,90,test.jpg,1,Appetizer,1
+Salted Crispy Mushroom : เห็ดคั่วเกลือ,90,test.jpg,1,Appetizer,0
+The Crazy Fries : เครซี่ฟรายส์,130,test.jpg,1,Appetizer,0
+French Fries : เฟรนช์ฟรายส์,70,test.jpg,1,Appetizer,0
+Pork/Beef Jerky : หมู/เนื้อทอดแดดเดียว,100,test.jpg,1,Appetizer,0
+Baked Mussels with Garlic Butter Cheese : หอยแมลงภู่นิวซีแลนด์อบชีส,130,test.jpg,1,Appetizer,0
+Sautéed Iceberg/Cabbage : ผักกาดแก้ว/กะหลํ่าปลีผัดนํ้าปลา,80,test.jpg,1,Appetizer,0
+"""Tofu"" Pad Pik Kluae : เต้าหู้ผักพริกเกลือ",85,test.jpg,1,Appetizer,0
+Calamari : คาลามาริ,105,test.jpg,1,Appetizer,0
+Shrimp Morning Salad Rolls : ปอเปี๊ยะกุ้งสดทานตะวัน,110,test.jpg,1,Appetizer,1
+New Zealand or Blue Mussels Steam with Thai Herb : หอยแมลงภู่นิวซีแลนด์หรือบลูมัซเซิ่ลอบสมุนไพร,155,test.jpg,2,Tasty Starter,0
+New Zealand or Blue Mussels Steam in White Wine Sauce : หอยแมลงภู่นิวซีแลนด์หรือบลูมัซเซิ่ลอบซอสไวน์ขาว,155,test.jpg,2,Tasty Starter,0
+Smoked Salmon Carpaccio : แซลมอนคาร์ปาซิโอ,195,test.jpg,2,Tasty Starter,0
+Spicy Beef Carpaccio : เนื้อคาร์ปาซิโอ,195,test.jpg,2,Tasty Starter,0
+Naked Salmon on the Leaves : พล่าแซลมอน,110,test.jpg,2,Tasty Starter,0
+Leaf-Wrapped Spicy Mushrooms : เมี่ยงเห็ดเจ็ดอย่าง,90,test.jpg,2,Tasty Starter,0
+Lettuce-Wrapped with Spicy Cripsy Salmon : ลาบแซลมอนทอด,110,test.jpg,2,Tasty Starter,0
+Lettuce-Wrapped with Spicy Smoked Duck : ลาบอกเป็ดรมควัน,110,test.jpg,2,Tasty Starter,0
+Lettuce-Wrapped with Spicy Mushrooms : ลาบเห็ด,85,test.jpg,2,Tasty Starter,0
+Sweet Corn Cream Soup : ซุปข้าวโพด,75,test.jpg,3,Soup,0
+Cream of Mushroom Soup : ซุปเห็ด,75,test.jpg,3,Soup,1
+Onion Soup : ซุปหัวหอม,65,test.jpg,3,Soup,0
+Spinach Cream Soup : ซุปผักโขม,75,test.jpg,3,Soup,0
+Tom Yum Kung : ต้มยำกุ้ง,75,test.jpg,3,Soup,0
+Clam Chowder Soup : ซุปหอยลาย,75,test.jpg,3,Soup,1
+Egg Tofu Soup : เต้าหู้นํ้าแดง,95,test.jpg,3,Soup,0
+Grilled Salmon with Spicy Glass Noodle Salad : ยำวุ้นเส้นปลาแซลมอน,160,test.jpg,4,Spicy Salad,0
+Naked Shrimps on the Beach : ยำกุ้งย่าง,150,test.jpg,4,Spicy Salad,0
+Grilled Chicken Spicy Salad : ยำไก่ย่าง,125,test.jpg,4,Spicy Salad,1
+Spicy Fresh Salmon Salad : ยำแซลมอนแซ่บ,200,test.jpg,4,Spicy Salad,0
+Fishemen Salad : ยำทะเล,155,test.jpg,4,Spicy Salad,0
+Spicy Tuna Salad : ยำทูน่า,145,test.jpg,4,Spicy Salad,0
+Spicy Beef Salad : ยำเนื้อย่าง,185,test.jpg,4,Spicy Salad,0
+Spicy Spring Rolls Salad : ยำปอเปี๊ยะสด,100,test.jpg,4,Spicy Salad,0
+Spicy Soft Shell Crab Salad : ยำผลไม้ปูนิ่มทอด,185,test.jpg,4,Spicy Salad,0
+Crispy Fish with Spicy Mango Salad : ยำมะม่วงปลาทอด,130,test.jpg,4,Spicy Salad,0
+Spicy Glass Noodles with Grilled Pork Salad : นํ้าตกวุ้นเส้น,110,test.jpg,4,Spicy Salad,0
+Spicy Factory Pork Salad : ยำหมูทอด,125,test.jpg,4,Spicy Salad,0
+Spicy Grilled Pork Salad : ยำหมูย่าง,125,test.jpg,4,Spicy Salad,0
+Spicy Mushroom Salad : ยำเห็ด 7 อย่าง,95,test.jpg,4,Spicy Salad,1
+Spicy Papaya Salad : ส้มตำ Factory,95,test.jpg,4,Spicy Salad,0
+"Som tum ""Pol la mai"" : ส้มตำผลไม้",90,test.jpg,4,Spicy Salad,0
+Create Your Own Salad : สลัดแบบที่คุณต้องการ,75,test.jpg,5,Main Salad,0
+Honey Roasted Chicken Salad : สลัดไก่ย่างอบนํ้าผี้ง,125,test.jpg,5,Main Salad,0
+Japanese Style Grilled Chicken Breast Salad : สลัดอกไก่ย่างงาญี่ปุ่น,125,test.jpg,5,Main Salad,0
+Korean Beef Salad : สลัดดเนื้อย่างเกาหลี,140,test.jpg,5,Main Salad,0
+Thai Herb Beef Salad : สลัดเนื้อย่างสมุนไพร,140,test.jpg,5,Main Salad,0
+Japanese Style Crispy Pork Salad : สลัดหมูทอดงาญี่ปุ่น,125,test.jpg,5,Main Salad,0
+Sausage Salad : สลัดไส้กรอก,115,test.jpg,5,Main Salad,0
+The Healthy Salad : สลัดเพื่อสุขภาพ,110,test.jpg,5,Main Salad,1
+Japanese Style Grilled Pork Salad : สลัดอกหมูย่างงาญี่ปุ่น,125,test.jpg,5,Main Salad,0
+Grilled Pork with Thai Herb Salad : สลัดหมูย่างสมุนไพร,125,test.jpg,5,Main Salad,0
+Caesar Salad : ซีซ่าร์สลัด,145,test.jpg,5,Main Salad,0
+Deep Fried Shrimps or Fish Salad : สลัดกุ้งทอด หรือ ปลาทอด,160,test.jpg,5,Main Salad,1
+Tuna Salad : สลัดทูน่า,150,test.jpg,5,Main Salad,0
+Butter Garlic Shrimp Salad : สลัดกุ้งย่างเนยกระเทียม,170,test.jpg,5,Main Salad,0
+Fresh Salmon Salad : สลัดแซลมอนดิบ,200,test.jpg,5,Main Salad,0
+Grilled Salmon Salad : สลัดแซลมอนย่างเกลือ,220,test.jpg,5,Main Salad,0
+Pan Fried Grouper Fillet Salad : สลัดปลาเก๋า,160,test.jpg,5,Main Salad,0
+Seafood Wasabi Salad : สลัดซีฟู้ดวาซาบิ,160,test.jpg,5,Main Salad,0
+Pan Fried Cod Fillet Salad : สลัดปลาคอด,230,test.jpg,5,Main Salad,0
+Deep Fried Shrimp with Fruit Salad : สลัดผลไม้กุ้งทอด,140,test.jpg,5,Main Salad,0
+Hawaiian Salad : สลัดฮาวายเอี้ยน,145,test.jpg,5,Main Salad,0
+Pan Fired/Cheesy Dory Fish Salad : สลัดปลาดอรี่ย่างเกลือหรือทอดชีส,160,test.jpg,5,Main Salad,0
+Salmon Skin Salad : สลัดหนังปลาแซลมอน,145,test.jpg,5,Main Salad,0
+Greek Salad : กรีกสลัด,135,test.jpg,5,Main Salad,0
+Donald Duck on the Rocket/Baby Spinach : ร็อกเก็ตหรือต้นอ่อนผักโขมอกเป็ดรมควัน,190,test.jpg,6,Rocket or Baby Spinach Salad,1
+Grilled Beef on the Rocket/Baby Spinach : ร็อกเก็ตหรือต้นอ่อนผักโขมเนื้อย่าง,155,test.jpg,6,Rocket or Baby Spinach Salad,0
+Smoked Salmon with Rocket Salad/Baby Spinach : ร็อกเก็ตหรือต้นอ่อนผักโขมแซลมอนรมควัน,195,test.jpg,6,Rocket or Baby Spinach Salad,0
+Soft Shell Crab with Rocket Salad/Baby Spinach : ร็อกเก็ตหรือต้นอ่อนผักโขมปูนิ่ม,185,test.jpg,6,Rocket or Baby Spinach Salad,0
+Grilled Pork with Rocket Salad/Baby Spinach : ร็อกเก็ตหรือต้นอ่อนผักโขมหมูย่าง,150,test.jpg,6,Rocket or Baby Spinach Salad,1
+Rocket/Baby Spinach with Avocado Salad : ร็อกเก็ตหรือต้นอ่อนผักโขมอโวคาโด,135,test.jpg,6,Rocket or Baby Spinach Salad,0
+Grilled Shrimp with Rocket Salad/Baby Spinach : ร็อกเก็ตหรือต้นอ่อนผักโขมกุ้งย่าง,195,test.jpg,6,Rocket or Baby Spinach Salad,0
+Grilled Mushroom with Rocket Salad/Baby Spinach : ร็อกเก็ตหรือต้นอ่อนผักโขมเห็ดย่าง,125,test.jpg,6,Rocket or Baby Spinach Salad,0
+Summer Rocket Salad/Baby Spinach : ร็อกเก็ตหรือต้นอ่อนผักซัมเมอร์,150,test.jpg,6,Rocket or Baby Spinach Salad,1
+Rocket/Baby Spinach Salad : ร็อกเก็ตหรือต้นอ่อนผักโขมสลัด,100,test.jpg,6,Rocket or Baby Spinach Salad,0
+Rocket/Baby Spinach with Parma Ham and Melon : ร็อกเก็ตพาร์มาแฮมเมลอน,190,test.jpg,6,Rocket or Baby Spinach Salad,0
+Foie Gras with Rocket Salad,490,test.jpg,6,Rocket or Baby Spinach Salad,0
+Skirt Steak with Blue Cheese on the Rocket : ร็อกเก็ตหรือต้นอ่อนผักโขม,220,test.jpg,6,Rocket or Baby Spinach Salad,0
+Carbonara Shrimp and Ebiko : คาโบนาร่า กุ้งและไข่กุ้ง,185,test.jpg,7,Spaghetti,0
+Carbonara : คาโบนาร่า,140,test.jpg,7,Spaghetti,0
+Carbonara with Grilled Eringii Mushroom : คาโบนาร่าเห็ดออเรนจิย่าง,140,test.jpg,7,Spaghetti,0
+Spaghetti Seafood Stir-Fried with Dried Chili and Garlic Sauce : สปาเก็ตตี้ทะเลผัดพริกกระเทียม,145,test.jpg,7,Spaghetti,0
+Spaghetti Bacon Stir-Fried with Dried Chili and Garlic Sauce : สปาเก็ตตี้เบคอนผัดพริกกระเทียม,125,test.jpg,7,Spaghetti,0
+Spaghetti Thai Anchovy Stir-Fried with Dried Chili and Garlic Sauce : สปาเก็ตตี้ปลาเค็มผัดพริกกระเทียม,125,test.jpg,7,Spaghetti,0
+Spaghetti Clam Chowder & Bacon Stir-Fried with Dried Chili and Garlic Sauce : สปาเก็ตตี้หอยลายและเบคอนผัดพริกกระเทียม,135,test.jpg,7,Spaghetti,0
+Spaghetti Hotstuff Seafood : สปาเก็ตตี้ขี้เมาเจ้าสมุทร,145,test.jpg,7,Spaghetti,0
+Spaghetti Hotstuff Sausage and Bacon : สปาเก็ตตี้ขี้เมาไส้กรอกและเบคอน,140,test.jpg,7,Spaghetti,0
+Spaghetti Hotstuff with Combo Mushroom: สปาเก็ตตี้ขี้เมาเห็ด,125,test.jpg,7,Spaghetti,0
+Spaghetti Seafood with Fresh Chili Sauce : สปาเก็ตตี้ทะเลพริกสด,145,test.jpg,7,Spaghetti,0
+Spaghetti Clam Chowder with Fresh Chili Sauce : สปาเก็ตตี้หอยลายพริกสด,125,test.jpg,7,Spaghetti,0
+Spaghetti Seafood with Thai Chili Paste : สปาเก็ตตี้ทะเลพริกเผา,145,test.jpg,7,Spaghetti,0
+Spaghetti Clam Chowder with Thai Chili Paste : สปาเก็ตตี้หอยลายพริกเผา,125,test.jpg,7,Spaghetti,0
+Spaghetti Anchovy Bacon in Olive Oil : สปาเก็ตตี้แองโชวี้ในนํ้ามันมะกอก หรือ ผัดแห้ง,145,test.jpg,7,Spaghetti,0
+Spaghetti Seafood Bolognese : สปาเก็ตตี้โบโลเนสทะเล,145,test.jpg,7,Spaghetti,0
+Spaghetti Beef Bolognese : สปาเก็ตตี้โบโลเนสทะเล,135,test.jpg,7,Spaghetti,1
+Spaghetti Pork Bolognese : สปาเก็ตตี้โบโลเนสทะเล,135,test.jpg,7,Spaghetti,1
+Spaghetti Seafood with Pesto Sauce : สปาเก็ตตี้ซอสเพสโต้ทะเล,145,test.jpg,7,Spaghetti,0
+Baby Back Ribs BBQ : ซี่โครงหมูบาร์บีคิว,265,test.jpg,8,Steak,0
+Pork Chop : พอร์คชอพ,240,test.jpg,8,Steak,0
+Salmon Steak : สเต็กปลาแซลมอนย่างเกลือ,230,test.jpg,8,Steak,0
+Pork Chunk Loin : สเต็กหมูสันคอ,165,test.jpg,8,Steak,0
+Pork Tender Loin : สเต็กหมูสันใน,180,test.jpg,8,Steak,0
+Grilled Chicken Breast Steak : สเต็กอกไก่ย่าง,155,test.jpg,8,Steak,0
+Cod Fillet Steak : สเต็กปลาคอด,230,test.jpg,8,Steak,0
+Grilled Dory Steak : สเต็กปลาดอรี่ย่างเกลือ,160,test.jpg,8,Steak,0
+Pan-Fried Dory Steak with Cheese : สเต็กปลาดอรี่ย่างชีส,170,test.jpg,8,Steak,0
+House Beef Steak : เสต็กเนื้อ [250g],235,test.jpg,8,Steak,1
+Chuck Eye Steak : สเต็กเนื้อชั๊คอาย [250g],380,test.jpg,8,Steak,0
+T-Bone Steak : สเต็กเนื้อทีโบน [300g],595,test.jpg,8,Steak,0
+Rib Eye Steak : สเต็กเนื้อริบอาย [300g],595,test.jpg,8,Steak,0
+New York Steak : สเต็กเนื้อสันนอก ,595,test.jpg,8,Steak,0
+Hotstuff With Mushroom on Rice : ข้าวกะเพราเห็ด,90,test.jpg,9,Rice is Nice,1
+Hotstuff With Fried Pork on Rice : ข้าวกะเพราหมูทอด,95,test.jpg,9,Rice is Nice,0
+Hotstuff With Sliced Beef on Rice : ข้าวกะเพราเนื้อ,95,test.jpg,9,Rice is Nice,0
+Hotstuff With Seafood on Rice : ข้าวกะเพราทะเล,115,test.jpg,9,Rice is Nice,0
+Spicy Shrimp and Eringii Mushroom on Rice : ข้าวกุ้งผัดเห็ดออเรนจิพริกขี้หนู,100,test.jpg,9,Rice is Nice,0
+Stir-Fried Clam Chowder with Chili Paste on Rice : ข้าวหอยลายผักโขมพริกเผา,95,test.jpg,9,Rice is Nice,0
+Crispy Pork on Rice : ข้าวหมูทอดจิ้มแจ่ว,90,test.jpg,9,Rice is Nice,0
+Grilled Pork on Rice : ข้าวหมูย่างจิ้มแจ่ว,90,test.jpg,9,Rice is Nice,0
+Pork Zabb on Rice : ข้าวหมูแซ่บ,95,test.jpg,9,Rice is Nice,1
+Honey Roasted Chicken on Rice : ข้าวไก่ย่างอบนํ้าผึ้ง,90,test.jpg,9,Rice is Nice,0

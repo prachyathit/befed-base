@@ -24,8 +24,10 @@
         <%= link_to add_new_path(id: food.id), remote: true do %>
           <div class="food-item color-hover">
             <div class="food-price"><%= food.price %> ฿</div>
-            <div class="food-name"><%= th_name %></div>
-            <div><%=eng_name%></div>
+            <div>
+              <%= th_name %> <%if food.rec == 1%><span class="glyphicon glyphicon-star-empty recommend"></span><% end %>
+            </div>
+            <div class="food-name"><%=eng_name%></div>
           </div>
         <% end %>
 

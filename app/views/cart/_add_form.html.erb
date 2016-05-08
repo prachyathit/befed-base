@@ -3,23 +3,13 @@
     <%= form_for(:cart, url: add_create_path, remote: true) do |f| %>
       <div class="modal-body">
         <ul class="errors"></ul>
-        <div class="center"><h2><%= @food.name %></h2></div>
+        <div class="center"><h2><%= @food.name %> | <%= @food.price %> ฿</h2></div>
         <% unless @food.image_url.empty? %>
           <div class="jumbotron center-norep" style="background-image: url(<%= @food.image_url %>); "></div>
         <% end %>
         <%= hidden_field_tag :food_id, @food_id %>
-
-        <div class="form-group">
-          <%= f.label :quantity, class:"control-label" %>
-          <%= f.number_field :quantity, in: 1..5, value: 1, class: "form-control" %>
-        </div>
-        <div class="form-group">
-          <%= f.label :special, class: "control-label" %>
-          <%= f.text_field :special, class: "form-control" %>
-        </div>
         <div class="form-group">
               <% @options.each do |option| %>
-
                 <% ovs = option.option_values %>
                 <% option_name = option.name %>
                 <%= f.label option_name %>
@@ -32,10 +22,20 @@
                     <% cb.label(class: "checkbox input_checkbox") {cb.check_box(class: "checkbox") + cb.text} %>
                   <% end %>
                 <% end %>
-                <br>
+                
               <% end %>
     
-      </div>
+        </div>
+        <div class="form-group">
+          <%= f.label "Special Instruction : คำขออื่นๆ", class: "control-label" %>
+          <%= f.text_field :special, class: "form-control" %>
+        </div>
+        <div class="form-group">
+          <%= f.label "Quantity : จำนวน", class:"control-label" %>
+          <%= f.number_field :quantity, in: 1..5, value: 1, class: "form-control" %>
+        </div>
+
+
     </div>
 
       <div class="modal-footer">
@@ -45,3 +45,15 @@
     <% end %>
   </div>
 </div>
+<script>
+  $('input[name="value[1) Choose Topping (up to 5) : ท็อปปิ้ง (เลือกได้สูงสุด 5 อย่าง)][option_value_ids][]"]').change(function(e){
+   if ($('input[name="value[1) Choose Topping (up to 5) : ท็อปปิ้ง (เลือกได้สูงสุด 5 อย่าง)][option_value_ids][]"]:checked').length > 5) {
+     $(this).prop('checked', false)
+   }
+})
+  $('input[name="value[Sides (Choose 2) : ไซด์ (เลือก 2)][option_value_ids][]"]').change(function(e){
+   if ($('input[name="value[Sides (Choose 2) : ไซด์ (เลือก 2)][option_value_ids][]"]:checked').length > 2) {
+     $(this).prop('checked', false)
+   }
+})
+</script>

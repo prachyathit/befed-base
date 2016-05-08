@@ -40,16 +40,29 @@ $(document).ready(function() {
         google.maps.event.trigger(map, 'resize');
      });
 
-     autocomplete = new google.maps.places.Autocomplete(document.getElementsByClassName("location")[0]);
-     autocomplete.addListener('place_changed', function() {
-       var map = $(".location").geocomplete("map");
-       var place = autocomplete.getPlace();
-       $('.latitude').val(place.geometry.location.lat());
-       $('.longitude').val(place.geometry.location.lng());
-       marker = new google.maps.Marker({position: place.geometry.location, title: 'Hi', map: map});
-       map.setCenter(place.geometry.location);
-       map.setZoom(17);
-       marker.setPosition(place.geometry.location);
+
+
+     $(".location-arrow-wrapper").click(function() {
+       var timeoutOptions = {
+         enableHighAccuracy: true,
+         timeout: 5000,
+         maximumAge: 0
+       }
+       $(".location-arrow-wrapper").addClass("hide");
+       $(".spinning-icon-wrapper").removeClass("hide");
+       $('#map-container').slideDown();
+       navigator.geolocation.getCurrentPosition(function(position){
+         var map = $(".location").geocomplete("map");
+         google.maps.event.trigger(map, 'resize');
+         $.ajax({
+           url: "http://maps.googleapis.com/maps/api/geocode/json?latlng=" + position.coords.latitude + "," + position.coords.longitude,
+           success: function(result) {
+             $(".location-arrow-wrapper").removeClass("hide");
+             $(".spinning-icon-wrapper").addClass("hide");
+             $(".location").geocomplete("find", result.results[0].formatted_address);
+           }
+         })
+       }, null, timeoutOptions);
      });
 
    });
