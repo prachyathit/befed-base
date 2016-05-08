@@ -23,6 +23,6 @@ class Order < ActiveRecord::Base
       food = Food.find_by(id: v['food_id'])
       total += food.price * v['quantity'].to_i
     end
-    total
+    total + FLAT_RATE
   end
 end
