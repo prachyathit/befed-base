@@ -244,6 +244,17 @@ a, a:hover {
   border-color: $red-main;
 }
 
+.food-name {
+  color: gray;
+  padding-left: 10px;
+  padding-right: 50px;
+  font-size: 0.9em;
+}
+
+.recommend {
+  color: $red-main;
+}
+
 .container {
   max-width: 800px;
 }
@@ -345,16 +356,24 @@ div.container {
 }
 
 .jumbotron-landing {
-  padding: 80px;
+  padding: 60px;
   background-size: 100% auto;
   // background-color: red;
-  background-image: url("http://i.imgur.com/lJgDM9N.jpg");
+  background-image: url("http://i.imgur.com/E2Hc3qd.jpg");
   background-repeat: repeat-y;
 }
 
 .tagline {
-  margin-bottom: 10px;
-  font-size: 1.4em;
+   /*stitching*/
+ outline: 1px dashed $red-main;
+ outline-offset: -5px;
+background-color:rgba(255,255,255,0.5);d-color: #556068;
+  color: black;
+  margin-bottom: 20px;
+  font-size: 1.6em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
 }
 @media only screen and (max-width: 768px) {
   .hide-mobile {
@@ -396,4 +415,12 @@ div.container {
   .dropdown-location {
     min-width: 300px;
   }
+}
+
+.subthai {
+  font-size: 1em;
+  letter-spacing: -1px;
+  text-align: center;
+  font-weight: normal;
+  color: $gray-light;
 }

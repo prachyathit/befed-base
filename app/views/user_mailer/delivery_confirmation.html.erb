@@ -2,8 +2,87 @@
 
 <p><%= @user.name %>, Thank you for choosing us </p>
 
-<p>Your order has been placed. Your order will arrive at your doorstep in less than 45 minutes.</p>
+<p>Your order has been placed. Your order will arrive at your doorstep in around 60 minutes.</p>
 
 <p>
   If you have any questions, please call 02-123-4567
 </p>
+<% total = 0 %>
+<h1>Order Info</h1>
+<% first_food_id = @cart["1"]["food_id"] %>
+<% first_food = Food.find(first_food_id) %>
+<% rest_id = first_food.restaurant_id %>
+<%= Restaurant.find(rest_id).name %>
+
+    <table class="table">
+
+        <% @cart.each do |id, order_info| %>
+          <% food_id = order_info["food_id"] %>
+          <% quantity = order_info["quantity"].to_i %>
+          <% special = order_info["special"] %>
+          <% options = order_info["options"] %>
+          <% food = Food.find(food_id) %>
+          <% food_price = food.price %>
+          <tr>
+            <td width="70%">
+              <strong><%= food.name %></strong>
+
+
+              <!--Option list start-->
+                <ul class="option-lists">
+                  <% unless options.nil? %>
+                    <% options.each do |option| %>
+                      <% option_value_id = option[1]["option_value_ids"] %>
+                        <% unless option_value_id.first.empty? %>
+
+                          <!--Radio button-->
+                          <% if option_value_id.class == String %>
+                            <% option_value = OptionValue.find(option_value_id) %>
+                            <li><%= option_value.name %></li>
+                            <% food_price += option_value.price.to_i %>
+                          <!--Checkbox-->
+                          <% else %>
+                              <% option_value_id.each do |option_number| %>
+                                <% unless option_number.empty? %>
+                                  <% option_value = OptionValue.find(option_number) %>
+                                  <li><%= option_value.name %></li>
+                                  <% food_price += option_value.price.to_i %>
+                                <% end %>
+                              <% end %>
+
+                          <% end %>
+
+                        <% end %>
+                      <% end %>
+                    <% end %>
+                    <% unless special.empty? %>
+                      <li><%= special %></li>
+                    <% end %>
+                  </ul>
+              <!--Option list end-->
+
+              </td>
+              <td width="10%"><%= quantity %></td>
+              <td>
+                <strong><%= food_price * quantity %> ฿</strong>
+              </td width="20%">
+              <% total += quantity * food_price %>
+            </tr>
+          <% end %>
+          <tr>
+            <td width="70%"></td>
+            <td width="10%"><b>Delivery Fee</b></td>
+            <td width="20%"><b>70 ฿</b></td>
+          </tr>
+          <tr>
+            <td width="70%"></td>
+            <td width="10%"><b>Subtotal:</b></td>
+            <td width="20%"><b><%= total+70 %> ฿</b></td>
+          </tr>
+      </tbody>
+    </table>
+    <p>Payment Method: Cash on delivery</p>
+    <p>Name: <%= @user.name %></p>
+    <p>Contact Number: <%= @user.phone %></p>
+    <p>Delivery Address: <%= @user.address %></p>
+    <p>Delivery Instruction: <%= @instruction %></p>
