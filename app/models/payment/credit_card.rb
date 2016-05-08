@@ -7,6 +7,7 @@ class Payment::CreditCard < Payment
 
   def create_omise_charge
     charge = OmiseGateway.create_charge(order, token)
-    # save charge information
+    self.omise_charge_id = charge.id
+    # may want to save extra information not sure but for now save charge_id (this is used for refund and other stuff)
   end
 end
