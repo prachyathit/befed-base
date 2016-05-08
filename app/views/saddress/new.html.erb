@@ -9,18 +9,10 @@
 
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
-      <%= form_for(:saddress, url: submit_saddress_path) do |f| %>
-        <%= f.text_field :faddress, class: "location form-control" %>
-        <%= f.hidden_field :latitude , class: "longitude" %>
-        <%= f.hidden_field :longitude ,  class: "latitude" %>
-        <div id="map-container" class="geomap">
-          <div id="map" class="geomap"></div>
-        </div>
-        <%= f.submit "Feed me now!", class: "btn btn-danger" %>
-      <% end %>
+      <%= render partial: "shared/map", locals: { button_name: "Feed me now!" } %>
     </div>
   </div>
-  
+
 </div>
 <h1>How it works</h1>
 <p class="subthai center">สั่งง่ายๆใน 3 ขั้นตอน</p>
@@ -40,5 +32,5 @@
         <span class="glyphicon glyphicon-cutlery"></span>
         <p>We Deliver</p>
       </div>
- 
+
   </div>

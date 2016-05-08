@@ -21,15 +21,7 @@
               <b class="caret"></b>
             </a>
             <ul class="dropdown-menu dropdown-location">
-              <%= form_for(:saddress, url: submit_saddress_path) do |f| %>
-                <%= f.text_field :faddress, class: "location form-control" %>
-                <%= f.hidden_field :latitude , class: "longitude" %>
-                <%= f.hidden_field :longitude ,  class: "latitude" %>
-                <div id="map-container" class="geomap">
-                  <div id="map" class="geomap"></div>
-                </div>
-                <%= f.submit "I'm here!", class: "btn btn-danger" %>
-              <% end %>
+              <%= render partial: "shared/map", locals: { button_name: "I'm here" } %>
             </ul>
           </li>
         <% end %>
