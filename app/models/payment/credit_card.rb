@@ -6,7 +6,7 @@ class Payment::CreditCard < Payment
   private
 
   def create_omise_charge
-    charge = OmiseGateway.create(order, token)
+    charge = OmiseGateway.create_charge(order, token)
     # save charge information
   end
 end

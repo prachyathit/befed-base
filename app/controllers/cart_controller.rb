@@ -59,16 +59,23 @@ after_action :get_cart_size
 
   def submit
     # Submit order
+    @user = current_user
     rr11 = Restaurant.find(session[:restaurant_id])
     dbur = Geocoder::Calculations.distance_between([current_user.latitude,current_user.longitude], [rr11.latitude,rr11.longitude]) #Distance between current user and restuarant
-    if dbur < 5
-      @cart = session[:cart]
-      @user = current_user
-      @instruction = params[:submit]["delivery_instruction"]
-      UserMailer.delivery_confirmation(@user,@cart, @instruction).deliver_now
-      flash.now[:info] = "Email confirmation will be sent to you shortly"
-      session[:cart] = nil
-      UserMailer.order_placed(@user,@cart, @instruction).deliver_now
+    if dbur <= 5
+      begin
+        ActiveRecord::Base.transaction do
+          order = Order.process!(user: @user, cart: session[:cart])
+          payment = Payment::CreditCard.create!(order: order, user: @user)
+          flash.now[:info] = "Email confirmation will be sent to you shortly"
+          session[:cart] = nil
+        end
+      rescue ActiveRecord::RecordInvalid => e
+        flash[:danger] = 'Something went wrong. Please try again later.'
+      end
+      # @instruction = params[:submit]["delivery_instruction"]
+      # UserMailer.delivery_confirmation(@user,@cart, @instruction).deliver_now
+      # UserMailer.order_placed(@user,@cart, @instruction).deliver_now
     else
       flash[:danger] = "Delivery address is not within the service area : ที่อยู่ของคุณอยู่นอกพื้นที่จัดส่ง"
       redirect_to checkout_url
