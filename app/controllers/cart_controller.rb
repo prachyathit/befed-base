@@ -66,7 +66,7 @@ after_action :get_cart_size
       begin
         ActiveRecord::Base.transaction do
           order = Order.process!(user: @user, cart: session[:cart])
-          payment = Payment::CreditCard.create!(order: order, user: @user)
+          payment = create_new_payment!(order)
           flash.now[:info] = "Email confirmation will be sent to you shortly"
           session[:cart] = nil
         end
@@ -84,6 +84,23 @@ after_action :get_cart_size
   end
 
   private
+
+  def credit_card?
+    params[:payment_type] == Payment::CREDIT_CARD
+  end
+
+  def create_new_payment!(order)
+    credit_card? ? new_credit_card_payment(order) : new_cash_payment(order)
+  end
+
+  def new_credit_card_payment!(order)
+    Payment::CreditCard.create!(order: order, token: params[:token], user: @user)
+  end
+
+  def new_cash_payment(order)
+    Payment::Cash.create!(order: order, user: @user)
+  end
+
 
     # Confirms a logged-in user.
     def logged_in_user
