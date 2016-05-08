@@ -61,13 +61,14 @@ ActiveRecord::Schema.define(version: 20160507224721) do
 
   create_table "orders", force: :cascade do |t|
     t.decimal  "total"
-    t.integer  "payment_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "payments", force: :cascade do |t|
     t.integer  "user_id"
+    t.integer  "order_id"
     t.text     "omise_charge_id"
     t.datetime "created_at"
     t.datetime "updated_at"
