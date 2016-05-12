@@ -55,7 +55,7 @@ $(document).ready(function() {
          var map = $(".location").geocomplete("map");
          google.maps.event.trigger(map, 'resize');
          $.ajax({
-           url: "http://maps.googleapis.com/maps/api/geocode/json?latlng=" + position.coords.latitude + "," + position.coords.longitude,
+           url: "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + position.coords.latitude + "," + position.coords.longitude,
            success: function(result) {
              $(".location-arrow-wrapper").removeClass("hide");
              $(".spinning-icon-wrapper").addClass("hide");
