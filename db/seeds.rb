@@ -27,7 +27,7 @@ end
                 feeding and production process. Every ingredient can be checked back to
                 its source to guarantee fresh, clean and safe food. We serve you only the
                 best as we always do for our family."
-  image_url = "http://i.imgur.com/4RZEYGB.jpg?1"
+  image_url = "https://i.imgur.com/4RZEYGB.jpg?1"
   address = "Soi Mu Ban Mueang Thong Thani Khrongkan 6 Zone A, Tambon Ban Mai, Amphoe Pak Kret, Chang Wat Nonthaburi 11120, Thailand"
   Restaurant.create!( name: name,
                 desc: description,
@@ -41,7 +41,7 @@ end
                 feeding and production process. Every ingredient can be checked back to
                 its source to guarantee fresh, clean and safe food. We serve you only the
                 best as we always do for our family."
-  image_url = "http://i.imgur.com/4RZEYGB.jpg?1"
+  image_url = "https://i.imgur.com/4RZEYGB.jpg?1"
   address = "Thanon Srisaman, Tambon Ban Mai, Amphoe Pak Kret, Chang Wat Nonthaburi 11120, Thailand"
   Restaurant.create!( name: name,
                 desc: description,
@@ -55,7 +55,7 @@ end
                 feeding and production process. Every ingredient can be checked back to
                 its source to guarantee fresh, clean and safe food. We serve you only the
                 best as we always do for our family."
-  image_url = "http://i.imgur.com/4RZEYGB.jpg?1"
+  image_url = "https://i.imgur.com/4RZEYGB.jpg?1"
   address = "205 Pradit Manutham Road, Khwaeng Lat Phrao, Khet Lat Phrao, Krung Thep Maha Nakhon 10230, Thailand"
   Restaurant.create!( name: name,
                 desc: description,
@@ -87,14 +87,14 @@ end
 
 # Create some categories
 Category.create!( name: "Healthy",
-                  image_url: "http://i.imgur.com/lVGYkOW.jpg?1")
+                  image_url: "https://i.imgur.com/lVGYkOW.jpg?1")
 Category.create!( name: "Thai",
-                  image_url: "http://i.imgur.com/nMzNKxo.jpg?1")
+                  image_url: "https://i.imgur.com/nMzNKxo.jpg?1")
 Category.create!( name: "Noodles",
-                  image_url: "http://i.imgur.com/R2s7oM5.jpg?1")
+                  image_url: "https://i.imgur.com/R2s7oM5.jpg?1")
 Category.create!( name: "Japanese",
-                  image_url: "http://i.imgur.com/RR3A02c.jpg?1")
+                  image_url: "https://i.imgur.com/RR3A02c.jpg?1")
 Category.create!( name: "Desserts",
-                  image_url: "http://i.imgur.com/GrNPRhU.jpg?1")
+                  image_url: "https://i.imgur.com/GrNPRhU.jpg?1")
 Category.create!( name: "Drinks",
-                  image_url: "http://i.imgur.com/cf7SXbV.jpg?1")
+                  image_url: "https://i.imgur.com/cf7SXbV.jpg?1")

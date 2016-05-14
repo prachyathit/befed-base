@@ -14,15 +14,15 @@ namespace :data do
     end
 
     CSV.foreach(saladfactory_options, :headers => true) do |row|
-    Option.create!(row.to_hash)
+      Option.create!(row.to_hash)
     end
 
     CSV.foreach(saladfactory_option_values, :headers => true) do |row|
-    OptionValue.create!(row.to_hash)
+      OptionValue.create!(row.to_hash)
     end
 
     CSV.foreach(saladfactory_food_options, :headers => true) do |row|
-    FoodOption.create!(row.to_hash)
+      FoodOption.create!(row.to_hash)
     end
   end
 end
