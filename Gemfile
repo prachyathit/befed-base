@@ -14,8 +14,12 @@ gem 'jbuilder', '2.2.3'
 gem 'geocoder'
 gem 'geocomplete_rails'
 gem 'sdoc', '0.4.0', group: :doc
+
+# for icons
 gem 'font-awesome-sass', '~> 4.6.2'
 
+# payment
+gem 'omise', github: 'omise/omise-ruby'
 
 group :development, :test do
   gem 'sqlite3', '1.3.9'
@@ -30,6 +34,7 @@ group :test do
   gem 'mini_backtrace', '0.1.3'
   gem 'guard-minitest', '2.3.1'
 end
+
 group :production do
   gem 'pg', '0.17.1'
   gem 'rails_12factor', '0.0.2'

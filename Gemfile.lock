@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/omise/omise-ruby.git
+  revision: 5f9005dcbc557a9ea0b032b0766449908db8a762
+  specs:
+    omise (0.3.0)
+      json (~> 1.8.1)
+      rest-client (~> 1.7.2)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -118,6 +126,7 @@ GEM
       ruby-progressbar
     multi_json (1.11.2)
     nenv (0.3.0)
+    netrc (0.11.0)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     notiffany (0.0.8)
@@ -168,6 +177,9 @@ GEM
       ffi (>= 0.5.0)
     rdoc (4.2.2)
       json (~> 1.4)
+    rest-client (1.7.3)
+      mime-types (>= 1.16, < 3.0)
+      netrc (~> 0.7)
     ruby-progressbar (1.7.5)
     sass (3.4.21)
     sass-rails (5.0.2)
@@ -225,6 +237,7 @@ DEPENDENCIES
   jquery-rails (= 4.0.3)
   mini_backtrace (= 0.1.3)
   minitest-reporters (= 1.0.5)
+  omise!
   pg (= 0.17.1)
   pry
   puma (= 2.11.1)
