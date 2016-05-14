@@ -23,7 +23,7 @@ class UsersController < ApplicationController
       flash[:success] = "Let's eat!"
       redirect_back_or @user
     else
-      render 'new'
+      render template: 'sessions/new'
     end
   end
 
