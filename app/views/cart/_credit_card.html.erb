@@ -8,35 +8,37 @@
       // TODO add display error message when response.object == "error"
       // some how it just didn't get the correct value yet
 
-      var form = $(this);
+      var button = $(this);
+      var form = $('#cc-payment');
 
       // Disable the submit button to avoid repeated click.
-      form.find("input[type=button]").prop("disabled", true);
+      button.find("input[type=button]").prop("disabled", true);
 
       // Serialize the form fields into a valid card object.
       var card = {
-        "name": form.find("[name=card-holder-name]").val(),
-        "number": form.find("[name=card-number]").val(),
-        "expiration_month": form.find("[name=expiry-month]").val(),
-        "expiration_year": form.find("[name=expiry-year]").val(),
-        "security_code": form.find("[name=cvv]").val()
+        "name": $('#card-holder-name').val(),
+        "number": $('#card-number').val(),
+        "expiration_month": $('#expiry-month').val(),
+        "expiration_year": $('#expiry-year').val(),
+        "security_code": $('#cvv').val()
       };
-
+      debugger;
       // Send a request to create a token then trigger the callback function once
       // a response is received from Omise.
       //
       // Note that the response could be an error and this needs to be handled within
       // the callback.
       Omise.createToken("card", card, function (statusCode, response) {
+        debugger
         if (response.object == "error") {
           // Display an error message.
           $("#token_errors").html(response.message);
 
           // Re-enable the submit button.
-          form.find("input[type=button]").prop("disabled", false);
+          button.find("input[type=button]").prop("disabled", false);
         } else {
           // Then fill the omise_token.
-          form.find("[name=omise_token]").val(response.id);
+          form.find("[name=token]").val(response.id);
 
           // Remove card number from form before submiting to server.
           form.find("[name=card-number]").val("");
@@ -53,7 +55,8 @@
 </script>
 
 <form id="cc-payment" class="form-horizontal" role="form">
-  <input type="hidden" name="omise_token">
+  <input type="hidden" name="token">
+  <input type='hidden' name='payment_type' value='credit_card'>
   <fieldset style="margin: 30px">
     <div class="form-group">
       <label class="col-sm-3 control-label" for="card-holder-name">Name on Card</label>
@@ -89,7 +92,7 @@
             </select>
           </div>
           <div class="col-xs-3">
-            <select class="form-control" name="expiry-year">
+            <select class="form-control" name="expiry-year" id='expiry-year'>
               <option value="16">2016</option>
               <option value="17">2017</option>
               <option value="18">2018</option>
