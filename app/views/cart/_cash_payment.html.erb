@@ -1,14 +1,11 @@
-<script>
-    $(document).ready(function() {
-      $("#pay-with-cash").click(function(e){
-        // TODO send request to the server with cash parameter set to true
-        debugger;
-      });
-    });
-</script>
+
 <div id="cash-on-delivery" class="hide ">
   <div class="cash-delivery-text-wrapper">
     Payment Method: Cash on delivery
-    <input type="submit" name="commit" value="Pay with cash" class="btn btn-danger" id="pay-with-cash">
+    <form id="cash-payment" class="form-horizontal" role="form" action='/checkout/complete' method='POST'>
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+      <input type='hidden' name='payment_type' value='cash'>
+      <input type="submit" name="commit" value="Pay with cash" class="btn btn-danger" id="pay-with-cash">
+    </form>
   </div>
 </div>
