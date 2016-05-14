@@ -22,14 +22,13 @@
         "expiration_year": $('#expiry-year').val(),
         "security_code": $('#cvv').val()
       };
-      debugger;
+
       // Send a request to create a token then trigger the callback function once
       // a response is received from Omise.
       //
       // Note that the response could be an error and this needs to be handled within
       // the callback.
       Omise.createToken("card", card, function (statusCode, response) {
-        debugger
         if (response.object == "error") {
           // Display an error message.
           $("#token_errors").html(response.message);
@@ -54,7 +53,8 @@
   });
 </script>
 
-<form id="cc-payment" class="form-horizontal" role="form">
+<form id="cc-payment" class="form-horizontal" role="form" action='/checkout/complete' method='POST'>
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
   <input type="hidden" name="token">
   <input type='hidden' name='payment_type' value='credit_card'>
   <fieldset style="margin: 30px">

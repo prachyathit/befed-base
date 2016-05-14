@@ -70,7 +70,7 @@ after_action :get_cart_size
           flash.now[:info] = "Email confirmation will be sent to you shortly"
           session[:cart] = nil
         end
-      rescue ActiveRecord::RecordInvalid => e
+      rescue => e
         flash[:danger] = 'Something went wrong. Please try again later.'
       end
       # @instruction = params[:submit]["delivery_instruction"]
@@ -90,14 +90,14 @@ after_action :get_cart_size
   end
 
   def create_new_payment!(order)
-    credit_card? ? new_credit_card_payment(order) : new_cash_payment(order)
+    credit_card? ? new_credit_card_payment!(order) : new_cash_payment!(order)
   end
 
   def new_credit_card_payment!(order)
     Payment::CreditCard.create!(order: order, token: params[:token], user: @user)
   end
 
-  def new_cash_payment(order)
+  def new_cash_payment!(order)
     Payment::Cash.create!(order: order, user: @user)
   end
 
