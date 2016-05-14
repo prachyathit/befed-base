@@ -87,11 +87,6 @@
     <table class="table">
       <tr>
         <td class="col-md-2"></td>
-        <td class="col-md-2">Payment Method:</td>
-        <td class="col-md-4">Cash on delivery</td>
-      </tr>
-      <tr>
-        <td class="col-md-2"></td>
         <td class="col-md-2">Name:</td>
         <td class="col-md-4"><%= @user.name %></td>
       </tr>
@@ -106,18 +101,14 @@
         <td class="col-md-4"><%= @user.address %></td>
       </tr>
     </table>
-            <div class="geomap">
-          <div id="googleMap" class="geomap"></div>
-        </div>
+      <div class="geomap">
+        <div id="googleMap" class="geomap"></div>
+      </div>
   </div>
 </div>
-<%= form_for(:submit, url: checkout_complete_path) do |f| %>
-  <div class="form-group">
-    <%= f.label "Delivery Instruction : คำแนะนำในการจัดส่ง", class: "control-label" %>
-    <%= f.text_field :delivery_instruction, placeholder:"(ตัวอย่าง) คอนโดไอดีโอสาทร ห้อง 750 ถึงแล้วกรุณาโทรมา" ,class: "form-control" %>
-  </div>
-  <h2><%= f.submit "Submit Order", class: "btn btn-danger" %></h2>
-<% end %>
+<tr>
+  <%= render partial: "payment" %>
+</tr>
 <script>
 var myCenter=new google.maps.LatLng(<%= @user.latitude %>,<%= @user.longitude %>);
 
