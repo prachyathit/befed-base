@@ -4,7 +4,7 @@ module OmiseGateway
   class << self
     def create_charge(order, token)
       Omise::Charge.create({
-        amount: order.total,
+        amount: order.total * 100,
         currency: "thb",
         card: token
       })

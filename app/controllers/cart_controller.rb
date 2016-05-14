@@ -31,7 +31,7 @@ after_action :get_cart_size
 
   def line_delete
     session[:cart].delete(params[:id])
-    redirect_to cart_url
+    redirect_to checkout_path
   end
 
   def index
@@ -59,16 +59,23 @@ after_action :get_cart_size
 
   def submit
     # Submit order
+    @user = current_user
     rr11 = Restaurant.find(session[:restaurant_id])
     dbur = Geocoder::Calculations.distance_between([current_user.latitude,current_user.longitude], [rr11.latitude,rr11.longitude]) #Distance between current user and restuarant
-    if dbur < 5
-      @cart = session[:cart]
-      @user = current_user
-      @instruction = params[:submit]["delivery_instruction"]
-      UserMailer.delivery_confirmation(@user,@cart, @instruction).deliver_now
-      flash.now[:info] = "Email confirmation will be sent to you shortly"
-      session[:cart] = nil
-      UserMailer.order_placed(@user,@cart, @instruction).deliver_now
+    if dbur <= 5
+      begin
+        ActiveRecord::Base.transaction do
+          order = Order.process!(user: @user, cart: session[:cart])
+          payment = create_new_payment!(order)
+          flash.now[:info] = "Email confirmation will be sent to you shortly"
+          session[:cart] = nil
+        end
+      rescue ActiveRecord::RecordInvalid => e
+        flash[:danger] = 'Something went wrong. Please try again later.'
+      end
+      # @instruction = params[:submit]["delivery_instruction"]
+      # UserMailer.delivery_confirmation(@user,@cart, @instruction).deliver_now
+      # UserMailer.order_placed(@user,@cart, @instruction).deliver_now
     else
       flash[:danger] = "Delivery address is not within the service area : ที่อยู่ของคุณอยู่นอกพื้นที่จัดส่ง"
       redirect_to checkout_url
@@ -77,6 +84,23 @@ after_action :get_cart_size
   end
 
   private
+
+  def credit_card?
+    params[:payment_type] == Payment::CREDIT_CARD
+  end
+
+  def create_new_payment!(order)
+    credit_card? ? new_credit_card_payment(order) : new_cash_payment(order)
+  end
+
+  def new_credit_card_payment!(order)
+    Payment::CreditCard.create!(order: order, token: params[:token], user: @user)
+  end
+
+  def new_cash_payment(order)
+    Payment::Cash.create!(order: order, user: @user)
+  end
+
 
     # Confirms a logged-in user.
     def logged_in_user
