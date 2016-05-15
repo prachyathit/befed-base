@@ -11,12 +11,12 @@
     </div>
 
     <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class = "nav navbar-nav navbar-right">
+      <ul class="nav navbar-nav navbar-left">
         <!--Address-->
         <% unless ["Landing", "Sign up", "Edit user", "clearmap"].include? yield(:hidden_title)%>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <span class="glyphicon glyphicon-flag"></span>
+            <a href="#" class="dropdown-toggle text-color" data-toggle="dropdown">
+              <i class="fa fa-map-marker fa-lg theme-color"></i>
               <div class="address_header"><%= session[:saddress]["faddress"] %></div>
               <b class="caret"></b>
             </a>
@@ -26,6 +26,8 @@
           </li>
         <% end %>
         <!--Address END-->
+      </ul>
+      <ul class = "nav navbar-nav navbar-right">
         <!--CART -->
         <% unless yield(:hidden_title) == "Landing" %>
           <% if session[:cart] %>
@@ -33,9 +35,9 @@
           <% end %>
           <li>
             <%= link_to checkout_path do %>
-              <span class="glyphicon glyphicon-shopping-cart"></span>
-              <span class="badge badge-danger">
-                <div id="cartnum"><%= @cart_size %></div>
+              <i class="fa fa-shopping-bag fa-lg"></i>
+              <span id="cartnum" class="text-color">
+                <%= @cart_size %> Items
               </span>
             <% end %>
           </li>
@@ -47,23 +49,28 @@
         <% end %>
         <% if logged_in? %>
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <span class="glyphicon glyphicon-user"></span>
-              Account
-              <b class="caret"></b>
+            <a href="#" class="dropdown-toggle text-color" data-toggle="dropdown">
+              <i class="fa fa-user fa-lg theme-color button-offset"></i>
+                <span class="text-color">
+                  Account
+                </span>
+
+              <b class="caret text-color"></b>
             </a>
-            <ul class="dropdown-menu">
-              <li><%= link_to "Profile", current_user %></li>
-              <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+            <ul class="dropdown-menu text-color">
+              <li><%= link_to "Profile", current_user,  { :class=>"text-color" } %></li>
+              <li><%= link_to "Settings", edit_user_path(current_user),  { :class=>"text-color" } %></li>
               <li class="divider"></li>
-              <li><%= link_to "Log out", logout_path, method: "delete" %></li>
+              <li><%= link_to "Log out", logout_path, { :class=>"text-color", method: "delete"} %></li>
             </ul>
           </li>
         <% else %>
           <li>
             <%= link_to login_path do %>
-              <span class="glyphicon glyphicon-user"></span>
-              Log in
+            <i class="fa fa-user fa-lg theme-color button-offset"></i>
+              <span class="text-color">
+                Sign in
+              </span>
             <% end %>
           </li>
         <% end %>
