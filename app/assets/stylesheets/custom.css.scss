@@ -56,15 +56,14 @@ p {
 #logo {
   float: left;
   margin-right: 10px;
-  font-size: 1.7em;
-  color: black;
+  font-size: 1.6em;
+  color: #EF5A50;
   text-transform: uppercase;
-  letter-spacing: -1px;
   padding-top: 9px;
   font-weight: bold;
+  letter-spacing: 2px;
   &:hover {
-  color: black;
-  text-decoration: none;
+    text-decoration: none;
   }
 }
 
@@ -74,10 +73,9 @@ p {
   font-size: 1.2em;
   color: $gray-light;
   letter-spacing: -1px;
-  padding-top: 9px;
+  padding-top: 12px;
   &:hover {
-  color: black;
-  text-decoration: none;
+    text-decoration: none;
   }
 }
 
@@ -214,7 +212,11 @@ a, a:hover {
 }
 
 .nav.navbar-nav.navbar-right li a {
-    color: black;
+    color: #EF5A50;
+}
+
+.nav.navbar-nav.navbar-right li a.text-color {
+    color: #777;
 }
 
 .navbar-header .navbar-toggle .icon-bar {
@@ -398,11 +400,11 @@ background-color:rgba(255,255,255,0.5);d-color: #556068;
 .address_header {
   display: inline-block;
   vertical-align: middle;
-  max-width: 100px;
+  max-width: 220px;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-
+  margin-left: 3px;
 }
 
 .container > .navbar-header,
@@ -425,4 +427,26 @@ background-color:rgba(255,255,255,0.5);d-color: #556068;
   text-align: center;
   font-weight: normal;
   color: $gray-light;
+}
+
+.navbar .container {
+  max-width: 100%;
+}
+
+@media only screen and (min-width: 1090px) {
+  .navbar-left {
+    margin-left: 110px;
+  }
+}
+
+.theme-color {
+  color: #EF665E;
+}
+
+.text-color {
+  color: #777;
+}
+
+.navbar .button-offset {
+  margin-top: 4px;
 }
