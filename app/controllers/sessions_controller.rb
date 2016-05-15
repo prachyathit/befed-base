@@ -2,6 +2,7 @@ class SessionsController < ApplicationController
   before_action :get_cart_size
 
   def new
+    @user = User.new
   end
 
   def create

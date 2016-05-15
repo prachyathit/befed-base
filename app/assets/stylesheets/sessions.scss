@@ -1,3 +1,42 @@
 // Place all the styles related to the Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.default-background {
+  background-color: #F0F0F0;
+}
+
+.form-container {
+  background-color: white;
+  margin-top: 30px;
+  margin-right: 20px;
+  padding: 50px;
+  border-radius: 6px;
+}
+
+.form-btn {
+  color: white;
+  background-color: #EE6D67;
+  text-align: center;
+}
+
+.form-btn:hover {
+  color: white;
+}
+
+.btn-icon {
+  margin-right: 10px;
+}
+
+#forgot-password {
+  color: #EE6D67;
+}
+
+#password-link {
+  margin-top: 2px;
+  font-size: 10px;
+}
+
+.forgot-password-container {
+  padding: 20px 15px;
+}
