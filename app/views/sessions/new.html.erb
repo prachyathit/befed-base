@@ -3,41 +3,40 @@
 <%= javascript_include_tag("reg_maps.js") %>
 
 <% provide(:title, 'Log in') %>
+  <div class="row">
+    <div class="col-md-5 col-md-offset-1 form-container">
+      <%= form_for(:session, url: login_path) do |f| %>
+        <%= f.email_field :email, class: 'form-control', placeholder: 'Email' %>
 
-<div class="row">
-  <div class="col-md-5 col-md-offset-1 form-container">
-    <%= form_for(:session, url: login_path) do |f| %>
-      <%= f.email_field :email, class: 'form-control', placeholder: 'Email' %>
+        <%= f.password_field :password, class: 'form-control', placeholder: 'Password'  %>
 
-      <%= f.password_field :password, class: 'form-control', placeholder: 'Password'  %>
+        <button type='submit' class='btn form-btn form-control'><i class="fa fa-sign-in btn-icon fa-sm"></i>Sign In</button>
+        <p id='password-link'>Forgot password? <span id='forgot-password'><a href='/password_resets/new'>Click to reset your password</a></span><p>
+      <% end %>
 
-      <button type='submit' class='btn form-btn form-control'><i class="fa fa-sign-in btn-icon fa-sm theme-color"></i>Sign In</button>
-      <p id='password-link'>Forgot password? <span id='forgot-password'><a href='/password_resets/new'>Click to reset your password</a></span><p>
-    <% end %>
+    </div>
 
+    <div class="col-md-5 form-container">
+      <% prefill_address = session[:saddress]["faddress"] %>
+      <%= form_for(:user, url: users_path) do |f| %>
+        <%= render 'shared/error_messages' %>
+
+        <%= f.text_field :name, class: 'form-control', placeholder: 'Name' %>
+
+        <%= f.email_field :email, class: 'form-control', placeholder: 'Email' %>
+
+        <%= f.text_field :phone, class: 'form-control', placeholder: 'Phone Number' %>
+
+        <%= f.text_field :address, class: "location form-control", value: prefill_address %>
+
+        <%= f.hidden_field :latitude , class: "longitude" %>
+        <%= f.hidden_field :longitude ,  class: "latitude" %>
+
+        <%= f.password_field :password, class: 'form-control', placeholder: 'Password' %>
+
+        <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Password Confirmation' %>
+
+        <button type='submit' class='btn form-btn form-control'><i class="fa fa-pencil btn-icon fa-sm"></i>Register</button>
+      <% end %>
+    </div>
   </div>
-
-  <div class="col-md-5 form-container">
-    <% prefill_address = session[:saddress]["faddress"] %>
-    <%= form_for(:user, url: users_path) do |f| %>
-      <%= render 'shared/error_messages' %>
-
-      <%= f.text_field :name, class: 'form-control', placeholder: 'Name' %>
-
-      <%= f.email_field :email, class: 'form-control', placeholder: 'Email' %>
-
-      <%= f.text_field :phone, class: 'form-control', placeholder: 'Phone Number' %>
-
-      <%= f.text_field :address, class: "location form-control", value: prefill_address %>
-
-      <%= f.hidden_field :latitude , class: "longitude" %>
-      <%= f.hidden_field :longitude ,  class: "latitude" %>
-
-      <%= f.password_field :password, class: 'form-control', placeholder: 'Password' %>
-
-      <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Password Confirmation' %>
-
-      <button type='submit' class='btn form-btn form-control'><i class="fa fa-pencil btn-icon fa-sm theme-color"></i>Register</button>
-    <% end %>
-  </div>
-</div>
