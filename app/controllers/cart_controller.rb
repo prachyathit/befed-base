@@ -67,15 +67,16 @@ after_action :get_cart_size
         ActiveRecord::Base.transaction do
           order = Order.process!(user: @user, cart: session[:cart])
           payment = create_new_payment!(order)
-          flash.now[:info] = "Email confirmation will be sent to you shortly"
-          session[:cart] = nil
         end
+        flash.now[:info] = "Email confirmation will be sent to you shortly"
+        session[:cart] = nil
+        @instruction = params[:delivery_instruction]
+        UserMailer.delivery_confirmation(@user,@cart, @instruction).deliver_now
+        UserMailer.order_placed(@user,@cart, @instruction).deliver_now
       rescue => e
         flash[:danger] = 'Something went wrong. Please try again later.'
+        redirect_to checkout_url
       end
-      # @instruction = params[:submit]["delivery_instruction"]
-      # UserMailer.delivery_confirmation(@user,@cart, @instruction).deliver_now
-      # UserMailer.order_placed(@user,@cart, @instruction).deliver_now
     else
       flash[:danger] = "Delivery address is not within the service area : ที่อยู่ของคุณอยู่นอกพื้นที่จัดส่ง"
       redirect_to checkout_url
