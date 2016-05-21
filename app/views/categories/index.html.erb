@@ -1,49 +1,51 @@
-<h1>Select Category</h1>
-<% numi = 1 %>
-  <div class="container">
-    <div class="row">
-    <div class="col-xs-12 col-sm-6">
-      <%= link_to restaurants_path, class: "thumbnail center" do %>
-          <p><%= image_tag('http://i.imgur.com/4rAOIkH.jpg?1', alt: "image", class: "rest-image center-block") %></p>
-          <div class="medium">
-            <strong>All</strong>
-            <span class="badge badge-danger">
-              <div id="cartnum"><%= @restaurants.size %></div>
-            </span>
-          </div>
-      <% end %>
-    </div>
-    <% @categories.each do |category| %>
-
-    <% num_res = category.restaurants.size %>
-    <% unless num_res == 0 %>
-      <% numi += 1 %>
+<div class='container'>
+  <h1>Select Category</h1>
+  <% numi = 1 %>
+    <div class="container">
+      <div class="row">
       <div class="col-xs-12 col-sm-6">
-
-        <%= link_to category_path(category), class: "thumbnail center" do %>
-          <p><%= image_tag(category.image_url, alt: "image", class: "rest-image center-block") %></p>
-          <div class="medium">
-            <strong><%= category.name %></strong>
-            <span class="badge badge-danger">
-              <div id="cartnum"><%= num_res %></div>
-            </span>
-          </div>
-        <% end %>
-
-        <% if user_admin? %>
-          <%= link_to 'Show', category %>
-          <%= link_to 'Edit', edit_category_path(category) %>
-          <%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to restaurants_path, class: "thumbnail center" do %>
+            <p><%= image_tag('http://i.imgur.com/4rAOIkH.jpg?1', alt: "image", class: "rest-image center-block") %></p>
+            <div class="medium">
+              <strong>All</strong>
+              <span class="badge badge-danger">
+                <div id="cartnum"><%= @restaurants.size %></div>
+              </span>
+            </div>
         <% end %>
       </div>
-      <% if numi.even? %>
-        <div class="clearfix"></div>
-      <% end %>
-      <% end %>
-    <% end %>
-    </div>
-  </div>
+      <% @categories.each do |category| %>
 
-<% if user_admin? %>
-<%= link_to 'New Category', new_category_path %>
-<% end %>
+      <% num_res = category.restaurants.size %>
+      <% unless num_res == 0 %>
+        <% numi += 1 %>
+        <div class="col-xs-12 col-sm-6">
+
+          <%= link_to category_path(category), class: "thumbnail center" do %>
+            <p><%= image_tag(category.image_url, alt: "image", class: "rest-image center-block") %></p>
+            <div class="medium">
+              <strong><%= category.name %></strong>
+              <span class="badge badge-danger">
+                <div id="cartnum"><%= num_res %></div>
+              </span>
+            </div>
+          <% end %>
+
+          <% if user_admin? %>
+            <%= link_to 'Show', category %>
+            <%= link_to 'Edit', edit_category_path(category) %>
+            <%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </div>
+        <% if numi.even? %>
+          <div class="clearfix"></div>
+        <% end %>
+        <% end %>
+      <% end %>
+      </div>
+    </div>
+
+  <% if user_admin? %>
+  <%= link_to 'New Category', new_category_path %>
+  <% end %>
+</div>

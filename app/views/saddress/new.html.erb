@@ -1,24 +1,18 @@
 <% provide(:hidden_title, 'Landing') %>
 
 <div class='jumbotron-landing'>
-  <div class="tagline center">
-    <p>Salad Factory</p>
-    <p>Deliver Healthy & Delicious Food</p>
-    <p>to Our Beloved Customers<span class="glyphicon glyphicon-heart" style="color:red"></span></p>
-  </div>
-
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
       <%= render partial: "shared/map", locals: { button_name: "Feed me now!" } %>
     </div>
   </div>
-
 </div>
-<h1>How it works</h1>
-<p class="subthai center">สั่งง่ายๆใน 3 ขั้นตอน</p>
-<div>
-  <div class="row">
 
+<div class='container-fluid'>
+  <h1>How it works</h1>
+  <p class="subthai center">สั่งง่ายๆใน 3 ขั้นตอน</p>
+  <div>
+    <div class="row">
       <div class="col-sm-4 center">
         <span class="glyphicon glyphicon-map-marker"></span>
         <p>Locate</p>
@@ -33,6 +27,6 @@
         <span class="glyphicon glyphicon-cutlery"></span>
         <p>We Deliver</p>
       </div>
-
+    </div>
   </div>
 </div>

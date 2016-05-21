@@ -1,21 +1,23 @@
-<p id="notice"><%= notice %></p>
+<div class='container'>
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @option.name %>
-</p>
-
-<p>
-  <strong>Position:</strong>
-  <%= @option.position %>
-</p>
-<% if @option.option_values.any? %>
   <p>
-    <%= render @option_values %>
+    <strong>Name:</strong>
+    <%= @option.name %>
   </p>
-<% end %>
 
-<%= render 'option_values/option_value_form' %>
+  <p>
+    <strong>Position:</strong>
+    <%= @option.position %>
+  </p>
+  <% if @option.option_values.any? %>
+    <p>
+      <%= render @option_values %>
+    </p>
+  <% end %>
 
-<%= link_to 'Edit', edit_option_path(@option) %> |
-<%= link_to 'Back', options_path %>
+  <%= render 'option_values/option_value_form' %>
+
+  <%= link_to 'Edit', edit_option_path(@option) %> |
+  <%= link_to 'Back', options_path %>
+</div>

@@ -1,49 +1,51 @@
-<% cat_number = 0 %>
+<div class='container'>
+  <% cat_number = 0 %>
 
-<div>
-  <div class="jumbotron" style="background-image: url(<%= @foods.first.restaurant.image_url %>);">
-    <h1><%= @foods.first.restaurant.name %></h1>
+  <div>
+    <div class="jumbotron" style="background-image: url(<%= @foods.first.restaurant.image_url %>);">
+      <h1><%= @foods.first.restaurant.name %></h1>
+    </div>
+
+    <div class="row">
+      <% @foods.each do |food| %>
+          <% full_name = food.name %>
+          <% eng_name = full_name.split(" : ")[0] %>
+          <% th_name = full_name.split(" : ")[1] %>
+          <% unless food.cat_id == cat_number %>
+
+            <div class="col-sm-12">
+              <div class="food-cat">
+                <strong><%= food.cat %></strong>
+              </div>
+            </div>
+            <% cat_number = food.cat_id %>
+          <% end %>
+        <div class="col-sm-6">
+
+          <%= link_to add_new_path(id: food.id), remote: true do %>
+            <div class="food-item color-hover">
+              <div class="food-price"><%= food.price %> ฿</div>
+              <div>
+                <%= th_name %> <%if food.rec == 1%><span class="glyphicon glyphicon-star-empty recommend"></span><% end %>
+              </div>
+              <div class="food-name"><%=eng_name%></div>
+            </div>
+          <% end %>
+
+          <% if user_admin? %>
+            <%= link_to 'Show', restaurant_food_path(id: food.id) %>
+            <%= link_to 'Edit', edit_restaurant_food_path(id: food.id) %>
+            <%= link_to 'Destroy', restaurant_food_path(id: food.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+
+        </div>
+      <% end %>
+    </div>
   </div>
 
-  <div class="row">
-    <% @foods.each do |food| %>
-        <% full_name = food.name %>
-        <% eng_name = full_name.split(" : ")[0] %>
-        <% th_name = full_name.split(" : ")[1] %>
-        <% unless food.cat_id == cat_number %>
+  <% if user_admin? %>
+  <%= link_to 'New Food', new_restaurant_food_path %>
+  <% end %>
 
-          <div class="col-sm-12">
-            <div class="food-cat">
-              <strong><%= food.cat %></strong>
-            </div>
-          </div>
-          <% cat_number = food.cat_id %>
-        <% end %>
-      <div class="col-sm-6">
-
-        <%= link_to add_new_path(id: food.id), remote: true do %>
-          <div class="food-item color-hover">
-            <div class="food-price"><%= food.price %> ฿</div>
-            <div>
-              <%= th_name %> <%if food.rec == 1%><span class="glyphicon glyphicon-star-empty recommend"></span><% end %>
-            </div>
-            <div class="food-name"><%=eng_name%></div>
-          </div>
-        <% end %>
-
-        <% if user_admin? %>
-          <%= link_to 'Show', restaurant_food_path(id: food.id) %>
-          <%= link_to 'Edit', edit_restaurant_food_path(id: food.id) %>
-          <%= link_to 'Destroy', restaurant_food_path(id: food.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-        <% end %>
-
-      </div>
-    <% end %>
-  </div>
+  <div id="product-modal" class="modal fade"></div>
 </div>
-
-<% if user_admin? %>
-<%= link_to 'New Food', new_restaurant_food_path %>
-<% end %>
-
-<div id="product-modal" class="modal fade"></div>
