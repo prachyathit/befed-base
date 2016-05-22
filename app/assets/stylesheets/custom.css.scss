@@ -4,6 +4,9 @@
 @import "bootstrap";
 
 /* mixins, variables, etc.. */
+body {
+  font-family: 'Open Sans';
+}
 
 $gray-medium-light: #eaeaea;
 $red-main: #ff4444;
@@ -56,11 +59,11 @@ p {
 #logo {
   float: left;
   margin-right: 10px;
-  font-size: 1.6em;
+  font-size: 1.7em;
   color: #EF5A50;
   text-transform: uppercase;
   padding-top: 9px;
-  font-weight: bold;
+  font-weight: 700;
   letter-spacing: 2px;
   &:hover {
     text-decoration: none;
@@ -70,10 +73,10 @@ p {
 #sublogo {
   float: left;
   margin-right: 10px;
-  font-size: 1.2em;
-  color: $gray-light;
+  font-size: 1.1em;
+  color: #777777;
   letter-spacing: -1px;
-  padding-top: 12px;
+  padding-top: 13px;
   &:hover {
     text-decoration: none;
   }
@@ -434,11 +437,19 @@ background-color:rgba(255,255,255,0.5);d-color: #556068;
   max-width: 100%;
 }
 
-@media only screen and (min-width: 1090px) {
+@media only screen and (min-width: 768px) {
   .navbar-left {
-    margin-left: 110px;
+    margin-left: 5px;
   }
 }
+
+@media only screen and (min-width: 1090px) {
+  .navbar-left {
+    margin-left: 190px;
+  }
+}
+
+
 
 .theme-color {
   color: #EF665E;

@@ -1,3 +1,111 @@
 // Place all the styles related to the Restaurants controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.restaurants-container {
+  background-color: #f0f0f0;
+}
+
+
+@media only screen and (min-width: 400px) {
+  .restaurant-container {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    padding: 20px 50px 10px 50px;
+    border: 1px solid #d2d2d2;
+    border-radius: 6px;
+    min-height: 200px;
+    background: #fff;
+
+    a:hover {
+      color: #EF665E;
+    }
+
+    .menu-slogan {
+      margin-top: 12px;
+      font-style: italic;
+      font-size: 14px;
+      font-weight: 100;
+      color: #a0a0a0;
+      text-align: center;
+    }
+
+    .restaurant-image {
+      max-width: 200px;
+    }
+    .right-column {
+      .title {
+        font-weight: 400;
+        font-size: 32px;
+        text-align: center;
+      }
+      .estimated-delivery, .delivery-hours {
+        margin-top: 10px;
+        font-weight: 200;
+        font-size: 15px;
+        color: #606060;
+        text-align: center;
+      }
+    }
+  }
+
+}
+
+@media only screen
+  and (min-device-width: 1px)
+  and (max-device-width: 630px) {
+  .restaurants-container {
+    background-color: #f0f0f0;
+  }
+
+  .restaurant-container {
+    min-height: 400px;
+    width:100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #d2d2d2;
+    border-radius: 6px;
+    background-color: #fff;
+
+    img {
+      width: 70%;
+    }
+
+    a:hover {
+      color: #EF665E;
+    }
+
+    .menu-slogan {
+      margin-top: 22px;
+      font-style: italic;
+      font-size: 14px;
+      font-weight: 100;
+      color: #a0a0a0;
+      text-align: center;
+    }
+
+    .left-column {
+      clear: left;
+      width: 100%;
+      text-align: center;
+    }
+    .right-column {
+      clear: left;
+      width: 100%;
+      .title {
+        margin-top: 10px;
+        margin-bottom: 30px;
+        font-weight: 400;
+        font-size: 22px;
+        text-align: center;
+      }
+      .estimated-delivery, .delivery-hours {
+        margin-top: 10px;
+        font-weight: 200;
+        font-size: 13px;
+        color: #606060;
+        text-align: center;
+      }
+    }
+  }
+}
