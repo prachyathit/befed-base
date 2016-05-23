@@ -1,34 +1,12 @@
-<div class='container'>
-  <h1>Select Restaurant</h1>
-  <% numi = 0 %>
-    <div>
-      <div class="row">
-      <% @restaurants.each do |restaurant| %>
-      <% numi += 1 %>
-        <div class="col-xs-12 col-sm-6">
-          <%= link_to restaurant_foods_path(restaurant_id: restaurant.id), class: "thumbnail center" do %>
-            <%= image_tag(restaurant.image_url, alt: "image", class: "rest-image center-block") %>
-            <p class="medium"><strong><%= restaurant.name %></strong></p>
-            <% if false %>
-              <% restaurant.categories.each do |category| %>
-                <span class="food-cat"><%= category.name %> &nbsp; </span>
-              <% end %>
-            <% end %>
-          <% end %>
-          <% if user_admin? %>
-            <%= link_to 'Show', restaurant %>
-            <%= link_to 'Edit', edit_restaurant_path(restaurant) %>
-            <%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %>
-          <% end %>
-        </div>
-        <% if numi.even? %>
-          <div class="clearfix"></div>
-        <% end %>
-      <% end %>
-      </div>
-    </div>
+<div class="container">
+  <div class='row restaurants-container'>
+    <% @restaurants.each do |restaurant| %>
+      <%= render partial: "shared/restaurant", locals: { restaurant: restaurant } %>
+    <% end %>
+  </div>
 
-  <% if user_admin? %>
-  <%= link_to 'New Restaurant', new_restaurant_path %>
-  <% end %>
+    <% if user_admin? %>
+    <%= link_to 'New Restaurant', new_restaurant_path %>
+    <% end %>
+  </div>
 </div>

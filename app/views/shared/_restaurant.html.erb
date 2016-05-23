@@ -1,0 +1,15 @@
+<div class='restaurant-container'>
+  <div class='col-md-4 col-xs-4 left-column'>
+    <%= link_to restaurant_foods_path(restaurant_id: restaurant.id) do %>
+      <%= image_tag(restaurant.image_url, alt: "image", class: "restaurant-image") %>
+    <% end %>
+  </div>
+  <div class='col-md-8 col-xs-8 right-column'>
+    <%= link_to restaurant_foods_path(restaurant_id: restaurant.id) do %>
+      <div class='title'><%= restaurant.name %></div>
+    <% end %>
+    <div class='estimated-delivery'><i class="fa fa-truck fa-lg"></i>&nbsp;&nbsp;&nbsp;Estimated delivery time: 45 minutes</div>
+    <div class='delivery-hours'>&nbsp;<i class="fa fa-clock-o fa-lg"></i>&nbsp;&nbsp;&nbsp;Delivery hours: 11:00AM - 9:00PM&nbsp;&nbsp;&nbsp;&nbsp;</div>
+  </div>
+  <div class='col-xs-12 menu-slogan'>"We serve you only the best as we always do for our family."</div>
+</div>
