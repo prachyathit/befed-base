@@ -1,68 +1,70 @@
 <% provide(:hidden_title, 'clearmap') %>
-<div class='row order-checkout'>
-  <div class='col-xs-6 user-information-container'>
-    <div class="geomap">
-      <div id="googleMap" class="geomap"></div>
+<div class='container'>
+  <div class='row order-checkout'>
+    <div class='col-xs-6 user-information-container'>
+      <div class="geomap">
+        <div id="googleMap" class="geomap"></div>
+      </div>
+      <div class="deliverying-to-container">
+        <div class="title">
+          Delivering to
+        </div>
+        <div class="detail">
+          <%= @user.address %>
+        </div>
+      </div>
+      <div class="phone-info-container">
+        <div class="title">
+          Phone
+        </div>
+        <div class="detail">
+          <%= @user.phone %>
+        </div>
+      </div>
+      <div class="credit-card-payment-container">
+        <div class="title">
+          Credit card payment <span class='theme-color' style="font-size:16px; font-weight: 200;">(Coming soon)</span>
+        </div>
+      </div>
     </div>
-    <div class="deliverying-to-container">
-      <div class="title">
-        Delivering to
-      </div>
-      <div class="detail">
-        <%= @user.address %>
-      </div>
-    </div>
-    <div class="phone-info-container">
-      <div class="title">
-        Phone
-      </div>
-      <div class="detail">
-        <%= @user.phone %>
-      </div>
-    </div>
-    <div class="credit-card-payment-container">
-      <div class="title">
-        Credit card payment <span class='theme-color' style="font-size:16px; font-weight: 200;">(Coming soon)</span>
-      </div>
-    </div>
-  </div>
-  <div class='col-xs-6 order-summary-container'>
-    <div class='order-summary'>
-      <div class='title'>
-        Your order
-      </div>
-      <div class='order-items'>
-        <% cumulative_quantity = 0 %>
-        <% total = 0 %>
-        <% @cart.each do |id, order_info| %>
-          <% food = Food.find(order_info["food_id"]) %>
-          <% quantity = order_info["quantity"].to_i %>
+    <div class='col-xs-6 order-summary-container'>
+      <div class='order-summary'>
+        <div class='title'>
+          Your order
+        </div>
+        <div class='order-items'>
+          <% cumulative_quantity = 0 %>
+          <% total = 0 %>
+          <% @cart.each do |id, order_info| %>
+            <% food = Food.find(order_info["food_id"]) %>
+            <% quantity = order_info["quantity"].to_i %>
 
-          <% cumulative_quantity += quantity %>
+            <% cumulative_quantity += quantity %>
 
-          <% options = order_info["options"] %>
+            <% options = order_info["options"] %>
 
-          <% @food_price = 0 %>
+            <% @food_price = 0 %>
 
-          <%= render partial: 'shared/order_item', locals: { name: food.name, id: id, price: food.price, quantity: order_info["quantity"], options: options } %>
+            <%= render partial: 'shared/order_item', locals: { name: food.name, id: id, price: food.price, quantity: order_info["quantity"], options: options } %>
 
-          <% total += quantity * @food_price %>
+            <% total += quantity * @food_price %>
 
-        <% end %>
-      </div>
-      <hr>
-      <% delivery_fee = 70 %>
-      <%= render partial: 'shared/order_details', locals: { cumulative_quantity: cumulative_quantity, total: total, delivery_fee: delivery_fee } %>
-      <hr>
-      <div class="order-total">
-        Order total <span class="theme-color">&nbsp;<%= "#{total + delivery_fee}฿" %></span>
-      </div>
-      <div class='cash-payment-container'>
-        <form id="cash-payment" class="form-horizontal" role="form" action='/checkout/complete' method='POST'>
-          <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-          <input type='hidden' name='payment_type' value='cash'>
-          <input type="submit" name="commit" value="Pay with cash" class="btn btn-danger" id="pay-with-cash">
-        </form>
+          <% end %>
+        </div>
+        <hr>
+        <% delivery_fee = 70 %>
+        <%= render partial: 'shared/order_details', locals: { cumulative_quantity: cumulative_quantity, total: total, delivery_fee: delivery_fee } %>
+        <hr>
+        <div class="order-total">
+          Order total <span class="theme-color">&nbsp;<%= "#{total + delivery_fee}฿" %></span>
+        </div>
+        <div class='cash-payment-container'>
+          <form id="cash-payment" class="form-horizontal" role="form" action='/checkout/complete' method='POST'>
+            <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+            <input type='hidden' name='payment_type' value='cash'>
+            <input type="submit" name="commit" value="Pay with cash" class="btn btn-danger" id="pay-with-cash">
+          </form>
+        </div>
       </div>
     </div>
   </div>
@@ -70,12 +72,10 @@
 
 
 
-
   <%= render partial: "payment" if false%>
 
 <script>
 var myCenter=new google.maps.LatLng(<%= @user.latitude %>,<%= @user.longitude %>);
-
 function initialize()
 {
 var mapProp = {
@@ -84,15 +84,11 @@ var mapProp = {
   mapTypeId:google.maps.MapTypeId.ROADMAP,
   scrollwheel:false
   };
-
 var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-
 var marker=new google.maps.Marker({
   position:myCenter,
   });
-
 marker.setMap(map);
 }
-
 google.maps.event.addDomListener(window, 'load', initialize);
 </script>

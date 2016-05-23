@@ -1,9 +1,12 @@
-<div class='row restaurants-container'>
-  <% @restaurants.each do |restaurant| %>
-    <%= render partial: "shared/restaurant", locals: { restaurant: restaurant } %>
-  <% end %>
-</div>
+<div class="container">
+  <div class='row restaurants-container'>
+    <% @restaurants.each do |restaurant| %>
+      <%= render partial: "shared/restaurant", locals: { restaurant: restaurant } %>
+    <% end %>
+  </div>
 
-<% if user_admin? %>
-<%= link_to 'New Restaurant', new_restaurant_path %>
-<% end %>
+    <% if user_admin? %>
+    <%= link_to 'New Restaurant', new_restaurant_path %>
+    <% end %>
+  </div>
+</div>

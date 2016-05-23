@@ -1,102 +1,104 @@
 <% provide(:hidden_title, 'clearmap') %>
+<div class='container'>
   <div class="pull-left">
     <%= link_to image_tag('back.png', alt: 'Back to Menu', size: '30'), restaurant_foods_path(session[:restaurant_id]) %>
   </div>
 
-<h1>Your Cart</h1>
-<% if @cart.empty? %>
-  <p>Your cart is currently empty.</p>
-<% end %>
-<br>
+  <h1>Your Cart</h1>
+  <% if @cart.empty? %>
+    <p>Your cart is currently empty.</p>
+  <% end %>
+  <br>
 
-<% total = 0 %>
-<div class="container">
-  <div class="table-responsive">
-    <table class="table">
-      <thead>
-        <tr>
-          <th></th>
-          <th></th>
-          <th></th>
-
-        </tr>
-      </thead>
-      <tbody>
-        <% @cart.each do |id, order_info| %>
-          <% food_id = order_info["food_id"] %>
-          <% quantity = order_info["quantity"].to_i %>
-          <% special = order_info["special"] %>
-          <% options = order_info["options"] %>
-          <% food = Food.find(food_id) %>
-          <% food_price = food.price %>
+  <% total = 0 %>
+  <div class="container">
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
           <tr>
-            <td class="col-md-4">
-              <strong><%= food.name %></strong>
+            <th></th>
+            <th></th>
+            <th></th>
+
+          </tr>
+        </thead>
+        <tbody>
+          <% @cart.each do |id, order_info| %>
+            <% food_id = order_info["food_id"] %>
+            <% quantity = order_info["quantity"].to_i %>
+            <% special = order_info["special"] %>
+            <% options = order_info["options"] %>
+            <% food = Food.find(food_id) %>
+            <% food_price = food.price %>
+            <tr>
+              <td class="col-md-4">
+                <strong><%= food.name %></strong>
 
 
-              <!--Option list start-->
-                <ul class="option-lists">
-                  <% unless options.nil? %>
-                    <% options.each do |option| %>
-                      <% option_value_id = option[1]["option_value_ids"] %>
-                        <% unless option_value_id.first.empty? %>
+                <!--Option list start-->
+                  <ul class="option-lists">
+                    <% unless options.nil? %>
+                      <% options.each do |option| %>
+                        <% option_value_id = option[1]["option_value_ids"] %>
+                          <% unless option_value_id.first.empty? %>
 
-                          <!--Radio button-->
-                          <% if option_value_id.class == String %>
-                            <% option_value = OptionValue.find(option_value_id) %>
-                            <li><%= option_value.name %></li>
-                            <% food_price += option_value.price.to_i %>
-                          <!--Checkbox-->
-                          <% else %>
-                              <% option_value_id.each do |option_number| %>
-                                <% unless option_number.empty? %>
-                                  <% option_value = OptionValue.find(option_number) %>
-                                  <li><%= option_value.name %></li>
-                                  <% food_price += option_value.price.to_i %>
+                            <!--Radio button-->
+                            <% if option_value_id.class == String %>
+                              <% option_value = OptionValue.find(option_value_id) %>
+                              <li><%= option_value.name %></li>
+                              <% food_price += option_value.price.to_i %>
+                            <!--Checkbox-->
+                            <% else %>
+                                <% option_value_id.each do |option_number| %>
+                                  <% unless option_number.empty? %>
+                                    <% option_value = OptionValue.find(option_number) %>
+                                    <li><%= option_value.name %></li>
+                                    <% food_price += option_value.price.to_i %>
+                                  <% end %>
                                 <% end %>
-                              <% end %>
+
+                            <% end %>
 
                           <% end %>
-
                         <% end %>
                       <% end %>
-                    <% end %>
-                    <% unless special.empty? %>
-                      <li><%= special %></li>
-                    <% end %>
-                  </ul>
-              <!--Option list end-->
+                      <% unless special.empty? %>
+                        <li><%= special %></li>
+                      <% end %>
+                    </ul>
+                <!--Option list end-->
 
-              </td>
-              <td class="col-md-2"><%= quantity %></td>
+                </td>
+                <td class="col-md-2"><%= quantity %></td>
+                <td class="col-md-2">
+                  <strong><%= food_price * quantity %> ฿</strong>
+                  <%= link_to line_delete_path(id: id), class: "btn" do %>
+                    <span class="glyphicon glyphicon-remove"></span>
+                  <% end %>
+                </td>
+                <% total += quantity * food_price %>
+              </tr>
+            <% end %>
+            <tr>
+              <td class="col-md-3"></td>
+              <td class="col-md-2"><b>Subtotal:</b></td>
+              <td class="col-md-2"><b><%= total %> ฿</b></td>
+            </tr>
+            <tr>
+              <td class="col-md-3"></td>
               <td class="col-md-2">
-                <strong><%= food_price * quantity %> ฿</strong>
-                <%= link_to line_delete_path(id: id), class: "btn" do %>
-                  <span class="glyphicon glyphicon-remove"></span>
+                <% unless @cart.empty? %>
+                  <%= link_to 'Empty Your Cart', cart_clear_path, class: "btn btn-default" %>
                 <% end %>
               </td>
-              <% total += quantity * food_price %>
+              <td class="col-md-2">
+                <% unless @cart.empty? %>
+                  <%= link_to "Checkout", checkout_path, class: "btn btn-danger" %>
+                <% end %>
+              </td>
             </tr>
-          <% end %>
-          <tr>
-            <td class="col-md-3"></td>
-            <td class="col-md-2"><b>Subtotal:</b></td>
-            <td class="col-md-2"><b><%= total %> ฿</b></td>
-          </tr>
-          <tr>
-            <td class="col-md-3"></td>
-            <td class="col-md-2">
-              <% unless @cart.empty? %>
-                <%= link_to 'Empty Your Cart', cart_clear_path, class: "btn btn-default" %>
-              <% end %>
-            </td>
-            <td class="col-md-2">
-              <% unless @cart.empty? %>
-                <%= link_to "Checkout", checkout_path, class: "btn btn-danger" %>
-              <% end %>
-            </td>
-          </tr>
-      </tbody>
-    </table>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>

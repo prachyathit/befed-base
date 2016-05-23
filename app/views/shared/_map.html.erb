@@ -1,5 +1,5 @@
 <%= form_for(:saddress, url: submit_saddress_path) do |f| %>
-  <%= f.text_field :faddress, class: "location form-control" %>
+  <%= f.text_field :faddress, class: "location form-control", placeholder: 'Enter your destination here' %>
   <%= f.hidden_field :latitude , class: "longitude" %>
   <%= f.hidden_field :longitude ,  class: "latitude" %>
   <div id="map-container" class="geomap">

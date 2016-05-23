@@ -363,10 +363,19 @@ div.container {
   width: 100%;
 }
 
+.alert {
+  margin-top: -8px;
+  margin-bottom: 10px;
+}
+
 .jumbotron-landing {
-  padding: 60px;
-  background-size: 100% auto;
-  // background-color: red;
+  padding: 150px;
+  background-size: 100% 100%;
+  background-color: #999;
+  background-blend-mode: multiply;
+  background-repeat:no-repeat;
+  margin-top: -10px;
+  height: 680px;
   background-image: image-url("landing_bg.png");
   background-repeat: repeat-y;
 }
@@ -461,6 +470,46 @@ background-color:rgba(255,255,255,0.5);d-color: #556068;
   background: white;
 }
 
+.location {
+  text-align: center;
+}
+
+.container-fluid.landing-page-pane {
+  padding: 0px;
+}
+
+.landing-pane-bg {
+  color: white;
+  text-align: center;
+  padding: 80px;
+  height: 680px;
+}
+
+.landing-pane {
+  background-color: #fff;
+  text-align: center;
+  padding: 80px;
+  height: 680px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  width: auto\9; /* ie8 */
+}
+
+.landing-pane-bg.red {
+  background-color: #EF665E;
+}
+
+.landing-pane-bg.black {
+  background-color: black;
+}
+
+.lading-pane-input {
+  width: 200px;
+}
+
 body {
   position: relative;
   margin: 0;
@@ -478,6 +527,17 @@ body {
   text-align: center;
 }
 
+
+.landing-title {
+  font-size: 40px;
+  letter-spacing: 5px;
+  font-weight: 100;
+  margin-bottom: 20px;
+}
+
+.gray-background {
+  background-color: #383737;
+}
 // Checkout related
 .order-checkout {
   margin-top: 10px;
@@ -597,5 +657,4 @@ body {
     background-color: #44A67C;
     border: none;
   }
-
 }

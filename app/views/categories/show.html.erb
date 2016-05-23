@@ -1,30 +1,30 @@
-<h1><%= @category.name %></h1>
-<h2>Select Restaurant</h2>
+<div class='container'>
+  <h1><%= @category.name %></h1>
+  <h2>Select Restaurant</h2>
 
-  <div class="container">
-    <div class="row">
-    <% @category_restaurants.each do |restaurant| %>
-      <div class="col-xs-12 col-sm-6">
+    <div class="container">
+      <div class="row">
+      <% @category_restaurants.each do |restaurant| %>
+        <div class="col-xs-12 col-sm-6">
 
-        <%= link_to restaurant_foods_path(restaurant_id: restaurant.id), class: "thumbnail center" do %>
-          <p><%= image_tag(restaurant.image_url, alt: "image", class: "rest-image center-block") %></p>
-          <p class="medium"><strong><%= restaurant.name %></strong></p>
-          <% if false %>
+          <%= link_to restaurant_foods_path(restaurant_id: restaurant.id), class: "thumbnail center" do %>
+            <p><%= image_tag(restaurant.image_url, alt: "image", class: "rest-image center-block") %></p>
+            <p class="medium"><strong><%= restaurant.name %></strong></p>
+            <% if false %>
 
-              <% restaurant.categories.each do |category| %>
-                <span class = "food-cat"><%= category.name %> &nbsp; </span>
-              <% end %>
+                <% restaurant.categories.each do |category| %>
+                  <span class = "food-cat"><%= category.name %> &nbsp; </span>
+                <% end %>
 
+            <% end %>
           <% end %>
-        <% end %>
+        </div>
+      <% end %>
       </div>
-    <% end %>
     </div>
-  </div>
 
-<% if user_admin? %>
-  <%= link_to 'Edit', edit_category_path(@category) %> |
-  <%= link_to 'Back', categories_path %>
-<% end %>
-
-
+  <% if user_admin? %>
+    <%= link_to 'Edit', edit_category_path(@category) %> |
+    <%= link_to 'Back', categories_path %>
+  <% end %>
+</div>
