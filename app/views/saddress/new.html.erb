@@ -10,18 +10,17 @@
 
 <div class='container-fluid landing-page-pane'>
   <div class='landing-pane-bg red'>
-    <h1>Enter delivery address</h1>
-    <img class='landing-image-row' src='<%= asset_path("input_field.png") %>'></img>
-    <p>Animation when a user types in address and display dropdown</p>
+    <div class='landing-title'>Enter delivery address</div>
+    <img class='landing-image-row' style='max-height: 450px;' src='<%= asset_path("input_map.png") %>'></img>
   </div>
 
-  <div class='landing-pane'>
-    <h1>Select Menu</h1>
-    <img class='landing-image-row' src='<%= asset_path("menu_img.png") %>'></img>
+  <div class='landing-pane theme-color'>
+    <div class='landing-title'>Select Menu</div>
+    <img class='landing-image-row' style='max-height: 500px;' src='<%= asset_path("menu_img.png") %>'></img>
   </div>
 
   <div class='landing-pane-bg black'>
-    <h1>Review & Pay</h1>
+    <div class='landing-title'>Review <span class="theme-color">&</span> Pay</div>
     <img class='landing-image-row' src='<%= asset_path("checkout_summary.png") %>'></img>
   </div>
 </div>
