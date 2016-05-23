@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   get 'sessions/new'
 
   root                  'saddress#new'
+  get     'privacy' =>  'static_pages#privacy'
   get     'help'    =>  'static_pages#help'
   get     'about'   =>  'static_pages#about'
   get     'contact' =>  'static_pages#contact'

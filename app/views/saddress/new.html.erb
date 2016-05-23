@@ -1,6 +1,10 @@
 <% provide(:hidden_title, 'Landing') %>
 
 <div class='jumbotron-landing'>
+  <div class="tagline center">
+    Food from Top Restaurants Near You <br>
+    Deliver with <span class="glyphicon glyphicon-heart" style="color:red;"></span>
+  </div>
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
       <%= render partial: "shared/map", locals: { button_name: "Feed me now!" } %>

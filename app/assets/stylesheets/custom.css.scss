@@ -375,19 +375,18 @@ div.container {
   background-blend-mode: multiply;
   background-repeat:no-repeat;
   margin-top: -10px;
-  height: 680px;
   background-image: image-url("landing_bg.png");
-  background-repeat: repeat-y;
+  background-size: cover;
+  min-height: 280px;
 }
 
 .tagline {
    /*stitching*/
- outline: 1px dashed $red-main;
- outline-offset: -5px;
-background-color:rgba(255,255,255,0.5);d-color: #556068;
-  color: black;
+
+/*background-color:rgba(0,0,0,0.5);d-color: #556068;*/
+  color: white;
   margin-bottom: 20px;
-  font-size: 1.6em;
+  font-size: 1.8em;
   padding-top: 10px;
   padding-bottom: 10px;
 
