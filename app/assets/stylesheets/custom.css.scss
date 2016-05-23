@@ -359,7 +359,7 @@ div.container {
 }
 
 .geomap {
-  height: 280px;
+  height: 200px;
   width: 100%;
 }
 
@@ -399,10 +399,6 @@ background-color:rgba(255,255,255,0.5);d-color: #556068;
   .jumbotron-landing {
     padding: 20px;
   }
-}
-
-.geomap {
-  margin-bottom: 15px;
 }
 
 .pac-container, .pac-item {
@@ -454,11 +450,9 @@ background-color:rgba(255,255,255,0.5);d-color: #556068;
 
 @media only screen and (min-width: 1090px) {
   .navbar-left {
-    margin-left: 190px;
+    margin-left: 13%;
   }
 }
-
-
 
 .theme-color {
   color: #EF665E;
@@ -533,6 +527,7 @@ body {
   text-align: center;
 }
 
+
 .landing-title {
   font-size: 40px;
   letter-spacing: 5px;
@@ -542,4 +537,124 @@ body {
 
 .gray-background {
   background-color: #383737;
+}
+// Checkout related
+.order-checkout {
+  margin-top: 10px;
+  margin-bottom: 30px;
+  .user-information-container {
+    margin-bottom: 20px;
+  }
+
+  @media only screen and (min-device-width: 1px) and (max-device-width: 630px) {
+    .order-summary-container {
+      width: 100%;
+    }
+    .user-information-container{
+      width: 100%;
+    }
+  }
+  .deliverying-to-container, .phone-info-container, .credit-card-payment-container {
+    margin-top: 30px;
+    margin-left: 30px;
+    .title {
+      font-size: 20px;
+      font-weight: 600;
+    }
+    .detail {
+      font-size: 16px;
+      font-weight: 300;
+    }
+  }
+
+  .order-summary {
+    border-radius: 6px;
+    border: 1px solid #f0f0f0;
+    .title {
+      font-size: 24px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      margin-left: 30px;
+      font-weight: 600;
+    }
+    .order-details {
+      margin-top: 30px;
+      margin-left: 70px;
+      margin-right: 70px;
+      @media only screen
+        and (min-device-width: 1px)
+        and (max-device-width: 630px) {
+        margin-right: 30px;
+        margin-left: 30px;
+      }
+      .total-items-container, .delivery-fee-container {
+        clear: both;
+        height: 35px;
+      }
+      .total-items, .delivery-fee {
+        float: left;
+        color: #878484;
+      }
+      .price, .delivery-price {
+        float: right;
+      }
+    }
+    .order-total {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: 700;
+    }
+    .order-items {
+      margin-left: 30px;
+      margin-right: 30px;
+      .order-item {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        .info {
+          width: 100%;
+          .name {
+            font-size: 16px;
+            width: 80%;
+            float: left;
+            color: #444;
+          }
+          .quantity {
+            padding-top:2px;
+            width: 10%;
+            color: #EF4E42;
+            float: right;
+            font-weight: 600;
+          }
+          .close-icon {
+            color: #CECBCB;
+            font-size: 11px;
+            font-weight: 100;
+            float:right;
+            width: 3%;
+            padding-top:4px;
+          }
+        }
+        .price {
+          color: #878484;
+          font-weight: 100;
+          clear:both;
+        }
+      }
+    }
+  }
+}
+
+.cash-payment-container {
+  height: 80px;
+  #cash-payment {
+    width: 200px;
+    margin: auto;
+  }
+
+  #pay-with-cash {
+    background-color: #44A67C;
+    border: none;
+  }
 }

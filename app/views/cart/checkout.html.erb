@@ -1,118 +1,81 @@
 <% provide(:hidden_title, 'clearmap') %>
-
 <div class='container'>
-  <h1>Checkout</h1>
-  <% total = 0 %>
-  <div>
-    <div class="table-responsive">
-      <table class="table">
-        <thead>
-          <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-
-          </tr>
-        </thead>
-        <tbody>
-          <% @cart.each do |id, order_info| %>
-            <% food_id = order_info["food_id"] %>
-            <% quantity = order_info["quantity"].to_i %>
-            <% special = order_info["special"] %>
-            <% options = order_info["options"] %>
-            <% food = Food.find(food_id) %>
-            <% food_price = food.price %>
-            <tr>
-              <td class="col-md-4">
-                <strong><%= food.name %></strong>
-
-
-                <!--Option list start-->
-                  <ul class="option-lists">
-                    <% unless options.nil? %>
-                      <% options.each do |option| %>
-                        <% option_value_id = option[1]["option_value_ids"] %>
-                          <% unless option_value_id.first.empty? %>
-
-                            <!--Radio button-->
-                            <% if option_value_id.class == String %>
-                              <% option_value = OptionValue.find(option_value_id) %>
-                              <li><%= option_value.name %></li>
-                              <% food_price += option_value.price.to_i %>
-                            <!--Checkbox-->
-                            <% else %>
-                                <% option_value_id.each do |option_number| %>
-                                  <% unless option_number.empty? %>
-                                    <% option_value = OptionValue.find(option_number) %>
-                                    <li><%= option_value.name %></li>
-                                    <% food_price += option_value.price.to_i %>
-                                  <% end %>
-                                <% end %>
-
-                            <% end %>
-
-                          <% end %>
-                        <% end %>
-                      <% end %>
-                      <% unless special.empty? %>
-                        <li><%= special %></li>
-                      <% end %>
-                    </ul>
-                <!--Option list end-->
-
-                </td>
-                <td class="col-md-2"><%= quantity %></td>
-                <td class="col-md-2">
-                  <strong><%= food_price * quantity %> ฿</strong>
-                  <%= link_to line_delete_path(id: id), class: "btn" do %>
-                    <span class="glyphicon glyphicon-remove"></span>
-                  <% end %>
-                </td>
-                <% total += quantity * food_price %>
-              </tr>
-            <% end %>
-            <tr>
-              <td class="col-md-3"></td>
-              <td class="col-md-2"><b>Delivery Fee</b></td>
-              <td class="col-md-2"><b>70 ฿</b></td>
-            </tr>
-            <tr>
-              <td class="col-md-3"></td>
-              <td class="col-md-2"><b>Subtotal:</b></td>
-              <td class="col-md-2"><b><%= total+70 %> ฿</b></td>
-            </tr>
-        </tbody>
-      </table>
-      <table class="table">
-        <tr>
-          <td class="col-md-2"></td>
-          <td class="col-md-2">Name:</td>
-          <td class="col-md-4"><%= @user.name %></td>
-        </tr>
-        <tr>
-          <td class="col-md-2"></td>
-          <td class="col-md-2">Contact Number:</td>
-          <td class="col-md-4"><%= @user.phone %></td>
-        </tr>
-        <tr>
-          <td class="col-md-2"></td>
-          <td class="col-md-2">Delivery Address:</td>
-          <td class="col-md-4"><%= @user.address %></td>
-        </tr>
-      </table>
-        <div class="geomap">
-          <div id="googleMap" class="geomap"></div>
+  <div class='row order-checkout'>
+    <div class='col-xs-6 user-information-container'>
+      <div class="geomap">
+        <div id="googleMap" class="geomap"></div>
+      </div>
+      <div class="deliverying-to-container">
+        <div class="title">
+          Delivering to
         </div>
+        <div class="detail">
+          <%= @user.address %>
+        </div>
+      </div>
+      <div class="phone-info-container">
+        <div class="title">
+          Phone
+        </div>
+        <div class="detail">
+          <%= @user.phone %>
+        </div>
+      </div>
+      <div class="credit-card-payment-container">
+        <div class="title">
+          Credit card payment <span class='theme-color' style="font-size:16px; font-weight: 200;">(Coming soon)</span>
+        </div>
+      </div>
+    </div>
+    <div class='col-xs-6 order-summary-container'>
+      <div class='order-summary'>
+        <div class='title'>
+          Your order
+        </div>
+        <div class='order-items'>
+          <% cumulative_quantity = 0 %>
+          <% total = 0 %>
+          <% @cart.each do |id, order_info| %>
+            <% food = Food.find(order_info["food_id"]) %>
+            <% quantity = order_info["quantity"].to_i %>
+
+            <% cumulative_quantity += quantity %>
+
+            <% options = order_info["options"] %>
+
+            <% @food_price = 0 %>
+
+            <%= render partial: 'shared/order_item', locals: { name: food.name, id: id, price: food.price, quantity: order_info["quantity"], options: options } %>
+
+            <% total += quantity * @food_price %>
+
+          <% end %>
+        </div>
+        <hr>
+        <% delivery_fee = 70 %>
+        <%= render partial: 'shared/order_details', locals: { cumulative_quantity: cumulative_quantity, total: total, delivery_fee: delivery_fee } %>
+        <hr>
+        <div class="order-total">
+          Order total <span class="theme-color">&nbsp;<%= "#{total + delivery_fee}฿" %></span>
+        </div>
+        <div class='cash-payment-container'>
+          <form id="cash-payment" class="form-horizontal" role="form" action='/checkout/complete' method='POST'>
+            <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+            <input type='hidden' name='payment_type' value='cash'>
+            <input type="submit" name="commit" value="Pay with cash" class="btn btn-danger" id="pay-with-cash">
+          </form>
+        </div>
+      </div>
     </div>
   </div>
-  <tr>
-    <%= render partial: "payment" %>
-  </tr>
 </div>
+
+
+
+  <%= render partial: "payment" if false%>
 
 <script>
 var myCenter=new google.maps.LatLng(<%= @user.latitude %>,<%= @user.longitude %>);
-
 function initialize()
 {
 var mapProp = {
@@ -121,15 +84,11 @@ var mapProp = {
   mapTypeId:google.maps.MapTypeId.ROADMAP,
   scrollwheel:false
   };
-
 var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-
 var marker=new google.maps.Marker({
   position:myCenter,
   });
-
 marker.setMap(map);
 }
-
 google.maps.event.addDomListener(window, 'load', initialize);
 </script>
