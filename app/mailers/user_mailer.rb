@@ -12,7 +12,7 @@ class UserMailer < ApplicationMailer
     @cart = cart
     @instruction = instruction
     subject_to_us = "Order from #{user.name}"
-    mail to: "prachyathit.k@gmail.com", subject: subject_to_us
+    mail to: "befedtoday@gmail.com", subject: subject_to_us
   end
 
   def password_reset(user)
