@@ -102,7 +102,7 @@ footer {
     list-style: none;
   }
   ul li {
-    float: left;
+    float: right;
     margin-left: 15px;
   }
 }
@@ -378,15 +378,13 @@ div.container {
   background-image: image-url("landing_bg.png");
   background-size: cover;
   min-height: 280px;
+  color: white;
 }
 
 .tagline {
-   /*stitching*/
-
-/*background-color:rgba(0,0,0,0.5);d-color: #556068;*/
   color: white;
   margin-bottom: 20px;
-  font-size: 1.8em;
+  font-size: 2.0em;
   padding-top: 10px;
   padding-bottom: 10px;
 
@@ -519,11 +517,12 @@ body {
 .footer {
   position: absolute;
   right: 0;
-  bottom: 0;
+  /*bottom: 0;*/
   left: 0;
   padding: 1rem;
   background-color: #efefef;
   text-align: center;
+  margin-top: 0;
 }
 
 
