@@ -377,8 +377,19 @@ div.container {
   margin-top: -10px;
   background-image: image-url("landing_bg.png");
   background-size: cover;
-  min-height: 280px;
+  min-height: 680px;
   color: white;
+}
+
+@media only screen and (min-device-width: 1px) and (max-device-width: 630px) {
+  .jumbotron-landing {
+    background-image: image-url("landing_bg_mobile.png");
+    height: 580px;
+    .landing-title {
+      font-size: 30px;
+      font-weight: 300;
+    }
+  }
 }
 
 .tagline {
@@ -478,15 +489,17 @@ div.container {
 .landing-pane-bg {
   color: white;
   text-align: center;
-  padding: 80px;
+  padding-top: 40px;
+  padding-left:10px;
+  padding-right: 10px;
   height: 680px;
 }
 
 .landing-pane {
   background-color: #fff;
   text-align: center;
-  padding: 80px;
   height: 680px;
+  padding-top: 40px;
 }
 
 img {
