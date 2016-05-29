@@ -21,6 +21,7 @@ class UsersController < ApplicationController
     if @user.save
       log_in @user
       flash[:success] = "Let's eat!"
+      
       redirect_back_or @user
     else
       render template: 'sessions/new'
@@ -50,7 +51,7 @@ class UsersController < ApplicationController
   private
 
     def user_params
-      params.require(:user).permit( :name, :email, :phone, :address,
+      params.require(:user).permit( :name, :email, :phone, :address, :dinstruction,
                                     :latitude, :longitude,
                                     :password, :password_confirmation)
     end
