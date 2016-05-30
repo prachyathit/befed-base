@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   get '/checkout' => 'cart#checkout'
   post '/checkout/complete' => 'cart#submit'
+  get '/checkout/complete' => 'saddress#new'
 
   get '/cart' => 'cart#index'
   get '/cart/clear' => 'cart#clear_cart'

@@ -1,16 +1,14 @@
 class UserMailer < ApplicationMailer
 
-  def delivery_confirmation(user, cart, instruction)
+  def delivery_confirmation(user, cart)
     @user = user
     @cart = cart
-    @instruction = instruction
     mail to: user.email, subject: "Delivery Confirmation"
   end
 
-  def order_placed(user, cart, instruction)
+  def order_placed(user, cart)
     @user = user
     @cart = cart
-    @instruction = instruction
     subject_to_us = "Order from #{user.name}"
     mail to: "befedtoday@gmail.com", subject: subject_to_us
   end

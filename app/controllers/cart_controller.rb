@@ -68,9 +68,8 @@ after_action :get_cart_size
           @cart = session[:cart]
           order = Order.process!(user: @user, cart: @cart)
           payment = create_new_payment!(order)
-          @instruction = params[:delivery_instruction]
-          UserMailer.delivery_confirmation(@user, @cart, @instruction).deliver_now
-          UserMailer.order_placed(@user, @cart, @instruction).deliver_now
+          UserMailer.delivery_confirmation(@user, @cart).deliver_now
+          UserMailer.order_placed(@user, @cart).deliver_now
           flash.now[:info] = "Email confirmation will be sent to you shortly"
           session[:cart] = nil
         end
