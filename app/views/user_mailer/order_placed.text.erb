@@ -6,7 +6,7 @@ Phone number: <%= @user.phone %>
 
 Address: <%= @user.address %>
 <% total = 0 %>
-Order Info
+Order Number <%= @order.id %>
 <% first_food_id = @cart["1"]["food_id"] %>
 <% first_food = Food.find(first_food_id) %>
 <% rest_id = first_food.restaurant_id %>
