@@ -62,7 +62,8 @@ after_action :get_cart_size
     @user = current_user
     rr11 = Restaurant.find(session[:restaurant_id])
     dbur = Geocoder::Calculations.distance_between([current_user.latitude,current_user.longitude], [rr11.latitude,rr11.longitude]) #Distance between current user and restuarant
-    if dbur <= 5
+    # if dbur <= 5
+    if true
       begin
         ActiveRecord::Base.transaction do
           @cart = session[:cart]
