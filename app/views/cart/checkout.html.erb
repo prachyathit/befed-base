@@ -21,11 +21,6 @@
           <%= @user.phone %>
         </div>
       </div>
-      <div class="credit-card-payment-container">
-        <div class="title">
-          <%= render partial: "payment" %>
-        </div>
-      </div>
     </div>
     <div class='col-xs-6 order-summary-container'>
       <div class='order-summary'>
@@ -58,6 +53,11 @@
         <div class="order-total">
           Order total <span class="theme-color">&nbsp;<%= "#{total + delivery_fee}฿" %></span>
         </div>
+      </div>
+    </div>
+    <div class="credit-card-payment-container row">
+      <div class="title">
+        <%= render partial: "payment" %>
       </div>
     </div>
   </div>
