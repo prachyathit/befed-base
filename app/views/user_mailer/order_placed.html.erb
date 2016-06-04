@@ -5,11 +5,14 @@
 <p>Phone number: <%= @user.phone %></p>
 
 <p>Address: <%= @user.address %></p>
+<p>Lat: <%= @user.latitude %></p>
+<p>Lng: <%= @user.longitude %></p>
 <% total = 0 %>
 <h1>Order Info</h1>
 <% first_food_id = @cart["1"]["food_id"] %>
 <% first_food = Food.find(first_food_id) %>
 <% rest_id = first_food.restaurant_id %>
+Order id: <%= @order.id %>
 <%= Restaurant.find(rest_id).name %>
 
     <table class="table">
@@ -83,4 +86,4 @@
     <p>Name: <%= @user.name %></p>
     <p>Contact Number: <%= @user.phone %></p>
     <p>Delivery Address: <%= @user.address %></p>
-    <p>Delivery Instruction: <%= @instruction %></p>
+    <p>Delivery Instruction: <%= @user.dinstruction %></p>

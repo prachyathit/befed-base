@@ -1,6 +1,10 @@
 <% provide(:hidden_title, 'Landing') %>
 
 <div class='jumbotron-landing'>
+  <div class="landing-title center">
+    Delicious Food<br>
+    Deliver with <span class="glyphicon glyphicon-heart" style="color:red;"></span>
+  </div>
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
       <%= render partial: "shared/map", locals: { button_name: "Feed me now!" } %>
@@ -10,17 +14,24 @@
 
 <div class='container-fluid landing-page-pane'>
   <div class='landing-pane-bg red'>
-    <div class='landing-title'>Enter delivery address</div>
-    <img class='landing-image-row' style='max-height: 450px;' src='<%= asset_path("input_map.png") %>'></img>
+    <div class='container' style="background-color: #EF665E;">
+      <div class='landing-title'>Enter delivery address</div>
+      <img class='landing-image-row' style='max-height: 500px;' src='<%= asset_path("input_map.png") %>'></img>
+    </div>
   </div>
 
   <div class='landing-pane theme-color'>
     <div class='landing-title'>Select Menu</div>
-    <img class='landing-image-row' style='max-height: 500px;' src='<%= asset_path("menu_img.png") %>'></img>
+    <img class='landing-image-row' style='max-height: 500px;' src='<%= asset_path("menu_img_mobile.png") %>'></img>
   </div>
 
   <div class='landing-pane-bg gray-background'>
     <div class='landing-title'>Review <span class="theme-color">&</span> Pay</div>
     <img class='landing-image-row' style='max-height: 500px;' src='<%= asset_path("checkout_summary.png") %>'></img>
+  </div>
+  
+  <div class='landing-pane feature theme-color'>
+    <div class='landing-title'>Deliver from</div>
+    <img class='landing-image-row' style='max-height: 300px;' src='<%= asset_path("salad_factory_logo.jpg") %>'></img>
   </div>
 </div>

@@ -10,6 +10,7 @@ Order Info
 <% first_food_id = @cart["1"]["food_id"] %>
 <% first_food = Food.find(first_food_id) %>
 <% rest_id = first_food.restaurant_id %>
+Order id: <%= @order.id %>
 <%= Restaurant.find(rest_id).name %>
 
 
@@ -71,4 +72,4 @@ Payment Method: Cash on delivery
 Name: <%= @user.name %>
 Contact Number: <%= @user.phone %>
 Delivery Address: <%= @user.address %>
-
+Delivery Instruction: <%= @user.dinstruction %>

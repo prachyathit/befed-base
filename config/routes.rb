@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   get '/checkout' => 'cart#checkout'
   post '/checkout/complete' => 'cart#submit'
+  get '/checkout/complete' => 'saddress#new'
 
   get '/cart' => 'cart#index'
   get '/cart/clear' => 'cart#clear_cart'
@@ -27,6 +28,8 @@ Rails.application.routes.draw do
   get 'sessions/new'
 
   root                  'saddress#new'
+  get     'terms' =>  'static_pages#terms'
+  get     'privacy' =>  'static_pages#privacy'
   get     'help'    =>  'static_pages#help'
   get     'about'   =>  'static_pages#about'
   get     'contact' =>  'static_pages#contact'
