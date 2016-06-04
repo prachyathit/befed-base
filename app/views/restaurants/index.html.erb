@@ -3,6 +3,7 @@
     <% @restaurants.each do |restaurant| %>
       <%= render partial: "shared/restaurant", locals: { restaurant: restaurant } %>
     <% end %>
+    <%= render partial: "shared/restaurant_coming_soon" %>
     <% if @restaurants.size==0 %>
       <h1>Stay tuned, we're coming to your area soon.</h1>
     <% end %>
