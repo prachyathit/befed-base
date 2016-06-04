@@ -62,7 +62,9 @@ $(document).ready(function() {
              $(".location").geocomplete("find", result.results[0].formatted_address);
            }
          })
-       }, null, timeoutOptions);
+       }, function() {
+         alert("We can't locate your current location. Please grant a permission in your browser to locate your device");
+       }, timeoutOptions);
      });
 
    });
