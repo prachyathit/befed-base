@@ -1,7 +1,7 @@
 <script src="https://cdn.omise.co/omise.js"></script>
 <script>
   $(document).ready(function() {
-    Omise.setPublicKey("pkey_test_53toly2ll40xt5cvmir");
+    Omise.setPublicKey('<%= ENV['omise_public_key']%>');
 
     $("#pay-with-cc").click(function () {
       // TODO make the following code work
