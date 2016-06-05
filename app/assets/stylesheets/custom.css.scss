@@ -223,7 +223,7 @@ a, a:hover {
 }
 
 .navbar-header .navbar-toggle .icon-bar {
-    background-color: black;
+    background-color: #777;
 }
 
 .dropdown-menu {
@@ -685,8 +685,20 @@ body {
   text-align: center;
 }
 
-a.return-to-menu {
+a.return-to-menu, a.edit-info {
   color: #EF665E;
   font-size: 14px;
   font-weight: 300;
+}
+
+.navbar-toggle a {
+  color: #EF665E;
+}
+
+#hamburger-navbar-icon {
+  margin-top: 8px;
+}
+
+.navbar-toggle {
+  margin-top: 5px;
 }
