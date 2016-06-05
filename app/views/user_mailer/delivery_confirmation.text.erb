@@ -1,15 +1,16 @@
 Delivery Confirmation
 
-<%= @user.name %>, Thank you for choosing us
+<%= @user.name %>, Thank you for ordering with Befed
 
-Your order has been placed. Your order will arrive at your doorstep in around 60 minutes.
+Your order will arrive at your doorstep in around 45 minutes.
 
-If you have any questions, please call 02-123-4567
+If you have any questions, please contact us at 092-276-4769
 <% total = 0 %>
 Order Info
 <% first_food_id = @cart["1"]["food_id"] %>
 <% first_food = Food.find(first_food_id) %>
 <% rest_id = first_food.restaurant_id %>
+Order id: <%= @order.id %>
 <%= Restaurant.find(rest_id).name %>
 
 
@@ -71,3 +72,4 @@ Payment Method: Cash on delivery
 Name: <%= @user.name %>
 Contact Number: <%= @user.phone %>
 Delivery Address: <%= @user.address %>
+Delivery Instruction: <%= @user.dinstruction %>

@@ -102,7 +102,7 @@ footer {
     list-style: none;
   }
   ul li {
-    float: left;
+    float: right;
     margin-left: 15px;
   }
 }
@@ -375,19 +375,27 @@ div.container {
   background-blend-mode: multiply;
   background-repeat:no-repeat;
   margin-top: -10px;
-  height: 680px;
   background-image: image-url("landing_bg.png");
-  background-repeat: repeat-y;
+  background-size: cover;
+  min-height: 680px;
+  color: white;
+}
+
+@media only screen and (min-device-width: 1px) and (max-device-width: 630px) {
+  .jumbotron-landing {
+    background-image: image-url("landing_bg_mobile.png");
+    height: 580px;
+    .landing-title {
+      font-size: 30px;
+      font-weight: 300;
+    }
+  }
 }
 
 .tagline {
-   /*stitching*/
- outline: 1px dashed $red-main;
- outline-offset: -5px;
-background-color:rgba(255,255,255,0.5);d-color: #556068;
-  color: black;
+  color: white;
   margin-bottom: 20px;
-  font-size: 1.6em;
+  font-size: 2.0em;
   padding-top: 10px;
   padding-bottom: 10px;
 
@@ -433,7 +441,6 @@ background-color:rgba(255,255,255,0.5);d-color: #556068;
 .subthai {
   font-size: 1em;
   letter-spacing: -1px;
-  text-align: center;
   font-weight: normal;
   color: $gray-light;
 }
@@ -481,15 +488,22 @@ background-color:rgba(255,255,255,0.5);d-color: #556068;
 .landing-pane-bg {
   color: white;
   text-align: center;
-  padding: 80px;
+  padding-top: 40px;
+  padding-left:10px;
+  padding-right: 10px;
   height: 680px;
 }
 
 .landing-pane {
   background-color: #fff;
   text-align: center;
-  padding: 80px;
   height: 680px;
+  padding-top: 40px;
+}
+
+.landing-pane.feature {
+  height: 480px;
+
 }
 
 img {
@@ -520,11 +534,12 @@ body {
 .footer {
   position: absolute;
   right: 0;
-  bottom: 0;
+  /*bottom: 0;*/
   left: 0;
   padding: 1rem;
   background-color: #efefef;
   text-align: center;
+  margin-top: 0;
 }
 
 
@@ -657,4 +672,21 @@ body {
     background-color: #44A67C;
     border: none;
   }
+}
+
+.phone-note {
+  color: #EF665E;
+  font-size: 0.7em;
+}
+
+.sign-up-title, .sign-in-title{
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+a.return-to-menu {
+  color: #EF665E;
+  font-size: 14px;
+  font-weight: 300;
 }

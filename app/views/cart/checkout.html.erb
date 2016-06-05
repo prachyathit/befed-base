@@ -8,9 +8,13 @@
       <div class="deliverying-to-container">
         <div class="title">
           Delivering to
+          <%= link_to "(Edit)", edit_user_path(current_user),  { :class=>"text-color" } %> 
         </div>
         <div class="detail">
           <%= @user.address %>
+        </div>
+        <div class="subthai">
+          <%= @user.dinstruction %>
         </div>
       </div>
       <div class="phone-info-container">
@@ -20,12 +24,16 @@
         <div class="detail">
           <%= @user.phone %>
         </div>
+        <div class="phone-note">
+          (*If this is your first order, we'll call you to verify the phone number.
+          Your order will not be processed until your phone number has been verified.)
+        </div>
       </div>
     </div>
     <div class='col-xs-6 order-summary-container'>
       <div class='order-summary'>
         <div class='title'>
-          Your order
+          Your order <%= link_to '(Return to menu)', restaurant_foods_path(session[:restaurant_id]),{ class: 'return-to-menu' } %>
         </div>
         <div class='order-items'>
           <% cumulative_quantity = 0 %>

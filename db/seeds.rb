@@ -27,7 +27,7 @@ end
                 feeding and production process. Every ingredient can be checked back to
                 its source to guarantee fresh, clean and safe food. We serve you only the
                 best as we always do for our family."
-  image_url = "https://i.imgur.com/4RZEYGB.jpg?1"
+  image_url = "https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/logo2.jpg"
   address = "Soi Mu Ban Mueang Thong Thani Khrongkan 6 Zone A, Tambon Ban Mai, Amphoe Pak Kret, Chang Wat Nonthaburi 11120, Thailand"
   Restaurant.create!( name: name,
                 desc: description,
@@ -41,7 +41,7 @@ end
                 feeding and production process. Every ingredient can be checked back to
                 its source to guarantee fresh, clean and safe food. We serve you only the
                 best as we always do for our family."
-  image_url = "https://i.imgur.com/4RZEYGB.jpg?1"
+  image_url = "https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/logo2.jpg"
   address = "Thanon Srisaman, Tambon Ban Mai, Amphoe Pak Kret, Chang Wat Nonthaburi 11120, Thailand"
   Restaurant.create!( name: name,
                 desc: description,
@@ -55,7 +55,7 @@ end
                 feeding and production process. Every ingredient can be checked back to
                 its source to guarantee fresh, clean and safe food. We serve you only the
                 best as we always do for our family."
-  image_url = "https://i.imgur.com/4RZEYGB.jpg?1"
+  image_url = "https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/logo2.jpg"
   address = "205 Pradit Manutham Road, Khwaeng Lat Phrao, Khet Lat Phrao, Krung Thep Maha Nakhon 10230, Thailand"
   Restaurant.create!( name: name,
                 desc: description,

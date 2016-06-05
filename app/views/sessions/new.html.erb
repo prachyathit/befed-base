@@ -6,6 +6,7 @@
   <% provide(:title, 'Log in') %>
     <div class="row">
       <div class="col-md-5 col-md-offset-1 form-container">
+        <div class='sign-in-title'>Returning User</div>
         <%= form_for(:session, url: login_path) do |f| %>
           <%= f.email_field :email, class: 'form-control', placeholder: 'Email' %>
 
@@ -18,12 +19,13 @@
       </div>
 
       <div class="col-md-5 form-container">
+        <div class='sign-up-title'>Create Account</div>
         <% prefill_address = session[:saddress]["faddress"] %>
         <%= form_for(:user, url: users_path) do |f| %>
           <% if @user %>
             <%= render 'shared/error_messages' %>
           <% end %>
-          
+
           <%= f.text_field :name, class: 'form-control', placeholder: 'Name' %>
 
           <%= f.email_field :email, class: 'form-control', placeholder: 'Email' %>
@@ -31,7 +33,9 @@
           <%= f.text_field :phone, class: 'form-control', placeholder: 'Phone Number' %>
 
           <%= f.text_field :address, class: "location form-control", value: prefill_address %>
-
+          
+          <%= f.text_field :dinstruction, class: "form-control", placeholder: 'Delivery Instruction' %>
+          
           <%= f.hidden_field :latitude , class: "longitude" %>
           <%= f.hidden_field :longitude ,  class: "latitude" %>
 

@@ -3,10 +3,14 @@
     <% @restaurants.each do |restaurant| %>
       <%= render partial: "shared/restaurant", locals: { restaurant: restaurant } %>
     <% end %>
+    <% if @restaurants.size==0 %>
+      <h1>Stay tuned, we're coming to your area soon.</h1>
+    <% end %>
   </div>
 
     <% if user_admin? %>
     <%= link_to 'New Restaurant', new_restaurant_path %>
     <% end %>
   </div>
+
 </div>
