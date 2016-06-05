@@ -16,7 +16,7 @@
           <%= link_to checkout_path do %>
             <i class="fa fa-shopping-bag fa-lg"></i>
             <span id="cartnum" class="text-color">
-              <%= pluralize(@cart_size, 'Item') %>
+              <%= @cart_size %>
             </span>
           <% end %>
         </span>
