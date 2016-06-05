@@ -6,8 +6,7 @@
     <div id="map" class="geomap"></div>
   </div>
   <div>
-    <span class="location-arrow-wrapper btn btn-danger"><i class="fa fa-location-arrow strong"></i></span>
-    <span class="spinning-icon-wrapper btn btn-danger hide"><i class="fa fa-spinner fa-spin strong"></i></span>
+    <%= render partial: "shared/map_auto_address" %>
     <span><%= f.submit "#{button_name}", class: "btn btn-danger map-submit" %></span>
   </div>
 <% end %>
