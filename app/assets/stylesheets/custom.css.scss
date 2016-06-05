@@ -371,7 +371,7 @@ div.container {
 .jumbotron-landing {
   padding: 150px;
   background-size: 100% 100%;
-  background-color: #999;
+  background-color: #777;
   background-blend-mode: multiply;
   background-repeat:no-repeat;
   margin-top: -10px;
@@ -702,4 +702,8 @@ a.return-to-menu, a.edit-info {
 .navbar-toggle {
   padding: 9px 6px;
   margin-top: 5px;
+}
+
+#saddress_faddress{
+  min-height: 50px;
 }
