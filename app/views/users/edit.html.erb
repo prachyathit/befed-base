@@ -20,13 +20,13 @@
         <%= f.label :phone %>
         <%= f.text_field :phone, class: 'form-control' %>
 
-        <%= f.label :address %>
+        <%= f.label "Delivery Location" %>
         <%= f.text_field :address, class: "location form-control" %>
         <div id="map-container" class="geomap">
           <div id="map" class="geomap"></div>
         </div>
 
-        <%= f.label "Delivery Instruction" %>
+        <%= f.label "Delivery Address Detail (optional)" %>
         <%= f.text_field :dinstruction, class: "form-control" %>
         
         <%= f.hidden_field :latitude , class: "longitude" %>
@@ -38,7 +38,7 @@
         <%= f.label :password_confirmation %>
         <%= f.password_field :password_confirmation, placeholder: 'Leave blank if no change', class: 'form-control' %>
 
-        <%= f.submit "Save changes", class: "btn btn-danger" %>
+        <%= f.submit "Submit changes", class: "btn btn-danger" %>
       <% end %>
     </div>
   </div>

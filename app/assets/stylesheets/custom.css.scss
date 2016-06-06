@@ -411,6 +411,14 @@ div.container {
   .jumbotron-landing {
     padding: 20px;
   }
+  .row {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .col-sm-12, .col-sm-6 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
 }
 
 .pac-container, .pac-item {
@@ -686,4 +694,18 @@ body {
   font-size: 24px;
   margin-bottom: 20px;
   text-align: center;
+}
+
+.ball {
+  display: block;
+  position: absolute;
+  left: -100px;
+  top: 400px;
+  opacity: 0;
+  width: 10px;
+  height: 10px;
+  background-color: $red-main;
+  -moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
 }
