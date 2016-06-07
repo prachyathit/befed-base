@@ -4,7 +4,7 @@
 
 <div class='container'>
   <% provide(:title, 'Log in') %>
-    <div class="row">
+    <div class="row default-background">
       <div class="col-md-6">
         <div class="form-container">
           <div class='sign-in-title'>Returning User</div>
@@ -22,7 +22,7 @@
 
       <div class="col-md-6">
         <div class="form-container">
-          <div class='sign-up-title'>Create Account</div>
+          <div class='sign-up-title'>New User</div>
           <% prefill_address = session[:saddress]["faddress"] %>
           <%= form_for(:user, url: users_path) do |f| %>
             <% if @user %>
