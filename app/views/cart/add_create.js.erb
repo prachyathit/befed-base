@@ -1,3 +1,18 @@
 $("#product-modal").modal("hide")
 $("#cartnum").html('<%= "#{@cart_size} Items" %>')
 $("#cartnum2").html('<%= "#{@cart_size} Items" %>')
+$(".ball")
+    .queue(function(){ 
+        $(this).css("opacity","1").dequeue();
+    })
+    .animate({
+      left: 20,
+      top: 20,
+    }, 800)
+    .queue(function(){ 
+        $(this).css("opacity","0").dequeue();
+    })
+    .animate({
+      left: -100,
+      top: 400,
+    }, 800)
