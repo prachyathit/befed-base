@@ -20,14 +20,14 @@
         <%= f.label :phone %>
         <%= f.text_field :phone, class: 'form-control' %>
 
-        <%= f.label :address %>
+        <%= f.label "Delivery Location" %>
         <%= f.text_field :address, class: "location form-control map-input" %>
         <div id="map-container" class="geomap">
           <div id="map" class="geomap"></div>
         </div>
 
-        <%= f.label "Delivery Instruction" %>
-        <%= f.text_field :dinstruction, class: "form-control" %>
+        <%= f.label "Delivery Address (Please provide additional detail in case your address from Delivery Location is incomplete or incorrect)" %>
+        <%= f.text_field :dinstruction, class: "form-control", placeholder:"e.g. บ้านเลขที่ 80 แยก 8" %>
 
         <%= f.hidden_field :latitude , class: "longitude" %>
         <%= f.hidden_field :longitude ,  class: "latitude" %>

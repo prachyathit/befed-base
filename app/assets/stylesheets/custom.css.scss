@@ -361,6 +361,14 @@ div.container {
 .geomap {
   height: 200px;
   width: 100%;
+  margin-bottom: 15px;
+}
+
+.geotext {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: white;
 }
 
 .alert {
@@ -434,7 +442,8 @@ div.container {
 
 @media only screen and (min-width: 768px) {
   .dropdown-location {
-    min-width: 300px;
+    min-width: 280px;
+    text-align: center;
   }
 }
 
@@ -478,7 +487,9 @@ div.container {
 }
 
 .location {
-  text-align: center;
+  display: inline-block;
+  width: 60%;
+  min-width: 220px;
 }
 
 .map-input.location {
@@ -708,10 +719,6 @@ a.return-to-menu, a.edit-info {
   margin-top: 5px;
 }
 
-#saddress_faddress{
-  min-height: 50px;
-}
-
 .menu-img {
   height: 200px;
 }
@@ -733,4 +740,13 @@ a.return-to-menu, a.edit-info {
 .payment-bar {
   padding-left: 30px;
   padding-right: 30px;
+}
+
+.delivery-detail {
+  color: $red-main;
+}
+
+.nopad {
+  padding-left: 0px;
+  padding-right: 0px;
 }

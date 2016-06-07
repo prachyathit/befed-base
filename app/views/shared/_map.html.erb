@@ -1,12 +1,13 @@
 <%= form_for(:saddress, url: submit_saddress_path) do |f| %>
-  <%= f.text_field :faddress, class: "location form-control", placeholder: 'Enter your destination here' %>
+    <%= render partial: "shared/map_auto_address" %>
+  <%= f.text_field :faddress, class: "location form-control", placeholder: 'Enter Delivery Location' %>
   <%= f.hidden_field :latitude , class: "longitude" %>
   <%= f.hidden_field :longitude ,  class: "latitude" %>
   <div id="map-container" class="geomap">
     <div id="map" class="geomap"></div>
   </div>
   <div>
-    <%= render partial: "shared/map_auto_address" %>
+
     <span><%= f.submit "#{button_name}", class: "btn btn-danger map-submit" %></span>
   </div>
 <% end %>
