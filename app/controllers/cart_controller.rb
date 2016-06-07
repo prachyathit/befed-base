@@ -14,7 +14,7 @@ after_action :get_cart_size
   end
 
   def add_create
-    line_id = session[:cart].size + 1
+    line_id = session[:cart].keys.last.to_i + 1
     session[:cart][line_id] = {}
     session[:cart][line_id][:food_id] = params[:food_id]
     session[:cart][line_id][:quantity] = params[:cart][:quantity]
