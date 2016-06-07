@@ -1,13 +1,13 @@
 <script src="https://cdn.omise.co/omise.js"></script>
 <script>
   $(document).ready(function() {
-    Omise.setPublicKey("pkey_test_53toly2ll40xt5cvmir");
+    Omise.setPublicKey('<%= ENV['omise_public_key']%>');
 
     $("#pay-with-cc").click(function () {
       // TODO make the following code work
       // TODO add display error message when response.object == "error"
       // some how it just didn't get the correct value yet
-
+      $('#cc-errors').innerHTML = '';
       var button = $(this);
       var form = $('#cc-payment');
 
@@ -31,8 +31,7 @@
       Omise.createToken("card", card, function (statusCode, response) {
         if (response.object == "error") {
           // Display an error message.
-          $("#token_errors").html(response.message);
-
+          $('#cc-errors').html(response.message);
           // Re-enable the submit button.
           button.find("input[type=button]").prop("disabled", false);
         } else {
@@ -53,6 +52,7 @@
   });
 </script>
 
+<div id='cc-errors'></div>
 <form id="cc-payment" class="form-horizontal" role="form" action='/checkout/complete' method='POST'>
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
   <input type="hidden" name="token">

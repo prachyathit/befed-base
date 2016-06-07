@@ -21,6 +21,8 @@ gem 'font-awesome-sass', '~> 4.6.2'
 # payment
 gem 'omise', github: 'omise/omise-ruby'
 
+gem 'figaro'
+
 group :development, :test do
   gem 'sqlite3', '1.3.9'
   gem 'pry-rails'
