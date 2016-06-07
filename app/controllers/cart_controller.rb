@@ -53,6 +53,7 @@ after_action :get_cart_size
       flash[:danger] = "Your cart is empty"
       render 'index'
     end
+    session[:forwarding_url] = checkout_url
     get_cart_size
 
   end
