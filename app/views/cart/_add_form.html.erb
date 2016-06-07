@@ -4,9 +4,7 @@
       <div class="modal-body">
         <ul class="errors"></ul>
         <div class="center"><h2><%= @food.name %> | <%= @food.price %> ฿</h2></div>
-        <% unless @food.image_url.empty? %>
-          <div class="jumbotron center-norep" style="background-image: url(<%= @food.image_url %>); "></div>
-        <% end %>
+        <div class="menu-img center-norep" style="background-image: url(<%= @food.image_url %>); "></div>
         <%= hidden_field_tag :food_id, @food_id %>
         <div class="form-group">
               <% @options.each do |option| %>

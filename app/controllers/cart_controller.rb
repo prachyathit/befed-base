@@ -104,20 +104,20 @@ after_action :get_cart_size
   end
 
 
-    # Confirms a logged-in user.
-    def logged_in_user
-      unless logged_in?
-        store_location
-        flash[:danger] = "Please log in"
-        redirect_to login_url
-      end
+  # Confirms a logged-in user.
+  def logged_in_user
+    unless logged_in?
+      store_location
+      flash[:danger] = "Please log in"
+      redirect_to login_url
     end
+  end
 
-    # Cart is empty?
-    def check_cart_status
-      unless session[:cart]
-        redirect_to root_url
-      end
+  # Cart is empty?
+  def check_cart_status
+    unless session[:cart]
+      redirect_to root_url
     end
+  end
 
 end
