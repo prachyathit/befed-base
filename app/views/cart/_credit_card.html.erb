@@ -53,11 +53,28 @@
 </script>
 
 <div id='cc-errors'></div>
-<form id="cc-payment" class="form-horizontal" role="form" action='/checkout/complete' method='POST'>
+
+<form id="cc-payment" class="form-horizontal light-border" role="form" action='/checkout/complete' method='POST'>
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
   <input type="hidden" name="token">
   <input type='hidden' name='payment_type' value='credit_card'>
   <fieldset style="margin: 30px">
+    <div class="form-group">
+      <label class="col-sm-3 control-label"></label>
+      <div class="col-sm-6">
+        <i class="fa fa-lock" aria-hidden="true"></i>
+        We use SSL encryption to protect your personal information, including your credit card information.
+      </div>
+      <div class="col-sm-3">
+        <img style='width: 100px', src='<%= asset_path("comodo_secure_seal_100x85_transp.png") %>'></img>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-3 control-label">We accept</label>
+      <div class="col-sm-9">
+        <img style='width: 200px', src='<%= asset_path("master-visa-jcb.png") %>'></img>
+      </div>
+    </div>
     <div class="form-group">
       <label class="col-sm-3 control-label" for="card-holder-name">Name on Card</label>
       <div class="col-sm-9">

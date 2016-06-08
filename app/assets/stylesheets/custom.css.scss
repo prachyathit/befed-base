@@ -764,3 +764,11 @@ a.return-to-menu, a.edit-info {
 .pay-with-cash-btn {
   max-width: 200px;
 }
+
+.light-border {
+  border: solid 1px #C0C0C0;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  margin-bottom: 15px;
+}
