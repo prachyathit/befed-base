@@ -772,3 +772,31 @@ a.return-to-menu, a.edit-info {
   -webkit-border-radius: 10px;
   margin-bottom: 15px;
 }
+
+.btn-remove {
+  padding-left: 6px;
+}
+
+.pad-cart {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+hr.style-one {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+    margin-bottom: 10px;
+}
+
+.close-icon-gen {
+  color: #CECBCB;
+  font-size: 14px;
+  font-weight: 100;
+}
+
+.quantity-gen {
+  color: #EF4E42;
+  font-weight: 600;
+}

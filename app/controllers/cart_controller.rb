@@ -31,7 +31,7 @@ after_action :get_cart_size
 
   def line_delete
     session[:cart].delete(params[:id])
-    redirect_to checkout_path
+    redirect_to cart_path
   end
 
   def index
