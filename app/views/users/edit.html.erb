@@ -19,10 +19,14 @@
 
         <%= f.label :phone %>
         <%= f.text_field :phone, class: 'form-control' %>
-
-        <%= f.label "Delivery Location" %>
-        <%= f.text_field :address, class: "location form-control map-input" %>
+        
+        <%= f.label "Delivery Location" %><br>
+        <%= render partial: "shared/map_auto_address" %>
+        <%= f.text_field :address, class: "location-update form-control", placeholder: 'Enter Delivery Location' %>
+        <%= f.hidden_field :latitude , class: "longitude" %>
+        <%= f.hidden_field :longitude ,  class: "latitude" %>
         <div id="map-container" class="geomap">
+          <div class="quantity-gen">Drag marker to fine-tune your location</div>
           <div id="map" class="geomap"></div>
         </div>
 
@@ -38,7 +42,7 @@
         <%= f.label :password_confirmation %>
         <%= f.password_field :password_confirmation, placeholder: 'Leave blank if no change', class: 'form-control' %>
 
-        <%= f.submit "Save changes", class: "btn btn-danger" %>
+        <%= f.submit "Save changes", class: "btn btn-danger margin-bot" %>
       <% end %>
     </div>
   </div>

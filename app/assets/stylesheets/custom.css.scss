@@ -496,6 +496,12 @@ div.container {
   min-width: 220px;
 }
 
+.location-update {
+  display: inline-block;
+  width: 85%;
+  float: right;
+}
+
 .map-input.location {
   text-align: left;
 }
@@ -799,4 +805,8 @@ hr.style-one {
 .quantity-gen {
   color: #EF4E42;
   font-weight: 600;
+}
+
+.margin-bot {
+  margin-bottom: 30px;
 }

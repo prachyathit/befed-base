@@ -1,9 +1,6 @@
-<script src="//maps.googleapis.com/maps/api/js?key=AIzaSyBLod8mAcjj-5mmficTg-cu2W-BhEu6Cgs&libraries=places" type="text/javascript"></script>
-<script src="//google-maps-utility-library-v3.googlecode.com/svn/tags/markerclustererplus/2.0.14/src/markerclusterer_packed.js" type="text/javascript"></script>
-<%= javascript_include_tag("reg_maps.js") %>
-
+<% provide(:title, 'Log in') %>
+<% provide(:hidden_title, 'Log in') %>
 <div class='container'>
-  <% provide(:title, 'Log in') %>
     <div class="row default-background">
       <div class="col-md-6">
         <div class="form-container">
@@ -34,13 +31,23 @@
             <%= f.email_field :email, class: 'form-control', placeholder: 'Email' %>
   
             <%= f.text_field :phone, class: 'form-control', placeholder: 'Phone Number' %>
-  
+            
+            <% unless prefill_address.nil? %>
             <%= f.hidden_field :address, class: "location form-control map-input", value: prefill_address%>
-  
+            <% else %>
+              <%= render partial: "shared/map_auto_address" %>
+              <%= f.text_field :address, class: "location-update form-control", placeholder: 'Enter Delivery Location' %>
+              <%= f.hidden_field :latitude , class: "longitude" %>
+              <%= f.hidden_field :longitude ,  class: "latitude" %>
+              <div id="map-container" class="geomap">
+                       <div class="quantity-gen">Drag marker to fine-tune your location</div>
+                <div id="map" class="geomap"></div>
+              </div>
+            <% end %>
             <%= f.hidden_field :latitude , class: "longitude" %>
             <%= f.hidden_field :longitude ,  class: "latitude" %>
   
-            <%= f.password_field :password, class: 'form-control', placeholder: 'Password' %>
+            <%= f.password_field :password, class: 'form-control', placeholder: 'Password (minimum 6 characters)' %>
   
             <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Password Confirmation' %>
   

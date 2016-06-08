@@ -4,11 +4,8 @@
   <%= f.hidden_field :latitude , class: "longitude" %>
   <%= f.hidden_field :longitude ,  class: "latitude" %>
   <div id="map-container" class="geomap">
-           <div>Drag marker to fine-tune your location</div>
-    <div id="map" class="geomap">
-
-    </div>
-   
+    <div class="quantity-gen">Drag marker to fine-tune your location</div>
+    <div id="map" class="geomap"></div>
   </div>
     <div><%= f.submit "#{button_name}", class: "btn btn-danger map-submit" %></div>
 
