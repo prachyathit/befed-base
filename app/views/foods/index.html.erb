@@ -1,5 +1,5 @@
 <% cat_number = 0 %>
-
+  <% provide(:title, @foods.first.restaurant.name) %>
 <div class="container">
   <div style="margin-top: 10px">
     <%= render partial: "shared/restaurant", locals: { restaurant: @foods.first.restaurant } %>
