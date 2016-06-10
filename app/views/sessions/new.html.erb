@@ -33,19 +33,47 @@
             <%= f.text_field :phone, class: 'form-control', placeholder: 'Phone Number' %>
             
             <% unless prefill_address.nil? %>
-            <%= f.hidden_field :address, class: "location form-control map-input", value: prefill_address%>
+              <%= f.hidden_field :address, class: "location form-control map-input", value: prefill_address %>
+              <%= f.hidden_field :latitude , class: "longitude", value: session[:saddress]["latitude"] %>
+              <%= f.hidden_field :longitude ,  class: "latitude", value: session[:saddress]["longitude"] %>
             <% else %>
-              <%= render partial: "shared/map_auto_address" %>
-              <%= f.text_field :address, class: "location-update form-control", placeholder: 'Enter Delivery Location' %>
-              <%= f.hidden_field :latitude , class: "longitude" %>
-              <%= f.hidden_field :longitude ,  class: "latitude" %>
-              <div id="map-container" class="geomap">
-                       <div class="quantity-gen">Drag marker to fine-tune your location</div>
-                <div id="map" class="geomap"></div>
-              </div>
+                     
+         <%= link_to "#", { :class => "showmap" } do %>
+          
+          <div class="edit-address btn btn-default text-color margin-bot-15"><%= "Enter Delivery Location" %></div>
+        <% end %>
+  <div class="center">
+  <div id="map-modal-edit" class="modal fade">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-header">
+        Please locate yourself to see the list of restaurants delivering to your location. <br>
+        กรุณาระบุที่อยู่ของคุณเพื่อหาร้านอาหารที่มีบริการส่งถึงคุณ
+      </div>
+      <div class="modal-content">
+
+        <button type="button" class="close" data-dismiss="modal"><i class="fa fa-close"></i></button>
+          <%= render partial: "shared/map_auto_address" %>
+          <%= f.text_field :address, class: "location form-control", placeholder: 'Enter Delivery Location', value: session[:saddress]["faddress"] %>
+          <%= f.hidden_field :latitude , class: "latitude", value: session[:saddress]["latitude"] %>
+          <%= f.hidden_field :longitude ,  class: "longitude", value: session[:saddress]["longitude"] %>
+          <div id="map-container" class="geomap">
+            <div class="drag-marker">Drag marker to fine-tune your location</div>
+            <div id="map" class="geomap"></div>
+                       <%= link_to edit_address_path, remote: true do %>
+              <button class="btn btn-danger map-submit">
+                Use this address
+              </button>
+           <% end %>
+          </div>
+ 
+         
+     </div>
+    </div>
+  </div>
+  </div>
             <% end %>
-            <%= f.hidden_field :latitude , class: "longitude" %>
-            <%= f.hidden_field :longitude ,  class: "latitude" %>
+            
+
   
             <%= f.password_field :password, class: 'form-control', placeholder: 'Password (minimum 6 characters)' %>
   

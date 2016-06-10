@@ -31,10 +31,17 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
   end
+  
+  def edit_address
+
+  end
 
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
+      session[:saddress][:faddress] = @user.address
+      session[:saddress][:latitude] = @user.latitude
+      session[:saddress][:longitude] = @user.longitude
       flash[:success] = "Profile updated"
       redirect_back_or @user
     else

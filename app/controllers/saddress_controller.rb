@@ -18,13 +18,9 @@ class SaddressController < ApplicationController
   end
   def create
     unless params[:saddress][:faddress].empty?
-      address = params[:saddress][:faddress]
-      result = Geocoder.search(address)
-      latitude = result[0].data["geometry"]["location"]["lat"]
-      longitude = result[0].data["geometry"]["location"]["lng"]
-      session[:saddress][:faddress] = address
-      session[:saddress][:latitude] = latitude
-      session[:saddress][:longitude] = longitude
+      session[:saddress][:faddress] = params[:saddress][:faddress]
+      session[:saddress][:latitude] = params[:saddress][:latitude]
+      session[:saddress][:longitude] = params[:saddress][:longitude]
       get_cart_size
       redirect_to restaurants_url
     else

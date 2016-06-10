@@ -28,22 +28,21 @@
 
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-left">
-        <!--Address-->
-        <% unless ["Landing", "Sign up", "Edit user", "clearmap", "Log in"].include? yield(:hidden_title)%>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle text-color" data-toggle="dropdown">
-              <i class="fa fa-map-marker fa-lg theme-color"></i>
-              <div class="address_header"><%= session[:saddress]["faddress"] %></div>
-              <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu dropdown-location">
-              <%= render partial: "shared/map", locals: { button_name: "Submit" } %>
-            </ul>
-          </li>
-        <% end %>
-        <!--Address END-->
+
       </ul>
       <ul class = "nav navbar-nav navbar-right">
+                <!--Address-->
+        <% unless ["Landing", "Sign up", "Edit user", "clearmap", "Log in"].include? yield(:hidden_title)%>
+           <li>
+          
+             <%= link_to "#", { :class => "showmap" } do %>
+                    <i class="fa fa-map-marker fa-lg theme-color"></i>
+              <div class="address_header text-color"><%= session[:saddress]["faddress"] %></div>
+              <% end %>
+              
+           </li>
+        <% end %>
+        <!--Address END-->
         <!--CART -->
         <% unless yield(:hidden_title) == "Landing" %>
           <% if session[:cart] %>

@@ -7,17 +7,17 @@ class User < ActiveRecord::Base
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
   validates :phone, presence: true, length: { minimum: 9 }
-  validates :address, presence: true
+  # validates :address, presence: true
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
   #Geolocation
-  validates :address , presence: true
+
   # after_validation :reverse_geocode
   # reverse_geocoded_by :latitude, :longitude, :address => :location
-  geocoded_by :address
-  reverse_geocoded_by :latitude, :longitude
-  after_validation :geocode, :reverse_geocode
+  # geocoded_by :address
+  # reverse_geocoded_by :latitude, :longitude
+  # after_validation :geocode, :reverse_geocode
 
   has_many :payments
   has_many :orders

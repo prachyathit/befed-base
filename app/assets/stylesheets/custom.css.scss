@@ -359,7 +359,7 @@ div.container {
 }
 
 .geomap {
-  height: 200px;
+  height: 400px;
   width: 100%;
   margin-bottom: 30px;
 }
@@ -809,4 +809,34 @@ hr.style-one {
 
 .margin-bot {
   margin-bottom: 30px;
+}
+
+.modal-content {
+  padding: 15px;
+}
+
+.modal-header {
+  border: none;
+  color: white;
+}
+
+.address-header {
+  margin-top: 8px;
+}
+
+.edit-address {
+  width: 100%;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.margin-bot-15 {
+  margin-bottom: 15px;
+}
+
+.drag-marker {
+  border: solid 1px;
+  color: #EF4E42;
+  font-weight: 600;
 }
