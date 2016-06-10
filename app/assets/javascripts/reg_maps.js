@@ -80,16 +80,16 @@ $(document).ready(function() {
            })
          }, function() {
             alert("We can't locate your current location. Please grant a permission in your browser to locate your device");
-           var map = $(".location").geocomplete("map");
-           google.maps.event.trigger(map, 'resize');
-           $.ajax({
-             url: "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + 13.910616 + "," + 100.539522,
-             success: function(result) {
-               $(".location-arrow-wrapper").removeClass("hide");
-               $(".spinning-icon-wrapper").addClass("hide");
-               $(".location").geocomplete("find", result.results[0].formatted_address);
-             }
-           })
+          // var map = $(".location").geocomplete("map");
+          // google.maps.event.trigger(map, 'resize');
+          // $.ajax({
+          //   url: "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + 13.910616 + "," + 100.539522,
+          //   success: function(result) {
+          //     $(".location-arrow-wrapper").removeClass("hide");
+          //     $(".spinning-icon-wrapper").addClass("hide");
+          //     $(".location").geocomplete("find", result.results[0].formatted_address);
+          //   }
+          // })
             
          }, timeoutOptions);
        } else {

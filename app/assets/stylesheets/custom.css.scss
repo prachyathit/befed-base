@@ -426,7 +426,10 @@ div.container {
     padding: 5px !important;
   }
   .geomap {
-    height: 300px;
+    height: 260px;
+  }
+  .pac-container {
+    max-width: 200px;
   }
 }
 

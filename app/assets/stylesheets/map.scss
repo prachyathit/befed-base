@@ -46,3 +46,8 @@
   z-index: 999;
 }
 
+@media only screen and (max-width: 768px) {
+  .tooltips:hover .tooltipstext {
+    visibility: hidden;
+  }
+}
