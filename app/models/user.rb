@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
 
   #Geolocation
-
+  # Geocoder gives wrong Latlng!!!!!!!!!!!!!
   # after_validation :reverse_geocode
   # reverse_geocoded_by :latitude, :longitude, :address => :location
   # geocoded_by :address
