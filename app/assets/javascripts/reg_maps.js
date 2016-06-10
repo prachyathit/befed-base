@@ -42,9 +42,9 @@ $(document).ready(function() {
         // google.maps.event.trigger(map, 'resize');
      });
 
-      // $("#map-container").hide();
-      // $("#map-modal").hide();
-      // $("#map-modal-edit").hide();   
+      $("#map-container").hide();
+      $("#map-modal").hide();
+      $("#map-modal-edit").hide();   
       $(".location").on("change", function() {
         
                $("#map-modal").modal("show")
