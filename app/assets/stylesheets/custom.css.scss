@@ -361,7 +361,7 @@ div.container {
 .geomap {
   height: 400px;
   width: 100%;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .geotext {
@@ -418,6 +418,15 @@ div.container {
   .row {
     margin-left: 0px;
     margin-right: 0px;
+  }
+  .modal-header {
+    padding: 5px;
+  }
+  .modal-content {
+    padding: 5px !important;
+  }
+  .geomap {
+    height: 300px;
   }
 }
 

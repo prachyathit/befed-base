@@ -2,7 +2,7 @@
     <div class="modal-dialog modal-lg">
       <div class="modal-header">
         Please locate yourself to see the list of restaurants delivering to your location.<br>
-        กรุณาระบุที่อยู่ของคุณเพื่อค้นหาร้านอาหารที่มีบริการส่งถึงคุณ
+        <div class="hide-mobile">กรุณาระบุที่อยู่ของคุณเพื่อค้นหาร้านอาหารที่มีบริการส่งถึงคุณ</div>
       </div>
       <div class="modal-content">
 <%= form_for(:saddress, url: submit_saddress_path) do |f| %>
