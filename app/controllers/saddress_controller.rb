@@ -4,16 +4,9 @@ class SaddressController < ApplicationController
       session[:saddress] = {}
     end
     if logged_in?
-      address = current_user.address
-      result = Geocoder.search(address)
-      unless result.empty?
-        latitude = result[0].data["geometry"]["location"]["lat"]
-        longitude = result[0].data["geometry"]["location"]["lng"]
-        session[:saddress][:faddress] = address
-        session[:saddress][:latitude] = latitude
-        session[:saddress][:longitude] = longitude
-      end
-      redirect_to restaurants_url
+      session[:saddress][:faddress] = current_user.address
+      session[:saddress][:latitude] = current_user.latitude
+      session[:saddress][:longitude] = current_user.longitude
     end
   end
   def create

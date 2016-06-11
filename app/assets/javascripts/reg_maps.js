@@ -85,8 +85,8 @@ $(document).ready(function() {
           // $.ajax({
           //   url: "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + 13.910616 + "," + 100.539522,
           //   success: function(result) {
-          //     $(".location-arrow-wrapper").removeClass("hide");
-          //     $(".spinning-icon-wrapper").addClass("hide");
+              $(".location-arrow-wrapper").removeClass("hide");
+              $(".spinning-icon-wrapper").addClass("hide");
           //     $(".location").geocomplete("find", result.results[0].formatted_address);
           //   }
           // })
