@@ -16,7 +16,7 @@
       <% food = Food.find(food_id) %>
       <% food_price = food.price %>
       <div class="row pad-cart">
-        <div class="col-xs-7">
+        <div class="pad-col col-xs-7">
           <%= food.name %>
           <!--Option list start-->
           <ul class="option-lists">
@@ -49,13 +49,13 @@
           </ul>
           <!--Option list end-->
         </div>
-        <div class="col-xs-1 text-right quantity-gen"><%= quantity %></div>
-        <div class="col-xs-1 text-right">
+        <div class="pad-col col-xs-1 text-right quantity-gen"><%= quantity %></div>
+        <div class="pad-col col-xs-1 text-right">
             <%= link_to line_delete_path(id: id), class: "btn-remove" do %>
               <i class="fa fa-close fa-sm close-icon-gen"></i>
             <% end %>
         </div>
-        <div class="col-xs-3 text-right">
+        <div class="pad-col col-xs-3 text-right">
             <strong><%= food_price * quantity %> ฿</strong>
 
         </div>
@@ -64,31 +64,29 @@
       </div>
     <% end %>
     <div class="row">
-      <div class="col-xs-7"></div>
-      <div class="col-xs-2 text-right">Delivery Fee</div>
-      <div class="col-xs-3 text-right"><b>70 ฿</b></div>
+      <div class="pad-col col-xs-9 text-right">Delivery Fee</div>
+      <div class="pad-col col-xs-3 text-right"><b>70 ฿</b></div>
     </div>
        <% total += 70 %>
     <div class="row">
-      <div class="col-xs-7"></div>
-      <div class="col-xs-2 text-right"><b>Total</b></div>
-      <div class="col-xs-3 text-right"><b><%= total %> ฿</b></div>
+      <div class="pad-col col-xs-9 text-right"><b>Total</b></div>
+      <div class="pad-col col-xs-3 text-right"><b><%= total %> ฿</b></div>
     </div>
     <div class="row">
       <hr class="style-one">
     </div>
     <div class="row">
-      <div class="col-xs-4 text-center">
+      <div class="pad-col col-xs-4 text-center">
         <% unless @cart.empty? %>
           <%= link_to 'Clear Cart', cart_clear_path, class: "btn btn-default" %>
         <% end %>
       </div>
-      <div class="col-xs-4 text-center">
-   
-          <%= link_to 'Back to menu', restaurant_foods_path(session[:restaurant_id]), class: "btn btn-warning" %>
-
+      <div class="pad-col col-xs-4 text-center">
+          <%= link_to restaurant_foods_path(session[:restaurant_id]), class: "btn btn-warning" do %>
+            Back <span class="hide-mobile"> to menu</span>
+          <% end %>
       </div>
-      <div class="col-xs-4 text-center">
+      <div class="pad-col col-xs-4 text-center">
         <% unless @cart.empty? %>
           <%= link_to "Checkout", checkout_path, class: "btn btn-danger" %>
         <% end %>

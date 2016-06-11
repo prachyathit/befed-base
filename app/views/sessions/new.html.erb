@@ -2,7 +2,7 @@
 <% provide(:hidden_title, 'Log in') %>
 <div class='container'>
     <div class="row default-background">
-      <div class="col-md-6">
+      <div class="pad-col col-md-6">
         <div class="form-container">
           <div class='sign-in-title'>Returning User</div>
           <%= form_for(:session, url: login_path) do |f| %>
@@ -17,7 +17,7 @@
 
       </div>
 
-      <div class="col-md-6">
+      <div class="pad-col col-md-6">
         <div class="form-container">
           <div class='sign-up-title'>New User</div>
           <% prefill_address = session[:saddress]["faddress"] %>
