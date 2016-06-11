@@ -15,7 +15,7 @@ $(document).ready(function() {
         $('.latitude').val(result.geometry.location.lat());
         $('.longitude').val(result.geometry.location.lng());
         var map = $(".location").geocomplete("map");
-        map.setZoom(18);
+        map.setZoom(16);
         map.setCenter(result.geometry.location);
       });
 

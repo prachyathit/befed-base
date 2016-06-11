@@ -7,6 +7,7 @@ class SaddressController < ApplicationController
       session[:saddress][:faddress] = current_user.address
       session[:saddress][:latitude] = current_user.latitude
       session[:saddress][:longitude] = current_user.longitude
+      redirect_to restaurants_url
     end
   end
   def create
