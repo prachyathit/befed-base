@@ -4,13 +4,16 @@
     <div class="row default-background">
       <div class="pad-col col-md-6">
         <div class="form-container">
-          <div class='sign-in-title'>Returning User</div>
+          <div class='sign-in-title'>
+            Returning User<br>
+            <span class='subthai'>เข้าสู่ระบบ</span>
+          </div>
           <%= form_for(:session, url: login_path) do |f| %>
             <%= f.email_field :email, class: 'form-control', placeholder: 'Email' %>
   
             <%= f.password_field :password, class: 'form-control', placeholder: 'Password'  %>
   
-            <button type='submit' class='btn form-btn form-control'><i class="fa fa-sign-in btn-icon fa-sm"></i>Sign In</button>
+            <button type='submit' class='btn form-btn form-control'><i class="fa fa-sign-in btn-icon fa-sm"></i>Log In</button>
             <p id='password-link'>Forgot password? <span id='forgot-password'><a href='/password_resets/new'>Click to reset your password</a></span><p>
           <% end %>
         </div>
@@ -19,7 +22,10 @@
 
       <div class="pad-col col-md-6">
         <div class="form-container">
-          <div class='sign-up-title'>New User</div>
+          <div class='sign-up-title'>
+            New User<br>
+            <span class='subthai'>ลงทะเบียนกับเรา</span>
+          </div>
           <% prefill_address = session[:saddress]["faddress"] %>
           <%= form_for(:user, url: users_path) do |f| %>
             <% if @user %>
@@ -57,7 +63,7 @@
           <%= f.hidden_field :latitude , class: "latitude", value: session[:saddress]["latitude"] %>
           <%= f.hidden_field :longitude ,  class: "longitude", value: session[:saddress]["longitude"] %>
           <div id="map-container" class="geomap">
-            <div class="drag-marker">Drag marker to fine-tune your location</div>
+            <div class="quantity-gen">Drag marker to fine-tune your location</div>
             <div id="map" class="geomap"></div>
                        <%= link_to edit_address_path, remote: true do %>
               <button class="btn btn-danger map-submit">
