@@ -27,17 +27,18 @@
         <% end %>
       </div>
       <div class="form-group">
-        <%= f.label "Special Request : คำขอเพิ่มเติม", class: "control-label" %>
+        <%= f.label "Special Request : คำขอเพิ่มเติม", class: "control-label label-addform" %>
         <%= f.text_area :special, class: "form-control" %>
       </div>
       <div class="form-group">
  
-          <%= f.label "Quantity : จำนวน", class:"control-label" %>
+          <%= f.label "Quantity : จำนวน", class:"control-label label-addform" %>
           <div class="row">
-          <div class="col-xs-6">
+          <div class="col-xs-5">
           <%= f.number_field :quantity, in: 1..10, value: 1, class: "form-control" %>          
   </div>
-              <div class="col-xs-6">
+  <div class="col-xs-2"></div>
+              <div class="col-xs-5">
           <%= f.submit "Add to Cart", class: "btn btn-danger" %>
         </div>
         </div>

@@ -15,7 +15,7 @@
   color: #EF665E;
 }
 
-@media only screen and (min-width: 400px) {
+@media only screen and (min-width: 630px) {
   .restaurant-container {
     margin-left: 20px;
     margin-right: 20px;
@@ -62,14 +62,14 @@
 }
 
 @media only screen
-  and (min-device-width: 1px)
-  and (max-device-width: 630px) {
+  and (min-width: 1px)
+  and (max-width: 630px) {
   .restaurants-container {
     background-color: #f0f0f0;
   }
 
   .restaurant-container {
-    min-height: 400px;
+    // min-height: 400px;
     width:100%;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -104,13 +104,14 @@
       width: 100%;
       .title {
         margin-top: 10px;
-        margin-bottom: 30px;
+        margin-bottom: 10px;
         font-weight: 400;
         font-size: 22px;
         text-align: center;
       }
       .estimated-delivery, .delivery-hours {
         margin-top: 10px;
+        margin-bottom: 10px;
         font-weight: 200;
         font-size: 13px;
         color: #606060;
