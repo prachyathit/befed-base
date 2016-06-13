@@ -4,9 +4,11 @@ class SaddressController < ApplicationController
       session[:saddress] = {}
     end
     if logged_in?
-      session[:saddress][:faddress] = current_user.address
-      session[:saddress][:latitude] = current_user.latitude
-      session[:saddress][:longitude] = current_user.longitude
+      if session[:saddress]["faddress"].empty?
+        session[:saddress][:faddress] = current_user.address
+        session[:saddress][:latitude] = current_user.latitude
+        session[:saddress][:longitude] = current_user.longitude
+      end
       redirect_to restaurants_url
     end
   end
