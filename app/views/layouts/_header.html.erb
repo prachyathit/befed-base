@@ -10,7 +10,7 @@
         <span class="icon-bar"></span>
       </button>
       <% unless yield(:hidden_title) == "Landing"%>
-        <button type="button" class="navbar-toggle">
+        <button type="button" class="navbar-toggle scart">
           <% if session[:cart] %>
             <% get_cart_size %>
           <% end %>
@@ -50,7 +50,7 @@
           <% end %>
           <li class="hidden-xs">
             <div class="ball"></div>
-            <%= link_to cart_path do %>
+            <%= link_to cart_path, { :class => "scart" } do %>
               <i class="fa fa-shopping-bag fa-lg"></i>
               <span id="cartnum2" class="text-color">
                 <%= pluralize(@cart_size, 'Item') %>
