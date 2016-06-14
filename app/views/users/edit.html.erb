@@ -1,5 +1,3 @@
-<%= javascript_include_tag("reg_maps.js") %>
-
 <% provide(:title, 'Edit user') %>
 <% provide(:hidden_title, 'Edit user') %>
 
@@ -19,18 +17,43 @@
 
         <%= f.label :phone %>
         <%= f.text_field :phone, class: 'form-control' %>
+        
+        <%= f.label "Delivery Location" %><br>
+         <%= link_to "#", { :class => "showmap" } do %>
+          
+          <div class="edit-address btn btn-default text-color margin-bot-15"><%= session[:saddress]["faddress"] %></div>
+        <% end %>
+  <div class="center">
+  <div id="map-modal-edit" class="modal fade">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-header">
+        Edit your location <br>
+        กรุณาระบุที่อยู่ของคุณเพื่อค้นหาร้านอาหารที่มีบริการส่งถึงคุณ
+      </div>
+      <div class="modal-content">
 
-        <%= f.label :address %>
-        <%= f.text_field :address, class: "location form-control map-input" %>
-        <div id="map-container" class="geomap">
-          <div id="map" class="geomap"></div>
-        </div>
-
-        <%= f.label "Delivery Instruction" %>
-        <%= f.text_field :dinstruction, class: "form-control" %>
-
-        <%= f.hidden_field :latitude , class: "longitude" %>
-        <%= f.hidden_field :longitude ,  class: "latitude" %>
+        <button type="button" class="close" data-dismiss="modal"><i class="fa fa-close"></i></button>
+          <%= render partial: "shared/map_auto_address" %>
+          <%= f.text_field :address, class: "location form-control margin-bot-0", placeholder: 'Enter Delivery Location', value: session[:saddress]["faddress"] %>
+          <%= f.hidden_field :latitude , class: "latitude", value: session[:saddress]["latitude"] %>
+          <%= f.hidden_field :longitude ,  class: "longitude", value: session[:saddress]["longitude"] %>
+          <div id="map-container" class="geomap">
+            <div class="quantity-gen">Drag marker to fine-tune your location</div>
+            <div id="map" class="geomap"></div>
+              <%= link_to edit_address_path, remote: true do %>
+                <button class="btn btn-danger map-submit">
+                  Use this address
+                </button>
+              <% end %>
+          </div>
+           
+         
+     </div>
+    </div>
+  </div>
+</div>
+        <%= f.label "Delivery Address Details (Please provide additional details in case your address from Delivery Location is incomplete or incorrect)" %>
+        <%= f.text_field :dinstruction, class: "form-control", placeholder:"e.g. บ้านเลขที่ 80 แยก 8" %>
 
         <%= f.label :password %>
         <%= f.password_field :password, placeholder: 'Leave blank if no change', class: 'form-control' %>
@@ -38,7 +61,7 @@
         <%= f.label :password_confirmation %>
         <%= f.password_field :password_confirmation, placeholder: 'Leave blank if no change', class: 'form-control' %>
 
-        <%= f.submit "Save changes", class: "btn btn-danger" %>
+        <%= f.submit "Save changes", class: "btn btn-danger margin-bot" %>
       <% end %>
     </div>
   </div>

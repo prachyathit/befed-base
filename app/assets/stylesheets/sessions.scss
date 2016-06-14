@@ -9,7 +9,7 @@
 .form-container {
   background-color: white;
   margin-top: 30px;
-  margin-right: 20px;
+  margin-bottom: 30px;
   padding: 50px;
   border-radius: 6px;
   border: 1px solid #d0d0d0;
@@ -40,4 +40,10 @@
 
 .forgot-password-container {
   padding: 20px 15px;
+}
+
+@media only screen and (max-width: 768px) {
+  .form-container {
+    padding: 5px;
+  }
 }

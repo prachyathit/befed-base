@@ -7,6 +7,7 @@
       $("#cc-payment-button").removeClass('active');
       $("#cash-on-delivery").removeClass('hide');
       $("#cc-payment").addClass('hide');
+      $("#cc-errors").addClass('hide');
     });
 
     $("#cc-payment-button").click(function(e) {
@@ -15,6 +16,7 @@
       $("#cash-on-delivery-button").removeClass('active');
       $("#cc-payment").removeClass('hide');
       $("#cash-on-delivery").addClass('hide');
+      $("#cc-errors").removeClass('hide');
     });
   });
 </script>

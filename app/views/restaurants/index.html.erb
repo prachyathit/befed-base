@@ -1,4 +1,12 @@
 <div class="container">
+  <div class="center">
+    <%= render partial: "shared/map", locals: { button_name: "Find Restaurants" } %>
+  </div>
+  <% if @restaurants.size == 0 %>
+    <div class="center">
+      <h1>Sorry, we don't have restaurants delivering to your location yet.</h1>
+    </div>
+  <% end %>
   <div class='row restaurants-container'>
     <% @restaurants.each do |restaurant| %>
       <%= render partial: "shared/restaurant", locals: { restaurant: restaurant } %>

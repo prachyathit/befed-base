@@ -4,27 +4,19 @@ class SaddressController < ApplicationController
       session[:saddress] = {}
     end
     if logged_in?
-      address = current_user.address
-      result = Geocoder.search(address)
-      unless result.empty?
-        latitude = result[0].data["geometry"]["location"]["lat"]
-        longitude = result[0].data["geometry"]["location"]["lng"]
-        session[:saddress][:faddress] = address
-        session[:saddress][:latitude] = latitude
-        session[:saddress][:longitude] = longitude
+      if session[:saddress]["faddress"].empty?
+        session[:saddress][:faddress] = current_user.address
+        session[:saddress][:latitude] = current_user.latitude
+        session[:saddress][:longitude] = current_user.longitude
       end
       redirect_to restaurants_url
     end
   end
   def create
     unless params[:saddress][:faddress].empty?
-      address = params[:saddress][:faddress]
-      result = Geocoder.search(address)
-      latitude = result[0].data["geometry"]["location"]["lat"]
-      longitude = result[0].data["geometry"]["location"]["lng"]
-      session[:saddress][:faddress] = address
-      session[:saddress][:latitude] = latitude
-      session[:saddress][:longitude] = longitude
+      session[:saddress][:faddress] = params[:saddress][:faddress]
+      session[:saddress][:latitude] = params[:saddress][:latitude]
+      session[:saddress][:longitude] = params[:saddress][:longitude]
       get_cart_size
       redirect_to restaurants_url
     else

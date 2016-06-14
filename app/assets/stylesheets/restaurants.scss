@@ -15,11 +15,12 @@
   color: #EF665E;
 }
 
-@media only screen and (min-width: 400px) {
+@media only screen and (min-width: 630px) {
   .restaurant-container {
     margin-left: 20px;
     margin-right: 20px;
-    margin-bottom: 30px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     padding: 20px 50px 10px 50px;
     border: 1px solid #d2d2d2;
     border-radius: 6px;
@@ -61,14 +62,14 @@
 }
 
 @media only screen
-  and (min-device-width: 1px)
-  and (max-device-width: 630px) {
+  and (min-width: 1px)
+  and (max-width: 630px) {
   .restaurants-container {
     background-color: #f0f0f0;
   }
 
   .restaurant-container {
-    min-height: 400px;
+    // min-height: 400px;
     width:100%;
     margin-top: 10px;
     margin-bottom: 10px;
@@ -86,6 +87,7 @@
 
     .menu-slogan {
       margin-top: 22px;
+      margin-bottom: 22px;
       font-style: italic;
       font-size: 14px;
       font-weight: 100;
@@ -103,13 +105,14 @@
       width: 100%;
       .title {
         margin-top: 10px;
-        margin-bottom: 30px;
+        margin-bottom: 10px;
         font-weight: 400;
         font-size: 22px;
         text-align: center;
       }
       .estimated-delivery, .delivery-hours {
         margin-top: 10px;
+        margin-bottom: 10px;
         font-weight: 200;
         font-size: 13px;
         color: #606060;

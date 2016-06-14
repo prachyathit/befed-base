@@ -53,11 +53,28 @@
 </script>
 
 <div id='cc-errors'></div>
-<form id="cc-payment" class="form-horizontal" role="form" action='/checkout/complete' method='POST'>
+
+<form id="cc-payment" class="form-horizontal light-border" role="form" action='/checkout/complete' method='POST'>
   <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
   <input type="hidden" name="token">
   <input type='hidden' name='payment_type' value='credit_card'>
   <fieldset style="margin: 30px">
+    <div class="form-group">
+      <label class="col-sm-3 control-label"></label>
+      <div class="col-sm-6">
+        <i class="fa fa-lock" aria-hidden="true"></i>
+        We use SSL encryption to protect your personal information, including your credit card information.
+      </div>
+      <div class="col-sm-3">
+        <img style='width: 100px', src='<%= asset_path("comodo_secure_seal_100x85_transp.png") %>'></img>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-sm-3 control-label">We accept</label>
+      <div class="col-sm-9">
+        <img style='width: 200px', src='<%= asset_path("master-visa-jcb.png") %>'></img>
+      </div>
+    </div>
     <div class="form-group">
       <label class="col-sm-3 control-label" for="card-holder-name">Name on Card</label>
       <div class="col-sm-9">
@@ -72,9 +89,9 @@
     </div>
     <div class="form-group">
       <label class="col-sm-3 control-label" for="expiry-month">Expiration Date</label>
-      <div class="col-sm-9">
+      <div class="pad-col col-sm-9">
         <div class="row">
-          <div class="col-xs-3">
+          <div class="col-xs-6 col-md-3">
             <select class="form-control col-sm-2" name="expiry-month" id="expiry-month">
               <option>Month</option>
               <option value="01">Jan (01)</option>
@@ -91,7 +108,7 @@
               <option value="12">Dec (12)</option>
             </select>
           </div>
-          <div class="col-xs-3">
+          <div class="col-xs-6 col-md-3">
             <select class="form-control" name="expiry-year" id='expiry-year'>
               <option value="16">2016</option>
               <option value="17">2017</option>
@@ -116,7 +133,7 @@
     </div>
     <div class="form-group">
       <div class="col-sm-offset-3 col-sm-9">
-        <button type="button" class="btn btn-success" id="pay-with-cc">Pay Now</button>
+        <button type="button" class="btn btn-success" id="pay-with-cc">Submit Order</button>
       </div>
     </div>
   </fieldset>

@@ -39,8 +39,8 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 20px;
 }
 h1 {
-  font-size: 3em;
-  letter-spacing: -2px;
+  font-size: 2em;
+  letter-spacing: -1px;
   text-align: center;
 }
 h2 {
@@ -204,6 +204,10 @@ a, a:hover {
   text-decoration: none;
 }
 
+a:active {
+  text-decoration: none;
+}
+
 .rest-image {
   width: 100%;
   max-height: 280px;
@@ -359,8 +363,16 @@ div.container {
 }
 
 .geomap {
-  height: 200px;
+  height: 360px;
   width: 100%;
+  margin-bottom: 20px;
+}
+
+.geotext {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  color: white;
 }
 
 .alert {
@@ -407,6 +419,30 @@ div.container {
   .jumbotron-landing {
     padding: 20px;
   }
+  .row {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .modal-header {
+    padding: 5px;
+  }
+  .modal-content {
+    padding: 5px !important;
+  }
+  .geomap {
+    height: 260px;
+  }
+  .pac-container {
+    max-width: 200px;
+  }
+  .pad-col {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .payment-bar {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
 }
 
 .pac-container, .pac-item {
@@ -434,15 +470,16 @@ div.container {
 
 @media only screen and (min-width: 768px) {
   .dropdown-location {
-    min-width: 300px;
+    min-width: 280px;
+    text-align: center;
   }
 }
 
 .subthai {
-  font-size: 1em;
+  font-size: 18px;
   letter-spacing: -1px;
   font-weight: normal;
-  color: $gray-light;
+  color: #999;
 }
 
 .navbar .container {
@@ -478,7 +515,15 @@ div.container {
 }
 
 .location {
-  text-align: center;
+  display: inline-block;
+  width: 60%;
+  min-width: 220px;
+}
+
+.location-update {
+  display: inline-block;
+  width: 85%;
+  float: right;
 }
 
 .map-input.location {
@@ -708,6 +753,131 @@ a.return-to-menu, a.edit-info {
   margin-top: 5px;
 }
 
-#saddress_faddress{
-  min-height: 50px;
+.menu-img {
+  height: 200px;
+}
+
+.ball {
+  display: block;
+  position: absolute;
+  left: -100px;
+  top: 400px;
+  opacity: 0;
+  width: 10px;
+  height: 10px;
+  background-color: $red-main;
+  -moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.payment-bar {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.delivery-detail {
+  color: $red-main;
+}
+
+.nopad {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+#cc-errors {
+  color: red;
+  font-weight: bold;
+  text-align: center;
+}
+
+.pay-with-cash-btn {
+  max-width: 200px;
+}
+
+.light-border {
+  border: solid 1px #C0C0C0;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.btn-remove {
+  padding-left: 6px;
+}
+
+.pad-cart {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+hr.style-one {
+    border: 0;
+    height: 1px;
+    background: #333;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+    margin-bottom: 10px;
+}
+
+.close-icon-gen {
+  color: #CECBCB;
+  font-size: 14px;
+  font-weight: 100;
+}
+
+.quantity-gen {
+  color: #EF4E42;
+  font-weight: 600;
+}
+
+.margin-bot {
+  margin-bottom: 30px;
+}
+
+.modal-content {
+  padding: 15px;
+}
+
+.modal-header {
+  border: none;
+  color: white;
+}
+
+.address-header {
+  margin-top: 8px;
+}
+
+.edit-address {
+  width: 100%;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.margin-bot-15 {
+  margin-bottom: 15px;
+}
+
+.drag-marker {
+  border: solid 1px;
+  color: #EF4E42;
+  font-weight: 600;
+}
+
+.margin-bot-0 {
+  margin-bottom: 0;
+}
+
+.kanit {
+  font-family: 'Kanit', sans-serif;
+}
+
+.static-page {
+  padding: 20px;
+}
+
+.label-addform {
+  font-weight: normal;
+  margin-bottom: 10px;
 }

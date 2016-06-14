@@ -14,7 +14,7 @@ after_action :get_cart_size
   end
 
   def add_create
-    line_id = session[:cart].size + 1
+    line_id = session[:cart].keys.last.to_i + 1
     session[:cart][line_id] = {}
     session[:cart][line_id][:food_id] = params[:food_id]
     session[:cart][line_id][:quantity] = params[:cart][:quantity]
@@ -31,7 +31,7 @@ after_action :get_cart_size
 
   def line_delete
     session[:cart].delete(params[:id])
-    redirect_to checkout_path
+    redirect_to cart_path
   end
 
   def index
@@ -53,6 +53,7 @@ after_action :get_cart_size
       flash[:danger] = "Your cart is empty"
       render 'index'
     end
+    session[:forwarding_url] = checkout_url
     get_cart_size
 
   end
@@ -104,20 +105,20 @@ after_action :get_cart_size
   end
 
 
-    # Confirms a logged-in user.
-    def logged_in_user
-      unless logged_in?
-        store_location
-        flash[:danger] = "Please log in"
-        redirect_to login_url
-      end
+  # Confirms a logged-in user.
+  def logged_in_user
+    unless logged_in?
+      store_location
+      flash[:danger] = "Please log in"
+      redirect_to login_url
     end
+  end
 
-    # Cart is empty?
-    def check_cart_status
-      unless session[:cart]
-        redirect_to root_url
-      end
+  # Cart is empty?
+  def check_cart_status
+    unless session[:cart]
+      redirect_to root_url
     end
+  end
 
 end

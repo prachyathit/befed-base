@@ -1,2 +1,24 @@
 $("#product-modal").modal("hide")
-$("#cartnum").html('<%= "#{@cart_size} Items" %>')
+$("#cartnum").html('<%= "#{@cart_size}" %>')
+$("#cartnum2").html('<%= pluralize(@cart_size, 'Item') %>')
+<!--$(".ball")-->
+<!--    .queue(function(){ -->
+<!--        $(this).css("opacity","1").dequeue();-->
+<!--    })-->
+<!--    .animate({-->
+<!--      left: 20,-->
+<!--      top: 20,-->
+<!--    }, 800)-->
+<!--    .queue(function(){ -->
+<!--        $(this).css("opacity","0").dequeue();-->
+<!--    })-->
+<!--    .animate({-->
+<!--      left: -100,-->
+<!--      top: 400,-->
+<!--    }, 800)-->
+
+$(".scart").css({
+    "webkit-box-shadow" : "inset 0px -2px 0px 0px #ef5a50",
+    "moz-box-shadow" : "inset 0px -2px 0px 0px #ef5a50",
+    "box-shadow" : "inset 0px -2px 0px 0px #ef5a50"
+  })

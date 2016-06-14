@@ -8,13 +8,13 @@
       <div class="deliverying-to-container">
         <div class="title">
           Delivering to
-          <%= link_to "(Edit)", edit_user_path(current_user),  { :class=>"edit-info" } %> 
+          <%= link_to "(Edit/Add more detail)", edit_user_path(current_user),  { :class=>"edit-info" } %> 
         </div>
         <div class="detail">
           <%= @user.address %>
         </div>
-        <div class="subthai">
-          <%= @user.dinstruction %>
+        <div class="delivery-detail">
+          *<%= @user.dinstruction %>
         </div>
       </div>
       <div class="phone-info-container">
@@ -63,12 +63,13 @@
         </div>
       </div>
     </div>
-    <div class="credit-card-payment-container row">
-      <div class="title">
+  </div>
+    <div class="row">
+      <h2>Please select payment method and click Submit Order to complete your order</h2>
+      <div class="payment-bar">
         <%= render partial: "payment" %>
       </div>
     </div>
-  </div>
 </div>
 
 <script>

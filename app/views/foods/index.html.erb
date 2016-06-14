@@ -1,10 +1,13 @@
 <% cat_number = 0 %>
-
+  <% provide(:title, @foods.first.restaurant.name) %>
 <div class="container">
+    <div class="center">
+    <%= render partial: "shared/map", locals: { button_name: "Find Restaurants" } %>
+  </div>
   <div style="margin-top: 10px">
     <%= render partial: "shared/restaurant", locals: { restaurant: @foods.first.restaurant } %>
   </div>
-
+  <span class="glyphicon glyphicon-star-empty recommend pull-right">Recommended</span>
   <div class="row">
     <% @foods.each do |food| %>
         <% full_name = food.name %>
