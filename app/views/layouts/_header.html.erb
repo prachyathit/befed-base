@@ -48,9 +48,8 @@
           <% if session[:cart] %>
             <% get_cart_size %>
           <% end %>
-          <li class="hidden-xs">
-            <div class="ball"></div>
-            <%= link_to cart_path, { :class => "scart" } do %>
+          <li class="hidden-xs cart-link">
+            <%= link_to cart_path do %>
               <i class="fa fa-shopping-bag fa-lg"></i>
               <span id="cartnum2" class="text-color">
                 <%= pluralize(@cart_size, 'Item') %>

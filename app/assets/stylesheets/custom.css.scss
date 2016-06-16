@@ -757,20 +757,6 @@ a.return-to-menu, a.edit-info {
   height: 200px;
 }
 
-.ball {
-  display: block;
-  position: absolute;
-  left: -100px;
-  top: 400px;
-  opacity: 0;
-  width: 10px;
-  height: 10px;
-  background-color: $red-main;
-  -moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
-}
-
 .payment-bar {
   padding-left: 30px;
   padding-right: 30px;
