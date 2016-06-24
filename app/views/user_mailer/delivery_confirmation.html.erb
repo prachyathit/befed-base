@@ -1,88 +1,96 @@
-<h1>Delivery Confirmation</h1>
-
-<p><%= @user.name %>, Thank you for ordering with Befed</p>
-
-<p>Your order will arrive at your doorstep in around 45 minutes.</p>
-
-<p>If you have any questions, please contact us at 092-276-4769</p>
-
-<% total = 0 %>
-<h1>Order Info</h1>
-<% first_food_id = @cart["1"]["food_id"] %>
-<% first_food = Food.find(first_food_id) %>
-<% rest_id = first_food.restaurant_id %>
-<p>Order id: <%= @order.id %></p>
-<p><%= Restaurant.find(rest_id).name %></p>
-
-    <table class="table">
-
-        <% @cart.each do |id, order_info| %>
-          <% food_id = order_info["food_id"] %>
-          <% quantity = order_info["quantity"].to_i %>
-          <% special = order_info["special"] %>
-          <% options = order_info["options"] %>
-          <% food = Food.find(food_id) %>
-          <% food_price = food.price %>
-          <tr>
-            <td width="70%">
-              <strong><%= food.name %></strong>
-
-
-              <!--Option list start-->
-                <ul class="option-lists">
-                  <% unless options.nil? %>
-                    <% options.each do |option| %>
-                      <% option_value_id = option[1]["option_value_ids"] %>
-                        <% unless option_value_id.first.empty? %>
-
-                          <!--Radio button-->
-                          <% if option_value_id.class == String %>
-                            <% option_value = OptionValue.find(option_value_id) %>
-                            <li><%= option_value.name %></li>
-                            <% food_price += option_value.price.to_i %>
-                          <!--Checkbox-->
-                          <% else %>
-                              <% option_value_id.each do |option_number| %>
-                                <% unless option_number.empty? %>
-                                  <% option_value = OptionValue.find(option_number) %>
-                                  <li><%= option_value.name %></li>
-                                  <% food_price += option_value.price.to_i %>
-                                <% end %>
-                              <% end %>
-
-                          <% end %>
-
-                        <% end %>
-                      <% end %>
-                    <% end %>
-                    <% unless special.empty? %>
-                      <li><%= special %></li>
-                    <% end %>
-                  </ul>
-              <!--Option list end-->
-
-              </td>
-              <td width="10%"><%= quantity %></td>
-              <td>
-                <strong><%= food_price * quantity %> ฿</strong>
-              </td width="20%">
-              <% total += quantity * food_price %>
-            </tr>
-          <% end %>
-          <tr>
-            <td width="70%"></td>
-            <td width="10%"><b>Delivery Fee</b></td>
-            <td width="20%"><b>70 ฿</b></td>
-          </tr>
-          <tr>
-            <td width="70%"></td>
-            <td width="10%"><b>Subtotal:</b></td>
-            <td width="20%"><b><%= total+70 %> ฿</b></td>
-          </tr>
-      </tbody>
-    </table>
-    <p>Payment Method: Cash on delivery</p>
+<div style="background-color: #f0f0f0; font-family: 'Helvetica;">
+  <div style="width: 80%">
+    <div style="background-color: white; height: 100px; text-align: center;">
+      <img alt = 'Befed Logo' style = 'max-width: 100px;' src='<%= asset_path("logoBefed.jpg") %>'>
+    </div>
+    <h1>Delivery Confirmation</h1>
+    <p><%= @user.name %>, Thank you for ordering with Befed</p>
+    <p>The estimated delivery time for your order is 45 minutes.</p>
+    <p>If you have any questions, please contact us at 092-276-4769</p>
+    <h1>Customer Information</h1>
     <p>Name: <%= @user.name %></p>
     <p>Contact Number: <%= @user.phone %></p>
     <p>Delivery Address: <%= @user.address %></p>
     <p>Delivery Instruction: <%= @user.dinstruction %></p>
+
+    <% total = 0 %>
+    <h1>Order Information</h1>
+    <% first_food_id = @cart["1"]["food_id"] %>
+    <% first_food = Food.find(first_food_id) %>
+    <% rest_id = first_food.restaurant_id %>
+    <p>Order id: <%= @order.id %></p>
+    <p>Order from: <%= Restaurant.find(rest_id).name %></p>
+    
+    <table style="width: 100%; border: 1px solid #f0f0f0; border-radius: 6px;">
+
+      <% @cart.each do |id, order_info| %>
+        <% food_id = order_info["food_id"] %>
+        <% quantity = order_info["quantity"].to_i %>
+        <% special = order_info["special"] %>
+        <% options = order_info["options"] %>
+        <% food = Food.find(food_id) %>
+        <% food_price = food.price %>
+      <tr>
+        <td width="70%">
+          <strong><%= food.name %></strong>
+  
+  
+          <!--Option list start-->
+            <ul class="option-lists">
+              <% unless options.nil? %>
+                <% options.each do |option| %>
+                  <% option_value_id = option[1]["option_value_ids"] %>
+                    <% unless option_value_id.first.empty? %>
+  
+                      <!--Radio button-->
+                      <% if option_value_id.class == String %>
+                        <% option_value = OptionValue.find(option_value_id) %>
+                        <li><%= option_value.name %></li>
+                        <% food_price += option_value.price.to_i %>
+                      <!--Checkbox-->
+                      <% else %>
+                          <% option_value_id.each do |option_number| %>
+                            <% unless option_number.empty? %>
+                              <% option_value = OptionValue.find(option_number) %>
+                              <li><%= option_value.name %></li>
+                              <% food_price += option_value.price.to_i %>
+                            <% end %>
+                          <% end %>
+  
+                      <% end %>
+  
+                    <% end %>
+                  <% end %>
+                <% end %>
+                <% unless special.empty? %>
+                  <li><%= special %></li>
+                <% end %>
+              </ul>
+          <!--Option list end-->
+  
+          </td>
+          <td width="10%"><%= quantity %></td>
+          <td>
+            <strong><%= food_price * quantity %> ฿</strong>
+          </td width="20%">
+          <% total += quantity * food_price %>
+        </tr>
+      <% end %>
+      <tr>
+        <td width="70%"></td>
+        <td width="10%"><b>Delivery Fee</b></td>
+        <td width="20%"><b>50 ฿</b></td>
+      </tr>
+      <tr>
+        <td width="70%"></td>
+        <td width="10%"><b>Subtotal:</b></td>
+        <td width="20%"><b><%= total+50 %> ฿</b></td>
+      </tr>
+    </table>
+    <div style="background-color: #383737; height: 60px; color: #f0f0f0; text-align: right; font-size: 0.7em;">
+      Befed Technology Co., Ltd.<br>
+      84 Ladprao 114 Rd. Wangthonglang<br>
+      Bangkok, Thailand 10310<br>
+    </div>
+  </div>
+</div>
