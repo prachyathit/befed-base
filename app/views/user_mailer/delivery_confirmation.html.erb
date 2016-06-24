@@ -1,7 +1,7 @@
 <div style="background-color: #f0f0f0; font-family: 'Helvetica;">
   <div style="width: 80%">
     <div style="background-color: white; height: 100px; text-align: center;">
-      <img alt = 'Befed Logo' style = 'max-width: 100px;' src='<%= asset_path("logoBefed.jpg") %>'>
+      <%= image_tag attachments['logo01.png'].url, alt: 'Befed Logo' %>
     </div>
     <h1>Delivery Confirmation</h1>
     <p><%= @user.name %>, Thank you for ordering with Befed</p>
