@@ -1,7 +1,8 @@
 class UserMailer < ApplicationMailer
 
   def delivery_confirmation(user, cart, order)
-    attachments.inline['logo01.png'] = File.read('assets/images/logo01.png')
+    debugger
+    attachments.inline['logo01.png'] = File.read(Rails.root + 'app/assets/images/logo01.png')
     @user = user
     @cart = cart
     @order = order
