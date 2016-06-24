@@ -7,23 +7,15 @@
         <p><%= @user.name %>, Thank you for ordering with Befed</p>
         <p>The estimated delivery time for your order is 45 minutes.</p>
         <p>If you have any questions, please contact us at 092-276-4769</p>
-      </td>
-    </tr>
-    
-    <tr style="background-color: white; text-align: center">
-      <td colspan="3">
+
         <h1>Customer Information</h1>
         <p>Name: <%= @user.name %></p>
         <p>Contact Number: <%= @user.phone %></p>
         <p>Delivery Address: <%= @user.address %></p>
         <p>Delivery Instruction: <%= @user.dinstruction %></p>
-      </td>
-    </tr>
-    
+
     <% total = 0 %>
 
-    <tr style="background-color: white; text-align: center">
-      <td colspan="3">    
         <h1>Order Information</h1>
         <% first_food_id = @cart["1"]["food_id"] %>
         <% first_food = Food.find(first_food_id) %>
@@ -79,22 +71,22 @@
         <!--Option list end-->
 
         </td>
-        <td width="10%"><%= quantity %></td>
-        <td>
+        <td width="10%" style="text-align: center"><%= quantity %></td>
+        <td width="20%" style="text-align: right">
           <strong><%= food_price * quantity %> ฿</strong>
-        </td width="20%">
+        </td>
         <% total += quantity * food_price %>
       </tr>
       <% end %>
       <tr style="background-color: white;">
         <td width="40%"></td>
-        <td width="30%"><b>Delivery Fee</b></td>
-        <td width="20%"><b>50 ฿</b></td>
+        <td width="30%" style="text-align: center"><b>Delivery Fee</b></td>
+        <td width="20%" style="text-align: right"><b>50 ฿</b></td>
       </tr>
       <tr style="background-color: white;">
         <td width="40%"></td>
-        <td width="30%"><b>Total:</b></td>
-        <td width="20%"><b><%= total+50 %> ฿</b></td>
+        <td width="30%" style="text-align: center"><b>Total</b></td>
+        <td width="20%" style="text-align: right"><b><%= total+50 %> ฿</b></td>
       </tr>
    
     <tr style="background-color: #383737; height: 60px;">
