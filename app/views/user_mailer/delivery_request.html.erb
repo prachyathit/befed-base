@@ -1,3 +1,4 @@
+<div style="border: 1px solid #f0f0f0; border-radius: 6px; padding: 5px">
 <h1>Order Information</h1>
 <% first_food_id = @cart["1"]["food_id"] %>
 <% first_food = Food.find(first_food_id) %>
@@ -72,8 +73,11 @@
 <p>Contact Number: <%= @user.phone %></p>
 <p>Delivery Address: <%= @user.address %></p>
 <p>Delivery Instruction: <%= @user.dinstruction %></p>
-
-    
+</div>
+<div style="padding-top: 6px; padding-bottom: 6px; text-align: center; background-color: #f0f0f0">
+  <span style="font-family: 'Helvetica'; margin-right: 10px; font-size: 1.7em; color: #EF5A50; text-transform: uppercase; font-weight: 700; letter-spacing: 2px;">BEFED</span>
+  <span style="font-family: 'Helvetica'; margin-right: 10px; font-size: 1.1em; color: #777777; letter-spacing: -1px;">Food Delivery</span>
+</div>     
    
     
 
