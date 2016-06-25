@@ -68,7 +68,7 @@ after_action :get_cart_size
       begin
         ActiveRecord::Base.transaction do
           @cart = session[:cart]
-          @order = Order.process!(user: @user, cart: @cart)
+          @order = Order.process!(user: @user, cart: @cart, payment_type: credit_card?)
           payment = create_new_payment!(@order)
           UserMailer.order_placed(@user, @cart, @order).deliver_now
           UserMailer.delivery_request(@user, @cart, @order).deliver_now

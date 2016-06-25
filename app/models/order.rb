@@ -10,7 +10,7 @@ class Order < ActiveRecord::Base
     self.new.tap do |order|
       order.user = params[:user]
       order.total = calculate_order_total(params[:cart])
-      if params[:payment_type] == Payment::CREDIT_CARD
+      if params[:payment_type]
         order.payment_type = 1
       else
         order.payment_type = 0
