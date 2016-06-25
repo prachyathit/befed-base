@@ -81,11 +81,13 @@
           <%= link_to 'Clear Cart', cart_clear_path, class: "btn btn-default" %>
         <% end %>
       </div>
-      <div class="pad-col col-xs-4 text-center">
-          <%= link_to restaurant_foods_path(session[:restaurant_id]), class: "btn btn-warning" do %>
-            Back <span class="hide-mobile"> to menu</span>
-          <% end %>
-      </div>
+      <% unless session[:restaurant_id].nil? %>
+        <div class="pad-col col-xs-4 text-center">
+            <%= link_to restaurant_foods_path(session[:restaurant_id]), class: "btn btn-warning" do %>
+              Back <span class="hide-mobile"> to menu</span>
+            <% end %>
+        </div>
+      <% end %>
       <div class="pad-col col-xs-4 text-center">
         <% unless @cart.empty? %>
           <%= link_to "Checkout", checkout_path, class: "btn btn-danger" %>
