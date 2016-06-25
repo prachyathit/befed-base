@@ -87,7 +87,14 @@ Order id: <%= @order.id %>
           </tr>
       </tbody>
     </table>
-    <p>Payment Method: Cash on delivery</p>
+    <p>
+      Payment Method:
+      <% if @order.payment_type == 1 %>
+        Credit Card
+      <% else %>
+        Cash
+      <% end %>
+    </p>
     <p>Name: <%= @user.name %></p>
     <p>Contact Number: <%= @user.phone %></p>
     <p>Delivery Address: <%= @user.address %></p>

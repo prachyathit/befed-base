@@ -18,6 +18,14 @@
 <% rest_id = first_food.restaurant_id %>
 <p>Order id: <%= @order.id %></p>
 <p>Order from: <%= Restaurant.find(rest_id).name %></p>
+<p>
+  Payment Method:
+  <% if @order.payment_type == 1 %>
+    Credit Card
+  <% else %>
+    Cash
+  <% end %>
+</p>
 
 <table>
   <% @cart.each do |id, order_info| %>
