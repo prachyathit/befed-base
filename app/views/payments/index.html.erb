@@ -1,0 +1,20 @@
+<% provide(:title, 'All payments') %>
+<div class='container'>
+  <h1>All payments</h1>
+
+  <%= will_paginate %>
+
+  <table class="admin_table">
+    <tr>
+      <td width="30%">Payment ID</td>
+      <td width="30%">User ID</td>
+      <td width="30%">Order ID</td>
+      <td width="30%">Omise Charge ID</td>
+    </tr>
+    <% @payments.each do |payment| %>
+      <%= render payment %>
+    <% end %>
+  </table>
+
+  <%= will_paginate %>
+</div>
