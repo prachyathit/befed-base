@@ -7,7 +7,7 @@
         <% first_food = Food.find(first_food_id) %>
         <% rest_id = first_food.restaurant_id %>
         <p>Order id: <%= @order.id %></p>
-        <p>Order from: <%= Restaurant.find(rest_id).name %></p>
+        <p>Restaurant Name: <%= Restaurant.find(rest_id).name %></p>
       </td>
     </tr>
     <% total = 0 %>
