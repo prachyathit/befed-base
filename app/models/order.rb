@@ -21,7 +21,28 @@ class Order < ActiveRecord::Base
     total = 0
     cart.each do |k, v|
       food = Food.find_by(id: v['food_id'])
-      total += food.price * v['quantity'].to_i
+      food_price = food.price
+      
+      options = v["options"]
+      unless options.nil?
+        options.each do |option|
+          option_value_id = option[1]["option_value_ids"]
+          unless option_value_id.first.empty?
+            if option_value_id.class == String
+              option_value = OptionValue.find(option_value_id)
+              food_price += option_value.price.to_i
+            else
+              option_value_id.each do |option_number|
+                unless option_number.empty?
+                  option_value = OptionValue.find(option_number)
+                  food_price += option_value.price.to_i
+                end
+              end
+            end
+          end
+        end
+      end
+      total += food_price * v['quantity'].to_i
     end
     total + FLAT_RATE
   end
