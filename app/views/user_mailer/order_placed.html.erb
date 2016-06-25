@@ -6,7 +6,7 @@
 
 <p>Address: <%= @user.address %></p>
 <p>Lat: <%= @user.latitude %>, Lng: <%= @user.longitude %></p>
-<% debugger %>
+
 <% lat = @user.latitude %>
 <% lng = @user.longitude %>
 <% gmap_url = "http://maps.google.com/maps?q=" + lat.to_s + ", " + lng.to_s %>
