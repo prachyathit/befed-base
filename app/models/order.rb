@@ -1,7 +1,7 @@
 class Order < ActiveRecord::Base
 
   # Flat rate for delivery
-  FLAT_RATE = 70 # Bahts
+  FLAT_RATE = 50 # Bahts
 
   belongs_to :user
   has_one :payment
