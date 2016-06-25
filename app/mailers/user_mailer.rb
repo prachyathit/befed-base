@@ -19,7 +19,7 @@ class UserMailer < ApplicationMailer
     @user = user
     @cart = cart
     @order = order
-    subject_to_restaurant = "Befed Delivery Request Order number #{order.id} from #{user.name}"
+    subject_to_restaurant = "Befed Delivery Request Order number #{order.id}"
     mail to: "prachyathit.k@gmail.com", subject: subject_to_restaurant
   end
 
