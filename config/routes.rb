@@ -10,7 +10,8 @@ Rails.application.routes.draw do
   resources :restaurants do
     resources :foods
   end
-
+  get '/payment' => 'payments#index'
+  get '/order' => 'orders#index'
   get '/checkout' => 'cart#checkout'
   post '/checkout/complete' => 'cart#submit'
   get '/checkout/complete' => 'saddress#new'
