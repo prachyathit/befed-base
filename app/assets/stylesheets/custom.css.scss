@@ -286,6 +286,7 @@ a:active {
 .center-norep {
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .medium {
@@ -379,7 +380,7 @@ div.container {
   background-blend-mode: multiply;
   background-repeat:no-repeat;
   margin-top: -10px;
-  background-image: image-url("landing_bg.png");
+  background-image: image-url("landing_bg3.jpg");
   background-size: cover;
   min-height: 680px;
   color: white;
@@ -754,7 +755,7 @@ a.return-to-menu, a.edit-info {
 }
 
 .menu-img {
-  height: 200px;
+  height: 220px;
   margin-top: 10px;
   margin-bottom: 10px;
 }
@@ -831,6 +832,11 @@ hr.style-one {
   border: none;
   color: white;
 }
+@media (min-width: 768px) {
+  .modal-dialog {
+    width: 480px;
+  }
+}
 
 .address-header {
   margin-top: 8px;
@@ -881,4 +887,3 @@ hr.style-one {
 #cart_quantity {
   margin-bottom: 0px;
 }
-
