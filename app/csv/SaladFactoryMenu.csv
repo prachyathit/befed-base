@@ -1,4 +1,4 @@
-name,name,image_url,cat_id,cat,rec
+name,price,image_url,cat_id,cat,rec
 Factory Wontons : เกี๊ยวทอดแฟคทอรี่,90,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/factorywonton.jpg,1,Appetizer,1
 Spicy Edamame : ถั่วแระญี่ปุ่นผัดซอส,75,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/edamame.jpg,1,Appetizer,0
 Money Bags : ถุงทอง,95,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/goldenbag.jpg,1,Appetizer,0
