@@ -168,17 +168,9 @@ input {
   }
 }
 
-// .checkbox {
-//   margin-top: -10px;
-//   margin-bottom: 10px;
-//   span {
-//     margin-left: 20px;
-//     font-weight: normal;
-//   }
-// }
-
 .checkbox, .radio {
   padding-left: 20px;
+  font-weight: normal;
 }
 
 #session_remember_me {
@@ -442,6 +434,13 @@ div.container {
   .payment-bar {
     padding-left: 0px !important;
     padding-right: 0px !important;
+  }
+  .pad-left-0 {
+    padding-left: 0px;
+  }
+
+  .pad-right-0 {
+    padding-right: 0px;
   }
 }
 
@@ -756,6 +755,8 @@ a.return-to-menu, a.edit-info {
 
 .menu-img {
   height: 200px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .payment-bar {
@@ -856,6 +857,10 @@ hr.style-one {
   margin-bottom: 0;
 }
 
+.margin-bot-5 {
+  margin-bottom: 5px;
+}
+
 .kanit {
   font-family: 'Kanit', sans-serif;
 }
@@ -866,9 +871,14 @@ hr.style-one {
 
 .label-addform {
   font-weight: normal;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .admin_table {
   width: 100%;
 }
+
+#cart_quantity {
+  margin-bottom: 0px;
+}
+
