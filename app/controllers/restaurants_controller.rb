@@ -6,8 +6,12 @@ class RestaurantsController < ApplicationController
   # GET /restaurants
   # GET /restaurants.json
   def index
-    @restaurants = Restaurant.all
-    # @restaurants = Restaurant.near([session[:saddress]['latitude'], session[:saddress]['longitude']], 5, :units => :km)
+    unless session[:saddress].nil?
+      @restaurants = Restaurant.all
+      # @restaurants = Restaurant.near([session[:saddress]['latitude'], session[:saddress]['longitude']], 5, :units => :km)
+    else
+      redirect_to root_url
+    end
   end
 
   # GET /restaurants/1

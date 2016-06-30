@@ -6,8 +6,12 @@ class FoodsController < ApplicationController
   # GET /foods
   # GET /foods.json
   def index
-    @foods = current_restaurant.foods.by_cat
-    reset_cart
+    unless session[:saddress].nil?
+      @foods = current_restaurant.foods.by_cat
+      reset_cart
+    else
+      redirect_to root_url
+    end
   end
 
   # GET /foods/1
