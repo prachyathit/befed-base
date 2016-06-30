@@ -33,14 +33,14 @@
       <ul class = "nav navbar-nav navbar-right">
                 <!--Address-->
         <% unless ["Landing", "Sign up", "Edit user", "clearmap", "Log in"].include? yield(:hidden_title)%>
-           <li>
-          
-             <%= link_to "#", { :class => "showmap" } do %>
-                    <i class="fa fa-map-marker fa-lg theme-color"></i>
-              <div class="address_header text-color"><%= session[:saddress]["faddress"] %></div>
+          <li>
+            <%= link_to "#", { :class => "showmap" } do %>
+              <i class="fa fa-map-marker fa-lg theme-color"></i>
+              <% unless session[:saddress].nil? %>
+                <div class="address_header text-color"><%= session[:saddress]["faddress"] %></div>
               <% end %>
-              
-           </li>
+            <% end %>
+          </li>
         <% end %>
         <!--Address END-->
         <!--CART -->
