@@ -6,14 +6,14 @@ Factory Spring Rolls : ปอเปี๊ยะทอด,85,https://s3-ap-southe
 Factory Fresh Rolls : ปอเปี๊ยะผักสด,70,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/freshspringrolls.jpg,1,Appetizer,0
 New Orleans Chicken : ปีกไก่นิวออร์ลีน,90,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/chickenneworleans.jpg,1,Appetizer,1
 Salted Crispy Mushroom : เห็ดคั่วเกลือ,90,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/friedmushroom.jpg,1,Appetizer,0
-The Crazy Fries : เครซี่ฟรายส์,130,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/crazyfries.jpg,1,Appetizer,0
+The Crazy Fries : เครซี่ฟรายส์,130,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/crazyfries.jpg,1,Appetizer,1
 French Fries : เฟรนช์ฟรายส์,70,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/fries.jpg,1,Appetizer,0
 Pork/Beef Jerky : หมู/เนื้อทอดแดดเดียว,100,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/porkjerky.jpg,1,Appetizer,0
 Baked Mussels with Garlic Butter Cheese : หอยแมลงภู่นิวซีแลนด์อบชีส,130,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/nzcheese.jpg,1,Appetizer,0
 Sautéed Iceberg/Cabbage : ผักกาดแก้ว/กะหลํ่าปลีผัดนํ้าปลา,80,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/sautediceberg.jpg,1,Appetizer,0
-"""Tofu"" Pad Pik Kluae : เต้าหู้ผักพริกเกลือ",85,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/tofuprikkluea.jpg,1,Appetizer,0
+"""Tofu"" Pad Pik Kluae : เต้าหู้ผักพริกเกลือ",85,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/tofuprikkluea.jpg,1,Appetizer,1
 Calamari : คาลามาริ,105,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/calamari.jpg,1,Appetizer,0
-Shrimp Morning Salad Rolls : ปอเปี๊ยะกุ้งสดทานตะวัน,110,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/sunflowerspringrolls.jpg,1,Appetizer,1
+Shrimp Morning Salad Rolls : ปอเปี๊ยะกุ้งสดทานตะวัน,110,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/sunflowerspringrolls.jpg,1,Appetizer,0
 New Zealand or Blue Mussels Steam with Thai Herb : หอยแมลงภู่นิวซีแลนด์หรือบลูมัซเซิ่ลอบสมุนไพร,155,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/nzherb.jpg,2,Tasty Starter,0
 New Zealand or Blue Mussels Steam in White Wine Sauce : หอยแมลงภู่นิวซีแลนด์หรือบลูมัซเซิ่ลอบซอสไวน์ขาว,155,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/nzwhitewine.jpg,2,Tasty Starter,0
 Smoked Salmon Carpaccio : แซลมอนคาร์ปาซิโอ,195,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/salmoncarpacio.jpg,2,Tasty Starter,0
@@ -24,15 +24,15 @@ Lettuce-Wrapped with Spicy Cripsy Salmon : ลาบแซลมอนทอด,
 Lettuce-Wrapped with Spicy Smoked Duck : ลาบอกเป็ดรมควัน,110,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/larbduck.jpg,2,Tasty Starter,0
 Lettuce-Wrapped with Spicy Mushrooms : ลาบเห็ด,85,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/larbmushroom.jpg,2,Tasty Starter,0
 Sweet Corn Cream Soup : ซุปข้าวโพด,75,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/cornsoup.jpg,3,Soup,0
-Cream of Mushroom Soup : ซุปเห็ด,75,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/mushroomsoup.jpg,3,Soup,1
+Cream of Mushroom Soup : ซุปเห็ด,75,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/mushroomsoup.jpg,3,Soup,0
 Onion Soup : ซุปหัวหอม,65,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/onionsoup.jpg,3,Soup,0
 Spinach Cream Soup : ซุปผักโขม,75,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/spinachsoup.jpg,3,Soup,0
 Tom Yum Kung : ต้มยำกุ้ง,75,test.jpg,3,Soup,0
-Clam Chowder Soup : ซุปหอยลาย,75,test.jpg,3,Soup,1
+Clam Chowder Soup : ซุปหอยลาย,75,test.jpg,3,Soup,0
 Egg Tofu Soup : เต้าหู้นํ้าแดง,95,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/eggtofusoup.jpg,3,Soup,0
 Grilled Salmon with Spicy Glass Noodle Salad : ยำวุ้นเส้นปลาแซลมอน,160,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/spicysalmonwoonsen.jpg,4,Spicy Salad,0
 Naked Shrimps on the Beach : ยำกุ้งย่าง,150,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/spicysaladshrimp.jpg,4,Spicy Salad,0
-Grilled Chicken Spicy Salad : ยำไก่ย่าง,125,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/spicysaladchicken.jpg,4,Spicy Salad,1
+Grilled Chicken Spicy Salad : ยำไก่ย่าง,125,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/spicysaladchicken.jpg,4,Spicy Salad,0
 Spicy Fresh Salmon Salad : ยำแซลมอนแซ่บ,200,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/spicysaladsalmon.jpg,4,Spicy Salad,0
 Fishermen Salad : ยำทะเล,155,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/spicysaladseafood.jpg,4,Spicy Salad,0
 Spicy Tuna Salad : ยำทูน่า,145,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/spicysaladtuna.jpg,4,Spicy Salad,0
@@ -43,13 +43,13 @@ Crispy Fish with Spicy Mango Salad : ยำมะม่วงปลาทอด,
 Spicy Glass Noodles with Grilled Pork Salad : นํ้าตกวุ้นเส้น,110,test.jpg,4,Spicy Salad,0
 Spicy Factory Pork Salad : ยำหมูทอด,125,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/spicyfriedpork.jpg,4,Spicy Salad,0
 Spicy Grilled Pork Salad : ยำหมูย่าง,125,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/spicygrilledpork.jpg,4,Spicy Salad,0
-Spicy Mushroom Salad : ยำเห็ด 7 อย่าง,95,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/spicymushroom7.jpg,4,Spicy Salad,1
+Spicy Mushroom Salad : ยำเห็ด 7 อย่าง,95,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/spicymushroom7.jpg,4,Spicy Salad,0
 Spicy Papaya Salad : ส้มตำ Factory,95,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/somtumfactory.jpg,4,Spicy Salad,0
-"Som tum ""Pol la mai"" : ส้มตำผลไม้",90,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/somtumfruits.jpg,4,Spicy Salad,0
+"Som tum ""Pol la mai"" : ส้มตำผลไม้",90,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/somtumfruits.jpg,4,Spicy Salad,1
 Create Your Own Salad : สลัดแบบที่คุณต้องการ,79,test.jpg,5,Main Salad,0
-Honey Roasted Chicken Salad : สลัดไก่ย่างอบนํ้าผี้ง,125,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/saladchickenhoney.jpg,5,Main Salad,0
-Japanese Style Grilled Chicken Breast Salad : สลัดอกไก่ย่างงาญี่ปุ่น,125,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/saladchickenjapan.jpg,5,Main Salad,0
-Korean Beef Salad : สลัดดเนื้อย่างเกาหลี,140,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/saladkoreanbeef.jpg,5,Main Salad,0
+Honey Roasted Chicken Salad : สลัดไก่ย่างอบนํ้าผี้ง,125,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/saladchickenhoney.jpg,5,Main Salad,1
+Japanese Style Grilled Chicken Breast Salad : สลัดอกไก่ย่างงาญี่ปุ่น,125,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/saladchickenjapan.jpg,5,Main Salad,1
+Korean Beef Salad : สลัดดเนื้อย่างเกาหลี,140,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/saladkoreanbeef.jpg,5,Main Salad,1
 Thai Herb Beef Salad : สลัดเนื้อย่างสมุนไพร,140,test.jpg,5,Main Salad,0
 Japanese Style Crispy Pork Salad : สลัดหมูทอดงาญี่ปุ่น,125,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/saladfriedpork.jpg,5,Main Salad,0
 Sausage Salad : สลัดไส้กรอก,115,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/saladsausage.jpg,5,Main Salad,0
@@ -66,15 +66,15 @@ Pan Fried Grouper Fillet Salad : สลัดปลาเก๋า,160,https://s
 Seafood Wasabi Salad : สลัดซีฟู้ดวาซาบิ,160,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/saladseafoodwasabi.jpg,5,Main Salad,0
 Pan Fried Cod Fillet Salad : สลัดปลาคอด,230,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/saladcod.jpg,5,Main Salad,0
 Deep Fried Shrimp with Fruit Salad : สลัดผลไม้กุ้งทอด,140,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/saladfruitfriedshrimp.jpg,5,Main Salad,0
-Hawaiian Salad : สลัดฮาวายเอี้ยน,145,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/saladhawaiian.jpg,5,Main Salad,0
+Hawaiian Salad : สลัดฮาวายเอี้ยน,145,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/saladhawaiian.jpg,5,Main Salad,1
 Pan Fried/Cheesy Dory Fish Salad : สลัดปลาดอรี่ย่างเกลือหรือทอดชีส,160,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/dorysteak.jpg,5,Main Salad,0
 Salmon Skin Salad : สลัดหนังปลาแซลมอน,145,test.jpg,5,Main Salad,0
 Greek Salad : กรีกสลัด,135,test.jpg,5,Main Salad,0
 Donald Duck on the Rocket/Baby Spinach : ร็อกเก็ตหรือต้นอ่อนผักโขมอกเป็ดรมควัน,190,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/rocketduck.jpg,6,Rocket or Baby Spinach Salad,1
 Grilled Beef on the Rocket/Baby Spinach : ร็อกเก็ตหรือต้นอ่อนผักโขมเนื้อย่าง,155,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/saladrocketbeef.jpg,6,Rocket or Baby Spinach Salad,0
 Smoked Salmon with Rocket Salad/Baby Spinach : ร็อกเก็ตหรือต้นอ่อนผักโขมแซลมอนรมควัน,195,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/saladrocketsmokedsalmon.jpg,6,Rocket or Baby Spinach Salad,0
-Soft Shell Crab with Rocket Salad/Baby Spinach : ร็อกเก็ตหรือต้นอ่อนผักโขมปูนิ่ม,185,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/rocketsscrab.jpg,6,Rocket or Baby Spinach Salad,0
-Grilled Pork with Rocket Salad/Baby Spinach : ร็อกเก็ตหรือต้นอ่อนผักโขมหมูย่าง,150,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/rocketpork.jpg,6,Rocket or Baby Spinach Salad,1
+Soft Shell Crab with Rocket Salad/Baby Spinach : ร็อกเก็ตหรือต้นอ่อนผักโขมปูนิ่ม,185,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/rocketsscrab.jpg,6,Rocket or Baby Spinach Salad,1
+Grilled Pork with Rocket Salad/Baby Spinach : ร็อกเก็ตหรือต้นอ่อนผักโขมหมูย่าง,150,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/rocketpork.jpg,6,Rocket or Baby Spinach Salad,0
 Rocket/Baby Spinach with Avocado Salad : ร็อกเก็ตหรือต้นอ่อนผักโขมอโวคาโด,135,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/rocketavo.jpg,6,Rocket or Baby Spinach Salad,0
 Grilled Shrimp with Rocket Salad/Baby Spinach : ร็อกเก็ตหรือต้นอ่อนผักโขมกุ้งย่าง,195,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/saladrocketshrimp.jpg,6,Rocket or Baby Spinach Salad,0
 Grilled Mushroom with Rocket Salad/Baby Spinach : ร็อกเก็ตหรือต้นอ่อนผักโขมเห็ดย่าง,125,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/rocketmushroom7.jpg,6,Rocket or Baby Spinach Salad,0
@@ -83,7 +83,7 @@ Rocket/Baby Spinach Salad : ร็อกเก็ตหรือต้นอ่�
 Rocket/Baby Spinach with Parma Ham and Melon : ร็อกเก็ตพาร์มาแฮมเมลอน,190,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/rocketparmaham.jpg,6,Rocket or Baby Spinach Salad,0
 Foie Gras with Rocket Salad : ฟัวกราร็อกเก็ต,490,test.jpg,6,Rocket or Baby Spinach Salad,0
 Skirt Steak with Blue Cheese on the Rocket : ร็อกเก็ตหรือต้นอ่อนผักโขม,220,test.jpg,6,Rocket or Baby Spinach Salad,0
-Carbonara Shrimp and Ebiko : คาโบนาร่า กุ้งและไข่กุ้ง,185,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/carbonarashrimp.jpg,7,Spaghetti,0
+Carbonara Shrimp and Ebiko : คาโบนาร่า กุ้งและไข่กุ้ง,185,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/carbonarashrimp.jpg,7,Spaghetti,1
 Carbonara : คาโบนาร่า,140,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/carbonara.jpg,7,Spaghetti,0
 Carbonara with Grilled Eringii Mushroom : คาโบนาร่าเห็ดออเรนจิย่าง,140,test.jpg,7,Spaghetti,0
 Spaghetti Seafood Stir-Fried with Dried Chili and Garlic Sauce : สปาเก็ตตี้ทะเลผัดพริกกระเทียม,145,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/spagarlicseafood.jpg,7,Spaghetti,0
@@ -93,21 +93,21 @@ Spaghetti Clam Chowder & Bacon Stir-Fried with Dried Chili and Garlic Sauce : �
 Spaghetti Hotstuff Seafood : สปาเก็ตตี้ขี้เมาเจ้าสมุทร,145,test.jpg,7,Spaghetti,0
 Spaghetti Hotstuff Sausage and Bacon : สปาเก็ตตี้ขี้เมาไส้กรอกและเบคอน,140,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/spabacon.jpg,7,Spaghetti,0
 Spaghetti Hotstuff with Combo Mushroom : สปาเก็ตตี้ขี้เมาเห็ด,125,test.jpg,7,Spaghetti,0
-Spaghetti Seafood with Fresh Chili Sauce : สปาเก็ตตี้ทะเลพริกสด,145,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/spachiliseafood.jpg,7,Spaghetti,0
+Spaghetti Seafood with Fresh Chili Sauce : สปาเก็ตตี้ทะเลพริกสด,145,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/spachiliseafood.jpg,7,Spaghetti,1
 Spaghetti Clam Chowder with Fresh Chili Sauce : สปาเก็ตตี้หอยลายพริกสด,125,test.jpg,7,Spaghetti,0
 Spaghetti Seafood with Thai Chili Paste : สปาเก็ตตี้ทะเลพริกเผา,145,test.jpg,7,Spaghetti,0
 Spaghetti Clam Chowder with Thai Chili Paste : สปาเก็ตตี้หอยลายพริกเผา,125,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/spascallop.jpg,7,Spaghetti,0
 Spaghetti Anchovy Bacon in Olive Oil : สปาเก็ตตี้แองโชวี้ในนํ้ามันมะกอก หรือ ผัดแห้ง,145,test.jpg,7,Spaghetti,0
 Spaghetti Seafood Bolognese : สปาเก็ตตี้โบโลเนสทะเล,145,test.jpg,7,Spaghetti,0
-Spaghetti Beef Bolognese : สปาเก็ตตี้โบโลเนสเนื้อ,135,test.jpg,7,Spaghetti,1
-Spaghetti Pork Bolognese : สปาเก็ตตี้โบโลเนสหมู,135,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/spabolognesepork.jpg,7,Spaghetti,1
+Spaghetti Beef Bolognese : สปาเก็ตตี้โบโลเนสเนื้อ,135,test.jpg,7,Spaghetti,0
+Spaghetti Pork Bolognese : สปาเก็ตตี้โบโลเนสหมู,135,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/spabolognesepork.jpg,7,Spaghetti,0
 Spaghetti Seafood with Pesto Sauce : สปาเก็ตตี้ซอสเพสโต้ทะเล,145,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/spaprestoseafood.jpg,7,Spaghetti,0
 Baby Back Ribs BBQ : ซี่โครงหมูบาร์บีคิว,265,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/bbqribs.jpg,8,Steak,0
 Pork Chop : พอร์คชอพ,240,test.jpg,8,Steak,0
 Salmon Steak : สเต็กปลาแซลมอนย่างเกลือ,230,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/salmonsteak.jpg,8,Steak,0
-Pork Chunk Loin : สเต็กหมูสันคอ,165,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/porksteak.jpg,8,Steak,0
+Pork Chunk Loin : สเต็กหมูสันคอ,165,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/porksteak.jpg,8,Steak,1
 Pork Tender Loin : สเต็กหมูสันใน,180,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/porksteakin.jpg,8,Steak,0
-Grilled Chicken Breast Steak : สเต็กอกไก่ย่าง,155,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/chickensteak.jpg,8,Steak,0
+Grilled Chicken Breast Steak : สเต็กอกไก่ย่าง,155,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/chickensteak.jpg,8,Steak,1
 Cod Fillet Steak : สเต็กปลาคอด,230,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/saladcod.jpg,8,Steak,0
 Grilled Dory Steak : สเต็กปลาดอรี่ย่างเกลือ,160,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/dorysteak.jpg,8,Steak,0
 Pan-Fried Dory Steak with Cheese : สเต็กปลาดอรี่ย่างชีส,170,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/dorysteakcheese.jpg,8,Steak,0
@@ -119,7 +119,7 @@ New York Steak : สเต็กเนื้อสันนอก ,595,test.jpg,
 Hotstuff With Mushroom on Rice : ข้าวกะเพราเห็ด,90,test.jpg,9,Rice is Nice,1
 Hotstuff With Fried Pork on Rice : ข้าวกะเพราหมูทอด,95,test.jpg,9,Rice is Nice,0
 Hotstuff With Sliced Beef on Rice : ข้าวกะเพราเนื้อ,95,test.jpg,9,Rice is Nice,0
-Hotstuff With Seafood on Rice : ข้าวกะเพราทะเล,115,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/ricekpsea.jpg,9,Rice is Nice,0
+Hotstuff With Seafood on Rice : ข้าวกะเพราทะเล,115,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/ricekpsea.jpg,9,Rice is Nice,1
 Spicy Shrimp and Eringii Mushroom on Rice : ข้าวกุ้งผัดเห็ดออเรนจิพริกขี้หนู,100,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/riceshrimpmushroom.jpg,9,Rice is Nice,0
 Stir-Fried Clam Chowder with Chili Paste on Rice : ข้าวหอยลายผักโขมพริกเผา,95,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/ricechiliscallop.jpg,9,Rice is Nice,0
 Crispy Pork on Rice : ข้าวหมูทอดจิ้มแจ่ว,90,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/ricefriedpork.jpg,9,Rice is Nice,0
@@ -130,7 +130,7 @@ Beef or Pork Bulgogi on Rice : ข้าวเนื้อ หรือหมู
 Factory Fried Rice : ข้าวผัดแฟคทอรี่,95,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/ricefactory.jpg,9,Rice is Nice,0
 Salmon Fried Rice : ข้าวผัดปลาแซลมอน,95,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/ricesalmon.jpg,9,Rice is Nice,0
 Healthy Fried Rice : ข้าวผัดเพื่อสุขภาพ,90,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/ricehealthy.jpg,9,Rice is Nice,0
-Pineapple Fried Rice with Shrimp : ข้าวผัดสัปปะรดกุ้ง,110,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/riceshrimppineapple.jpg,9,Rice is Nice,0
+Pineapple Fried Rice with Shrimp : ข้าวผัดสัปปะรดกุ้ง,110,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/riceshrimppineapple.jpg,9,Rice is Nice,1
 Stir-Fried Pork with Home Made Ginger and Chili Paste : ข้าวนํ้าพริกขิงหมูทอด,120,test.jpg,9,Rice is Nice,0
 Deep Fried Dory with Sweet Chili Sauce on Rice : ข้าวปลาทอดราดพริก,105,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/ricechilifish.jpg,9,Rice is Nice,0
 Grilled Bacon and Mushroom on Rice : ข้าวเบคอนเห็ดย่าง,95,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/ricebaconmushroom.jpg,9,Rice is Nice,0
@@ -140,8 +140,11 @@ Organic Jasmine Rice : ข้าวสวย,20,test.jpg,9,Rice is Nice,0
 Seafood Au Gratin : ซีฟู้ด อู กราแตง,220,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/seafoodaugratin.jpg,10,From the Oven,0
 Baked Spinach with Cheese : ผักโขมอบชีส,130,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/spinachcheese.jpg,10,From the Oven,0
 Garlic Bread : ขนมปังกระเทียม,65,test.jpg,10,From the Oven,0
-Garlic Bread with Cheese : ขนมปังกระเทียมชีส,85,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/garliccheese.jpg,10,From the Oven,0
+Garlic Bread with Cheese : ขนมปังกระเทียมชีส,85,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/garliccheese.jpg,10,From the Oven,1
 Garlic Bread with Tuna Pumpkin Spread : ขนมปังชีสกับทูน่าสเปรด,120,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/garlicpumpkin.jpg,10,From the Oven,0
 Garlic Bread with Parma Ham & Cheese : ขนมปังชีสกับพาร์มาแฮม,150,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/garlicparma.jpg,10,From the Oven,0
-Clam Chowder with Cheesy Garlic Bread : หอยลายผัดเนยกับขนมปังกระเทียมชีส,130,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/garlicshell.jpg,10,From the Oven,0
+Clam Chowder with Cheesy Garlic Bread : หอยลายผัดเนยกับขนมปังกระเทียมชีส,130,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/garlicshell.jpg,10,From the Oven,1
 Pork or Beef Lasagna : ลาซานญ่าหมูหรือเนื้อ,170,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/SFedited/lasagna.jpg,10,From the Oven,0
+Water : นํ้าเปล่า,20,test.jpg,11,Beverages,0
+Mineral Water : นํ้าแร่,25,test.jpg,11,Beverages,0
+Soft Drink : นํ้าอัดลม,25,test.jpg,11,Beverages,0
