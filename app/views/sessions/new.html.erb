@@ -26,7 +26,7 @@
             New User<br>
             <span class='subthai'>ลงทะเบียนกับเรา</span>
           </div>
-          <% prefill_address = session[:saddress]["faddress"] %>
+          
           <%= form_for(:user, url: users_path) do |f| %>
             <% if @user %>
               <%= render 'shared/error_messages' %>
@@ -38,8 +38,8 @@
   
             <%= f.text_field :phone, class: 'form-control', placeholder: 'Phone Number' %>
             
-            <% unless prefill_address.nil? %>
-              <%= f.hidden_field :address, class: "location form-control map-input", value: prefill_address %>
+            <% unless session[:saddress]["faddress"].nil? %>
+              <%= f.hidden_field :address, class: "location form-control map-input", value: session[:saddress]["faddress"] %>
               <%= f.hidden_field :latitude , class: "longitude", value: session[:saddress]["latitude"] %>
               <%= f.hidden_field :longitude ,  class: "latitude", value: session[:saddress]["longitude"] %>
             <% else %>
