@@ -38,10 +38,10 @@
   
             <%= f.text_field :phone, class: 'form-control', placeholder: 'Phone Number' %>
             
-            <% unless session[:saddress]["faddress"].nil? %>
+            <% unless session[:saddress].nil? | session[:saddress].empty? %>
               <%= f.hidden_field :address, class: "location form-control map-input", value: session[:saddress]["faddress"] %>
-              <%= f.hidden_field :latitude , class: "longitude", value: session[:saddress]["latitude"] %>
-              <%= f.hidden_field :longitude ,  class: "latitude", value: session[:saddress]["longitude"] %>
+              <%= f.hidden_field :latitude , class: "latitude", value: session[:saddress]["latitude"] %>
+              <%= f.hidden_field :longitude ,  class: "longitude", value: session[:saddress]["longitude"] %>
             <% else %>
                      
          <%= link_to "#", { :class => "showmap" } do %>
