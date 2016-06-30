@@ -1,7 +1,6 @@
 class CartController < ApplicationController
 before_action :logged_in_user, only: [:checkout, :submit]
 before_action :check_cart_status, only: [:checkout, :submit]
-after_action :get_cart_size
 
   def add_new
     @food_id = params[:id]
