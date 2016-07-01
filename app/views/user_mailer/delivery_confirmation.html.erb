@@ -1,5 +1,6 @@
 <div style="border: 1px solid #f0f0f0; border-radius: 6px; padding: 5px">
 <h1>Order Confirmed!</h1>
+<% user_order = Order.where(user_id: @order.user_id) %>
 <p><%= @user.name %>, Thank you for ordering with Befed</p>
 <p>The estimated delivery time for your order is 45 minutes.</p>
 <p>If you have any questions, please contact us at 092-276-4769</p>
@@ -81,7 +82,8 @@
     <% total += quantity * food_price %>
   </tr>
   <% end %>
-  <% @first_order ? delivery_fee = 0 : delivery_fee = 50 %>
+  <% user_order.size == 1 ? delivery_fee = 0 : delivery_fee = 50 %>
+  
   <tr>
     <td width="70%"></td>
     <td width="10%" style="text-align: right"><b>Delivery Fee</b></td>
