@@ -4,7 +4,7 @@ class SaddressController < ApplicationController
       session[:saddress] = {}
     end
     if logged_in?
-      if session[:saddress]["faddress"].empty?
+      if session[:saddress]["faddress"].nil?
         session[:saddress][:faddress] = current_user.address
         session[:saddress][:latitude] = current_user.latitude
         session[:saddress][:longitude] = current_user.longitude

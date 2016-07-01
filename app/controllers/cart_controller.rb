@@ -1,7 +1,6 @@
 class CartController < ApplicationController
 before_action :logged_in_user, only: [:checkout, :submit]
 before_action :check_cart_status, only: [:checkout, :submit]
-after_action :get_cart_size
 
   def add_new
     @food_id = params[:id]
@@ -63,15 +62,18 @@ after_action :get_cart_size
     @user = current_user
     rr11 = Restaurant.find(session[:restaurant_id])
     dbur = Geocoder::Calculations.distance_between([current_user.latitude,current_user.longitude], [rr11.latitude,rr11.longitude]) #Distance between current user and restuarant
-    if dbur <= 5
-    # if true
+    # if dbur <= 5
+    if true
       begin
         ActiveRecord::Base.transaction do
           @cart = session[:cart]
-          @order = Order.process!(user: @user, cart: @cart)
+          @order = Order.process!(user: @user, cart: @cart, payment_type: credit_card?)
           payment = create_new_payment!(@order)
-          UserMailer.delivery_confirmation(@user, @cart, @order).deliver_now
           UserMailer.order_placed(@user, @cart, @order).deliver_now
+          UserMailer.delivery_request(@user, @cart, @order).deliver_now
+          UserMailer.delivery_confirmation(@user, @cart, @order).deliver_now
+          
+          
           flash.now[:info] = "Email confirmation will be sent to you shortly"
           session[:cart] = nil
         end

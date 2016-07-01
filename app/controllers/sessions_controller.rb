@@ -2,7 +2,11 @@ class SessionsController < ApplicationController
   before_action :get_cart_size
 
   def new
-    @user = User.new
+    unless logged_in?
+      @user = User.new
+    else
+      redirect_to root_url
+    end
   end
 
   def create

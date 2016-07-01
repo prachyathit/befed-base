@@ -65,9 +65,9 @@
     <% end %>
     <div class="row">
       <div class="pad-col col-xs-9 text-right">Delivery Fee</div>
-      <div class="pad-col col-xs-3 text-right"><b>70 ฿</b></div>
+      <div class="pad-col col-xs-3 text-right"><b>50 ฿</b></div>
     </div>
-       <% total += 70 %>
+       <% total += 50 %>
     <div class="row">
       <div class="pad-col col-xs-9 text-right"><b>Total</b></div>
       <div class="pad-col col-xs-3 text-right"><b><%= total %> ฿</b></div>
@@ -81,11 +81,13 @@
           <%= link_to 'Clear Cart', cart_clear_path, class: "btn btn-default" %>
         <% end %>
       </div>
-      <div class="pad-col col-xs-4 text-center">
-          <%= link_to restaurant_foods_path(session[:restaurant_id]), class: "btn btn-warning" do %>
-            Back <span class="hide-mobile"> to menu</span>
-          <% end %>
-      </div>
+      <% unless session[:restaurant_id].nil? %>
+        <div class="pad-col col-xs-4 text-center">
+            <%= link_to restaurant_foods_path(session[:restaurant_id]), class: "btn btn-warning" do %>
+              Back <span class="hide-mobile"> to menu</span>
+            <% end %>
+        </div>
+      <% end %>
       <div class="pad-col col-xs-4 text-center">
         <% unless @cart.empty? %>
           <%= link_to "Checkout", checkout_path, class: "btn btn-danger" %>

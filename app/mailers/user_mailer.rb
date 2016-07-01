@@ -15,6 +15,14 @@ class UserMailer < ApplicationMailer
     mail to: "befedtoday@gmail.com", subject: subject_to_us
   end
 
+  def delivery_request(user, cart, order)
+    @user = user
+    @cart = cart
+    @order = order
+    subject_to_restaurant = "Befed Delivery Request Order number #{order.id}"
+    mail to: "saladfactory.befed@gmail.com", subject: subject_to_restaurant, from: "befedtoday@gmail.com"
+  end
+
   def password_reset(user)
     @user = user
     mail to: user.email, subject: "Password reset"

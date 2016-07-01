@@ -1,0 +1,20 @@
+<% provide(:title, 'All orders') %>
+<div class='container'>
+  <h1>All orders</h1>
+
+  <%= will_paginate %>
+
+  <table class="admin_table">
+    <tr>
+      <td width="25%">Order ID</td>
+      <td width="25%">User ID</td>
+      <td width="25%">Total</td>
+      <td width="25%">Payment Type</td>
+    </tr>
+    <% @orders.each do |order| %>
+      <%= render order %>
+    <% end %>
+  </table>
+
+  <%= will_paginate %>
+</div>

@@ -5,8 +5,13 @@
 <p>Phone number: <%= @user.phone %></p>
 
 <p>Address: <%= @user.address %></p>
-<p>Lat: <%= @user.latitude %></p>
-<p>Lng: <%= @user.longitude %></p>
+<p>Lat: <%= @user.latitude %>, Lng: <%= @user.longitude %></p>
+
+<% lat = @user.latitude %>
+<% lng = @user.longitude %>
+<% gmap_url = "http://maps.google.com/maps?q=" + lat.to_s + ", " + lng.to_s %>
+<a href=<%= gmap_url %>>Link to Google Map</a>
+
 <% total = 0 %>
 <h1>Order Info</h1>
 <% first_food_id = @cart["1"]["food_id"] %>
@@ -73,16 +78,23 @@ Order id: <%= @order.id %>
           <tr>
             <td width="70%"></td>
             <td width="10%"><b>Delivery Fee</b></td>
-            <td width="20%"><b>70 ฿</b></td>
+            <td width="20%"><b>50 ฿</b></td>
           </tr>
           <tr>
             <td width="70%"></td>
             <td width="10%"><b>Subtotal:</b></td>
-            <td width="20%"><b><%= total+70 %> ฿</b></td>
+            <td width="20%"><b><%= total+50 %> ฿</b></td>
           </tr>
       </tbody>
     </table>
-    <p>Payment Method: Cash on delivery</p>
+    <p>
+      Payment Method:
+      <% if @order.payment_type == 1 %>
+        Credit Card
+      <% else %>
+        Cash
+      <% end %>
+    </p>
     <p>Name: <%= @user.name %></p>
     <p>Contact Number: <%= @user.phone %></p>
     <p>Delivery Address: <%= @user.address %></p>

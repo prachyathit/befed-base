@@ -168,17 +168,9 @@ input {
   }
 }
 
-// .checkbox {
-//   margin-top: -10px;
-//   margin-bottom: 10px;
-//   span {
-//     margin-left: 20px;
-//     font-weight: normal;
-//   }
-// }
-
 .checkbox, .radio {
   padding-left: 20px;
+  font-weight: normal;
 }
 
 #session_remember_me {
@@ -294,6 +286,7 @@ a:active {
 .center-norep {
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .medium {
@@ -387,7 +380,7 @@ div.container {
   background-blend-mode: multiply;
   background-repeat:no-repeat;
   margin-top: -10px;
-  background-image: image-url("landing_bg.png");
+  background-image: image-url("landing_bg3.jpg");
   background-size: cover;
   min-height: 680px;
   color: white;
@@ -395,7 +388,7 @@ div.container {
 
 @media only screen and (min-device-width: 1px) and (max-device-width: 630px) {
   .jumbotron-landing {
-    background-image: image-url("landing_bg_mobile.png");
+    background-image: image-url("landing_bg_mobile.jpg");
     height: 580px;
     .landing-title {
       font-size: 30px;
@@ -442,6 +435,13 @@ div.container {
   .payment-bar {
     padding-left: 0px !important;
     padding-right: 0px !important;
+  }
+  .pad-left-0 {
+    padding-left: 0px;
+  }
+
+  .pad-right-0 {
+    padding-right: 0px;
   }
 }
 
@@ -599,6 +599,7 @@ body {
   margin-bottom: 20px;
 }
 
+
 .gray-background {
   background-color: #383737;
 }
@@ -754,21 +755,9 @@ a.return-to-menu, a.edit-info {
 }
 
 .menu-img {
-  height: 200px;
-}
-
-.ball {
-  display: block;
-  position: absolute;
-  left: -100px;
-  top: 400px;
-  opacity: 0;
-  width: 10px;
-  height: 10px;
-  background-color: $red-main;
-  -moz-border-radius: 5px;
-	-webkit-border-radius: 5px;
-	border-radius: 5px;
+  height: 220px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .payment-bar {
@@ -843,6 +832,11 @@ hr.style-one {
   border: none;
   color: white;
 }
+@media (min-width: 768px) {
+  .modal-480 {
+    width: 480px;
+  }
+}
 
 .address-header {
   margin-top: 8px;
@@ -869,6 +863,10 @@ hr.style-one {
   margin-bottom: 0;
 }
 
+.margin-bot-5 {
+  margin-bottom: 5px;
+}
+
 .kanit {
   font-family: 'Kanit', sans-serif;
 }
@@ -879,5 +877,13 @@ hr.style-one {
 
 .label-addform {
   font-weight: normal;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+}
+
+.admin_table {
+  width: 100%;
+}
+
+#cart_quantity {
+  margin-bottom: 0px;
 }
