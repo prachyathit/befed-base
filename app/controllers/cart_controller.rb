@@ -45,6 +45,12 @@ before_action :check_cart_status, only: [:checkout, :submit]
 
   def checkout
     # If there is a cart pass it to the page to display, else pass an empty value
+    if Order.find_by_user_id(current_user).nil?
+      @first_order = true
+    else
+      @first_order = false
+    end
+    
     if session[:cart]
       @cart = session[:cart]
       @user = current_user
@@ -59,6 +65,11 @@ before_action :check_cart_status, only: [:checkout, :submit]
 
   def submit
     # Submit order
+    if Order.find_by_user_id(current_user).nil?
+      @first_order = true
+    else
+      @first_order = false
+    end
     @user = current_user
     rr11 = Restaurant.find(session[:restaurant_id])
     dbur = Geocoder::Calculations.distance_between([current_user.latitude,current_user.longitude], [rr11.latitude,rr11.longitude]) #Distance between current user and restuarant
@@ -67,7 +78,7 @@ before_action :check_cart_status, only: [:checkout, :submit]
       begin
         ActiveRecord::Base.transaction do
           @cart = session[:cart]
-          @order = Order.process!(user: @user, cart: @cart, payment_type: credit_card?)
+          @order = Order.process!(user: @user, cart: @cart, payment_type: credit_card?, first_order: @first_order)
           payment = create_new_payment!(@order)
           UserMailer.order_placed(@user, @cart, @order).deliver_now
           UserMailer.delivery_request(@user, @cart, @order).deliver_now

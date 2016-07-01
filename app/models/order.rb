@@ -9,7 +9,7 @@ class Order < ActiveRecord::Base
   def self.process!(params)
     self.new.tap do |order|
       order.user = params[:user]
-      order.total = calculate_order_total(params[:cart])
+      order.total = calculate_order_total(params[:cart], params[:first_order])
       if params[:payment_type]
         order.payment_type = 1
       else
@@ -22,7 +22,7 @@ class Order < ActiveRecord::Base
   private
   # Probably need to store some details about this order such as
   # food options, special instructions, and delivery instructions
-  def self.calculate_order_total(cart)
+  def self.calculate_order_total(cart, first_order)
     total = 0
     cart.each do |k, v|
       food = Food.find_by(id: v['food_id'])
@@ -49,6 +49,10 @@ class Order < ActiveRecord::Base
       end
       total += food_price * v['quantity'].to_i
     end
-    total + FLAT_RATE
+    unless first_order
+      total + FLAT_RATE
+    else 
+      total
+    end
   end
 end
