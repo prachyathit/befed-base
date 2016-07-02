@@ -63,11 +63,12 @@
           <% total += quantity * food_price %>
       </div>
     <% end %>
-    <div class="row">
-      <div class="pad-col col-xs-9 text-right">Delivery Fee</div>
-      <div class="pad-col col-xs-3 text-right"><b>50 ฿</b></div>
-    </div>
-       <% total += 50 %>
+    <% session[:total] = total %>
+    <!--<div class="row">-->
+    <!--  <div class="pad-col col-xs-9 text-right">Delivery Fee</div>-->
+    <!--  <div class="pad-col col-xs-3 text-right"><b>50 ฿</b></div>-->
+    <!--</div>-->
+    
     <div class="row">
       <div class="pad-col col-xs-9 text-right"><b>Total</b></div>
       <div class="pad-col col-xs-3 text-right"><b><%= total %> ฿</b></div>
@@ -90,7 +91,15 @@
       <% end %>
       <div class="pad-col col-xs-4 text-center">
         <% unless @cart.empty? %>
+          <% if total < @min_order %>
+          
+            <%= link_to restaurant_foods_path(session[:restaurant_id]), class: "btn btn-danger" do %>
+              Order more</span>
+            <% end %><br>
+            <div style="color: red">Your order total is less than minimum order <%= @min_order %> ฿ </div>
+         <% else %>
           <%= link_to "Checkout", checkout_path, class: "btn btn-danger" %>
+          <% end %>
         <% end %>
       </div>
     </div>

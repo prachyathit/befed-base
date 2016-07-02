@@ -35,6 +35,7 @@ before_action :check_cart_status, only: [:checkout, :submit]
 
   def index
     # If there is a cart pass it to the page to display, else pass an empty value
+    @min_order = Restaurant.find(session[:restaurant_id]).min_order
     if session[:cart]
       @cart = session[:cart]
     else
@@ -45,6 +46,11 @@ before_action :check_cart_status, only: [:checkout, :submit]
 
   def checkout
     # If there is a cart pass it to the page to display, else pass an empty value
+    min_order = Restaurant.find(session[:restaurant_id]).min_order
+    if session[:total] < min_order
+      flash[:danger] = "Minimum order is #{min_order} ฿, please order some more."
+      redirect_to cart_url
+    end
     if Order.find_by_user_id(current_user).nil?
       @first_order = true
     else
@@ -64,6 +70,11 @@ before_action :check_cart_status, only: [:checkout, :submit]
   end
 
   def submit
+    min_order = Restaurant.find(session[:restaurant_id]).min_order
+    if session[:total] < min_order
+      flash[:danger] = "Minimum order is #{min_order} ฿, please order some more."
+      redirect_to cart_url
+    end
     # Submit order
     if Order.find_by_user_id(current_user).nil?
       @first_order = true
