@@ -58,10 +58,22 @@
           </li>
         <% end %>
         <!--CART END-->
+        
+        <!--ADMIN START-->
         <% if user_admin? %>
-          <li><%= link_to "Users", users_path%></li>
-          <li><%= link_to "Options", options_path %></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle text-color" data-toggle="dropdown">
+              Admin<b class="caret text-color"></b>
+            </a>
+            <ul class="dropdown-menu text-color">
+              <li><%= link_to "Users", users_path%></li>
+              <li><%= link_to "Options", options_path %></li>
+              <li><%= link_to "Orders", order_path %></li>
+            </ul>
+          </li>
         <% end %>
+        <!--ADMIN END-->
+        
         <% if logged_in? %>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle text-color" data-toggle="dropdown">

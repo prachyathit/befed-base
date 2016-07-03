@@ -17,4 +17,9 @@
   </table>
 
   <%= will_paginate %>
+  <div class="center">
+    <%= link_to order_path(:format => 'csv') do %>
+      <button type="button" class="btn btn-default">Download all as CSV</button>
+    <% end %>
+  </div>
 </div>
