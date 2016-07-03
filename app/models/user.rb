@@ -76,4 +76,15 @@ class User < ActiveRecord::Base
     self.email = email.downcase
   end
 
+  def self.to_csv
+    attributes = %w{id name email phone address latitude longitude dinstruction created_at updated_at}
+    CSV.generate(headers: true) do |csv|
+      csv << attributes
+      
+      all.each do |user|
+        csv << user.attributes.values_at(*attributes)
+      end
+    end
+  end
+
 end

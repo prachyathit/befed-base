@@ -6,19 +6,19 @@ User.create!( name: "Example User",
               password_confirmation: "foobar0898318806",
               admin: true )
 
-5.times do |n|
-  name = Faker::Name.name
-  email = "example-#{n+1}@railstutorial.org"
-  phone = Faker::PhoneNumber.cell_phone
-  address = Faker::Address.street_address + Faker::Address.city
-  password = "password"
-  User.create!( name: name,
-                email: email,
-                phone: phone,
-                address: address,
-                password: password,
-                password_confirmation: password )
-end
+# 5.times do |n|
+#   name = Faker::Name.name
+#   email = "example-#{n+1}@railstutorial.org"
+#   phone = Faker::PhoneNumber.cell_phone
+#   address = Faker::Address.street_address + Faker::Address.city
+#   password = "password"
+#   User.create!( name: name,
+#                 email: email,
+#                 phone: phone,
+#                 address: address,
+#                 password: password,
+#                 password_confirmation: password )
+# end
 
 # Branch 1
   name = "Salad Factory Beehive"

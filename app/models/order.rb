@@ -18,6 +18,17 @@ class Order < ActiveRecord::Base
       order.save!
     end
   end
+  
+  def self.to_csv
+    attributes = %w{id total payment_type created_at}
+    CSV.generate(headers: true) do |csv|
+      csv << attributes
+      
+      all.each do |order|
+        csv << order.attributes.values_at(*attributes)
+      end
+    end
+  end
 
   private
   # Probably need to store some details about this order such as
