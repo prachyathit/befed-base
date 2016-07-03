@@ -16,7 +16,7 @@
         <%= f.email_field :email, class: 'form-control' %>
 
         <%= f.label :phone %>
-        <%= f.text_field :phone, class: 'form-control' %>
+        <%= f.text_field :phone, class: 'form-control', readonly: true %>
         
         <%= f.label "Delivery Location" %><br>
          <%= link_to "#", { :class => "showmap" } do %>

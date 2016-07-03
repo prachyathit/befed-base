@@ -1,3 +1,7 @@
+<div style="padding-top: 6px; padding-bottom: 6px; text-align: center; background-color: #f0f0f0">
+  <span style="font-family: 'Helvetica'; margin-right: 10px; font-size: 1.7em; color: #EF5A50; text-transform: uppercase; font-weight: 700; letter-spacing: 2px;">BEFED</span>
+  <span style="font-family: 'Helvetica'; margin-right: 10px; font-size: 1.1em; color: #777777; letter-spacing: -1px;">Food Delivery</span>
+</div> 
 <div style="border: 1px solid #f0f0f0; border-radius: 6px; padding: 5px">
 <h1>Order Confirmed!</h1>
 <% user_order = Order.where(user_id: @order.user_id) %>
@@ -95,9 +99,12 @@
     <td width="20%" style="text-align: right"><b><%= total+delivery_fee %> ฿</b></td>
   </tr>
 </table>
-
+  <hr>
+<div style="text-align: center">
+  Befed Technology Co., Ltd.<br>
+  84 Ladprao 114 Rd. Wangthonglang
+  Bangkok, Thailand 10310<br>
+  befedtoday@gmail.com<br>
+  092-276-4769
 </div>
-<div style="padding-top: 6px; padding-bottom: 6px; text-align: center; background-color: #f0f0f0">
-  <span style="font-family: 'Helvetica'; margin-right: 10px; font-size: 1.7em; color: #EF5A50; text-transform: uppercase; font-weight: 700; letter-spacing: 2px;">BEFED</span>
-  <span style="font-family: 'Helvetica'; margin-right: 10px; font-size: 1.1em; color: #777777; letter-spacing: -1px;">Food Delivery</span>
-</div> 
+</div>
