@@ -9,21 +9,25 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <% unless yield(:hidden_title) == "Landing"%>
-        <button type="button" class="navbar-toggle scart">
-          <% if session[:cart] %>
-            <% get_cart_size %>
-          <% end %>
-          <span>
-            <%= link_to cart_path do %>
-              <i class="fa fa-shopping-bag fa-lg"></i>
-              <span id="cartnum" class="text-color">
-                <%= @cart_size %>
-              </span>
+      
+        <% unless session[:cart].nil? %>
+          <button type="button" class="navbar-toggle scart">
+            <% if session[:cart] %>
+              <% get_cart_size %>
             <% end %>
-          </span>
-        </button>
-      <% end %>
+            
+            <span>
+              <%= link_to cart_path do %>
+                <i class="fa fa-shopping-bag fa-lg"></i>
+                <span id="cartnum" class="text-color">
+                  <%= @cart_size %>
+                </span>
+              <% end %>
+            </span>
+            
+          </button>
+        <% end %>
+      
     </div>
 
     <div class="collapse navbar-collapse" id="myNavbar">
@@ -32,7 +36,7 @@
       </ul>
       <ul class = "nav navbar-nav navbar-right">
                 <!--Address-->
-        <% unless ["Landing", "Sign up", "Edit user", "clearmap", "Log in"].include? yield(:hidden_title)%>
+        <% unless ["Landing", "Sign up", "Edit user", "clearmap", "Log in", "Static"].include? yield(:hidden_title)%>
           <li>
             <%= link_to "#", { :class => "showmap" } do %>
               <i class="fa fa-map-marker fa-lg theme-color"></i>
@@ -44,19 +48,21 @@
         <% end %>
         <!--Address END-->
         <!--CART -->
-        <% unless yield(:hidden_title) == "Landing" %>
-          <% if session[:cart] %>
-            <% get_cart_size %>
-          <% end %>
-          <li class="hidden-xs cart-link">
-            <%= link_to cart_path do %>
-              <i class="fa fa-shopping-bag fa-lg"></i>
-              <span id="cartnum2" class="text-color">
-                <%= pluralize(@cart_size, 'Item') %>
-              </span>
+        
+          <% unless session[:cart].nil? %>
+            <% if session[:cart] %>
+              <% get_cart_size %>
             <% end %>
-          </li>
-        <% end %>
+            <li class="hidden-xs cart-link">
+              <%= link_to cart_path do %>
+                <i class="fa fa-shopping-bag fa-lg"></i>
+                <span id="cartnum2" class="text-color">
+                  <%= pluralize(@cart_size, 'Item') %>
+                </span>
+              <% end %>
+            </li>
+          <% end %>
+        
         <!--CART END-->
         
         <!--ADMIN START-->

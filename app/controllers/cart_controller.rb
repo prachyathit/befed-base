@@ -6,10 +6,6 @@ before_action :check_cart_status, only: [:checkout, :submit]
     @food_id = params[:id]
     @food = Food.find(params[:id])
     @options = @food.options
-    # # If the card has already been created, use an existing cart else creates a new cart
-    unless session[:cart]
-      session[:cart] = {}
-    end
   end
 
   def add_create
@@ -24,7 +20,7 @@ before_action :check_cart_status, only: [:checkout, :submit]
   end
 
   def clear_cart
-    session[:cart] = nil
+    session[:cart] = {}
     redirect_to :action => :index
   end
 
@@ -35,7 +31,12 @@ before_action :check_cart_status, only: [:checkout, :submit]
 
   def index
     # If there is a cart pass it to the page to display, else pass an empty value
-    @min_order = Restaurant.find(session[:restaurant_id]).min_order
+    
+    unless session[:restaurant_id].nil?
+      @min_order = Restaurant.find(session[:restaurant_id]).min_order
+    else
+      @min_order = 0
+    end
     if session[:cart]
       @cart = session[:cart]
     else
