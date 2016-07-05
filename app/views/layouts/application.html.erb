@@ -15,7 +15,7 @@
   <body class='default-background'>
     <%= render 'layouts/header' %>
     <% flash.each do |message_type, message| %>
-      <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <div class="center alert alert-<%= message_type %>"><%= message %></div>
     <% end %>
     <%= yield %>
     <%= render 'layouts/footer' %>

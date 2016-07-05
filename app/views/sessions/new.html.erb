@@ -2,28 +2,12 @@
 <% provide(:hidden_title, 'Log in') %>
 <div class='container'>
     <div class="row default-background">
-      <div class="pad-col col-md-6">
-        <div class="form-container">
-          <div class='sign-in-title'>
-            Returning User<br>
-            <span class='subthai'>เข้าสู่ระบบ</span>
-          </div>
-          <%= form_for(:session, url: login_path) do |f| %>
-            <%= f.email_field :email, class: 'form-control', placeholder: 'Email' %>
-  
-            <%= f.password_field :password, class: 'form-control', placeholder: 'Password'  %>
-  
-            <button type='submit' class='btn form-btn form-control'><i class="fa fa-sign-in btn-icon fa-sm"></i>Log In</button>
-            <p id='password-link'>Forgot password? <span id='forgot-password'><a href='/password_resets/new'>Click to reset your password</a></span><p>
-          <% end %>
-        </div>
 
-      </div>
 
       <div class="pad-col col-md-6">
         <div class="form-container">
           <div class='sign-up-title'>
-            New User<br>
+            Create New Account<br>
             <span class='subthai'>ลงทะเบียนกับเรา</span>
           </div>
           
@@ -85,9 +69,29 @@
   
             <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Password Confirmation' %>
   
-            <button type='submit' class='btn form-btn form-control'><i class="fa fa-pencil btn-icon fa-sm"></i>Register</button>
+            <button type='submit' class='btn form-btn form-control'><i class="fa fa-user btn-icon fa-sm"></i>Register</button>
           <% end %>
         </div>
       </div>
+      
+      
+      <div class="pad-col col-md-6">
+        <div class="form-container">
+          <div class='sign-in-title'>
+            Already Registered?<br>
+            <span class='subthai'>เข้าสู่ระบบ</span>
+          </div>
+          <%= form_for(:session, url: login_path) do |f| %>
+            <%= f.email_field :email, class: 'form-control', placeholder: 'Email' %>
+  
+            <%= f.password_field :password, class: 'form-control', placeholder: 'Password'  %>
+  
+            <button type='submit' class='btn form-btn form-control green_success'><i class="fa fa-lock btn-icon fa-sm"></i>Log In</button>
+            <p id='password-link'>Forgot password? <span id='forgot-password'><a href='/password_resets/new'>Click to reset your password</a></span><p>
+          <% end %>
+        </div>
+
+      </div>      
+      
     </div>
 </div>

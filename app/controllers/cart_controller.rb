@@ -134,7 +134,7 @@ before_action :check_cart_status, only: [:checkout, :submit]
   def logged_in_user
     unless logged_in?
       store_location
-      flash[:danger] = "Please log in"
+      flash[:danger] = "Please log in / create account"
       redirect_to login_url
     end
   end
