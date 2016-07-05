@@ -1,5 +1,4 @@
-<%= link_to restaurant_foods_path(restaurant_id: restaurant.id) do %>
-<div class='restaurant-container'>
+
   <div class="row">
     <div class='col-md-4 col-xs-4 left-column'>
       <%= image_tag(restaurant.image_url, alt: "image", class: "restaurant-image") %>
@@ -11,6 +10,4 @@
       <div class='estimated-delivery'><i class="fa fa-money fa-lg"></i>&nbsp;&nbsp;&nbsp;Minimum order: <%= restaurant.min_order %> ฿</div>
     </div>
   </div>
-  
-</div>
-<% end %>
+

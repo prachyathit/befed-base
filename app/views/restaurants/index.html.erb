@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container default-background">
   <div class="center">
     <%= render partial: "shared/map", locals: { button_name: "Find Restaurants" } %>
   </div>
@@ -7,9 +7,15 @@
       <h1>Sorry, we don't have restaurants delivering to your location yet.</h1>
     </div>
   <% end %>
+  <div class="select-rest center">Select Restaurant</div>
+  <div class="subthai center">เลือกร้านอาหาร</div>
   <div class='row restaurants-container'>
     <% @restaurants.each do |restaurant| %>
-      <%= render partial: "shared/restaurant", locals: { restaurant: restaurant } %>
+      <%= link_to restaurant_foods_path(restaurant_id: restaurant.id) do %>
+        <div class='restaurant-container rc-hover'>
+          <%= render partial: "shared/restaurant", locals: { restaurant: restaurant } %>
+        </div>
+      <% end %>
     <% end %>
     <%= render partial: "shared/restaurant_coming_soon" %>
   </div>
