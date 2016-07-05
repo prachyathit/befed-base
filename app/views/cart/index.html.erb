@@ -80,7 +80,7 @@
       <div class="pad-col col-xs-4 text-center">
         <% unless @cart.empty? %>
           <%= link_to cart_clear_path, class: "btn btn-default"  do%>
-          <i class="fa fa-trash"></i> Empty Cart
+          <i class="fa fa-trash"></i> Empty <span class="hide-mobile">Cart</span>
           <% end %>
         <% end %>
       </div>
