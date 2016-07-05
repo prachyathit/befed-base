@@ -79,13 +79,15 @@
     <div class="row">
       <div class="pad-col col-xs-4 text-center">
         <% unless @cart.empty? %>
-          <%= link_to 'Clear Cart', cart_clear_path, class: "btn btn-default" %>
+          <%= link_to cart_clear_path, class: "btn btn-default"  do%>
+          <i class="fa fa-trash"></i> Empty Cart
+          <% end %>
         <% end %>
       </div>
       <% unless session[:restaurant_id].nil? %>
         <div class="pad-col col-xs-4 text-center">
             <%= link_to restaurant_foods_path(session[:restaurant_id]), class: "btn btn-warning" do %>
-              Back <span class="hide-mobile"> to menu</span>
+              <i class="fa fa-angle-left"></i> Back <span class="hide-mobile"> to menu</span>
             <% end %>
         </div>
       <% end %>
@@ -99,7 +101,9 @@
               <% end %><br>
               <div style="color: red">Your order total is less than minimum order <%= @min_order %> ฿ </div>
            <% else %>
-            <%= link_to "Checkout", checkout_path, class: "btn btn-danger" %>
+            <%= link_to checkout_path, class: "btn btn-success" do %>
+              NEXT <i class="fa fa-angle-right"></i>
+            <% end %>
             <% end %>
           <% end %>
        
