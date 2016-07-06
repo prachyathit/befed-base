@@ -20,23 +20,25 @@
         
         <%= f.label "Delivery Location" %><br>
          <%= link_to "#", { :class => "showmap" } do %>
-          
-          <div class="edit-address btn btn-default text-color margin-bot-15"><%= session[:saddress]["faddress"] %></div>
+        
+          <div class="edit-address btn btn-default text-color margin-bot-15">
+            <%= @user.address %>
+          </div>
         <% end %>
   <div class="center">
   <div id="map-modal-edit" class="modal fade">
     <div class="modal-dialog modal-lg">
       <div class="modal-header">
         Edit your location <br>
-        กรุณาระบุที่อยู่ของคุณเพื่อค้นหาร้านอาหารที่มีบริการส่งถึงคุณ
+        เปลี่ยนตำแหน่งที่อยู่จัดส่ง
       </div>
       <div class="modal-content">
 
         <button type="button" class="close" data-dismiss="modal"><i class="fa fa-close"></i></button>
           <%= render partial: "shared/map_auto_address" %>
-          <%= f.text_field :address, class: "location form-control margin-bot-0", placeholder: 'Enter Delivery Location', value: session[:saddress]["faddress"] %>
-          <%= f.hidden_field :latitude , class: "latitude", value: session[:saddress]["latitude"] %>
-          <%= f.hidden_field :longitude ,  class: "longitude", value: session[:saddress]["longitude"] %>
+          <%= f.text_field :address, class: "location form-control margin-bot-0", placeholder: 'Type and Select New Location', value: "" %>
+          <%= f.hidden_field :latitude , class: "latitude" %>
+          <%= f.hidden_field :longitude ,  class: "longitude" %>
           <div id="map-container" class="geomap">
             <div class="quantity-gen">Drag marker to fine-tune your location</div>
             <div id="map" class="geomap"></div>

@@ -1,5 +1,6 @@
 class SaddressController < ApplicationController
   def new
+    
     unless session[:saddress]
       session[:saddress] = {}
     end

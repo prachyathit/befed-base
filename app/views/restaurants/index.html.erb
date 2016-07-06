@@ -6,9 +6,10 @@
     <div class="center">
       <h1>Sorry, we don't have restaurants delivering to your location yet.</h1>
     </div>
+  <% else %>
+    <div class="select-rest center">Select Restaurant</div>
+    <div class="subthai center">เลือกร้านอาหาร</div>
   <% end %>
-  <div class="select-rest center">Select Restaurant</div>
-  <div class="subthai center">เลือกร้านอาหาร</div>
   <div class='row restaurants-container'>
     <% @restaurants.each do |restaurant| %>
       <%= link_to restaurant_foods_path(restaurant_id: restaurant.id) do %>
