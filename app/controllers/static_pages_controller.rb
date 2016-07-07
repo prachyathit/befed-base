@@ -7,7 +7,11 @@ class StaticPagesController < ApplicationController
   end
 
   def about
-
+    begin
+      t.t
+    rescue => e
+      logger.error("Message for the log file #{e.message}")
+    end
   end
 
   def contact
