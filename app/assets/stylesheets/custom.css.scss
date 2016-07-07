@@ -9,7 +9,7 @@ body {
 }
 
 $gray-medium-light: #eaeaea;
-$red-main: #ff4444;
+$red-main: #ef5a50;
 $red-hilight: #ffc1c1;
 
 @mixin box_sizing {
@@ -894,4 +894,12 @@ hr.style-one {
 
 .select-rest {
   font-size: 2em;
+}
+
+.pac-item:hover {
+  background-color: $red-hilight;
+  // color: white;
+  .pac-icon {
+    // background-image: image-url("landing_bg_mobile.jpg");
+  }
 }
