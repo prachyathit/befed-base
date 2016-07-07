@@ -2,7 +2,6 @@ class SessionsController < ApplicationController
   before_action :get_cart_size
 
   def new
-    debugger
     unless logged_in?
       @user = User.new
     else

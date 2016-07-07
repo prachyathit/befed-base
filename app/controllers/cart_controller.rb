@@ -102,6 +102,7 @@ before_action :check_cart_status, only: [:checkout, :submit]
         end
       rescue => e
         flash[:danger] = 'Something went wrong. Please try again later.'
+        logger.error("Message for the log file #{e.message}")
         redirect_to checkout_url
       end
     else
