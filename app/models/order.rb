@@ -6,6 +6,9 @@ class Order < ActiveRecord::Base
   belongs_to :user
   has_one :payment
 
+  has_many :order_foods
+  has_many :foods, through: :order_foods
+
   def self.process!(params)
     self.new.tap do |order|
       order.user = params[:user]
@@ -21,7 +24,7 @@ class Order < ActiveRecord::Base
   end
   
   def self.to_csv
-    attributes = %w{id total payment_type created_at}
+    attributes = %w{id rest_id user total payment_type created_at}
     CSV.generate(headers: true) do |csv|
       csv << attributes
       
@@ -67,4 +70,5 @@ class Order < ActiveRecord::Base
       total
     end
   end
+  
 end
