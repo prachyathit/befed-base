@@ -89,8 +89,9 @@ before_action :check_cart_status, only: [:checkout, :submit]
     # if true
       begin
         ActiveRecord::Base.transaction do
+          @rest_id = session[:restaurant_id]
           @cart = session[:cart]
-          @order = Order.process!(user: @user, cart: @cart, payment_type: credit_card?, first_order: @first_order)
+          @order = Order.process!(user: @user, cart: @cart, payment_type: credit_card?, first_order: @first_order, rest_id: @rest_id)
           payment = create_new_payment!(@order)
           UserMailer.order_placed(@user, @cart, @order).deliver_now
           UserMailer.delivery_request(@user, @cart, @order).deliver_now

@@ -1,6 +1,6 @@
 class SaddressController < ApplicationController
   def new
-    
+    @places = Place.all
     unless session[:saddress]
       session[:saddress] = {}
     end

@@ -1,8 +1,9 @@
 <tr>
-  <td width="25%"><%= order.id %> </td>
-  <td width="25%"><%= order.user_id %></td>
-  <td width="25%"><%= order.total %></td>
-  <td width="25%">
+  <td width="20%"><%= order.id %> </td>
+  <td width="20%"><%= order.rest_id %> </td>
+  <td width="20%"><%= order.user_id %></td>
+  <td width="20%"><%= order.total %></td>
+  <td width="20%">
     <% if order.payment_type == 1 %>
       Credit Card
     <% else %>

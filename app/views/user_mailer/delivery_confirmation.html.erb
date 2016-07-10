@@ -18,9 +18,7 @@
 <% total = 0 %>
 
 <h1>Order Information</h1>
-<% first_food_id = @cart["1"]["food_id"] %>
-<% first_food = Food.find(first_food_id) %>
-<% rest_id = first_food.restaurant_id %>
+<% rest_id = @order.rest_id %>
 <p>Order id: <%= @order.id %></p>
 <p>Order from: <%= Restaurant.find(rest_id).name %></p>
 <p>

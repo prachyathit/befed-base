@@ -3,6 +3,7 @@ $(document).ready(function() {
   $("#map-container").hide();
   $("#map-modal").hide();
   $("#map-modal-edit").hide();
+  $("#place-modal").hide(); 
   var address_local = $('.location').val();
       var lat_local = $('.latitude').val();
       var lng_local = $('.longitude').val();
@@ -45,7 +46,16 @@ $(document).ready(function() {
     }
     });
   });
-  
+  $(".switch-map").on("click", function() {
+    $("#place-modal").modal("hide");
+    $("#map-modal").modal("show");
+    
+  });
+  /////Show map modal, show the map if the location already existed////////
+  $(".showplace").on("click", function() {
+    $("#place-modal").modal("show");
+  });
+
   /////Show map modal, show the map if the location already existed////////
   $(".showmap").on("click", function() {
     

@@ -9,6 +9,7 @@ class Order < ActiveRecord::Base
   def self.process!(params)
     self.new.tap do |order|
       order.user = params[:user]
+      order.rest_id = params[:rest_id]
       order.total = calculate_order_total(params[:cart], params[:first_order])
       if params[:payment_type]
         order.payment_type = 1

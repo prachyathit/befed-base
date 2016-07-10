@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :places
   post '/submitsaddress' => 'saddress#create', :as => :submit_saddress
   get 'saddress/new'
 
