@@ -23,8 +23,15 @@ class Order < ActiveRecord::Base
     end
   end
   
+  def self.create_order_food(cart)
+    cart.each do [k,v]
+      food = Food.find_by(id: v['food_id'])
+      self.orders << food
+    end
+  end
+  
   def self.to_csv
-    attributes = %w{id rest_id user total payment_type created_at}
+    attributes = %w{id rest_id user_id total payment_type created_at note}
     CSV.generate(headers: true) do |csv|
       csv << attributes
       

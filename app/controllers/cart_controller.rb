@@ -93,10 +93,10 @@ before_action :check_cart_status, only: [:checkout, :submit]
           @cart = session[:cart]
           @order = Order.process!(user: @user, cart: @cart, payment_type: credit_card?, first_order: @first_order, rest_id: @rest_id)
           payment = create_new_payment!(@order)
+          create_order_food(@order, @cart)
           UserMailer.order_placed(@user, @cart, @order).deliver_now
           UserMailer.delivery_request(@user, @cart, @order).deliver_now
           UserMailer.delivery_confirmation(@user, @cart, @order).deliver_now
-          
           
           flash.now[:info] = "Email confirmation will be sent to you shortly"
           session[:cart] = nil
@@ -130,7 +130,38 @@ before_action :check_cart_status, only: [:checkout, :submit]
   def new_cash_payment!(order)
     Payment::Cash.create!(order: order, user: @user)
   end
-
+  
+  def create_order_food(order, cart)
+    cart.each do |k,v|
+      food = Food.find_by(id: v['food_id'])
+      food_price = food.price
+      food_name = food.name
+      food_cat = food.cat
+      quantity = v["quantity"].to_i
+      
+      options = v["options"]
+      unless options.nil?
+        options.each do |option|
+          option_value_id = option[1]["option_value_ids"]
+          unless option_value_id.first.empty?
+            if option_value_id.class == String
+              option_value = OptionValue.find(option_value_id)
+              food_price += option_value.price.to_i
+            else
+              option_value_id.each do |option_number|
+                unless option_number.empty?
+                  option_value = OptionValue.find(option_number)
+                  food_price += option_value.price.to_i
+                end
+              end
+            end
+          end
+        end
+      end
+      total = food_price * quantity
+      OrderFood.create!(order_id: order.id, rest_id: order.rest_id, food_id: v["food_id"], food_name: food_name, food_cat: food_cat, quantity: quantity, total: total)
+    end
+  end
 
   # Confirms a logged-in user.
   def logged_in_user

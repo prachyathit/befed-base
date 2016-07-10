@@ -1,0 +1,27 @@
+<% provide(:title, 'All order foods') %>
+<div class='container'>
+  <h1>All order foods</h1>
+
+  <%= will_paginate %>
+
+  <table class="admin_table">
+    <tr>
+      <td width="10%">Order ID</td>
+      <td width="10%">Food ID</td>
+      <td width="40%">Food Name</td>
+      <td width="20%">Food Category</td>
+      <td width="10%">Quantity</td>
+      <td width="10%">Total</td>
+    </tr>
+    <% @order_foods.each do |order_food| %>
+      <%= render order_food %>
+    <% end %>
+  </table>
+
+  <%= will_paginate %>
+  <div class="center">
+    <%= link_to orderfood_path(:format => 'csv') do %>
+      <button type="button" class="btn btn-default">Download all as CSV</button>
+    <% end %>
+  </div>
+</div>
