@@ -138,7 +138,7 @@ before_action :check_cart_status, only: [:checkout, :submit]
       food_name = food.name
       food_cat = food.cat
       quantity = v["quantity"].to_i
-      
+      option_string = ""
       options = v["options"]
       unless options.nil?
         options.each do |option|
@@ -147,19 +147,22 @@ before_action :check_cart_status, only: [:checkout, :submit]
             if option_value_id.class == String
               option_value = OptionValue.find(option_value_id)
               food_price += option_value.price.to_i
+              option_string = option_string + ", " + option_value.name
             else
               option_value_id.each do |option_number|
                 unless option_number.empty?
                   option_value = OptionValue.find(option_number)
                   food_price += option_value.price.to_i
+                  option_string = option_string + ", " + option_value.name
                 end
               end
             end
           end
         end
       end
+      option_string = option_string + ", " + v["special"]
       total = food_price * quantity
-      OrderFood.create!(order_id: order.id, rest_id: order.rest_id, food_id: v["food_id"], food_name: food_name, food_cat: food_cat, quantity: quantity, total: total)
+      OrderFood.create!(order_id: order.id, rest_id: order.rest_id, food_id: v["food_id"], food_name: food_name, option_string: option_string, food_cat: food_cat, quantity: quantity, total: total)
     end
   end
 

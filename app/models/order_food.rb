@@ -3,7 +3,7 @@ class OrderFood < ActiveRecord::Base
   belongs_to :food
   
   def self.to_csv
-    attributes = %w{id order_id rest_id food_id food_name food_cat quantity total}
+    attributes = %w{id order_id rest_id food_id food_name option_string food_cat quantity total}
     CSV.generate(headers: true) do |csv|
       csv << attributes
       
