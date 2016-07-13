@@ -6,6 +6,7 @@
     <meta name="description" content="Food delivery Bangkok, Nonthaburi | We believe eating fresh and healthy food leads to living well. Befed provide you with better and healthier food delivery choices. เราอยากให้คนไทยมีสุขภาพดี สั่งอาหารเดลิเวรี่ กรุงเทพ นนทบุรี เรารวบรวมร้านอาหารที่ดีต่อสุขภาพในพื้นที่ของคุณมาให้สั่งไปกินที่บ้านกันได้เลย อาหารปรุงสดใหม่จากร้านอาหารชื่อดัง บริการส่งถึงที่รวดเร็วทันใจ">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application','reg_maps.js', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag "https://www.google.com/jsapi", "chartkick" %>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLod8mAcjj-5mmficTg-cu2W-BhEu6Cgs&libraries=places" type="text/javascript"></script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Kanit&subset=thai' rel='stylesheet' type='text/css'>
@@ -15,7 +16,7 @@
   <body class='default-background'>
     <%= render 'layouts/header' %>
     <% flash.each do |message_type, message| %>
-      <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <div class="center alert alert-<%= message_type %>"><%= message %></div>
     <% end %>
     <%= yield %>
     <%= render 'layouts/footer' %>

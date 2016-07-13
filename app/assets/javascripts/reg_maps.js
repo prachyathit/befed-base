@@ -3,7 +3,10 @@ $(document).ready(function() {
   $("#map-container").hide();
   $("#map-modal").hide();
   $("#map-modal-edit").hide();
-  
+  $("#place-modal").hide(); 
+  var address_local = $('.location').val();
+      var lat_local = $('.latitude').val();
+      var lng_local = $('.longitude').val();
   /////Initial Variables//////
   var options = {
     map: "#map",
@@ -43,26 +46,33 @@ $(document).ready(function() {
     }
     });
   });
-  
+  $(".switch-map").on("click", function() {
+    $("#place-modal").modal("hide");
+    $("#map-modal").modal("show");
+    
+  });
+  /////Show map modal, show the map if the location already existed////////
+  $(".showplace").on("click", function() {
+    $("#place-modal").modal("show");
+  });
+
   /////Show map modal, show the map if the location already existed////////
   $(".showmap").on("click", function() {
     
     $("#map-modal").modal("show");
     $("#map-modal-edit").modal("show");
-    var address_local = $('.location').val();
-    if (address_local && !geocoded) { 
+    
+    // diabled: Prefill bug on non geocode location (places, establishment) geocomplete find results in multiple results which are incorrect.
+    // if (address_local && !geocoded) { 
+    if (false) {
     
       setTimeout(function() {
-      var address_local = $('.location').val();
-      var lat_local = $('.latitude').val();
-      var lng_local = $('.longitude').val();
-
-      
-        var map = $(".location").geocomplete("map");
-        $('#map-container').slideDown();
-        google.maps.event.trigger(map, 'resize');
+      $('#map-container').slideDown();
+      var map = $(".location").geocomplete("map");
         
-        $(".location").geocomplete("find", address_local);
+        // google.maps.event.trigger(map, 'resize');
+        
+        
       
       }, 300);
     }

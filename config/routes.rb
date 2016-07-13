@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :places
   post '/submitsaddress' => 'saddress#create', :as => :submit_saddress
   get 'saddress/new'
 
@@ -12,6 +13,7 @@ Rails.application.routes.draw do
   end
   get '/payment' => 'payments#index'
   get '/order' => 'orders#index'
+  get '/orderfood' => 'order_foods#index'
   get '/checkout' => 'cart#checkout'
   post '/checkout/complete' => 'cart#submit'
   get '/checkout/complete' => 'saddress#new'

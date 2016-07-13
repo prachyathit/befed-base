@@ -1,5 +1,10 @@
+<div style="padding-top: 6px; padding-bottom: 6px; text-align: center; background-color: #f0f0f0">
+  <span style="font-family: 'Helvetica'; margin-right: 10px; font-size: 1.7em; color: #EF5A50; text-transform: uppercase; font-weight: 700; letter-spacing: 2px;">BEFED</span>
+  <span style="font-family: 'Helvetica'; margin-right: 10px; font-size: 1.1em; color: #777777; letter-spacing: -1px;">Food Delivery</span>
+</div> 
 <div style="border: 1px solid #f0f0f0; border-radius: 6px; padding: 5px">
 <h1>Order Confirmed!</h1>
+<% user_order = Order.where(user_id: @order.user_id) %>
 <p><%= @user.name %>, Thank you for ordering with Befed</p>
 <p>The estimated delivery time for your order is 45 minutes.</p>
 <p>If you have any questions, please contact us at 092-276-4769</p>
@@ -13,9 +18,7 @@
 <% total = 0 %>
 
 <h1>Order Information</h1>
-<% first_food_id = @cart["1"]["food_id"] %>
-<% first_food = Food.find(first_food_id) %>
-<% rest_id = first_food.restaurant_id %>
+<% rest_id = @order.rest_id %>
 <p>Order id: <%= @order.id %></p>
 <p>Order from: <%= Restaurant.find(rest_id).name %></p>
 <p>
@@ -81,20 +84,27 @@
     <% total += quantity * food_price %>
   </tr>
   <% end %>
+  <% user_order.size == 1 ? delivery_fee = 0 : delivery_fee = 50 %>
+  
   <tr>
     <td width="70%"></td>
     <td width="10%" style="text-align: right"><b>Delivery Fee</b></td>
-    <td width="20%" style="text-align: right"><b>50 ฿</b></td>
+    <td width="20%" style="text-align: right"><b><%="#{delivery_fee} ฿"%></b></td>
   </tr>
   <tr>
     <td width="70%"></td>
     <td width="10%" style="text-align: right"><b>Total</b></td>
-    <td width="20%" style="text-align: right"><b><%= total+50 %> ฿</b></td>
+    <td width="20%" style="text-align: right"><b><%= total+delivery_fee %> ฿</b></td>
   </tr>
 </table>
-
+  <hr>
+<div style="text-align: center">
+  Befed Technology Co., Ltd.<br>
+  84 Ladprao 114 Rd. Wangthonglang
+  Bangkok, Thailand 10310<br>
+  contact@befed.me<br>
+  092-276-4769<br>
+  <a href="http://www.facebook.com/befed.me">facebook</a> | 
+  <a href="http://line.me/ti/p/%40befed.me">line@</a>
 </div>
-<div style="padding-top: 6px; padding-bottom: 6px; text-align: center; background-color: #f0f0f0">
-  <span style="font-family: 'Helvetica'; margin-right: 10px; font-size: 1.7em; color: #EF5A50; text-transform: uppercase; font-weight: 700; letter-spacing: 2px;">BEFED</span>
-  <span style="font-family: 'Helvetica'; margin-right: 10px; font-size: 1.1em; color: #777777; letter-spacing: -1px;">Food Delivery</span>
-</div> 
+</div>

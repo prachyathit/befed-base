@@ -6,11 +6,11 @@ class User < ActiveRecord::Base
   validates :email, presence: true, length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
-  validates :phone, presence: true, length: { minimum: 9 }
+  validates :phone, presence: true, length: { minimum: 9 }, uniqueness: true
   # validates :address, presence: true
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
-
+  default_scope -> { order(:id) }
   #Geolocation
   # Geocoder gives wrong Latlng!!!!!!!!!!!!!
   # after_validation :reverse_geocode
@@ -74,6 +74,17 @@ class User < ActiveRecord::Base
   # Converts email to all lower case
   def downcase_email
     self.email = email.downcase
+  end
+
+  def self.to_csv
+    attributes = %w{id name email phone address latitude longitude dinstruction created_at updated_at}
+    CSV.generate(headers: true) do |csv|
+      csv << attributes
+      
+      all.each do |user|
+        csv << user.attributes.values_at(*attributes)
+      end
+    end
   end
 
 end

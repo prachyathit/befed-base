@@ -55,7 +55,8 @@
           <% end %>
         </div>
         <hr>
-        <% delivery_fee = 50 %>
+        <% @first_order ? delivery_fee = 0 : delivery_fee = 50 %>
+       
         <%= render partial: 'shared/order_details', locals: { cumulative_quantity: cumulative_quantity, total: total, delivery_fee: delivery_fee } %>
         <hr>
         <div class="order-total">

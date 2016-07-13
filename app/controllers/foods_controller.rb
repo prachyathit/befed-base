@@ -86,9 +86,10 @@ class FoodsController < ApplicationController
 
     # If user changes restaurant, empty cart
     def reset_cart
+      session[:cart] = {} if session[:cart].nil?
       if session[:restaurant_id]
         unless session[:restaurant_id] == params[:restaurant_id]
-          session[:cart] = nil
+          session[:cart] = {}
           session[:restaurant_id] = params[:restaurant_id]
         end
       else

@@ -6,6 +6,11 @@ class UsersController < ApplicationController
 
   def index
     @users = User.paginate(page: params[:page])
+    @usersall = User.all
+      respond_to do |format|
+      format.html
+      format.csv { send_data @usersall.to_csv }
+    end
   end
 
   def show
@@ -22,7 +27,7 @@ class UsersController < ApplicationController
       log_in @user
       flash[:success] = "Let's eat!"
       
-      redirect_back_or @user
+      redirect_back_or restaurants_url
     else
       render template: 'sessions/new'
     end

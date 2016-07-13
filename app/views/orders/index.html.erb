@@ -6,10 +6,12 @@
 
   <table class="admin_table">
     <tr>
-      <td width="25%">Order ID</td>
-      <td width="25%">User ID</td>
-      <td width="25%">Total</td>
-      <td width="25%">Payment Type</td>
+      <td width="15%">Order ID</td>
+      <td width="15%">Restaurant ID</td>
+      <td width="15%">User ID</td>
+      <td width="20%">Total</td>
+      <td width="20%">Payment Type</td>
+      <td width="15%">Notes</td>
     </tr>
     <% @orders.each do |order| %>
       <%= render order %>
@@ -17,4 +19,12 @@
   </table>
 
   <%= will_paginate %>
+  <div class="center">
+    <%= link_to order_path(:format => 'csv') do %>
+      <button type="button" class="btn btn-default">Download all as CSV</button>
+    <% end %>
+  </div>
+  <%= column_chart @orders.group_by_day(:created_at, format: "%B %d, %Y").count, discrete: true %>
+
+  <%= column_chart @orders.group_by_hour_of_day(:created_at, format: "%l %P").count, discrete: true %>
 </div>

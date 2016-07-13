@@ -5,6 +5,12 @@ class OrdersController < ApplicationController
 
   def index
     @orders = Order.paginate(page: params[:page], :per_page => 10)
+    @ordersall = Order.all
+    
+    respond_to do |format|
+      format.html
+      format.csv { send_data @ordersall.to_csv }
+    end
   end
 
  

@@ -34,7 +34,10 @@
   <div id="map-container" class="geomap">
     <div id="map" class="geomap"></div>
   </div>
-
+  <div class="field">
+    <%= f.label :min_order %><br>
+    <%= f.number_field :min_order %>
+  </div>
   <%= f.hidden_field :latitude , class: "longitude" %>
   <%= f.hidden_field :longitude ,  class: "latitude" %>
 

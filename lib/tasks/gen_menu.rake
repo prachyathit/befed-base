@@ -3,7 +3,7 @@ saladfactory_foods = Rails.root + "app/csv/SaladFactoryMenu.csv"
 saladfactory_options = Rails.root + "app/csv/SaladFactoryOptions.csv"
 saladfactory_option_values = Rails.root + "app/csv/SaladFactoryOptionValues.csv"
 saladfactory_food_options = Rails.root + "app/csv/SaladFactoryFoodOptions.csv"
-
+pakkred_place = Rails.root + "app/csv/PakkredPlace.csv"
 namespace :data do
 
 # Run these rake task in order to fill in all the menus and options for Salad Factory
@@ -29,11 +29,16 @@ namespace :data do
   end
   
   task delete_all_data: :environment do 
-    Restaurant.destroy_all
     Food.destroy_all
     Option.destroy_all
     OptionValue.destroy_all
     FoodOption.destroy_all
+  end
+  
+  task load_place_data: :environment do
+    CSV.foreach(pakkred_place, :headers => true) do |row|
+      Place.create!(row.to_hash)
+    end   
   end
     
 end

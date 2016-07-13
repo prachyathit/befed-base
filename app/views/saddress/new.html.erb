@@ -4,11 +4,13 @@
   <div class="landing-title center">
     Delicious Food<br>
     Deliver with <span class="glyphicon glyphicon-heart" style="color:red;"></span><br>
-    <span class="kanit">สั่งอาหารเดลิเวอรี่ แจ้งวัฒนะ</span>
+    <span class="kanit jumbothai">สั่งอาหารเดลิเวอรี่ แจ้งวัฒนะ</span>
   </div>
   <div class="center">
-    <button type="button" class="showmap btn btn-default"><strong>Click here to start</strong></button>
+    <button type="button" class="showmap margin-5 btn btn-default"><strong>Enter Location</strong><br><span class="kanit thai-btn">ใส่ที่อยู่</span></button>
       <%= render partial: "shared/map", locals: { button_name: "Find Restaurants" } %>
+    <button type="button" class="showplace margin-10 btn btn-default"><strong>Select from List</strong><br><span class="kanit thai-btn">เลือกคอนโด</span></button>
+      <%= render partial: "shared/place" %>
   </div>
 </div>
 

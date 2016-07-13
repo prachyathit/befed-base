@@ -4,26 +4,8 @@
     <div class="row default-background">
       <div class="pad-col col-md-6">
         <div class="form-container">
-          <div class='sign-in-title'>
-            Returning User<br>
-            <span class='subthai'>เข้าสู่ระบบ</span>
-          </div>
-          <%= form_for(:session, url: login_path) do |f| %>
-            <%= f.email_field :email, class: 'form-control', placeholder: 'Email' %>
-  
-            <%= f.password_field :password, class: 'form-control', placeholder: 'Password'  %>
-  
-            <button type='submit' class='btn form-btn form-control'><i class="fa fa-sign-in btn-icon fa-sm"></i>Log In</button>
-            <p id='password-link'>Forgot password? <span id='forgot-password'><a href='/password_resets/new'>Click to reset your password</a></span><p>
-          <% end %>
-        </div>
-
-      </div>
-
-      <div class="pad-col col-md-6">
-        <div class="form-container">
           <div class='sign-up-title'>
-            New User<br>
+            Create New Account<br>
             <span class='subthai'>ลงทะเบียนกับเรา</span>
           </div>
           
@@ -38,56 +20,81 @@
   
             <%= f.text_field :phone, class: 'form-control', placeholder: 'Phone Number' %>
             
-            <% unless session[:saddress].nil? | session[:saddress].empty? %>
+            <% address_nil = session[:saddress].nil? %>
+            
+            <% unless address_nil %>
+              <% address_empty = session[:saddress].empty? %>
+            <% else %>
+              <% address_empty = true %>
+            <% end %>
+            
+            <% if address_empty %>
+              
+              <%= link_to "#", { :class => "showmap" } do %>
+                <div class="edit-address btn btn-default text-color margin-bot-15"><%= "Enter Delivery Location" %></div>
+              <% end %>
+              
+              <div class="center">
+                <div id="map-modal-edit" class="modal fade">
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-header">
+                      Please locate yourself to see the list of restaurants delivering to your location. <br>
+                       กรุณาระบุตำแหน่งของคุณในแผนที่เพื่อค้นหาร้านอาหารที่มีบริการส่งถึงคุณ
+                    </div>
+                    <div class="modal-content">
+              
+                      <button type="button" class="close" data-dismiss="modal"><i class="fa fa-close"></i></button>
+                        <%= render partial: "shared/map_auto_address" %>
+                        <%= f.text_field :address, class: "location form-control margin-bot-0", placeholder: 'Type and Select Location' %>
+                        <%= f.hidden_field :latitude , class: "latitude" %>
+                        <%= f.hidden_field :longitude ,  class: "longitude" %>
+                        <div id="map-container" class="geomap">
+                          <div class="quantity-gen">Drag marker to fine-tune your location</div>
+                          <div id="map" class="geomap"></div>
+                          <%= link_to edit_address_path, remote: true do %>
+                            <button class="btn btn-danger map-submit">Use this address</button>
+                          <% end %>
+                        </div>
+                     </div>
+                  </div>
+                </div>
+              </div>
+              
+            <% else %>
+                     
               <%= f.hidden_field :address, class: "location form-control map-input", value: session[:saddress]["faddress"] %>
               <%= f.hidden_field :latitude , class: "latitude", value: session[:saddress]["latitude"] %>
               <%= f.hidden_field :longitude ,  class: "longitude", value: session[:saddress]["longitude"] %>
-            <% else %>
-                     
-         <%= link_to "#", { :class => "showmap" } do %>
-          
-          <div class="edit-address btn btn-default text-color margin-bot-15"><%= "Enter Delivery Location" %></div>
-        <% end %>
-  <div class="center">
-  <div id="map-modal-edit" class="modal fade">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-header">
-        Please locate yourself to see the list of restaurants delivering to your location. <br>
-         กรุณาระบุที่อยู่ของคุณเพื่อค้นหาร้านอาหารที่มีบริการส่งถึงคุณ
-      </div>
-      <div class="modal-content">
-
-        <button type="button" class="close" data-dismiss="modal"><i class="fa fa-close"></i></button>
-          <%= render partial: "shared/map_auto_address" %>
-          <%= f.text_field :address, class: "location form-control margin-bot-0", placeholder: 'Enter Delivery Location', value: session[:saddress]["faddress"] %>
-          <%= f.hidden_field :latitude , class: "latitude", value: session[:saddress]["latitude"] %>
-          <%= f.hidden_field :longitude ,  class: "longitude", value: session[:saddress]["longitude"] %>
-          <div id="map-container" class="geomap">
-            <div class="quantity-gen">Drag marker to fine-tune your location</div>
-            <div id="map" class="geomap"></div>
-                       <%= link_to edit_address_path, remote: true do %>
-              <button class="btn btn-danger map-submit">
-                Use this address
-              </button>
-           <% end %>
-          </div>
- 
-         
-     </div>
-    </div>
-  </div>
-  </div>
-            <% end %>
             
-
+            <% end %>
   
             <%= f.password_field :password, class: 'form-control', placeholder: 'Password (minimum 6 characters)' %>
   
             <%= f.password_field :password_confirmation, class: 'form-control', placeholder: 'Password Confirmation' %>
   
-            <button type='submit' class='btn form-btn form-control'><i class="fa fa-pencil btn-icon fa-sm"></i>Register</button>
+            <button type='submit' class='btn form-btn form-control'><i class="fa fa-user btn-icon fa-sm"></i>Register</button>
           <% end %>
         </div>
       </div>
+      
+      
+      <div class="pad-col col-md-6">
+        <div class="form-container">
+          <div class='sign-in-title'>
+            Already Registered?<br>
+            <span class='subthai'>เข้าสู่ระบบ</span>
+          </div>
+          <%= form_for(:session, url: login_path) do |f| %>
+            <%= f.email_field :email, class: 'form-control', placeholder: 'Email' %>
+  
+            <%= f.password_field :password, class: 'form-control', placeholder: 'Password'  %>
+  
+            <button type='submit' class='btn form-btn form-control green_success'><i class="fa fa-lock btn-icon fa-sm"></i>Log In</button>
+            <p id='password-link'>Forgot password? <span id='forgot-password'><a href='/password_resets/new'>Click to reset your password</a></span><p>
+          <% end %>
+        </div>
+
+      </div>      
+      
     </div>
 </div>

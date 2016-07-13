@@ -6,19 +6,19 @@ User.create!( name: "Example User",
               password_confirmation: "foobar0898318806",
               admin: true )
 
-5.times do |n|
-  name = Faker::Name.name
-  email = "example-#{n+1}@railstutorial.org"
-  phone = Faker::PhoneNumber.cell_phone
-  address = Faker::Address.street_address + Faker::Address.city
-  password = "password"
-  User.create!( name: name,
-                email: email,
-                phone: phone,
-                address: address,
-                password: password,
-                password_confirmation: password )
-end
+# 5.times do |n|
+#   name = Faker::Name.name
+#   email = "example-#{n+1}@railstutorial.org"
+#   phone = Faker::PhoneNumber.cell_phone
+#   address = Faker::Address.street_address + Faker::Address.city
+#   password = "password"
+#   User.create!( name: name,
+#                 email: email,
+#                 phone: phone,
+#                 address: address,
+#                 password: password,
+#                 password_confirmation: password )
+# end
 
 # Branch 1
   name = "Salad Factory Beehive"
@@ -29,10 +29,12 @@ end
                 best as we always do for our family."
   image_url = "https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/logo2.jpg"
   address = "Soi Mu Ban Mueang Thong Thani Khrongkan 6 Zone A, Tambon Ban Mai, Amphoe Pak Kret, Chang Wat Nonthaburi 11120, Thailand"
+  min_order = 200
   Restaurant.create!( name: name,
                 desc: description,
                 image_url: image_url,
-                address: address)
+                address: address,
+                min_order: min_order)
 
 # Branch 2
   # name = "Salad Factory Robinson Srisaman"

@@ -7,8 +7,8 @@ class RestaurantsController < ApplicationController
   # GET /restaurants.json
   def index
     unless session[:saddress].nil?
-      @restaurants = Restaurant.all
-      # @restaurants = Restaurant.near([session[:saddress]['latitude'], session[:saddress]['longitude']], 5, :units => :km)
+      # @restaurants = Restaurant.all
+      @restaurants = Restaurant.near([session[:saddress]['latitude'], session[:saddress]['longitude']], 5, :units => :km)
     else
       redirect_to root_url
     end
@@ -77,7 +77,7 @@ class RestaurantsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def restaurant_params
       params.require(:restaurant).permit( :name, :desc, :image_url,
-                                          :address, :latitude, :longitude,
+                                          :address, :latitude, :longitude, :min_order,
                                           category_ids: [])
     end
 

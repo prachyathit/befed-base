@@ -9,7 +9,7 @@ body {
 }
 
 $gray-medium-light: #eaeaea;
-$red-main: #ff4444;
+$red-main: #ef5a50;
 $red-hilight: #ffc1c1;
 
 @mixin box_sizing {
@@ -410,7 +410,11 @@ div.container {
     display: none;
   }
   .jumbotron-landing {
-    padding: 20px;
+    padding: 100px 20px;
+  }
+  .jumbothai {
+    font-size: 32px;
+    letter-spacing: 2px;
   }
   .row {
     margin-left: 0px;
@@ -853,6 +857,10 @@ hr.style-one {
   margin-bottom: 15px;
 }
 
+.margin-5 {
+  margin: 5px;
+}
+
 .drag-marker {
   border: solid 1px;
   color: #EF4E42;
@@ -886,4 +894,20 @@ hr.style-one {
 
 #cart_quantity {
   margin-bottom: 0px;
+}
+
+.select-rest {
+  font-size: 2em;
+}
+
+.pac-item:hover {
+  background-color: $red-hilight;
+  // color: white;
+  .pac-icon {
+    // background-image: image-url("landing_bg_mobile.jpg");
+  }
+}
+
+.thai-btn {
+  color: #716868;
 }

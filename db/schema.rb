@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160625203101) do
+ActiveRecord::Schema.define(version: 20160712162847) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -60,12 +60,27 @@ ActiveRecord::Schema.define(version: 20160625203101) do
     t.integer  "option_type"
   end
 
+  create_table "order_foods", force: :cascade do |t|
+    t.integer  "order_id"
+    t.integer  "food_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.integer  "quantity"
+    t.integer  "total"
+    t.string   "food_name"
+    t.string   "food_cat"
+    t.integer  "rest_id"
+    t.string   "option_string"
+  end
+
   create_table "orders", force: :cascade do |t|
     t.decimal  "total"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "payment_type", default: 0
+    t.integer  "rest_id"
+    t.string   "note"
   end
 
   create_table "payments", force: :cascade do |t|
@@ -74,6 +89,15 @@ ActiveRecord::Schema.define(version: 20160625203101) do
     t.text     "omise_charge_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "places", force: :cascade do |t|
+    t.string   "name"
+    t.string   "address"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "restaurant_categories", force: :cascade do |t|
@@ -85,11 +109,12 @@ ActiveRecord::Schema.define(version: 20160625203101) do
     t.string   "name"
     t.text     "desc"
     t.string   "image_url"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
     t.text     "address"
     t.float    "latitude"
     t.float    "longitude"
+    t.integer  "min_order",  default: 0
   end
 
   create_table "users", force: :cascade do |t|

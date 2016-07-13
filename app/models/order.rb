@@ -1,15 +1,19 @@
 class Order < ActiveRecord::Base
-
+  default_scope -> { order(:id) }
   # Flat rate for delivery
   FLAT_RATE = 50 # Bahts
 
   belongs_to :user
   has_one :payment
 
+  has_many :order_foods
+  has_many :foods, through: :order_foods
+
   def self.process!(params)
     self.new.tap do |order|
       order.user = params[:user]
-      order.total = calculate_order_total(params[:cart])
+      order.rest_id = params[:rest_id]
+      order.total = calculate_order_total(params[:cart], params[:first_order])
       if params[:payment_type]
         order.payment_type = 1
       else
@@ -18,11 +22,29 @@ class Order < ActiveRecord::Base
       order.save!
     end
   end
+  
+  def self.create_order_food(cart)
+    cart.each do [k,v]
+      food = Food.find_by(id: v['food_id'])
+      self.orders << food
+    end
+  end
+  
+  def self.to_csv
+    attributes = %w{id rest_id user_id total payment_type created_at note}
+    CSV.generate(headers: true) do |csv|
+      csv << attributes
+      
+      all.each do |order|
+        csv << order.attributes.values_at(*attributes)
+      end
+    end
+  end
 
   private
   # Probably need to store some details about this order such as
   # food options, special instructions, and delivery instructions
-  def self.calculate_order_total(cart)
+  def self.calculate_order_total(cart, first_order)
     total = 0
     cart.each do |k, v|
       food = Food.find_by(id: v['food_id'])
@@ -49,6 +71,11 @@ class Order < ActiveRecord::Base
       end
       total += food_price * v['quantity'].to_i
     end
-    total + FLAT_RATE
+    unless first_order
+      total + FLAT_RATE
+    else 
+      total
+    end
   end
+  
 end
