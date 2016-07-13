@@ -24,4 +24,5 @@
       <button type="button" class="btn btn-default">Download all as CSV</button>
     <% end %>
   </div>
+  <%= line_chart @orders.group_by_day(:created_at, format: "%B %d, %Y").count, discrete: true %>
 </div>

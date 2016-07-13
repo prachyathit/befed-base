@@ -15,6 +15,11 @@ gem 'geocoder', '~> 1.3.6'
 gem 'geocomplete_rails', '~> 1.7.0'
 gem 'sdoc', '0.4.0', group: :doc
 
+# for charting
+gem "chartkick"
+gem 'groupdate', '~> 2.1.1'
+gem 'active_median', '~> 0.1.0'
+
 # for icons
 gem 'font-awesome-sass', '~> 4.6.2'
 
