@@ -6,7 +6,6 @@ class OrdersController < ApplicationController
   def index
     @orders = Order.paginate(page: params[:page], :per_page => 10)
     @ordersall = Order.all
-    @ordersreal = Order.where(note: nil).order(:id)
     
     respond_to do |format|
       format.html
