@@ -1,5 +1,6 @@
 <% provide(:title, 'All orders') %>
 <div class='container'>
+  <%= @orders.average(:total) %>
   <h1>All orders</h1>
 
   <%= will_paginate %>
