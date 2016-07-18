@@ -24,6 +24,9 @@
           </div>
           <% cat_number = food.cat_id %>
         <% end %>
+        <% show_food = food.appear | user_admin? %>
+       
+        <% if show_food %>
       <div class="col-sm-6">
 
         <%= link_to add_new_path(id: food.id), remote: true do %>
@@ -43,6 +46,7 @@
         <% end %>
 
       </div>
+      <% end %>
     <% end %>
   </div>
 </div>

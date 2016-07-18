@@ -77,12 +77,17 @@ Order id: <%= @order.id %>
           <% user_order.size == 1 ? delivery_fee = 0 : delivery_fee = 50 %>
           <tr>
             <td width="70%"></td>
+            <td width="10%"><b>Subtotal</b></td>
+            <td width="20%"><b><%= total %> ฿</b></td>
+          </tr>
+          <tr>
+            <td width="70%"></td>
             <td width="10%"><b>Delivery Fee</b></td>
             <td width="20%"><b><%="#{delivery_fee} ฿"%></b></td>
           </tr>
           <tr>
             <td width="70%"></td>
-            <td width="10%"><b>Subtotal:</b></td>
+            <td width="10%"><b>Total</b></td>
             <td width="20%"><b><%= total+delivery_fee %> ฿</b></td>
           </tr>
       </tbody>
