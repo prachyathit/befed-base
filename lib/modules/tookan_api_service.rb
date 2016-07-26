@@ -1,8 +1,6 @@
-module Tookan
+module TookanApiService
 	require 'rest_client'
-
-	class ApiService
-
+	class << self
 		TOOKAN_API_URL = 'https://api.tookanapp.com:8888'
 
 		def create_pickup_and_delivary_task user, cart, order
@@ -20,16 +18,15 @@ module Tookan
 				has_delivery: "1",
 				layout_type: "0",
 				tracking_link: 1,
-				timezone: "-420", #UTC+7
-				# fleet_id: "636", assign task to specific agent id
+				timezone: "+420", #UTC+7
+				fleet_id: "", # assign task to specific agent id (incase auto assign is off)
 				p_ref_images: [],
 				ref_images: [],
 				notify: 1,
-				tags: [],
-				geofence: 1,
+				geofence: 0,
 				
 				# pickup info
-				job_description: "",
+				job_description: "Testing",
 				job_pickup_phone: "",
 				job_pickup_name: restaurant.name,
 				job_pickup_email: "",
@@ -68,12 +65,18 @@ module Tookan
 				  },
 				  {
 				  	label: "Price",
-				  	data: order.total
+				  	data: order.total.to_s
 				  }
 				]
 			}
 
 			response = RestClient.post TOOKAN_API_URL+'/create_task', params, headers
+			response = JSON.parse(response)
+			if response['status'] == 200
+				Rails.logger.info("Successfully create pickup and delivery task for order##{order.id} (#{response['data']})")
+			else
+				Rails.logger.error("Failed to create pickup and delivery task #{response}")
+			end
 		end
 
 	end
