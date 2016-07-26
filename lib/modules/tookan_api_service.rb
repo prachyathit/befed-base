@@ -7,7 +7,7 @@ module TookanApiService
 			restaurant = Restaurant.find(order.rest_id)
 
 			headers = {
-			  :content_type => 'application/json'
+				:content_type => 'application/json'
 			}
 
 			params = {
@@ -24,7 +24,7 @@ module TookanApiService
 				ref_images: [],
 				notify: 1,
 				geofence: 0,
-				
+
 				# pickup info
 				job_description: "Testing",
 				job_pickup_phone: "",
@@ -34,39 +34,39 @@ module TookanApiService
 				job_pickup_latitude: restaurant.latitude,
 				job_pickup_longitude: restaurant.longitude,
 				job_pickup_datetime: (DateTime.now + 15.minutes).to_s(:db), #YYYY-MM-DD HH:MM:SS
-				
+
 				pickup_custom_field_template: "Pickup",
 				pickup_meta_data: [
-				  {
-				    label: "Order",
-				    data: order.id
-				  }
+					{
+						label: "Order",
+						data: order.id
+					}
 				],
-				
+
 				# delivery info				
 				customer_email: user.email,
 				customer_username: user.name,
 				customer_phone: user.phone,
 				customer_address: user.address,
-				
+
 				latitude: user.latitude,
 				longitude: user.longitude,
 
 				job_delivery_datetime: (DateTime.now + 45.minutes).to_s(:db), #YYYY-MM-DD HH:MM:SS
 				custom_field_template: "Delivery",
 				meta_data: [
-				  {
-				    label: "DeliveryInstruction",
-				    data: user.dinstruction
-				  },
-				  {
-				    label: "Phone",
-				    data: user.phone
-				  },
-				  {
-				  	label: "Price",
-				  	data: order.total.to_s
-				  }
+					{
+						label: "DeliveryInstruction",
+						data: user.dinstruction
+					},
+					{
+						label: "Phone",
+						data: user.phone
+					},
+					{
+						label: "Price",
+						data: order.total.to_s
+					}
 				]
 			}
 
