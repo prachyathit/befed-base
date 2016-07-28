@@ -33,7 +33,7 @@ module TookanApiService
 				job_pickup_address: restaurant.address,
 				job_pickup_latitude: restaurant.latitude,
 				job_pickup_longitude: restaurant.longitude,
-				job_pickup_datetime: (DateTime.now + 15.minutes).to_s(:db), #YYYY-MM-DD HH:MM:SS
+				job_pickup_datetime: (DateTime.current + 15.minutes).to_s(:db), #YYYY-MM-DD HH:MM:SS
 
 				pickup_custom_field_template: "Pickup",
 				pickup_meta_data: [
@@ -52,7 +52,7 @@ module TookanApiService
 				latitude: user.latitude,
 				longitude: user.longitude,
 
-				job_delivery_datetime: (DateTime.now + 45.minutes).to_s(:db), #YYYY-MM-DD HH:MM:SS
+				job_delivery_datetime: (DateTime.current + 45.minutes).to_s(:db), #YYYY-MM-DD HH:MM:SS
 				custom_field_template: "Delivery",
 				meta_data: [
 					{
