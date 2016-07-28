@@ -26,7 +26,7 @@ module TookanApiService
 				geofence: 0,
 
 				# pickup info
-				job_description: "Testing",
+				job_description: "",
 				job_pickup_phone: "",
 				job_pickup_name: restaurant.name,
 				job_pickup_email: "",
@@ -70,7 +70,7 @@ module TookanApiService
 				]
 			}
 
-			response = RestClient.post TOOKAN_API_URL+'/create_task', params, headers
+			response = RestClient.post TOOKAN_API_URL+'/create_task', params.to_json, headers
 			response = JSON.parse(response)
 			if response['status'] == 200
 				Rails.logger.info("Successfully create pickup and delivery task for order##{order.id} (#{response['data']})")
