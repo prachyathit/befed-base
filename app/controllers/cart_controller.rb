@@ -94,6 +94,9 @@ before_action :check_cart_status, only: [:checkout, :submit]
           @order = Order.process!(user: @user, cart: @cart, payment_type: credit_card?, first_order: @first_order, rest_id: @rest_id)
           payment = create_new_payment!(@order)
           create_order_food(@order, @cart)
+          
+          TookanApiService.create_pickup_and_delivary_task(@user, @cart, @order).inspect
+
           UserMailer.order_placed(@user, @cart, @order).deliver_now
           UserMailer.delivery_request(@user, @cart, @order).deliver_now
           UserMailer.delivery_confirmation(@user, @cart, @order).deliver_now
