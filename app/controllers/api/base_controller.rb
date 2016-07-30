@@ -1,8 +1,8 @@
 module Api
 	class BaseController < ActionController::API
 		include ActionController::Serialization
-	  include ErrorHandler
-	  include	ErrorResponder
+		include ErrorHandler
+		include ErrorResponder
 
 		def authenticate_user!
 			error401 unless current_user.present?
