@@ -1,12 +1,9 @@
-module ErrorResponder
-  extend ActiveSupport::Concern
+module Api
+  module ErrorResponder
+    extend ActiveSupport::Concern
 
-  module ClassMethods
-  end
-  
-  module InstanceMethods
     def error(status, message="")
-      render json: { message: message }, status: status 
+      render json: { message: message, status: status }, status: status 
     end
 
     def error401(message="Unauthorized")
@@ -20,6 +17,6 @@ module ErrorResponder
     def error422(message="Unprocessable Entity")
       error(422, message)
     end
+    
   end
-  
 end
