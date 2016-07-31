@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160714085221) do
+ActiveRecord::Schema.define(version: 20160729162456) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -133,8 +133,10 @@ ActiveRecord::Schema.define(version: 20160714085221) do
     t.float    "latitude"
     t.float    "longitude"
     t.text     "dinstruction"
+    t.string   "access_token"
   end
 
+  add_index "users", ["access_token"], name: "index_users_on_access_token", unique: true
   add_index "users", ["email"], name: "index_users_on_email", unique: true
 
 end

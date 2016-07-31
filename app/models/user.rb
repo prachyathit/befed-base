@@ -34,10 +34,26 @@ class User < ActiveRecord::Base
     SecureRandom.urlsafe_base64
   end
 
+  def generate_access_token
+    begin
+      self.access_token = User.new_token
+    end while User.exists?(access_token: access_token)
+    self.save
+    self.access_token
+  end
+
+  def remove_access_token
+    self.update(access_token: nil)
+  end
+
   # Remembers a user in the database for user in persistent sessions
   def remember
     self.remember_token = User.new_token
     update_attribute(:remember_digest, User.digest(remember_token))
+  end
+
+  def valid_password?(password)
+    authenticated?(:password, password)
   end
 
   # Returns true if the given token matches the digest
