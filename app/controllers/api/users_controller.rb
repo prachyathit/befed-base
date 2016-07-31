@@ -34,7 +34,7 @@ module Api
       param! :latitude, Float
       param! :longitude,Float
       param! :delivery_instruction, String
-
+      
       if current_user.update(user_params)
       	render json: current_user
       else
@@ -45,8 +45,8 @@ module Api
 		private
 
 		def user_params
-			params[:phone] = params[:phone_no]
-			params[:dinstruction] = params[:delivery_instruction]
+			params[:phone] = params[:phone_no] if params[:phone_no].present?
+			params[:dinstruction] = params[:delivery_instruction] if params[:delivery_instruction].present?
 			params.permit( :name, :email, :phone, :address, :dinstruction, :latitude, :longitude, :password )
 		end
 	end
