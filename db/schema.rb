@@ -56,11 +56,11 @@ ActiveRecord::Schema.define(version: 20160802013030) do
   create_table "options", force: :cascade do |t|
     t.string   "name"
     t.integer  "position"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.integer  "option_type"
-    t.integer  "min"
-    t.integer  "max"
+    t.integer  "min",         default: 1
+    t.integer  "max",         default: 1
   end
 
   create_table "order_foods", force: :cascade do |t|
