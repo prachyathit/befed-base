@@ -49,5 +49,7 @@ Rails.application.routes.draw do
     delete  :logout,    to: 'sessions#destroy'
     post    :register,  to: 'users#create'
     resources :users, only: [:show, :update]
+
+    resources :restaurants, only: [:index, :show]
   end
 end
