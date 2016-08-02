@@ -47,5 +47,7 @@ Rails.application.routes.draw do
   namespace :api do
     post    :login,     to: 'sessions#create'
     delete  :logout,    to: 'sessions#destroy'
+    post    :register,  to: 'users#create'
+    resources :users, only: [:show, :update]
   end
 end
