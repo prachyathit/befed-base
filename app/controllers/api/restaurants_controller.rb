@@ -3,7 +3,7 @@ module Api
 
 		def index
 			param! :latitude, 	Float, required: true
-      param! :longitude, 	Float, required: true
+			param! :longitude, 	Float, required: true
 
 			render json: Restaurant.near([params[:latitude], params[:longitude]], 5, :units => :km), each_serializer: RestaurantArraySerializer
 		end
