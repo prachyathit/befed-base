@@ -10,6 +10,16 @@
     <strong>Position:</strong>
     <%= @option.position %>
   </p>
+
+  <p>
+    <strong>Min:</strong>
+    <%= @option.min %>
+  </p>
+
+  <p>
+    <strong>Max:</strong>
+    <%= @option.max %>
+  </p>
   <% if @option.option_values.any? %>
     <p>
       <%= render @option_values %>
