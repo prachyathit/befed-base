@@ -5,13 +5,21 @@ module Api
 			before_action :validate_restaurant!
 
 			def index
-				render json: current_restaurant.foods.group_by(&:cat)
+				menu_by_category = current_restaurant.foods.select(:id, :name, :price, :rec, :cat).group_by(&:cat).to_json
+				menu_by_category = JSON.parse(menu_by_category)
+				menu_by_category.each do |category, menus|
+					menus.each do |menu|
+						menu['recommend'] = menu.delete('rec')
+						menu.delete('cat')
+					end
+				end
+				render json: menu_by_category
 			end
 
 			def show
 				menu = current_restaurant.foods.where(id: params[:id]).first
 				if menu.present?
-					render json: menu
+					render json: menu, serializer: MenuSerializer
 				else
 					error404("Menu with id #{params[:id]} in restaurant #{current_restaurant.name} does not exists")
 				end
