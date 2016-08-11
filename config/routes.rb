@@ -51,7 +51,9 @@ Rails.application.routes.draw do
     resources :users, only: [:show, :update]
 
     resources :restaurants, only: [:index, :show] do
-      resources :menu, only: [:index, :show]
+      resources :menu, only: [:index, :show] do
+        get :options
+      end
     end
   end
 end
