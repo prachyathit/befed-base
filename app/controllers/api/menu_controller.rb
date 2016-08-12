@@ -19,7 +19,7 @@ module Api
 		def show
 			menu = current_restaurant.foods.where(id: params[:id]).first
 			if menu.present?
-				render json: menu
+				render json: menu, serializer: MenuSerializer
 			else
 				error404("Menu with id #{params[:id]} in restaurant #{current_restaurant.name} does not exists")
 			end
