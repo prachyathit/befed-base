@@ -50,6 +50,10 @@ Rails.application.routes.draw do
     post    :register,  to: 'users#create'
     resources :users, only: [:show, :update]
 
-    resources :restaurants, only: [:index, :show]
+    resources :restaurants, only: [:index, :show] do
+      resources :menu, only: [:index, :show] do
+        get :options
+      end
+    end
   end
 end

@@ -13,7 +13,7 @@ module Api
 			if restaurant.present?
 				render json: restaurant
 			else
-				error404("Restaurant with #{params[:id]} does not exists")
+				error404("Restaurant with id #{params[:id]} does not exists")
 			end
 		end
 
