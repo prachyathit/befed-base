@@ -21,6 +21,9 @@ class Order < ActiveRecord::Base
         order.payment_type = 0
       end
       order.save!
+      user = order.user
+      order.create_shipping_address!(address: user.address, latitude: user.latitude, 
+        longitude: user.longitude, instruction: user.dinstruction)
     end
   end
   
