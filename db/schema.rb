@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160802013030) do
+ActiveRecord::Schema.define(version: 20160819163339) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -119,6 +119,18 @@ ActiveRecord::Schema.define(version: 20160802013030) do
     t.float    "longitude"
     t.integer  "min_order",  default: 0
   end
+
+  create_table "shipping_addresses", force: :cascade do |t|
+    t.integer  "order_id"
+    t.text     "address"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "instruction"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "shipping_addresses", ["order_id"], name: "index_shipping_addresses_on_order_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "name"

@@ -5,6 +5,7 @@ class Order < ActiveRecord::Base
 
   belongs_to :user
   has_one :payment
+  has_one :shipping_address
 
   has_many :order_foods
   has_many :foods, through: :order_foods

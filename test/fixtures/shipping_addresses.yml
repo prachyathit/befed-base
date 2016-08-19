@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  order_id: 1
+  address: MyText
+  latitude: 1.5
+  longitude: 1.5
+  instruction: MyString
+
+two:
+  order_id: 1
+  address: MyText
+  latitude: 1.5
+  longitude: 1.5
+  instruction: MyString
