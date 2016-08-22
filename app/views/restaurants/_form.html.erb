@@ -20,6 +20,10 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
     <%= f.label :desc %><br>
     <%= f.text_area :desc %>
   </div>
@@ -37,6 +41,17 @@
   <div class="field">
     <%= f.label :min_order %><br>
     <%= f.number_field :min_order %>
+  </div>
+  <div class="field">
+    <%= f.label :dtime %><br>
+    <%= f.number_field :dtime %>
+  </div>
+  <div class="field">
+    <%= f.label :soon, "Link" %>
+    <%= f.radio_button :soon, false %>
+    <%= label :soon, "Enable" %>
+    <%= f.radio_button :soon, true %>
+    <%= label :soon, "Disable" %>
   </div>
   <%= f.hidden_field :latitude , class: "longitude" %>
   <%= f.hidden_field :longitude ,  class: "latitude" %>

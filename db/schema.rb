@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160714085221) do
+ActiveRecord::Schema.define(version: 20160822035240) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -110,12 +110,15 @@ ActiveRecord::Schema.define(version: 20160714085221) do
     t.string   "name"
     t.text     "desc"
     t.string   "image_url"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.text     "address"
     t.float    "latitude"
     t.float    "longitude"
     t.integer  "min_order",  default: 0
+    t.string   "email"
+    t.integer  "dtime"
+    t.boolean  "soon",       default: false
   end
 
   create_table "users", force: :cascade do |t|

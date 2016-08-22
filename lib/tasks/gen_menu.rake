@@ -40,5 +40,12 @@ namespace :data do
       Place.create!(row.to_hash)
     end   
   end
-    
+  
+  task :load_food_data, [:filename] => :environment do |task, args|
+    fullname = Rails.root + "app/csv/" + args[:filename]
+    CSV.foreach(fullname, :headers => true) do |row|
+      Food.create!(row.to_hash)
+    end  
+  end
+  
 end

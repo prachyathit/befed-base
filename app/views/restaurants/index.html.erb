@@ -12,10 +12,16 @@
   <% end %>
   <div class='row restaurants-container'>
     <% @restaurants.each do |restaurant| %>
-      <%= link_to restaurant_foods_path(restaurant_id: restaurant.id) do %>
+      <% unless restaurant.soon %>
+        <%= link_to restaurant_foods_path(restaurant_id: restaurant.id) do %>
+          <div class='restaurant-container rc-hover'>
+            <%= render partial: "shared/restaurant", locals: { restaurant: restaurant } %>
+          </div>
+        <% end %>
+      <% else %>
         <div class='restaurant-container rc-hover'>
           <%= render partial: "shared/restaurant", locals: { restaurant: restaurant } %>
-        </div>
+        </div>        
       <% end %>
     <% end %>
     <%= render partial: "shared/restaurant_coming_soon" %>
