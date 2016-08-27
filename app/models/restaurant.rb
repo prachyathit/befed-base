@@ -8,4 +8,13 @@ class Restaurant < ActiveRecord::Base
   geocoded_by :address
   reverse_geocoded_by :latitude, :longitude
   after_validation :geocode, :reverse_geocode
+
+  DELIVERY_RADIUS = 5
+
+  def can_delivery_to_address?(latitude, longitude)
+  	#Distance between current user and restuarant
+  	distance = Geocoder::Calculations.distance_between(
+  							[latitude, longitude], [self.latitude, self.longitude])
+  	distance <= DELIVERY_RADIUS
+  end
 end

@@ -83,9 +83,8 @@ before_action :check_cart_status, only: [:checkout, :submit]
       @first_order = false
     end
     @user = current_user
-    rr11 = Restaurant.find(session[:restaurant_id])
-    dbur = Geocoder::Calculations.distance_between([current_user.latitude,current_user.longitude], [rr11.latitude,rr11.longitude]) #Distance between current user and restuarant
-    if dbur <= 5
+    restaurant = Restaurant.find(session[:restaurant_id])
+    if restaurant.can_delivery_to_address?(current_user.latitude,current_user.longitude)
     # if true
       begin
         ActiveRecord::Base.transaction do
