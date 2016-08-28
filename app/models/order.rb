@@ -11,9 +11,6 @@ class Order < ActiveRecord::Base
   has_many :foods, through: :order_foods
 
   def self.process!(params)
-    p "========================================"
-    p params
-    p "========================================"
     order = self.create! do |o|
       o.user = params[:user]
       o.rest_id = params[:rest_id]
@@ -23,17 +20,10 @@ class Order < ActiveRecord::Base
       else
         o.payment_type = 0
       end
-      # p "ORDER #{o}"
-      # o.save!
-      # user = o.user
-      # o.create_shipping_address!(address: user.address, latitude: user.latitude, 
-      #   longitude: user.longitude, instruction: user.dinstruction)
     end
-    # order.save!
-    p "ORDER #{order.inspect}"
-    # user = order.user
-    # order.create_shipping_address!(address: user.address, latitude: user.latitude, 
-    #     longitude: user.longitude, instruction: user.dinstruction)
+    user = order.user
+    order.create_shipping_address!(address: user.address, latitude: user.latitude, 
+        longitude: user.longitude, instruction: user.dinstruction)
     order
   end
   

@@ -44,16 +44,13 @@ module Api
 						options: item_options
 					}
 				end
-				# p "CART #{cart}"
-
-				# {"1"=>{"food_id"=>"553", "quantity"=>"1", "special"=>"", "options"=>{"Sides (Choose 2) : ไซด์ (เลือก 2)"=>{"option_value_ids"=>["17", "18", ""]}}}}
+				
 				begin
 					ActiveRecord::Base.transaction do
 						first_order = current_user.orders.count == 0
 						order = Order.process!(user: current_user, cart: cart, 
 							payment_type: Payment::CASH, first_order: first_order, 
 							rest_id: restaurant.id)
-						p "ORDER #{order}"
 						Payment::Cash.create!(order: order, user: current_user)
 						order.create_order_food(cart)
 
@@ -66,7 +63,7 @@ module Api
 	          render json: order and return
 					end
 				rescue Exception => e
-					p "E #{e}"
+					Rails.logger.error(e)
 					error500("Something went wrong, Please try again later.") and return
 				end
 			else
