@@ -1,6 +1,6 @@
 class CartController < ApplicationController
-before_action :logged_in_user, only: [:checkout, :submit]
-before_action :check_cart_status, only: [:checkout, :submit]
+  before_action :logged_in_user, only: [:checkout, :submit]
+  before_action :check_cart_status, only: [:checkout, :submit]
 
   def add_new
     @food_id = params[:id]
@@ -90,9 +90,9 @@ before_action :check_cart_status, only: [:checkout, :submit]
         ActiveRecord::Base.transaction do
           @rest_id = session[:restaurant_id]
           @cart = session[:cart]
-          @order = Order.process!(user: @user, cart: @cart, payment_type: credit_card?, first_order: @first_order, rest_id: @rest_id)
+          @order = Order.process!(user: @user, cart: @cart, payment_type: params[:payment_type], first_order: @first_order, rest_id: @rest_id)
           payment = create_new_payment!(@order)
-          create_order_food(@order, @cart)
+          @order.create_order_food(@cart)
           
           TookanApiService.create_pickup_and_delivary_task(@user, @cart, @order).inspect
 
@@ -131,41 +131,6 @@ before_action :check_cart_status, only: [:checkout, :submit]
 
   def new_cash_payment!(order)
     Payment::Cash.create!(order: order, user: @user)
-  end
-  
-  def create_order_food(order, cart)
-    cart.each do |k,v|
-      food = Food.find_by(id: v['food_id'])
-      food_price = food.price
-      food_name = food.name
-      food_cat = food.cat
-      quantity = v["quantity"].to_i
-      option_string = ""
-      options = v["options"]
-      unless options.nil?
-        options.each do |option|
-          option_value_id = option[1]["option_value_ids"]
-          unless option_value_id.first.empty?
-            if option_value_id.class == String
-              option_value = OptionValue.find(option_value_id)
-              food_price += option_value.price.to_i
-              option_string = option_string + ", " + option_value.name
-            else
-              option_value_id.each do |option_number|
-                unless option_number.empty?
-                  option_value = OptionValue.find(option_number)
-                  food_price += option_value.price.to_i
-                  option_string = option_string + ", " + option_value.name
-                end
-              end
-            end
-          end
-        end
-      end
-      option_string = option_string + ", " + v["special"]
-      total = food_price * quantity
-      OrderFood.create!(order_id: order.id, rest_id: order.rest_id, food_id: v["food_id"], food_name: food_name, option_string: option_string, food_cat: food_cat, quantity: quantity, total: total)
-    end
   end
 
   # Confirms a logged-in user.
