@@ -48,6 +48,7 @@ Rails.application.routes.draw do
     post    :login,     to: 'sessions#create'
     delete  :logout,    to: 'sessions#destroy'
     post    :register,  to: 'users#create'
+    post    :checkout,  controller: 'cart'
     resources :users, only: [:show, :update]
 
     resources :restaurants, only: [:index, :show] do

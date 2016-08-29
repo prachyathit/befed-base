@@ -8,10 +8,10 @@
 
 <table>
 <% @cart.each do |id, order_info| %>
-  <% food_id = order_info["food_id"] %>
-  <% quantity = order_info["quantity"].to_i %>
-  <% special = order_info["special"] %>
-  <% options = order_info["options"] %>
+  <% food_id = order_info[:food_id] %>
+  <% quantity = order_info[:quantity].to_i %>
+  <% special = order_info[:special] %>
+  <% options = order_info[:options] %>
   <% food = Food.find(food_id) %>
   <% food_price = food.price %>
 <tr>
@@ -23,7 +23,7 @@
       <ul class="option-lists">
         <% unless options.nil? %>
           <% options.each do |option| %>
-            <% option_value_id = option[1]["option_value_ids"] %>
+            <% option_value_id = option[1][:option_value_ids] %>
               <% unless option_value_id.first.empty? %>
 
                 <!--Radio button-->

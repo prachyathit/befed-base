@@ -6,6 +6,10 @@ module Api
       render json: { message: message, status: status }, status: status 
     end
 
+    def error400(message="Invalid Params")
+      error(400, message)
+    end
+
     def error401(message="Unauthorized")
       error(401, message)
     end
@@ -16,6 +20,10 @@ module Api
 
     def error422(message="Unprocessable Entity")
       error(422, message)
+    end
+
+    def error500(message="Something went wrong, please try again later")
+      error(500, message)
     end
     
   end
