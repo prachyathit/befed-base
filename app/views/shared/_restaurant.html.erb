@@ -4,9 +4,13 @@
   </div>
   <div class='col-md-8 col-xs-8 right-column'>
     <div class='title'><%= restaurant.name %></div>
+    <% unless restaurant.soon %>
     <div class='estimated-delivery'><i class="fa fa-truck fa-lg"></i>&nbsp;&nbsp;&nbsp;Estimated delivery time: <%= restaurant.dtime %> Minutes</div>
     <div class='delivery-hours'>&nbsp;<i class="fa fa-clock-o fa-lg"></i>&nbsp;&nbsp;&nbsp;Delivery hours: 11:00AM - 9:00PM&nbsp;&nbsp;&nbsp;&nbsp;</div>
     <div class='estimated-delivery'><i class="fa fa-money fa-lg"></i>&nbsp;&nbsp;&nbsp;Minimum order: <%= restaurant.min_order %> ฿</div>
+    <% else %>
+    <div class='delivery-hours'>&nbsp;&nbsp;&nbsp;Coming Soon&nbsp;&nbsp;&nbsp;&nbsp;</div>
+    <% end %>
   </div>
 </div>
 
