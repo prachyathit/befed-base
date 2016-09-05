@@ -92,8 +92,8 @@
               <b class="caret text-color"></b>
             </a>
             <ul class="dropdown-menu text-color">
-              <li><%= link_to "Profile", current_user,  { :class=>"text-color" } %></li>
-              <li><%= link_to "Settings", edit_user_path(current_user),  { :class=>"text-color" } %></li>
+              <li><%= link_to "Profile", edit_user_path(current_user),  { :class=>"text-color" } %></li>
+              <li><%= link_to "Address", current_user,  { :class=>"text-color" } %></li>
               <li class="divider"></li>
               <li><%= link_to "Log out", logout_path, { :class=>"text-color", method: "delete"} %></li>
             </ul>
