@@ -13,12 +13,12 @@ module Api
 
     def create
       param! :name,           String, required: true
-      param! :is_default,     :boolean, default: false
       param! :latitude,       Float, required: true
       param! :longitude,      Float, required: true
-      param! :instruction,    String
       param! :house_room_no,  String, required: true
       param! :street,         String, required: true
+      param! :is_default,     :boolean, default: false
+      param! :instruction,    String
       param! :building_name,  String
       param! :floor,          String
       param! :province,       String
