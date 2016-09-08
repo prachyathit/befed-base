@@ -32,6 +32,27 @@ module Api
       end
     end
 
+    def update
+      param! :name,           String
+      param! :latitude,       Float
+      param! :longitude,      Float
+      param! :house_room_no,  String
+      param! :street,         String
+      param! :is_default,     :boolean
+      param! :instruction,    String
+      param! :building_name,  String
+      param! :floor,          String
+      param! :province,       String
+      param! :postal_code,    String
+
+      current_address.assign_attributes(address_params)
+      if current_address.save
+        render json: current_address
+      else
+        error422(address.errors.full_messages)
+      end
+    end
+
 		private
 
     def current_address
