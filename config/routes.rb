@@ -50,7 +50,7 @@ Rails.application.routes.draw do
     post    :register,  to: 'users#create'
     post    :checkout,  controller: 'cart'
     resources :users, only: [:show, :update] do
-      resources :addresses, only: [:index, :show, :create, :update]
+      resources :addresses, only: [:index, :show, :create, :update, :destroy]
     end
 
     resources :restaurants, only: [:index, :show] do

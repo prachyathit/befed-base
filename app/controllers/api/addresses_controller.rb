@@ -53,6 +53,14 @@ module Api
       end
     end
 
+    def destroy
+      if success = current_address.destroy
+        render json: { success: success, message: 'Successfully Logged out'}
+      else
+        render json: { success: success, message: current_address.errors.full_messages}
+      end
+    end
+
 		private
 
     def current_address
