@@ -7,13 +7,20 @@ module Api
 		def index
 			menu_by_category = current_restaurant.foods.select(:id, :name, :price, :rec, :cat).group_by(&:cat).to_json
 			menu_by_category = JSON.parse(menu_by_category)
+			response = []
 			menu_by_category.each do |category, menus|
-				menus.each do |menu|
+				menu_obj = menus.map do |menu|
 					menu['recommend'] = menu.delete('rec')
 					menu.delete('cat')
+					menu
 				end
+				response_obj = {
+					category_name: category,
+					menus: menu_obj
+				}
+				response << response_obj
 			end
-			render json: menu_by_category
+			render json: response
 		end
 
 		def show
