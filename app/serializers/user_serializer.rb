@@ -1,5 +1,8 @@
 class UserSerializer < ActiveModel::Serializer
-	attributes :id, :name, :email, :address, :latitude, :longitude
+	attributes :id, :name, :email, :default_address_id
 	attribute :phone, key: :phone_no
-	attribute :dinstruction, key: :delivery_instruction
+
+	def default_address_id
+		object.default_address.id
+	end
 end

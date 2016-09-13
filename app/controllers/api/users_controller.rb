@@ -8,10 +8,6 @@ module Api
       param! :password, String, required: true, min_length: 6
       param! :name,			String, required: true
       param! :phone_no,	String, required: true
-      param! :address,	String
-      param! :latitude, Float
-      param! :longitude,Float
-      param! :delivery_instruction, String
       
       user = User.new(user_params)
       if user.save
@@ -30,16 +26,21 @@ module Api
       param! :password, String, min_length: 6
       param! :name,			String
       param! :phone_no,	String
-      param! :address,	String
-      param! :latitude, Float
-      param! :longitude,Float
-      param! :delivery_instruction, String
-      
-      if current_user.update(user_params)
-      	render json: current_user
-      else
-      	error422(current_user.errors.full_messages)
+      param! :default_address_id, Integer
+
+      begin
+        ActiveRecord::Base.transaction do
+          current_user.update!(user_params)
+          new_default_address = current_user.addresses.where(id: params["default_address_id"]).first
+          raise Error unless new_default_address.present?
+          current_user.set_default_address!(new_default_address)
+        end
+      rescue Exception => e
+        Rails.logger.error(e)
+        error422(current_user.errors.full_messages) and return
       end
+      
+      render json: current_user
 		end
 
 		private
