@@ -5,12 +5,12 @@
         <div class="hide-mobile">กรุณาระบุตำแหน่งของคุณในแผนที่เพื่อค้นหาร้านอาหารที่มีบริการส่งถึงคุณ</div>
       </div>
       <div class="modal-content">
-<%= form_for(:saddress, url: submit_saddress_path) do |f| %>
-<button type="button" class="close" data-dismiss="modal"><i class="fa fa-close"></i></button>
-    <%= render partial: "shared/map_auto_address" %>
-  <%= f.text_field :faddress, class: "location form-control margin-bot-0", placeholder: 'Type and Select Location'%>
-  <%= f.hidden_field :latitude , class: "latitude" %>
-  <%= f.hidden_field :longitude ,  class: "longitude"%>
+        <%= form_for(:saddress, url: submit_saddress_path) do |f| %>
+        <button type="button" class="close" data-dismiss="modal"><i class="fa fa-close"></i></button>
+            <%= render partial: "shared/map_auto_address" %>
+          <%= f.text_field :faddress, class: "location form-control margin-bot-0", placeholder: 'Type and Select Location'%>
+          <%= f.hidden_field :latitude , class: "latitude" %>
+          <%= f.hidden_field :longitude ,  class: "longitude"%>
 
 
           <div id="map-container" class="geomap">

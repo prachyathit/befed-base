@@ -2,6 +2,99 @@
 <% provide(:hidden_title, 'Edit user') %>
 
 <div class='container'>
+  <h1>Profile</h1>
+  <div class='row'>
+    <div class="col-md-8 col-md-offset-2">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <button class="btn btn-default pull-right">Save</button>
+          <h3 class="panel-title pull-left" style="padding-top: 7.5px;">General</h3>
+          <div class="clearfix"></div>
+        </div>
+        <div class="panel-body">
+          <!-- Need rails -->
+          <div class="form-group row">
+            <label for="name-input" class="col-xs-2 col-form-label">Name:</label>
+            <div class="col-xs-10">
+              <input class="form-control" type="text" id="example-name-input">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="email-input" class="col-xs-2 col-form-label">Email:</label>
+            <div class="col-xs-10">
+              <input class="form-control" type="email" id="email-input">
+            </div>
+          </div>
+          <div class="row">
+            <label class="col-xs-2 col-form-label">Telephone:</label>
+            <div class="col-xs-10">
+              
+            </div>
+          </div>
+          <!-- end Need rails -->
+        </div> 
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <button class="btn btn-default pull-right">Change</button>
+          <h3 class="panel-title pull-left" style="padding-top: 7.5px;">Delivery</h3>
+          <div class="clearfix"></div>
+        </div>
+        <div class="panel-body">
+          <!-- Need rails -->
+          <div class="form-group row">
+            <label class="col-xs-2 col-form-label">Name:</label>
+            <div class="col-xs-10">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-xs-2 col-form-label">Address:</label>
+            <div class="col-xs-10">
+            </div>
+          </div>
+          <div class="row">
+            <label class="col-xs-2 col-form-label">Instruction:</label>
+            <div class="col-xs-10">
+            </div>
+          </div>
+          <div>
+            <div id="googleMap" class="geomap">
+              <%= render partial: "shared/address", locals: {latitude: @user.latitude, longitude: @user.longitude, elementId: 'googleMap'} %>
+            </div>
+          </div>
+          <!-- end Need rails -->
+        </div> 
+      </div>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <button class="btn btn-default pull-right">Save</button>
+          <h3 class="panel-title pull-left" style="padding-top: 7.5px;">Change Password</h3>
+          <div class="clearfix"></div>
+        </div>
+        <div class="panel-body">
+          <!-- Need rails -->
+          <div class="form-group row">
+            <label for="password-input" class="col-xs-4 col-form-label">New Password:</label>
+            <div class="col-xs-8">
+              <input class="form-control" type="password" id="password-input">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="confirm-password-input" class="col-xs-4 col-form-label">Password Confirmation:</label>
+            <div class="col-xs-8">
+              <input class="form-control" type="password" id="confirm">
+            </div>
+          </div>
+          <!-- end Need rails -->
+        </div> 
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- <div class='container'>
   <h1>Update your profile</h1>
 
   <div class="row">
@@ -24,35 +117,35 @@
             <%= @user.address %>
           </div>
         <% end %>
-  <div class="center">
-  <div id="map-modal-edit" class="modal fade">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-header">
-        Edit your location <br>
-        เปลี่ยนตำแหน่งที่อยู่จัดส่ง
-      </div>
-      <div class="modal-content">
-
-        <button type="button" class="close" data-dismiss="modal"><i class="fa fa-close"></i></button>
-          <%= render partial: "shared/map_auto_address" %>
-          <%= f.text_field :address, class: "location form-control margin-bot-0", placeholder: 'Type and Select New Location' %>
-          <%= f.hidden_field :latitude , class: "latitude" %>
-          <%= f.hidden_field :longitude ,  class: "longitude" %>
-          <div id="map-container" class="geomap">
-            <div class="quantity-gen">Drag marker to fine-tune your location</div>
-            <div id="map" class="geomap"></div>
-              <%= link_to edit_address_path, remote: true do %>
-                <button class="btn btn-danger map-submit">
-                  Use this address
-                </button>
-              <% end %>
+      <div class="center">
+        <div id="map-modal-edit" class="modal fade">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-header">
+            Edit your location <br>
+            เปลี่ยนตำแหน่งที่อยู่จัดส่ง
           </div>
-           
-         
-     </div>
-    </div>
-  </div>
-</div>
+          <div class="modal-content">
+
+            <button type="button" class="close" data-dismiss="modal"><i class="fa fa-close"></i></button>
+              <%= render partial: "shared/map_auto_address" %>
+              <%= f.text_field :address, class: "location form-control margin-bot-0", placeholder: 'Type and Select New Location' %>
+              <%= f.hidden_field :latitude , class: "latitude" %>
+              <%= f.hidden_field :longitude ,  class: "longitude" %>
+              <div id="map-container" class="geomap">
+                <div class="quantity-gen">Drag marker to fine-tune your location</div>
+                <div id="map" class="geomap"></div>
+                  <%= link_to edit_address_path, remote: true do %>
+                    <button class="btn btn-danger map-submit">
+                      Use this address
+                    </button>
+                  <% end %>
+              </div>
+               
+             
+         </div>
+        </div>
+        </div>
+      </div>
         <%= f.label "Delivery Address Details (Please provide additional details in case your address from Delivery Location is incomplete or incorrect)" %>
         <%= f.text_field :dinstruction, class: "form-control", placeholder:"Condo name, House number, Delivery instruction" %>
 
@@ -66,4 +159,4 @@
       <% end %>
     </div>
   </div>
-</div>
+</div> -->

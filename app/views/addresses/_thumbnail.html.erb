@@ -10,8 +10,12 @@
     </div>
     <div class="panel-body">
       <div>address</div>
+      <div>address</div>
+      <div>address</div>
       <div>
-        
+        <div id="googleMap" class="thumb-map">
+          <%= render partial: "shared/address", locals: {latitude: '0.0', longitude: '0.0', elementId: 'googleMap'} %>
+        </div>
       </div>
     </div>
   </div>
