@@ -57,6 +57,11 @@
             <div class="col-xs-10">
             </div>
           </div>
+          <div>
+            <div id="googleMap" class="geomap">
+              <%= render partial: "shared/address", locals: {latitude: @user.latitude, longitude: @user.longitude, elementId: 'googleMap'} %>
+            </div>
+          </div>
           <!-- end Need rails -->
         </div> 
       </div>
@@ -86,6 +91,8 @@
     </div>
   </div>
 </div>
+
+
 
 <!-- <div class='container'>
   <h1>Update your profile</h1>
