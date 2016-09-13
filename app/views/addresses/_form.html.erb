@@ -1,31 +1,22 @@
 <div>
   <img src="http://placehold.it/750x500">
-  <span>
-    <input type="text" class="form-control" placeholder="House/Room No.*">
-  </span>
-  <span>
-    <input type="text" class="form-control" placeholder="Street/Soi*">
-  </span>
-  <span>
-    <input type="text" class="form-control" placeholder="Building/Condo/House Name (optional)">
-  </span>
-  <span>
-    <input type="text" class="form-control" placeholder="City (Optional)">
-  </span>
-  <span>
-    <input type="text" class="form-control" placeholder="Postal Code (Optional)">
-  </span>
-  <span>
-    <input type="text" class="form-control" placeholder="Postal Code (Optional)">
-  </span>
-=================================
-  <form class="form-inline">
-    <div class="form-group">
-      <input type="email" class="form-control" id="exampleInputEmail3" placeholder="Emailffffff">
-      <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Password">
-    </div>
-    <div class="form-group">
-      <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Password">
-    </div>
-  </form>
+  <div class="address-form">
+    <form class="form-inline">
+      <div class="form-group">
+        <input type="text" class="form-control input-medium" id="house-number" placeholder="House/Room No.*">
+        <input type="text" class="form-control input-small" id="exampleInputPassword3" placeholder="Street/Soi *">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control input-medium" id="building" placeholder="Building/Condo/House Name (optional)">
+        <input type="text" class="form-control input-small" id="text" placeholder="Floor no. (optional)">
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-control input-medium" id="province" placeholder="Province">
+        <input type="number" class="form-control input-small" id="postcode" placeholder="Postal Code">
+      </div>
+      <div class="form-group">
+        <textarea class="form-control input-large" placeholder="Delivery Instruction (optional)"></textarea>
+      </div>
+    </form>
+  </div>
 </div>

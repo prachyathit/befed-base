@@ -8,3 +8,51 @@
     }
   }
 }
+
+@media only screen and (min-width: 1px) and (max-width: 767px) {
+  .address-form{
+    margin-top: 4%;
+    .form-inline {
+      .form-group {
+        width: 100%;
+
+        .input-large {
+          width: 100%;
+        }
+
+        .input-medium {
+          width: 100%;
+        }
+
+        .input-small {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .address-form{
+    margin-top: 4%;
+    .form-inline {
+      .form-group {
+        width: 101%;
+
+        .input-large {
+          width: 99%;
+        }
+
+        .input-medium {
+          width: 59%;
+        }
+
+        .input-small {
+          width: 39%;
+        }
+      }
+    }
+  }
+}
+
+
