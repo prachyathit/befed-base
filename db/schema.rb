@@ -11,7 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160819163339) do
+ActiveRecord::Schema.define(version: 20160905132211) do
+
+  create_table "addresses", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.boolean  "is_default",    default: false
+    t.float    "latitude"
+    t.float    "longitude"
+    t.text     "instruction"
+    t.string   "house_room_no"
+    t.string   "street"
+    t.string   "building_name"
+    t.string   "floor"
+    t.string   "province"
+    t.string   "postal_code"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  add_index "addresses", ["user_id", "is_default"], name: "index_addresses_on_user_id_and_is_default"
+  add_index "addresses", ["user_id"], name: "index_addresses_on_user_id"
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"

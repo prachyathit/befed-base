@@ -21,6 +21,7 @@ class User < ActiveRecord::Base
 
   has_many :payments
   has_many :orders
+  has_many :addresses
 
   # Returns the hash digest of the given string
   def User.digest(string)
@@ -83,6 +84,15 @@ class User < ActiveRecord::Base
   # Returns true if as password reset has expired.
   def password_reset_expired?
     reset_sent_at < 2.hours.ago
+  end
+
+  def default_address
+    self.addresses.where(is_default: true).first
+  end
+
+  def set_default_address(address)
+    self.addresses.update_all(is_default: false)
+    address.update(is_default: true)
   end
 
   private
