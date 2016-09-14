@@ -55,7 +55,7 @@ module Api
 
     def destroy
       if success = current_address.destroy
-        render json: { success: success, message: 'Successfully Logged out'}
+        render json: { success: success, message: 'Successfully Destroy'}
       else
         render json: { success: success, message: current_address.errors.full_messages}
       end
