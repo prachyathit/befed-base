@@ -5,45 +5,41 @@
   <h1>Profile</h1>
   <div class='row'>
     <div class="col-md-8 col-md-offset-2">
-    <!-- START: General Form -->
-    <%= form_for(@user) do |f| %>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <button class="btn btn-default pull-right">Save</button>
-          <h3 class="panel-title pull-left" style="padding-top: 7.5px;">General</h3>
-          <div class="clearfix"></div>
+      <!-- START: General Form -->
+      <%= form_for(@user) do |f| %>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <button class="btn btn-default pull-right">Save</button>
+            <h3 class="panel-title pull-left" style="padding-top: 7.5px;">General</h3>
+            <div class="clearfix"></div>
+          </div>
+          <div class="panel-body">
+            <div class="form-group row">
+              <%= f.label :name, class: "col-xs-2 col-form-label" %>
+              <div class="col-xs-10">
+                <%= f.text_field :name, class: 'form-control' %>
+              </div>
+            </div>
+            <div class="form-group row">
+              <%= f.label :email, class: "col-xs-2 col-form-label" %>
+              <div class="col-xs-10">
+                <%= f.email_field :email, class: 'form-control' %>
+              </div>
+            </div>
+            <div class="row">
+              <%= f.label :phone, "Telephone", class: "col-xs-2 col-form-label" %>
+              <div class="col-xs-10">
+                <%= f.text_field :phone, class: 'form-control', readonly: true %>
+              </div>
+            </div>
+          </div> 
         </div>
-        <div class="panel-body">
-          <!-- Need rails -->
-          <div class="form-group row">
-            <%= f.label :name, class: "col-xs-2 col-form-label" %>
-            <div class="col-xs-10">
-              <%= f.text_field :name, class: 'form-control' %>
-            </div>
-          </div>
-          <div class="form-group row">
-            <%= f.label :email, class: "col-xs-2 col-form-label" %>
-            <div class="col-xs-10">
-              <%= f.email_field :email, class: 'form-control' %>
-            </div>
-          </div>
-          <div class="row">
-            <%= f.label :phone, "Telephone", class: "col-xs-2 col-form-label" %>
-            <div class="col-xs-10">
-              <%= f.text_field :phone, class: 'form-control', readonly: true %>
-            </div>
-          </div>
-          
-        </div> 
-      </div>
       <% end %>
       <!-- END: General Form -->
 
       <!-- START: Delivery Form -->
-      
       <% if @user.default_address.present? %>
         <!-- User have default address -->
-        <%= form_for(@user.default_address) do |f| %>
         <div class="panel panel-default">
           <div class="panel-heading">
             <button class="btn btn-default pull-right">Change</button>
@@ -51,31 +47,31 @@
             <div class="clearfix"></div>
           </div>
           <div class="panel-body">
-            <!-- Need rails -->
             <div class="form-group row">
-              <%= f.label :name, class: "col-xs-2 col-form-label" %>
+              <%= label_tag :name, "Name", class: "col-xs-2 col-form-label" %>
               <div class="col-xs-10">
+                <%= @user.default_address.name %>
               </div>
             </div>
             <div class="form-group row">
-              <%= f.label :address, class: "col-xs-2 col-form-label" %>
+              <%= label_tag :address, "Address", class: "col-xs-2 col-form-label" %>
               <div class="col-xs-10">
+                <%= @user.default_address.full_address %>
               </div>
             </div>
             <div class="row">
-              <%= f.label :instruction, class: "col-xs-2 col-form-label" %>
+              <%= label_tag :instruction, "Instruction", class: "col-xs-2 col-form-label" %>
               <div class="col-xs-10">
+                <%= @user.default_address.instruction %>
               </div>
             </div>
             <div>
               <div id="googleMap" class="geomap">
-                <%= render partial: "shared/address", locals: {latitude: @user.latitude, longitude: @user.longitude, elementId: 'googleMap'} %>
+                <%= render partial: "shared/address", locals: {latitude: @user.default_address.latitude, longitude: @user.default_address.longitude, elementId: 'googleMap'} %>
               </div>
             </div>
-            <!-- end Need rails -->
           </div> 
         </div>
-        <% end %>
       <% else %>
         <!-- User doesn't have default address -->
         <div class="panel panel-default">
@@ -91,29 +87,33 @@
       <% end %>
       <!-- END: Delivery Form -->
 
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <button class="btn btn-default pull-right">Save</button>
-          <h3 class="panel-title pull-left" style="padding-top: 7.5px;">Change Password</h3>
-          <div class="clearfix"></div>
+      <!-- START: Change Password Form -->
+      <%= form_for(@user) do |f| %>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <button class="btn btn-default pull-right">Save</button>
+            <h3 class="panel-title pull-left" style="padding-top: 7.5px;">Change Password</h3>
+            <div class="clearfix"></div>
+          </div>
+          <div class="panel-body">
+            <!-- Need rails -->
+            <div class="form-group row">
+              <%= f.label :password, 'New Password', class: "col-xs-4 col-form-label" %>
+              <div class="col-xs-8">
+                <%= f.password_field :password, :autocomplete => "off", class: "form-control" %>
+              </div>
+            </div>
+            <div class="form-group row">
+              <%= f.label :password, 'Password Confirmation', class: "col-xs-4 col-form-label" %>
+              <div class="col-xs-8">
+                <%= f.password_field :password_confirmation, class: "form-control" %>
+              </div>
+            </div>
+            <!-- end Need rails -->
+          </div> 
         </div>
-        <div class="panel-body">
-          <!-- Need rails -->
-          <div class="form-group row">
-            <label for="password-input" class="col-xs-4 col-form-label">New Password:</label>
-            <div class="col-xs-8">
-              <input class="form-control" type="password" id="password-input">
-            </div>
-          </div>
-          <div class="form-group row">
-            <label for="confirm-password-input" class="col-xs-4 col-form-label">Password Confirmation:</label>
-            <div class="col-xs-8">
-              <input class="form-control" type="password" id="confirm">
-            </div>
-          </div>
-          <!-- end Need rails -->
-        </div> 
-      </div>
+      <% end %>
+        <!-- END: Change Password Form -->
     </div>
   </div>
 </div>
