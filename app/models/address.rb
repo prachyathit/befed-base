@@ -12,4 +12,10 @@ class Address < ActiveRecord::Base
 		self.is_default = true
 	end
 
+  def full_address
+    full_street = street+" Rd." if street.present?
+    full_floor = "floor "+floor if floor.present?
+    [house_room_no, building_name, full_floor, full_street, province, postal_code].join(" ")
+  end
+
 end
