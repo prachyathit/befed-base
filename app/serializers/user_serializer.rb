@@ -3,6 +3,10 @@ class UserSerializer < ActiveModel::Serializer
 	attribute :phone, key: :phone_no
 
 	def default_address_id
-		object.default_address.id
+		if object.default_address.present?
+			object.default_address.id
+		else
+			nil
+		end
 	end
 end
