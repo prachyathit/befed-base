@@ -2,6 +2,7 @@ module Api
 	class AddressesController < BaseController
 
 		before_action :authenticate_user!
+    before_action :validates_presence_of_address!, only: [:show, :update, :destroy]
 
 		def index
       render json: current_user.addresses
@@ -71,6 +72,10 @@ module Api
       params.permit( :name, :is_default, :latitude, :longitude, 
         :instruction, :house_room_no, :street, :building_name, 
         :floor, :province, :postal_code )
+    end
+
+    def validates_presence_of_address
+      error404("Address with id #{params[:id]} does not exists") unless current_address.present?
     end
 	end
 end
