@@ -54,6 +54,7 @@ Rails.application.routes.draw do
     end
 
     resources :restaurants, only: [:index, :show] do
+      get :check_valid_address
       resources :menu, only: [:index, :show] do
         get :options
       end

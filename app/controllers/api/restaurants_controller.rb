@@ -17,5 +17,14 @@ module Api
 			end
 		end
 
+		def check_valid_address
+			param! :latitude, 	Float, required: true
+			param! :longitude, 	Float, required: true
+
+			restaurant = Restaurant.where(id: params[:restaurant_id]).first
+			error404("Restaurant with id #{params[:id]} does not exists") and return unless restaurant.present?
+			render json: { valid: restaurant.can_delivery_to_address?(params[:latitude], params[:longitude])  }
+		end
+
 	end
 end
