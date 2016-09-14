@@ -74,7 +74,7 @@ module Api
         :floor, :province, :postal_code )
     end
 
-    def validates_presence_of_address
+    def validates_presence_of_address!
       error404("Address with id #{params[:id]} does not exists") unless current_address.present?
     end
 	end
