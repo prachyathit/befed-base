@@ -5,6 +5,8 @@
   <h1>Profile</h1>
   <div class='row'>
     <div class="col-md-8 col-md-offset-2">
+    <!-- START: General Form -->
+    <%= form_for(@user) do |f| %>
       <div class="panel panel-default">
         <div class="panel-heading">
           <button class="btn btn-default pull-right">Save</button>
@@ -14,57 +16,81 @@
         <div class="panel-body">
           <!-- Need rails -->
           <div class="form-group row">
-            <label for="name-input" class="col-xs-2 col-form-label">Name:</label>
+            <%= f.label :name, class: "col-xs-2 col-form-label" %>
             <div class="col-xs-10">
-              <input class="form-control" type="text" id="example-name-input">
+              <%= f.text_field :name, class: 'form-control' %>
             </div>
           </div>
           <div class="form-group row">
-            <label for="email-input" class="col-xs-2 col-form-label">Email:</label>
+            <%= f.label :email, class: "col-xs-2 col-form-label" %>
             <div class="col-xs-10">
-              <input class="form-control" type="email" id="email-input">
+              <%= f.email_field :email, class: 'form-control' %>
             </div>
           </div>
           <div class="row">
-            <label class="col-xs-2 col-form-label">Telephone:</label>
+            <%= f.label :phone, "Telephone", class: "col-xs-2 col-form-label" %>
             <div class="col-xs-10">
-              
+              <%= f.text_field :phone, class: 'form-control', readonly: true %>
             </div>
           </div>
-          <!-- end Need rails -->
+          
         </div> 
       </div>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <button class="btn btn-default pull-right">Change</button>
-          <h3 class="panel-title pull-left" style="padding-top: 7.5px;">Delivery</h3>
-          <div class="clearfix"></div>
+      <% end %>
+      <!-- END: General Form -->
+
+      <!-- START: Delivery Form -->
+      
+      <% if @user.default_address.present? %>
+        <!-- User have default address -->
+        <%= form_for(@user.default_address) do |f| %>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <button class="btn btn-default pull-right">Change</button>
+            <h3 class="panel-title pull-left" style="padding-top: 7.5px;">Delivery</h3>
+            <div class="clearfix"></div>
+          </div>
+          <div class="panel-body">
+            <!-- Need rails -->
+            <div class="form-group row">
+              <%= f.label :name, class: "col-xs-2 col-form-label" %>
+              <div class="col-xs-10">
+              </div>
+            </div>
+            <div class="form-group row">
+              <%= f.label :address, class: "col-xs-2 col-form-label" %>
+              <div class="col-xs-10">
+              </div>
+            </div>
+            <div class="row">
+              <%= f.label :instruction, class: "col-xs-2 col-form-label" %>
+              <div class="col-xs-10">
+              </div>
+            </div>
+            <div>
+              <div id="googleMap" class="geomap">
+                <%= render partial: "shared/address", locals: {latitude: @user.latitude, longitude: @user.longitude, elementId: 'googleMap'} %>
+              </div>
+            </div>
+            <!-- end Need rails -->
+          </div> 
         </div>
-        <div class="panel-body">
-          <!-- Need rails -->
-          <div class="form-group row">
-            <label class="col-xs-2 col-form-label">Name:</label>
-            <div class="col-xs-10">
-            </div>
+        <% end %>
+      <% else %>
+        <!-- User doesn't have default address -->
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <button class="btn btn-default pull-right">Add Address</button>
+            <h3 class="panel-title pull-left" style="padding-top: 7.5px;">Delivery</h3>
+            <div class="clearfix"></div>
           </div>
-          <div class="form-group row">
-            <label class="col-xs-2 col-form-label">Address:</label>
-            <div class="col-xs-10">
-            </div>
-          </div>
-          <div class="row">
-            <label class="col-xs-2 col-form-label">Instruction:</label>
-            <div class="col-xs-10">
-            </div>
-          </div>
-          <div>
-            <div id="googleMap" class="geomap">
-              <%= render partial: "shared/address", locals: {latitude: @user.latitude, longitude: @user.longitude, elementId: 'googleMap'} %>
-            </div>
-          </div>
-          <!-- end Need rails -->
-        </div> 
-      </div>
+          <div class="panel-body">
+            <center>No Default Address Yet.</center>
+          </div> 
+        </div>
+      <% end %>
+      <!-- END: Delivery Form -->
+
       <div class="panel panel-default">
         <div class="panel-heading">
           <button class="btn btn-default pull-right">Save</button>
