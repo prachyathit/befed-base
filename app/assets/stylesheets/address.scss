@@ -2,13 +2,22 @@
   .panel {
     height: 250px;
 
+    .default-location {
+      border: 1px solid #EF665E;
+    }
+
+    &:hover {
+      border: 1px solid #CCCCCC;
+      box-shadow: 1px 1px 1px #CCCCCC;
+    }
+
     .new-address {
       padding: 80px 50px; 
       text-align: center;
     }
 
     .thumb-map {
-      height: 150px;
+      height: 120px;
     }
   }
 }

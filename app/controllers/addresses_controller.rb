@@ -16,4 +16,7 @@ class AddressesController < ApplicationController
    
   end
 
+  def delete
+  end
+
 end

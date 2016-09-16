@@ -3,18 +3,16 @@
     <div class="panel-heading">
       Name
       <div class="pull-right">
-        <a href="#"><span class="glyphicon glyphicon-pencil"></span></a>
+        <%= link_to "", new_address_path,  { :class=>"glyphicon glyphicon-pencil" } %>
         <a  href="#"><span class="glyphicon glyphicon-trash"></span></a>
       </div>
       <div class="clearfix;"></div>
     </div>
     <div class="panel-body">
       <div>address</div>
-      <div>address</div>
-      <div>address</div>
       <div>
         <div id="googleMap" class="thumb-map">
-          <%= render partial: "shared/address", locals: {latitude: '0.0', longitude: '0.0', elementId: 'googleMap'} %>
+          <%= render partial: "shared/address", locals: {latitude: '13.8894791', longitude: '100.56435499999998', elementId: 'googleMap'} %>
         </div>
       </div>
     </div>

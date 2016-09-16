@@ -42,7 +42,7 @@
         <!-- User have default address -->
         <div class="panel panel-default">
           <div class="panel-heading">
-            <button class="btn btn-default pull-right">Change</button>
+            <%= link_to "Change", addresses_path,  { :class=>"btn btn-default pull-right" } %>
             <h3 class="panel-title pull-left" style="padding-top: 7.5px;">Delivery</h3>
             <div class="clearfix"></div>
           </div>
@@ -76,7 +76,7 @@
         <!-- User doesn't have default address -->
         <div class="panel panel-default">
           <div class="panel-heading">
-            <button class="btn btn-default pull-right">Add Address</button>
+            <%= link_to "Add Address", new_address_path,  { :class=>"btn btn-default pull-right" } %>
             <h3 class="panel-title pull-left" style="padding-top: 7.5px;">Delivery</h3>
             <div class="clearfix"></div>
           </div>

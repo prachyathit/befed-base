@@ -5,14 +5,14 @@
       <%= render partial: "thumbnail" %>
       <div class="col-sm-6 address-thumb">
         <div class="panel panel-default">
-          <a href="#">
+          <%= link_to new_address_path do %>
             <div class="panel-body">
               <div class="new-address">
                 <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
                 <h2>New Address</h2>
               </div>
             </div>
-          </a>
+          <% end %>
         </div>
       </div>
     </div>
