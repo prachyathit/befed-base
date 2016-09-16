@@ -13,10 +13,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
-    @user = User.find(params[:id])
-  end
-
   def new
     @user = User.new
   end
@@ -47,9 +43,7 @@ class UsersController < ApplicationController
       session[:saddress][:faddress] = @user.address
       session[:saddress][:latitude] = @user.latitude
       session[:saddress][:longitude] = @user.longitude
-      flash[:success] = "Profile updated"
-      redirect_back_or @user
-    else
+      # flash[:success] = "Profile updated"
       render 'edit'
     end
   end
