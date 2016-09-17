@@ -1,23 +1,37 @@
 <div>
   <img src="http://placehold.it/750x500">
   <div class="address-form">
-    <form class="form-inline">
+    <%= form_for(@address, class: "form-inline") do |f| %>
       <div class="form-group">
-        <input type="text" class="form-control input-medium" id="house-number" placeholder="House/Room No.*">
-        <input type="text" class="form-control input-small" id="exampleInputPassword3" placeholder="Street/Soi *">
+        <%= f.text_field :house_room_no, 
+              { placeholder: "House/Room No.*", 
+                class: "form-control input-medium" } %>
+        <%= f.text_field :street, 
+              { placeholder: "Street/Soi *", 
+                class: "form-control input-small" } %>
       </div>
       <div class="form-group">
-        <input type="text" class="form-control input-medium" id="building" placeholder="Building/Condo/House Name (optional)">
-        <input type="text" class="form-control input-small" id="text" placeholder="Floor no. (optional)">
+        <%= f.text_field :building_name, 
+              { placeholder: "Building/Condo/House Name (optional)", 
+                class: "form-control input-medium" } %>
+        <%= f.text_field :floor, 
+              { placeholder: "Floor no. (optional)", 
+                class: "form-control input-small" } %>
       </div>
       <div class="form-group">
-        <input type="text" class="form-control input-medium" id="city" placeholder="City (optional)">
-        <input type="number" class="form-control input-small" id="postcode" placeholder="Postal Code (optional)">
+        <%= f.text_field :province, 
+              { placeholder: "City (optional)", 
+                class: "form-control input-medium" } %>
+        <%= f.text_field :postal_code, 
+              { placeholder: "Postal Code (optional)", 
+                class: "form-control input-small" } %>
       </div>
       <div class="form-group">
-        <textarea class="form-control input-large" placeholder="Delivery Instruction (optional)"></textarea>
+        <%= f.text_area :instruction,
+              { placeholder: "Delivery Instruction (optional)", 
+                class: "form-control input-large" } %>
       </div>
       <button type="button" class="btn btn-block btn-success">Save</button>
-    </form>
+    <% end %>
   </div>
 </div>

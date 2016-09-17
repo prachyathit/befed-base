@@ -1,18 +1,24 @@
 <div class="col-sm-6 address-thumb">
   <div class="panel panel-default">
     <div class="panel-heading">
-      Name
+      <%= address.name %>
       <div class="pull-right">
-        <%= link_to "", new_address_path,  { :class=>"glyphicon glyphicon-pencil" } %>
-        <a  href="#"><span class="glyphicon glyphicon-trash"></span></a>
+        <%= link_to "", edit_address_path(address.id),  { class: "glyphicon glyphicon-pencil" } %>
+        <%= link_to "", address_path(address),  
+          { class: "glyphicon glyphicon-trash", 
+            method: :delete, 
+            data: { confirm: 'Are you sure?' } 
+          } %>
       </div>
       <div class="clearfix;"></div>
     </div>
     <div class="panel-body">
-      <div>address</div>
+      <div><%= address.full_address %></div>
       <div>
-        <div id="googleMap" class="thumb-map">
-          <%= render partial: "shared/address", locals: {latitude: '13.8894791', longitude: '100.56435499999998', elementId: 'googleMap'} %>
+        <div id="googleMap<%= address.id %>" class="thumb-map">
+          <%= render partial: "shared/address", locals: {latitude: address.latitude, 
+            longitude: address.longitude, 
+            elementId: "googleMap#{address.id}"} %>
         </div>
       </div>
     </div>
