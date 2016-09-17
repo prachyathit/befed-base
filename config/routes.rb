@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   get '/cart/:id' => 'cart#add_new', :as => :add_new
   post '/addcart' => 'cart#add_create', :as => :add_create
   get '/cart/line_delete/(:id)' => 'cart#line_delete', :as => :line_delete
-  get 'users/edit_address' => 'users#edit_address', :as => :edit_address
+  get 'users/edit_address' => 'users#edit_address', :as => :edit_user_address
 
   get 'password_resets/new'
 
