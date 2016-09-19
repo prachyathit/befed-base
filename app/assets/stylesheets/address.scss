@@ -2,10 +2,6 @@
   .panel {
     height: 250px;
 
-    .default-location {
-      border: 1px solid #EF665E;
-    }
-
     &:hover {
       border: 1px solid #CCCCCC;
       box-shadow: 1px 1px 1px #CCCCCC;
@@ -20,7 +16,16 @@
       height: 120px;
     }
   }
+  
+  &.default-address-thumb {
+    .panel {
+      border: 1px solid #EF665E;
+      box-shadow: 1px 1px 1px #EF665E;
+    }
+  }
 }
+
+
 
 @media only screen and (min-width: 1px) and (max-width: 767px) {
   .address-form{
