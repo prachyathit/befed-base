@@ -20,3 +20,22 @@
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $(".address-thumb").each(function() {
+      $(this).bind("click", function(e){
+        console.log(e.target);
+        var target = $(e.target);
+        if (!target.hasClass("glyphicon") && !$(this).hasClass("default-address-thumb")){
+          $.ajax({
+            type: "POST",
+            url: "addresses/"+$(this).attr("address-id")+"/set_default"
+          }).done(function(data) {
+            window.location.href = data.next_url;
+          });
+        }
+      });
+    });
+  });
+</script>

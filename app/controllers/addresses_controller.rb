@@ -30,7 +30,7 @@ class AddressesController < ApplicationController
 
   def set_default
     @address.user.set_default_address(@address)
-    redirect_to addresses_path
+    render json: { success: true, next_url: addresses_url }
   end
 
   private
