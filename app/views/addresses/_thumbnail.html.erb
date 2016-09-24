@@ -1,26 +1,28 @@
-<div class="col-sm-6 <%= thumb_class_for_address(address) %>">
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <%= address.name %>
-      <div class="pull-right">
-        <%= link_to "", edit_address_path(address.id),  { class: "glyphicon glyphicon-pencil" } %>
-        <%= link_to "", address_path(address),  
-          { class: "glyphicon glyphicon-trash", 
-            method: :delete, 
-            data: { confirm: 'Are you sure?' } 
-          } %>
+<%= link_to set_default_address_path(id: address.id), { method: :post } do %>
+  <div class="col-sm-6 <%= thumb_class_for_address(address) %>">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <%= address.name %>
+        <div class="pull-right">
+          <%= link_to "", edit_address_path(address.id),  { class: "glyphicon glyphicon-pencil" } %>
+          <%= link_to "", address_path(address),  
+            { class: "glyphicon glyphicon-trash", 
+              method: :delete, 
+              data: { confirm: 'Are you sure?' } 
+            } %>
+        </div>
+        <div class="clearfix;"></div>
       </div>
-      <div class="clearfix;"></div>
-    </div>
-    <div class="panel-body">
-      <div><%= address.full_address %></div>
-      <div>
-        <div id="googleMap<%= address.id %>" class="thumb-map">
-          <%= render partial: "shared/address", locals: {latitude: address.latitude, 
-            longitude: address.longitude, 
-            elementId: "googleMap#{address.id}"} %>
+      <div class="panel-body">
+        <div><%= address.full_address %></div>
+        <div>
+          <div id="googleMap<%= address.id %>" class="thumb-map">
+            <%= render partial: "shared/address", locals: {latitude: address.latitude, 
+              longitude: address.longitude, 
+              elementId: "googleMap#{address.id}"} %>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+<% end %>

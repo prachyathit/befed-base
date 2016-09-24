@@ -42,7 +42,11 @@ Rails.application.routes.draw do
   post    'login'   =>  'sessions#create'
   delete  'logout'  =>  'sessions#destroy'
   resources :users
-  resources :addresses
+  resources :addresses do
+    member do
+      post :set_default
+    end
+  end
   resources :password_resets, only: [:new, :create, :edit, :update]
 
   namespace :api do
