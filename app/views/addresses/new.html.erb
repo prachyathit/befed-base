@@ -6,3 +6,94 @@
     </div>
   </div>
 </div>
+<div id="map-modal" class="modal fade">
+  <div class="modal-dialog modal-lg">
+	  <div style="background-color: white; height: 400px;">
+			<div id="map" style="height: 350px;">
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- <div id="map-modal" class="modal fade">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-header">
+      Please locate yourself to see the list of restaurants delivering to your location.<br>
+      <div class="hide-mobile">กรุณาระบุตำแหน่งของคุณในแผนที่เพื่อค้นหาร้านอาหารที่มีบริการส่งถึงคุณ</div>
+    </div>
+    <div class="modal-content">
+      <%= form_for(:saddress, url: submit_saddress_path) do |f| %>
+      <button type="button" class="close" data-dismiss="modal"><i class="fa fa-close"></i></button>
+        
+        <span class="tooltips">
+			    <span class="tooltipstext">Get my current location</span>
+			    <span class="location-arrow-wrapper btn btn-danger"><i class="fa fa-location-arrow strong"></i></span>
+			    <span class="spinning-icon-wrapper btn btn-danger hide"><i class="fa fa-spinner fa-spin strong"></i></span>
+				</span>
+
+        <%= f.text_field :faddress, class: "location form-control margin-bot-0", placeholder: 'Type and Select Location'%>
+        <%= f.hidden_field :latitude , class: "latitude" %>
+        <%= f.hidden_field :longitude ,  class: "longitude"%>
+
+        <div id="map-container" class="geomap">
+          <div class="quantity-gen"><i class="fa fa-map-marker"></i><i class="fa fa-hand-o-left"></i> Drag marker to fine-tune your location</div>
+          <div id="map" class="geomap"></div>
+            <div><%= f.submit "Use this address", class: "btn btn-danger map-submit" %></div>
+        </div>
+
+			<% end %>
+   	</div>
+  </div>
+</div> -->
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#map-modal").modal("show");
+    $("#map-modal-edit").modal("show");
+    // $('#map-container').slideDown();
+  });
+
+ 	// Note: This example requires that you consent to location sharing when
+	// prompted by your browser. If you see the error "The Geolocation service
+	// failed.", it means you probably did not give permission for the browser to
+	// locate you.
+
+	function initMap() {
+	  var map = new google.maps.Map(document.getElementById('map'), {
+	    center: {lat: -34.397, lng: 150.644},
+	    zoom: 6
+	  });
+	  var infoWindow = new google.maps.InfoWindow({map: map});
+
+	  // Try HTML5 geolocation.
+	  if (navigator.geolocation) {
+	    navigator.geolocation.getCurrentPosition(function(position) {
+	      var pos = {
+	        lat: position.coords.latitude,
+	        lng: position.coords.longitude
+	      };
+
+	      infoWindow.setPosition(pos);
+	      infoWindow.setContent('Location found.');
+	      map.setCenter(pos);
+	    }, function() {
+	      handleLocationError(true, infoWindow, map.getCenter());
+	    });
+	  } else {
+	    // Browser doesn't support Geolocation
+	    handleLocationError(false, infoWindow, map.getCenter());
+	  }
+	}
+
+	function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+    infoWindow.setPosition(pos);
+    infoWindow.setContent(browserHasGeolocation ?
+                          'Error: The Geolocation service failed.' :
+                          'Error: Your browser doesn\'t support geolocation.');
+  }
+</script>
+<script async defer
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLod8mAcjj-5mmficTg-cu2W-BhEu6Cgs&callback=initMap">
+	// AIzaSyCwhcezDLA4hI2yH4uZxzKTKH_y1RoONUY
+</script>
