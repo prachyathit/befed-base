@@ -12,8 +12,8 @@
 <h1>Customer Information</h1>
 <p>Name: <%= @user.name %></p>
 <p>Contact Number: <%= @user.phone %></p>
-<p>Delivery Address: <%= @user.address %></p>
-<p>Delivery Instruction: <%= @user.dinstruction %></p>
+<p>Delivery Address: <%= @order.shipping_address.address %></p>
+<p>Delivery Instruction: <%= @order.shipping_address.instruction %></p>
 
 <% total = 0 %>
 

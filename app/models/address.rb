@@ -24,4 +24,12 @@ class Address < ActiveRecord::Base
 		user.addresses.count == 1
 	end
 
+	def full_address
+		street = "#{self.street} Rd." if self.street.present?
+		building_name = "Building #{self.building_name}" if self.building_name.present?
+		floor = "Floor #{self.floor}" if self.floor.present?
+		[self.house_room_no, street, building_name, 
+		floor, self.province, self.postal_code].compact.join(' ')
+	end
+
 end
