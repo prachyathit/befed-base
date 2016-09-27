@@ -22,8 +22,13 @@ class Order < ActiveRecord::Base
       end
     end
     user = order.user
-    order.create_shipping_address!(address: user.address, latitude: user.latitude, 
-        longitude: user.longitude, instruction: user.dinstruction)
+    if params[:address_id]
+      address = user.addresses.where(id: params[:address_id]).first
+    else
+      address = user.default_address
+    end
+    order.create_shipping_address!(address: address.full_address, latitude: address.latitude, 
+        longitude: address.longitude, instruction: address.instruction)
     order
   end
   
