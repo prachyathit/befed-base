@@ -1,0 +1,92 @@
+<div class="container">
+  <div class="row order-checkout">
+    <div class="col-xs-6 user-information-container">
+      <div class="geomap">
+        <div id="googleMap" class="geomap"></div>
+      </div>
+      <div class="deliverying-to-container">
+        <div class="title">
+          Delivering to
+          <%= link_to "(Edit/Add more detail)", edit_user_path(current_user),  { :class=>"edit-info" } %> 
+        </div>
+        <div class="detail">
+          <%= @user.address %>
+        </div>
+        <div class="delivery-detail">
+          *<%= @user.dinstruction %>
+        </div>
+      </div>
+      <div class="phone-info-container">
+        <div class="title">
+          Phone
+        </div>
+        <div class="detail">
+          <%= @user.phone %>
+        </div>
+        <div class="phone-note">
+          (*If this is your first order, we"ll call you to verify the phone number.
+          Your order will not be processed until your phone number has been verified.)
+        </div>
+      </div>
+    </div>
+    <div class="col-xs-6 order-summary-container">
+      <div class="order-summary">
+        <div class="title">
+          Your order <%= link_to "(Return to menu)", restaurant_foods_path(session[:restaurant_id]),{ class: "return-to-menu" } %>
+        </div>
+        <div class="order-items">
+          <% cumulative_quantity = 0 %>
+          <% total = 0 %>
+          <% @cart.each do |id, order_info| %>
+            <% food = Food.find(order_info["food_id"]) %>
+            <% quantity = order_info["quantity"].to_i %>
+
+            <% cumulative_quantity += quantity %>
+
+            <% options = order_info["options"] %>
+
+            <% @food_price = 0 %>
+
+            <%= render partial: "shared/order_item", locals: { name: food.name, id: id, price: food.price, quantity: order_info["quantity"], options: options } %>
+
+            <% total += quantity * @food_price %>
+
+          <% end %>
+        </div>
+        <hr>
+        <% @first_order ? delivery_fee = 0 : delivery_fee = 50 %>
+       
+        <%= render partial: "shared/order_details", locals: { cumulative_quantity: cumulative_quantity, total: total, delivery_fee: delivery_fee } %>
+        <hr>
+        <div class="order-total">
+          Order total <span class="theme-color">&nbsp;<%= "#{total + delivery_fee}฿" %></span>
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="row">
+      <h2>Please select payment method and click Submit Order to complete your order</h2>
+      <div class="payment-bar">
+        <%= render partial: "payment" %>
+      </div>
+    </div>
+</div>
+
+<script>
+var myCenter=new google.maps.LatLng(<%= @user.latitude %>,<%= @user.longitude %>);
+function initialize()
+{
+var mapProp = {
+  center:myCenter,
+  zoom:17,
+  mapTypeId:google.maps.MapTypeId.ROADMAP,
+  scrollwheel:false
+  };
+var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+var marker=new google.maps.Marker({
+  position:myCenter,
+  });
+marker.setMap(map);
+}
+google.maps.event.addDomListener(window, "load", initialize);
+</script>
