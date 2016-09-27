@@ -5,11 +5,11 @@
 
 <p>Phone number: <%= @user.phone %></p>
 
-<p>Address: <%= @user.address %></p>
-<p>Lat: <%= @user.latitude %>, Lng: <%= @user.longitude %></p>
+<p>Address: <%= @order.shipping_address.address %></p>
+<p>Lat: <%= @order.shipping_address.latitude %>, Lng: <%= @order.shipping_address.longitude %></p>
 
-<% lat = @user.latitude %>
-<% lng = @user.longitude %>
+<% lat = @order.shipping_address.latitude %>
+<% lng = @order.shipping_address.longitude %>
 <% gmap_url = "http://maps.google.com/maps?q=" + lat.to_s + ", " + lng.to_s %>
 <a href=<%= gmap_url %>>Link to Google Map</a>
 
@@ -102,5 +102,5 @@ Order id: <%= @order.id %>
     </p>
     <p>Name: <%= @user.name %></p>
     <p>Contact Number: <%= @user.phone %></p>
-    <p>Delivery Address: <%= @user.address %></p>
-    <p>Delivery Instruction: <%= @user.dinstruction %></p>
+    <p>Delivery Address: <%= @order.shipping_address.address %></p>
+    <p>Delivery Instruction: <%= @order.shipping_address.instruction %></p>
