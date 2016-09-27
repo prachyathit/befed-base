@@ -14,20 +14,17 @@ module Api
 					opt.param! :value_ids,			Array
 				end
 			end
-			# prepare for multiple address
-			# TODO: use this address to create shipping address instead of user address
-			param! :address,				Hash, required: true do |a|
-				a.param! :latitude,		Float, required: true
-				a.param! :longitude,	Float, required: true
-				a.param! :address,		String, required: true
-				a.param! :instruction,String
-			end
+			param! :address_id,			Integer, required: true
 
 			unless restaurant = Restaurant.where(id: params[:restaurant_id]).first
 				error400("Restaurant with id #{params[:restaurant_id]} does not exists.") and return
 			end
 
-			if restaurant.can_delivery_to_address?(current_user.latitude,current_user.longitude)
+			unless address = current_user.addresses.where(id: params[:address_id]).first
+				error400("Address with id #{params[:address_id]} does not exists.") and return
+			end
+
+			if restaurant.can_delivery_to_address?(address.latitude,address.longitude)
 				cart = {}
 				params[:items].each_with_index do |item, index|
 					item_options = {}
@@ -50,7 +47,7 @@ module Api
 						first_order = current_user.orders.count == 0
 						order = Order.process!(user: current_user, cart: cart, 
 							payment_type: Payment::CASH, first_order: first_order, 
-							rest_id: restaurant.id)
+							rest_id: restaurant.id, address_id: params[:address_id])
 						Payment::Cash.create!(order: order, user: current_user)
 						order.create_order_food(cart)
 
