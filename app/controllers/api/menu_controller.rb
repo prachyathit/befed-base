@@ -5,7 +5,7 @@ module Api
 		before_action :validate_menu!, only: [:options]
 
 		def index
-			menu_by_category = current_restaurant.foods.select(:id, :name, :price, :rec, :cat).group_by(&:cat).to_json
+			menu_by_category = current_restaurant.foods.select(:id, :name, :price, :image_url, :rec, :cat).group_by(&:cat).to_json
 			menu_by_category = JSON.parse(menu_by_category)
 			response = []
 			menu_by_category.each do |category, menus|
