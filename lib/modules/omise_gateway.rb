@@ -11,10 +11,10 @@ module OmiseGateway
       if charge.paid
         # handle success
         puts "thanks"
-        logger.info("Paid SUCCESSFULLY")
+        Rails.logger.info("Paid SUCCESSFULLY")
       else
         # handle failure
-        logger.error("#{charge.failure_code} #{charge.inspect}")
+        Rails.logger.error("#{charge.failure_code} #{charge.inspect}")
         raise charge.failure_code
       end
     end
