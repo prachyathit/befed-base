@@ -3,11 +3,20 @@ module OmiseGateway
 
   class << self
     def create_charge(order, token)
-      Omise::Charge.create({
+      charge = Omise::Charge.create({
         amount: (order.total * 100).to_i,
         currency: "thb",
         card: token
       })
+      if charge.paid
+        # handle success
+        puts "thanks"
+        logger.info("Paid SUCCESSFULLY")
+      else
+        # handle failure
+        logger.error("#{charge.failure_code} #{charge.inspect}")
+        raise charge.failure_code
+      end
     end
   end
 end
