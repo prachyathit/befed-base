@@ -9,13 +9,10 @@ module OmiseGateway
         card: token
       })
       if charge.paid
-        # handle success
-        puts "thanks"
-        Rails.logger.info("Paid SUCCESSFULLY")
+        Rails.logger.info("Successfully paid by credit card")
       else
-        # handle failure
-        Rails.logger.error("#{charge.failure_code} #{charge.inspect}")
-        raise charge.failure_code
+        Rails.logger.error("Unsuccessfully paid by credit card: #{charge.failure_code} #{charge.inspect}")
+        raise ArgumentError, "Credit Card info is incorrect."
       end
     end
   end
