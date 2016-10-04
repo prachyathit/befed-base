@@ -13,8 +13,14 @@ module OmiseGateway
         charge
       else
         Rails.logger.error("Unsuccessfully paid by credit card: #{charge.failure_code} #{charge.inspect}")
-        raise ArgumentError, "Credit Card info is incorrect."
+        raise InvalidCreditCardInfo.new("Credit Card info is incorrect.")
       end
+    end
+  end
+
+  class InvalidCreditCardInfo < StandardError
+    def initialize(data)
+      @data = data
     end
   end
 end
