@@ -104,11 +104,11 @@ class CartController < ApplicationController
           session[:cart] = nil
         end
       rescue OmiseGateway::InvalidCreditCardInfo => e 
-        flash[:danger] = e.message
+        flash[:danger] = "Credit Card info is incorrect."
         logger.error("Message for the log file #{e.message}")
         redirect_to checkout_url
       rescue => e
-        flash[:danger] = 'Something went wrong. Please try again later.'
+        flash[:danger] = 'Something went wrong. Please try again later.'+e.message
         logger.error("Message for the log file #{e.message}")
         redirect_to checkout_url
       end
