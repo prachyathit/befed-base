@@ -108,7 +108,7 @@ class CartController < ApplicationController
         logger.error("Message for the log file #{e.message}")
         redirect_to checkout_url
       rescue => e
-        flash[:danger] = 'Something went wrong. Please try again later.'+e.message
+        flash[:danger] = 'Something went wrong. Please try again later.'
         logger.error("Message for the log file #{e.message}")
         redirect_to checkout_url
       end
