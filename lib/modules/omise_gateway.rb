@@ -3,11 +3,24 @@ module OmiseGateway
 
   class << self
     def create_charge(order, token)
-      Omise::Charge.create({
+      charge = Omise::Charge.create({
         amount: (order.total * 100).to_i,
         currency: "thb",
         card: token
       })
+      if charge.paid
+        Rails.logger.info("Successfully paid by credit card")
+        charge
+      else
+        Rails.logger.error("Unsuccessfully paid by credit card: #{charge.failure_code} #{charge.inspect}")
+        raise InvalidCreditCardInfo.new("Credit Card info is incorrect.")
+      end
+    end
+  end
+
+  class InvalidCreditCardInfo < StandardError
+    def initialize(data)
+      @data = data
     end
   end
 end
