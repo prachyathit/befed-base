@@ -19,8 +19,9 @@ class UserMailer < ApplicationMailer
     @user = user
     @cart = cart
     @order = order
+    rest_email = Restaurant.find(@order.rest_id).email
     subject_to_restaurant = "Befed Delivery Request Order number #{order.id}"
-    mail to: "saladfactory.befed@gmail.com", subject: subject_to_restaurant, from: "befedtoday@gmail.com"
+    mail to: rest_email, subject: subject_to_restaurant, from: "befedtoday@gmail.com"
   end
 
   def password_reset(user)

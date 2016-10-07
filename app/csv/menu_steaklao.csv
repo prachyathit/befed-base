@@ -1,0 +1,46 @@
+name,price,image_url,cat_id,cat,rec,restaurant_id
+Steak Lao : สเต็กลาว,185,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Steak+Lao/01_steaklao.jpg,1,Our Signature,1,2
+Chicken Wing : ปีกไก่ทอดเกลือ,160,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Steak+Lao/02_chickenwings.jpg,2,Deep Fried,1,2
+Hot & Spicy Pork Ball : ลาบหมูทอด,165,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Steak+Lao/03_larbporkball.jpg,2,Deep Fried,1,2
+Hot & Spicy Mushroom Ball : ลาบเห็ดรวมทอด,155,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Steak+Lao/04_larbshroomball.jpg,2,Deep Fried,0,2
+Deep-Fried Pork Stick : หมูแดดเดียว,160,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Steak+Lao/05_porkstick.jpg,2,Deep Fried,0,2
+Shrimp Cake : ทอดมันกุ้ง,185,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Steak+Lao/06_shrimpcake.jpg,2,Deep Fried,1,2
+Fried Seabass with Fish Sauce : ปลากะพงทอดนํ้าปลา ยำมะม่วง,475,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Steak+Lao/07_friedseabass.jpg,2,Deep Fried,0,2
+Tom Yum Koong : ต้มยำกุ้ง,165,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Steak+Lao/08_tomyumkoong.jpg,3,Soup,1,2
+Tom Kar Gai : ต้มข่าไก่,155,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Steak+Lao/09_tomkargai.jpg,3,Soup,1,2
+Green Curry with Chicken : แกงเขียวหวานไก่,155,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Steak+Lao/10_greencurry.jpg,3,Soup,1,2
+Tom Zab Pork Cartilage : ต้มแซ่บกระดูกอ่อนหมู,155,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Steak+Lao/11_tomzab.jpg,3,Soup,0,2
+Kang Om Chicken : แกงอ่อมไก่นา,165,test.jpg,3,Soup,0,2
+Mushroom Soup : ซุปเห็ดฟาง,85,test.jpg,3,Soup,0,2
+Spinach Soup : ซุปผักโขม,85,test.jpg,3,Soup,0,2
+Stir-Fried Rice Noodles with Prawns (Pad Thai) : ผัดไทยกุ้งสดห่อไข่,160,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Steak+Lao/15_padthai.JPG,4,Thai Food,1,2
+Steam Rice with Stir-Fried Chicken and Cashew Nut : ข้าวราดไก่ผัดเม็ดมะม่วงหิมพานต์,155,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Steak+Lao/16_chickenrice.jpg,4,Thai Food,1,2
+Shrimp Paste Fried Rice : ข้าวคลุกกะปิทรงเครื่อง,160,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Steak+Lao/17_kapirice.jpg,4,Thai Food,1,2
+Steam Rice with Stir-Fried Seafood Curry : ข้าวราดทะเลผัดผงกะหรี่,165,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Steak+Lao/18_seafoodrice.jpg,4,Thai Food,0,2
+Steam Rice with Stir-Fried Seafood Basil Leaf : ข้าวราดผัดกะเพราทะเลไข่ดาว,165,test.jpg,4,Thai Food,0,2
+"Steam Rice with Mix Stir-Fried Mushroom, Basil Leaf and Egg Tofu : ข้าวราดกะเพราเห็ดรวมเต้าหู้ใข่",155,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Steak+Lao/20_ricemushroom.jpg,4,Thai Food,0,2
+Vegetarian Fried Rice : ข้าวผัดมังสวิรัติ,140,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Steak+Lao/21_vegfriedrice.jpg,4,Thai Food,0,2
+Corn Salad with Salted-Egg : ตำข้าวโพดใข่เค็ม,100,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Steak+Lao/22_tumcornegg.jpg,5,Som Tum,0,2
+Tum Sunshine : ตำตะวันซันชายน์,140,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Steak+Lao/23_tumsunshine.jpg,5,Som Tum,1,2
+Tum Sua : ตำซั่ว,115,test.jpg,5,Som Tum,0,2
+Tum Mixed Fruit : ตำผลไม้รวม,115,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Steak+Lao/25_mixedfruit.jpg,5,Som Tum,0,2
+Papaya Salad with Blue Crab : ตำปูม้า,195,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Steak+Lao/26_tumbluecrab.jpg,5,Som Tum,0,2
+Tum Grilled-Salmon : ตำแซลม่อนย่าง,255,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Steak+Lao/27_tumsalmon.jpg,5,Som Tum,0,2
+Tum Thai with Salted-Egg : ตำไทยใข่เค็ม,90,test.jpg,5,Som Tum,0,2
+Tum Lao : ตำลาว,80,test.jpg,5,Som Tum,0,2
+Tum Crab : ตำปู,80,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Steak+Lao/30_tumcrab.jpg,5,Som Tum,0,2
+Thai Style Grilled Beef  : เสือร้องไห้เนื้อโคขุน,185,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Steak+Lao/31_grilledbeef.jpg,6,"Grill, Yam, Larb",1,2
+Grilled Pork Neck : คอหมูย่าง,160,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Steak+Lao/32_porkneck.jpg,6,"Grill, Yam, Larb",1,2
+Winged Bean Yam with Shrimp : ยำถั่วพูกุ้งสด,170,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Steak+Lao/33_wingedbean.jpg,6,"Grill, Yam, Larb",1,2
+Beef Yam : ยำเนื้อมะเขือเปราะ,180,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Steak+Lao/34_yumbeef.jpg,6,"Grill, Yam, Larb",0,2
+Spicy Seafood Salad : ยำทะเล,170,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Steak+Lao/35_yumseafood.jpg,6,"Grill, Yam, Larb",0,2
+Sliced Grilled Pork Salad : นํ้าตกหมู,160,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Steak+Lao/36_porkwaterfall.jpg,6,"Grill, Yam, Larb",0,2
+Larb : ลาบ,135,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Steak+Lao/37_larb.jpg,6,"Grill, Yam, Larb",0,2
+Larb Salmon : ลาบแซลมอน,195,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Steak+Lao/38_larbsalmon.jpg,6,"Grill, Yam, Larb",0,2
+Tenderloin Steak : สเต็กสันใน,340,test.jpg,7,Western,0,2
+Pork Chop Steak : สเต็กพอร์คชอป,210,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Steak+Lao/40_porkchop.jpg,7,Western,0,2
+Salmon Steak : สเต็กแซลมอน,305,test.jpg,7,Western,0,2
+Grilled Seabass Salsa Verde Sauce : ปลากะพงย่างซ้อสซัลซ่าเวร์เด,305,test.jpg,7,Western,0,2
+Mix Grilled Sausages : ไส้กรอกรวมย่าง,315,test.jpg,7,Western,0,2
+Jasmine Rice : ข้าวสวย,20,test.jpg,8,Rice,0,2
+Sticky Rice : ข้าวเหนียว,20,test.jpg,8,Rice,0,2

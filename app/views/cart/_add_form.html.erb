@@ -60,4 +60,19 @@
      $(this).prop('checked', false)
    }
 })
+  $('input[name="value[Toppings (Choose 2)][option_value_ids][]"]').change(function(e){
+   if ($('input[name="value[Toppings (Choose 2)][option_value_ids][]"]:checked').length > 2) {
+     $(this).prop('checked', false)
+   }
+})
+  $('input[name="value[Toppings (Choose 3)][option_value_ids][]"]').change(function(e){
+   if ($('input[name="value[Toppings (Choose 3)][option_value_ids][]"]:checked').length > 3) {
+     $(this).prop('checked', false)
+   }
+})
+  $('input[name="value[Toppings (Choose 4)][option_value_ids][]"]').change(function(e){
+   if ($('input[name="value[Toppings (Choose 4)][option_value_ids][]"]:checked').length > 4) {
+     $(this).prop('checked', false)
+   }
+})
 </script>

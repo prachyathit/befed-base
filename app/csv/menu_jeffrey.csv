@@ -1,0 +1,47 @@
+name,price,image_url,cat_id,cat,rec,restaurant_id
+Tomato Bruchetta : ขนมปังหน้ามะเขือเทศ,95,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Jeffrey/01_tomatobread.JPG,1,Appetizer,0,4
+Fried Chicken : ไก่ทอด,105,test.jpg,1,Appetizer,0,4
+French Fries : เฟรนช์ฟราย,70,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Jeffrey/03_frenchfries.JPG,1,Appetizer,0,4
+Nacho Cheese with French Fries : เฟรนช์ฟรายนาโช่ชีส,150,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Jeffrey/04_nacho+cheese+with+frenchfries.jpg,1,Appetizer,0,4
+Mashed Potato :  มันบด,70,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Jeffrey/04_mashedpotato.jpg,1,Appetizer,0,4
+Garlic Bread : ขนมปังกระเทียม,95,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Jeffrey/05_gralicbread.JPG,1,Appetizer,0,4
+Beef Tenderloin : สเต็กเนื้อ,420,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Jeffrey/06_beefsteak.JPG,2,Steak,0,4
+Pork chop : พอร์คชอป,340,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Jeffrey/07_porkchop.jpg,2,Steak,1,4
+Roasted Chicken Steak : สเต็กอกไก่,230,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Jeffrey/08_chickensteak.JPG,2,Steak,1,4
+Salmon Steak : สเต็กปลาแซลมอน,455,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Jeffrey/09_salmonsteak.JPG,2,Steak,1,4
+Rib Eye Steak Australia : เนื้อริบอายออสเตรเลีย,795,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Jeffrey/11_ribeyesteak.jpg,2,Steak,0,4
+Pork Spare Ribs Barbeque : ซี่โครงหมูอบซอสบาร์บีคิว,400,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Jeffrey/11_spareribs.jpg,2,Steak,1,4
+Spaghetti & Meatballs : สปาเก็ตตี้มีทบอลเนื้อ,205,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Jeffrey/12_spaghettimeatball.JPG,3,Pasta,0,4
+Spaghetti & Porkballs : สปาเก็ตตี้มีทบอลหมู,205,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Jeffrey/12_spaghettimeatball.JPG,3,Pasta,0,4
+Chicken Spaghetti : สปาเก็ตตี้ไก่ซอสมะเขือเทศ,205,test.jpg,3,Pasta,0,4
+Seafood Spaghetti : สปาเก็ตตี้ทะเล,205,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Jeffrey/15_seafoodspa.jpg,3,Pasta,0,4
+Carbonara : คาโบนาร่า,205,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Jeffrey/16_carbonara.jpg,3,Pasta,0,4
+Pasta with Chicken Stew : พาสต้าไก่ในครีมซอส,205,test.jpg,3,Pasta,0,4
+Mac n' Cheese with Crispy Fish : มักกะโรนีชีสกับปลาชุบแป้งทอด,250,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Jeffrey/18_macncheesecrispyfish.JPG,3,Pasta,0,4
+Pizza 2 Toppings : พิซซ่า 2 ทอปปิ้ง,285,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Jeffrey/20_pizza.jpg,4,Pizza,1,4
+Pizza 3 Toppings : พิซซ่า 3 ทอปปิ้ง,295,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Jeffrey/20_pizza.jpg,4,Pizza,1,4
+Pizza 4 Toppings : พิซซ่า 4 ทอปปิ้ง,310,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Jeffrey/20_pizza.jpg,4,Pizza,1,4
+Pizza All Toppings : พิซซ่าทอปปิ้งรวม,320,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Jeffrey/20_pizza.jpg,4,Pizza,1,4
+Pizza Spicy Sausage Toppings : พิซซ่าไส้กรอกเผ็ด,285,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Jeffrey/20_pizza.jpg,4,Pizza,1,4
+Pizza Carbonara Toppings : พิซซ่าคาโบนาร่า,340,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Jeffrey/20_pizza.jpg,4,Pizza,1,4
+Hamburger : แฮมเบอร์เกอร์,185,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Jeffrey/20_hamburger.jpg,5,Burger and Sandwich,1,4
+Ham Sandwich : แซนด์วิชแฮม,185,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Jeffrey/21_hamsandwich.JPG,5,Burger and Sandwich,0,4
+Chicken Sandwich : แซนด์วิชไก่,185,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Jeffrey/22_chickensandwich.JPG,5,Burger and Sandwich,0,4
+Tuna Sandwich : แซนด์วิชทูน่า,185,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Jeffrey/23_tunasandwich.JPG,5,Burger and Sandwich,0,4
+Cheese Steak : ชีสสเต็ก,230,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Jeffrey/25_cheesesteak.jpg,5,Burger and Sandwich,0,4
+Tomato Soup : ซุปมะเขือเทศ,95,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Jeffrey/27_tomatosoup.jpg,6,Soup,0,4
+Green Bean Soup : ซุปถั่วเขียว,95,test.jpg,6,Soup,0,4
+Mushroom Soup : ซุปเห็ด,95,test.jpg,6,Soup,0,4
+Chef's Salad : สลัดผักพร้อมนํ้าสลัดสูตรเฉพาะ,115,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Jeffrey/28_chefsalad.JPG,7,Salad,1,4
+Tuna Salad : สลัดทูน่า,140,test.jpg,7,Salad,0,4
+Caesar Salad : สลัดซีซาร์,185,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Jeffrey/30_caesarsalad.JPG,7,Salad,0,4
+Sesame Oil Salad : สลัดนํ้ามันงา,140,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Jeffrey/31_sesameoilsalad.JPG,7,Salad,0,4
+Tofu Salad : สลัดเต้าหู้,185,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Jeffrey/32_tofusalad.JPG,7,Salad,0,4
+Chicken Salad : สลัดอกไก่,185,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Jeffrey/33_chickensalad.JPG,7,Salad,0,4
+Salmon Salad : สลัดปลาแซลมอน,205,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Jeffrey/34_salmonsalad.jpg,7,Salad,0,4
+Lasagna : ลาซานญ่า,230,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Jeffrey/37_lasagna.jpg,8,Special,0,4
+Turkey : ไก่งวง,455,test.jpg,8,Special,0,4
+Spinach with Cheese : ผักโขมอบชีส,185,test.jpg,8,Special,0,4
+"Fried Rice (Ham, Sausage, Fried Egg) : ข้าวผัดแฮม ไส้กรอก ไข่ดาว",230,test.jpg,8,Special,0,4
+Thai Spicy Salmon Salad : ลาบปลาแซลมอน,340,test.jpg,8,Special,0,4
+Thai Spicy Sausage Salad : ยำไส้กรอก,230,test.jpg,8,Special,0,4
