@@ -8,10 +8,10 @@
 
 <table>
 <% @cart.each do |id, order_info| %>
-  <% food_id = order_info["food_id"] %>
-  <% quantity = order_info["quantity"].to_i %>
-  <% special = order_info["special"] %>
-  <% options = order_info["options"] %>
+  <% food_id = order_info[:food_id] %>
+  <% quantity = order_info[:quantity].to_i %>
+  <% special = order_info[:special] %>
+  <% options = order_info[:options] %>
   <% food = Food.find(food_id) %>
   <% food_price = food.price %>
 <tr>
@@ -23,7 +23,7 @@
       <ul class="option-lists">
         <% unless options.nil? %>
           <% options.each do |option| %>
-            <% option_value_id = option[1]["option_value_ids"] %>
+            <% option_value_id = option[1][:option_value_ids] %>
               <% unless option_value_id.first.empty? %>
 
                 <!--Radio button-->
@@ -69,8 +69,8 @@
 <h1>Customer Information</h1>
 <p>Name: <%= @user.name %></p>
 <p>Contact Number: <%= @user.phone %></p>
-<p>Delivery Address: <%= @user.address %></p>
-<p>Delivery Instruction: <%= @user.dinstruction %></p>
+<p>Delivery Address: <%= @order.shipping_address.address %></p>
+<p>Delivery Instruction: <%= @order.shipping_address.instruction %></p>
 </div>
 <div style="padding-top: 6px; padding-bottom: 6px; text-align: center; background-color: #f0f0f0">
   <span style="font-family: 'Helvetica'; margin-right: 10px; font-size: 1.7em; color: #EF5A50; text-transform: uppercase; font-weight: 700; letter-spacing: 2px;">BEFED</span>

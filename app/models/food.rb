@@ -8,4 +8,12 @@ class Food < ActiveRecord::Base
   has_many :orders, through: :order_foods
 
   scope :by_cat, -> { order(cat_id: :asc, id: :asc) }
+
+  def thai_name
+  	self.name.split(" : ")[1]
+  end
+
+  def eng_name
+  	self.name.split(" : ")[0]
+  end
 end

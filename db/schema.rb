@@ -13,6 +13,26 @@
 
 ActiveRecord::Schema.define(version: 20160905134012) do
 
+  create_table "addresses", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.boolean  "is_default",    default: false
+    t.float    "latitude"
+    t.float    "longitude"
+    t.text     "instruction"
+    t.string   "house_room_no"
+    t.string   "street"
+    t.string   "building_name"
+    t.string   "floor"
+    t.string   "province"
+    t.string   "postal_code"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  add_index "addresses", ["user_id", "is_default"], name: "index_addresses_on_user_id_and_is_default"
+  add_index "addresses", ["user_id"], name: "index_addresses_on_user_id"
+
   create_table "categories", force: :cascade do |t|
     t.string   "name"
     t.text     "image_url"
@@ -56,9 +76,11 @@ ActiveRecord::Schema.define(version: 20160905134012) do
   create_table "options", force: :cascade do |t|
     t.string   "name"
     t.integer  "position"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
     t.integer  "option_type"
+    t.integer  "min",         default: 1
+    t.integer  "max",         default: 1
   end
 
   create_table "order_foods", force: :cascade do |t|
@@ -122,6 +144,18 @@ ActiveRecord::Schema.define(version: 20160905134012) do
     t.integer  "cday"
   end
 
+  create_table "shipping_addresses", force: :cascade do |t|
+    t.integer  "order_id"
+    t.text     "address"
+    t.float    "latitude"
+    t.float    "longitude"
+    t.string   "instruction"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "shipping_addresses", ["order_id"], name: "index_shipping_addresses_on_order_id"
+
   create_table "users", force: :cascade do |t|
     t.string   "name"
     t.string   "email"
@@ -137,8 +171,10 @@ ActiveRecord::Schema.define(version: 20160905134012) do
     t.float    "latitude"
     t.float    "longitude"
     t.text     "dinstruction"
+    t.string   "access_token"
   end
 
+  add_index "users", ["access_token"], name: "index_users_on_access_token", unique: true
   add_index "users", ["email"], name: "index_users_on_email", unique: true
 
 end

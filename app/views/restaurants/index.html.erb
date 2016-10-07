@@ -12,7 +12,7 @@
   <% end %>
   <div class='row restaurants-container'>
     <% @restaurants.each do |restaurant| %>
-      <% if restaurant.soon || restaurant.cday == Time.now.wday %>
+      <% if restaurant.soon || restaurant.close_today? %>
         <div class='restaurant-container rc-hover'>
           <%= render partial: "shared/restaurant", locals: { restaurant: restaurant } %>
         </div>  

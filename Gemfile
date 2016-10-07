@@ -28,6 +28,11 @@ gem 'omise', github: 'omise/omise-ruby'
 
 gem 'figaro'
 
+# for API
+gem 'rails-api'
+gem 'rails_param'
+gem 'active_model_serializers', '~> 0.10.0'
+
 group :development, :test do
   gem 'sqlite3', '1.3.9'
   gem 'pry-rails'

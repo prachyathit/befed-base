@@ -21,6 +21,7 @@ class User < ActiveRecord::Base
 
   has_many :payments
   has_many :orders
+  has_many :addresses
 
   # Returns the hash digest of the given string
   def User.digest(string)
@@ -34,10 +35,26 @@ class User < ActiveRecord::Base
     SecureRandom.urlsafe_base64
   end
 
+  def generate_access_token
+    begin
+      self.access_token = User.new_token
+    end while User.exists?(access_token: access_token)
+    self.save
+    self.access_token
+  end
+
+  def remove_access_token
+    self.update(access_token: nil)
+  end
+
   # Remembers a user in the database for user in persistent sessions
   def remember
     self.remember_token = User.new_token
     update_attribute(:remember_digest, User.digest(remember_token))
+  end
+
+  def valid_password?(password)
+    authenticated?(:password, password)
   end
 
   # Returns true if the given token matches the digest
@@ -67,6 +84,20 @@ class User < ActiveRecord::Base
   # Returns true if as password reset has expired.
   def password_reset_expired?
     reset_sent_at < 2.hours.ago
+  end
+
+  def default_address
+    self.addresses.where(is_default: true).first
+  end
+
+  def set_default_address(address)
+    self.addresses.update_all(is_default: false)
+    address.update(is_default: true)
+  end
+
+  def set_default_address!(address)
+    self.addresses.update_all(is_default: false)
+    address.update!(is_default: true)
   end
 
   private

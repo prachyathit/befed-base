@@ -43,4 +43,21 @@ Rails.application.routes.draw do
   delete  'logout'  =>  'sessions#destroy'
   resources :users
   resources :password_resets, only: [:new, :create, :edit, :update]
+
+  namespace :api do
+    post    :login,     to: 'sessions#create'
+    delete  :logout,    to: 'sessions#destroy'
+    post    :register,  to: 'users#create'
+    post    :checkout,  controller: 'cart'
+    resources :users, only: [:show, :update] do
+      resources :addresses, only: [:index, :show, :create, :update, :destroy]
+    end
+
+    resources :restaurants, only: [:index, :show] do
+      get :check_valid_address
+      resources :menu, only: [:index, :show] do
+        get :options
+      end
+    end
+  end
 end

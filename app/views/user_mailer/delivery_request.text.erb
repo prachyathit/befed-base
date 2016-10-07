@@ -7,10 +7,10 @@ Order id: <%= @order.id %>
 
 
     <% @cart.each do |id, order_info| %>
-      <% food_id = order_info["food_id"] %>
-      <% quantity = order_info["quantity"].to_i %>
-      <% special = order_info["special"] %>
-      <% options = order_info["options"] %>
+      <% food_id = order_info[:food_id] %>
+      <% quantity = order_info[:quantity].to_i %>
+      <% special = order_info[:special] %>
+      <% options = order_info[:options] %>
       <% food = Food.find(food_id) %>
       <% food_price = food.price %>
 
@@ -21,7 +21,7 @@ Order id: <%= @order.id %>
 
               <% unless options.nil? %>
                 <% options.each do |option| %>
-                  <% option_value_id = option[1]["option_value_ids"] %>
+                  <% option_value_id = option[1][:option_value_ids] %>
                     <% unless option_value_id.first.empty? %>
 
                       <!--Radio button-->
@@ -62,5 +62,5 @@ Subtotal:<%= total+50 %> ฿
 Payment Method: Cash on delivery
 Name: <%= @user.name %>
 Contact Number: <%= @user.phone %>
-Delivery Address: <%= @user.address %>
-Delivery Instruction: <%= @user.dinstruction %>
+Delivery Address: <%= @order.shipping_address.address %>
+Delivery Instruction: <%= @order.shipping_address.instruction %>
