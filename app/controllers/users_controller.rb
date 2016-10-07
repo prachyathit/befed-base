@@ -24,6 +24,12 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      # Temporary fix for non multiple address
+      # TODO : Remove this when multiple address website launch
+      @user.addresses.create(latitude: @user.latitude, 
+        longitude: @user.longitude, 
+        instruction: @user.address || "" + " " + @user.dinstruction || "")
+
       log_in @user
       flash[:success] = "Let's eat!"
       
@@ -44,6 +50,12 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
+      # Temporary fix for non multiple address
+      # TODO : Remove this when multiple address website launch
+      @user.addresses.first.update(latitude: @user.latitude, 
+        longitude: @user.longitude, 
+        instruction: @user.address || "" + " " + @user.dinstruction || "")
+
       session[:saddress][:faddress] = @user.address
       session[:saddress][:latitude] = @user.latitude
       session[:saddress][:longitude] = @user.longitude
