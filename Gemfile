@@ -33,6 +33,9 @@ gem 'rails-api'
 gem 'rails_param'
 gem 'active_model_serializers', '~> 0.10.0'
 
+# for monitoring
+gem 'newrelic_rpm'
+
 group :development, :test do
   gem 'sqlite3', '1.3.9'
   gem 'pry-rails'
