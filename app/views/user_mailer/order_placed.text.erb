@@ -5,6 +5,7 @@ Name: <%= @user.name %>
 Phone number: <%= @user.phone %>
 
 Address: <%= @order.shipping_address.address %>
+         <%= @order.shipping_address.instruction %>
 <% total = 0 %>
 Order Info
 <% rest_id = @order.rest_id %>

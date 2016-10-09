@@ -48,7 +48,10 @@ module TookanApiService
 				customer_email: user.email,
 				customer_username: user.name,
 				customer_phone: user.phone,
-				customer_address: shipping_address.address,
+
+				# Temporary fix for non multiple address
+				# TODO : Change this to shipping_address.address when multiple address website launch
+				customer_address: shipping_address.instruction,
 
 				latitude: shipping_address.latitude,
 				longitude: shipping_address.longitude,
