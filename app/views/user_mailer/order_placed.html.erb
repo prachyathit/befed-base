@@ -5,7 +5,9 @@
 
 <p>Phone number: <%= @user.phone %></p>
 
-<p>Address: <%= @order.shipping_address.address %></p>
+<p>Address: <%= @order.shipping_address.address %>
+            <%= @order.shipping_address.instruction %>
+</p>
 <p>Lat: <%= @order.shipping_address.latitude %>, Lng: <%= @order.shipping_address.longitude %></p>
 
 <% lat = @order.shipping_address.latitude %>
