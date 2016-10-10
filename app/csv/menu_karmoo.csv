@@ -1,0 +1,12 @@
+name,price,image_url,cat_id,cat,rec,restaurant_id
+Stewed Pork Leg : ขาหมูจาน,120,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/karmoo/porkleg.jpg,1,Pork Leg,1,6
+Stewed Pork Leg with Rice : ข้าวขาหมู,60,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/karmoo/porkleg_rice.jpg,2,Rice,1,6
+Crispy Pork with Rice : ข้าวหมูกรอบ,60,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/karmoo/crispypork_rice.jpg,2,Rice,0,6
+Fried Pork with Rice : ข้าวหมูทอด,60,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/karmoo/friedpork_rice.jpg,2,Rice,0,6
+"Stewed Pork Leg, Chitterling and Egg on Rice : ราดข้าว Extra",100,,2,Rice,1,6
+Pork Clear Soup : เกาเหลาหมู,60,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/karmoo/clearsoup.jpg,3,Soup/Noodle,0,6
+Pork Clear Soup with Seaweed : เกาเหลาสาหร่ายหมู,70,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/karmoo/clearsoup_seaweed.jpg,3,Soup/Noodle,0,6
+Chinese Roll Noodle with Thick Soup : ก๋วยจั๊บนํ้าข้น,60,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/karmoo/thicksoup_noodle.jpg,3,Soup/Noodle,1,6
+Chinese Roll Noodle with Clear Soup : ก๋วยจั๊บนํ้าใส,60,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/karmoo/clearsoup_noodle.jpg,3,Soup/Noodle,1,6
+Bamboo Shoot with Pork Ribs Soup : หน่อไม้ตุ๋นเห็ดหอมกระดูกหมูอ่อน,120,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/karmoo/shoot.jpg,3,Soup/Noodle,0,6
+Fish Maw in Thick Soup : กระเพาะปลา,120,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/karmoo/fishmaw.jpg,3,Soup/Noodle,0,6

@@ -5,12 +5,12 @@
   <div class='col-md-8 col-xs-8 right-column'>
     <div class='title'><%= restaurant.name %></div>
     <% if restaurant.soon %>
-      <div class='delivery-hours'>&nbsp;&nbsp;&nbsp;Coming Soon&nbsp;&nbsp;&nbsp;&nbsp;</div>
+      <div class='delivery-hours'>&nbsp;&nbsp;&nbsp;Close&nbsp;&nbsp;&nbsp;&nbsp;</div>
     <% elsif restaurant.cday == Time.now.wday %>
       <div class='delivery-hours'>&nbsp;&nbsp;&nbsp;Close Today&nbsp;&nbsp;&nbsp;&nbsp;</div>
     <% else %>
       <div class='estimated-delivery'><i class="fa fa-truck fa-lg"></i>&nbsp;&nbsp;&nbsp;Estimated delivery time: <%= restaurant.dtime %> Minutes</div>
-      <div class='delivery-hours'>&nbsp;<i class="fa fa-clock-o fa-lg"></i>&nbsp;&nbsp;&nbsp;Delivery hours: 11:00AM - 9:00PM&nbsp;&nbsp;&nbsp;&nbsp;</div>
+      <div class='delivery-hours'>&nbsp;<i class="fa fa-clock-o fa-lg"></i>&nbsp;&nbsp;&nbsp;Delivery hours: <%= restaurant.dhour %>&nbsp;&nbsp;&nbsp;&nbsp;</div>
       <div class='estimated-delivery'><i class="fa fa-money fa-lg"></i>&nbsp;&nbsp;&nbsp;Minimum order: <%= restaurant.min_order %> ฿</div>
     <% end %>
   </div>
