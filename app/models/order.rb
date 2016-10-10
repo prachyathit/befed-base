@@ -27,7 +27,8 @@ class Order < ActiveRecord::Base
     else
       address = user.default_address
     end
-    order.create_shipping_address!(address: address.full_address, latitude: address.latitude, 
+    # TODO: change user.address to address.full_address when website with multiple address launched
+    order.create_shipping_address!(address: user.address, latitude: address.latitude, 
         longitude: address.longitude, instruction: address.instruction)
     order
   end
