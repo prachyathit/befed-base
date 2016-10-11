@@ -60,6 +60,7 @@ ActiveRecord::Schema.define(version: 20161011135634) do
     t.string   "cat"
     t.integer  "rec"
     t.boolean  "appear",        default: true
+    t.integer  "full_price",    default: 0
   end
 
   add_index "foods", ["restaurant_id"], name: "index_foods_on_restaurant_id"
@@ -145,6 +146,7 @@ ActiveRecord::Schema.define(version: 20161011135634) do
     t.boolean  "soon",       default: false
     t.integer  "cday"
     t.string   "dhour",      default: "11:00AM - 9:00PM"
+    t.boolean  "promo",      default: false
   end
 
   create_table "shipping_addresses", force: :cascade do |t|

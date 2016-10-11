@@ -57,6 +57,13 @@
     <%= f.radio_button :soon, true %>
     <%= label :soon, "Disable" %>
   </div>
+  <div class="field">
+    <%= f.label :promo, "Promotion" %>
+    <%= f.radio_button :promo, true %>
+    <%= label :soon, "Yes" %>
+    <%= f.radio_button :promo, false %>
+    <%= label :soon, "No" %>
+  </div>
   <%= f.hidden_field :latitude , class: "longitude" %>
   <%= f.hidden_field :longitude ,  class: "latitude" %>
 
