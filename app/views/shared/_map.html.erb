@@ -1,26 +1,24 @@
   <div id="map-modal" class="modal fade">
     <div class="modal-dialog modal-lg">
-      <div class="modal-header">
-        Please locate yourself to see the list of restaurants delivering to your location.<br>
-        <div class="hide-mobile">กรุณาระบุตำแหน่งของคุณในแผนที่เพื่อค้นหาร้านอาหารที่มีบริการส่งถึงคุณ</div>
-      </div>
       <div class="modal-content">
         <%= form_for(:saddress, url: submit_saddress_path) do |f| %>
-        <button type="button" class="close" data-dismiss="modal"><i class="fa fa-close"></i></button>
-            <%= render partial: "shared/map_auto_address" %>
+          <button type="button" class="close" data-dismiss="modal"><i class="fa fa-close"></i></button>
+          <%= render partial: "shared/map_auto_address" %>
           <%= f.text_field :faddress, class: "location form-control margin-bot-0", placeholder: 'Type and Select Location'%>
           <%= f.hidden_field :latitude , class: "latitude" %>
           <%= f.hidden_field :longitude ,  class: "longitude"%>
-
-
           <div id="map-container" class="geomap">
-            <div class="quantity-gen"><i class="fa fa-map-marker"></i><i class="fa fa-hand-o-left"></i> Drag marker to fine-tune your location</div>
+            <div class="quantity-gen">
+              <i class="fa fa-map-marker"></i>
+              <i class="fa fa-hand-o-left"></i> 
+              Drag marker to fine-tune your location
+            </div>
             <div id="map" class="geomap"></div>
-              <div><%= f.submit "#{button_name}", class: "btn btn-danger map-submit" %></div>
+            <div>
+              <%= f.submit "#{button_name}", class: "btn btn-danger map-submit" %>
+            </div>
           </div>
-          
- 
-<% end %>
+        <% end %>
      </div>
     </div>
   </div>

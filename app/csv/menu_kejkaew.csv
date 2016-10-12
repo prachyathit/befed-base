@@ -1,0 +1,161 @@
+name,price,image_url,cat_id,cat,rec,restaurant_id
+Deep Fried Pork with Pineapple : หมูเก็จแก้ว,150,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/kejkaew/friedpork.JPG,1,Appetizer,1,3
+Cashew Nuts : เม็ดมะม่วงทอด ยำ,115,test.jpg,1,Appetizer,0,3
+"Thai Fermented Pork with Peanut, Ginger and Shallot : แหนมมัด",115,test.jpg,1,Appetizer,0,3
+Deep Fried Spare Ribs with Garlic and Pepper : ซี่โครงหมูทอดกระเทียม,150,test.jpg,1,Appetizer,0,3
+Boiled Spare Ribs with Fermented Soybean Dip : ซี่โครงหมูจิ้มเต้าเจี้ยว,150,test.jpg,1,Appetizer,0,3
+Deep Fried Chicken : ไก่บ้านชุบน้ำปลาทอด,150,test.jpg,1,Appetizer,0,3
+Cashew Nuts and Dried Shrimp Dip : เม็ดมะม่วงทอดกับกุ้งเสียบ,150,test.jpg,1,Appetizer,0,3
+Stir Fried Chicken with Cashew Nuts : ไก่ผัดเม็ดมะม่วง,195,test.jpg,1,Appetizer,0,3
+Stir Fried Prawn with Cashew Nuts : กุ้งผัดเม็ดมะม่วง,225,test.jpg,1,Appetizer,0,3
+Deep Fried Fish Cake : ทอดมันปลากราย,195,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/kejkaew/fishcake.JPG,1,Appetizer,1,3
+Stir Fried Shrimp with Garlic and Pepper : กุ้งทอดกระเทียมพริกไทย,205,test.jpg,1,Appetizer,0,3
+Deep Fried Shrimp : กุ้งชุบแป้งทอด,205,test.jpg,1,Appetizer,0,3
+Spicy Coconut Shoots with Shrimp : ยำยอดมะพร้าวกุ้ง,180,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/kejkaew/coconutshootshrimp.JPG,2,Spicy Salad,1,3
+Spicy Grilled Eggplants Salad : ยำมะเขือยาว,150,test.jpg,2,Spicy Salad,0,3
+Spicy Vermicelli Salad : ยำวุ้นเส้น,180,test.jpg,2,Spicy Salad,0,3
+Spicy Bitter Melon Salad : ยำมะระ,180,test.jpg,2,Spicy Salad,0,3
+Spicy Winged Bean Salad : ยําถั่วพลู,180,test.jpg,2,Spicy Salad,0,3
+Spicy Straw Mushroom Salad : ยำเห็ดฟางกุ้ง,180,test.jpg,2,Spicy Salad,0,3
+Spicy Mixed Salad : ยำรวมมิตร,180,test.jpg,2,Spicy Salad,0,3
+Spicy Seafood Salad : รวมมิตรทะเล,225,test.jpg,2,Spicy Salad,0,3
+Crispy Fish Maw in Spicy Salad : ยำสามกรอบ,180,test.jpg,2,Spicy Salad,0,3
+Spicy Lemongrass Salad : ยำตะไคร้,180,test.jpg,2,Spicy Salad,0,3
+Spicy Dried Shrimp Salad : ยำกุ้งเสียบ,205,test.jpg,2,Spicy Salad,0,3
+Spicy Salad with Prawn : พล่ากุ้ง,205,test.jpg,2,Spicy Salad,0,3
+Spicy Salad with Raw Shrimp : กุ้งแช่น้ำปลา,205,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/kejkaew/rawshrimp.JPG,2,Spicy Salad,1,3
+Crispy Catfish Salad with Green Mango : ยำปลาดุกฟู,195,test.jpg,2,Spicy Salad,0,3
+Stir Fried Pak Miang with Egg : ใบเหลียงผัดไข่,150,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/kejkaew/pakmiangegg.jpg,3,Stir-fried Vegetables,1,3
+Stir Fried Pag Miang with Oyster Sauce : ใบเหลียงผัดน้ำมันหอย,115,test.jpg,3,Stir-fried Vegetables,0,3
+Stir Fired Pak Miang with Shrimp/Dried Shrimp : ใบเหลียงผัดกุ้งสด/กุ้งเสียบ,195,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/kejkaew/parkiashrimp.JPG,3,Stir-fried Vegetables,1,3
+Pak Miang in Coconut Milk and Shrimp : ใบเหลียงต้มกะทิ(กุ้ง),150,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/kejkaew/pakmiangcoconutshrimp.JPG,3,Stir-fried Vegetables,1,3
+Stir Fried Mixed Vegetables : ผัดผักรวม,105,test.jpg,3,Stir-fried Vegetables,0,3
+Stir-Fried Vegetables in Oyster Sauce: ผัดน้ำมันหอย,105,test.jpg,3,Stir-fried Vegetables,0,3
+Fried Ivy Gourd with Oyster Sauce : ตำลึงไฟแดง,105,test.jpg,3,Stir-fried Vegetables,0,3
+Fried Ivy Gourd with Egg : ตำลึงผัดไข่,115,test.jpg,3,Stir-fried Vegetables,0,3
+"Stir-Fried Baby Corn with Mushroom and Sugar Pea : ผัดข้าวโพดอ่อน, เห็ด, ถั่วลันเตา",105,test.jpg,3,Stir-fried Vegetables,0,3
+Stir Fried Bittermelon with Eggs : มะระผัดไข่,115,test.jpg,3,Stir-fried Vegetables,0,3
+Stir-Fried Bean Sprouts and Sugar Pea : ผัดถั่วงอกกับถั่วลันเตา,105,test.jpg,3,Stir-fried Vegetables,0,3
+Stir Fried Coconut Shoot Shrimps : ยอดมะพร้าวผัดกุ้ง,180,test.jpg,3,Stir-fried Vegetables,0,3
+Stir Fried Straw Mushroom with Shrimp : เห็ดฟางผัดกุ้ง,180,test.jpg,3,Stir-fried Vegetables,0,3
+Stir Fried Kale with Salted Fish/Shrimps/Squid : คะน้าปลาเค็ม/กุ้ง/หมึก,180,test.jpg,3,Stir-fried Vegetables,0,3
+Stir Fried Kale with Dip Dried Shrimps : คะน้ากุ้งเสียบ,195,test.jpg,3,Stir-fried Vegetables,0,3
+Omelette with Pak Miang : ไข่เจียวใบเหลียง,90,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/kejkaew/omeletpakmiang.JPG,4,Egg,1,3
+Omelette : ไข่เจียว,60,test.jpg,4,Egg,0,3
+Omelette with Chinese Bitter Gourd/Onion/Bird Chilies : ไข่เจียวมะระ/หอมใหญ่/พริก,70,test.jpg,4,Egg,0,3
+Minced Pork/Thai Fermented Pork Omelette : ไข่เจียวหมูสับ/ไข่เจียวแหนม,80,test.jpg,4,Egg,0,3
+Omelette with Minced Shrimp : ไข่เจียวกุ้งสับ,90,test.jpg,4,Egg,0,3
+Shrimp Paste Sauce with Crispy Fried Fish and Sweet Pork : น้ำพริกลงเรือ,205,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/kejkaew/shrimppaste.JPG,5,Chili Paste Sauce,1,3
+Chili Paste with Dried Shrimp : น้ำพริกกุ้งเสียบ,205,test.jpg,5,Chili Paste Sauce,0,3
+Chili Paste with Shrimp : น้ำพริกกุ้งสด,160,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/kejkaew/chilipasteshrimp.JPG,5,Chili Paste Sauce,1,3
+Chili Paste with Mango : น้ำพริกมะม่วง,160,test.jpg,5,Chili Paste Sauce,0,3
+Spicy Fish Kidney : ยำไตปลา,115,test.jpg,5,Chili Paste Sauce,0,3
+ Sweet and Sour Vegetable with Choice of Meat : ผัดเปรี้ยวหวาน ,150,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/kejkaew/ssseabass.JPG,6,Spicy Stir-Fried,1,3
+ Fried Meat with Garlic : ทอดกระเทียมพริกไทย ,150,test.jpg,6,Spicy Stir-Fried,0,3
+ Stir-Fried Meat with Chili and Basil : ผัดกะเพรา ,150,test.jpg,6,Spicy Stir-Fried,0,3
+ Sweet Pork Condiment : หมูหวาน ,150,test.jpg,6,Spicy Stir-Fried,0,3
+ Stir-Fried Vermicelli Noodle with Egg and Choice of Meat : ผัดวุ้นเส้น ,150,test.jpg,6,Spicy Stir-Fried,0,3
+ Stir-Fried Meat with Curry Paste : ผัดเครื่องแกง ,150,test.jpg,6,Spicy Stir-Fried,0,3
+  Stir-Fried Meat with Green Peppercorn : ผัดพริกไทยอ่อน ,205,test.jpg,6,Spicy Stir-Fried,0,3
+ Stir-Fried Pork with Shrimp Paste : หมูผัดกะปิกับถั่วฝักยาว/ยอดมะพร้าว ,150,test.jpg,6,Spicy Stir-Fried,0,3
+ Stir-Fried meat with Bird Chili : ผัดพริกขี้หนู ,150,test.jpg,6,Spicy Stir-Fried,0,3
+ Stir-Fried Crispy Catfish with Crispy Basil : ปลาดุกฟูผัดกะเพรากรอบ ,195,test.jpg,6,Spicy Stir-Fried,0,3
+ Fried Hot and Spicy Domestic-Raised Chicken  : ไก่บ้านผัดเผ็ด ,180,test.jpg,6,Spicy Stir-Fried,0,3
+ Fried Domestic Raised Chicken with Black Pepper : ไก่บ้านผัดพริกไทยดำ ,180,test.jpg,6,Spicy Stir-Fried,0,3
+ Stir-Fried Coconut Shoot with Curry : ยอดมะพร้าวผัดกะปิ/ผัดเผ็ดกุ้ง ,180,test.jpg,6,Spicy Stir-Fried,0,3
+ Stir-Fried Tofu in Chinese Style : เต้าหู้ทรงเครื่อง ,195,test.jpg,6,Spicy Stir-Fried,0,3
+" Stir-Fried Fish Maw with Shrimp or Squid : กระเพาะปลาผัดกุ้ง, หมึก ",270,test.jpg,6,Spicy Stir-Fried,0,3
+ Stir-Fried Fish Maw : กระเพาะปลาผัดแห้ง ,270,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/kejkaew/fishmaw.JPG,6,Spicy Stir-Fried,1,3
+ Stir-Fried Fish Maw with Mushroom and Shrimp : กระเพาะปลาผัดเห็ดหอมกับกุ้ง ,270,test.jpg,6,Spicy Stir-Fried,0,3
+" Stir-Fried Minced Chicken/Pork/Beef with Curry Paste : คั่วเครื่องแกง ไก่, หมู, เนื้อ ",150,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/kejkaew/mincepork.JPG,6,Spicy Stir-Fried,1,3
+ Stir-Fried Parkia with Curry Paste : ผัดเผ็ดสะตอ ,205,test.jpg,7,Parkia,0,3
+ Stir-Fried Minced Meat with Curry Paste : คั่วหมูใส่สะตอ ,205,test.jpg,7,Parkia,0,3
+ Stir-Fried Parkia with Shrimp Paste : สะตอผัดกะปิ ,205,test.jpg,7,Parkia,0,3
+ Stir-Fried Sweet and Sour Parkia : สะตอผัดเปรี้ยวหวาน ,205,test.jpg,7,Parkia,0,3
+ Stir-Fried Parkia with Thai Fermented Sausage : สะตอผัดแหนม ,225,test.jpg,7,Parkia,0,3
+ Stir-Fried Parkia with Curry Paste and Sea Bass : สะตอผัดเผ็ดปลากะพง ,285,test.jpg,7,Parkia,0,3
+ Yellow Curry with Pork Belly and Cabbage : แกงเหลืองหมูสามชั้นผักกาดขาว ,170,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/kejkaew/yellowcurrypork.jpg,8,Curry,1,3
+ Yellow Curry with Choice of Seafood and Vegetables : แกงเหลือง,260,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/kejkaew/yellowcurryseabass.JPG,8,Curry,1,3
+ Yellow Curry with Shrimp and Acacia Omelet : แกงเหลืองกุ้ง ชะอมชุบไข่ทอด ,215,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/kejkaew/yellowcurryshrimp.JPG,8,Curry,1,3
+ Red Curry with Mushroom : แกงเห็ดแครง ,215,test.jpg,8,Curry,0,3
+ Fish Kidney Thick Spicy Soup : แกงไตปลา ,195,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/kejkaew/fishkidneythicksoup.JPG,8,Curry,1,3
+ Red Curry with Choice of Meat : แกงเผ็ด ,170,test.jpg,8,Curry,0,3
+ Green Curry with Choise of Meat : แกงเขียวหวาน ,170,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/kejkaew/greencurrychicken.JPG,8,Curry,1,3
+ Curry with Chicken/Spare Ribs : แกงพริกไก่บ้าน/ซี่โครงหมูอ่อน ,180,test.jpg,8,Curry,0,3
+ Thai Herb and Pepper Corns Curry with Choice of Meat : แกงป่า ,180,test.jpg,8,Curry,0,3
+ Tom Yum Looktoong : ต้มยำลูกทุ่ง ,180,test.jpg,9,Soup,0,3
+ Chicken in Coconut Milk Coup with Galangal : ต้มข่าไก่ ,170,test.jpg,9,Soup,0,3
+ Tom Yum with Choice of Meat : ต้มยำ ,180,test.jpg,9,Soup,0,3
+ Tom Yum Seafood with Basil : โป๊ะแตก ,225,test.jpg,9,Soup,0,3
+ Sea Food in Coconut Milk Coup with Galangal : ต้มข่าทะเล ,225,test.jpg,9,Soup,0,3
+ Tom Som : ต้มส้ม ,260,test.jpg,9,Soup,0,3
+ Turmeric Soup : ต้มขมิ้น ,260,test.jpg,9,Soup,0,3
+ Sour Soup : ต้มโคล้ง ,260,test.jpg,9,Soup,0,3
+ Pickling Lette Soup with Slice Sea Bass : แกงจืดปลากะพงเกี้ยมฉ่าย ,260,test.jpg,9,Soup,0,3
+ Seafood Soup : แกงจืดรวมมิตรทะเล ,225,test.jpg,9,Soup,0,3
+ Spicy Herb Soup : แกงเลียงกุ้งสด ,195,test.jpg,9,Soup,0,3
+ Straw Mushroom Soup with Minced Pork : แกงจืดเห็ดฟางหมูสับ ,115,test.jpg,9,Soup,0,3
+ Straw Lettuce Soup with Minced Pork : แกงจีดเต้าหู้หมูสับ ,115,test.jpg,9,Soup,0,3
+ Seaweed Soup with Minced Pork and Tofu : แกงจืดสาหร่ายเต้าหู้หมูสับ ,115,test.jpg,9,Soup,0,3
+ Steamed Sea Bass with Chili Sauce and Lime : ปลากะพงนึ่งมะนาว ,395,test.jpg,10,Sea Bass/Mullet,0,3
+ Deep Fried Sea Bass with Sweet and Sour Chili Sauce : ปลากะพงราดพริก ,395,test.jpg,10,Sea Bass/Mullet,0,3
+ Deep Fried Sea Bass with Turmeric and Garlic : ปลากะพงทอดขมิ้น ,395,test.jpg,10,Sea Bass/Mullet,0,3
+ Deep Fried Whisker Sheatfish with Turmeric : ปลากุเราทอดขมิ้น ,385,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/kejkaew/threadfin.jpg,11,Whisker Sheatfish / Threadfin,1,3
+ Deep Fried Whisker Sheatfish with Garlic : ปลากุเราทอดกระเทียม ,385,test.jpg,11,Whisker Sheatfish / Threadfin,0,3
+ Deep Fried Threadfin Serve with Herb and Spicy Sauce : ปลากุเราลุยสวน ,385,test.jpg,11,Whisker Sheatfish / Threadfin,0,3
+ Deep Fried Threadfin with Mango Salad : ปลากุเราแดดเดียวยำมะม่วง ,385,test.jpg,11,Whisker Sheatfish / Threadfin,0,3
+ Deep Fried Threadfin with Spicy Salad : ลาบปลากุเราทอดกรอบ ,385,test.jpg,11,Whisker Sheatfish / Threadfin,0,3
+ Steamed Threadfin with Chili Sauce : ปลากุเราจิ้มแจ่ว ,385,test.jpg,11,Whisker Sheatfish / Threadfin,0,3
+ Deep Fried Threadfin with Thai Herb : ปลากุเราทอดสมุนไพร ,385,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/kejkaew/threadfinherb.JPG,11,Whisker Sheatfish / Threadfin,1,3
+ Silver Sillago with Yellow Curry : แกงเหลืองปลาทราย ,260,test.jpg,12,Silver Sillage,0,3
+" Curry with Silver Sillago and Vegetable, Thai Herbs and Pepper Corns : แกงป่า/แกงพริกปลากราย ",260,test.jpg,12,Silver Sillage,0,3
+ Deep Fried Silver Sillago with Fish Sauce : ปลาทรายชุบนํ้าปลาทอด ,260,test.jpg,12,Silver Sillage,0,3
+ Deep Fried Silver Sillago with Garlic/Turmeric : ปลาทรายทอดกระเทียม/ทอดขมิ้น ,305,test.jpg,12,Silver Sillage,0,3
+ Deep Fried Striped Snakehead and Spicy Salad : ลาบปลาช่อนทอดกรอบ ,315,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/kejkaew/larbsneakhead.JPG,13,Stripe Snakehead Fish,1,3
+ Deep Fried Striped Snakehead with Mango Salad : ปลาช่อนยำมะม่วง ,315,test.jpg,13,Stripe Snakehead Fish,0,3
+ Deep Fried Striped Snakehead with Spicy Herbs Salad : ปลาช่อนราดสมุนไพร ,315,test.jpg,13,Stripe Snakehead Fish,0,3
+ Steamed Striped Snakehead with Chili Dip : ปลาช่อนจิ้มแจ่ว ,315,test.jpg,13,Stripe Snakehead Fish,0,3
+ Boiled Striped Snakehead with Chili Sauce : ปลาช่อนลุยสวน ,315,test.jpg,13,Stripe Snakehead Fish,0,3
+ Yellow Curry with Fish Head : แกงเหลืองหัวปลา ,180,test.jpg,14,Sea Bass Head,0,3
+ Tom Yum with Fish Head : ต้มยำหัวปลา ,180,test.jpg,14,Sea Bass Head,0,3
+ Chili Boiled Fish Head : หัวปลาต้มพริก ,180,test.jpg,14,Sea Bass Head,0,3
+ Chili Fried Fish Head : หัวปลาผัดพริก ,180,test.jpg,14,Sea Bass Head,0,3
+ Garlic Fried Fish Head : หัวปลาผัดกระเทียม ,180,test.jpg,14,Sea Bass Head,0,3
+ Southern Thai Style Rice and Herb Salad : ข้าวยำปักษ์ใต้ ,90,test.jpg,15,A La Carte,0,3
+ Southern Thai Style Herb Salad : ข้าวยำปักษ์ใต้ ไม่ใส่ข้าว ,105,test.jpg,15,A La Carte,0,3
+ Fried Rice with Thai Fermented Sausage and Egg : ข้าวผัดแหนม ,90,test.jpg,15,A La Carte,0,3
+ Minced Pork Omelette on Steamed Rice : ข้าวไข่เจียวหมูสับ ,90,test.jpg,15,A La Carte,0,3
+ Stir Fried Chicken with Ginger on Steamed Rice : ไก่ผัดขิงสดราดข้าว ,90,test.jpg,15,A La Carte,0,3
+ Stir Fried Pork with Ginger on Steamed Rice : หมูผัดขิงสดราดข้าว ,90,test.jpg,15,A La Carte,0,3
+ Stir Fried Meat with Sweet Pepper on Steamed Rice : ผัดพริกราดข้าว ,90,test.jpg,15,A La Carte,0,3
+ Stir Fried Meat with Basil on Steamed Rice : ผัดกระเพราราดข้าว ,90,test.jpg,15,A La Carte,0,3
+ Stir Fried Meat with Bide Chili on Steamed Rice : ผัดพริกขี้หนูราดข้าว ,90,test.jpg,15,A La Carte,0,3
+ Fried Rice Shrimp Paste and Sweet Pork : ข้าวคลุกกะปิ ,100,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/kejkaew/frshrimppaste.JPG,15,A La Carte,1,3
+ Fried Rice with Kale and Salted Fish : ข้าวผัดคะน้าปลาเค็ม ,105,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/kejkaew/franchovy.JPG,15,A La Carte,1,3
+ Fried Rice with Shrimp Paste and Shrimp : ข้าวผัดน้ำพริกกุ้ง ,105,test.jpg,15,A La Carte,0,3
+ Fried Rice with Shrimp Paste and Deep Fried Mackerel : ข้าวผัดน้ำพริกปลาทู ,115,test.jpg,15,A La Carte,0,3
+ Fried Rice with Shrimp : ข้าวผัดกุ้ง ,105,test.jpg,15,A La Carte,0,3
+ Fried Rice with Seafood : ข้าวผัดทะเล ,115,test.jpg,15,A La Carte,0,3
+ Green Curry Fried Rice with Meat : ข้าวผัดแกงเขียวหวาน,105,test.jpg,15,A La Carte,0,3
+ Fried Noodle with Meat in Gravy : ราดหน้า,90,test.jpg,16,Noodle,0,3
+ Fried Noodle with Egg and Meat : ผัดซีอิ๊ว,90,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/kejkaew/sieiw.JPG,16,Noodle,1,3
+ Stir-Fried Fresh Rice-Flour Noodle with Chicken and Egg : ก๋วยเตี๋ยวคั่วไก่ ,90,test.jpg,16,Noodle,0,3
+ Spicy Stir-Fried Noodle with Basil Leaves and Meat : ก๋วยเตี๋ยวผัดขี้เมา,90,test.jpg,16,Noodle,0,3
+ Pad Thai (Southern Style) : ผัดไทยกุ้งสด (ปักษ์ใต้) ,105,test.jpg,16,Noodle,0,3
+ Pad Thai in Egg Wrap (Southern Style) : ผัดไทยห่อไข่ (ปักษ์ใต้) ,135,test.jpg,16,Noodle,0,3
+ Fried Noodle with Sea Bass : ราดหน้าปลากะพง ,170,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/kejkaew/radnaseabass.JPG,16,Noodle,1,3
+ Fried Rice with Vegetable and Egg : ข้าวผัดผักรวม ,80,test.jpg,17,Vegetarian,0,3
+ Stir Fried Chinese Kale on Steamed Rice : คะน้าผัดน้ำมันหอยราดข้าว ,80,test.jpg,17,Vegetarian,0,3
+ Stir Fried Mixed Vegetable on Steamed Rice : ผัดผักรวมราดข้าว ,80,test.jpg,17,Vegetarian,0,3
+ Fried Noodle with Mixed Vegetable in Gravy : ก๋วยเตี๋ยวราดหน้าผักรวม ,80,test.jpg,17,Vegetarian,0,3
+ Stir Fried Tofu on Steamed Rice : ผัดเผ็ดเต้าหู้ราดข้าว ,90,test.jpg,17,Vegetarian,0,3
+ Pad Thai (Southern Style) : ผัดไทย (ปักษ์ใต้) ,80,test.jpg,17,Vegetarian,0,3
+ Fried Noodle with Mixed Vegetable : ก๋วยเตี๋ยวราดหน้าเจผักรวม ,80,test.jpg,17,Vegetarian,0,3
+ Stir Fried Sweet and Sour Mixed Vegetable : ผัดเปรี้ยวหวานผัก ,105,test.jpg,17,Vegetarian,0,3
+ Stir Fried Mixed Vegetable : ผัดผักรวม ,105,test.jpg,17,Vegetarian,0,3
+ Stir Fried Vermicelli Noodle with Vegetable and Egg : ผัดวุ้นเส้นเจ ,135,test.jpg,17,Vegetarian,0,3
+ Stir Fried Tofu with Chili Paste : ผัดเผ็ดเต้าหู้ ,135,test.jpg,17,Vegetarian,0,3
+ Spicy Vermicelli Noodle Salad : ยำวุ้นเส้นเจ ,115,test.jpg,17,Vegetarian,0,3
+ Spicy Straw Mushroom Salad : ยำเห็ดฟางเจ ,105,test.jpg,17,Vegetarian,0,3
+ Green Curry with Vegetable : แกงเขียวหวานผัก ,115,test.jpg,17,Vegetarian,0,3
+ Stir Fried Chinese Kale and Shiitake Mushroom in Oyster Sauce : คะน้าผัดเห็ดหอม ,105,test.jpg,17,Vegetarian,0,3

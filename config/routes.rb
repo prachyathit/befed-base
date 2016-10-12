@@ -54,9 +54,12 @@ Rails.application.routes.draw do
     delete  :logout,    to: 'sessions#destroy'
     post    :register,  to: 'users#create'
     post    :checkout,  controller: 'cart'
-    resources :users, only: [:show, :update]
+    resources :users, only: [:show, :update] do
+      resources :addresses, only: [:index, :show, :create, :update, :destroy]
+    end
 
     resources :restaurants, only: [:index, :show] do
+      get :check_valid_address
       resources :menu, only: [:index, :show] do
         get :options
       end

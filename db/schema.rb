@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160905132211) do
+ActiveRecord::Schema.define(version: 20161011135634) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "name"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 20160905132211) do
     t.string   "postal_code"
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
+    t.string   "district"
+    t.string   "subdistrict"
   end
 
   add_index "addresses", ["user_id", "is_default"], name: "index_addresses_on_user_id_and_is_default"
@@ -58,6 +60,7 @@ ActiveRecord::Schema.define(version: 20160905132211) do
     t.string   "cat"
     t.integer  "rec"
     t.boolean  "appear",        default: true
+    t.integer  "full_price",    default: 0
   end
 
   add_index "foods", ["restaurant_id"], name: "index_foods_on_restaurant_id"
@@ -132,12 +135,18 @@ ActiveRecord::Schema.define(version: 20160905132211) do
     t.string   "name"
     t.text     "desc"
     t.string   "image_url"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",                              null: false
+    t.datetime "updated_at",                              null: false
     t.text     "address"
     t.float    "latitude"
     t.float    "longitude"
     t.integer  "min_order",  default: 0
+    t.string   "email"
+    t.integer  "dtime"
+    t.boolean  "soon",       default: false
+    t.integer  "cday"
+    t.string   "dhour",      default: "11:00AM - 9:00PM"
+    t.boolean  "promo",      default: false
   end
 
   create_table "shipping_addresses", force: :cascade do |t|

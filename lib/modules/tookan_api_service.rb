@@ -5,6 +5,7 @@ module TookanApiService
 
 		def create_pickup_and_delivary_task user, cart, order
 			restaurant = Restaurant.find(order.rest_id)
+			shipping_address = order.shipping_address
 
 			headers = {
 				:content_type => 'application/json'
@@ -47,17 +48,18 @@ module TookanApiService
 				customer_email: user.email,
 				customer_username: user.name,
 				customer_phone: user.phone,
-				customer_address: user.address,
 
-				latitude: user.latitude,
-				longitude: user.longitude,
+				customer_address: shipping_address.address,
+
+				latitude: shipping_address.latitude,
+				longitude: shipping_address.longitude,
 
 				job_delivery_datetime: (DateTime.current + 45.minutes).to_s(:db), #YYYY-MM-DD HH:MM:SS
 				custom_field_template: "Delivery",
 				meta_data: [
 					{
 						label: "DeliveryInstruction",
-						data: user.dinstruction
+						data: shipping_address.instruction
 					},
 					{
 						label: "Phone",

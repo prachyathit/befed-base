@@ -1,7 +1,7 @@
 <% cat_number = 0 %>
-  <% provide(:title, @foods.first.restaurant.name) %>
+<% provide(:title, @foods.first.restaurant.name) %>
 <div class="container">
-    <div class="center">
+  <div class="center">
     <%= render partial: "shared/map", locals: { button_name: "Find Restaurants" } %>
   </div>
   <div style="margin-top: 10px">
@@ -9,42 +9,47 @@
       <%= render partial: "shared/restaurant", locals: { restaurant: @foods.first.restaurant } %>
     </div>
   </div>
+  <div class="center">- Click on Menu to Order -</div>
   <span class="glyphicon glyphicon-star-empty recommend pull-right">Recommended</span>
+  
   <div class="row">
     <% @foods.each do |food| %>
-        <% full_name = food.name %>
-        <% eng_name = full_name.split(" : ")[0] %>
-        <% th_name = full_name.split(" : ")[1] %>
-        <% unless food.cat_id == cat_number %>
-
-          <div class="col-sm-12">
-            <div class="food-cat">
-              <strong><%= food.cat %></strong>
-            </div>
+      <% full_name = food.name %>
+      <% eng_name = full_name.split(" : ")[0] %>
+      <% th_name = full_name.split(" : ")[1] %>
+      <% unless food.cat_id == cat_number %>
+        <div class="col-sm-12">
+          <div class="food-cat">
+            <strong><%= food.cat %></strong>
           </div>
-          <% cat_number = food.cat_id %>
-        <% end %>
-        <% show_food = food.appear | user_admin? %>
-       
-        <% if show_food %>
+        </div>
+        <% cat_number = food.cat_id %>
+      <% end %>
+      <% show_food = food.appear | user_admin? %>
+      <% if show_food %>
       <div class="col-sm-6">
-
         <%= link_to add_new_path(id: food.id), remote: true do %>
           <div class="food-item color-hover">
-            <div class="food-price"><%= food.price %> ฿</div>
+            <% if food.full_price == 0 %>
+              <div class="food-price"><%= food.price %> ฿</div>
+            <% elsif food.full_price == food.price %>
+              <div class="food-price"><%= food.price %> ฿</div>
+            <% else %>
+              <div class="food-price redmain"><strong><%= food.price %> ฿</strong></div>
+              <div class="food-price slash"><%= food.full_price %> ฿&nbsp;</div>
+              
+            <% end %>
             <div>
               <%= th_name %> <%if food.rec == 1%><span class="glyphicon glyphicon-star-empty recommend"></span><% end %>
             </div>
             <div class="food-name"><%=eng_name%></div>
           </div>
         <% end %>
-
         <% if user_admin? %>
           <%= link_to 'Show', restaurant_food_path(id: food.id) %>
           <%= link_to 'Edit', edit_restaurant_food_path(id: food.id) %>
           <%= link_to 'Destroy', restaurant_food_path(id: food.id), method: :delete, data: { confirm: 'Are you sure?' } %>
         <% end %>
-
       </div>
       <% end %>
     <% end %>

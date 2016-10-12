@@ -17,4 +17,8 @@ class Restaurant < ActiveRecord::Base
   							[latitude, longitude], [self.latitude, self.longitude])
   	distance <= DELIVERY_RADIUS
   end
+
+  def close_today?
+    self.cday == Time.now.wday
+  end
 end

@@ -22,8 +22,16 @@ class Order < ActiveRecord::Base
       end
     end
     user = order.user
-    order.create_shipping_address!(address: user.address, latitude: user.latitude, 
-        longitude: user.longitude, instruction: user.dinstruction)
+    if params[:address_id]
+      address = user.addresses.where(id: params[:address_id]).first
+    else
+      address = user.default_address
+    end
+    # TODO: change user.address to address.full_address 
+    # and user.dinstruction to address.instruction
+    # when website with multiple address launched
+    order.create_shipping_address!(address: user.address, latitude: address.latitude, 
+        longitude: address.longitude, instruction: user.dinstruction)
     order
   end
   

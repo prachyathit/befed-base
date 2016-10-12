@@ -95,6 +95,11 @@ class User < ActiveRecord::Base
     address.update(is_default: true)
   end
 
+  def set_default_address!(address)
+    self.addresses.update_all(is_default: false)
+    address.update!(is_default: true)
+  end
+
   private
 
   # Converts email to all lower case
