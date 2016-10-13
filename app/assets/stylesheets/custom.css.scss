@@ -6,6 +6,8 @@
 /* mixins, variables, etc.. */
 body {
   font-family: 'Open Sans';
+  filter: grayscale(88%);
+  -webkit-filter: grayscale(88%);
 }
 
 $gray-medium-light: #eaeaea;
