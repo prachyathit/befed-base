@@ -6,10 +6,12 @@
 /* mixins, variables, etc.. */
 body {
   font-family: 'Open Sans';
-  filter: grayscale(88%);
+
+}
+.filtergray {
+    filter: grayscale(88%);
   -webkit-filter: grayscale(88%);
 }
-
 $gray-medium-light: #eaeaea;
 $red-main: #ef5a50;
 $red-hilight: #ffc1c1;

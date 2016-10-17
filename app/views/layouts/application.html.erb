@@ -19,7 +19,11 @@
     <%= csrf_meta_tags %>
     <%= render 'layouts/shim' %>
   </head>
-  <body class='default-background'>
+  <% if yield(:hidden_title) == "Landing" %>
+    <body class='default-background filtergray'>
+  <% else %>
+    <body class='default-background'>
+  <% end %>
     <%= render 'layouts/header' %>
     <% flash.each do |message_type, message| %>
       <div class="center alert alert-<%= message_type %>"><%= message %></div>
