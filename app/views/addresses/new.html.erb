@@ -66,12 +66,14 @@
 
 <script type="text/javascript">
 	$(document).ready(function() {
-    $("#map-modal").modal({
-      backdrop: 'static',
-      keyboard: false
-    });
-		$("#map-modal").modal("show");
-    $("#map-modal-edit").modal("show");
+    if (!urlContainParam('latitude') || !urlContainParam('longitude')) {
+      $("#map-modal").modal({
+        backdrop: 'static',
+        keyboard: false
+      });
+      $("#map-modal").modal("show");
+      $("#map-modal-edit").modal("show");
+    }
   });
 
  	// Note: This example requires that you consent to location sharing when
@@ -135,6 +137,15 @@
     $('#cancelAddress').on('click', function(){
       window.location = "<%= addresses_path() %>";
     });
+  }
+
+  function urlContainParam(param) {
+    var url = window.location.href;
+    if(url.indexOf('?' + param + '=') != -1)
+      return true;
+    else if(url.indexOf('&' + param + '=') != -1)
+      return true;
+    return false
   }
 
 </script>
