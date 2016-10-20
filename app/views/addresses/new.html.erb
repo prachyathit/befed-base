@@ -2,7 +2,7 @@
   <h1>New Address</h1>
   <div class="row">
     <div class="col-sm-8 col-sm-offset-2">
-      <%= render partial: "form" %>
+      <%= render partial: "form", address: @address %>
     </div>
   </div>
 </div>
@@ -24,8 +24,10 @@
   			</div>
       </div>
       <div class="modal-footer">
-        <a href="" class="btn btn-default">Cancel</a>
-        <button type="button" class="btn btn-primary">Use this address</button>
+        <a id="cancelAddress" href="javascript:;" class="btn btn-default">Cancel</a>
+        <button id="useAddress" type="button" class="btn btn-primary">
+          Use this address
+        </button>
       </div>
     </div>
 	</div>
@@ -80,6 +82,7 @@
   var map;
   var marker;
   var currentPosition;
+  var address;
 
 	function initMap() {
     currentPosition = {lat: 13.7563, lng: 100.5018};
@@ -124,6 +127,15 @@
       alert('Your browser doesn\'t support geolocation.');
 	  }
 	}
+
+  function addEventListener() {
+    $('#useAddress').on('click', function(){
+      window.location = "<%= new_address_path() %>"+"?address="+address+"&latitude="+currentPosition.lat+"&longitude="+currentPosition.lng;
+    });
+    $('#cancelAddress').on('click', function(){
+      window.location = "<%= addresses_path() %>";
+    });
+  }
 
 </script>
 <script async defer

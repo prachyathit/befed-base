@@ -15,10 +15,16 @@ class AddressesController < ApplicationController
   end
 
   def new
-    @address = Address.new
+    if params.include?([:address, :latitude, :longitude])
+      @address = Address.new(latitude: params[:latitude], 
+        longitude: params[:longitude], instruction: params[:address])
+    else
+      @address = Address.new
+    end
   end
 
   def create
+
   end
 
   def show
