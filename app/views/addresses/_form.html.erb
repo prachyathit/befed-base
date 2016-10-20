@@ -1,12 +1,13 @@
 <div>
+  <%= @address.latitude %>AAAAA
+  <%= @address.longitude %>BBBBB
   <% if @address.latitude.present? and @address.longitude.present? %>
     <div id="googleMap<%= @address.id %>" class="thumb-map" style="height: 518px;">
       <%= render partial: "shared/address", 
-        locals: {latitude: @address.latitude, 
+        locals: { latitude: @address.latitude, 
         longitude: @address.longitude, 
-        elementId: "googleMap#{@address.id}"} %>
+        elementId: "googleMap#{@address.id}" } %>
     </div>
-    <img src="http://placehold.it/750x500">
   <% end %>
   <div class="address-form">
     <%= form_for(@address, class: "form-inline") do |f| %>

@@ -15,7 +15,7 @@ class AddressesController < ApplicationController
   end
 
   def new
-    if params.include?([:address, :latitude, :longitude])
+    if params.include?(:latitude) and params.include?(:longitude)
       @address = Address.new(latitude: params[:latitude], 
         longitude: params[:longitude], instruction: params[:address])
     else
