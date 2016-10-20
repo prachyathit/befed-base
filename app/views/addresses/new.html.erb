@@ -82,11 +82,21 @@
   var currentPosition;
 
 	function initMap() {
-    currentPosition = {lat: 15.8700, lng: 100.9925};
+    currentPosition = {lat: 13.7563, lng: 100.5018};
 	  map = new google.maps.Map(document.getElementById('map'), {
 	    center: currentPosition,
-	    zoom: 6
+	    zoom: 14
 	  });
+
+    marker = new google.maps.Marker({
+      position: currentPosition,
+      map: map,
+      title: 'Hello World!',
+      draggable: true
+    });
+    marker.addListener('position_changed', function(event) {
+      currentPosition = marker.position;
+    });
 
 	  // Try HTML5 geolocation.
 	  if (navigator.geolocation) {
