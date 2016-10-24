@@ -14,11 +14,16 @@
         <h4 class="modal-title">Pin your location</h4>
       </div>
       <div class="modal-body">
-        <span class="tooltips">
-          <span class="tooltipstext">Get my current location</span>
-          <span class="location-arrow-wrapper btn btn-danger"><i class="fa fa-location-arrow strong"></i></span>
-          <span class="spinning-icon-wrapper btn btn-danger hide"><i class="fa fa-spinner fa-spin strong"></i></span>
-        </span>
+        <div class="row">
+          <span class="tooltips col-xs-1">
+            <span class="tooltipstext">Get my current location</span>
+            <span class="location-arrow-wrapper btn btn-danger"><i class="fa fa-location-arrow strong"></i></span>
+            <span class="spinning-icon-wrapper btn btn-danger hide"><i class="fa fa-spinner fa-spin strong"></i></span>
+          </span>
+          <div class="col-xs-11">
+            <%= text_field_tag :locationSearch, '', { placeholder: 'Search Google Maps', type: 'search', class: 'form-control' } %>
+          </div>
+        </div>
   			<div id="map" style="height: 350px;">
   				
   			</div>
@@ -83,25 +88,17 @@
 
   var map;
   var marker;
-  var currentPosition;
+  var currentPosition = {lat: 13.7563, lng: 100.5018};
   var address;
 
 	function initMap() {
-    currentPosition = {lat: 13.7563, lng: 100.5018};
+    
 	  map = new google.maps.Map(document.getElementById('map'), {
 	    center: currentPosition,
 	    zoom: 14
 	  });
 
-    marker = new google.maps.Marker({
-      position: currentPosition,
-      map: map,
-      title: 'Hello World!',
-      draggable: true
-    });
-    marker.addListener('position_changed', function(event) {
-      currentPosition = marker.position;
-    });
+    setMarkerToPosition();
 
 	  // Try HTML5 geolocation.
 	  if (navigator.geolocation) {
@@ -111,15 +108,9 @@
 	        lng: position.coords.longitude
 	      };
         map.setCenter(currentPosition);
-        marker = new google.maps.Marker({
-          position: currentPosition,
-          map: map,
-          title: 'Hello World!',
-          draggable: true
-        });
-        marker.addListener('position_changed', function(event) {
-          currentPosition = marker.position;
-        });
+        
+        setMarkerToPosition();
+
 	    }, function() {
 	      // Cannot get location
         alert("We can't locate your current location. Please grant a permission in your browser to locate your device");
@@ -128,10 +119,49 @@
 	    // Browser doesn't support Geolocation
       alert('Your browser doesn\'t support geolocation.');
 	  }
+
+    var input = document.getElementById('locationSearch');
+    var options = {
+      // Restrict the search to Thailand
+      componentRestrictions: {country: 'th'}
+    };
+    autocomplete = new google.maps.places.Autocomplete(input, options);
+    autocomplete.addListener('place_changed', function(){
+      var place = autocomplete.getPlace();
+      console.log(place);
+      currentPosition = {
+        lat: place.geometry.location.lat(),
+        lng: place.geometry.location.lng()
+      };
+      map.setCenter(currentPosition);
+      setMarkerToPosition();
+    });
 	}
+
+  function setMarkerToPosition(){
+    if(marker == null) {
+      marker = new google.maps.Marker({
+        position: currentPosition,
+        map: map,
+        // title: 'Hello World!',
+        draggable: true
+      });
+      marker.addListener('position_changed', function(event) {
+        console.log('position_changed');
+        currentPosition = marker.position;
+        geocodeLatLng();
+      });
+    } else {
+      marker.setMap(null);
+      marker.setPosition(currentPosition);
+      marker.setMap(map);
+    }
+  }
 
   function addEventListener() {
     $('#useAddress').on('click', function(){
+      console.log(currentPosition.lat);
+      console.log(currentPosition.lng);
       window.location = "<%= new_address_path() %>"+"?address="+address+"&latitude="+currentPosition.lat+"&longitude="+currentPosition.lng;
     });
     $('#cancelAddress').on('click', function(){
@@ -148,8 +178,30 @@
     return false
   }
 
+  function geocodeLatLng() {
+    var geocoder = new google.maps.Geocoder;
+    geocoder.geocode({'location': currentPosition}, function(results, status) {
+      if (status === 'OK') {
+        if (results[1]) {
+          // map.setZoom(11);
+          // var marker = new google.maps.Marker({
+          //   position: currentPosition,
+          //   map: map
+          // });
+          var input = document.getElementById('locationSearch');
+          input.setText(results[1].formatted_address);
+          // infowindow.open(map, marker);
+        } else {
+          window.alert('No results found');
+        }
+      } else {
+        window.alert('Geocoder failed due to: ' + status);
+      }
+    });
+  }
+
 </script>
 <script async defer
-	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLod8mAcjj-5mmficTg-cu2W-BhEu6Cgs&callback=initMap">
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLod8mAcjj-5mmficTg-cu2W-BhEu6Cgs&callback=initMap&libraries=places">
 	// AIzaSyCwhcezDLA4hI2yH4uZxzKTKH_y1RoONUY
 </script>
