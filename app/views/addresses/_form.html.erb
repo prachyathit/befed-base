@@ -1,13 +1,9 @@
 <div>
-  <%= @address.latitude %>AAAAA
-  <%= @address.longitude %>BBBBB
   <% if @address.latitude.present? and @address.longitude.present? %>
-    <div id="googleMap<%= @address.id %>" class="thumb-map" style="height: 518px;">
-      <%= render partial: "shared/address", 
-        locals: { latitude: @address.latitude, 
-        longitude: @address.longitude, 
-        elementId: "googleMap#{@address.id}" } %>
-    </div>
+    <%= render partial: "shared/address", 
+      locals: { latitude: @address.latitude, 
+      longitude: @address.longitude, 
+      elementId: "googleMap#{@address.id || 'new'}" } %>
   <% end %>
   <div class="address-form">
     <%= form_for(@address, class: "form-inline") do |f| %>
@@ -25,6 +21,14 @@
                 class: "form-control input-medium" } %>
         <%= f.text_field :floor, 
               { placeholder: "Floor no. (optional)", 
+                class: "form-control input-small" } %>
+      </div>
+      <div class="form-group">
+        <%= f.text_field :subdistrict, 
+              { placeholder: "Subdistrict (optional)", 
+                class: "form-control input-medium" } %>
+        <%= f.text_field :district, 
+              { placeholder: "District (optional)", 
                 class: "form-control input-small" } %>
       </div>
       <div class="form-group">

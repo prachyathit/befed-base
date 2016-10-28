@@ -16,8 +16,9 @@ class AddressesController < ApplicationController
 
   def new
     if params.include?(:latitude) and params.include?(:longitude)
-      @address = Address.new(latitude: params[:latitude], 
-        longitude: params[:longitude], instruction: params[:address])
+      params[:address][:latitude] = params[:latitude]
+      params[:address][:longitude] = params[:longitude]
+      @address = Address.new(address_params)
     else
       @address = Address.new
     end
@@ -40,6 +41,13 @@ class AddressesController < ApplicationController
   end
 
   private
+
+  def address_params
+    params.require(:address).permit(:latitude, :longitude, :user_id, 
+      :house_room_no, :street, :building_name, :floor, :province, 
+      :postal_code, :district, :subdistrict)
+  end
+
   def get_current_address
     @address = Address.where(id: params[:id]).first
   end
