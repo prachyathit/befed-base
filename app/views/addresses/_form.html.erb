@@ -1,6 +1,6 @@
 <div>
   <% if @address.latitude.present? and @address.longitude.present? %>
-    <%= render partial: "shared/address", 
+    <%= render partial: "shared/map_display", 
       locals: { latitude: @address.latitude, 
       longitude: @address.longitude, 
       elementId: "googleMap#{@address.id || 'new'}" } %>
