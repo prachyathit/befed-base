@@ -67,7 +67,7 @@
             </div>
             <div>
               <div id="googleMap" class="geomap">
-                <%= render partial: "shared/address", locals: {latitude: @user.default_address.latitude, longitude: @user.default_address.longitude, elementId: 'googleMap'} %>
+                <%= render partial: "shared/map_display", locals: {latitude: @user.default_address.latitude, longitude: @user.default_address.longitude, elementId: 'googleMap'} %>
               </div>
             </div>
           </div> 

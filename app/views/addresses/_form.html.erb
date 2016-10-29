@@ -1,9 +1,11 @@
 <div>
   <% if @address.latitude.present? and @address.longitude.present? %>
-    <%= render partial: "shared/map_display", 
-      locals: { latitude: @address.latitude, 
-      longitude: @address.longitude, 
-      elementId: "googleMap#{@address.id || 'new'}" } %>
+    <div id="googleMap" class="thumb-map" style="height: 300px;">
+      <%= render partial: "shared/map_display", 
+        locals: { latitude: @address.latitude, 
+        longitude: @address.longitude, 
+        elementId: "googleMap" } %>
+    </div>
   <% end %>
   <div class="address-form">
     <%= form_for(@address, class: "form-inline") do |f| %>
@@ -44,7 +46,10 @@
               { placeholder: "Delivery Instruction (optional)", 
                 class: "form-control input-large" } %>
       </div>
-      <button type="button" class="btn btn-block btn-success">Save</button>
+      <%= f.hidden_field :latitude, value: @address.latitude %>
+      <%= f.hidden_field :longitude, value: @address.longitude %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.submit :Save, { class: "btn btn-block btn-success" } %>
     <% end %>
   </div>
 </div>

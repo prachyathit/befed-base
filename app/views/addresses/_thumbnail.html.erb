@@ -16,7 +16,7 @@
       <div><%= address.full_address %></div>
       <div>
         <div id="googleMap<%= address.id %>" class="thumb-map">
-          <%= render partial: "shared/address", locals: {latitude: address.latitude, 
+          <%= render partial: "shared/map_display", locals: {latitude: address.latitude, 
             longitude: address.longitude, 
             elementId: "googleMap#{address.id}"} %>
         </div>

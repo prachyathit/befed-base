@@ -25,7 +25,13 @@ class AddressesController < ApplicationController
   end
 
   def create
-
+    @address = current_user.addresses.new(address_params)
+    if @address.save
+      redirect_to edit_address_path(@address)
+    else
+      p @address.errors.inspect
+      render :new and return
+    end
   end
 
   def show
