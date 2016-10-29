@@ -2,7 +2,7 @@ class AddressesController < ApplicationController
 
   before_action :authenticate_user!
   before_action :get_current_address, 
-    only: [:edit, :update, :show, :delete, :set_default]
+    only: [:edit, :update, :show, :destroy, :set_default]
  
   def index
    @addresses = current_user.addresses.order(updated_at: :desc)
@@ -38,7 +38,9 @@ class AddressesController < ApplicationController
    
   end
 
-  def delete
+  def destroy
+    @address.destroy
+    redirect_to addresses_path
   end
 
   def set_default
@@ -49,9 +51,9 @@ class AddressesController < ApplicationController
   private
 
   def address_params
-    params.require(:address).permit(:latitude, :longitude, :user_id, 
+    params.require(:address).permit(:name, :latitude, :longitude, :user_id, 
       :house_room_no, :street, :building_name, :floor, :province, 
-      :postal_code, :district, :subdistrict)
+      :postal_code, :district, :subdistrict, :instruction)
   end
 
   def get_current_address

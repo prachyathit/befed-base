@@ -7,8 +7,20 @@
         elementId: "googleMap" } %>
     </div>
   <% end %>
+  <% if @address.errors.any? %>
+    <ul>
+    <% @address.errors.full_messages.each do |error_msg| %>
+      <li><%= error_msg %></li>
+    <% end %>
+    </ul>
+  <% end %>
   <div class="address-form">
     <%= form_for(@address, class: "form-inline") do |f| %>
+      <div class="form-group">
+        <%= f.text_field :name, 
+              { placeholder: "Address Name *", 
+                class: "form-control input-medium" } %>
+      </div>
       <div class="form-group">
         <%= f.text_field :house_room_no, 
               { placeholder: "House/Room No.*", 

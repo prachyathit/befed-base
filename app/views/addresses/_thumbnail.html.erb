@@ -5,10 +5,10 @@
       <div class="pull-right">
         <%= link_to "", edit_address_path(address.id),  { class: "glyphicon glyphicon-pencil" } %>
         <%= link_to "", address_path(address),  
-          { class: "glyphicon glyphicon-trash", 
-            method: :delete, 
-            data: { confirm: 'Are you sure?' } 
-          } %>
+            data: { confirm: 'Are you sure?' },
+            method: :delete,
+            class: "glyphicon glyphicon-trash"
+          %>
       </div>
       <div class="clearfix;"></div>
     </div>
