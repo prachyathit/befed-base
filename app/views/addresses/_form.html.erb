@@ -1,10 +1,7 @@
 <div>
   <% if @address.latitude.present? and @address.longitude.present? %>
-    <div id="googleMap" class="thumb-map" style="height: 300px;">
-      <%= render partial: "shared/map_display", 
-        locals: { latitude: @address.latitude, 
-        longitude: @address.longitude, 
-        elementId: "googleMap" } %>
+    <div id="displayMap" class="thumb-map" style="height: 300px;">
+
     </div>
   <% end %>
   <% if @address.errors.any? %>
@@ -15,11 +12,11 @@
     </ul>
   <% end %>
   <div class="address-form">
-    <%= form_for(@address, class: "form-inline") do |f| %>
+    <%= form_for(@address, html: { class: "form-inline" }) do |f| %>
       <div class="form-group">
         <%= f.text_field :name, 
               { placeholder: "Address Name *", 
-                class: "form-control input-medium" } %>
+                class: "form-control input-large" } %>
       </div>
       <div class="form-group">
         <%= f.text_field :house_room_no, 
@@ -65,3 +62,24 @@
     <% end %>
   </div>
 </div>
+<% if @address.new_record?  %>
+  <%= render partial: "shared/map_modal_display", 
+    locals: { 
+      submit_url: new_address_path(), 
+      cancel_url: addresses_path(),
+      auto_display: true,
+      display_latitude: @address.latitude, 
+      display_longitude: @address.longitude, 
+      display_map_id: "displayMap" } 
+  %>
+<% else %>
+  <%= render partial: "shared/map_modal_display", 
+    locals: { 
+      submit_url: edit_address_path(@address), 
+      cancel_url: edit_address_path(@address),
+      auto_display: false,
+      display_latitude: @address.latitude, 
+      display_longitude: @address.longitude, 
+      display_map_id: "displayMap" } 
+  %>
+<% end %>

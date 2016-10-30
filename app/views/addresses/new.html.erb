@@ -7,7 +7,3 @@
   </div>
 </div>
 
-<% unless @address.latitude.present? and @address.longitude.present? %>
-  <%= render partial: "shared/map_modal", 
-    locals: { submit_url: new_address_path(), cancel_url: addresses_path() } %>
-<% end %>
