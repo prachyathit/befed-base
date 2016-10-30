@@ -33,30 +33,47 @@
 </div>
 
 <script type="text/javascript">
+
+  var displayMap;
+  var modalMap;
+  var marker;
+  var defaultLocation = {lat: 13.7563, lng: 100.5018};
+  var currentPosition = defaultLocation;
+  var address;
+  var addressInput;
+
   $(document).ready(function() {
     if ((!urlContainParam('latitude') || !urlContainParam('longitude')) && "<%= auto_display %>" == 'true') {
-      $("#map-modal").modal({
-        backdrop: 'static',
-        keyboard: false
-      });
-      $("#map-modal").modal("show");
-      $("#map-modal-edit").modal("show");
+      displayModal();
+    } else {
+      // console.log(parseFloat("<%= @address.latitude %>"));
+      // console.log(parseFloat("<%= @address.longitude %>"));
+      // currentPosition = { lat: parseFloat("<%= @address.latitude %>"), lng: parseFloat("<%= @address.longitude %>") }
     }
   });
+
+  function displayModal(){
+    $("#map-modal").modal({
+      backdrop: 'static',
+      keyboard: false
+    });
+    $("#map-modal").modal("show");
+    $("#map-modal-edit").modal("show");
+
+    currentPosition = { lat: parseFloat("<%= @address.latitude %>"), lng: parseFloat("<%= @address.longitude %>") };
+    initModalMap();
+      // displayMap.setCenter(currentPosition);
+      // setMarkerToPosition();
+  }
 
   // Note: This example requires that you consent to location sharing when
   // prompted by your browser. If you see the error "The Geolocation service
   // failed.", it means you probably did not give permission for the browser to
   // locate you.
 
-  var map;
-  var marker;
-  var currentPosition = {lat: 13.7563, lng: 100.5018};
-  var address;
-  var addressInput;
-
-  function initMap() {
-    map = new google.maps.Map(document.getElementById('map'), {
+  function initModalMap() {
+    console.log("initModalMap");
+    modalMap = new google.maps.Map(document.getElementById('map'), {
       center: currentPosition,
       zoom: 14,
       streetViewControl: false
@@ -64,9 +81,15 @@
     setMarkerToPosition();
     initAutoComplete();
     initGetCurrentLocation();
-    getCurrentLocation();
-
-    initDisplayMap();
+    if (currentPosition == defaultLocation) {
+      getCurrentLocation();
+    }
+    if ("<%= @address.latitude %>".length > 0 && 
+      "<%= @address.longitude %>".length > 0) {
+      console.log("<%= @address.latitude %>".length + " " + "<%= @address.longitude %>".length);
+      initDisplayMap();
+    }
+    
   }
 
   function initAutoComplete(){
@@ -83,7 +106,7 @@
         lat: place.geometry.location.lat(),
         lng: place.geometry.location.lng()
       };
-      map.setCenter(currentPosition);
+      modalMap.setCenter(currentPosition);
       setMarkerToPosition();
     });
   }
@@ -104,7 +127,7 @@
           lat: position.coords.latitude,
           lng: position.coords.longitude
         };
-        map.setCenter(currentPosition);
+        modalMap.setCenter(currentPosition);
         setMarkerToPosition();
 
         $(".location-arrow-wrapper").removeClass("hide");
@@ -129,7 +152,7 @@
     if(marker == null) {
       marker = new google.maps.Marker({
         position: currentPosition,
-        map: map,
+        map: modalMap,
         // title: 'Hello World!',
         draggable: true
       });
@@ -140,7 +163,7 @@
     } else {
       marker.setMap(null);
       marker.setPosition(currentPosition);
-      marker.setMap(map);
+      marker.setMap(modalMap);
     }
     geocodeLatLng();
   }
@@ -205,10 +228,10 @@
 
   function initDisplayMap(){
     var position = {
-      lat: <%= display_latitude %>,
-      lng: <%= display_longitude %> 
+      lat: parseFloat("<%= display_latitude %>"),
+      lng: parseFloat("<%= display_longitude %>") 
     };
-    var map = new google.maps.Map(
+    displayMap = new google.maps.Map(
       document.getElementById('<%= display_map_id %>'), {
         center: position,
         zoom: 14,
@@ -216,12 +239,19 @@
     });
     var marker = new google.maps.Marker({
       position: position,
-      map: map
+      map: displayMap
+    });
+
+    displayMap.addListener('click', function() {
+      console.log(parseFloat("<%= @address.latitude %>"));
+      console.log(parseFloat("<%= @address.longitude %>"));
+      
+      displayModal();
     });
   }
 
 </script>
 <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLod8mAcjj-5mmficTg-cu2W-BhEu6Cgs&callback=initMap&libraries=places">
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLod8mAcjj-5mmficTg-cu2W-BhEu6Cgs&callback=initModalMap&libraries=places">
   // AIzaSyCwhcezDLA4hI2yH4uZxzKTKH_y1RoONUY
 </script>

@@ -76,7 +76,7 @@
   <%= render partial: "shared/map_modal_display", 
     locals: { 
       submit_url: edit_address_path(@address), 
-      cancel_url: addresses_path(),
+      cancel_url: edit_address_path(@address),
       auto_display: false,
       display_latitude: @address.latitude, 
       display_longitude: @address.longitude, 
