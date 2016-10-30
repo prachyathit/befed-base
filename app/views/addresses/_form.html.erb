@@ -12,11 +12,11 @@
     </ul>
   <% end %>
   <div class="address-form">
-    <%= form_for(@address, class: "form-inline") do |f| %>
+    <%= form_for(@address, html: { class: "form-inline" }) do |f| %>
       <div class="form-group">
         <%= f.text_field :name, 
               { placeholder: "Address Name *", 
-                class: "form-control input-medium" } %>
+                class: "form-control input-large" } %>
       </div>
       <div class="form-group">
         <%= f.text_field :house_room_no, 
