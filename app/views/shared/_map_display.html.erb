@@ -1,14 +1,15 @@
 
 <script>
-  function initialize(){
+  function initMap(){
     var position = {
       lat: <%= latitude %>,
-      lng: <%=longitude %> 
+      lng: <%= longitude %> 
     };
     var map = new google.maps.Map(
       document.getElementById('<%= elementId %>'), {
         center: position,
-        zoom: 14
+        zoom: 14,
+        streetViewControl: false
     });
     var marker = new google.maps.Marker({
       position: position,
@@ -16,7 +17,7 @@
     });
   }
 </script>
-<script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLod8mAcjj-5mmficTg-cu2W-BhEu6Cgs&callback=initialize&libraries=places">
+<!-- <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLod8mAcjj-5mmficTg-cu2W-BhEu6Cgs&callback=initialize">
   // AIzaSyCwhcezDLA4hI2yH4uZxzKTKH_y1RoONUY
-</script>
+</script> -->

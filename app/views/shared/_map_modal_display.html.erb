@@ -34,7 +34,7 @@
 
 <script type="text/javascript">
   $(document).ready(function() {
-    if (!urlContainParam('latitude') || !urlContainParam('longitude')) {
+    if ((!urlContainParam('latitude') || !urlContainParam('longitude')) && "<%= auto_display %>" == 'true') {
       $("#map-modal").modal({
         backdrop: 'static',
         keyboard: false
@@ -58,12 +58,15 @@
   function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {
       center: currentPosition,
-      zoom: 14
+      zoom: 14,
+      streetViewControl: false
     });
     setMarkerToPosition();
     initAutoComplete();
     initGetCurrentLocation();
     getCurrentLocation();
+
+    initDisplayMap();
   }
 
   function initAutoComplete(){
@@ -197,6 +200,23 @@
       } else {
         window.alert('Geocoder failed due to: ' + status);
       }
+    });
+  }
+
+  function initDisplayMap(){
+    var position = {
+      lat: <%= display_latitude %>,
+      lng: <%= display_longitude %> 
+    };
+    var map = new google.maps.Map(
+      document.getElementById('<%= display_map_id %>'), {
+        center: position,
+        zoom: 14,
+        streetViewControl: false
+    });
+    var marker = new google.maps.Marker({
+      position: position,
+      map: map
     });
   }
 

@@ -12,6 +12,12 @@ class AddressesController < ApplicationController
   end
 
   def update
+    @address.set_attributes(address_params)
+    if @address.save
+      redirect_to edit_address_path(@address)
+    else
+      render :new and return
+    end
   end
 
   def new
@@ -29,7 +35,6 @@ class AddressesController < ApplicationController
     if @address.save
       redirect_to edit_address_path(@address)
     else
-      p @address.errors.inspect
       render :new and return
     end
   end
