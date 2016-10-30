@@ -1,4 +1,8 @@
 .address-thumb {
+  .thumb-map {
+    height: 120px;
+  }
+  
   .panel {
     height: 250px;
 
@@ -11,12 +15,8 @@
       padding: 80px 50px; 
       text-align: center;
     }
-
-    .thumb-map {
-      height: 120px;
-    }
   }
-  
+
   &.default-address-thumb {
     .panel {
       border: 1px solid #EF665E;

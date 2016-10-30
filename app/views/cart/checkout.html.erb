@@ -1,54 +1,106 @@
 <% provide(:hidden_title, "clearmap") %>
 <div class="container">
   <div class="row">
-    <!-- DELIVERY ADDRESS -->
-    <div class="col-xs-6 deliverying-to-container">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title pull-left" style="padding-top: 7.5px;"> Delivery Address
-          </h3>
-          <div class="clearfix"></div>
-        </div>
-        <div class="panel-body">
-        </div>
-      </div>
-    </div>
-    <!-- END DELIVERY ADDRESS -->
-    <!-- ORDER SUMMARY -->
-    <div class="col-xs-6 order-summary-container">
-      <div class="order-summary">
+    <div class="checkout-summary" style="padding-top:20px; 10px;">
+      <!-- DELIVERY ADDRESS -->
+      <div class="col-xs-12 col-sm-7">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title pull-left" style="padding-top: 7.5px;">Your Order <%= link_to "(Return to menu)", restaurant_foods_path(session[:restaurant_id]),{ class: "return-to-menu" } %>
+            <h3 class="panel-title pull-left" style="padding-top: 7.5px;"> Delivery Address
             </h3>
             <div class="clearfix"></div>
           </div>
           <div class="panel-body">
-            <div class="order-items">
-             
-
+            <div  class="col-xs-6 col-sm-6">
+              <div>full_address</div>
+            </div>
+            <div class="col-xs-6 col-sm-6 address_thumb">
+              <div id="googleMap" class="thumb-map" style="height:120px;">
+                <%= render partial: "shared/address", locals: {latitude: "0", 
+                  longitude: "0", 
+                  elementId: "googleMap"} %>
+              </div>
+            </div>
+            <div class="warning-msg">
+              <p>*If this is your first order, we'll call you to verify the phone number. Your order will not be processed until your phone number has been verified.</p>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- END ORDER SUMMARY -->
-    <!-- PAYMENT METHOD -->
-    <div class="col-xs-6 ">
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title pull-left" style="padding-top: 7.5px;"> Payment Method
-          </h3>
-          <div class="clearfix"></div>
-        </div>
-        <div class="panel-body">
-          <div class="payment-bar">
-            <%= render partial: "payment" %>
+      <!-- END DELIVERY ADDRESS -->
+      <!-- ORDER SUMMARY -->
+      <div class="col-xs-12 col-sm-5">
+        <div class="order-summary">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title pull-left" style="padding-top: 7.5px;">Your Order <%= link_to "(Return to menu)", restaurant_foods_path(session[:restaurant_id]),{ class: "return-to-menu" } %>
+              </h3>
+              <div class="clearfix"></div>
+            </div>
+            <div class="panel-body" style="padding-left: 0px; padding-right: 0px;">
+              <div class="order-items" style="display: table; padding-bottom: 10px;">
+                <div class="col-xs-7">
+                  Hot & Spicy Mushroom Ball
+                  <div style="color:#DDDDDD;"> tst </div>
+                </div>
+                <div class="col-xs-2">
+                  x5
+                </div>
+                <div class="col-xs-3">
+                  155 &#xe3f;
+                </div>
+              </div>
+              <div class="price-summary"  style="display: table;padding-top: 10px;border-top: 1px solid #dddddd;">
+                <div class="col-xs-6">
+                  Item(5)
+                </div>
+                <div class="col-xs-6">
+                  310 &#xe3f;
+                </div>
+                <div class="col-xs-6">
+                  Delivery fee
+                </div>
+                <div class="col-xs-6">
+                  50 &#xe3f;
+                </div>
+                <div class="col-xs-12 warning-msg">
+                  Enjoy FREE delivery on your first order!
+                </div>
+                <div class="col-xs-12">
+                  Order Total 360 &#xe3f;
+                </div>
+              </div>
+            </div>
+            <div class="panel-footer" style="background-color: #FFFFFF;">
+              <div class="order-submit">
+                <center>
+                  <button class="btn btn-success">
+                    Submit Order
+                  </button>
+                </center>
+              </div>
+            </div>
           </div>
         </div>
       </div>
+      <!-- END ORDER SUMMARY -->
+      <!-- PAYMENT METHOD -->
+      <div class="col-xs-12 col-sm-7">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title pull-left" style="padding-top: 7.5px;"> Payment Method
+            </h3>
+            <div class="clearfix"></div>
+          </div>
+          <div class="panel-body">
+            <div class="payment-bar">
+              <%= render partial: "payment" %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END PAYMENT METHOD -->
     </div>
-    <!-- END PAYMENT METHOD -->
   </div>
 </div>
 

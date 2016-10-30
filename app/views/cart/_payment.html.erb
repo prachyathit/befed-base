@@ -25,6 +25,7 @@
   <li role="presentation" class="active" id="cc-payment-button"><a href="#">Credit Card</a></li>
   <li role="presentation" id="cash-on-delivery-button"><a href="#">Cash</a></li>
 </ul>
-
-<%= render partial: "cash_payment" %>
-<%= render partial: "credit_card" %>
+<div class="payment-methods">
+  <%= render partial: "cash_payment" %>
+  <%= render partial: "credit_card" %>
+</div>
