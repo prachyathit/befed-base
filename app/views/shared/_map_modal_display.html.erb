@@ -61,9 +61,8 @@
     $("#map-modal-edit").modal("show");
 
     currentPosition = { lat: parseFloat("<%= @address.latitude %>"), lng: parseFloat("<%= @address.longitude %>") };
-    initModalMap();
-      // displayMap.setCenter(currentPosition);
-      // setMarkerToPosition();
+    displayMap.setCenter(currentPosition);
+    setMarkerToPosition();
   }
 
   // Note: This example requires that you consent to location sharing when
@@ -180,6 +179,11 @@
     $('#cancelAddress').on('click', function(){
       window.location = "<%= cancel_url %>";
     });
+
+    $('#map-modal').on('shown.bs.modal', function(e) {
+      google.maps.event.trigger(modalMap, "resize");
+      displayModal();
+    });
   }
 
   function urlContainParam(param) {
@@ -243,15 +247,12 @@
     });
 
     displayMap.addListener('click', function() {
-      console.log(parseFloat("<%= @address.latitude %>"));
-      console.log(parseFloat("<%= @address.longitude %>"));
-      
       displayModal();
     });
   }
 
 </script>
 <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLod8mAcjj-5mmficTg-cu2W-BhEu6Cgs&callback=initModalMap&libraries=places">
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwhcezDLA4hI2yH4uZxzKTKH_y1RoONUY&callback=initModalMap&libraries=places">
   // AIzaSyCwhcezDLA4hI2yH4uZxzKTKH_y1RoONUY
 </script>
