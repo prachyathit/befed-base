@@ -12,7 +12,7 @@ class AddressesController < ApplicationController
   end
 
   def update
-    @address.set_attributes(address_params)
+    @address.assign_attributes(address_params)
     if @address.save
       redirect_to edit_address_path(@address)
     else
