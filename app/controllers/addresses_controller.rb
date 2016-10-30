@@ -9,6 +9,13 @@ class AddressesController < ApplicationController
   end
 
   def edit
+    @address_params = {}
+    if params.include?(:latitude) and params.include?(:longitude)
+      params[:address][:latitude] = params[:latitude]
+      params[:address][:longitude] = params[:longitude]
+      @address_params = params
+      @address.assign_attributes(address_params)
+    end
   end
 
   def update
