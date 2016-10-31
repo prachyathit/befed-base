@@ -60,9 +60,35 @@
     $("#map-modal").modal("show");
     $("#map-modal-edit").modal("show");
 
+    console.log('displayModal');
+
     currentPosition = { lat: parseFloat("<%= @address.latitude %>"), lng: parseFloat("<%= @address.longitude %>") };
     displayMap.setCenter(currentPosition);
     setMarkerToPosition();
+  }
+
+  function initDisplayMap(){
+    var position = {
+      lat: parseFloat("<%= display_latitude %>"),
+      lng: parseFloat("<%= display_longitude %>") 
+    };
+    displayMap = new google.maps.Map(
+      document.getElementById('<%= display_map_id %>'), {
+        center: position,
+        zoom: 14,
+        streetViewControl: false
+    });
+    var marker = new google.maps.Marker({
+      position: position,
+      map: displayMap
+    });
+
+    displayMap.addListener('click', function() {
+      displayModal();
+      // currentPosition = { lat: parseFloat("<%= @address.latitude %>"), lng: parseFloat("<%= @address.longitude %>") };
+      // modalMap.setCenter(currentPosition);
+      // setMarkerToPosition();
+    });
   }
 
   // Note: This example requires that you consent to location sharing when
@@ -71,11 +97,13 @@
   // locate you.
 
   function initModalMap() {
-    console.log("initModalMap");
     modalMap = new google.maps.Map(document.getElementById('map'), {
       center: currentPosition,
       zoom: 14,
       streetViewControl: false
+    });
+    modalMap.addListener('resize', function(){
+      console.log('resize');
     });
     setMarkerToPosition();
     initAutoComplete();
@@ -85,7 +113,6 @@
     }
     if ("<%= @address.latitude %>".length > 0 && 
       "<%= @address.longitude %>".length > 0) {
-      console.log("<%= @address.latitude %>".length + " " + "<%= @address.longitude %>".length);
       initDisplayMap();
     }
     
@@ -181,8 +208,8 @@
     });
 
     $('#map-modal').on('shown.bs.modal', function(e) {
+      console.log('shown.br.modal');
       google.maps.event.trigger(modalMap, "resize");
-      displayModal();
     });
   }
 
@@ -227,27 +254,6 @@
       } else {
         window.alert('Geocoder failed due to: ' + status);
       }
-    });
-  }
-
-  function initDisplayMap(){
-    var position = {
-      lat: parseFloat("<%= display_latitude %>"),
-      lng: parseFloat("<%= display_longitude %>") 
-    };
-    displayMap = new google.maps.Map(
-      document.getElementById('<%= display_map_id %>'), {
-        center: position,
-        zoom: 14,
-        streetViewControl: false
-    });
-    var marker = new google.maps.Marker({
-      position: position,
-      map: displayMap
-    });
-
-    displayMap.addListener('click', function() {
-      displayModal();
     });
   }
 
