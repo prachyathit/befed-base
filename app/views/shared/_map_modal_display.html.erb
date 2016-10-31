@@ -105,6 +105,9 @@
     modalMap.addListener('resize', function(){
       console.log('resize');
     });
+    modalMap.addListener('idle', function(){
+      console.log('idle');
+    });
     setMarkerToPosition();
     initAutoComplete();
     initGetCurrentLocation();
