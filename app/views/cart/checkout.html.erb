@@ -12,12 +12,13 @@
           </div>
           <div class="panel-body">
             <div  class="col-xs-6 col-sm-6">
-              <div>full_address</div>
+              <div><%= @address.full_address %></div>
             </div>
             <div class="col-xs-6 col-sm-6 address_thumb">
               <div id="googleMap" class="thumb-map" style="height:120px;">
-                <%= render partial: "shared/map_display", locals: {latitude: "0", 
-                  longitude: "0", 
+                <%= render partial: "shared/map_display", locals: {
+                  latitude: @address.latitude, 
+                  longitude: @address.longitude,
                   elementId: "googleMap"} %>
               </div>
             </div>
@@ -38,43 +39,91 @@
               <div class="clearfix"></div>
             </div>
             <div class="panel-body" style="padding-left: 0px; padding-right: 0px;">
-              <div class="order-items" style="display: table; padding-bottom: 10px;">
-                <div class="col-xs-7">
-                  Hot & Spicy Mushroom Ball
-                  <div style="color:#DDDDDD;"> tst </div>
+              <% cumulative_quantity = 0 %>
+              <% total = 0 %>
+              <% @cart.each do |id, order_info| %>
+                <% food = Food.find(order_info["food_id"]) %>
+                <% quantity = order_info["quantity"].to_i %>
+                <% options = order_info["options"] %>
+
+                <% @food_price = 0 %>
+                <% @food_price += food.price %>
+
+                <div class="order-items" style="display: table; padding-bottom: 10px;">
+                  <div class="col-xs-7">
+                    <%= food.name %>
+
+                    <% unless options.nil? %>
+                      <% options.each do |option| %>
+                        <% option_value_id = option[1]["option_value_ids"] %>
+                          <% unless option_value_id.first.empty? %>
+
+                            <!--Radio button-->
+                            <% if option_value_id.class == String %>
+                              <% option_value = OptionValue.find(option_value_id) %>
+                              <div style="color:#DDDDDD;">
+                                <%= option_value.name %>
+                              </div>
+                              <% @food_price += option_value.price.to_i %>
+                            <!--Checkbox-->
+                            <% else %>
+                                <% option_value_id.each do |option_number| %>
+                                  <% unless option_number.empty? %>
+                                    <% option_value = OptionValue.find(option_number) %>
+                                    <div style="color:#DDDDDD;">
+                                      <%= option_value.name %>
+                                    </div>
+                                    <% @food_price += option_value.price.to_i %>
+                                  <% end %>
+                                <% end %>
+
+                            <% end %>
+
+                          <% end %>
+                        <% end %>
+                      <% end %>
+
+                  </div>
+                  <div class="col-xs-2">
+                    x<%= quantity %>
+                  </div>
+                  <div class="col-xs-3">
+                    <%= @food_price %> &#xe3f;
+                  </div>
                 </div>
-                <div class="col-xs-2">
-                  x5
-                </div>
-                <div class="col-xs-3">
-                  155 &#xe3f;
-                </div>
-              </div>
+
+                <% cumulative_quantity += quantity %>
+                <% total += quantity * @food_price %>
+              <% end %>
+              
               <div class="price-summary"  style="display: table;padding-top: 10px;border-top: 1px solid #dddddd;">
                 <div class="col-xs-6">
-                  Item(5)
+                  Item(<%= cumulative_quantity %>)
                 </div>
                 <div class="col-xs-6">
-                  310 &#xe3f;
+                  <%= total %> &#xe3f;
                 </div>
                 <div class="col-xs-6">
                   Delivery fee
                 </div>
                 <div class="col-xs-6">
-                  50 &#xe3f;
+                  <% @first_order ? delivery_fee = 0 : delivery_fee = 50 %>
+                  <%= delivery_fee %> &#xe3f;
                 </div>
-                <div class="col-xs-12 warning-msg">
-                  Enjoy FREE delivery on your first order!
-                </div>
+                <% if @first_order %>
+                  <div class="col-xs-12 warning-msg">
+                    Enjoy FREE delivery on your first order!
+                  </div>
+                <% end %>
                 <div class="col-xs-12">
-                  Order Total 360 &#xe3f;
+                  Order Total <%= total + delivery_fee %> &#xe3f;
                 </div>
               </div>
             </div>
             <div class="panel-footer" style="background-color: #FFFFFF;">
               <div class="order-submit">
                 <center>
-                  <button class="btn btn-success">
+                  <button class="btn btn-success" id="orderSubmitBtn">
                     Submit Order
                   </button>
                 </center>
@@ -94,7 +143,112 @@
           </div>
           <div class="panel-body">
             <div class="payment-bar">
-              <%= render partial: "payment" %>
+              <ul class="nav nav-pills">
+                <li role="presentation" class="active" id="cc-payment-button">
+                  <a href="javascript:;">Credit Card</a>
+                </li>
+                <li role="presentation" id="cash-on-delivery-button">
+                  <a href="javascript:;">Cash</a>
+                </li>
+              </ul>
+              <div class="payment-methods">
+
+                <!-- BEGIN: CASH PAYMENT FORM -->
+                <div id="cash-on-delivery" class="hide">
+                  <div class="cash-delivery-text-wrapper">
+                    Cash on delivery
+                    <%= form_tag '/checkout/complete', class: 'form-horizontal', id: 'cash-payment' do %>
+                      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                      <input type='hidden' name='payment_type' value='cash'>
+                    <% end %>
+                  </div>
+                </div>
+                <!-- END: CASH PAYMENT FORM -->
+
+                <!-- BEGIN: CREDIT CARD PAYMENT FORM -->
+                <%= form_tag '/checkout/complete', class: 'form-horizontal', id: 'cc-payment' do %>
+                  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                  <input type="hidden" name="token">
+                  <input type='hidden' name='payment_type' value='credit_card'>
+                    <div class="form-group">
+                      <div class="col-sm-9">
+                        <h5><i class="fa fa-lock" aria-hidden="true"></i>
+                        We use SSL encryption to protect your personal information, including your credit card information.</h5>
+                      </div>
+                      <div class="col-sm-3">
+                        <img style='width: 100px', src='<%= asset_path("comodo_secure_seal_100x85_transp.png") %>'></img>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-5 control-label">We accept</label>
+                      <div class="col-sm-7">
+                        <img style='width: 200px', src='<%= asset_path("master-visa-jcb.png") %>'></img>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-5 control-label" for="card-holder-name">Name on Card</label>
+                      <div class="col-sm-7">
+                        <input type="text" class="form-control" name="card-holder-name" id="card-holder-name" placeholder="Card Holder's Name">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-5 control-label" for="card-number">Card Number</label>
+                      <div class="col-sm-7">
+                        <input type="text" class="form-control" name="card-number" id="card-number" placeholder="Debit/Credit Card Number">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-sm-5 control-label" for="expiry-month">Expiration Date</label>
+                      <div class="pad-col col-sm-7">
+                        <div class="row">
+                          <div class="col-xs-6 col-md-6">
+                            <select class="form-control" name="expiry-month" id="expiry-month">
+                              <option>Month</option>
+                              <option value="01">Jan (01)</option>
+                              <option value="02">Feb (02)</option>
+                              <option value="03">Mar (03)</option>
+                              <option value="04">Apr (04)</option>
+                              <option value="05">May (05)</option>
+                              <option value="06">June (06)</option>
+                              <option value="07">July (07)</option>
+                              <option value="08">Aug (08)</option>
+                              <option value="09">Sep (09)</option>
+                              <option value="10">Oct (10)</option>
+                              <option value="11">Nov (11)</option>
+                              <option value="12">Dec (12)</option>
+                            </select>
+                          </div>
+                          <div class="col-xs-6 col-md-6">
+                            <select class="form-control" name="expiry-year" id='expiry-year'>
+                              <option value="16">2016</option>
+                              <option value="17">2017</option>
+                              <option value="18">2018</option>
+                              <option value="19">2019</option>
+                              <option value="20">2020</option>
+                              <option value="21">2021</option>
+                              <option value="22">2022</option>
+                              <option value="23">2023</option>
+                              <option value="24">2024</option>
+                              <option value="25">2025</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="col-xs-5 control-label" for="cvv">Card CVV</label>
+                      <div class="col-xs-5">
+                        <input type="text" class="form-control" name="cvv" id="cvv" placeholder="Security Code">
+                      </div>
+                    </div>
+                    <!-- <div class="form-group">
+                      <div class="col-sm-offset-3 col-sm-9">
+                        <button type="button" class="btn btn-success" id="pay-with-cc">Submit Order</button>
+                      </div>
+                    </div> -->
+                <% end %>
+                <!-- END: CREDIT CARD PAYMENT FORM -->
+              </div>
             </div>
           </div>
         </div>
@@ -104,3 +258,92 @@
   </div>
 </div>
 
+<script src="moment.js"></script>
+<script src="https://cdn.omise.co/omise.js"></script>
+<script>
+  $(document).ready(function() {
+    console.log(moment.monthsShort());
+    var paymentType;
+
+    $("#cash-on-delivery-button").click(function(e) {
+      paymentType = 'cash';
+      $("#cash-on-delivery-button").addClass('active');
+      $("#cc-payment-button").removeClass('active');
+      $("#cash-on-delivery").removeClass('hide');
+      $("#cc-payment").addClass('hide');
+      $("#cc-errors").addClass('hide');
+    });
+
+    $("#cc-payment-button").click(function(e) {
+      paymentType = 'credit_card';
+      $("#cc-payment-button").addClass('active');
+      $("#cash-on-delivery-button").removeClass('active');
+      $("#cc-payment").removeClass('hide');
+      $("#cash-on-delivery").addClass('hide');
+      $("#cc-errors").removeClass('hide');
+    });
+
+    $("#orderSubmitBtn").click(function(e) {
+      switch(paymentType){
+        case 'cash':
+          $("#cash-payment").submit();
+          break;
+        case 'credit_card':
+          setUpOmise();
+          break;
+      }
+    });
+  });
+
+  function setUpOmise(){
+    Omise.setPublicKey('<%= ENV['omise_public_key']%>');
+
+    // $("#pay-with-cc").click(function () {
+      // TODO make the following code work
+      // TODO add display error message when response.object == "error"
+      // some how it just didn't get the correct value yet
+      $('#cc-errors').innerHTML = '';
+      var button = $(this);
+      var form = $('#cc-payment');
+
+      // Disable the submit button to avoid repeated click.
+      button.find("input[type=button]").prop("disabled", true);
+
+      // Serialize the form fields into a valid card object.
+      var card = {
+        "name": $('#card-holder-name').val(),
+        "number": $('#card-number').val(),
+        "expiration_month": $('#expiry-month').val(),
+        "expiration_year": $('#expiry-year').val(),
+        "security_code": $('#cvv').val()
+      };
+
+      // Send a request to create a token then trigger the callback function once
+      // a response is received from Omise.
+      //
+      // Note that the response could be an error and this needs to be handled within
+      // the callback.
+      Omise.createToken("card", card, function (statusCode, response) {
+        if (response.object == "error") {
+          // Display an error message.
+          $('#cc-errors').html(response.message);
+          // Re-enable the submit button.
+          button.find("input[type=button]").prop("disabled", false);
+        } else {
+          // Then fill the omise_token.
+          form.find("[name=token]").val(response.id);
+
+          // Remove card number from form before submiting to server.
+          form.find("[name=card-number]").val("");
+          form.find("[name=cvv]").val("");
+
+          // submit token to server.
+          // form.get(0).submit();
+          form.submit();
+        };
+      });
+      // Prevent the form from being submitted;
+      // return false;
+    // });
+  }
+</script>
