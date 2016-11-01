@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+ .warning-msg {
+  color: #A94442;
+ }
