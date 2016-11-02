@@ -28,12 +28,15 @@ module Api
 				cart = {}
 				params[:items].each_with_index do |item, index|
 					item_options = {}
-					item[:options].each do |opt|
-						option = Option.where(id: opt[:id]).first
-						item_options[option.name.to_sym] = {
-							option_value_ids: opt[:value_ids]
-						}
+					if item[:options].present?
+						item[:options].each do |opt|
+							option = Option.where(id: opt[:id]).first
+							item_options[option.name.to_sym] = {
+								option_value_ids: opt[:value_ids]
+							}
+						end	
 					end
+					
 					cart[index] = {
 						food_id: item[:menu_id],
 						quantity: item[:quantity],
