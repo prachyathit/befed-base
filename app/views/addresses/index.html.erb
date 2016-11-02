@@ -5,7 +5,7 @@
       <% @addresses.each do |address| %>
         <%= render partial: "thumbnail", locals: {address: address} %>
       <% end %>
-      <div class="col-sm-6 address-thumb">
+      <div class="col-sm-6 address-thumb new-address">
         <div class="panel panel-default">
           <%= link_to new_address_path do %>
             <div class="panel-body">
@@ -27,7 +27,9 @@
       $(this).bind("click", function(e){
         console.log(e.target);
         var target = $(e.target);
-        if (!target.hasClass("glyphicon") && !$(this).hasClass("default-address-thumb")){
+        if (!target.hasClass("glyphicon") && 
+            !$(this).hasClass("default-address-thumb") &&
+            !$(this).hasClass("new-address")){
           $.ajax({
             type: "POST",
             url: "addresses/"+$(this).attr("address-id")+"/set_default"
