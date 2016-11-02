@@ -23,7 +23,7 @@ class AddressesController < ApplicationController
     if @address.save
       redirect_to edit_address_path(@address)
     else
-      render :new and return
+      render :edit and return
     end
   end
 

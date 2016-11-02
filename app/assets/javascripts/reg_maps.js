@@ -32,20 +32,20 @@ $(document).ready(function() {
   });
 
   //////Drag Marker Event///////
-  $(".location").bind("geocode:dragged", function(event, latLng){
-  var map = $(".location").geocomplete("map");
-    map.panTo(latLng);
-    var geocoder = new google.maps.Geocoder();
-    geocoder.geocode({'latLng': latLng }, function(results, status) {
-    if (status == google.maps.GeocoderStatus.OK) {
-      if (results[0]) {
-        $('.location').val(results[0].formatted_address);
-        $('.latitude').val(latLng.lat());
-        $('.longitude').val(latLng.lng());
-      }
-    }
-    });
-  });
+  // $(".location").bind("geocode:dragged", function(event, latLng){
+  // var map = $(".location").geocomplete("map");
+  //   map.panTo(latLng);
+  //   var geocoder = new google.maps.Geocoder();
+  //   geocoder.geocode({'latLng': latLng }, function(results, status) {
+  //   if (status == google.maps.GeocoderStatus.OK) {
+  //     if (results[0]) {
+  //       $('.location').val(results[0].formatted_address);
+  //       $('.latitude').val(latLng.lat());
+  //       $('.longitude').val(latLng.lng());
+  //     }
+  //   }
+  //   });
+  // });
   $(".switch-map").on("click", function() {
     $("#place-modal").modal("hide");
     $("#map-modal").modal("show");
