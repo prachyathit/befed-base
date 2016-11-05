@@ -8,6 +8,7 @@ class RestaurantsController < ApplicationController
   def index
     unless session[:saddress].nil?
       # @restaurants = Restaurant.all
+
       @restaurants = Restaurant.near([session[:saddress]['latitude'], session[:saddress]['longitude']], 5, :units => :km)
     else
       redirect_to root_url
