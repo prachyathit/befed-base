@@ -1,7 +1,6 @@
-
 <div id="cash-on-delivery" class="hide ">
   <div class="cash-delivery-text-wrapper">
-    Payment Method: Cash on delivery
+    Cash on delivery
     <form id="cash-payment" class="form-horizontal" role="form" action='/checkout/complete' method='POST'>
       <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
       <input type='hidden' name='payment_type' value='cash'>

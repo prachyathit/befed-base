@@ -1,0 +1,288 @@
+<div id="map-modal" class="modal fade">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
+        <h4 class="modal-title">Pin your location</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <span class="tooltips col-xs-1">
+            <span class="tooltipstext">Get my current location</span>
+            <span id="currentLocationBtn" class="location-arrow-wrapper btn btn-danger">
+              <i class="fa fa-location-arrow strong"></i>
+            </span>
+            <span class="spinning-icon-wrapper btn btn-danger hide"><i class="fa fa-spinner fa-spin strong"></i></span>
+          </span>
+          <div class="col-xs-11">
+            <%= text_field_tag :locationSearch, '', { placeholder: 'Search Google Maps', type: 'search', class: 'form-control' } %>
+          </div>
+        </div>
+        <div id="map" style="height: 350px;">
+          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a id="cancelAddress" href="javascript:;" class="btn btn-default">Cancel</a>
+        <button id="useAddress" type="button" class="btn btn-primary">
+          Use this address
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+
+  var displayMap;
+  var modalMap;
+  var marker;
+  var defaultLocation = {lat: 13.7563, lng: 100.5018};
+  var currentPosition = defaultLocation;
+  var address;
+  var addressInput;
+
+  function initialize() {
+    initModalMap();
+    if ("<%= @address.latitude.present? %>" == 'true' && 
+      "<%= @address.longitude.present? %>" == 'true') {
+      initDisplayMap();
+    }
+
+    if (currentPosition == defaultLocation) {
+      getCurrentLocation().then(function(position){
+        currentPosition = position;
+
+        if ("<%= @address.errors.any? %>" == 'false' &&
+          (!urlContainParam('latitude') || !urlContainParam('longitude')) && "<%= auto_display %>" == 'true') {
+          displayModal();
+        }
+      });
+    }
+
+    
+  }
+
+  // Note: This example requires that you consent to location sharing when
+  // prompted by your browser. If you see the error "The Geolocation service
+  // failed.", it means you probably did not give permission for the browser to
+  // locate you.
+
+  function initModalMap() {
+    modalMap = new google.maps.Map(document.getElementById('map'), {
+      center: currentPosition,
+      zoom: 14,
+      streetViewControl: false
+    });
+    modalMap.addListener('click', function(e){
+      currentPosition = {
+        lat: e.latLng.lat(),
+        lng: e.latLng.lng()
+      }
+      modalMap.setCenter(currentPosition);
+      setMarkerToPosition();
+    });
+    modalMap.addListener('resize', function(){});
+    modalMap.addListener('idle', function(){
+      modalMap.setCenter(currentPosition);
+      setMarkerToPosition();
+    });
+    initAutoComplete();
+    initGetCurrentLocation();
+  }
+
+  function displayModal(){
+    $("#map-modal").modal({
+      backdrop: 'static',
+      keyboard: false
+    });
+    $("#map-modal").modal("show");
+    $("#map-modal-edit").modal("show");
+
+    if (urlContainParam('latitude') && urlContainParam('longitude')) {
+      currentPosition = { lat: parseFloat("<%= @address.latitude %>"), lng: parseFloat("<%= @address.longitude %>") };
+    }
+  }
+
+  function initDisplayMap(){
+    var position = {
+      lat: parseFloat("<%= display_latitude %>"),
+      lng: parseFloat("<%= display_longitude %>") 
+    };
+    displayMap = new google.maps.Map(
+      document.getElementById('<%= display_map_id %>'), {
+        center: position,
+        zoom: 14,
+        streetViewControl: false
+    });
+    var marker = new google.maps.Marker({
+      position: position,
+      map: displayMap
+    });
+
+    displayMap.addListener('click', function() {
+      currentPosition = position;
+      displayModal();
+    });
+  }
+
+  function initAutoComplete(){
+    addressInput = document.getElementById('locationSearch');
+    var options = {
+      // Restrict the search to Thailand
+      componentRestrictions: {country: 'th'}
+    };
+    autocomplete = new google.maps.places.Autocomplete(addressInput, options);
+    autocomplete.addListener('place_changed', function(){
+      var place = autocomplete.getPlace();
+      console.log(place);
+      currentPosition = {
+        lat: place.geometry.location.lat(),
+        lng: place.geometry.location.lng()
+      };
+      modalMap.setCenter(currentPosition);
+      setMarkerToPosition();
+    });
+  }
+
+  function initGetCurrentLocation(){
+    $("#currentLocationBtn").click(function() {
+      getCurrentLocation().then(function(position){
+        currentPosition = position;
+      });
+      $(".location-arrow-wrapper").addClass("hide");
+      $(".spinning-icon-wrapper").removeClass("hide");
+    });
+  }
+
+  function getCurrentLocation(){
+    // Try HTML5 geolocation.
+    if (navigator.geolocation) {
+      return new Promise(function(resolve, reject) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+          pos = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+
+          $(".location-arrow-wrapper").removeClass("hide");
+          $(".spinning-icon-wrapper").addClass("hide");
+          
+          resolve(pos);
+        }, function() {
+          // Cannot get location
+          alert("We can't locate your current location. Please grant a permission in your browser to locate your device");
+
+          $(".location-arrow-wrapper").removeClass("hide");
+          $(".spinning-icon-wrapper").addClass("hide");
+
+          reject("We can't locate your current location. Please grant a permission in your browser to locate your device");
+        });
+      });
+    } else {
+      // Browser doesn't support Geolocation
+      alert('Your browser doesn\'t support geolocation.');
+      $(".location-arrow-wrapper").removeClass("hide");
+      $(".spinning-icon-wrapper").addClass("hide");
+
+      return new Promise(function(resolve, reject) {
+        reject('Your browser doesn\'t support geolocation.');
+      });
+    }
+    
+  }
+
+  function setMarkerToPosition(){
+    if(marker == null) {
+      marker = new google.maps.Marker({
+        position: currentPosition,
+        map: modalMap,
+        // title: 'Hello World!',
+        draggable: true
+      });
+      marker.addListener('dragend', function(event) {
+        console.log('drag END');
+        currentPosition = marker.position;
+        geocodeLatLng();
+      });
+      marker.addListener('dragstart', function(event) {
+        console.log('drag START');
+      });
+      marker.addListener('drag', function(event) {
+        console.log('drag');
+      });
+    } else {
+      marker.setMap(null);
+      marker.setPosition(currentPosition);
+      marker.setMap(modalMap);
+    }
+    geocodeLatLng();
+  }
+
+  function addEventListener() {
+    $('#useAddress').on('click', function(){
+      var params = {
+        address: address,
+        latitude: currentPosition.lat,
+        longitude: currentPosition.lng
+      };
+      window.location = "<%= submit_url %>?"+jQuery.param(params);
+    });
+    $('#cancelAddress').on('click', function(){
+      window.location = "<%= cancel_url %>";
+    });
+
+    $('#map-modal').on('shown.bs.modal', function(e) {
+      google.maps.event.trigger(modalMap, "resize");
+    });
+  }
+
+  function urlContainParam(param) {
+    var url = window.location.href;
+    if(url.indexOf('?' + param + '=') != -1)
+      return true;
+    else if(url.indexOf('&' + param + '=') != -1)
+      return true;
+    return false
+  }
+
+  function geocodeLatLng() {
+    var geocoder = new google.maps.Geocoder;
+    geocoder.geocode({'location': currentPosition}, function(results, status) {
+      if (status === 'OK') {
+        if (results[1]) {
+          address = {};
+          results[0].address_components.forEach(function(component){
+            if(component.types.includes('street_number')){
+              address['house_room_no'] = component.long_name;
+            } else if(component.types.includes('premise')){
+              address['building_name'] = component.long_name;
+            } else if(component.types.includes('route')){
+              address['street'] = component.long_name;
+            } else if(component.types.includes('sublocality_level_1')){
+              address['district'] = component.long_name;
+            } else if(component.types.includes('sublocality_level_2')){
+              address['subdistrict'] = component.long_name;
+            } else if(component.types.includes('locality') && 
+                component.types.includes('political')){
+              address['province'] = component.long_name;
+            } else if(component.types.includes('postal_code')){
+              address['postal_code'] = component.long_name;
+            } else if(component.types.includes('country')){
+            }
+          });
+          addressInput.value = results[1].formatted_address;
+        } else {
+          window.alert('No results found');
+        }
+      } else {
+        window.alert('Geocoder failed due to: ' + status);
+      }
+    });
+  }
+
+</script>
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwhcezDLA4hI2yH4uZxzKTKH_y1RoONUY&callback=initialize&libraries=places">
+  // AIzaSyCwhcezDLA4hI2yH4uZxzKTKH_y1RoONUY
+</script>

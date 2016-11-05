@@ -32,20 +32,20 @@ $(document).ready(function() {
   });
 
   //////Drag Marker Event///////
-  $(".location").bind("geocode:dragged", function(event, latLng){
-  var map = $(".location").geocomplete("map");
-    map.panTo(latLng);
-    var geocoder = new google.maps.Geocoder();
-    geocoder.geocode({'latLng': latLng }, function(results, status) {
-    if (status == google.maps.GeocoderStatus.OK) {
-      if (results[0]) {
-        $('.location').val(results[0].formatted_address);
-        $('.latitude').val(latLng.lat());
-        $('.longitude').val(latLng.lng());
-      }
-    }
-    });
-  });
+  // $(".location").bind("geocode:dragged", function(event, latLng){
+  // var map = $(".location").geocomplete("map");
+  //   map.panTo(latLng);
+  //   var geocoder = new google.maps.Geocoder();
+  //   geocoder.geocode({'latLng': latLng }, function(results, status) {
+  //   if (status == google.maps.GeocoderStatus.OK) {
+  //     if (results[0]) {
+  //       $('.location').val(results[0].formatted_address);
+  //       $('.latitude').val(latLng.lat());
+  //       $('.longitude').val(latLng.lng());
+  //     }
+  //   }
+  //   });
+  // });
   $(".switch-map").on("click", function() {
     $("#place-modal").modal("hide");
     $("#map-modal").modal("show");
@@ -87,36 +87,36 @@ $(document).ready(function() {
   });
 
     /////Auto locate//////
-  $(".location-arrow-wrapper").click(function() {
-   var timeoutOptions = {
-     enableHighAccuracy: true,
-     timeout: 5000,
-     maximumAge: 0
-   }
+  // $(".location-arrow-wrapper").click(function() {
+  //  var timeoutOptions = {
+  //    enableHighAccuracy: true,
+  //    timeout: 5000,
+  //    maximumAge: 0
+  //  }
   
-   $(".location-arrow-wrapper").addClass("hide");
-   $(".spinning-icon-wrapper").removeClass("hide");
-   $('#map-container').slideDown();
+  //  $(".location-arrow-wrapper").addClass("hide");
+  //  $(".spinning-icon-wrapper").removeClass("hide");
+  //  $('#map-container').slideDown();
    
-   if (navigator.geolocation) {
-     navigator.geolocation.getCurrentPosition(function(position){
-      var map = $(".location").geocomplete("map");
-       google.maps.event.trigger(map, 'resize');
-       $.ajax({
-         url: "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + position.coords.latitude + "," + position.coords.longitude,
-         success: function(result) {
-           $(".location-arrow-wrapper").removeClass("hide");
-           $(".spinning-icon-wrapper").addClass("hide");
-           $(".location").geocomplete("find", result.results[0].formatted_address);
-         }
-       })
-     }, function() {
-        alert("We can't locate your current location. Please grant a permission in your browser to locate your device");
-          $(".location-arrow-wrapper").removeClass("hide");
-          $(".spinning-icon-wrapper").addClass("hide");
-       }, timeoutOptions);
-   } else {
-     alert('Error: Your browser doesn\'t support geolocation.')
-   }
-  });
+  //  if (navigator.geolocation) {
+  //    navigator.geolocation.getCurrentPosition(function(position){
+  //     var map = $(".location").geocomplete("map");
+  //      google.maps.event.trigger(map, 'resize');
+  //      $.ajax({
+  //        url: "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + position.coords.latitude + "," + position.coords.longitude,
+  //        success: function(result) {
+  //          $(".location-arrow-wrapper").removeClass("hide");
+  //          $(".spinning-icon-wrapper").addClass("hide");
+  //          $(".location").geocomplete("find", result.results[0].formatted_address);
+  //        }
+  //      })
+  //    }, function() {
+  //       alert("We can't locate your current location. Please grant a permission in your browser to locate your device");
+  //         $(".location-arrow-wrapper").removeClass("hide");
+  //         $(".spinning-icon-wrapper").addClass("hide");
+  //      }, timeoutOptions);
+  //  } else {
+  //    alert('Error: Your browser doesn\'t support geolocation.')
+  //  }
+  // });
 });

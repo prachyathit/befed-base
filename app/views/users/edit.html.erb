@@ -2,68 +2,116 @@
 <% provide(:hidden_title, 'Edit user') %>
 
 <div class='container'>
-  <h1>Update your profile</h1>
-
-  <div class="row">
+  <h1>Profile</h1>
+  <div class='row'>
     <div class="col-md-8 col-md-offset-2">
+      <!-- START: General Form -->
       <%= form_for(@user) do |f| %>
-        <%= render 'shared/error_messages' %>
-
-        <%= f.label :name %>
-        <%= f.text_field :name, class: 'form-control' %>
-
-        <%= f.label :email %>
-        <%= f.email_field :email, class: 'form-control' %>
-
-        <%= f.label :phone %>
-        <%= f.text_field :phone, class: 'form-control', readonly: true %>
-        
-        <%= f.label "Delivery Location" %><br>
-         <%= link_to "#", { :class => "showmap" } do %>
-          <div class="edit-address btn btn-default text-color margin-bot-15">
-            <%= @user.address %>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <button class="btn btn-default pull-right">Save</button>
+            <h3 class="panel-title pull-left" style="padding-top: 7.5px;">General</h3>
+            <div class="clearfix"></div>
           </div>
-        <% end %>
-  <div class="center">
-  <div id="map-modal-edit" class="modal fade">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-header">
-        Edit your location <br>
-        เปลี่ยนตำแหน่งที่อยู่จัดส่ง
-      </div>
-      <div class="modal-content">
-
-        <button type="button" class="close" data-dismiss="modal"><i class="fa fa-close"></i></button>
-          <%= render partial: "shared/map_auto_address" %>
-          <%= f.text_field :address, class: "location form-control margin-bot-0", placeholder: 'Type and Select New Location' %>
-          <%= f.hidden_field :latitude , class: "latitude" %>
-          <%= f.hidden_field :longitude ,  class: "longitude" %>
-          <div id="map-container" class="geomap">
-            <div class="quantity-gen">Drag marker to fine-tune your location</div>
-            <div id="map" class="geomap"></div>
-              <%= link_to edit_address_path, remote: true do %>
-                <button class="btn btn-danger map-submit">
-                  Use this address
-                </button>
-              <% end %>
-          </div>
-           
-         
-     </div>
-    </div>
-  </div>
-</div>
-        <%= f.label "Delivery Address Details (Please provide additional details in case your address from Delivery Location is incomplete or incorrect)" %>
-        <%= f.text_field :dinstruction, class: "form-control", placeholder:"Condo name, House number, Delivery instruction" %>
-
-        <%= f.label :password %>
-        <%= f.password_field :password, placeholder: 'Leave blank if no change', class: 'form-control' %>
-
-        <%= f.label :password_confirmation %>
-        <%= f.password_field :password_confirmation, placeholder: 'Leave blank if no change', class: 'form-control' %>
-
-        <%= f.submit "Save changes", class: "btn btn-danger margin-bot" %>
+          <div class="panel-body">
+            <div class="form-group row">
+              <%= f.label :name, class: "col-xs-2 col-form-label" %>
+              <div class="col-xs-10">
+                <%= f.text_field :name, class: 'form-control' %>
+              </div>
+            </div>
+            <div class="form-group row">
+              <%= f.label :email, class: "col-xs-2 col-form-label" %>
+              <div class="col-xs-10">
+                <%= f.email_field :email, class: 'form-control' %>
+              </div>
+            </div>
+            <div class="row">
+              <%= f.label :phone, "Telephone", class: "col-xs-2 col-form-label" %>
+              <div class="col-xs-10">
+                <%= f.text_field :phone, class: 'form-control', readonly: true %>
+              </div>
+            </div>
+          </div> 
+        </div>
       <% end %>
+      <!-- END: General Form -->
+
+      <!-- START: Delivery Form -->
+      <% if @user.default_address.present? %>
+        <!-- User have default address -->
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <%= link_to "Change", addresses_path,  { :class=>"btn btn-default pull-right" } %>
+            <h3 class="panel-title pull-left" style="padding-top: 7.5px;">Delivery</h3>
+            <div class="clearfix"></div>
+          </div>
+          <div class="panel-body">
+            <div class="form-group row">
+              <%= label_tag :name, "Name", class: "col-xs-2 col-form-label" %>
+              <div class="col-xs-10">
+                <%= @user.default_address.name %>
+              </div>
+            </div>
+            <div class="form-group row">
+              <%= label_tag :address, "Address", class: "col-xs-2 col-form-label" %>
+              <div class="col-xs-10">
+                <%= @user.default_address.full_address %>
+              </div>
+            </div>
+            <div class="row">
+              <%= label_tag :instruction, "Instruction", class: "col-xs-2 col-form-label" %>
+              <div class="col-xs-10">
+                <%= @user.default_address.instruction %>
+              </div>
+            </div>
+            <div>
+              <div id="googleMap" class="geomap">
+                <%= render partial: "shared/map_display", locals: {latitude: @user.default_address.latitude, longitude: @user.default_address.longitude, elementId: 'googleMap'} %>
+              </div>
+            </div>
+          </div> 
+        </div>
+      <% else %>
+        <!-- User doesn't have default address -->
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <%= link_to "Add Address", new_address_path,  { :class=>"btn btn-default pull-right" } %>
+            <h3 class="panel-title pull-left" style="padding-top: 7.5px;">Delivery</h3>
+            <div class="clearfix"></div>
+          </div>
+          <div class="panel-body">
+            <center>No Default Address Yet.</center>
+          </div> 
+        </div>
+      <% end %>
+      <!-- END: Delivery Form -->
+
+      <!-- START: Change Password Form -->
+      <%= form_for(@user) do |f| %>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <button class="btn btn-default pull-right">Save</button>
+            <h3 class="panel-title pull-left" style="padding-top: 7.5px;">Change Password</h3>
+            <div class="clearfix"></div>
+          </div>
+          <div class="panel-body">
+            <div class="form-group row">
+              <%= f.label :password, 'New Password', class: "col-xs-4 col-form-label" %>
+              <div class="col-xs-8">
+                <%= f.password_field :password, :autocomplete => "off", class: "form-control", placeholder: "Leave blank if no change" %>
+              </div>
+            </div>
+            <div class="form-group row">
+              <%= f.label :password, 'Password Confirmation', class: "col-xs-4 col-form-label" %>
+              <div class="col-xs-8">
+                <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Leave blank if no change" %>
+              </div>
+            </div>
+          </div> 
+        </div>
+      <% end %>
+        <!-- END: Change Password Form -->
     </div>
   </div>
 </div>

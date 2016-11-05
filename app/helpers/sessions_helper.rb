@@ -11,6 +11,10 @@ module SessionsHelper
     cookies.permanent[:remember_token] = user.remember_token
   end
 
+  def authenticate_user!
+    redirect_to root_path unless logged_in?
+  end
+
   # Returns true if the given user is the current user.
   def current_user?(user)
     user == current_user

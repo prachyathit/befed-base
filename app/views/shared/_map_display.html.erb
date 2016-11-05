@@ -1,0 +1,23 @@
+
+<script>
+  function initialize(){
+    var position = {
+      lat: <%= latitude %>,
+      lng: <%= longitude %> 
+    };
+    var map = new google.maps.Map(
+      document.getElementById('<%= elementId %>'), {
+        center: position,
+        zoom: 14,
+        streetViewControl: false
+    });
+    var marker = new google.maps.Marker({
+      position: position,
+      map: map
+    });
+  }
+</script>
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLod8mAcjj-5mmficTg-cu2W-BhEu6Cgs&callback=initialize">
+  // AIzaSyCwhcezDLA4hI2yH4uZxzKTKH_y1RoONUY
+</script>

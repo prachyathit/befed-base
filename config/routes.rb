@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   get '/cart/:id' => 'cart#add_new', :as => :add_new
   post '/addcart' => 'cart#add_create', :as => :add_create
   get '/cart/line_delete/(:id)' => 'cart#line_delete', :as => :line_delete
-  get 'users/edit_address' => 'users#edit_address', :as => :edit_address
+  get 'users/edit_address' => 'users#edit_address', :as => :edit_user_address
 
   get 'password_resets/new'
 
@@ -42,6 +42,11 @@ Rails.application.routes.draw do
   post    'login'   =>  'sessions#create'
   delete  'logout'  =>  'sessions#destroy'
   resources :users
+  resources :addresses do
+    member do
+      post :set_default
+    end
+  end
   resources :password_resets, only: [:new, :create, :edit, :update]
 
   namespace :api do

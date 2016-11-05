@@ -1,0 +1,43 @@
+<div class="container">
+  <h1>Address</h1>
+  <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+      <% @addresses.each do |address| %>
+        <%= render partial: "thumbnail", locals: {address: address} %>
+      <% end %>
+      <div class="col-sm-6 address-thumb new-address">
+        <div class="panel panel-default">
+          <%= link_to new_address_path do %>
+            <div class="panel-body">
+              <div class="new-address">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                <h2>New Address</h2>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    $(".address-thumb").each(function() {
+      $(this).bind("click", function(e){
+        console.log(e.target);
+        var target = $(e.target);
+        if (!target.hasClass("glyphicon") && 
+            !$(this).hasClass("default-address-thumb") &&
+            !$(this).hasClass("new-address")){
+          $.ajax({
+            type: "POST",
+            url: "addresses/"+$(this).attr("address-id")+"/set_default"
+          }).done(function(data) {
+            window.location.href = data.next_url;
+          });
+        }
+      });
+    });
+  });
+</script>

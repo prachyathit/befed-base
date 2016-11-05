@@ -1,0 +1,81 @@
+<div>
+  <% if @address.latitude.present? and @address.longitude.present? %>
+    <div id="displayMap" class="thumb-map" style="height: 300px;">
+
+    </div>
+  <% end %>
+  <div class="address-form">
+    <% if @address.errors.any? %>
+      <p class="warning-msg">Please fill in required fields</p>
+    <% end %>
+    <%= form_for(@address, html: { class: "form-inline" }) do |f| %>
+      <div class="form-group">
+        <%= f.text_field :name, 
+              { placeholder: "Address Name *", 
+                class: "form-control input-large" } %>
+      </div>
+      <div class="form-group">
+        <%= f.text_field :house_room_no, 
+              { placeholder: "House/Room No.*", 
+                class: "form-control input-medium" } %>
+        <%= f.text_field :street, 
+              { placeholder: "Street/Soi *", 
+                class: "form-control input-small" } %>
+      </div>
+      <div class="form-group">
+        <%= f.text_field :building_name, 
+              { placeholder: "Building/Condo/House Name (optional)", 
+                class: "form-control input-medium" } %>
+        <%= f.text_field :floor, 
+              { placeholder: "Floor no. (optional)", 
+                class: "form-control input-small" } %>
+      </div>
+      <div class="form-group">
+        <%= f.text_field :subdistrict, 
+              { placeholder: "Subdistrict (optional)", 
+                class: "form-control input-medium" } %>
+        <%= f.text_field :district, 
+              { placeholder: "District (optional)", 
+                class: "form-control input-small" } %>
+      </div>
+      <div class="form-group">
+        <%= f.text_field :province, 
+              { placeholder: "City (optional)", 
+                class: "form-control input-medium" } %>
+        <%= f.text_field :postal_code, 
+              { placeholder: "Postal Code (optional)", 
+                class: "form-control input-small" } %>
+      </div>
+      <div class="form-group">
+        <%= f.text_area :instruction,
+              { placeholder: "Delivery Instruction (optional)", 
+                class: "form-control input-large" } %>
+      </div>
+      <%= f.hidden_field :latitude, value: @address.latitude %>
+      <%= f.hidden_field :longitude, value: @address.longitude %>
+      <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= f.submit :Save, { class: "btn btn-block btn-success" } %>
+    <% end %>
+  </div>
+</div>
+<% if @address.new_record?  %>
+  <%= render partial: "shared/map_modal_display", 
+    locals: { 
+      submit_url: new_address_path(), 
+      cancel_url: addresses_path(),
+      auto_display: true,
+      display_latitude: @address.latitude, 
+      display_longitude: @address.longitude, 
+      display_map_id: "displayMap" } 
+  %>
+<% else %>
+  <%= render partial: "shared/map_modal_display", 
+    locals: { 
+      submit_url: edit_address_path(@address), 
+      cancel_url: edit_address_path(@address, @address_params),
+      auto_display: false,
+      display_latitude: @address.latitude, 
+      display_longitude: @address.longitude, 
+      display_map_id: "displayMap" } 
+  %>
+<% end %>

@@ -1,0 +1,81 @@
+.address-thumb {
+  .thumb-map {
+    height: 120px;
+  }
+  
+  .panel {
+    height: 250px;
+
+    &:hover {
+      border: 1px solid #CCCCCC;
+      box-shadow: 1px 1px 1px #CCCCCC;
+    }
+
+    .new-address {
+      padding: 80px 50px; 
+      text-align: center;
+    }
+  }
+
+  &.default-address-thumb {
+    .panel {
+      border: 1px solid #EF665E;
+      box-shadow: 1px 1px 1px #EF665E;
+    }
+  }
+}
+
+
+
+@media only screen and (min-width: 1px) and (max-width: 767px) {
+  .address-form{
+    margin-top: 4%;
+    .form-inline {
+      .form-group {
+        width: 100%;
+
+        .input-large {
+          width: 100%;
+        }
+
+        .input-medium {
+          width: 100%;
+        }
+
+        .input-small {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .address-form{
+    margin-top: 4%;
+
+    .field_with_errors {
+      display: inline;
+    }
+    
+    .form-inline {
+      .form-group {
+        width: 101%;
+
+        .input-large {
+          width: 99%;
+        }
+
+        .input-medium {
+          width: 59%;
+        }
+
+        .input-small {
+          width: 39%;
+        }
+      }
+    }
+  }
+}
+
+
