@@ -134,6 +134,13 @@
       </div>
       <!-- END ORDER SUMMARY -->
       <!-- PAYMENT METHOD -->
+      <!-- BEGIN PAYMENT ERROR -->
+      <div class="col-xs-12 col-sm-7">
+        <div class="alert alert-danger alert-dismissible hide" id="paymentError" role="alert">
+          Cannot process payment right now, Please try again later.
+        </div>
+      </div>
+      <!-- END PAYMENT ERROR -->
       <div class="col-xs-12 col-sm-7">
         <div class="panel panel-default">
           <div class="panel-heading">
@@ -241,11 +248,6 @@
                         <input type="text" class="form-control" name="cvv" id="cvv" placeholder="Security Code">
                       </div>
                     </div>
-                    <!-- <div class="form-group">
-                      <div class="col-sm-offset-3 col-sm-9">
-                        <button type="button" class="btn btn-success" id="pay-with-cc">Submit Order</button>
-                      </div>
-                    </div> -->
                 <% end %>
                 <!-- END: CREDIT CARD PAYMENT FORM -->
               </div>
@@ -258,12 +260,10 @@
   </div>
 </div>
 
-<script src="moment.js"></script>
 <script src="https://cdn.omise.co/omise.js"></script>
 <script>
   $(document).ready(function() {
-    console.log(moment.monthsShort());
-    var paymentType;
+    var paymentType = 'credit_card';
 
     $("#cash-on-delivery-button").click(function(e) {
       paymentType = 'cash';
@@ -297,13 +297,12 @@
 
   function setUpOmise(){
     Omise.setPublicKey('<%= ENV['omise_public_key']%>');
-
-    // $("#pay-with-cc").click(function () {
+    if (validateOmiseFields()) {
       // TODO make the following code work
       // TODO add display error message when response.object == "error"
       // some how it just didn't get the correct value yet
-      $('#cc-errors').innerHTML = '';
-      var button = $(this);
+      $('#paymentError').innerHTML = '';
+      var button = $("#orderSubmitBtn");//$(this);
       var form = $('#cc-payment');
 
       // Disable the submit button to avoid repeated click.
@@ -324,12 +323,15 @@
       // Note that the response could be an error and this needs to be handled within
       // the callback.
       Omise.createToken("card", card, function (statusCode, response) {
+        console.log(response);
         if (response.object == "error") {
           // Display an error message.
-          $('#cc-errors').html(response.message);
+          $('#paymentError').removeClass('hide');
+          $('#paymentError').html(response.message);
           // Re-enable the submit button.
           button.find("input[type=button]").prop("disabled", false);
         } else {
+          $('#paymentError').addClass('hide');
           // Then fill the omise_token.
           form.find("[name=token]").val(response.id);
 
@@ -338,12 +340,38 @@
           form.find("[name=cvv]").val("");
 
           // submit token to server.
-          // form.get(0).submit();
           form.submit();
         };
       });
-      // Prevent the form from being submitted;
-      // return false;
-    // });
+    }
+  }
+
+  function validateOmiseFields() {
+    var valid = true;
+    if ($('#card-holder-name').val().length == 0) {
+      $('#card-holder-name').parent().addClass('has-error');
+      valid = false;
+    } else {
+      $('#card-holder-name').parent().removeClass('has-error');
+    }
+    if ($('#card-number').val().length == 0) {
+      $('#card-number').parent().addClass('has-error');
+      valid = false;
+    } else {
+      $('#card-number').parent().removeClass('has-error');
+    }
+    if ($('#expiry-month').val().length == 0 || $('#expiry-month').val() == 'Month') {
+      $('#expiry-month').parent().addClass('has-error');
+      valid = false;
+    } else {
+      $('#expiry-month').parent().removeClass('has-error');
+    }
+    if ($('#cvv').val().length == 0) {
+      $('#cvv').parent().addClass('has-error');
+      valid = false;
+    } else {
+      $('#cvv').parent().removeClass('has-error');
+    }
+    return valid;
   }
 </script>
