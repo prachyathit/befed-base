@@ -29,12 +29,14 @@
 
         <div class="col-sm-4 address-thumb new-address" id="newAddressBtn">
           <div class="panel panel-default">
-            <div class="panel-body">
-              <div class="new-address">
-                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
-                <h2>New Address</h2>
+            <%= link_to new_address_path do %>
+              <div class="panel-body">
+                <div class="new-address">
+                  <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                  <h2>New Address</h2>
+                </div>
               </div>
-            </div>
+            <% end %>
           </div>
         </div>
 
