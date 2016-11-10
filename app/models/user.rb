@@ -87,7 +87,7 @@ class User < ActiveRecord::Base
   end
 
   def default_address
-    self.addresses.where(is_default: true).first
+    self.addresses.where(is_default: true).first || self.addresses.first
   end
 
   def set_default_address(address)
