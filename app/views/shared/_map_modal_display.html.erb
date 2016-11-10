@@ -239,9 +239,8 @@
 
   function urlContainParam(param) {
     var url = window.location.href;
-    if(url.indexOf('?' + param + '=') != -1)
-      return true;
-    else if(url.indexOf('&' + param + '=') != -1)
+    if((url.indexOf('?' + param + '=') != -1) ||
+        (url.indexOf('&' + param + '=') != -1))
       return true;
     return false
   }

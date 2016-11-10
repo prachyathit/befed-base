@@ -24,7 +24,7 @@
             </div>
             <div class="col-xs-6 col-sm-6 address_thumb">
               <div id="googleMap" class="thumb-map" style="height:120px;">
-                <%= render partial: "shared/map_display", locals: {
+                <%# render partial: "shared/map_display", locals: {
                   latitude: @address.latitude, 
                   longitude: @address.longitude,
                   elementId: "googleMap"} %>
@@ -268,6 +268,8 @@
   </div>
 </div>
 
+<%= render partial: 'change_address_modal' %>
+
 <script src="https://cdn.omise.co/omise.js"></script>
 <script>
   $(document).ready(function() {
@@ -300,6 +302,15 @@
           setUpOmise();
           break;
       }
+    });
+
+    $("#changeAddressBtn").click(function(e){
+      $("#changeAddressModal").modal("show");
+      initChangeAddressModal();
+    });
+
+    $("#newAddressBtn").click(function(e){
+      $("#newAddressModal").modal("show");
     });
   });
 
@@ -382,4 +393,63 @@
     }
     return valid;
   }
+
+  function initMap(){
+    $(".address-map").each(function() {
+      var position = {
+        lat: parseFloat($(this).attr('latitude')),
+        lng: parseFloat($(this).attr('longitude'))
+      };
+      var map = new google.maps.Map(
+        $(this), {
+          center: position,
+          zoom: 14,
+          streetViewControl: false
+      });
+      map.addListener('resize', function(){});
+      var marker = new google.maps.Marker({
+        position: position,
+        map: map
+      });
+    });
+  }
+
+  function initChangeAddressModal(){
+    $(".address-thumb").each(function(index) {
+      $(this).click(function(){
+        if (!$(this).hasClass('default-address-thumb')) {
+          var addressId = $(this).attr('address-id');
+          var url = window.location.href.split('?')[0];
+          var params = window.location.href.split('?')[1] || "";
+          
+          if (urlContainParam('address_id')) {
+            var params = params.split('&');
+            params = jQuery.grep(params, function( p ) {
+              return !p.startsWith('address_id=');
+            });
+            if (params.length > 0) {
+              params = params.join('&');
+              params = "&" + params;
+            }
+            window.location = url + "?address_id=" + addressId + params ;
+          } else {
+            if (params)
+              params = "&" + params
+            window.location = url + "?address_id=" + addressId + params;
+          }
+        }
+      });
+    });
+  }
+
+  function urlContainParam(param) {
+    var url = window.location.href;
+    if((url.indexOf('?' + param + '=') != -1) ||
+        (url.indexOf('&' + param + '=') != -1))
+      return true;
+    return false
+  }
+</script>
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwhcezDLA4hI2yH4uZxzKTKH_y1RoONUY&callback=initMap">
 </script>

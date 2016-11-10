@@ -61,7 +61,11 @@ class CartController < ApplicationController
     if session[:cart]
       @cart = session[:cart]
       @user = current_user
-      @address = current_user.default_address
+      if params[:address_id]
+        @address = current_user.addresses.where(id: params[:address_id]).first
+      end
+      @address ||= current_user.default_address
+      @addresses = current_user.addresses
     else
       flash[:danger] = "Your cart is empty"
       render 'index'
