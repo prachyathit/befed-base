@@ -40,4 +40,29 @@
       });
     });
   });
+
+  function initMap(){
+    $(".address-map").each(function() {
+      var position = {
+        lat: parseFloat($(this).attr('latitude')),
+        lng: parseFloat($(this).attr('longitude'))
+      };
+      var map = new google.maps.Map(
+        document.getElementById($(this).attr('id')), {
+          center: position,
+          zoom: 14,
+          streetViewControl: false,
+          draggable: false
+      });
+      var marker = new google.maps.Marker({
+        position: position,
+        map: map
+      });
+    });
+  }
+</script>
+
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLod8mAcjj-5mmficTg-cu2W-BhEu6Cgs&callback=initMap">
+  // AIzaSyCwhcezDLA4hI2yH4uZxzKTKH_y1RoONUY
 </script>
