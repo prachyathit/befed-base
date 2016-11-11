@@ -47,7 +47,8 @@ class CartController < ApplicationController
 
   def checkout
     # If there is a cart pass it to the page to display, else pass an empty value
-    min_order = Restaurant.find(session[:restaurant_id]).min_order
+    @restaurant = Restaurant.find(session[:restaurant_id])
+    min_order = @restaurant.min_order
     if session[:total] < min_order
       flash[:danger] = "Minimum order is #{min_order} ฿, please order some more."
       redirect_to cart_url
@@ -65,6 +66,7 @@ class CartController < ApplicationController
         @address = current_user.addresses.where(id: params[:address_id]).first
       end
       @address ||= current_user.default_address
+      @address_valid = @restaurant.can_delivery_to_address?(@address.latitude, @address.longitude)
       @addresses = current_user.addresses
     else
       flash[:danger] = "Your cart is empty"

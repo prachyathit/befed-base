@@ -3,6 +3,15 @@
   <div class="row">
     <div class="checkout-summary" style="padding-top:20px; 10px;">
       <!-- DELIVERY ADDRESS -->
+      <!-- BEGIN ADDRESS ERROR -->
+      <% unless @address_valid %>
+        <div class="col-xs-12 col-sm-7">
+          <div class="alert alert-danger alert-dismissible" id="addressError" role="alert">
+            This address is not within the service area, Please change the address.
+          </div>
+        </div>
+      <% end %>
+      <!-- END ADDRESS ERROR -->
       <div class="col-xs-12 col-sm-7">
         <div class="panel panel-default">
           <div class="panel-heading">
@@ -131,7 +140,7 @@
             <div class="panel-footer" style="background-color: #FFFFFF;">
               <div class="order-submit">
                 <center>
-                  <button class="btn btn-success" id="orderSubmitBtn">
+                  <button class="btn btn-success <%= @address_valid ? '' : 'disable' %>" id="orderSubmitBtn">
                     Submit Order
                   </button>
                 </center>
