@@ -32,11 +32,8 @@
               <div><%= @address.full_address %></div>
             </div>
             <div class="col-xs-6 col-sm-6 address_thumb">
-              <div id="googleMap" class="thumb-map" style="height:120px;">
-                <%# render partial: "shared/map_display", locals: {
-                  latitude: @address.latitude, 
-                  longitude: @address.longitude,
-                  elementId: "googleMap"} %>
+              <div id="addressMap" class="thumb-map" style="height:120px;">
+                
               </div>
             </div>
             <div class="warning-msg">
@@ -281,6 +278,8 @@
 
 <script src="https://cdn.omise.co/omise.js"></script>
 <script>
+  var mapsInModal = [];
+  var mapsInModalCenter = [];
   $(document).ready(function() {
     var paymentType = 'credit_card';
 
@@ -317,6 +316,9 @@
       $("#changeAddressModal").modal("show");
       initChangeAddressModal();
     });
+    $('#changeAddressModal').on('shown.bs.modal', function(e) {
+      awakeMapsInModal();
+    });
 
     $("#newAddressBtn").click(function(e){
       $("#newAddressModal").modal("show");
@@ -330,7 +332,7 @@
       // TODO add display error message when response.object == "error"
       // some how it just didn't get the correct value yet
       $('#paymentError').innerHTML = '';
-      var button = $("#orderSubmitBtn");//$(this);
+      var button = $("#orderSubmitBtn");
       var form = $('#cc-payment');
 
       // Disable the submit button to avoid repeated click.
@@ -404,22 +406,42 @@
   }
 
   function initMap(){
+    var position = {
+      lat: parseFloat("<%= @address.latitude %>"),
+      lng: parseFloat("<%= @address.longitude %>")
+    };
+    var map = new google.maps.Map(
+      document.getElementById("addressMap"), {
+        center: position,
+        zoom: 14,
+        streetViewControl: false,
+        draggable: false
+    });
+    map.addListener('resize', function(){});
+    var marker = new google.maps.Marker({
+      position: position,
+      map: map
+    });
+
     $(".address-map").each(function() {
       var position = {
         lat: parseFloat($(this).attr('latitude')),
         lng: parseFloat($(this).attr('longitude'))
       };
       var map = new google.maps.Map(
-        $(this), {
+        document.getElementById($(this).attr('id')), {
           center: position,
           zoom: 14,
-          streetViewControl: false
+          streetViewControl: false,
+          draggable: false
       });
       map.addListener('resize', function(){});
       var marker = new google.maps.Marker({
         position: position,
         map: map
       });
+      mapsInModal.push(map);
+      mapsInModalCenter.push(position);
     });
   }
 
@@ -451,6 +473,13 @@
     });
   }
 
+  function awakeMapsInModal() {
+    for (var i = 0; i < mapsInModal.length; i++) {
+      google.maps.event.trigger(mapsInModal[i], "resize");
+      mapsInModal[i].setCenter(mapsInModalCenter[i]);
+    }
+  }
+
   function urlContainParam(param) {
     var url = window.location.href;
     if((url.indexOf('?' + param + '=') != -1) ||
@@ -459,6 +488,8 @@
     return false
   }
 </script>
+
 <script async defer
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwhcezDLA4hI2yH4uZxzKTKH_y1RoONUY&callback=initMap">
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwhcezDLA4hI2yH4uZxzKTKH_y1RoONUY&callback=initMap&libraries=places">
+  // AIzaSyCwhcezDLA4hI2yH4uZxzKTKH_y1RoONUY
 </script>
