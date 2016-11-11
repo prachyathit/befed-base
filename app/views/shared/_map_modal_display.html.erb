@@ -224,12 +224,13 @@
       var params = {
         address: address,
         latitude: currentPosition.lat,
-        longitude: currentPosition.lng
+        longitude: currentPosition.lng,
+        return_url: "<%= return_url %>"
       };
       window.location = "<%= submit_url %>?"+jQuery.param(params);
     });
     $('#cancelAddress').on('click', function(){
-      window.location = "<%= cancel_url %>";
+      window.location = "<%= return_url || cancel_url %>";
     });
 
     $('#map-modal').on('shown.bs.modal', function(e) {

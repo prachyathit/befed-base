@@ -54,6 +54,7 @@
       <%= f.hidden_field :latitude, value: @address.latitude %>
       <%= f.hidden_field :longitude, value: @address.longitude %>
       <%= f.hidden_field :user_id, value: current_user.id %>
+      <%= hidden_field_tag :return_url, params[:return_url] %>
       <%= f.submit :Save, { class: "btn btn-block btn-success" } %>
     <% end %>
   </div>
@@ -63,6 +64,7 @@
     locals: { 
       submit_url: new_address_path(), 
       cancel_url: addresses_path(),
+      return_url: params[:return_url],
       auto_display: true,
       display_latitude: @address.latitude, 
       display_longitude: @address.longitude, 
@@ -73,6 +75,7 @@
     locals: { 
       submit_url: edit_address_path(@address), 
       cancel_url: edit_address_path(@address, @address_params),
+      return_url: params[:return_url],
       auto_display: false,
       display_latitude: @address.latitude, 
       display_longitude: @address.longitude, 
