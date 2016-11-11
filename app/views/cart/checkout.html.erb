@@ -18,9 +18,9 @@
             <h3 class="panel-title pull-left" style="padding-top: 7.5px;"> Delivery Address
             </h3>
             <div class="pull-right">
-              <button class="btn btn-default" id="editAddressBtn">
-                Edit
-              </button>
+              <%= link_to edit_address_path(@address, return_url: checkout_path), class: 'btn btn-default' do %>
+                  Edit
+              <% end %>
               <button class="btn btn-default" id="changeAddressBtn">
                 Change
               </button>
@@ -320,8 +320,8 @@
       awakeMapsInModal();
     });
 
-    $("#newAddressBtn").click(function(e){
-      $("#newAddressModal").modal("show");
+    $("#editAddressBtn").click(function(e){
+      
     });
   });
 

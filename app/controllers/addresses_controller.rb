@@ -21,7 +21,11 @@ class AddressesController < ApplicationController
   def update
     @address.assign_attributes(address_params)
     if @address.save
-      redirect_to edit_address_path(@address)
+      if params[:return_url]
+        redirect_to params[:return_url]+"?address_id=#{@address.id}"
+      else
+        redirect_to edit_address_path(@address)
+      end
     else
       render :edit and return
     end
