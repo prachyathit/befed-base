@@ -16,8 +16,8 @@ module Api
       param! :name,           String, required: true
       param! :latitude,       Float, required: true
       param! :longitude,      Float, required: true
-      param! :house_room_no,  String, required: true
-      param! :street,         String, required: true
+      param! :house_room_no,  String
+      param! :street,         String
       param! :is_default,     :boolean, default: false
       param! :instruction,    String
       param! :building_name,  String
