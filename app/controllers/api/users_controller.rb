@@ -25,7 +25,7 @@ module Api
 			param! :email, 		String, format: User::VALID_EMAIL_REGEX
       param! :password, String, min_length: 6
       param! :name,			String
-      param! :phone_no,	String
+      # param! :phone_no,	String
       param! :default_address_id, Integer
 
       begin
