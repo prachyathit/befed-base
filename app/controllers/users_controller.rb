@@ -46,17 +46,14 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      # Temporary fix for non multiple address
-      # TODO : Remove this when multiple address website launch
-      @user.addresses.first.update(latitude: @user.latitude, 
-        longitude: @user.longitude, 
-        instruction: @user.address || "" + " " + @user.dinstruction || "")
-
-      session[:saddress][:faddress] = @user.address
-      session[:saddress][:latitude] = @user.latitude
-      session[:saddress][:longitude] = @user.longitude
+      default_address = @user.default_address
+      session[:saddress][:faddress] = default_address.full_address
+      session[:saddress][:latitude] = default_address.latitude
+      session[:saddress][:longitude] = default_address.longitude
       # flash[:success] = "Profile updated"
-      render 'edit'
+      redirect_to edit_user_path(current_user)
+    else
+      render :edit
     end
   end
 

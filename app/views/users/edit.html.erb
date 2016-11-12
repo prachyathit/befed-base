@@ -4,6 +4,19 @@
 <div class='container'>
   <h1>Profile</h1>
   <div class='row'>
+    <!-- BEGIN ADDRESS ERROR -->
+    <% if @user.errors.any? %>
+      <div class="col-md-8 col-md-offset-2">
+        <div class="alert alert-danger alert-dismissible" role="alert">
+          <ul>
+            <% @user.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    <% end %>
+    <!-- END ADDRESS ERROR -->
     <div class="col-md-8 col-md-offset-2">
       <!-- START: General Form -->
       <%= form_for(@user) do |f| %>
