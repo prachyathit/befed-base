@@ -11,11 +11,13 @@ class SaddressController < ApplicationController
         session[:saddress][:longitude] = current_user.longitude
       end
       redirect_to restaurants_url
+    
     end
   end
   def create
-    unless params[:saddress][:faddress].empty?
-      session[:saddress][:faddress] = params[:saddress][:faddress]
+    unless params[:saddress].empty?
+      address = Address.new(JSON.parse(params[:saddress][:address]))
+      session[:saddress][:faddress] = address.full_address
       session[:saddress][:latitude] = params[:saddress][:latitude]
       session[:saddress][:longitude] = params[:saddress][:longitude]
       get_cart_size

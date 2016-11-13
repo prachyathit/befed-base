@@ -8,7 +8,13 @@
   </div>
   <div class="center">
     <button type="button" class="showmap margin-5 btn btn-default"><strong>Enter Location</strong><br><span class="kanit thai-btn">ใส่ที่อยู่</span></button>
-      <%= render partial: "shared/map", locals: { button_name: "Find Restaurants" } %>
+      <%= render partial: "shared/map_modal", 
+      locals: { 
+        button_name: "Find Restaurants",
+        return_url: root_path,
+        submit_url: restaurants_path,
+        cancel_url: root_path
+      } %>
     <button type="button" class="showplace margin-10 btn btn-default"><strong>Select from List</strong><br><span class="kanit thai-btn">เลือกคอนโด</span></button>
       <%= render partial: "shared/place" %>
   </div>
