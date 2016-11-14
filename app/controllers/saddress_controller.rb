@@ -17,11 +17,12 @@ class SaddressController < ApplicationController
   def create
     unless params[:saddress].empty?
       address = Address.new(JSON.parse(params[:saddress][:address]))
+      session[:saddress][:raw] = params[:saddress][:address]
       session[:saddress][:faddress] = address.full_address
       session[:saddress][:latitude] = params[:saddress][:latitude]
       session[:saddress][:longitude] = params[:saddress][:longitude]
       get_cart_size
-      redirect_to restaurants_url
+      redirect_to params[:redirect_url]
     else
       flash[:danger] = "Location can't be blank"
       redirect_to root_url

@@ -20,11 +20,12 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      # Temporary fix for non multiple address
-      # TODO : Remove this when multiple address website launch
-      @user.addresses.create(latitude: @user.latitude, 
-        longitude: @user.longitude, 
-        instruction: @user.address || "" + " " + @user.dinstruction || "")
+      address = Address.new(JSON.parse(session[:saddress]["raw"]))
+      address.name = 'Default'
+      address.user_id = @user.id
+      address.latitude = user_params[:latitude]
+      address.longitude = user_params[:longitude]
+      address.save
 
       log_in @user
       flash[:success] = "Let's eat!"

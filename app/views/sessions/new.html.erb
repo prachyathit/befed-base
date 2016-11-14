@@ -7,7 +7,6 @@
           <div class='sign-up-title'>
             Create New Account<br>
             <span class='subthai'>ลงทะเบียนกับเรา</span><br>
-            
           </div>
           
           <%= form_for(:user, url: users_path) do |f| %>
@@ -32,40 +31,15 @@
             <% if address_empty %>
               
               <%= link_to "#", { :class => "showmap" } do %>
-                <div class="edit-address btn btn-default text-color margin-bot-15"><%= "Enter Delivery Location" %></div>
+                <div class="edit-address btn btn-default text-color margin-bot-15">Enter Delivery Location</div>
               <% end %>
               
-              <div class="center">
-                <div id="map-modal-edit" class="modal fade">
-                  <div class="modal-dialog modal-lg">
-                    <div class="modal-header">
-                      Please locate yourself to see the list of restaurants delivering to your location. <br>
-                       กรุณาระบุตำแหน่งของคุณในแผนที่เพื่อค้นหาร้านอาหารที่มีบริการส่งถึงคุณ
-                    </div>
-                    <div class="modal-content">
-              
-                      <button type="button" class="close" data-dismiss="modal"><i class="fa fa-close"></i></button>
-                        <%= render partial: "shared/map_auto_address" %>
-                        <%= f.text_field :address, class: "location form-control margin-bot-0", placeholder: 'Type and Select Location' %>
-                        <%= f.hidden_field :latitude , class: "latitude" %>
-                        <%= f.hidden_field :longitude ,  class: "longitude" %>
-                        <div id="map-container" class="geomap">
-                          <div class="quantity-gen">Drag marker to fine-tune your location</div>
-                          <div id="map" class="geomap"></div>
-                          <%= link_to edit_user_address_path, remote: true do %>
-                            <button class="btn btn-danger map-submit">Use this address</button>
-                          <% end %>
-                        </div>
-                     </div>
-                  </div>
-                </div>
-              </div>
-              
             <% else %>
-                     
-              <%= f.hidden_field :address, class: "location form-control map-input", value: session[:saddress]["faddress"] %>
-              <%= f.hidden_field :latitude , class: "latitude", value: session[:saddress]["latitude"] %>
-              <%= f.hidden_field :longitude ,  class: "longitude", value: session[:saddress]["longitude"] %>
+              
+              <%= f.hidden_field :raw_address, value: session[:saddress]["raw"] %>       
+              <%= f.hidden_field :address, value: session[:saddress]["faddress"] %>
+              <%= f.hidden_field :latitude, value: session[:saddress]["latitude"] %>
+              <%= f.hidden_field :longitude, value: session[:saddress]["longitude"] %>
             
             <% end %>
   
@@ -78,7 +52,13 @@
           <span class= 'subred'>*Register today to get <strong>FREE DELIVERY</strong> on your first order!</span>
         </div>
       </div>
-      
+      <%= render partial: "shared/map_modal", 
+      locals: { 
+        button_name: "Find Restaurants",
+        return_url: '',
+        submit_url: login_path,
+        cancel_url: login_path
+      } %>
       
       <div class="pad-col col-md-6">
         <div class="form-container">

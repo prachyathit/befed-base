@@ -25,6 +25,7 @@
           <%= f.hidden_field :address %>
           <%= f.hidden_field :latitude %>
           <%= f.hidden_field :longitude %>
+          <%= hidden_field_tag :redirect_url, submit_url %>
         <% end %>
       </div>
       <div class="modal-footer">
