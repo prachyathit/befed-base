@@ -35,8 +35,8 @@
           </div>
           <div class="panel-body">
             <div  class="col-xs-6 col-sm-6">
-              <% if true #@address.need_more_detail? %>
-                <%= form_for(:address, url: address_path(@address, return_url: checkout_url), html: {class: 'form-inline'}) do |f| %>
+              <% if @address.need_more_detail? %>
+                <%= form_for(:address, url: address_path(@address, return_url: checkout_url), html: { method: :put, id: 'updateAddressForm', class: 'form-inline'}) do |f| %>
                   <div class="form-group">
                     <%= f.label :name %>:
                     <%= f.text_field :name, { 
@@ -375,8 +375,8 @@
       awakeMapsInModal();
     });
 
-    $("#editAddressBtn").click(function(e){
-      
+    $("#saveAddressBtn").click(function(e){
+      $("#updateAddressForm").submit();
     });
   });
 
