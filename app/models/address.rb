@@ -26,7 +26,7 @@ class Address < ActiveRecord::Base
 	def full_address
 		street = "#{self.street} Rd." if self.street.present?
 		building_name = "Building #{self.building_name}" if self.building_name.present?
-		floor = "Floor #{self.floor}" if self.floor.present?
+		floor = "flr.#{self.floor}" if self.floor.present?
 		[
 			self.house_room_no, street, building_name, 
 			floor, self.subdistrict, self.district, 
