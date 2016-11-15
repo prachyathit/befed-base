@@ -192,7 +192,7 @@
             <div class="panel-footer" style="background-color: #FFFFFF;">
               <div class="order-submit">
                 <center>
-                  <button class="btn btn-success <%= @address_valid ? '' : 'disable' %>" id="orderSubmitBtn">
+                  <button class="btn btn-success <%= ((not @address.need_more_detail?) and @address_valid) ? '' : 'disabled' %>" id="orderSubmitBtn" >
                     Submit Order
                   </button>
                 </center>
