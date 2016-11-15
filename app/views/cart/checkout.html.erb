@@ -29,11 +29,13 @@
           </div>
           <div class="panel-body">
             <div  class="col-xs-6 col-sm-6">
+              <div>Name: <%= @address.name %></div>
+              <div>Address:</div>
               <div><%= @address.full_address %></div>
+              <div>Direction Details: <%= @address.instruction %></div>
             </div>
             <div class="col-xs-6 col-sm-6 address_thumb">
               <div id="addressMap" class="thumb-map" style="height:120px;">
-                
               </div>
             </div>
             <div class="warning-msg">
