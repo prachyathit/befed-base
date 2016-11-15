@@ -33,12 +33,4 @@ class Address < ActiveRecord::Base
 			self.province, self.postal_code
 		].compact.join(' ')
 	end
-
-	def need_more_detail?
-		not (house_room_no.present? or street.present? or 
-			building_name.present? or floor.present?) #or 
-			# subdistrict.present? or district.present? or 
-			# province.present? or postal_code.present? )
-	end
-
 end

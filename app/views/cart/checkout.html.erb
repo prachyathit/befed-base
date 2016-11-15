@@ -18,74 +18,21 @@
             <h3 class="panel-title pull-left" style="padding-top: 7.5px;"> Delivery Address
             </h3>
             <div class="pull-right">
-              <% if @address.need_more_detail? %>
-                <button class="btn btn-default" id="saveAddressBtn">
-                  Save
-                </button>
-              <% else %>
-                <%= link_to edit_address_path(@address, return_url: checkout_path), class: 'btn btn-default' do %>
-                    Edit
-                <% end %>
-                <button class="btn btn-default" id="changeAddressBtn">
-                  Change
-                </button>
+              <%= link_to edit_address_path(@address, return_url: checkout_path), class: 'btn btn-default' do %>
+                  Edit
               <% end %>
+              <button class="btn btn-default" id="changeAddressBtn">
+                Change
+              </button>
             </div>
             <div class="clearfix"></div>
           </div>
           <div class="panel-body">
             <div  class="col-xs-6 col-sm-6">
-              <% if @address.need_more_detail? %>
-                <%= form_for(:address, url: address_path(@address, return_url: checkout_url), html: { method: :put, id: 'updateAddressForm', class: 'form-inline'}) do |f| %>
-                  <div class="form-group">
-                    <%= f.label :name %>:
-                    <%= f.text_field :name, { 
-                    placeholder: "Address Name *", class: "form-control" } %>
-                  </div>
-                  <b>Address: </b></br>
-                  <div class="form-group">
-                    <%= f.text_field :house_room_no, 
-                          { placeholder: "House/Room No. (optional)", 
-                            class: "form-control input-medium" } %>
-                    <%= f.text_field :street, 
-                          { placeholder: "Street/Soi (optional)", 
-                            class: "form-control input-small" } %>
-                  </div>
-                  <div class="form-group">
-                    <%= f.text_field :building_name, 
-                          { placeholder: "Building/Condo/House Name (optional)", 
-                            class: "form-control input-medium" } %>
-                    <%= f.text_field :floor, 
-                          { placeholder: "Floor no. (optional)", 
-                            class: "form-control input-small" } %>
-                  </div>
-                  <div class="form-group">
-                    <%= f.text_field :subdistrict, 
-                          { placeholder: "Subdistrict (optional)", 
-                            class: "form-control input-medium" } %>
-                    <%= f.text_field :district, 
-                          { placeholder: "District (optional)", 
-                            class: "form-control input-small" } %>
-                  </div>
-                  <div class="form-group">
-                    <%= f.text_field :province, 
-                          { placeholder: "City (optional)", 
-                            class: "form-control input-medium" } %>
-                    <%= f.text_field :postal_code, 
-                          { placeholder: "Postal Code (optional)", 
-                            class: "form-control input-small" } %>
-                  </div>
-                  <div class="form-group">
-                    <b>Direction Details:</b> <%= f.text_area :instruction, { placeholder: "Delivery Instruction (optional)", 
-                      class: "form-control" }  %>
-                  </div>
-                <% end %>
-              <% else %>
-                <b>Name:</b> <%= @address.name %></br>
-                <b>Address:</b></br>
-                <%= @address.full_address %></br>
-                <b>Direction Details:</b> <%= @address.instruction %>
-              <% end %>
+              <b>Name:</b> <%= @address.name %></br>
+              <b>Address:</b></br>
+              <%= @address.full_address %></br>
+              <b>Direction Details:</b> <%= @address.instruction %>
             </div>
             <div class="col-xs-6 col-sm-6 address_thumb">
               <div id="addressMap" class="thumb-map" style="height:120px;">
@@ -192,7 +139,7 @@
             <div class="panel-footer" style="background-color: #FFFFFF;">
               <div class="order-submit">
                 <center>
-                  <button class="btn btn-success <%= ((not @address.need_more_detail?) and @address_valid) ? '' : 'disabled' %>" id="orderSubmitBtn" 
+                  <button class="btn btn-success <%= @address_valid ? '' : 'disabled' %>" id="orderSubmitBtn" 
                     data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Processing Order">
                     Submit Order
                   </button>
