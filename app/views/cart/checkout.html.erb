@@ -192,7 +192,8 @@
             <div class="panel-footer" style="background-color: #FFFFFF;">
               <div class="order-submit">
                 <center>
-                  <button class="btn btn-success <%= ((not @address.need_more_detail?) and @address_valid) ? '' : 'disabled' %>" id="orderSubmitBtn" >
+                  <button class="btn btn-success <%= ((not @address.need_more_detail?) and @address_valid) ? '' : 'disabled' %>" id="orderSubmitBtn" 
+                    data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Processing Order">
                     Submit Order
                   </button>
                 </center>
@@ -357,6 +358,7 @@
     });
 
     $("#orderSubmitBtn").click(function(e) {
+      $("#orderSubmitBtn").button('loading');
       switch(paymentType){
         case 'cash':
           $("#cash-payment").submit();
