@@ -27,8 +27,18 @@ class Address < ActiveRecord::Base
 		street = "#{self.street} Rd." if self.street.present?
 		building_name = "Building #{self.building_name}" if self.building_name.present?
 		floor = "Floor #{self.floor}" if self.floor.present?
-		[self.house_room_no, street, building_name, 
-		floor, self.province, self.postal_code].compact.join(' ')
+		[
+			self.house_room_no, street, building_name, 
+			floor, self.subdistrict, self.district, 
+			self.province, self.postal_code
+		].compact.join(' ')
+	end
+
+	def need_more_detail?
+		not (house_room_no.present? or street.present? or 
+			building_name.present? or floor.present? or 
+			subdistrict.present? or district.present? or 
+			province.present? or postal_code.present? )
 	end
 
 end
