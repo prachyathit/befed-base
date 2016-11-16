@@ -1,7 +1,13 @@
 <div class="container default-background">
-  <div class="center">
-    <%= render partial: "shared/map", locals: { button_name: "Find Restaurants" } %>
-  </div>
+
+  <%= render partial: "shared/map_modal", 
+  locals: { 
+    button_name: "Find Restaurants",
+    return_url: restaurants_path,
+    submit_url: restaurants_path,
+    cancel_url: restaurants_path
+  } %>
+  
   <% if @restaurants.size == 0 %>
     <div class="center">
       <h1>Sorry, we don't have restaurants delivering to your location yet.</h1>
