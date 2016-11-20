@@ -35,16 +35,42 @@
 
       </ul>
       <ul class = "nav navbar-nav navbar-right">
-                <!--Address-->
+        <!--Address-->
         <% unless ["Landing", "Sign up", "Edit user", "clearmap", "Log in", "Static"].include? yield(:hidden_title)%>
-          <li>
-            <%= link_to "#", { :class => "showmap" } do %>
-              <i class="fa fa-map-marker fa-lg theme-color"></i>
-              <% unless session[:saddress].nil? %>
-                <div class="address_header text-color"><%= session[:saddress]["faddress"] %></div>
+          <% if logged_in? %>
+
+            <li class="dropdown">
+              <%= link_to "javascript:;", { class: "dropdown-toggle text-color", 'data-toggle'=> "dropdown" } do %>
+                <i class="fa fa-map-marker fa-lg theme-color"></i>
+                <% unless session[:saddress].nil? %>
+                  <div class="address_header text-color"><%= session[:saddress]["faddress"] %></div>
+                <% end %>
               <% end %>
-            <% end %>
-          </li>
+              <ul class="dropdown-menu" aria-labelledby="allAddressDropdown">
+                <% current_user.addresses.each do |address| %>
+                  <li>
+                      <a href="javascript:;">
+                        <h5><%= address.name %></h5>
+                        <p><%= address.full_address %></p>
+                      </a>
+                  </li>
+                <% end %>
+                <li role="separator" class="divider"></li>
+                <li><a href="javascript:;" class="showmap">New Address</a></li>
+              </ul>
+            </li>
+
+          <% else %>
+
+            <li>
+              <%= link_to "#", { class: "showmap" } do %>
+                <i class="fa fa-map-marker fa-lg theme-color"></i>
+                <% unless session[:saddress].nil? %>
+                  <div class="address_header text-color"><%= session[:saddress]["faddress"] %></div>
+                <% end %>
+              <% end %>
+            </li>
+          <% end %>
         <% end %>
         <!--Address END-->
         <!--CART -->
@@ -112,3 +138,7 @@
     </div>
   </div>
 </nav>
+
+<script type="text/javascript">
+  $('.dropdown-toggle').dropdown();
+</script>
