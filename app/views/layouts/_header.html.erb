@@ -49,10 +49,10 @@
               <ul class="dropdown-menu address-dropdown" aria-labelledby="allAddressDropdown">
                 <% current_user.addresses.each do |address| %>
                   <li>
-                    <a href="javascript:;">
+                    <%= link_to(saddress_update_path(address_id: address.id), method: :put) do %>
                       <%= address.name %></br>
                       <small><%= address.full_address %></small>
-                    </a>
+                    <% end %>
                   </li>
                   <li role="separator" class="divider"></li>
                 <% end %>

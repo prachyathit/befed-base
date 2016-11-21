@@ -29,4 +29,15 @@ class SaddressController < ApplicationController
       redirect_to root_url
     end
   end
+
+  def update
+    if params[:address_id]
+      address = Address.where(id: params[:address_id]).first
+      session[:saddress][:raw] = address.attributes
+      session[:saddress][:faddress] = address.full_address
+      session[:saddress][:latitude] = address.latitude
+      session[:saddress][:longitude] = address.longitude
+    end
+    redirect_to restaurants_url
+  end
 end

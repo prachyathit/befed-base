@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :places
   post '/submitsaddress' => 'saddress#create', :as => :submit_saddress
   get 'saddress/new'
+  put 'saddress/update'
 
   resources :options do
     resources :option_values, only: [:create, :destroy]
