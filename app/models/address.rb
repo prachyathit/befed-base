@@ -8,6 +8,17 @@ class Address < ActiveRecord::Base
 	before_create :mark_address_as_default, unless: "user.addresses.present?"
 	before_destroy :prevent_default_address_from_deletion
 
+	def self.default_from_params user, name, params
+		address_params = JSON.parse(params["raw"])
+		address_params[:user_id] = user.id
+		address_params[:latitude] = params['latitude']
+		address_params[:longitude] = params['longitude']
+		address_params[:name] = name
+		address = self.create(address_params)
+		user.set_default_address(address)
+		address
+	end
+
 	def mark_address_as_default
 		self.is_default = true
 	end

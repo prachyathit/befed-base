@@ -17,3 +17,13 @@
  .warning-msg {
   color: #A94442;
  }
+
+.address-dropdown {
+  width: 100%;
+}
+
+.address-dropdown li a {
+  color: #777 !important;
+  word-break: break-word;
+  white-space: normal;
+}

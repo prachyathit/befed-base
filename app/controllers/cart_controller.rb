@@ -62,6 +62,12 @@ class CartController < ApplicationController
     if session[:cart]
       @cart = session[:cart]
       @user = current_user
+      unless session[:saddress].empty?
+        @address = Address.default_from_params(
+          @user, "Address#{@user.addresses.count + 1}", 
+          session[:saddress])
+        session[:saddress] = {}
+      end
       if params[:address_id]
         @address = current_user.addresses.where(id: params[:address_id]).first
       end

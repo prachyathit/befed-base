@@ -18,7 +18,7 @@
             <h3 class="panel-title pull-left" style="padding-top: 7.5px;"> Delivery Address
             </h3>
             <div class="pull-right">
-              <%= link_to edit_address_path(@address, return_url: checkout_path), class: 'btn btn-default' do %>
+              <%= link_to edit_address_path(id: @address.id, return_url: checkout_path), class: 'btn btn-default' do %>
                   Edit
               <% end %>
               <button class="btn btn-default" id="changeAddressBtn">

@@ -46,16 +46,16 @@
                   <div class="address_header text-color"><%= session[:saddress]["faddress"] %></div>
                 <% end %>
               <% end %>
-              <ul class="dropdown-menu" aria-labelledby="allAddressDropdown">
+              <ul class="dropdown-menu address-dropdown" aria-labelledby="allAddressDropdown">
                 <% current_user.addresses.each do |address| %>
                   <li>
-                      <a href="javascript:;">
-                        <h5><%= address.name %></h5>
-                        <p><%= address.full_address %></p>
-                      </a>
+                    <a href="javascript:;">
+                      <%= address.name %></br>
+                      <small><%= address.full_address %></small>
+                    </a>
                   </li>
+                  <li role="separator" class="divider"></li>
                 <% end %>
-                <li role="separator" class="divider"></li>
                 <li><a href="javascript:;" class="showmap">New Address</a></li>
               </ul>
             </li>
