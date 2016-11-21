@@ -1,17 +1,18 @@
 class SaddressController < ApplicationController
   def new
-    @places = Place.all
+    # @places = Place.all
     unless session[:saddress]
       session[:saddress] = {}
     end
     if logged_in?
-      if session[:saddress]["faddress"].nil?
-        session[:saddress][:faddress] = current_user.address
-        session[:saddress][:latitude] = current_user.latitude
-        session[:saddress][:longitude] = current_user.longitude
+      if session[:saddress].empty?
+        default_address = current_user.default_address
+        session[:saddress][:raw] = default_address.attributes
+        session[:saddress][:faddress] = default_address.full_address
+        session[:saddress][:latitude] = default_address.latitude
+        session[:saddress][:longitude] = default_address.longitude
       end
       redirect_to restaurants_url
-    
     end
   end
   def create
