@@ -1,35 +1,35 @@
 $(document).ready(function() {
   ////Hide all map modals/////
-  $("#map-container").hide();
-  $("#map-modal").hide();
-  $("#map-modal-edit").hide();
-  $("#place-modal").hide(); 
-  var address_local = $('.location').val();
-      var lat_local = $('.latitude').val();
-      var lng_local = $('.longitude').val();
-  /////Initial Variables//////
-  var options = {
-    map: "#map",
-    mapOptions: {
-      streetViewControl: false,
-    },
-    markerOptions: {
-      draggable: true
-    },
-    types: []
-  };
-  var geocoded = false;
+  // $("#map-container").hide();
+  // $("#map-modal").hide();
+  // $("#map-modal-edit").hide();
+  // $("#place-modal").hide(); 
+  // var address_local = $('.location').val();
+  //     var lat_local = $('.latitude').val();
+  //     var lng_local = $('.longitude').val();
+  // /////Initial Variables//////
+  // var options = {
+  //   map: "#map",
+  //   mapOptions: {
+  //     streetViewControl: false,
+  //   },
+  //   markerOptions: {
+  //     draggable: true
+  //   },
+  //   types: []
+  // };
+  // var geocoded = false;
       
   //////Geocode and Geocomplete//////////    
-  $(".location").geocomplete(options).bind("geocode:result", function(event, result){
-     //get the value of the result and put it where it is supposed to be
-    $('.latitude').val(result.geometry.location.lat());
-    $('.longitude').val(result.geometry.location.lng());
-    var map = $(".location").geocomplete("map");
-    map.setZoom(16);
-    map.setCenter(result.geometry.location);
-    geocoded = true;
-  });
+  // $(".location").geocomplete(options).bind("geocode:result", function(event, result){
+  //    //get the value of the result and put it where it is supposed to be
+  //   $('.latitude').val(result.geometry.location.lat());
+  //   $('.longitude').val(result.geometry.location.lng());
+  //   var map = $(".location").geocomplete("map");
+  //   map.setZoom(16);
+  //   map.setCenter(result.geometry.location);
+  //   geocoded = true;
+  // });
 
   //////Drag Marker Event///////
   // $(".location").bind("geocode:dragged", function(event, latLng){
@@ -46,15 +46,15 @@ $(document).ready(function() {
   //   }
   //   });
   // });
-  $(".switch-map").on("click", function() {
-    $("#place-modal").modal("hide");
-    $("#map-modal").modal("show");
+  // $(".switch-map").on("click", function() {
+  //   $("#place-modal").modal("hide");
+  //   $("#map-modal").modal("show");
     
-  });
-  /////Show map modal, show the map if the location already existed////////
-  $(".showplace").on("click", function() {
-    $("#place-modal").modal("show");
-  });
+  // });
+  // /////Show map modal, show the map if the location already existed////////
+  // $(".showplace").on("click", function() {
+  //   $("#place-modal").modal("show");
+  // });
 
   /////Show map modal, show the map if the location already existed////////
   $(".showmap").on("click", function() {

@@ -169,14 +169,28 @@
           $(".spinning-icon-wrapper").addClass("hide");
           
           resolve(pos);
-        }, function() {
-          // Cannot get location
-          alert("We can't locate your current location. Please grant a permission in your browser to locate your device");
+        }, function(error) {
+          var message = ""
+          switch (error.code) {
+            case error.PERMISSION_DENIED:
+              message = "User denied the request for Geolocation. Please grant a permission in your browser to locate your device."
+              break;
+            case error.POSITION_UNAVAILABLE:
+              message = "Location information is unavailable."
+              break;
+            case error.TIMEOUT:
+              message = "The request timed out, Please refresh this page."
+              break;
+            case error.UNKNOWN_ERROR:
+              message = "An unknown error occurred."
+              break;
+          }
+          alert(message);
 
           $(".location-arrow-wrapper").removeClass("hide");
           $(".spinning-icon-wrapper").addClass("hide");
 
-          reject("We can't locate your current location. Please grant a permission in your browser to locate your device");
+          reject(message)
         });
       });
     } else {
