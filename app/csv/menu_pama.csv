@@ -1,0 +1,77 @@
+name,price,image_url,cat_id,cat,rec,restaurant_id
+Eel : ปลาไหล,59,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Pama/eelnigiri.jpg,1,Nigiri,1,7
+Sake Salmon : ท้องแซลมอน,59,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Pama/sakesalmonnigiri.jpg,1,Nigiri,0,7
+Hotate : หอยเชลล์,59,,1,Nigiri,0,7
+Igura : ไข่ปลาแซลมอน,59,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Pama/iguranigiri.jpg,1,Nigiri,0,7
+Hamachi : ฮามาจิ,49,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Pama/hamachinigiri.jpg,1,Nigiri,0,7
+Tuna : ทูน่า,49,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Pama/tunanigiri.jpg,1,Nigiri,0,7
+Salmon : แซลมอน,39,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Pama/salmonnigiri.jpg,1,Nigiri,0,7
+Kani : ปูอัด,29,,1,Nigiri,0,7
+Saba : ซาบะ,29,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Pama/sabanigiri.jpg,1,Nigiri,0,7
+Tobiko : ไข่กุ้ง,29,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Pama/tobikonigiri.jpg,1,Nigiri,0,7
+Hitachi Wakame : ยำสาหร่าย,29,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Pama/wakamenigiri.jpg,1,Nigiri,0,7
+Tako : หมึกยักษ์,29,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Pama/takonigiri.jpg,1,Nigiri,0,7
+Tamakoyaki : ไข่หวาน,20,,1,Nigiri,0,7
+Fuagra : ฟัวกรา,149,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Pama/fuagra.JPG,1,Nigiri,0,7
+Engawa : เอ็นกาวะ,99,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Pama/engawanigiri.JPG,1,Nigiri,0,7
+Igura : ไข่ปลาแซลมอน,390,,2,Sashimi,0,7
+Hotate : หอยเชลล์,390,,2,Sashimi,0,7
+Hamachi : ฮามาจิ,390,,2,Sashimi,0,7
+Tuna : ทูน่า,290,,2,Sashimi,0,7
+Salmon : แซลมอน,220,,2,Sashimi,0,7
+Kani : ปูอัด,150,,2,Sashimi,0,7
+Saba : ซาบะ,150,,2,Sashimi,0,7
+Tobiko : ไข่กุ้ง,150,,2,Sashimi,0,7
+Tamakoyaki : ไข่หวาน,120,,2,Sashimi,0,7
+Set 3 : Tuna + Salmon + Kani,200,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Pama/3sashimi.jpg,2,Sashimi,0,7
+Set 5 : Tuna + Salmon + Kani+Hamachi_Saba,300,,2,Sashimi,1,7
+Salmon Roll: แซลมอนมากิ,69,,3,Roll,0,7
+Tuna Roll: ทูน่ามากิ,69,,3,Roll,0,7
+PAMA Skewer Roll: ป๊าม๊าเสียบไม้โรล,109,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Pama/IMG_3289.JPG,3,Roll,0,7
+California Roll: แคลิฟอเนียร์โรล,109,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Pama/california+roll.jpg,3,Roll,0,7
+PAMA Aburi Roll: ป๊๊าม๊าเล่นไฟโรล,179,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Pama/pamafire.jpg,3,Roll,1,7
+PAMA Nakama Roll: สหายป๊าม๊า,239,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Pama/Sahaypama.JPG,3,Roll,0,7
+PAMA Sweety Roll: ป๊าม๊าสวีตตี้,279,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Pama/sweety+Roll.jpg,3,Roll,1,7
+Eel : ปลาไหล,390,,4,Donburi,1,7
+Hotate : หอยเชลล์,390,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Pama/hotatedon.JPG,4,Donburi,1,7
+Mixed Fish : ปลารวม,320,,4,Donburi,0,7
+Hamachi : ฮามาจิ,290,,4,Donburi,0,7
+Tuna : ทูน่า,290,,4,Donburi,0,7
+Salmon : แซลมอน,220,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Pama/salmondon.JPG,4,Donburi,0,7
+Tamakoyaki : ไข่หวาน,150,,4,Donburi,0,7
+Pork Curry on Rice : ข้าวแกงกะหรี่ญี่ปุ่นหมู,95,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Pama/currypork.JPG,5,Others,1,7
+Katsudon : ข้าวหน้าหมูทอด,159,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Pama/katsudon.JPG,5,Others,0,7
+Soft Shell Crab with Chilli Paste on Rice : ข้าวปูนิ่มกรอบผัดพริกแกง,159,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Pama/punimredcurry.JPG,5,Others,1,7
+Spinach with Cheese : ผักโขมอบชีส,190,,5,Others,0,7
+Linguine Crab Meat White Wine : ลงกวินี่เนื้อปูซอสไวน์ขาว,200,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Pama/linguinecrab.JPG,5,Others,0,7
+Carbonara : คาโบนาร่า,179,,5,Others,0,7
+Cabonara topped with Salmon Sashimi : ป๊าม๊าคาโบนาร่า,320,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Pama/pamacabo.JPG,5,Others,1,7
+Linguine Bacon Dried Chilli : ลิงกวินี่เบค่อนพริกแห้ง,159,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Pama/linguinebacon.JPG,5,Others,0,7
+Yaki Udon : ยากิอุด้ง,89,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Pama/yakiudon.JPG,5,Others,0,7
+Pork Udon : อุด้งนํ้าหมู,139,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Pama/udon.JPG,5,Others,0,7
+Beef Udon : อุด้งนํ้าเนื้อ,179,,5,Others,0,7
+Salmon Udon : อุด้งนํ้าแซลมอน,179,,5,Others,0,7
+Fried Chicken Wings : ปีกไก่ป๊าม๊า,89,,5,Others,1,7
+BBQ Fried Chicken Wings : ปีกไก่บาร์บีคิว,89,,5,Others,1,7
+French Fries : เฟรนช์ฟรายส์,59,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Pama/frenchfries.JPG,5,Others,0,7
+Popcorn : ป๊อปคอร์น,59,,5,Others,1,7
+Squid Wasabi : หมึกวาซาบิ,79,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Pama/takowasabi.JPG,5,Others,0,7
+Baked Scallop with Garlic Butter : หอยเชลล์อบเนยกระเทียมชีส,189,,5,Others,1,7
+Fried Silver Fish : ปลาเงินทอด,89,,5,Others,1,7
+Miso Soup : ซุปมิโสะ,29,,5,Others,0,7
+Seaweed Spicy Salad : ยำสาหร่าย,69,,5,Others,0,7
+Jellyfish Spicy Salad : ยำแมงกะพรุน,79,,5,Others,0,7
+Salmon/Tuna Spicy Salad : ยำสลัดแซลมอน/ทูน่า,169,,5,Others,0,7
+Edamame : ถั่วแระ,70,,5,Others,0,7
+Sauteed Tofu : เต้าหู้ราดซ้อส,49,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Pama/tofusauce.JPG,5,Others,0,7
+Takoyaki : ทาโกะยากิ,139,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Pama/takoyaki.jpg,5,Others,0,7
+Gyoza : เกี๊ยวซ่า,109,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Pama/gyoza.JPG,5,Others,0,7
+US Pork Nabe : นาเบะหมู US,239,,5,Others,1,7
+AUS Beef Nabe : นาเบะเนื้อออสเตรเลีย,279,,5,Others,1,7
+Sauteed Cabbage : กะหลํ่าผัดซอส,69,,5,Others,0,7
+Fried Giantt Squid Legs : หนวดปลาหมึกยักษ์ทอด,99,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Pama/takofried.jpg,5,Others,0,7
+Grilled Sliced Beef : เนื้อสไลด์ย่าง,129,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Pama/slicedbeef.JPG,5,Others,1,7
+Salmon Head Boil with Soy Sauce : หัวปลาแซลมอนต้มซีอิ๊ว,170,,5,Others,0,7
+Butter Fried Mushroom : เห็ดผัดเนย,69,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Pama/mushroombutter.JPG,5,Others,0,7
+Grilled Sausage : ไส้กรอกย่าง,159,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Pama/sausagepork.jpg,5,Others,1,7
+Banoffee,120,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Pama/Banoffee.JPG,6,Desserts,1,7
