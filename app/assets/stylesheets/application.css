@@ -27,3 +27,12 @@
   word-break: break-word;
   white-space: normal;
 }
+
+.loadinggif {
+  background-image: url("http://loadinggif.com/images/image-selection/4.gif");
+  /*background-size: 25px 25px;*/
+  /*background-position:left center;*/
+  background-position-x: 1%;
+  background-position-y: center;
+  background-repeat: no-repeat;
+}

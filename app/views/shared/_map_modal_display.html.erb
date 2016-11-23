@@ -41,6 +41,7 @@
   var currentPosition = defaultLocation;
   var address;
   var addressInput;
+  var waiting = false;
 
   function initialize() {
     initModalMap();
@@ -56,6 +57,7 @@
         if ("<%= @address.errors.any? %>" == 'false' &&
           (!urlContainParam('latitude') || !urlContainParam('longitude')) && "<%= auto_display %>" == 'true') {
           displayModal();
+          setMarkerToPosition();
         }
       });
     }
@@ -85,7 +87,6 @@
     modalMap.addListener('resize', function(){});
     modalMap.addListener('idle', function(){
       modalMap.setCenter(currentPosition);
-      setMarkerToPosition();
     });
     initAutoComplete();
     initGetCurrentLocation();
@@ -149,6 +150,7 @@
     $("#currentLocationBtn").click(function() {
       getCurrentLocation().then(function(position){
         currentPosition = position;
+        setMarkerToPosition();
       });
       $(".location-arrow-wrapper").addClass("hide");
       $(".spinning-icon-wrapper").removeClass("hide");
@@ -226,11 +228,14 @@
         console.log('drag');
       });
     } else {
-      marker.setMap(null);
-      marker.setPosition(currentPosition);
-      marker.setMap(modalMap);
+      if (marker.position != currentPosition) {
+        marker.setMap(null);
+        marker.setPosition(currentPosition);
+        marker.setMap(modalMap);
+        geocodeLatLng();
+      }
     }
-    geocodeLatLng();
+    
   }
 
   function addEventListener() {
@@ -263,7 +268,7 @@
   function geocodeLatLng() {
     var geocoder = new google.maps.Geocoder;
     geocoder.geocode({'location': currentPosition}, function(results, status) {
-      if (status === 'OK') {
+      if (status == google.maps.GeocoderStatus.OK) {
         if (results[1]) {
           address = {};
           results[0].address_components.forEach(function(component){
@@ -287,10 +292,21 @@
           });
           addressInput.value = results[1].formatted_address;
         } else {
-          window.alert('No results found');
+          // window.alert('No results found');
+          addressInput.value = " ";
         }
-      } else {
-        window.alert('Geocoder failed due to: ' + status);
+        addressInput.className = addressInput.className.replace(" loadinggif", "");
+        waiting = false;
+      } else if(status == google.maps.GeocoderStatus.OVER_QUERY_LIMIT){
+        console.log('Geocoder failed due to: ' + status);
+        if (!waiting) {
+          addressInput.value = " ";
+          addressInput.className += " loadinggif";
+          waiting = true;
+          setTimeout(function() {
+            geocodeLatLng();
+          }, 1000);
+        }
       }
     });
   }
