@@ -253,25 +253,7 @@
         if (status == google.maps.GeocoderStatus.OK) {
           if (results[1]) {
             address = {};
-            results[0].address_components.forEach(function(component){
-              if(component.types.includes('street_number')){
-                address['house_room_no'] = component.long_name;
-              } else if(component.types.includes('premise')){
-                address['building_name'] = component.long_name;
-              } else if(component.types.includes('route')){
-                address['street'] = component.long_name;
-              } else if(component.types.includes('sublocality_level_1')){
-                address['district'] = component.long_name;
-              } else if(component.types.includes('sublocality_level_2')){
-                address['subdistrict'] = component.long_name;
-              } else if(component.types.includes('locality') && 
-                  component.types.includes('political')){
-                address['province'] = component.long_name;
-              } else if(component.types.includes('postal_code')){
-                address['postal_code'] = component.long_name;
-              } else if(component.types.includes('country')){
-              }
-            });
+            setAddressFromComponents(results[0].address_components);
             addressInput.value = results[1].formatted_address;
           } else {
             addressInput.value = " ";
@@ -288,6 +270,39 @@
               geocodeLatLng();
             }, 1000);
           }
+        }
+      });
+    }
+
+    function setAddressFromComponents(components) {
+      components.forEach(function(component){
+        if(component.types.includes('street_number')){
+          address['house_room_no'] = component.long_name;
+
+        } else if(component.types.includes('premise')){
+          address['building_name'] = component.long_name;
+
+        } else if(component.types.includes('floor')){
+          address['floor'] = component.long_name;
+
+        } else if(component.types.includes('route') ||
+          component.types.includes('street_address')){
+          address['street'] = component.long_name;
+
+        } else if(component.types.includes('sublocality_level_1') || component.types.includes('administrative_area_level_1')){
+          address['district'] = component.long_name;
+
+        } else if(component.types.includes('sublocality_level_2') || component.types.includes('administrative_area_level_2')){
+          address['subdistrict'] = component.long_name;
+
+        } else if(component.types.includes('locality') && 
+            component.types.includes('political')){
+          address['province'] = component.long_name;
+
+        } else if(component.types.includes('postal_code')){
+          address['postal_code'] = component.long_name;
+
+        } else if(component.types.includes('country')){
         }
       });
     }
