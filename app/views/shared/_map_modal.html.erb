@@ -2,8 +2,7 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <div class="modal-header">
-        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
-        <h4 class="modal-title">Pin your location</h4>
+        <h4 class="modal-title">Pin your location <small>(Drag the marker or click on map to pin)</small></h4>
       </div>
       <div class="modal-body">
         <div class="row">
@@ -48,6 +47,7 @@
   var address;
   var addressInput;
   var waiting = false;
+  var markerDragging = false;
 
   function initialize() {
     initModalMap();
@@ -55,7 +55,9 @@
       getCurrentLocation().then(function(position){
         currentPosition = position;
         setMarkerToPosition();
+        modalMap.setCenter(currentPosition);
       });
+      modalMap.setCenter(currentPosition);
     }
   }
 
@@ -71,6 +73,7 @@
       streetViewControl: false
     });
     modalMap.addListener('click', function(e){
+      markerDragging = false;
       currentPosition = {
         lat: e.latLng.lat(),
         lng: e.latLng.lng()
@@ -79,9 +82,8 @@
       setMarkerToPosition();
     });
     modalMap.addListener('resize', function(){});
-    modalMap.addListener('idle', function(){
-      modalMap.setCenter(currentPosition);
-    });
+    // modalMap.addListener('idle', function(){
+    // });
     initAutoComplete();
     initGetCurrentLocation();
   }
@@ -170,26 +172,49 @@
 
   function setMarkerToPosition(){
     if(marker == null) {
+      var icon = {
+          url: "<%= image_url('marker.png') %>",
+          scaledSize: new google.maps.Size(50, 50) // scaled size
+      };
       marker = new google.maps.Marker({
         position: currentPosition,
         map: modalMap,
         // title: 'Hello World!',
+        icon: icon,
         draggable: true
+      });
+      marker.addListener('mousedown', function(event){
+        console.log('mouse Down');
+        markerDragging = true;
+      });
+      marker.addListener('mouseup', function(event){
+        console.log('mouse Up');
+        markerDragging = false;
+      });
+      marker.addListener('mouseout', function(event){
+        
+        if (markerDragging) {
+          console.log('mouse Out');
+          marker.setPosition(event.latLng);
+        }
       });
       marker.addListener('dragend', function(event) {
         console.log('drag END');
         currentPosition = marker.position;
+        markerDragging = false;
         geocodeLatLng();
       });
       marker.addListener('dragstart', function(event) {
         console.log('drag START');
+        markerDragging = true;
       });
-      marker.addListener('drag', function(event) {
-        console.log('drag');
-      });
+      // marker.addListener('drag', function(event) {
+      //   console.log('drag');
+      //   // markerDragging = true;
+      // });
     } else {
       if (marker.position != currentPosition) {
-        console.log("MARKER change POS")
+        // console.log("MARKER change POS")
         marker.setMap(null);
         marker.setPosition(currentPosition);
         marker.setMap(modalMap);
