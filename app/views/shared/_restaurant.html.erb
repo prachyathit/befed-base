@@ -15,7 +15,11 @@
     <% else %>
       <div class='row'>
         <div class='col-sm-6 estimated-delivery'><i class="fa fa-truck fa-lg"></i>&nbsp;&nbsp;&nbsp;~<%= restaurant.dtime %> Mins</div>
-        <div class='col-sm-6 delivery-hours'><i class="fa fa-clock-o fa-lg"></i>&nbsp;&nbsp;&nbsp;<%= restaurant.dhour %></div>       
+        <% if restaurant.id != 6 %>
+          <div class='col-sm-6 delivery-hours'><i class="fa fa-clock-o fa-lg"></i>&nbsp;&nbsp;&nbsp;<%= restaurant.dhour %></div>
+        <% else %>
+          <div class='col-sm-6 delivery-hours'><i class="fa fa-clock-o fa-lg"></i>&nbsp;&nbsp;&nbsp;<strong><%= restaurant.dhour %></strong></div>
+        <% end %>
       </div>
       <div class='row'>
         <div class='col-sm-12 estimated-delivery'><i class="fa fa-money fa-lg"></i>&nbsp;&nbsp;&nbsp;Min Order <%= restaurant.min_order %> ฿</div>
