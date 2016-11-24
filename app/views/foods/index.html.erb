@@ -4,11 +4,11 @@
   <div class="center">
     <%= render partial: "shared/map", locals: { button_name: "Find Restaurants" } %>
   </div>
-  <div style="margin-top: 10px">
-    <div class='restaurant-container'>
+
+    <div class='restaurant-container width400'>
       <%= render partial: "shared/restaurant", locals: { restaurant: @foods.first.restaurant } %>
     </div>
-  </div>
+
   <div class="center">- Click on Menu to Order -</div>
   <span class="glyphicon glyphicon-star-empty recommend pull-right">Recommended</span>
   

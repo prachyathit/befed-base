@@ -12,6 +12,7 @@
   <% end %>
   <div class='row restaurants-container'>
     <% @restaurants.each do |restaurant| %>
+      <div class='col-sm-6'>
       <% if restaurant.soon || restaurant.close_today? %>
         <div class='restaurant-container rc-hover'>
           <%= render partial: "shared/restaurant", locals: { restaurant: restaurant } %>
@@ -23,8 +24,9 @@
           </div>
         <% end %>
       <% end %>
+      </div>
     <% end %>
-    <%= render partial: "shared/restaurant_coming_soon" %>
+
   </div>
 
     <% if user_admin? %>
