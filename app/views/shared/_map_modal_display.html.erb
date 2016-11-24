@@ -75,6 +75,7 @@
     modalMap = new google.maps.Map(document.getElementById('map'), {
       center: currentPosition,
       zoom: 14,
+      scrollwheel: false,
       streetViewControl: false
     });
     modalMap.addListener('click', function(e){
@@ -116,6 +117,7 @@
       document.getElementById('<%= display_map_id %>'), {
         center: position,
         zoom: 14,
+        scrollwheel: false,
         streetViewControl: false
     });
     var marker = new google.maps.Marker({
