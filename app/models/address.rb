@@ -44,4 +44,8 @@ class Address < ActiveRecord::Base
 			self.province, self.postal_code
 		].compact.join(' ')
 	end
+
+	def full_address_with_name
+		self.name + " " + self.full_address
+	end
 end

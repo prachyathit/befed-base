@@ -8,7 +8,7 @@ class SaddressController < ApplicationController
       if session[:saddress].empty?
         default_address = current_user.default_address
         session[:saddress][:raw] = default_address.attributes
-        session[:saddress][:faddress] = default_address.full_address
+        session[:saddress][:faddress] = default_address.full_address_with_name
         session[:saddress][:latitude] = default_address.latitude
         session[:saddress][:longitude] = default_address.longitude
       end
@@ -19,7 +19,7 @@ class SaddressController < ApplicationController
     unless params[:saddress].empty?
       address = Address.new(JSON.parse(params[:saddress][:address]))
       session[:saddress][:raw] = params[:saddress][:address]
-      session[:saddress][:faddress] = address.full_address
+      session[:saddress][:faddress] = address.full_address_with_name
       session[:saddress][:latitude] = params[:saddress][:latitude]
       session[:saddress][:longitude] = params[:saddress][:longitude]
       get_cart_size
@@ -34,7 +34,7 @@ class SaddressController < ApplicationController
     if params[:address_id]
       address = Address.where(id: params[:address_id]).first
       session[:saddress][:raw] = address.attributes
-      session[:saddress][:faddress] = address.full_address
+      session[:saddress][:faddress] = address.full_address_with_name
       session[:saddress][:latitude] = address.latitude
       session[:saddress][:longitude] = address.longitude
     end

@@ -293,14 +293,14 @@
   }
 
   function geocodeLatLng() {
-    var geocoder = new google.maps.Geocoder;
     if (currentPlace) {
       address = {};
       setAddressFromComponents(currentPlace.address_components);
       address['name'] = currentPlace.name;
       console.log(address);
-      addressInput.value = currentPlace.formatted_address;
+      addressInput.value = currentPlace.name + currentPlace.formatted_address;
     } else {
+      var geocoder = new google.maps.Geocoder;
       geocoder.geocode({'location': currentPosition}, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
           console.log(results);
@@ -308,7 +308,11 @@
             address = {};
             setAddressFromComponents(results[0].address_components);
             console.log(address);
-            addressInput.value = results[1].formatted_address;
+            formatted_address = results[0].formatted_address;
+            if (results[1].formatted_address.length > results[0].formatted_address.length) {
+              formatted_address = results[1].formatted_address;
+            }
+            addressInput.value = formatted_address;
           } else {
             // window.alert('No results found');
             addressInput.value = " ";

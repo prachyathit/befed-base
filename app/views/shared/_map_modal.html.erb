@@ -44,6 +44,7 @@
   var marker;
   var defaultLocation = {lat: 13.7563, lng: 100.5018};
   var currentPosition = defaultLocation;
+  var currentPlace;
   var address;
   var addressInput;
   var waiting = false;
@@ -75,10 +76,8 @@
     });
     modalMap.addListener('click', function(e){
       markerDragging = false;
-      currentPosition = {
-        lat: e.latLng.lat(),
-        lng: e.latLng.lng()
-      }
+      currentPlace = null;
+      currentPosition = e.latLng;
       modalMap.setCenter(currentPosition);
       setMarkerToPosition();
     });
@@ -112,11 +111,11 @@
     };
     autocomplete = new google.maps.places.Autocomplete(addressInput, options);
     autocomplete.addListener('place_changed', function(){
-      var place = autocomplete.getPlace();
-      console.log(place);
+      currentPlace = autocomplete.getPlace();
+      console.log(currentPlace);
       currentPosition = {
-        lat: place.geometry.location.lat(),
-        lng: place.geometry.location.lng()
+        lat: currentPlace.geometry.location.lat(),
+        lng: currentPlace.geometry.location.lng()
       };
       modalMap.setCenter(currentPosition);
       setMarkerToPosition();
@@ -201,6 +200,7 @@
       });
       marker.addListener('dragend', function(event) {
         console.log('drag END');
+        currentPlace = null;
         currentPosition = marker.position;
         markerDragging = false;
         geocodeLatLng();
@@ -248,31 +248,43 @@
     return false
   }
 
-  function geocodeLatLng() {
-      var geocoder = new google.maps.Geocoder;
-      geocoder.geocode({'location': currentPosition}, function(results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
-          if (results[1]) {
-            address = {};
-            setAddressFromComponents(results[0].address_components);
-            addressInput.value = results[1].formatted_address;
-          } else {
-            addressInput.value = " ";
+    function geocodeLatLng() {
+      if (currentPlace) {
+        address = {};
+        setAddressFromComponents(currentPlace.address_components);
+        address['name'] = currentPlace.name;
+        console.log(address);
+        addressInput.value = currentPlace.name + currentPlace.formatted_address;
+      } else {
+        var geocoder = new google.maps.Geocoder;
+        geocoder.geocode({'location': currentPosition}, function(results, status) {
+          if (status == google.maps.GeocoderStatus.OK) {
+            if (results[1]) {
+              address = {};
+              setAddressFromComponents(results[0].address_components);
+              formatted_address = results[0].formatted_address;
+              if (results[1].formatted_address.length > results[0].formatted_address.length) {
+                formatted_address = results[1].formatted_address;
+              }
+              addressInput.value = formatted_address;
+            } else {
+              addressInput.value = " ";
+            }
+            addressInput.className = addressInput.className.replace(" loadinggif", "");
+            waiting = false;
+          } else if(status == google.maps.GeocoderStatus.OVER_QUERY_LIMIT){
+            console.log('Geocoder failed due to: ' + status);
+            if (!waiting) {
+              addressInput.value = " ";
+              addressInput.className += " loadinggif";
+              waiting = true;
+              setTimeout(function() {
+                geocodeLatLng();
+              }, 1000);
+            }
           }
-          addressInput.className = addressInput.className.replace(" loadinggif", "");
-          waiting = false;
-        } else if(status == google.maps.GeocoderStatus.OVER_QUERY_LIMIT){
-          console.log('Geocoder failed due to: ' + status);
-          if (!waiting) {
-            addressInput.value = " ";
-            addressInput.className += " loadinggif";
-            waiting = true;
-            setTimeout(function() {
-              geocodeLatLng();
-            }, 1000);
-          }
-        }
-      });
+        });
+      }
     }
 
     function setAddressFromComponents(components) {
