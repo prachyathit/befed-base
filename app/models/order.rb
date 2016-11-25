@@ -4,6 +4,7 @@ class Order < ActiveRecord::Base
   FLAT_RATE = 50 # Bahts
 
   belongs_to :user
+  belongs_to :restaurant, class_name: 'Restaurant', foreign_key: 'rest_id'
   has_one :payment
   has_one :shipping_address
 

@@ -57,6 +57,7 @@ Rails.application.routes.draw do
     post    :checkout,  controller: 'cart'
     resources :users, only: [:show, :update] do
       resources :addresses, only: [:index, :show, :create, :update, :destroy]
+      resources :orders, only: [:index]
     end
 
     resources :restaurants, only: [:index, :show] do
