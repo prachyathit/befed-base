@@ -16,4 +16,8 @@ class Food < ActiveRecord::Base
   def eng_name
   	self.name.split(" : ")[0]
   end
+
+  def have_option
+    not self.options.present?
+  end
 end
