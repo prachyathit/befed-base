@@ -126,6 +126,7 @@
     $("#currentLocationBtn").click(function() {
       getCurrentLocation().then(function(position){
         currentPosition = position;
+        modalMap.setCenter(currentPosition);
         setMarkerToPosition();
       });
       $(".location-arrow-wrapper").addClass("hide");
