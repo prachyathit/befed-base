@@ -1,7 +1,7 @@
 module Api
 	class UsersController < BaseController
 
-		before_action :authenticate_user!, only: [:show, :update]
+		before_action :authenticate_user!, only: [:show, :update, :delivery_fee]
 
 		def create
 			param! :email, 		String, required: true, format: User::VALID_EMAIL_REGEX
@@ -42,6 +42,10 @@ module Api
       
       render json: current_user
 		end
+
+    def delivery_fee
+      render json: { delivery_fee: current_user.delivery_fee }
+    end
 
 		private
 

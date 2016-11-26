@@ -58,6 +58,7 @@ Rails.application.routes.draw do
     resources :users, only: [:show, :update] do
       resources :addresses, only: [:index, :show, :create, :update, :destroy]
       resources :orders, only: [:index]
+      get :delivery_fee
     end
 
     resources :restaurants, only: [:index, :show] do
