@@ -268,13 +268,15 @@
 
   function addEventListener() {
     $('#useAddress').on('click', function(){
-      var params = {
-        address: address,
-        latitude: currentPosition.lat,
-        longitude: currentPosition.lng,
-        return_url: "<%= return_url %>"
-      };
-      window.location = "<%= submit_url %>?"+jQuery.param(params);
+      if (address != null) {
+        var params = {
+          address: address,
+          latitude: currentPosition.lat,
+          longitude: currentPosition.lng,
+          return_url: "<%= return_url %>"
+        };
+        window.location = "<%= submit_url %>?"+jQuery.param(params);
+      }
     });
     $('#cancelAddress').on('click', function(){
       window.location = "<%= return_url || cancel_url %>";

@@ -227,10 +227,12 @@
 
   function addEventListener() {
     $('#useAddress').on('click', function(){
-      $('#sessionAddressForm #saddress_address').val(JSON.stringify(address));
-      $('#sessionAddressForm #saddress_latitude').val(currentPosition.lat);
-      $('#sessionAddressForm #saddress_longitude').val(currentPosition.lng);
-      $('#sessionAddressForm').submit();
+      if (address != null) {
+        $('#sessionAddressForm #saddress_address').val(JSON.stringify(address));
+        $('#sessionAddressForm #saddress_latitude').val(currentPosition.lat);
+        $('#sessionAddressForm #saddress_longitude').val(currentPosition.lng);
+        $('#sessionAddressForm').submit();  
+      }
     });
     $('#cancelAddress').on('click', function(){
       window.location = "<%= return_url || cancel_url %>";
