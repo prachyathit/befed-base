@@ -46,6 +46,10 @@ class Address < ActiveRecord::Base
 	end
 
 	def full_address_with_name
-		self.name + " " + self.full_address
+		if self.name.present?
+			self.name + " " + self.full_address
+		else
+			self.full_address
+		end
 	end
 end
