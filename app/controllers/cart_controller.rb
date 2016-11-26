@@ -53,20 +53,18 @@ class CartController < ApplicationController
       flash[:danger] = "Minimum order is #{min_order} ฿, please order some more."
       redirect_to cart_url
     end
-    if Order.find_by_user_id(current_user).nil?
-      @first_order = true
-    else
-      @first_order = false
-    end
+    @delivery_fee = current_user.delivery_fee
     
     if session[:cart]
       @cart = session[:cart]
       @user = current_user
       unless session[:saddress].empty?
-        @address = Address.default_from_params(
-          @user, "Address#{@user.addresses.count + 1}", 
-          session[:saddress])
-        session[:saddress] = {}
+        unless session[:saddress].is_a?(Hash) and session[:saddress]['raw']['id'].present?
+          @address = Address.default_from_params(
+            @user, "Address#{@user.addresses.count + 1}", 
+            session[:saddress])
+          session[:saddress] = {}  
+        end
       end
       if params[:address_id]
         @address = current_user.addresses.where(id: params[:address_id]).first
@@ -90,11 +88,6 @@ class CartController < ApplicationController
       redirect_to cart_url
     end
     # Submit order
-    if Order.find_by_user_id(current_user).nil?
-      @first_order = true
-    else
-      @first_order = false
-    end
     @user = current_user
     restaurant = Restaurant.find(session[:restaurant_id])
     if restaurant.can_delivery_to_address?(current_user.latitude,current_user.longitude)
@@ -103,7 +96,9 @@ class CartController < ApplicationController
         ActiveRecord::Base.transaction do
           @rest_id = session[:restaurant_id]
           @cart = session[:cart]
-          @order = Order.process!(user: @user, cart: @cart, payment_type: params[:payment_type], first_order: @first_order, rest_id: @rest_id)
+          @order = Order.process!(user: @user, cart: @cart, 
+            payment_type: params[:payment_type], 
+            rest_id: @rest_id)
           payment = create_new_payment!(@order)
           @order.create_order_food(@cart)
           

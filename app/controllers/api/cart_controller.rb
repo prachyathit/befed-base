@@ -47,9 +47,8 @@ module Api
 				
 				begin
 					ActiveRecord::Base.transaction do
-						first_order = current_user.orders.count == 0
 						order = Order.process!(user: current_user, cart: cart, 
-							payment_type: Payment::CASH, first_order: first_order, 
+							payment_type: Payment::CASH, 
 							rest_id: restaurant.id, address_id: params[:address_id])
 						Payment::Cash.create!(order: order, user: current_user)
 						order.create_order_food(cart)

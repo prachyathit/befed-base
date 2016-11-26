@@ -11,17 +11,17 @@
     <div class='delivery-fee'>
       Delivery fee
     </div>
-    <% if @first_order %>
+    <% if @delivery_fee == 0 %>
       <div class='delivery-price'>
-        <span style="text-decoration: line-through">50 ฿</span><%=" #{delivery_fee} ฿"%>
+        <span style="text-decoration: line-through">500 ฿</span><%=" #{@delivery_fee} ฿"%>
       </div>
     <% else %>
       <div class='delivery-price'>
-        <%="#{delivery_fee} ฿"%>
+        <%="#{@delivery_fee} ฿"%>
       </div>
     <% end %>
   </div>
-  <% if @first_order %>
+  <% if @delivery_fee == 0 %>
     <div style="color:red">Enjoy FREE delivery on your first order!</div>
   <% end %>
 </div>

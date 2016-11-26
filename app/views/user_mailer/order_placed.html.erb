@@ -1,4 +1,4 @@
-<% user_order = Order.where(user_id: @order.user_id) %>
+
 <h1>Customer Info</h1>
 
 <p>Name: <%= @user.name %></p>
@@ -76,7 +76,7 @@ Order id: <%= @order.id %>
               <% total += quantity * food_price %>
             </tr>
           <% end %>
-          <% user_order.size == 1 ? delivery_fee = 0 : delivery_fee = 50 %>
+          
           <tr>
             <td width="70%"></td>
             <td width="10%"><b>Subtotal</b></td>
@@ -85,12 +85,12 @@ Order id: <%= @order.id %>
           <tr>
             <td width="70%"></td>
             <td width="10%"><b>Delivery Fee</b></td>
-            <td width="20%"><b><%="#{delivery_fee} ฿"%></b></td>
+            <td width="20%"><b><%="#{@order.delivery_fee} ฿"%></b></td>
           </tr>
           <tr>
             <td width="70%"></td>
             <td width="10%"><b>Total</b></td>
-            <td width="20%"><b><%= total+delivery_fee %> ฿</b></td>
+            <td width="20%"><b><%= total+@order.delivery_fee %> ฿</b></td>
           </tr>
       </tbody>
     </table>

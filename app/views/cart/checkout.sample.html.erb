@@ -54,12 +54,12 @@
           <% end %>
         </div>
         <hr>
-        <% @first_order ? delivery_fee = 0 : delivery_fee = 50 %>
+        
        
-        <%= render partial: "shared/order_details", locals: { cumulative_quantity: cumulative_quantity, total: total, delivery_fee: delivery_fee } %>
+        <%= render partial: "shared/order_details", locals: { cumulative_quantity: cumulative_quantity, total: total, delivery_fee: @delivery_fee } %>
         <hr>
         <div class="order-total">
-          Order total <span class="theme-color">&nbsp;<%= "#{total + delivery_fee}฿" %></span>
+          Order total <span class="theme-color">&nbsp;<%= "#{total + @delivery_fee}฿" %></span>
         </div>
       </div>
     </div>
