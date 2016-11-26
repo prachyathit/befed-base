@@ -58,7 +58,6 @@
         setMarkerToPosition();
         modalMap.setCenter(currentPosition);
       });
-      modalMap.setCenter(currentPosition);
     }
   }
 
@@ -81,9 +80,9 @@
       modalMap.setCenter(currentPosition);
       setMarkerToPosition();
     });
-    modalMap.addListener('resize', function(){});
-    // modalMap.addListener('idle', function(){
-    // });
+    modalMap.addListener('resize', function(){
+      modalMap.setCenter(currentPosition);
+    });
     initAutoComplete();
     initGetCurrentLocation();
   }
@@ -210,13 +209,8 @@
         console.log('drag START');
         markerDragging = true;
       });
-      // marker.addListener('drag', function(event) {
-      //   console.log('drag');
-      //   // markerDragging = true;
-      // });
     } else {
       if (marker.position != currentPosition) {
-        // console.log("MARKER change POS")
         marker.setMap(null);
         marker.setPosition(currentPosition);
         marker.setMap(modalMap);
