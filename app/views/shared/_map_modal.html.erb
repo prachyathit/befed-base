@@ -251,77 +251,77 @@
     return false
   }
 
-    function geocodeLatLng() {
-      if (currentPlace) {
-        address = {};
-        setAddressFromComponents(currentPlace.address_components);
-        address['name'] = currentPlace.name;
-        console.log(address);
-        addressInput.value = currentPlace.name + currentPlace.formatted_address;
-      } else {
-        var geocoder = new google.maps.Geocoder;
-        geocoder.geocode({'location': currentPosition}, function(results, status) {
-          if (status == google.maps.GeocoderStatus.OK) {
-            if (results[1]) {
-              address = {};
-              setAddressFromComponents(results[0].address_components);
-              formatted_address = results[0].formatted_address;
-              if (results[1].formatted_address.length > results[0].formatted_address.length) {
-                formatted_address = results[1].formatted_address;
-              }
-              addressInput.value = formatted_address;
-            } else {
-              addressInput.value = " ";
+  function geocodeLatLng() {
+    if (currentPlace) {
+      address = {};
+      setAddressFromComponents(currentPlace.address_components);
+      address['name'] = currentPlace.name;
+      console.log(address);
+      addressInput.value = currentPlace.name + currentPlace.formatted_address;
+    } else {
+      var geocoder = new google.maps.Geocoder;
+      geocoder.geocode({'location': currentPosition}, function(results, status) {
+        if (status == google.maps.GeocoderStatus.OK) {
+          if (results[1]) {
+            address = {};
+            setAddressFromComponents(results[0].address_components);
+            formatted_address = results[0].formatted_address;
+            if (results[1].formatted_address.length > results[0].formatted_address.length) {
+              formatted_address = results[1].formatted_address;
             }
-            addressInput.className = addressInput.className.replace(" loadinggif", "");
-            waiting = false;
-          } else if(status == google.maps.GeocoderStatus.OVER_QUERY_LIMIT){
-            console.log('Geocoder failed due to: ' + status);
-            if (!waiting) {
-              addressInput.value = " ";
-              addressInput.className += " loadinggif";
-              waiting = true;
-              setTimeout(function() {
-                geocodeLatLng();
-              }, 1000);
-            }
+            addressInput.value = formatted_address;
+          } else {
+            addressInput.value = " ";
           }
-        });
-      }
-    }
-
-    function setAddressFromComponents(components) {
-      components.forEach(function(component){
-        if(component.types.includes('street_number')){
-          address['house_room_no'] = component.long_name;
-
-        } else if(component.types.includes('premise')){
-          address['building_name'] = component.long_name;
-
-        } else if(component.types.includes('floor')){
-          address['floor'] = component.long_name;
-
-        } else if(component.types.includes('route') ||
-          component.types.includes('street_address')){
-          address['street'] = component.long_name;
-
-        } else if(component.types.includes('sublocality_level_1') || component.types.includes('administrative_area_level_1')){
-          address['district'] = component.long_name;
-
-        } else if(component.types.includes('sublocality_level_2') || component.types.includes('administrative_area_level_2')){
-          address['subdistrict'] = component.long_name;
-
-        } else if(component.types.includes('locality') && 
-            component.types.includes('political')){
-          address['province'] = component.long_name;
-
-        } else if(component.types.includes('postal_code')){
-          address['postal_code'] = component.long_name;
-
-        } else if(component.types.includes('country')){
+          addressInput.className = addressInput.className.replace(" loadinggif", "");
+          waiting = false;
+        } else if(status == google.maps.GeocoderStatus.OVER_QUERY_LIMIT){
+          console.log('Geocoder failed due to: ' + status);
+          if (!waiting) {
+            addressInput.value = " ";
+            addressInput.className += " loadinggif";
+            waiting = true;
+            setTimeout(function() {
+              geocodeLatLng();
+            }, 1000);
+          }
         }
       });
     }
+  }
+
+  function setAddressFromComponents(components) {
+    components.forEach(function(component){
+      if(component.types.includes('street_number')){
+        address['house_room_no'] = component.long_name;
+
+      } else if(component.types.includes('premise')){
+        address['building_name'] = component.long_name;
+
+      } else if(component.types.includes('floor')){
+        address['floor'] = component.long_name;
+
+      } else if(component.types.includes('route') ||
+        component.types.includes('street_address')){
+        address['street'] = component.long_name;
+
+      } else if(component.types.includes('sublocality_level_1') || component.types.includes('administrative_area_level_1')){
+        address['district'] = component.long_name;
+
+      } else if(component.types.includes('sublocality_level_2') || component.types.includes('administrative_area_level_2')){
+        address['subdistrict'] = component.long_name;
+
+      } else if(component.types.includes('locality') && 
+          component.types.includes('political')){
+        address['province'] = component.long_name;
+
+      } else if(component.types.includes('postal_code')){
+        address['postal_code'] = component.long_name;
+
+      } else if(component.types.includes('country')){
+      }
+    });
+  }
 
 </script>
 <script async defer

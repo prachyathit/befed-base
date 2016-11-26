@@ -62,8 +62,6 @@
         }
       });
     }
-
-    
   }
 
   // Note: This example requires that you consent to location sharing when
@@ -88,9 +86,9 @@
       modalMap.setCenter(currentPosition);
       setMarkerToPosition();
     });
-    modalMap.addListener('resize', function(){});
-    // modalMap.addListener('idle', function(){
-    // });
+    modalMap.addListener('resize', function(){
+      modalMap.setCenter(currentPosition);
+    });
     initAutoComplete();
     initGetCurrentLocation();
   }
@@ -120,14 +118,22 @@
         scrollwheel: false,
         streetViewControl: false
     });
-    var marker = new google.maps.Marker({
+    var icon = {
+        url: "<%= image_url('marker.png') %>",
+        scaledSize: new google.maps.Size(50, 50) // scaled size
+    };
+    new google.maps.Marker({
       position: position,
-      map: displayMap
+      map: displayMap,
+      icon: icon
     });
 
     displayMap.addListener('click', function() {
       currentPosition = position;
+      // initModalMap();
       displayModal();
+      setMarkerToPosition();
+      modalMap.setCenter(currentPosition);
     });
   }
 
@@ -174,7 +180,6 @@
 
           $(".location-arrow-wrapper").removeClass("hide");
           $(".spinning-icon-wrapper").addClass("hide");
-          
           resolve(pos);
         }, function(error) {
           var message = ""
