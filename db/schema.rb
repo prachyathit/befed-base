@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161011135634) do
+ActiveRecord::Schema.define(version: 20161126025957) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "name"
@@ -107,6 +107,7 @@ ActiveRecord::Schema.define(version: 20161011135634) do
     t.integer  "payment_type", default: 0
     t.integer  "rest_id"
     t.string   "note"
+    t.integer  "delivery_fee"
   end
 
   create_table "payments", force: :cascade do |t|
@@ -147,6 +148,14 @@ ActiveRecord::Schema.define(version: 20161011135634) do
     t.integer  "cday"
     t.string   "dhour",      default: "11:00AM - 9:00PM"
     t.boolean  "promo",      default: false
+  end
+
+  create_table "settings", force: :cascade do |t|
+    t.string   "key"
+    t.string   "value"
+    t.integer  "value_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "shipping_addresses", force: :cascade do |t|

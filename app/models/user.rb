@@ -100,6 +100,16 @@ class User < ActiveRecord::Base
     address.update!(is_default: true)
   end
 
+  def delivery_fee
+    if self.orders.present?
+      Setting.get(:delivery_fee)
+    elsif Setting.get(:first_order_free_delivery)
+      0
+    else
+      Setting.get(:delivery_fee)
+    end
+  end
+
   private
 
   # Converts email to all lower case

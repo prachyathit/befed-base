@@ -1,7 +1,8 @@
 class Order < ActiveRecord::Base
   default_scope -> { order(:id) }
   # Flat rate for delivery
-  FLAT_RATE = 50 # Bahts
+  # move flat rate to setting
+  # FLAT_RATE = 50 # Bahts
 
   belongs_to :user
   belongs_to :restaurant, class_name: 'Restaurant', foreign_key: 'rest_id'
@@ -15,7 +16,8 @@ class Order < ActiveRecord::Base
     order = self.create! do |o|
       o.user = params[:user]
       o.rest_id = params[:rest_id]
-      o.total = calculate_order_total(params[:cart], params[:first_order])
+      o.delivery_fee = params[:user].delivery_fee
+      o.total = calculate_order_total(params[:cart], params[:user].delivery_fee)
       if params[:payment_type] == Payment::CREDIT_CARD
         o.payment_type = 1
       else
@@ -86,7 +88,7 @@ class Order < ActiveRecord::Base
   private
   # Probably need to store some details about this order such as
   # food options, special instructions, and delivery instructions
-  def self.calculate_order_total(cart, first_order)
+  def self.calculate_order_total(cart, delivery_fee)
     total = 0
     cart.deep_symbolize_keys!
     cart.each do |k, v|
@@ -114,11 +116,7 @@ class Order < ActiveRecord::Base
       end
       total += food_price * v[:quantity].to_i
     end
-    unless first_order
-      total + FLAT_RATE
-    else 
-      total
-    end
+    total + delivery_fee
   end
   
 end
