@@ -231,30 +231,31 @@
         icon: icon,
         draggable: true
       });
+      geocodeLatLng();
       marker.addListener('mousedown', function(event){
-        console.log('mouse Down');
+        // console.log('mouse Down');
         markerDragging = true;
       });
       marker.addListener('mouseup', function(event){
-        console.log('mouse Up');
+        // console.log('mouse Up');
         markerDragging = false;
       });
       marker.addListener('mouseout', function(event){
         
         if (markerDragging) {
-          console.log('mouse Out');
+          // console.log('mouse Out');
           marker.setPosition(event.latLng);
         }
       });
       marker.addListener('dragend', function(event) {
-        console.log('drag END');
+        // console.log('drag END');
         currentPlace = null;
         currentPosition = marker.position;
         markerDragging = false;
         geocodeLatLng();
       });
       marker.addListener('dragstart', function(event) {
-        console.log('drag START');
+        // console.log('drag START');
         markerDragging = true;
       });
       // marker.addListener('drag', function(event) {
