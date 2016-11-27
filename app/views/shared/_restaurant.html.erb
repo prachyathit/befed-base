@@ -12,6 +12,7 @@
       <div class='delivery-hours'>&nbsp;&nbsp;&nbsp;Closed&nbsp;&nbsp;&nbsp;&nbsp;</div>
     <% elsif restaurant.cday == Time.now.wday %>
       <div class='delivery-hours'>&nbsp;&nbsp;&nbsp;Closed Today&nbsp;&nbsp;&nbsp;&nbsp;</div>
+      <div class='delivery-hours'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
     <% else %>
       <div class='row'>
         <div class='col-sm-6 estimated-delivery'><i class="fa fa-truck fa-lg"></i>&nbsp;&nbsp;&nbsp;~<%= restaurant.dtime %> Mins</div>
