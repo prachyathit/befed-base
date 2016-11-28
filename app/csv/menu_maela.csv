@@ -1,0 +1,223 @@
+name,price,image_url,cat_id,cat,rec,restaurant_id
+Grilled Snakehead : ปลาช่อนแม่ลาเผา,350,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/1snakehead.jpg,1,แนะนำ,1,8
+Red Curry with Little Snail and Coconut Milk : แกงคั่วหอยขม,160,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/1snakehead.jpg,1,แนะนำ,1,8
+Wing Bean Shrimp Salad : ยำถั่วพูกุ้งสด,150,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/50shrimp.jpg,1,แนะนำ,1,8
+Crab Stew : ปูหลน,140,,1,แนะนำ,1,8
+Shrimp Paste Sauce with Crispy Fried Fish and Sweet Pork : น้ำพริกลงเรือ,140,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/45boat.jpg,1,แนะนำ,1,8
+Tomyum Snakehead : ต้มยำ หัว พุง ไข่ ปลาช่อน,160,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/32snakehead.jpg,1,แนะนำ,1,8
+Deep Fried Snakehead Fish Serve with Herb and Spicy Sauce : ปลาช่อนลุยสวน,370,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/10snakehead.jpg,1,แนะนำ,1,8
+Spicy Curry Mekong Giant Catfish : ปลาบึกผัดเผ็ด,150,,1,แนะนำ,1,8
+Fried Chilli with Kang Catfish : ปลาคังผัดฉ่า,150,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/19kang.jpg,1,แนะนำ,1,8
+Roasted Lemongrass with Ruby Fish : ปลาทับทิมคั่วตะไคร้,350,,1,แนะนำ,1,8
+Roasted Lemongrass with Moorhen : ไก่นาคั่วตะไคร้,140,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/3chicken.jpg,1,แนะนำ,1,8
+Spicy Beef : กระทิงคลุกฝุ่น (เนื้อวัว),140,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/4beef.jpg,1,แนะนำ,1,8
+Sun-Dried Snakehead : ปลาช่อนแดดเดียวจิ้มแจ่ว,150,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/43snakehead.jpg,1,แนะนำ,1,8
+Fried Fermented Pork Rib Bone : แหนมซี่โครงหมูทอด,140,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/5ribs.jpg,1,แนะนำ,1,8
+Fried Fish Paste Balls : ทอดมันปลากราย,150,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/39fish.jpg,1,แนะนำ,1,8
+Fried Salty Beef in Green Curry : แกงเขียวหวานเนื้อเค็มทอด,160,,1,แนะนำ,1,8
+Spicy Soup with Shrimp and Vegetable Omelet : แกงส้มชะอมชุบไข่ทอดกุ้งสด,160,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/6soup.jpg,1,แนะนำ,1,8
+Stir Fried Local Fish in Red Curry and Coconut Milk : ฉู่ฉี่ปลาเนื้ออ่อน,160,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/16fish.jpg,1,แนะนำ,1,8
+Stir-Fried Ginger with Crispy Snakehead and Salted Egg : ปลาช่อนฟูผัดพริกขิงไข่เค็ม,150,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/60snakehead.jpg,1,แนะนำ,1,8
+Stir-Fried Squid with Salted Egg Yolk : ปลาหมึกผัดไข่เค็ม,170,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/28squid.jpg,1,แนะนำ,1,8
+Stir-Fried Oyster with Beansprout : ออส่วนจานร้อน,170,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/31oyster.jpg,1,แนะนำ,1,8
+Deep-Fried Tofu with Gravy Sauce : เต้าหู้ทรงเครื่อง,320,,1,แนะนำ,1,8
+Deep-Fried Tofu with Gravy Sauce and Crab Meat : เต้าหู้ราดหน้าปู,160,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/7tofu.jpg,1,แนะนำ,1,8
+Fried Chilli with Fish Sausage : ไส้กรอกปลาผัดฉ่า,140,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/9fish.jpg,1,แนะนำ,1,8
+Boiled Fish Sausage : ไส้กรอกปลาลวกจิ้ม,120,,1,แนะนำ,1,8
+Grilled Pork Neck with Chilli Sauce : คอหมูคำหวาน,140,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/8pork.jpg,1,แนะนำ,1,8
+Grilled Snakehead : ปลาช่อนแม่ลาเผา,350,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/1snakehead.jpg,2,ปลาช่อน,0,8
+Deep-Fried Snakehead Fish Serve with Herb and Spicy Sauce : ปลาช่อนลุยสวน,370,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/10snakehead.jpg,2,ปลาช่อน,0,8
+Deep-Fried Snakehead Fish with Sweet and Sour Sauce : ปลาช่อนชนไก่,370,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/11snakehead.jpg,2,ปลาช่อน,0,8
+Steamed Snakehead Fish with Jaew ปลาช่อนนึ่งแจ่ว,370,,2,ปลาช่อน,0,8
+Steamed Snakehead Fish with Plum Soup : ปลาช่อนแป๊ะซ๊ะบ๊วย,370,,2,ปลาช่อน,0,8
+Deep-Fried Snakehead Fish with Sour Soup : แกงส้มแป๊ะซ๊ะปลาช่อนทอด,370,,2,ปลาช่อน,0,8
+Deep-Fried Marinated Seabass with Sweet Fish Sauce : ปลากะพงทอดน้ำปลา,350,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/12seabass.jpg,3,ปลากะพง,0,8
+Steamed Sea Bass in Lime Sauce : ปลากะพงนึ่งมะนาว,350,,3,ปลากะพง,0,8
+Deep-Fried Seabass in Chilli Sauce : ปลากะพงราดพริก,350,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/13seabass.jpg,3,ปลากะพง,0,8
+Steamed Seabass with Soy Sauce : ปลากะพงนึ่งซีอิ๊ว,350,,3,ปลากะพง,0,8
+Deep-Fried Marinated Ruby Fish with Sweet Fish Sauce : ปลาทับทิมทอดน้ำปลา,330,,4,ปลาทับทิม,0,8
+Deep-Fried Ruby Fish Topped with Sweet Chilli Sauce : ปลาทับทิมราดพริก,330,,4,ปลาทับทิม,0,8
+Roasted Lemongrass with Ruby Fish : ปลาทับทิมคั่วตะไคร้,350,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/14ruby.jpg,4,ปลาทับทิม,1,8
+Fried Ruby Fish with Garlic and Pepper : ปลาทับทิมทอดกระเทียมพริกไทย,330,,4,ปลาทับทิม,0,8
+Stir Fried Local Fish in Red Curry and Coconut Milk : ฉู่ฉี่ปลาเนื้ออ่อน,160,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/16fish.jpg,5,ปลาเนื้ออ่อน,1,8
+Deep-Fried Sheat Fish Topped with Sweet Chilli Sauce : ปลาเนื้ออ่อนราดพริก,160,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/27fish.jpg,5,ปลาเนื้ออ่อน,0,8
+Fried Sheat Fish with Garlic and Pepper : ปลาเนื้ออ่อนทอดกระเทียมพริกไทย,160,,5,ปลาเนื้ออ่อน,0,8
+Sheat Fish Jungle Curry : แกงป่าปลาเนื้ออ่อน,160,,5,ปลาเนื้ออ่อน,0,8
+Spicy Curry Mekong Giant Catfish : ปลาบึกผัดเผ็ด,150,,6,ปลาบึก-ปลาคัง,1,8
+Spicy Curry Kang Catfish : ปลาคังผัดเผ็ด,150,,6,ปลาบึก-ปลาคัง,0,8
+Fried Mekong Giant Catfish with Chilli Paste : ปลาบึกผัดฉ่า,150,,6,ปลาบึก-ปลาคัง,0,8
+Fried Chilli with Kang Catfish : ปลาคังผัดฉ่า,150,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/19kang.jpg,6,ปลาบึก-ปลาคัง,1,8
+Boiled Mekong Giant Catfish : ปลาบึกลวกจิ้ม,150,,6,ปลาบึก-ปลาคัง,0,8
+Boiled Kang Catfish : ปลาคังลวกจิ้ม,150,,6,ปลาบึก-ปลาคัง,0,8
+Shrimp Potted with Vermicelli : กุ้งอบวุ้นเส้น,180,,7,กุ้ง,1,8
+Raw Shrimp in Fish Sauce : กุ้งแช่น้ำปลา,130,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/20shrimp.jpg,7,กุ้ง,1,8
+Stir-Fried Coconut Shoot with Shrimp : กุ้งผัดยอดมะพร้าว,130,,7,กุ้ง,0,8
+Stir-Fried Asparagus with Shrimp : กุ้งผัดหน่อไม้ฝรั่ง,130,,7,กุ้ง,1,8
+Stir-Fried Shiitake with Shrimp : กุ้งผัดเห็ดหอม,130,,7,กุ้ง,0,8
+Stir-Fried Parkia with Shrimp and Shrimp Paste : สะตอผัดกะปิกุ้ง,160,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/21shrimp.jpg,7,กุ้ง,0,8
+Pickled Blue Crab : ปูม้าดอง,370,,8,ปู,0,8
+Stir-Fried Crab Meat in Curry Powder : เนื้อปูผัดผงกะหรี่,200,,8,ปู,0,8
+Stir-Fried Blue Crab in Curry Powder : ปูม้าผัดผงกะหรี่,220,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/22crab.jpg,8,ปู,0,8
+Blue Crab Papaya Salad : ส้มตำปูม้า,170,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/23somtum.jpg,8,ปู,0,8
+Stir-Fried Soft-Shell Crab in Curry Powder : ปูนิ่มผัดผงกะหรี่,200,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/24crab.jpg,8,ปู,0,8
+Stir-Fried Soft-Shell Crab in Black Pepper Sauce : ปูนิ่มผัดพริกไทยดำ,200,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/25crab.jpg,8,ปู,0,8
+Stir-Fried Soft-Shell Crab with Garlic and Pepper : ปูนิ่มทอดกระเทียมพริกไทย,180,,8,ปู,0,8
+Steamed Squid Eggs in Lime Sauce : ปลาหมึกไข่นึ่งมะนาว,330,,9,ปลาหมึก,0,8
+Stir-Fried Squid Eggs with Garlic and Pepper : ปลาหมึกไข่ทอดกระเทียมพริกไทย,180,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/26squid.jpg,9,ปลาหมึก,0,8
+Stir-Fried Squid Eggs in Curry Powder : ปลาหมึกไข่ผัดผงกะหรี่,220,,9,ปลาหมึก,0,8
+Squid Eggs with Red Curry Paste : ฉู่ฉี่ปลาหมึกไข่,220,,9,ปลาหมึก,0,8
+Grilled Squid Eggs : ปลาหมึกไข่ย่าง,180,,9,ปลาหมึก,0,8
+Grilled Squid : ปลาหมึกหอมย่าง,150,,9,ปลาหมึก,0,8
+Sun-Dried Squid : ปลาหมึกแดดเดียว,160,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/27squid.jpg,9,ปลาหมึก,0,8
+Stir-Fried Squid with Salted Egg Yolk : ปลาหมึกผัดไข่เค็ม,170,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/28squid.jpg,9,ปลาหมึก,1,8
+Red Curry with Little Snail and Coconut Milk : แกงคั่วหอยขม,160,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/1snakehead.jpg,10,หอย,1,8
+Stir-Fried Climbing Wattle with Little Snail : หอยขมผัดชะอม,150,,10,หอย,0,8
+Stir-Fried Clams with Roasted Chilli Paste : หอยลายผัดพริกเผา,130,,10,หอย,0,8
+Oyster with Herbs : หอยนางรมทรงเครื่อง,180,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/30oyster.jpg,10,หอย,0,8
+Stir-Fried Oyster with Beansprout : ออส่วนจานร้อน,170,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/31oyster.jpg,10,หอย,1,8
+Tomyum Snakehead : ต้มยำหัว พุง ไข่ ปลาช่อน,160,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/32snakehead.jpg,11,ต้มยำ.. รสเด็ด,1,8
+Tom Yum Kung with Coconut Shoot : ต้มยำกุ้งมะพร้าวอ่อน,160,,11,ต้มยำ.. รสเด็ด,0,8
+Tom Yum Kung Clear Soup : ต้มยำกุ้งน้ำใส,160,,11,ต้มยำ.. รสเด็ด,0,8
+Tom Yum Mekong Giant Catfish : ต้มยำปลาบึก,160,,11,ต้มยำ.. รสเด็ด,0,8
+Tom Yum Kang Catfish : ต้มยำปลาคัง,160,,11,ต้มยำ.. รสเด็ด,0,8
+Tom Yum Seabass Meat : ต้มยำเนื้อปลากะพง,160,,11,ต้มยำ.. รสเด็ด,0,8
+Tom Yum Mixed Seafood : ต้มยำรวมมิตรทะเล,160,,11,ต้มยำ.. รสเด็ด,0,8
+Hot and Spicy Soup with Snake Skin Gourami : ต้มโคล้งปลาสลิด,160,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/33fish.jpg,11,ต้มยำ.. รสเด็ด,0,8
+Hot and Spicy Tamarind Soup with Chicken : ต้มแซ่บไก่บ้านใบมะขามอ่อน,160,,11,ต้มยำ.. รสเด็ด,0,8
+Thai Seafood Spicy Soup : โป๊ะแตก,160,,11,ต้มยำ.. รสเด็ด,0,8
+Chicken Coconut Soup : ต้มข่าไก่บ้าน,160,,11,ต้มยำ.. รสเด็ด,0,8
+Deep-Fried Snakehead Fish with Sour Soup : แกงส้มแป๊ะซะปลาช่อนทอด,370,,12,แกง... รสไทย,0,8
+Spicy Soup with Shrimp and Vegetable Omelet : แกงส้มชะอมชุบไข่ทอดกุ้งสด,160,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/6soup.jpg,12,แกง... รสไทย,1,8
+"Sour Soup Mixed Vegetables with Snakehead or Shrimp : แกงส้มผักรวมปลาช่อน, กุ้ง",160,,12,แกง... รสไทย,0,8
+Spicy Herb Soup with Shrimp : แกงเลียงกุ้งสด,160,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/34shrimp.jpg,12,แกง... รสไทย,0,8
+Red Curry with Roast Duck : แกงเผ็ดเป็ดย่าง,170,,12,แกง... รสไทย,0,8
+"Green Curry with Choice of Meat : แกงเขียวหวานหมู, เนื้อ, ไก่",160,,12,แกง... รสไทย,0,8
+Green Curry with Sun-Dried Beef : แกงเขียวหวานเนื้อแดดเดียว,160,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/35beef.jpg,12,แกง... รสไทย,0,8
+Green Curry with Sun-Dried Pork : แกงเขียวหวานหมูแดดเดียว,160,,12,แกง... รสไทย,0,8
+Green Curry with Fish Balls : แกงเขียวหวานลูกชิ้นปลากราย,160,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/36fishball.jpg,12,แกง... รสไทย,0,8
+Jungle Curry with Fish Balls : แกงป่าลูกชิ้นปลากราย,160,,12,แกง... รสไทย,0,8
+"Jungle Curry with Choice of Meat : แกงป่าหมู, เนื้อ, ไก่, กบ",160,,12,แกง... รสไทย,0,8
+Clear Soup with Pig Stomach and Pickled Cabbage : ต้มจืดกระเพาะหมูเกี๊ยมไฉ่,150,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/37pork.jpg,13,ต้มจืด - ตุ๋น,0,8
+Ckear Soup with Tofu and Minced Pork : ต้มจืดเต้าหู้หมูสับ,150,,13,ต้มจืด - ตุ๋น,0,8
+Clear Soup with Chinese Cabbage and Minced Pork : ต้มจืดผักกาดขาวหมูสับ,150,,13,ต้มจืด - ตุ๋น,0,8
+Clear Soup with Egg and Minced Pork : ต้มจืดไข่น้ำหมูสับ,150,,13,ต้มจืด - ตุ๋น,0,8
+Clear Soup with Mixed Seafood : ต้มจืดรวมมิตรทะเล,150,,13,ต้มจืด - ตุ๋น,0,8
+Chicked Stewed with Chinese Medicine : ไก่นาตุ๋นยาจีน,150,,13,ต้มจืด - ตุ๋น,0,8
+Duck Stewed with Chinese Medicine : เป็ดตุ๋นยาจีน,150,,13,ต้มจืด - ตุ๋น,0,8
+Chicken Stewed with Pickled Lime Soup : ไก่นาตุ๋นมะนาวดอง,150,,13,ต้มจืด - ตุ๋น,0,8
+Duck Stewed with Pickled Lime Soup : เป็ดตุ๋นมะนาวดอง,150,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/38duck.jpg,13,ต้มจืด - ตุ๋น,0,8
+Fried Fish Paste Balls : ทอดมันปลากราย,150,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/39fish.jpg,14,ทอด,0,8
+Shrimp Cake : ทอดมันกุ้ง,150,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/40shrimp.jpg,14,ทอด,0,8
+Deep-Fried Shrimp : กุ้งชุบแป้งทอด,150,,14,ทอด,0,8
+New Orleans Fried Chicken : ไก่ทอดนิวออลีน,130,,14,ทอด,0,8
+Salted Roasted Chicken : ไก่คั่วเค็ม,120,,14,ทอด,0,8
+Fried Pork Chitterlings with Garlic : ไส้ตันทอดกระเทียม,130,,14,ทอด,0,8
+Sun-Dried Squid : ปลาหมึกแดดเดียว,160,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/27squid.jpg,14,ทอด,0,8
+Sun-Dried Beef : เนื้อแดดเดียว,130,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/41beef.jpg,14,ทอด,0,8
+Sun Dried Pok : หมูแดดเดียว,130,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/42pork.jpg,14,ทอด,0,8
+Sun-Dried Snakehead : ปลาช่อนแดดเดียวจิ้มแจ่ว,150,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/43snakehead.jpg,14,ทอด,1,8
+E-Sann Sausage : ไส้กรอกอิสาน,130,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/44sausage.jpg,14,ทอด,0,8
+Fried Frog with Garlic : กบทอดกระเทียม,130,,14,ทอด,0,8
+Shrimp Paste Sauce with Crispy Fried Fish and Sweet Pork : น้ำพริกลงเรือ,140,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/45boat.jpg,15,น้ำพริก .. ผักจิ้ม,1,8
+Pounded Mackerel with Shrimp Paste Sauce : น้ำพริกปลาทู (ปลาทูโขลก),120,,15,น้ำพริก .. ผักจิ้ม,0,8
+Fried Mackerel with Shrimp Paste Sauce : น้ำพริกกะปิ (ปลาทูตัว),140,,15,น้ำพริก .. ผักจิ้ม,0,8
+Thai Chilli Paste Shrimp with Fresh Vegetables : น้ำพริกกุ้งสด,120,,15,น้ำพริก .. ผักจิ้ม,0,8
+Fermented Fish Spicy Dip : น้ำพริกปลาร้า,120,,15,น้ำพริก .. ผักจิ้ม,0,8
+Full Flavor Fermented Fish : ปลาร้าทรงเครื่อง,170,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/46fish.jpg,15,น้ำพริก .. ผักจิ้ม,0,8
+Minced Fermented Fish : ปลาร้าสับ,120,,15,น้ำพริก .. ผักจิ้ม,0,8
+Crab Stew : ปูหลน,140,,15,น้ำพริก .. ผักจิ้ม,0,8
+Fried Mackerel (1) : ปลาทูทอด (ตัวละ),50,,15,น้ำพริก .. ผักจิ้ม,0,8
+Fried Egg with Climbing Wattle : ชะอมชุบไข่ทอด,70,,15,น้ำพริก .. ผักจิ้ม,0,8
+Fried Chilli with Mixed Seafood : ผัดฉ่ารวมมิตรทะเล,200,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/47seafood.jpg,16,เผ็ดร้อนเครื่องแกงไทย,0,8
+Spicy Curry with Mekong Giant Catfish : ปลาบึกผัดเผ็ด,150,,16,เผ็ดร้อนเครื่องแกงไทย,0,8
+Spicy Curry with Kang Catfish : ปลาคังผัดเผ็ด,150,,16,เผ็ดร้อนเครื่องแกงไทย,0,8
+Spicy Curry with Fish Balls : ลูกชิ้นปลากรายผัดเผ็ด,150,,16,เผ็ดร้อนเครื่องแกงไทย,0,8
+Spicy Curry with Frogs : กบผัดเผ็ด,130,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/48frog.jpg,16,เผ็ดร้อนเครื่องแกงไทย,0,8
+Spicy Curry with Deep-Fried Catfish : ปลาดุกทอดกรอบผัดเผ็ด,130,,16,เผ็ดร้อนเครื่องแกงไทย,0,8
+Spicy Curry with Shrimp and Coconut Shoot : กุ้งผัดเผ็ดยอดมะพร้าว,130,,16,เผ็ดร้อนเครื่องแกงไทย,0,8
+Shrimp with Red Curry Paste : ฉู่ฉี่กุ้ง,150,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/49shrimp.jpg,16,เผ็ดร้อนเครื่องแกงไทย,0,8
+Stir Fried Local Fish in Red Curry and Coconut Milk : ฉู่ฉี่ปลาเนื้ออ่อน,160,,16,เผ็ดร้อนเครื่องแกงไทย,0,8
+Squid Eggs with Red Curry Paste : ฉู่ฉี่ปลาหมึกไข่,220,,16,เผ็ดร้อนเครื่องแกงไทย,0,8
+Stir-Fried Clams with Red Chilli Paste : หอยลายผัดพริกแกง,130,,16,เผ็ดร้อนเครื่องแกงไทย,0,8
+Steamed Curry Fish with Mixed Seafood : ห่อหมกทะเล,220,,16,เผ็ดร้อนเครื่องแกงไทย,0,8
+Steamed Curry Fish with Snakehead : ห่อหมกปลาช่อน,170,,16,เผ็ดร้อนเครื่องแกงไทย,0,8
+Wing Bean Shrimp Salad : ยำถั่วพูกุ้งสด,150,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/50shrimp.jpg,17,ยำๆ,1,8
+Crispy Spicy Salad : ยำสามกรอบ,150,,17,ยำๆ,0,8
+Mixed Seafood Spicy Salad : ยำรวมมิตรทะเล,150,,17,ยำๆ,0,8
+Fish Sausage Spicy Salad : ยำไส้กรอกปลา,140,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/51fish.jpg,17,ยำๆ,0,8
+Thai Herb Spicy Salad : ยำสมุนไพร,80,,17,ยำๆ,0,8
+"Banana Flower Spicy Salad with Shrimp/Frog : ยำหัวปลีกุ้งสด, กบ",130,,17,ยำๆ,0,8
+Vermicelli Mixed Spicy Salad : ยำวุ้นเส้นรวมมิตร,150,,17,ยำๆ,0,8
+Vermicelli Spicy Salad with Shrimp : ยำวุ้นเส้นกุ้งสด,130,,17,ยำๆ,0,8
+Grilled Eggplants Spicy Salad : ยำมะเขือยาว,130,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/52yum.jpg,17,ยำๆ,0,8
+Kale Spicy Salad with Shrimp : ยำคะน้ากุ้งสด,130,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/53yum.jpg,17,ยำๆ,0,8
+Water Mimosa Spicy Salad with Shrimp : ยำผักกระเฉดกุ้งสด,130,,17,ยำๆ,0,8
+Oyster Spicy Salad : ยำหอยนางรม,130,,17,ยำๆ,0,8
+Lemongrass Spicy Salad with Shrimp : ยำตะไคร้กุ้งสด,130,,17,ยำๆ,0,8
+Lemongrass Spicy Salad with Crispy Snakehead :  ยำตะไคร้ปลาช่อนฟู,150,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/54snakehead.jpg,17,ยำๆ,0,8
+Spicy Salad with Crispy Snakehead : ยำปลาช่อนฟู,150,,17,ยำๆ,0,8
+Grilled Pork Neck : คอหมูย่าง,130,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/55pork.jpg,17,ยำๆ,0,8
+Pork Lemon : หมูมะนาว,130,,17,ยำๆ,0,8
+"Larb Pork/Chicken : ลาบหมู, ไก่",130,,17,ยำๆ,0,8
+"Larb Duck/Catfish : ลาบเป็ด, ลาบปลาดุก",130,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/56duck.jpg,17,ยำๆ,0,8
+Shrimp Salad wth Lemongrass and Mint : พล่ากุ้ง,130,,17,ยำๆ,0,8
+"Papaya Salad (Som Tum)  : ส้มตำไทย, ปู, ปลาร้า",80,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/57crab.jpg,17,ยำๆ,0,8
+Papaya Salad with Shrimp : ส้มตำกุ้งสด,90,,17,ยำๆ,0,8
+Papaya Salad with Salted Egg : ส้มตำไข่เค็ม,90,,17,ยำๆ,0,8
+Papaya Salad with Blue Crab : ส้มตำปูม้า,170,,17,ยำๆ,0,8
+Stir-Fried Chicken with Cashew Nut : ไก่ผัดเม็ดมะม่วงหิมพานต์,150,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/58chicken.jpg,18,ผัด,0,8
+Stir-Fried Fish Sausage with Cashew Nut : ไส้กรอกปลาผัดเม็ดมะม่วงหิมพานต์,150,,18,ผัด,0,8
+Stir-Fried Ham with Champignon : เห็ดแชมปิญองผัดแฮม,150,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/59mushroom.jpg,18,ผัด,0,8
+Stir-Fried Ginger with Crispy Sneakhead and Salted Egg : ปลาช่อนฟูผัดพริกขิงไข่เค็ม,150,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/60snakehead.jpg,18,ผัด,0,8
+"Stir-Fried Shrimp/Squid with Basil : กุ้ง, ปลาหมึกผัดกะเพรา",160,,18,ผัด,0,8
+"Stir-Fried Pork/Chicken/Beef with Basil : หมู, เนื้อ, ไก่ผัดกะเพรา",130,,18,ผัด,0,8
+Stir-Fried Snakehead with Celery : ปลาช่อนผัดขึ้นฉ่าย,150,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/61snakehead.jpg,18,ผัด,0,8
+Stir-Fried Seabass with Celery : ปลากะพงผัดขึ้นฉ่าย,150,,18,ผัด,0,8
+Stir-Fried Seabass Meat with Sweet and Sour Sauce : เนื้อปลากะพงผัดเปรี้ยวหวาน,160,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/62seabass.jpg,18,ผัด,0,8
+Stir-Fried Shrimp with Sweet and Sour Sauce : กุ้งผัดเปรี้ยวหวาน,160,,18,ผัด,0,8
+Stir-Fried Shrimp with Asparagus : กุ้งผัดหน่อไม้ฝรั่ง,130,,18,ผัด,0,8
+Stir-Fried Shrimp with Shiitake : กุ้งผัดเห็ดหอม,130,,18,ผัด,0,8
+Stir-Fried Shrimp with Coconut Shoot : กุ้งผัดยอดมะพร้าว,130,,18,ผัด,0,8
+Stir-Fried Pig Stomach with Pickled Cabbage : กระเพาะหมูผัดเกี๊ยมไฉ่,150,,18,ผัด,0,8
+Stir-Fried Frog with Climbing Wattle : กบผัดชะอม,150,,18,ผัด,0,8
+Stir-Fried Vermicelli with Shrimp Eggs : ผัดวุ้นเส้นใส่ไข่กุ้ง,130,,18,ผัด,0,8
+Stir-Fried Broccoli with Shrimp : บร็อคโคลี่ผัดกุ้ง,130,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/63broccoli.jpg,18,ผัด,0,8
+"Stir-Fried Kale with Crispy Pork/Shrimp : คะน้าผัดหมูกรอบ, กุ้ง",130,,18,ผัด,0,8
+Stir-Fried Kale with Anchovy: คะน้าผัดปลาเค็ม,130,,18,ผัด,0,8
+Sitr-Fried Kale with Oyster Sauce : คะน้าผัดน้ำมันหอย,90,,18,ผัด,0,8
+"Stir-Fried Mixed Vegetables with Crispy Pork/Shrimp : ผัดผักรวมมิตรหมูกรอบ, กุ้ง",130,,18,ผัด,0,8
+Stir-Fried Mixed Vegetables in Oyster Sauce : ผัดผักรวมมิตร,90,,18,ผัด,0,8
+Stir-Fried Chayote with Oyster Sauce : ผัดยอดฟักแม้ว,90,,18,ผัด,0,8
+Stir-Fried Water Mimosa : กระเฉดไฟแดง,90,,18,ผัด,0,8
+Stir-Fried Water Spinach : ผักบุ้งไฟแดง,90,,18,ผัด,0,8
+Stir-Fried Chinese Cabbage with Fish Sauce : ผักกาดขาวผัดน้ำปลา,90,,18,ผัด,0,8
+Stir-Fried Cabbage with Fish Sauce : กะหล่ำปลีผัดน้ำปลา,90,,18,ผัด,0,8
+Stir-Fried Beansprout with Tofu and Minced Pork : ผัดถั่วงอกเต้าหู้หมูสับ,130,,18,ผัด,0,8
+Spicy Stir-Fried Preserved Eggs : ไข่เยี่ยวม้าผัดขี้เมา,130,,18,ผัด,0,8
+Spicy Stir-Fried Coconut Shoot with Shrimp : ยอดมะพร้าวผัดขี้เมากุ้ง,130,,18,ผัด,0,8
+"Thai Omelete with Oyster/Crab Meat/Minced Shrimp : ไข่เจียวหอยนางรม, ปู, กุ้งสับ",90,,18,ผัด,0,8
+Thai Omelete with Minced Pork : ไข่เจียวหมูสับ,70,,18,ผัด,0,8
+Thai Omelete : ไข่เจียวธรรมดา,50,,18,ผัด,0,8
+American Fried Rice : ข้าวผัดอเมริกัน,110,,19,อาหารจานเดียว,0,8
+"Fried Rice with Shrimp/Crab/Squid : ข้าวผัดกุ้ง, ปู, ปลาหมึก",90,,19,อาหารจานเดียว,0,8
+"Fried Rice with Pork/Chicken : ข้าวผัดหมู, ไก่",80,,19,อาหารจานเดียว,0,8
+Fried Rice Mixed (Choice of Meat) : ข้าวผัดรวมมิตร,110,,19,อาหารจานเดียว,0,8
+"Spicy Stir-Fried Shrimp/Squid on Rice : ข้าวราดกะเพรากุ้ง, ปลาหมึก",90,,19,อาหารจานเดียว,0,8
+"Spicy Stir-Fried Pork/Chicken/Beef on Rice : ข้าวราดกะเพราหมู, เนื้อ, ไก่",80,,19,อาหารจานเดียว,0,8
+Fried Rice with Shrimp Paste Sauce with Crispy Fried Fish and Sweet Pork : ข้าวผัดน้ำพริกลงเรือ,80,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/64rice.jpg,19,อาหารจานเดียว,0,8
+Shrimp Paste Fried Rice : ข้าวคลุกกะปิ,90,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/65rice.jpg,19,อาหารจานเดียว,0,8
+Baked Rice with Chinese Sausage : ข้าวอบกุนเชียง,110,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/66rice.jpg,19,อาหารจานเดียว,0,8
+Baked Rice with Pineapple : ข้าวอบสับปะรด,110,,19,อาหารจานเดียว,0,8
+"Green Curry Fried Rice with Pork/Chicken/Beef : ข้าวผัดแกงเขียวหวานหมู, เนื้อ, ไก่",80,,19,อาหารจานเดียว,0,8
+Green Curry Fried Rice with Sun-Dried Beef : ข้าวผัดแกงเขียวหวานเนื้อแดดเดียว,90,,19,อาหารจานเดียว,0,8
+Green Curry Fried Rice with Sun-Dried Pork : ข้าวผัดเขียวหวานหมูแดดเดียว,90,,19,อาหารจานเดียว,0,8
+Anchovy Fried Rice : ข้าวผัดปลาเค็ม,80,,19,อาหารจานเดียว,0,8
+Fried Rice with Chinese Sausage : ข้าวผัดกุนเชียง,80,,19,อาหารจานเดียว,0,8
+Vermicelli Pad Thai Wrapped with Omelete : ผัดไทยวุ้นเส้นห่อไข่กุ้งสด,90,,19,อาหารจานเดียว,0,8
+"Seafood Suki : สุกี้ทะเล (แห้ง, น้ำ)",110,,19,อาหารจานเดียว,0,8
+"Pork/Chicken Suki : สุกี้หมู, ไก่ (แห้ง, น้ำ)",80,,19,อาหารจานเดียว,0,8
+"Stir-Fried Wide Rice Noodle in Gravy with Shrimp/Squid : ราดหน้ากุ้ง, ปลาหมึก",90,,19,อาหารจานเดียว,0,8
+"Stir-Fried Wide Rice Noodle in Gravy with Pork/Chicken/Beef : ราดหน้าหมู, ไก่",80,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/67noodle.jpg,19,อาหารจานเดียว,0,8
+"Fried Noodle in Soy Sauce with Pork/Chicken : ผัดซีอิ้วหมู, ไก่",80,,19,อาหารจานเดียว,0,8
+"Spicy Stir-Fried Wide Rice Noodle with Pork/Chicken : เส้นใหญ่ผัดขี้เมาหมู, ไก่",80,,19,อาหารจานเดียว,0,8
+"Spicy Stir-Fried Wide Rice Noodle with Shrimp/Squid : เส้นใหญ่ผัดขี้เมากุ้ง, ปลาหมึก",90,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/maela/68noodle.jpg,19,อาหารจานเดียว,0,8
