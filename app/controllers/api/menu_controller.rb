@@ -5,17 +5,23 @@ module Api
 		before_action :validate_menu!, only: [:options]
 
 		def index
-			menu_by_category = current_restaurant.foods.select(:id, :name, 
-				:price, :image_url, :rec, :cat).group_by(&:cat).to_json
-			menu_by_category = JSON.parse(menu_by_category)
+			menu_by_category = current_restaurant.foods.select('foods.*', 
+				'COUNT(food_options.id) AS option_count').
+				joins("LEFT JOIN food_options ON foods.id = food_options.food_id").
+				group('foods.id').group_by(&:cat)
 			response = []
 			menu_by_category.each do |category, menus|
 				menu_obj = menus.map do |menu|
-					menu['recommend'] = menu.delete('rec')
-					menu.delete('cat')
-					menu['thai_name'] = menu['name'].split(" : ")[1]
-					menu['eng_name'] = menu['name'].split(" : ")[0]
-					menu
+					m = {}
+					m['id'] = menu.id
+					m['name'] = menu.name
+					m['price'] = menu.price.to_s
+					m['image_url'] = menu.image_url
+					m['recommend'] = menu.rec
+					m['thai_name'] = menu.name.split(" : ")[1]
+					m['eng_name'] = menu.name.split(" : ")[0]
+					m['has_option'] = (menu.option_count > 0)
+					m
 				end
 				response_obj = {
 					category_name: category,
