@@ -108,16 +108,28 @@
       // Restrict the search to Thailand
       componentRestrictions: {country: 'th'}
     };
-    autocomplete = new google.maps.places.Autocomplete(addressInput, options);
-    autocomplete.addListener('place_changed', function(){
-      currentPlace = autocomplete.getPlace();
-      console.log(currentPlace);
-      currentPosition = {
-        lat: currentPlace.geometry.location.lat(),
-        lng: currentPlace.geometry.location.lng()
-      };
-      modalMap.setCenter(currentPosition);
-      setMarkerToPosition();
+    var searchBox = new google.maps.places.SearchBox(addressInput, options);
+    searchBox.addListener('places_changed', function() {
+      var places = searchBox.getPlaces();
+      var service = new google.maps.places.PlacesService(modalMap);
+      service.getDetails({
+        placeId: places[0].place_id
+      }, function(place, status) {
+        if (status === google.maps.places.PlacesServiceStatus.OK) {
+          currentPlace = place
+          console.log(currentPlace);
+          if (currentPlace.address_components == null) {
+            queryPlace(currentPlace.name);
+          } else {
+            currentPosition = {
+              lat: currentPlace.geometry.location.lat(),
+              lng: currentPlace.geometry.location.lng()
+            };
+            modalMap.setCenter(currentPosition);
+            setMarkerToPosition();  
+          }
+        }
+      });
     });
   }
 
@@ -246,13 +258,55 @@
     return false
   }
 
+  function queryPlace(name) {
+    addressInput = document.getElementById('modalLocationSearch');
+    var searchBox = new google.maps.places.SearchBox(addressInput);
+    searchBox.addListener('places_changed', function() {
+      var places = searchBox.getPlaces();
+      console.log('PLACES');
+      console.log(places);
+    });
+
+
+    // service = new google.maps.places.PlacesService(modalMap);
+    // service.textSearch({ query: name }, function(results, status){
+    //   console.log(results);
+    //   console.log(status);
+    //   if (status == 'OK') {
+    //     if (results[0]) {
+    //       address = {};
+    //       setAddressFromComponents(results[0].address_components);
+    //       formatted_address = results[0].formatted_address;
+    //       if (results[1].formatted_address.length > results[0].formatted_address.length) {
+    //         formatted_address = results[1].formatted_address;
+    //       }
+    //       addressInput.value = formatted_address;
+    //     } else {
+    //       addressInput.value = " ";
+    //     }
+    //     addressInput.className = addressInput.className.replace(" loadinggif", "");
+    //     waiting = false;
+    //   } else if(status == google.maps.PlacesServiceStatus.OVER_QUERY_LIMIT){
+    //     console.log('Geocoder failed due to: ' + status);
+    //     if (!waiting) {
+    //       addressInput.value = " ";
+    //       addressInput.className += " loadinggif";
+    //       waiting = true;
+    //       setTimeout(function() {
+    //         geocodeLatLng();
+    //       }, 1000);
+    //     }
+    //   }
+    // });
+  }
+
   function geocodeLatLng() {
     if (currentPlace) {
       address = {};
       setAddressFromComponents(currentPlace.address_components);
       address['name'] = currentPlace.name;
       console.log(address);
-      addressInput.value = currentPlace.name + currentPlace.formatted_address;
+      addressInput.value = currentPlace.name + ' ' + currentPlace.formatted_address;
     } else {
       var geocoder = new google.maps.Geocoder;
       geocoder.geocode({'location': currentPosition}, function(results, status) {
