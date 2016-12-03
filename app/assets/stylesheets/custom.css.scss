@@ -6,8 +6,12 @@
 /* mixins, variables, etc.. */
 body {
   font-family: 'Open Sans';
-}
 
+}
+.filtergray {
+    filter: grayscale(88%);
+  -webkit-filter: grayscale(88%);
+}
 $gray-medium-light: #eaeaea;
 $red-main: #ef5a50;
 $red-hilight: #ffc1c1;
@@ -770,6 +774,12 @@ a.return-to-menu, a.edit-info {
   margin-bottom: 10px;
 }
 
+.menu-img-rest {
+  height: 160px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
 .payment-bar {
   padding-left: 30px;
   padding-right: 30px;
@@ -932,8 +942,8 @@ hr.style-one {
   height: 88px;
   overflow: hidden;
   position: absolute;
-  top: -3px;
-  right: -3px;
+  // top: -3px;
+  right: 20px;
 }
 
 .ribbon-green {
@@ -975,4 +985,9 @@ hr.style-one {
 }
 .ribbon-green:after {
   right: 0;
+}
+
+.width400 {
+  max-width: 400px;
+  margin: auto;
 }
