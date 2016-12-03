@@ -24,6 +24,9 @@ module Api
 				error400("Address with id #{params[:address_id]} does not exists.") and return
 			end
 
+			unless in_delivery_time
+				error400("Sorry, our delivery hours is at 11:00 AM to 9:00 PM") and return
+			end
 			if restaurant.can_delivery_to_address?(address.latitude,address.longitude)
 				cart = {}
 				params[:items].each_with_index do |item, index|
@@ -68,6 +71,15 @@ module Api
 			else
 				error400("The address is not in delivery region.") and return
 			end
+		end
+
+		private
+
+		def in_delivery_time
+			open_time = Time.parse "11:00 am"
+			close_time = Time.parse "9:00 pm"
+			current_time = Time.now
+			(current_time > open_time and current_time < close_time)
 		end
 	end
 end
