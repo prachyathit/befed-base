@@ -76,9 +76,9 @@ module Api
 		private
 
 		def in_delivery_time
-			open_time = Time.parse "11:00 am"
-			close_time = Time.parse "9:00 pm"
-			current_time = Time.now
+			open_time = Time.zone.parse "11:00 am"
+			close_time = Time.zone.parse "9:00 pm"
+			current_time = Time.zone.now
 			(current_time > open_time and current_time < close_time)
 		end
 	end
