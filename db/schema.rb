@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161126025957) do
+ActiveRecord::Schema.define(version: 20161204073008) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "name"
@@ -104,10 +104,13 @@ ActiveRecord::Schema.define(version: 20161126025957) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "payment_type", default: 0
+    t.integer  "payment_type",        default: 0
     t.integer  "rest_id"
     t.string   "note"
     t.integer  "delivery_fee"
+    t.integer  "service_fee_percent", default: 0
+    t.float    "service_fee",         default: 0.0
+    t.float    "sub_total"
   end
 
   create_table "payments", force: :cascade do |t|
@@ -136,18 +139,19 @@ ActiveRecord::Schema.define(version: 20161126025957) do
     t.string   "name"
     t.text     "desc"
     t.string   "image_url"
-    t.datetime "created_at",                              null: false
-    t.datetime "updated_at",                              null: false
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
     t.text     "address"
     t.float    "latitude"
     t.float    "longitude"
-    t.integer  "min_order",  default: 0
+    t.integer  "min_order",   default: 0
     t.string   "email"
     t.integer  "dtime"
-    t.boolean  "soon",       default: false
+    t.boolean  "soon",        default: false
     t.integer  "cday"
-    t.string   "dhour",      default: "11:00AM - 9:00PM"
-    t.boolean  "promo",      default: false
+    t.string   "dhour",       default: "11:00AM - 9:00PM"
+    t.boolean  "promo",       default: false
+    t.integer  "service_fee", default: 0
   end
 
   create_table "settings", force: :cascade do |t|
