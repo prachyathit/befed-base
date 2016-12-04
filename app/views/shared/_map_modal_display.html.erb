@@ -248,13 +248,21 @@
         // console.log('mouse Up');
         markerDragging = false;
       });
-      marker.addListener('mouseout', function(event){
-        
+      modalMap.addListener('mousemove', function(event){
         if (markerDragging) {
-          // console.log('mouse Out');
-          marker.setPosition(event.latLng);
+          var pos = {
+            lat: event.latLng.lat(),
+            lng: event.latLng.lng()
+          }
+          marker.setPosition(pos);
         }
       });
+      // marker.addListener('mouseout', function(event){
+      //   if (markerDragging) {
+      //     // console.log('mouse Out');
+      //     marker.setPosition(event.latLng);
+      //   }
+      // });
       marker.addListener('dragend', function(event) {
         // console.log('drag END');
         currentPlace = null;
