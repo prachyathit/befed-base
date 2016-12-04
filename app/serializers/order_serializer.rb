@@ -1,5 +1,7 @@
 class OrderSerializer < ActiveModel::Serializer
-	attributes :id, :total, :user_id, :restaurant_name, :created_at, :note
+	attributes :id, :sub_total, :delivery_fee, :service_fee, 
+    :service_fee_percent, :total, :user_id, :restaurant_name, 
+    :created_at, :note
 	attribute :rest_id, key: :restaurant_id
 
   def restaurant_name

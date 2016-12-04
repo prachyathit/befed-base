@@ -16,8 +16,16 @@ class Order < ActiveRecord::Base
     order = self.create! do |o|
       o.user = params[:user]
       o.rest_id = params[:rest_id]
+      
+      o.sub_total = calculate_item_total(params[:cart])
+      
+      restaurant = Restaurant.where(id: o.rest_id).first
+      o.service_fee_percent = restaurant.service_fee
+      o.service_fee = o.service_fee_percent * o.sub_total / 100
+
       o.delivery_fee = params[:user].delivery_fee
-      o.total = calculate_order_total(params[:cart], params[:user].delivery_fee)
+
+      o.total = o.sub_total + o.service_fee + o.delivery_fee
       if params[:payment_type] == Payment::CREDIT_CARD
         o.payment_type = 1
       else
@@ -88,8 +96,8 @@ class Order < ActiveRecord::Base
   private
   # Probably need to store some details about this order such as
   # food options, special instructions, and delivery instructions
-  def self.calculate_order_total(cart, delivery_fee)
-    total = 0
+  def self.calculate_item_total(cart)
+    subtotal = 0
     cart.deep_symbolize_keys!
     cart.each do |k, v|
       food = Food.find_by(id: v[:food_id])
@@ -114,9 +122,9 @@ class Order < ActiveRecord::Base
           end
         end
       end
-      total += food_price * v[:quantity].to_i
+      subtotal += food_price * v[:quantity].to_i
     end
-    total + delivery_fee
+    subtotal
   end
   
 end

@@ -1,6 +1,6 @@
 class RestaurantSerializer < ActiveModel::Serializer
 	attributes :id, :name, :desc, :image_url, :min_order, :address, 
-		:latitude, :longitude, :delivery_hours, :close_today
+		:latitude, :longitude, :delivery_hours, :close_today, :service_fee
 	attribute :dtime, key: :delivery_time
 	attribute :soon, key: :comming_soon
 
