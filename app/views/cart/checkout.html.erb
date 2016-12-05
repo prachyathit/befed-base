@@ -56,7 +56,7 @@
             </div>
             <div class="panel-body" style="padding-left: 0px; padding-right: 0px;">
               <% cumulative_quantity = 0 %>
-              <% total = 0 %>
+              <% sub_total = 0 %>
               <% @cart.each do |id, order_info| %>
                 <% food = Food.find(order_info["food_id"]) %>
                 <% quantity = order_info["quantity"].to_i %>
@@ -109,7 +109,7 @@
                 </div>
 
                 <% cumulative_quantity += quantity %>
-                <% total += quantity * @food_price %>
+                <% sub_total += quantity * @food_price %>
               <% end %>
               
               <div class="price-summary"  style="display: table;padding-top: 10px;border-top: 1px solid #dddddd;">
@@ -117,7 +117,7 @@
                   Item(<%= cumulative_quantity %>)
                 </div>
                 <div class="col-xs-6">
-                  <%= total %> &#xe3f;
+                  <%= sub_total %> &#xe3f;
                 </div>
                 <div class="col-xs-6">
                   Delivery fee
@@ -125,13 +125,19 @@
                 <div class="col-xs-6">
                   <%= @delivery_fee %> &#xe3f;
                 </div>
-                <% unless @delivery_fee == 0 %>
+                <% if @delivery_fee == 0 %>
                   <div class="col-xs-12 warning-msg">
                     Enjoy FREE delivery on your first order!
                   </div>
                 <% end %>
+                <div class="col-xs-6">
+                  Service fee (<%= @restaurant.service_fee %>%)
+                </div>
+                <div class="col-xs-6">
+                  <%= service_fee = (@restaurant.service_fee.to_f * sub_total.to_f / 100).ceil %> &#xe3f;
+                </div>
                 <div class="col-xs-12">
-                  Order Total <%= total + @delivery_fee %> &#xe3f;
+                  Order Total <%= sub_total + @delivery_fee + service_fee %> &#xe3f;
                 </div>
               </div>
             </div>
