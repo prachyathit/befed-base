@@ -21,7 +21,7 @@ class Order < ActiveRecord::Base
       
       restaurant = Restaurant.where(id: o.rest_id).first
       o.service_fee_percent = restaurant.service_fee
-      o.service_fee = o.service_fee_percent * o.sub_total / 100
+      o.service_fee = (o.service_fee_percent * o.sub_total / 100).ceil
 
       o.delivery_fee = params[:user].delivery_fee
 
