@@ -51,16 +51,23 @@
       initDisplayMap();
     }
 
-    if (currentPosition == defaultLocation) {
-      getCurrentLocation().then(function(position){
-        currentPosition = position;
+    $('#map-modal').on('shown.bs.modal', function() {
+      if (currentPosition == defaultLocation) {
+        getCurrentLocation().then(function(position){
+          currentPosition = position;
 
-        if ("<%= @address.errors.any? %>" == 'false' &&
-          (!urlContainParam('latitude') || !urlContainParam('longitude')) && "<%= auto_display %>" == 'true') {
-          displayModal();
-          setMarkerToPosition();
-        }
-      });
+          if ("<%= @address.errors.any? %>" == 'false' &&
+            (!urlContainParam('latitude') || !urlContainParam('longitude')) && "<%= auto_display %>" == 'true') {
+            displayModal();
+            setMarkerToPosition();
+          }
+        });
+      }
+    });
+    if ("<%= @address.errors.any? %>" == 'false' &&
+      (!urlContainParam('latitude') || !urlContainParam('longitude')) && "<%= auto_display %>" == 'true') {
+      displayModal();
+      setMarkerToPosition();
     }
   }
 

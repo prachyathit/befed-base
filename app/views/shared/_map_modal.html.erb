@@ -52,13 +52,15 @@
 
   function initialize() {
     initModalMap();
-    if (currentPosition == defaultLocation) {
-      getCurrentLocation().then(function(position){
-        currentPosition = position;
-        setMarkerToPosition();
-        modalMap.setCenter(currentPosition);
-      });
-    }
+    $('#map-modal').on('shown.bs.modal', function() {
+      if (currentPosition == defaultLocation) {
+        getCurrentLocation().then(function(position){
+          currentPosition = position;
+          setMarkerToPosition();
+          modalMap.setCenter(currentPosition);
+        });
+      }
+    });
   }
 
   // Note: This example requires that you consent to location sharing when
