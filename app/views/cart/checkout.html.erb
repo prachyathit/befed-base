@@ -430,7 +430,8 @@
         center: position,
         zoom: 14,
         streetViewControl: false,
-        draggable: false
+        draggable: false,
+        scrollwheel: false
     });
     map.addListener('resize', function(){});
     var marker = new google.maps.Marker({
@@ -448,7 +449,8 @@
           center: position,
           zoom: 14,
           streetViewControl: false,
-          draggable: false
+          draggable: false,
+          scrollwheel: false
       });
       map.addListener('resize', function(){});
       var marker = new google.maps.Marker({
