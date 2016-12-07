@@ -36,3 +36,13 @@
   background-position-y: center;
   background-repeat: no-repeat;
 }
+
+.checkout-order-summary-line {
+  padding-bottom: 10px; 
+  padding-left: 0px; 
+  padding-right: 0px;
+}
+
+.align-right {
+  text-align: right;
+}

@@ -185,9 +185,12 @@
                 <% @food_price = 0 %>
                 <% @food_price += food.price %>
 
-                <div class="order-items" style="display: table; padding-bottom: 10px;">
-                  <div class="col-xs-7">
+                <div class="order-items container-fluid checkout-order-summary-line">
+                  <div class="col-xs-10">
                     <%= food.name %>
+                    <div class="redmain">
+                      <%= @food_price %> &#xe3f;
+                    </div>
 
                     <% unless options.nil? %>
                       <% options.each do |option| %>
@@ -218,13 +221,9 @@
                           <% end %>
                         <% end %>
                       <% end %>
-
                   </div>
-                  <div class="col-xs-2">
+                  <div class="col-xs-2 redmain">
                     x<%= quantity %>
-                  </div>
-                  <div class="col-xs-3">
-                    <%= @food_price %> &#xe3f;
                   </div>
                 </div>
 
@@ -232,18 +231,26 @@
                 <% sub_total += quantity * @food_price %>
               <% end %>
               
-              <div class="price-summary"  style="display: table;padding-top: 10px;border-top: 1px solid #dddddd;">
+              <div class="price-summary container-fluid checkout-order-summary-line"  style="border-top: 1px solid #dddddd;">
                 <div class="col-xs-6">
-                  Item(<%= cumulative_quantity %>)
+                  <p>
+                    Item(<%= cumulative_quantity %>)
+                  </p>
+                </div>
+                <div class="col-xs-6 align-right">
+                  <p>
+                    <%= sub_total %> &#xe3f;
+                  </p>
                 </div>
                 <div class="col-xs-6">
-                  <%= sub_total %> &#xe3f;
+                  <p>
+                    Delivery fee
+                  </p>
                 </div>
-                <div class="col-xs-6">
-                  Delivery fee
-                </div>
-                <div class="col-xs-6">
-                  <%= @delivery_fee %> &#xe3f;
+                <div class="col-xs-6 align-right">
+                  <p>
+                    <%= @delivery_fee %> &#xe3f;
+                  </p>
                 </div>
                 <% if @delivery_fee == 0 %>
                   <div class="col-xs-12 warning-msg">
@@ -251,13 +258,24 @@
                   </div>
                 <% end %>
                 <div class="col-xs-6">
-                  Service fee (<%= @restaurant.service_fee %>%)
+                  <p>
+                    Service fee (<%= @restaurant.service_fee %>%)
+                  </p>
+                </div>
+                <div class="col-xs-6 align-right">
+                  <p>
+                    <%= service_fee = (@restaurant.service_fee.to_f * sub_total.to_f / 100).ceil %> &#xe3f;
+                  </p>
                 </div>
                 <div class="col-xs-6">
-                  <%= service_fee = (@restaurant.service_fee.to_f * sub_total.to_f / 100).ceil %> &#xe3f;
+                  <h4><b>
+                    Order Total 
+                  </b></h4>
                 </div>
-                <div class="col-xs-12">
-                  Order Total <%= sub_total + @delivery_fee + service_fee %> &#xe3f;
+                <div class="col-xs-6 align-right redmain">
+                  <h4><b>
+                    <%= sub_total + @delivery_fee + service_fee %> &#xe3f;
+                  </b></h4>
                 </div>
               </div>
             </div>
