@@ -42,7 +42,7 @@ module Api
 		end
 
 		def options
-			options = current_menu.options
+			options = current_menu.options.order(:id)
 			render json: options.includes(:option_values)
 		end
 
