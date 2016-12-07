@@ -310,9 +310,10 @@
     });
 
     $("#orderSubmitBtn").click(function(e) {
-      $("#orderSubmitBtn").button('loading');
+      
       switch(paymentType){
         case 'cash':
+          $("#orderSubmitBtn").button('loading');
           $("#cash-payment").submit();
           break;
         case 'credit_card':
@@ -337,6 +338,7 @@
   function setUpOmise(){
     Omise.setPublicKey('<%= ENV['omise_public_key']%>');
     if (validateOmiseFields()) {
+      $("#orderSubmitBtn").button('loading');
       // TODO make the following code work
       // TODO add display error message when response.object == "error"
       // some how it just didn't get the correct value yet
@@ -368,6 +370,7 @@
           $('#paymentError').removeClass('hide');
           $('#paymentError').html(response.message);
           // Re-enable the submit button.
+          $("#orderSubmitBtn").button('reset');
           button.find("input[type=button]").prop("disabled", false);
         } else {
           $('#paymentError').addClass('hide');
