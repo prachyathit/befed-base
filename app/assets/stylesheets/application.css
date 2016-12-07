@@ -46,3 +46,7 @@
 .align-right {
   text-align: right;
 }
+
+.food-modal {
+  padding: 15px;
+}
