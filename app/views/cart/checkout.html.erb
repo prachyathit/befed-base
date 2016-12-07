@@ -38,7 +38,7 @@
               <b>Direction Details:</b> <%= @address.instruction %>
             </div>
             
-            <div class="col-xs-12 warning-msg">
+            <div class="col-xs-12 redmain">
               <p>*If this is your first order, we'll call you to verify the phone number. Your order will not be processed until your phone number has been verified.</p>
             </div>
           </div>
@@ -249,12 +249,19 @@
                 </div>
                 <div class="col-xs-6 align-right">
                   <p>
+                    <% if @delivery_fee == 0 %>
+                      <span style="text-decoration: line-through;">
+                        <%= Setting.get(:delivery_fee) %> &#xe3f;
+                      </span>
+                    <% end %>
                     <%= @delivery_fee %> &#xe3f;
                   </p>
                 </div>
                 <% if @delivery_fee == 0 %>
-                  <div class="col-xs-12 warning-msg">
-                    Enjoy FREE delivery on your first order!
+                  <div class="col-xs-12 redmain">
+                    <p>
+                      Enjoy FREE delivery on your first order!
+                    </p>
                   </div>
                 <% end %>
                 <div class="col-xs-6">
