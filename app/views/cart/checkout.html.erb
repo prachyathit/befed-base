@@ -2,17 +2,16 @@
 <div class="container">
   <div class="row">
     <div class="checkout-summary" style="padding-top:20px; 10px;">
-      <!-- DELIVERY ADDRESS -->
-      <!-- BEGIN ADDRESS ERROR -->
-      <% unless @address_valid %>
-        <div class="col-xs-12 col-sm-7">
+      
+      <div class="col-xs-12 col-sm-7">
+        <!-- DELIVERY ADDRESS -->
+        <!-- BEGIN ADDRESS ERROR -->
+        <% unless @address_valid %>
           <div class="alert alert-danger alert-dismissible" id="addressError" role="alert">
             This address is not within the service area, Please change the address.
           </div>
-        </div>
-      <% end %>
-      <!-- END ADDRESS ERROR -->
-      <div class="col-xs-12 col-sm-7">
+        <% end %>
+        <!-- END ADDRESS ERROR -->
         <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="panel-title pull-left" style="padding-top: 7.5px;"> Delivery Address
@@ -28,23 +27,144 @@
             <div class="clearfix"></div>
           </div>
           <div class="panel-body">
-            <div  class="col-xs-6 col-sm-6">
+            <div class="col-xs-12 address_thumb">
+              <div id="addressMap" class="thumb-map" style="height:150px;">
+              </div>
+            </div>
+            <div class="col-xs-12" style="margin-top: 10px;">
               <b>Name:</b> <%= @address.name %></br>
               <b>Address:</b></br>
               <%= @address.full_address %></br>
               <b>Direction Details:</b> <%= @address.instruction %>
             </div>
-            <div class="col-xs-6 col-sm-6 address_thumb">
-              <div id="addressMap" class="thumb-map" style="height:120px;">
-              </div>
-            </div>
-            <div class="warning-msg">
+            
+            <div class="col-xs-12 warning-msg">
               <p>*If this is your first order, we'll call you to verify the phone number. Your order will not be processed until your phone number has been verified.</p>
             </div>
           </div>
         </div>
+        <!-- END DELIVERY ADDRESS -->
+
+        <!-- PAYMENT METHOD -->
+        <!-- BEGIN PAYMENT ERROR -->
+        <div class="alert alert-danger alert-dismissible hide" id="paymentError" role="alert">
+          Cannot process payment right now, Please try again later.
+        </div>
+        <!-- END PAYMENT ERROR -->
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title pull-left" style="padding-top: 7.5px;"> Payment Method
+            </h3>
+            <div class="clearfix"></div>
+          </div>
+          <div class="panel-body">
+            <ul class="nav nav-pills" style="display: flex; justify-content: center;">
+              <li role="presentation" class="active" id="cc-payment-button">
+                <a href="javascript:;">Credit Card</a>
+              </li>
+              <li role="presentation" id="cash-on-delivery-button">
+                <a href="javascript:;">Cash</a>
+              </li>
+            </ul>
+            <div class="payment-methods">
+
+              <!-- BEGIN: CASH PAYMENT FORM -->
+              <div id="cash-on-delivery" class="hide">
+                <div class="cash-delivery-text-wrapper">
+                  Cash on delivery
+                  <%= form_tag '/checkout/complete', class: 'form-horizontal', id: 'cash-payment' do %>
+                    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                    <input type='hidden' name='payment_type' value='cash'>
+                  <% end %>
+                </div>
+              </div>
+              <!-- END: CASH PAYMENT FORM -->
+
+              <!-- BEGIN: CREDIT CARD PAYMENT FORM -->
+              <%= form_tag '/checkout/complete', class: 'form-horizontal', id: 'cc-payment' do %>
+                <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                <input type="hidden" name="token">
+                <input type='hidden' name='payment_type' value='credit_card'>
+                  <div class="form-group">
+                    <div class="col-sm-9">
+                      <h5><i class="fa fa-lock" aria-hidden="true"></i>
+                      We use SSL encryption to protect your personal information, including your credit card information.</h5>
+                    </div>
+                    <div class="col-sm-3">
+                      <img style='width: 100px', src='<%= asset_path("comodo_secure_seal_100x85_transp.png") %>'></img>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-5 control-label">We accept</label>
+                    <div class="col-sm-7">
+                      <img style='width: 200px', src='<%= asset_path("master-visa-jcb.png") %>'></img>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-5 control-label" for="card-holder-name">Name on Card *</label>
+                    <div class="col-sm-7">
+                      <input type="text" class="form-control" name="card-holder-name" id="card-holder-name" placeholder="Card Holder's Name">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-5 control-label" for="card-number">Card Number *</label>
+                    <div class="col-sm-7">
+                      <input type="text" class="form-control" name="card-number" id="card-number" placeholder="Debit/Credit Card Number">
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-sm-5 control-label" for="expiry-month">Expiration Date *</label>
+                    <div class="pad-col col-sm-7">
+                      <div class="row">
+                        <div class="col-xs-6 col-md-6">
+                          <select class="form-control" name="expiry-month" id="expiry-month">
+                            <option>Month</option>
+                            <option value="01">Jan (01)</option>
+                            <option value="02">Feb (02)</option>
+                            <option value="03">Mar (03)</option>
+                            <option value="04">Apr (04)</option>
+                            <option value="05">May (05)</option>
+                            <option value="06">June (06)</option>
+                            <option value="07">July (07)</option>
+                            <option value="08">Aug (08)</option>
+                            <option value="09">Sep (09)</option>
+                            <option value="10">Oct (10)</option>
+                            <option value="11">Nov (11)</option>
+                            <option value="12">Dec (12)</option>
+                          </select>
+                        </div>
+                        <div class="col-xs-6 col-md-6">
+                          <select class="form-control" name="expiry-year" id='expiry-year'>
+                            <option value="16">2016</option>
+                            <option value="17">2017</option>
+                            <option value="18">2018</option>
+                            <option value="19">2019</option>
+                            <option value="20">2020</option>
+                            <option value="21">2021</option>
+                            <option value="22">2022</option>
+                            <option value="23">2023</option>
+                            <option value="24">2024</option>
+                            <option value="25">2025</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="col-xs-5 control-label" for="cvv">Card CVV *</label>
+                    <div class="col-xs-5">
+                      <input type="text" class="form-control" name="cvv" id="cvv" placeholder="Security Code">
+                    </div>
+                  </div>
+              <% end %>
+              <!-- END: CREDIT CARD PAYMENT FORM -->
+            </div>
+          </div>
+        </div>
+        <!-- END PAYMENT METHOD -->
       </div>
       <!-- END DELIVERY ADDRESS -->
+      
       <!-- ORDER SUMMARY -->
       <div class="col-xs-12 col-sm-5">
         <div class="order-summary">
@@ -155,129 +275,6 @@
         </div>
       </div>
       <!-- END ORDER SUMMARY -->
-      <!-- PAYMENT METHOD -->
-      <!-- BEGIN PAYMENT ERROR -->
-      <div class="col-xs-12 col-sm-7" id="beginPaymentSection">
-        <div class="alert alert-danger alert-dismissible hide" id="paymentError" role="alert">
-          Cannot process payment right now, Please try again later.
-        </div>
-      </div>
-      <!-- END PAYMENT ERROR -->
-      <div class="col-xs-12 col-sm-7">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title pull-left" style="padding-top: 7.5px;"> Payment Method
-            </h3>
-            <div class="clearfix"></div>
-          </div>
-          <div class="panel-body">
-            <div class="payment-bar">
-              <ul class="nav nav-pills">
-                <li role="presentation" class="active" id="cc-payment-button">
-                  <a href="javascript:;">Credit Card</a>
-                </li>
-                <li role="presentation" id="cash-on-delivery-button">
-                  <a href="javascript:;">Cash</a>
-                </li>
-              </ul>
-              <div class="payment-methods">
-
-                <!-- BEGIN: CASH PAYMENT FORM -->
-                <div id="cash-on-delivery" class="hide">
-                  <div class="cash-delivery-text-wrapper">
-                    Cash on delivery
-                    <%= form_tag '/checkout/complete', class: 'form-horizontal', id: 'cash-payment' do %>
-                      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-                      <input type='hidden' name='payment_type' value='cash'>
-                    <% end %>
-                  </div>
-                </div>
-                <!-- END: CASH PAYMENT FORM -->
-
-                <!-- BEGIN: CREDIT CARD PAYMENT FORM -->
-                <%= form_tag '/checkout/complete', class: 'form-horizontal', id: 'cc-payment' do %>
-                  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
-                  <input type="hidden" name="token">
-                  <input type='hidden' name='payment_type' value='credit_card'>
-                    <div class="form-group">
-                      <div class="col-sm-9">
-                        <h5><i class="fa fa-lock" aria-hidden="true"></i>
-                        We use SSL encryption to protect your personal information, including your credit card information.</h5>
-                      </div>
-                      <div class="col-sm-3">
-                        <img style='width: 100px', src='<%= asset_path("comodo_secure_seal_100x85_transp.png") %>'></img>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="col-sm-5 control-label">We accept</label>
-                      <div class="col-sm-7">
-                        <img style='width: 200px', src='<%= asset_path("master-visa-jcb.png") %>'></img>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="col-sm-5 control-label" for="card-holder-name">Name on Card *</label>
-                      <div class="col-sm-7">
-                        <input type="text" class="form-control" name="card-holder-name" id="card-holder-name" placeholder="Card Holder's Name">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="col-sm-5 control-label" for="card-number">Card Number *</label>
-                      <div class="col-sm-7">
-                        <input type="text" class="form-control" name="card-number" id="card-number" placeholder="Debit/Credit Card Number">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="col-sm-5 control-label" for="expiry-month">Expiration Date *</label>
-                      <div class="pad-col col-sm-7">
-                        <div class="row">
-                          <div class="col-xs-6 col-md-6">
-                            <select class="form-control" name="expiry-month" id="expiry-month">
-                              <option>Month</option>
-                              <option value="01">Jan (01)</option>
-                              <option value="02">Feb (02)</option>
-                              <option value="03">Mar (03)</option>
-                              <option value="04">Apr (04)</option>
-                              <option value="05">May (05)</option>
-                              <option value="06">June (06)</option>
-                              <option value="07">July (07)</option>
-                              <option value="08">Aug (08)</option>
-                              <option value="09">Sep (09)</option>
-                              <option value="10">Oct (10)</option>
-                              <option value="11">Nov (11)</option>
-                              <option value="12">Dec (12)</option>
-                            </select>
-                          </div>
-                          <div class="col-xs-6 col-md-6">
-                            <select class="form-control" name="expiry-year" id='expiry-year'>
-                              <option value="16">2016</option>
-                              <option value="17">2017</option>
-                              <option value="18">2018</option>
-                              <option value="19">2019</option>
-                              <option value="20">2020</option>
-                              <option value="21">2021</option>
-                              <option value="22">2022</option>
-                              <option value="23">2023</option>
-                              <option value="24">2024</option>
-                              <option value="25">2025</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <label class="col-xs-5 control-label" for="cvv">Card CVV *</label>
-                      <div class="col-xs-5">
-                        <input type="text" class="form-control" name="cvv" id="cvv" placeholder="Security Code">
-                      </div>
-                    </div>
-                <% end %>
-                <!-- END: CREDIT CARD PAYMENT FORM -->
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- END PAYMENT METHOD -->
     </div>
   </div>
 </div>
@@ -389,7 +386,7 @@
       $('#paymentError').removeClass('hide');
       $('#paymentError').html("Please fill all required fields");
       $('html, body').animate({
-        scrollTop: $("#beginPaymentSection").offset().top - 70
+        scrollTop: $("#paymentError").offset().top - 70
       }, 2000);
     }
   }
