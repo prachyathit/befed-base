@@ -21,7 +21,7 @@ class AddressesController < ApplicationController
   def update
     @address.assign_attributes(address_params)
     if @address.save
-      if params[:return_url]
+      if params[:return_url].present?
         redirect_to params[:return_url]+"?address_id=#{@address.id}"
       else
         redirect_to edit_address_path(@address)
@@ -44,7 +44,7 @@ class AddressesController < ApplicationController
   def create
     @address = current_user.addresses.new(address_params)
     if @address.save
-      if params[:return_url]
+      if params[:return_url].present?
         redirect_to params[:return_url]+"?address_id=#{@address.id}"
       else
         redirect_to edit_address_path(@address)
