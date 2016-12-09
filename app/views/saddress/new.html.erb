@@ -8,15 +8,15 @@
   </div>
   <div class="center">
     <button type="button" class="showmap margin-5 btn btn-default"><strong>Enter Delivery Location</strong><br><span class="kanit thai-btn">ระบุตำแหน่งจัดส่ง</span></button>
-    <%= render partial: "shared/map_modal", 
-    locals: { 
-      button_name: "Find Restaurants",
-      return_url: root_path,
-      submit_url: restaurants_path,
-      cancel_url: root_path
-    } %>
   </div>
 </div>
+<%= render partial: "shared/map_modal", 
+  locals: { 
+    button_name: "Find Restaurants",
+    return_url: root_path,
+    submit_url: restaurants_path,
+    cancel_url: root_path
+  } %>
 
 <div class='container-fluid landing-page-pane'>
   <div class='landing-pane-bg red'>
