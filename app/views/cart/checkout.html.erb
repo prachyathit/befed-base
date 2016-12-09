@@ -33,14 +33,15 @@
             </div>
             <div class="col-xs-12" style="margin-top: 10px;">
               <b>Name:</b> <%= @address.name %></br>
-              <b>Address:</b></br>
+              <b>Address:</b>
               <%= @address.full_address %></br>
-              <b>Direction Details:</b> <%= @address.instruction %>
+              <b>Delivery Instruction: <%= @address.instruction %>
             </div>
-            
+            <% if @delivery_fee == 0 %>
             <div class="col-xs-12 redmain">
-              <p>*If this is your first order, we'll call you to verify the phone number. Your order will not be processed until your phone number has been verified.</p>
+              **Since this is your first order, we'll call you to verify your phone number. We reserve the right to cancel this order if your number can't be reached. 
             </div>
+            <% end %>
           </div>
         </div>
         <!-- END DELIVERY ADDRESS -->
@@ -242,12 +243,12 @@
                     <%= sub_total %> &#xe3f;
                   </p>
                 </div>
-                <div class="col-xs-6">
+                <div class="col-xs-6 delivery-fee">
                   <p>
                     Delivery fee
                   </p>
                 </div>
-                <div class="col-xs-6 align-right">
+                <div class="col-xs-6 delivery-fee align-right">
                   <p>
                     <% if @delivery_fee == 0 %>
                       <span style="text-decoration: line-through;">
@@ -264,12 +265,12 @@
                     </p>
                   </div>
                 <% end %>
-                <div class="col-xs-6">
+                <div class="col-xs-6 delivery-fee">
                   <p>
                     Service fee (<%= @restaurant.service_fee %>%)
                   </p>
                 </div>
-                <div class="col-xs-6 align-right">
+                <div class="col-xs-6 delivery-fee align-right">
                   <p>
                     <%= service_fee = (@restaurant.service_fee.to_f * sub_total.to_f / 100).ceil %> &#xe3f;
                   </p>

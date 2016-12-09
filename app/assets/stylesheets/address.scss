@@ -1,12 +1,12 @@
 .address-thumb {
   .thumb-map {
-    height: 120px;
+    height: 140px;
   }
 
   
   
   .panel {
-    height: 250px;
+    height: 280px;
 
     &:hover {
       border: 1px solid #CCCCCC;
@@ -20,7 +20,7 @@
 
     $font-size: 14px;
     $line-height: 1.4;
-    $lines-to-show: 3;
+    $lines-to-show: 4;
 
     .full-address {
       display: block; /* Fallback for non-webkit */

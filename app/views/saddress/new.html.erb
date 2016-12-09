@@ -7,7 +7,7 @@
     <span class="kanit jumbothai">สั่งอาหารเดลิเวอรี่ แจ้งวัฒนะ</span>
   </div>
   <div class="center">
-    <button type="button" class="showmap margin-5 btn btn-default"><strong>Enter Location</strong><br><span class="kanit thai-btn">ใส่ที่อยู่</span></button>
+    <button type="button" class="showmap margin-5 btn btn-default"><strong>Enter Delivery Location</strong><br><span class="kanit thai-btn">ระบุตำแหน่งจัดส่ง</span></button>
     <%= render partial: "shared/map_modal", 
     locals: { 
       button_name: "Find Restaurants",
@@ -20,19 +20,49 @@
 
 <div class='container-fluid landing-page-pane'>
   <div class='landing-pane-bg red'>
-    <div class='landing-title'>1. Enter Location</div>
-    <img class='landing-image-row' style='max-height: 500px;' src='<%= asset_path("locate.jpg") %>'></img>
+    <div class='landing-title'>Order in 3 easy steps</div>
+    <div class='row'>
+      <div class='col-xs-4'>
+        <div class= 'landing-subtitle'>1. Enter Delivery Location</div>     
+      </div>
+      <div class='col-xs-4'>
+        <div class='landing-subtitle'>2. Select Menu</div>
+      </div>
+      <div class='col-xs-4'>
+        <div class='landing-subtitle'>3. Review & Pay by Cash/Credit Card</div>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-xs-4'>
+        <img class='landing-image-row' style='max-height: 500px;' src='<%= asset_path("locate.jpg") %>'></img>
+      </div>
+      <div class='col-xs-4'>
+        <img class='landing-image-row' style='max-height: 500px;' src='<%= asset_path("order.jpg") %>'></img>
+      </div>
+      <div class='col-xs-4'>
+        <img class='landing-image-row' style='max-height: 500px;' src='<%= asset_path("order_summary_2.jpg") %>'></img>
+      </div>
+    </div>
   </div>
   <div class='landing-pane theme-color'>
-    <div class='landing-title'>2. Select Menu</div>
-    <img class='landing-image-row' style='max-height: 500px;' src='<%= asset_path("order.jpg") %>'></img>
-  </div>
-  <div class='landing-pane-bg gray-background'>
-    <div class='landing-title'>3. Review <span class="theme-color">&</span> Pay</div>
-    <img class='landing-image-row' style='max-height: 500px;' src='<%= asset_path("order_summary_2.jpg") %>'></img>
-  </div>
-  <div class='landing-pane feature theme-color'>
     <div class='landing-title'>Deliver from</div>
-    <img class='landing-image-row' style='max-height: 300px;' src='<%= asset_path("salad_factory_logo.jpg") %>'></img>
+    <div class="col-lg-3 col-md-4 col-xs-6">
+        <img class="img-responsive thumbnail" src='<%= asset_path("logo_salad.png") %>'></img>
+    </div>
+    <div class="col-lg-3 col-md-4 col-xs-6">
+      <img class="img-responsive thumbnail" src='<%= asset_path("logo_kejkaew.png") %>'></img>
+    </div>
+    <div class="col-lg-3 col-md-4 col-xs-6">
+      <img class="img-responsive thumbnail" src='<%= asset_path("logo_alice.jpg") %>'></img>
+    </div>
+    <div class="col-lg-3 col-md-4 col-xs-6">
+      <img class="img-responsive thumbnail" src='<%= asset_path("logo_karmoo.png") %>'></img>
+    </div>
+    <div class="col-lg-3 col-md-4 col-xs-6">
+      <img class="img-responsive thumbnail" src='<%= asset_path("logo_pama.png") %>'></img>
+    </div>
+    <div class="col-lg-3 col-md-4 col-xs-6">
+      <img class="img-responsive thumbnail" src='<%= asset_path("logo_maela.jpg") %>'></img>
+    </div>
   </div>
 </div>
