@@ -128,7 +128,7 @@
               lng: currentPlace.geometry.location.lng()
             };
             modalMap.setCenter(currentPosition);
-            setMarkerToPosition();  
+            setMarkerToPosition();
           }
         }
       });
@@ -320,7 +320,13 @@
       setAddressFromComponents(currentPlace.address_components);
       address['name'] = currentPlace.name;
       console.log(address);
-      addressInput.value = currentPlace.name + ' ' + currentPlace.formatted_address;
+      var full_address = currentPlace.formatted_address;
+      var place_name = currentPlace.name;
+      if (full_address.startsWith(place_name)) {
+        addressInput.value = full_address
+      } else {
+        addressInput.value = place_name + ' ' + full_address;
+      }
     } else {
       var geocoder = new google.maps.Geocoder;
       geocoder.geocode({'location': currentPosition}, function(results, status) {
