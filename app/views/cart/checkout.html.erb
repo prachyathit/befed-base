@@ -201,7 +201,7 @@
                             <!--Radio button-->
                             <% if option_value_id.class == String %>
                               <% option_value = OptionValue.find(option_value_id) %>
-                              <div style="color:#DDDDDD;">
+                              <div style="color:#ABABAB;">
                                 <%= option_value.name %>
                               </div>
                               <% @food_price += option_value.price.to_i %>
@@ -210,7 +210,7 @@
                                 <% option_value_id.each do |option_number| %>
                                   <% unless option_number.empty? %>
                                     <% option_value = OptionValue.find(option_number) %>
-                                    <div style="color:#DDDDDD;">
+                                    <div style="color:#ABABAB;">
                                       <%= option_value.name %>
                                     </div>
                                     <% @food_price += option_value.price.to_i %>
