@@ -47,7 +47,7 @@ class AddressesController < ApplicationController
       if params[:return_url].present?
         redirect_to params[:return_url]+"?address_id=#{@address.id}"
       else
-        redirect_to edit_address_path(@address)
+        redirect_to addresses_path
       end
     else
       render :new and return
