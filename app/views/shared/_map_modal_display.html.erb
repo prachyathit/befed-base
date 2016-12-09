@@ -55,6 +55,7 @@
       if (currentPosition == defaultLocation) {
         getCurrentLocation().then(function(position){
           currentPosition = position;
+          modalMap.setCenter(currentPosition);
 
           if ("<%= @address.errors.any? %>" == 'false' &&
             (!urlContainParam('latitude') || !urlContainParam('longitude')) && "<%= auto_display %>" == 'true') {
