@@ -16,39 +16,39 @@
       </div>
       <div class="form-group">
         <%= f.text_field :house_room_no, 
-              { placeholder: "House/Room No. (optional)", 
-                class: "form-control input-medium" } %>
-        <%= f.text_field :street, 
-              { placeholder: "Street/Soi (optional)", 
+              { placeholder: "House/Room No.", 
                 class: "form-control input-small" } %>
+        <%= f.text_field :street, 
+              { placeholder: "Street/Soi", 
+                class: "form-control input-medium" } %>
       </div>
       <div class="form-group">
         <%= f.text_field :building_name, 
-              { placeholder: "Building/Condo/House Name (optional)", 
+              { placeholder: "Building Name", 
                 class: "form-control input-medium" } %>
         <%= f.text_field :floor, 
-              { placeholder: "Floor no. (optional)", 
+              { placeholder: "Floor no.", 
                 class: "form-control input-small" } %>
       </div>
       <div class="form-group">
         <%= f.text_field :subdistrict, 
-              { placeholder: "Subdistrict (optional)", 
+              { placeholder: "Subdistrict", 
                 class: "form-control input-medium" } %>
         <%= f.text_field :district, 
-              { placeholder: "District (optional)", 
+              { placeholder: "District", 
                 class: "form-control input-small" } %>
       </div>
       <div class="form-group">
         <%= f.text_field :province, 
-              { placeholder: "City (optional)", 
+              { placeholder: "City", 
                 class: "form-control input-medium" } %>
         <%= f.text_field :postal_code, 
-              { placeholder: "Postal Code (optional)", 
+              { placeholder: "Postal Code", 
                 class: "form-control input-small" } %>
       </div>
       <div class="form-group">
         <%= f.text_area :instruction,
-              { placeholder: "Delivery Instruction (optional)", 
+              { placeholder: "Delivery Instruction", 
                 class: "form-control input-large" } %>
       </div>
       <%= f.hidden_field :latitude, value: @address.latitude %>
