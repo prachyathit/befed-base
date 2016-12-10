@@ -8,7 +8,7 @@ module Api
 			menu_by_category = current_restaurant.foods.select('foods.*', 
 				'COUNT(food_options.id) AS option_count').
 				joins("LEFT JOIN food_options ON foods.id = food_options.food_id").
-				group('foods.id').group_by(&:cat)
+				group('foods.id').order('foods.id').group_by(&:cat)
 			response = []
 			menu_by_category.each do |category, menus|
 				menu_obj = menus.map do |menu|
