@@ -7,37 +7,59 @@
         <%= @user.name %>
       </h1>
       <p><%= @user.phone %></p>
-      <p><%= @user.address %></p>
-      <p><%= @user.dinstruction %></p>
       <p><%= @user.email %></p>
-  <div class="geomap">
-    <div id="googleMap" class="geomap"></div>
-  </div>
+      <hr>
+      <p>Address</p>
+      <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+          <% @user.addresses.each do |address| %>
+            <div class="col-sm-6 <%= (address.is_default) ? 'default-address-thumb' : '' %> address-thumb" address-id="<%= address.id %>">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <%= address.name %>
+                  <div class="clearfix;"></div>
+                </div>
+                <div class="panel-body">
+                  <div class="full-address"><%= address.full_address %></div>
+                  <div>
+                    <div id="googleMap<%= address.id %>" class="thumb-map address-map" latitude="<%= address.latitude %>" longitude="<%= address.longitude %>">
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
     </section>
   </div>
 </div>
 
 
-<script>
-var myCenter=new google.maps.LatLng(<%= @user.latitude %>,<%= @user.longitude %>);
+<script type="text/javascript">
+  function initMap(){
+    $(".address-map").each(function() {
+      var position = {
+        lat: parseFloat($(this).attr('latitude')),
+        lng: parseFloat($(this).attr('longitude'))
+      };
+      var map = new google.maps.Map(
+        document.getElementById($(this).attr('id')), {
+          center: position,
+          zoom: 15,
+          streetViewControl: false,
+          draggable: false,
+          scrollwheel: false
+      });
+      var marker = new google.maps.Marker({
+        position: position,
+        map: map
+      });
+    });
+  }
+</script>
 
-function initialize()
-{
-var mapProp = {
-  center:myCenter,
-  zoom:17,
-  mapTypeId:google.maps.MapTypeId.ROADMAP,
-  scrollwheel:false
-  };
-
-var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
-
-var marker=new google.maps.Marker({
-  position:myCenter,
-  });
-
-marker.setMap(map);
-}
-
-google.maps.event.addDomListener(window, 'load', initialize);
+<script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwhcezDLA4hI2yH4uZxzKTKH_y1RoONUY&callback=initMap">
 </script>
