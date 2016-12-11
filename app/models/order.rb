@@ -38,7 +38,7 @@ class Order < ActiveRecord::Base
     else
       address = user.default_address
     end
-    order.create_shipping_address!(address: address.full_address, latitude: address.latitude, 
+    order.create_shipping_address!(address: address.full_address_with_name, latitude: address.latitude, 
         longitude: address.longitude, instruction: address.instruction)
     order
   end

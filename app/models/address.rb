@@ -39,8 +39,8 @@ class Address < ActiveRecord::Base
 		building_name = "Building #{self.building_name}" if self.building_name.present?
 		floor = "flr.#{self.floor}" if self.floor.present?
 		[
-			self.house_room_no, street, building_name, 
-			floor, self.subdistrict, self.district, 
+			self.house_room_no, building_name, floor, street,
+			self.subdistrict, self.district, 
 			self.province, self.postal_code
 		].compact.join(' ')
 	end
