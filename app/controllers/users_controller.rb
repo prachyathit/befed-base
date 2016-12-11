@@ -25,7 +25,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       address = Address.new(JSON.parse(session[:saddress]["raw"]))
-      address.name = 'Default'
+      address.name ||= 'Default'
       address.user_id = @user.id
       address.latitude = user_params[:latitude]
       address.longitude = user_params[:longitude]
