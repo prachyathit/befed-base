@@ -2,6 +2,9 @@ class SessionsController < ApplicationController
   before_action :get_cart_size
 
   def new
+    unless session[:saddress]
+      session[:saddress] = {}
+    end
     unless logged_in?
       @user = User.new
     else
