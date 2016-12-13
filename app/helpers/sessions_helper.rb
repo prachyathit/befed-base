@@ -84,7 +84,7 @@ module SessionsHelper
 
   # Get Address
   def get_address
-    if session[:saddress]
+    if session[:saddress].present?
       @saddress = session[:saddress]["faddress"]
     else
       @saddress = ""

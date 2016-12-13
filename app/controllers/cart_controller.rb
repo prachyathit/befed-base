@@ -59,11 +59,11 @@ class CartController < ApplicationController
       @cart = session[:cart]
       @user = current_user
       unless session[:saddress].empty?
-        unless session[:saddress].is_a?(Hash) and session[:saddress]['raw']['id'].present?
+        unless session[:saddress].is_a?(Hash) and session[:saddress]['raw'].present? and session[:saddress]['raw']['id'].present?
           @address = Address.default_from_params(
-            @user, "Address#{@user.addresses.count + 1}", 
+            @user, "Address#{@user.addresses.count + 1}",
             session[:saddress])
-          session[:saddress] = {}  
+          session[:saddress] = {}
         end
       end
       if params[:address_id]
