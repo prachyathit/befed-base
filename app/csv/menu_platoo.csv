@@ -1,0 +1,27 @@
+name,price,image_url,cat_id,cat,rec,restaurant_id
+Leaf-Wrapped Mackerel Bite Size : เมี่ยงปลาทู,165,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Platoo/miang.jpg,1,Appetizer,1,9
+Grilled Fish in Curry Paste : งบปลาปิ้ง,165,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Platoo/ngobplaping.JPG,1,Appetizer,1,9
+Spicy Thai Dip made of Crab Eggs served with Vegetables : นํ้าพริกไข่ปู,135,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Platoo/numprikkaipoo.JPG,1,Appetizer,1,9
+Thai Style Coconut Milk with Blue Crab Dip : หลนปูม้า,180,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Platoo/lonpoo.JPG,1,Appetizer,1,9
+Steamed Minced Pork and Salted Fish : หมูนึ่งกุเลาเค็ม,200,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Platoo/porkgurao.JPG,1,Appetizer,1,9
+Rice Ball with Mackerel : ข้าวปั้นปลาทู,135,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Platoo/riceball.JPG,1,Appetizer,1,9
+Spicy Salted Indian Salmon Salad : ยำปลากุเลาเค็ม,250,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Platoo/yumgurao.JPG,1,Appetizer,1,9
+Spicy Soup with Mackerel and Roasted Chilli : ต้มยำปลาทูสูตรโบราณ,135,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Platoo/tomyumplatoo.jpg,2,Soup,1,9
+Hot & Sour Curry with Shrimps and Lotus Shoot : แกงส้มไหลบัวกุ้ง,175,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Platoo/orangelai.JPG,2,Soup,1,9
+Hot & Sour Curry with Fish Eggs and Pickled Bamboo Shoot : แกงส้มหน่อไม้ไข่ปลาริวกิว,350,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Platoo/orangerewgew.jpg,2,Soup,1,9
+Sweet & Sour Soup with Sea Mullet : ปลากระบอกต้มส้ม,150,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Platoo/orangegrabok.jpg,2,Soup,1,9
+Jungle Curry with Silver Sillago : แกงป่าปลาเห็ดโคน,165,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Platoo/junglefish.jpg,2,Soup,1,9
+Stir-Fried Red Curry with Mackerel : ฉู่ฉี่ปลาทู,165,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Platoo/choocheeplatoo.JPG,3,Stir-Fried,1,9
+Stir-Fried Mackerel Liver with Chilli and Holy Basil : ตับปลาทูผัดกะเพรา,165,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Platoo/platooliver.jpg,3,Stir-Fried,1,9
+Stir-Fried Squids in Squid Ink Sauce : หมึกไข่ผัดนํ้าดำ,200,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Platoo/blacksquid.JPG,3,Stir-Fried,1,9
+Stir-Fried Squid with Salted Egg Yolk : ปลาหมึกผัดไข่เค็ม,200,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Platoo/squidegg.jpg,3,Stir-Fried,1,9
+Stir-Fried Blue Crab with Curry Powder : ปูม้าผัดผงกะหรี่,200,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Platoo/crabcurry.JPG,3,Stir-Fried,1,9
+Stir-Fried Minced Shrimp with Salted Fish and Holy Basil : กุ้งสับผัดกะเพรากุเลาเค็ม,220,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Platoo/shrimpminced.jpg,3,Stir-Fried,1,9
+Stir-Fried Pak Wan Ban with Vermicelli and Egg : ผัดผักหวานวุ้นเส้นไข่,135,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Platoo/woonsen.JPG,3,Stir-Fried,1,9
+Deep-Fried Sun-Dried King Mackerel : ปลาอินทรีย์แดดเดียว,200,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Platoo/sdinsea.jpg,4,Deep-Fried,1,9
+Deep-Fried Sun-Dried Mackerel : ปลาทูแดดเดียว,135,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Platoo/sdplatoo.JPG,4,Deep-Fried,1,9
+Deep-Fried Sun-Dried Yellow-Strpied Trevally : ปลาสีกุนแดดเดียว,135,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Platoo/sdseekul.jpg,4,Deep-Fried ,1,9
+"Fried Rice with Pork/Chicken/Beef : ข้าวผัดหมู, ไก่, เนื้อ",65,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Platoo/friedrice1.JPG,5,Rice,1,9
+"Fried Rice with Squid/Shrimp/Mackerel/Seafood : ข้าวผัดหมึก, กุ้ง, ปลาทู, ทะเล",90,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Platoo/friedrice2.JPG,5,Rice,1,9
+White Rice : ข้าวสวย,20,,5,Rice,0,9
+Brown Rice : ข้าวกล้อง ,30,,5,Rice,0,9
