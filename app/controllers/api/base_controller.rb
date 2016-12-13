@@ -10,8 +10,12 @@ module Api
 
 		def current_user
 			access_token = request.headers['Authentication']
-			user_id = request.headers['User-Id']
+			user_id = current_user_id
 			@current_user ||= User.where(id: user_id, access_token: access_token).first
+		end
+
+		def current_user_id
+			request.headers['User-Id']
 		end
 	end
 end
