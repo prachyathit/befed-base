@@ -5,7 +5,8 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
 
   # To empty cache when using browser back button
-  before_filter :set_cache_headers
+  before_filter :set_cache_headers, 
+    :clear_old_session_address # to remove old formatted session address
 
   private
 
@@ -13,6 +14,12 @@ class ApplicationController < ActionController::Base
     response.headers["Cache-Control"] = "no-cache, no-store, max-age=0, must-revalidate"
     response.headers["Pragma"] = "no-cache"
     response.headers["Expires"] = "Fri, 01 Jan 1990 00:00:00 GMT"
+  end
+
+  def clear_old_session_address
+    if session[:saddress].present? and not session[:saddress]['raw'].present?
+      session.delete(:saddress)
+    end
   end
 
 end
