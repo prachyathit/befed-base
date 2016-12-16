@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
 
   def clear_old_session_address
     if session[:saddress].present? and not session[:saddress]['raw'].present?
-      session.delete(:saddress)
+      session[:saddress] = {}
     end
   end
 
