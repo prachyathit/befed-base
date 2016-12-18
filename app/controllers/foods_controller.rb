@@ -7,6 +7,7 @@ class FoodsController < ApplicationController
   # GET /foods.json
   def index
     unless session[:saddress].nil?
+      @current_restaurant = current_restaurant
       @foods = current_restaurant.foods.by_cat
       reset_cart
     else

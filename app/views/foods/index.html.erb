@@ -1,9 +1,9 @@
 <% cat_number = 0 %>
-<% provide(:title, @foods.first.restaurant.name) %>
+<% provide(:title, @current_restaurant.name) %>
 <div class="container">
 
     <div class='restaurant-container width400'>
-      <%= render partial: "shared/restaurant", locals: { restaurant: @foods.first.restaurant } %>
+      <%= render partial: "shared/restaurant", locals: { restaurant: @current_restaurant } %>
     </div>
 
   <div class="center">- Click on Menu to Order -</div>
