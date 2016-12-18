@@ -21,16 +21,40 @@ class RestaurantsController < ApplicationController
 
   # GET /restaurants/new
   def new
-    @restaurant = Restaurant.new
+    if params.include?(:latitude) or params.include?(:longitude) or params.include?(:address)
+      params[:restaurant] ||= {}
+      params[:restaurant][:latitude] = params[:latitude]
+      params[:restaurant][:longitude] = params[:longitude]
+      params[:restaurant][:address] = params[:address]
+      @restaurant = Restaurant.new(restaurant_params)
+    else
+      @restaurant = Restaurant.new
+    end
+    @address = @restaurant
   end
 
   # GET /restaurants/1/edit
   def edit
+    @restaurant_params = {}
+    if params.include?(:latitude) or params.include?(:longitude) or params.include?(:address)
+      params[:restaurant] ||= {}
+      params[:restaurant][:latitude] = params[:latitude]
+      params[:restaurant][:longitude] = params[:longitude]
+      params[:restaurant][:address] = params[:address]
+      @restaurant_params = params
+      @restaurant.assign_attributes(restaurant_params)
+    end
   end
 
   # POST /restaurants
   # POST /restaurants.json
   def create
+    if params.include?(:latitude) or params.include?(:longitude) or params.include?(:address)
+      params[:restaurant] ||= {}
+      params[:restaurant][:latitude] = params[:latitude]
+      params[:restaurant][:longitude] = params[:longitude]
+      params[:restaurant][:address] = params[:address]
+    end
     @restaurant = Restaurant.new(restaurant_params)
 
     respond_to do |format|
@@ -48,7 +72,7 @@ class RestaurantsController < ApplicationController
   # PATCH/PUT /restaurants/1.json
   def update
     respond_to do |format|
-      if @restaurant.update(restaurant_params)
+      if @restaurant.assign_attributes(restaurant_params)
         format.html { redirect_to @restaurant, notice: 'Restaurant was successfully updated.' }
         format.json { render :show, status: :ok, location: @restaurant }
       else
