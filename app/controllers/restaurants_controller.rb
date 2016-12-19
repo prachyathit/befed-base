@@ -23,9 +23,9 @@ class RestaurantsController < ApplicationController
   def new
     if params.include?(:latitude) or params.include?(:longitude) or params.include?(:address)
       params[:restaurant] ||= {}
-      params[:restaurant][:latitude] = params[:latitude]
-      params[:restaurant][:longitude] = params[:longitude]
-      params[:restaurant][:address] = params[:address]
+      params[:restaurant][:latitude] ||= params[:latitude]
+      params[:restaurant][:longitude] ||= params[:longitude]
+      params[:restaurant][:address] ||= params[:address]
       @restaurant = Restaurant.new(restaurant_params)
     else
       @restaurant = Restaurant.new
@@ -38,12 +38,13 @@ class RestaurantsController < ApplicationController
     @restaurant_params = {}
     if params.include?(:latitude) or params.include?(:longitude) or params.include?(:address)
       params[:restaurant] ||= {}
-      params[:restaurant][:latitude] = params[:latitude]
-      params[:restaurant][:longitude] = params[:longitude]
-      params[:restaurant][:address] = params[:address]
+      params[:restaurant][:latitude] ||= params[:latitude]
+      params[:restaurant][:longitude] ||= params[:longitude]
+      params[:restaurant][:address] ||= params[:address]
       @restaurant_params = params
       @restaurant.assign_attributes(restaurant_params)
     end
+    p @restaurant.address
   end
 
   # POST /restaurants
@@ -51,9 +52,9 @@ class RestaurantsController < ApplicationController
   def create
     if params.include?(:latitude) or params.include?(:longitude) or params.include?(:address)
       params[:restaurant] ||= {}
-      params[:restaurant][:latitude] = params[:latitude]
-      params[:restaurant][:longitude] = params[:longitude]
-      params[:restaurant][:address] = params[:address]
+      params[:restaurant][:latitude] ||= params[:latitude]
+      params[:restaurant][:longitude] ||= params[:longitude]
+      params[:restaurant][:address] ||= params[:address]
     end
     @restaurant = Restaurant.new(restaurant_params)
 
@@ -71,8 +72,15 @@ class RestaurantsController < ApplicationController
   # PATCH/PUT /restaurants/1
   # PATCH/PUT /restaurants/1.json
   def update
+    if params.include?(:latitude) or params.include?(:longitude) or params.include?(:address)
+      params[:restaurant] ||= {}
+      params[:restaurant][:latitude] ||= params[:latitude]
+      params[:restaurant][:longitude] ||= params[:longitude]
+      params[:restaurant][:address] ||= params[:address]
+    end
     respond_to do |format|
-      if @restaurant.assign_attributes(restaurant_params)
+      @restaurant.assign_attributes(restaurant_params)
+      if @restaurant.save
         format.html { redirect_to @restaurant, notice: 'Restaurant was successfully updated.' }
         format.json { render :show, status: :ok, location: @restaurant }
       else
@@ -102,7 +110,7 @@ class RestaurantsController < ApplicationController
     def restaurant_params
       params.require(:restaurant).permit( :name, :desc, :image_url, :email, :dtime, :soon,
                                           :address, :latitude, :longitude, :min_order, :cday, :promo,
-                                          category_ids: [])
+                                          :service_fee, category_ids: [])
     end
 
     # Only admin can do anything with resturants

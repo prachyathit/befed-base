@@ -29,7 +29,7 @@
   </div>
   <div class="field">
     <%= f.label :address %><br>
-    <%= f.text_field :address, class: "location" %>
+    <%= f.text_field :address %>
   </div>
   <% if @restaurant.latitude.present? and @restaurant.longitude.present? %>
     <div id="displayMap" style="height: 300px;">
