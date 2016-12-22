@@ -9,7 +9,7 @@
       <p><%= @user.phone %></p>
       <p><%= @user.email %></p>
       <hr>
-      <p>Address</p>
+      <h4>Address</h4>
       <div class="row">
         <div class="col-sm-10 col-sm-offset-1">
           <% @user.addresses.each do |address| %>
@@ -29,6 +29,77 @@
                 </div>
               </div>
             </div>
+          <% end %>
+        </div>
+      </div>
+      <hr>
+      <h4>Update Default Address</h4>
+      <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+          <p><b>Old Address</b></p>
+          <p>
+            Latitude: <%= @user.latitude %>, Longitude: <%= @user.longitude %></br>
+            Address: <%= @user.address %></br>
+            Instruction: <%= @user.dinstruction %>
+          </p>
+        </div>
+        <div class="col-sm-10 col-sm-offset-1">
+          <p><b>New Default Address</b></p>
+          <%= form_for(@user.default_address, html: { class: "form-inline" }) do |f| %>
+            <div class="form-group">
+              <%= f.text_field :latitude, 
+                    { placeholder: "Latitude *", 
+                      class: "form-control input-large" } %>
+            </div>
+            <div class="form-group">
+              <%= f.text_field :longitude, 
+                    { placeholder: "Longitude *", 
+                      class: "form-control input-large" } %>
+            </div>
+            <div class="form-group">
+              <%= f.text_field :name, 
+                    { placeholder: "Address Name *", 
+                      class: "form-control input-large" } %>
+            </div>
+            <div class="form-group">
+              <%= f.text_field :house_room_no, 
+                    { placeholder: "House/Room No.", 
+                      class: "form-control input-small" } %>
+              <%= f.text_field :street, 
+                    { placeholder: "Street/Soi", 
+                      class: "form-control input-medium" } %>
+            </div>
+            <div class="form-group">
+              <%= f.text_field :building_name, 
+                    { placeholder: "Building Name", 
+                      class: "form-control input-medium" } %>
+              <%= f.text_field :floor, 
+                    { placeholder: "Floor no.", 
+                      class: "form-control input-small" } %>
+            </div>
+            <div class="form-group">
+              <%= f.text_field :subdistrict, 
+                    { placeholder: "Subdistrict", 
+                      class: "form-control input-medium" } %>
+              <%= f.text_field :district, 
+                    { placeholder: "District", 
+                      class: "form-control input-small" } %>
+            </div>
+            <div class="form-group">
+              <%= f.text_field :province, 
+                    { placeholder: "City", 
+                      class: "form-control input-medium" } %>
+              <%= f.text_field :postal_code, 
+                    { placeholder: "Postal Code", 
+                      class: "form-control input-small" } %>
+            </div>
+            <div class="form-group">
+              <%= f.text_area :instruction,
+                    { placeholder: "Delivery Instruction", 
+                      class: "form-control input-large" } %>
+            </div>
+            <%= hidden_field_tag :return_url, request.original_url %>
+            <%= f.submit :Save, { class: "btn btn-block btn-success" } %>
           <% end %>
         </div>
       </div>
