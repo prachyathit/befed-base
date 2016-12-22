@@ -53,7 +53,6 @@
       </div>
       <%= f.hidden_field :latitude, value: @address.latitude %>
       <%= f.hidden_field :longitude, value: @address.longitude %>
-      <%= f.hidden_field :user_id, value: current_user.id %>
       <%= hidden_field_tag :return_url, params[:return_url] %>
       <%= f.submit :Save, { class: "btn btn-block btn-success" } %>
     <% end %>
