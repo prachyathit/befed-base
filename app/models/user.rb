@@ -110,6 +110,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def is_admin?
+    self.admin
+  end
+
   private
 
   # Converts email to all lower case

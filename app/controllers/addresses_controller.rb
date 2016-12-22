@@ -1,6 +1,8 @@
 class AddressesController < ApplicationController
 
   before_action :authenticate_user!
+  before_action :authenticate_address_owner!, 
+    only: [:edit, :update, :show, :destroy, :set_default]
   before_action :get_current_address, 
     only: [:edit, :update, :show, :destroy, :set_default]
  
@@ -69,6 +71,12 @@ class AddressesController < ApplicationController
   end
 
   private
+
+  def authenticate_address_owner!
+    unless current_user.is_admin? or get_current_address.user.id == current_user.id
+      redirect_to root_path
+    end
+  end
 
   def address_params
     params.require(:address).permit(:name, :latitude, :longitude, :user_id, 
