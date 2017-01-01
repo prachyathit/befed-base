@@ -5,7 +5,7 @@
 <div style="border: 1px solid #f0f0f0; border-radius: 6px; padding: 5px">
 <h1>Order Confirmed!</h1>
 <p><%= @user.name %>, Thank you for ordering with Befed</p>
-<p>The estimated delivery time for your order is 45 minutes.</p>
+<p>The estimated delivery time for your order is <%= @order.restaurant.dtime %> minutes.</p>
 <p>If you have any questions, please contact us at 092-276-4769</p>
 
 <h1>Customer Information</h1>

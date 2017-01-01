@@ -6,7 +6,18 @@ module TookanApiService
 		def create_pickup_and_delivary_task user, cart, order
 			restaurant = Restaurant.find(order.rest_id)
 			shipping_address = order.shipping_address
-
+			payment_type = order.payment_type ? "COD" : "Credit Card"
+			dtime = restaurant.dtime
+			order_list = "ออเดอร์หมายเลข #{order.id} \n"
+			cart.each do |id, order_info|
+				food_id = order_info[:food_id]
+				food = Food.find(food_id)
+				quantity = order_info[:quantity]
+				
+				order_list += "#{food.name} #{quantity} \n"
+			end
+			debugger
+			
 			headers = {
 				:content_type => 'application/json'
 			}
@@ -27,22 +38,22 @@ module TookanApiService
 				geofence: 0,
 
 				# pickup info
-				job_description: "",
-				job_pickup_phone: "",
+				job_description: order_list,
+				job_pickup_phone: restaurant.phone,
 				job_pickup_name: restaurant.name,
-				job_pickup_email: "",
+				job_pickup_email: restaurant.email,
 				job_pickup_address: restaurant.address,
 				job_pickup_latitude: restaurant.latitude,
 				job_pickup_longitude: restaurant.longitude,
 				job_pickup_datetime: (DateTime.current + 15.minutes).to_s(:db), #YYYY-MM-DD HH:MM:SS
 
-				pickup_custom_field_template: "Pickup",
-				pickup_meta_data: [
-					{
-						label: "Order",
-						data: order.id
-					}
-				],
+				# pickup_custom_field_template: "Pickup",
+				# pickup_meta_data: [
+				# 	{
+				# 		label: "Order",
+				# 		data: order.id
+				# 	}
+				# ],
 
 				# delivery info				
 				customer_email: user.email,
@@ -54,7 +65,7 @@ module TookanApiService
 				latitude: shipping_address.latitude,
 				longitude: shipping_address.longitude,
 
-				job_delivery_datetime: (DateTime.current + 45.minutes).to_s(:db), #YYYY-MM-DD HH:MM:SS
+				job_delivery_datetime: (DateTime.current + dtime.minutes).to_s(:db), #YYYY-MM-DD HH:MM:SS
 				custom_field_template: "Delivery",
 				meta_data: [
 					{
@@ -64,6 +75,10 @@ module TookanApiService
 					{
 						label: "Phone",
 						data: user.phone
+					},
+					{
+						label: "Payment Type",
+						data: payment_type
 					},
 					{
 						label: "Price",

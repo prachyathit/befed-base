@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161204073008) do
+ActiveRecord::Schema.define(version: 20170101064338) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "name"
@@ -152,6 +152,7 @@ ActiveRecord::Schema.define(version: 20161204073008) do
     t.string   "dhour",       default: "11:00AM - 9:00PM"
     t.boolean  "promo",       default: false
     t.integer  "service_fee", default: 0
+    t.string   "phone",       default: "0922764769"
   end
 
   create_table "settings", force: :cascade do |t|

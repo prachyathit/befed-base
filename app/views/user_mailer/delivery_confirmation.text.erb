@@ -2,7 +2,7 @@ Delivery Confirmation
 
 <%= @user.name %>, Thank you for ordering with Befed
 
-Your order will arrive at your doorstep in around 45 minutes.
+Your order will arrive at your doorstep in around <%= @order.restaurant.dtime %> minutes.
 
 If you have any questions, please contact us at 092-276-4769
 <% total = 0 %>
