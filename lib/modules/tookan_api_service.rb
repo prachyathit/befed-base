@@ -13,8 +13,8 @@ module TookanApiService
 				food_id = order_info[:food_id]
 				food = Food.find(food_id)
 				quantity = order_info[:quantity]
-				special = order_info["special"]
-				options = order_info["options"]
+				special = order_info[:special]
+				options = order_info[:options]
 				order_rows += "#{food.name} x#{quantity} \n"
 				#option start
 				unless options.nil? 
@@ -40,6 +40,7 @@ module TookanApiService
 			    end 
 			  end
 			  #option end
+
 		    unless special.empty?
 		    	order_rows += "- #{special} \n"
 		    end
@@ -65,7 +66,7 @@ module TookanApiService
 				geofence: 0,
 
 				# pickup info
-				job_description: order_list,
+				job_description: order_rows,
 				job_pickup_phone: restaurant.phone,
 				job_pickup_name: restaurant.name,
 				job_pickup_email: restaurant.email,
