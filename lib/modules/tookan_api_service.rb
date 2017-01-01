@@ -16,7 +16,7 @@ module TookanApiService
 				
 				order_list += "#{food.name} #{quantity} \n"
 			end
-			
+			debugger
 			headers = {
 				:content_type => 'application/json'
 			}
@@ -76,7 +76,7 @@ module TookanApiService
 						data: user.phone
 					},
 					{
-						label: "Payment Type",
+						label: "Payment",
 						data: payment_type
 					},
 					{
