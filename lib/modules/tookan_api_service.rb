@@ -19,7 +19,7 @@ module TookanApiService
 				#option start
 				unless options.nil? 
 			  	options.each do |option| 
-			    	option_value_id = option[1]["option_value_ids"] 
+			    	option_value_id = option[1][:option_value_ids] 
 			      unless option_value_id.first.empty? 
 			
 				      # <!--Radio button-->
