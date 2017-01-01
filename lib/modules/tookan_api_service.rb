@@ -16,7 +16,6 @@ module TookanApiService
 				
 				order_list += "#{food.name} #{quantity} \n"
 			end
-			debugger
 			
 			headers = {
 				:content_type => 'application/json'
