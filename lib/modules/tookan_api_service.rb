@@ -8,14 +8,43 @@ module TookanApiService
 			shipping_address = order.shipping_address
 			payment_type = order.payment_type ? "COD" : "Credit Card"
 			dtime = restaurant.dtime
-			order_list = "ออเดอร์หมายเลข #{order.id} \n"
+			order_rows = "ออเดอร์หมายเลข #{order.id} \n"
 			cart.each do |id, order_info|
 				food_id = order_info[:food_id]
 				food = Food.find(food_id)
 				quantity = order_info[:quantity]
-				
-				order_list += "#{food.name} #{quantity} \n"
-			end
+				special = order_info["special"]
+				options = order_info["options"]
+				order_rows += "#{food.name} x#{quantity} \n"
+				#option start
+				unless options.nil? 
+			  	options.each do |option| 
+			    	option_value_id = option[1]["option_value_ids"] 
+			      unless option_value_id.first.empty? 
+			
+				      # <!--Radio button-->
+				      if option_value_id.class == String 
+				      	option_value = OptionValue.find(option_value_id) 
+				      	order_rows += "- #{option_value.name} \n"
+				  
+				      # <!--Checkbox-->
+				      else 
+				      	option_value_id.each do |option_number| 
+				        	unless option_number.empty? 
+				          	option_value = OptionValue.find(option_number) 
+				          	order_rows += "- #{option_value.name} \n"
+				        	end 
+				        end 
+				      end 
+				  	end 
+			    end 
+			  end
+			  #option end
+		    unless special.empty?
+		    	order_rows += "- #{special} \n"
+		    end
+      end 
+
 			headers = {
 				:content_type => 'application/json'
 			}
