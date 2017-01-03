@@ -45,7 +45,7 @@ module TookanApiService
 			  #option end
 
 		    unless special.empty?
-		    	order_rows += "- #{special} \n"
+		    	order_rows += "\t- #{special} \n"
 		    end
       end 
 
