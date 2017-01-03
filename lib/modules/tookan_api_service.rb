@@ -4,18 +4,20 @@ module TookanApiService
 		TOOKAN_API_URL = 'https://api.tookanapp.com:8888'
 
 		def create_pickup_and_delivary_task user, cart, order
+			
 			restaurant = Restaurant.find(order.rest_id)
 			shipping_address = order.shipping_address
 			payment_type = order.payment_type ? "COD" : "Credit Card"
 			dtime = restaurant.dtime
 			order_rows = "ออเดอร์หมายเลข #{order.id} \n"
-			cart.each do |id, order_info|
+			
+			cart.each_with_index do |(id, order_info), index|
 				food_id = order_info[:food_id]
 				food = Food.find(food_id)
 				quantity = order_info[:quantity]
 				special = order_info[:special]
 				options = order_info[:options]
-				order_rows += "#{food.name} x#{quantity} \n"
+				order_rows += "#{index}) #{food.name} x#{quantity} \n"
 				#option start
 				unless options.nil? 
 			  	options.each do |option| 
@@ -36,6 +38,7 @@ module TookanApiService
 				        	end 
 				        end 
 				      end 
+				      
 				  	end 
 			    end 
 			  end
