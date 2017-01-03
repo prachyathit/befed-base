@@ -17,7 +17,7 @@ module TookanApiService
 				quantity = order_info[:quantity]
 				special = order_info[:special]
 				options = order_info[:options]
-				order_rows += "#{index}) #{food.name} x#{quantity} \n"
+				order_rows += "#{index+1}) #{food.name} x#{quantity} \n"
 				#option start
 				unless options.nil? 
 			  	options.each do |option| 
@@ -27,14 +27,14 @@ module TookanApiService
 				      # <!--Radio button-->
 				      if option_value_id.class == String 
 				      	option_value = OptionValue.find(option_value_id) 
-				      	order_rows += "- #{option_value.name} \n"
+				      	order_rows += "\t- #{option_value.name} \n"
 				  
 				      # <!--Checkbox-->
 				      else 
 				      	option_value_id.each do |option_number| 
 				        	unless option_number.empty? 
 				          	option_value = OptionValue.find(option_number) 
-				          	order_rows += "- #{option_value.name} \n"
+				          	order_rows += "\t- #{option_value.name} \n"
 				        	end 
 				        end 
 				      end 
