@@ -1,0 +1,155 @@
+name,price,image_url,cat_id,cat,rec,restaurant_id
+Grilled Chicken (Whole) : ไก่ย่าง ทั้งตัว,210,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/1+%E0%B9%84%E0%B8%81%E0%B9%88%E0%B8%A2%E0%B9%88%E0%B8%B2%E0%B8%87.JPG,1,"Grilled, Fried",1,10
+Grilled Chicken (Half) : ไก่ย่าง ครึ่งตัว,105,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/1+%E0%B9%84%E0%B8%81%E0%B9%88%E0%B8%A2%E0%B9%88%E0%B8%B2%E0%B8%87.JPG,1,"Grilled, Fried",1,10
+Grilled Pork Neck : คอหมูย่าง,85,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/2+%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B8%A2%E0%B9%88%E0%B8%B2%E0%B8%87.JPG,1,"Grilled, Fried",0,10
+Northeastern Style Sausage : ไส้กรอกอิสาน,70,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/7.%E0%B9%84%E0%B8%AA%E0%B9%89%E0%B8%81%E0%B8%A3%E0%B8%AD%E0%B8%81%E0%B8%AD%E0%B8%B5%E0%B8%AA%E0%B8%B2%E0%B8%99.JPG,1,"Grilled, Fried",0,10
+Northern Style Sausage : ไส้อั่ว,80,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/8.%E0%B9%84%E0%B8%AA%E0%B9%89%E0%B8%AD%E0%B8%B1%E0%B9%88%E0%B8%A7.JPG,1,"Grilled, Fried",0,10
+Chiangmai Style Fried Pork : หมูทอดเชียงใหม่,85,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/3+%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B8%97%E0%B8%AD%E0%B8%94%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88.JPG,1,"Grilled, Fried",0,10
+Fried Semi-Dried Pork : หมูแดดเดียว,90,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B9%81%E0%B8%94%E0%B8%94%E0%B9%80%E0%B8%94%E0%B8%B5%E0%B8%A2%E0%B8%A7.jpg,1,"Grilled, Fried",0,10
+Fried Semi-Dried Beef : เนื้อแดดเดียว,120,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/%E0%B9%80%E0%B8%99%E0%B8%B5%E0%B9%89%E0%B8%AD%E0%B9%81%E0%B8%94%E0%B8%94%E0%B9%80%E0%B8%94%E0%B8%B5%E0%B8%A2%E0%B8%A7.JPG,1,"Grilled, Fried",0,10
+Fried Pickled Pork with Shredded Rice Grains : หมูข้าวเม่า,95,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/7+%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B9%80%E0%B8%A1%E0%B9%88%E0%B8%B2.JPG,1,"Grilled, Fried",1,10
+Fried Duck Mouth : ปากเป็ดทอด,110,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/8+%E0%B8%9B%E0%B8%B2%E0%B8%81%E0%B9%80%E0%B8%9B%E0%B9%87%E0%B8%94%E0%B8%97%E0%B8%AD%E0%B8%94.jpg,1,"Grilled, Fried",0,10
+Fried Fish Sauce Marinated Chicken : ไก่แช่น้ำปลาทอด,100,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/9+%E0%B9%84%E0%B8%81%E0%B9%88%E0%B8%9A%E0%B9%89%E0%B8%B2%E0%B8%99%E0%B9%81%E0%B8%8A%E0%B9%88%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%9B%E0%B8%A5%E0%B8%B2%E0%B8%97%E0%B8%AD%E0%B8%94.JPG,1,"Grilled, Fried",0,10
+Deep-Fried Fish Cake : ทอดมันปลากราย,100,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/11+%E0%B8%97%E0%B8%AD%E0%B8%94%E0%B8%A1%E0%B8%B1%E0%B8%99%E0%B8%9B%E0%B8%A5%E0%B8%B2%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%A2.JPG,1,"Grilled, Fried",0,10
+Deep-Fried Shrimp Cake : ทอดมันกุ้ง,130,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/10+%E0%B8%97%E0%B8%AD%E0%B8%94%E0%B8%A1%E0%B8%B1%E0%B8%99%E0%B8%81%E0%B8%B8%E0%B9%89%E0%B8%87.jpg,1,"Grilled, Fried",0,10
+Deep-Fried Shrimp Patties : กุ้งกระเบื้อง,130,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/12+%E0%B8%81%E0%B8%B8%E0%B9%89%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%9A%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%87.jpg,1,"Grilled, Fried",0,10
+Fried Chicken Ligament with Sesame Seed : เอ็นไก่ทอดงา,95,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/15+%E0%B9%81%E0%B8%AB%E0%B8%99%E0%B8%A1%E0%B8%82%E0%B9%89%E0%B8%AD%E0%B9%84%E0%B8%81%E0%B9%88%E0%B8%97%E0%B8%AD%E0%B8%94.jpg,1,"Grilled, Fried",0,10
+Deep-Fried Prawn : กุ้งชุบแป้งทอด,110,,1,"Grilled, Fried",0,10
+Fried Pickled Pork Ribs : แหนมโครงอ่อนทอด,95,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/13+%E0%B9%81%E0%B8%AB%E0%B8%99%E0%B8%A1%E0%B8%8B%E0%B8%B5%E0%B9%88%E0%B9%82%E0%B8%84%E0%B8%A3%E0%B8%87%E0%B8%97%E0%B8%AD%E0%B8%94.jpg,1,"Grilled, Fried",0,10
+Fried Pickled Chicken Wings : แหนมปีกไก่,95,,1,"Grilled, Fried",0,10
+Northern Style Set : น้ำพริกหนุ่ม+ไส้อั่ว+ผักลวก+แคบหมู,130,,1,"Grilled, Fried",1,10
+Crispy Pork Skin : แคบหมู,20,,1,"Grilled, Fried",0,10
+Fried Cashew Nuts : เม็ดมะม่วงทอด,75,,1,"Grilled, Fried",0,10
+Fried Peanuts : ถั่วทอด,55,,1,"Grilled, Fried",0,10
+Northern Style Chilli Dip : น้ำพริกหนุ่ม (ถ้วย),45,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/14+%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%9E%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%AB%E0%B8%99%E0%B8%B8%E0%B9%88%E0%B8%A1.JPG,1,"Grilled, Fried",0,10
+Original Papaya Salad : ส้มตำไทย,65,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/41+%E0%B8%AA%E0%B9%89%E0%B8%A1%E0%B8%95%E0%B8%B3%E0%B9%84%E0%B8%97%E0%B8%A2+new.jpg,2,SomTum,0,10
+Papaya Salad with Pickled Crab : ส้มตำปู,65,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/%E0%B8%95%E0%B8%B3%E0%B8%9B%E0%B8%B9.JPG,2,SomTum,0,10
+Original Papaya Salad with Pickled Crab : ส้มตำไทยใส่ปู,70,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/%E0%B8%95%E0%B8%B3%E0%B9%84%E0%B8%97%E0%B8%A2%E0%B9%83%E0%B8%AA%E0%B9%88%E0%B8%9B%E0%B8%B9.JPG,2,SomTum,0,10
+Papaya Salad with Pickled Crab and Preserved Fish : ส้มตำปูปลาร้า,70,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/42+%E0%B8%AA%E0%B9%89%E0%B8%A1%E0%B8%95%E0%B8%B3%E0%B8%9B%E0%B8%B9%E0%B8%9B%E0%B8%A5%E0%B8%B2%E0%B8%A3%E0%B9%89%E0%B8%B2.JPG,2,SomTum,0,10
+Papaya Salad with Salted Egg : ส้มตำไข่เค็ม,75,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/43+%E0%B8%AA%E0%B9%89%E0%B8%A1%E0%B8%95%E0%B8%B3%E0%B9%84%E0%B8%82%E0%B9%88%E0%B9%80%E0%B8%84%E0%B9%87%E0%B8%A1.jpg,2,SomTum,1,10
+Mixed Fruit Salad : ส้มตำผลไม้รวม,75,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/44+%E0%B8%AA%E0%B9%89%E0%B8%A1%E0%B8%95%E0%B8%B3%E0%B8%9C%E0%B8%A5%E0%B9%84%E0%B8%A1%E0%B9%89.jpg,2,SomTum,0,10
+Papaya Salad with Broad Beans : ส้มตำถั่วปากอ้า,70,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/45+%E0%B8%AA%E0%B9%89%E0%B8%A1%E0%B8%95%E0%B8%B3%E0%B8%96%E0%B8%B1%E0%B9%88%E0%B8%A7%E0%B8%9B%E0%B8%B2%E0%B8%81%E0%B8%AD%E0%B9%89%E0%B8%B2.JPG,2,SomTum,0,10
+Papaya Salad with Pickled Clam : ส้มตำหอยดอง,75,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/46+%E0%B8%AA%E0%B9%89%E0%B8%A1%E0%B8%95%E0%B8%B3%E0%B8%AB%E0%B8%AD%E0%B8%A2%E0%B8%94%E0%B8%AD%E0%B8%87.JPG,2,SomTum,0,10
+Laotian Style Papaya Salad : ตำลาว,65,,2,SomTum,0,10
+Korat Style Papaya Salad : ตำโคราช,70,,2,SomTum,0,10
+Papaya Salad with Grilled Pork Neck : ส้มตำหมูย่าง,90,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/%E0%B8%95%E0%B8%B3%E0%B8%84%E0%B8%AD%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B8%A2%E0%B9%88%E0%B8%B2%E0%B8%87.JPG,2,SomTum,0,10
+Papaya Salad with Fresh Raw Prawn : ส้มตำกุ้งแช่,100,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/47+%E0%B8%AA%E0%B9%89%E0%B8%A1%E0%B8%95%E0%B8%B3%E0%B8%81%E0%B8%B8%E0%B9%89%E0%B8%87%E0%B9%81%E0%B8%8A%E0%B9%88%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%9B%E0%B8%A5%E0%B8%B2.JPG,2,SomTum,0,10
+Laotian Style Cabbage Salad : ตำมั่วลาว,70,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/6.%E0%B8%95%E0%B8%B3%E0%B8%A1%E0%B8%B1%E0%B9%88%E0%B8%A7%E0%B8%A5%E0%B8%B2%E0%B8%A7.JPG,2,SomTum,0,10
+Papaya Salad with Rice Noodle : ตำซั่ว (ใส่ขนมจีน),70,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/%E0%B8%95%E0%B8%B3%E0%B8%8B%E0%B8%B1%E0%B9%88%E0%B8%A7%E0%B9%84%E0%B8%97%E0%B8%A2.JPG,2,SomTum,0,10
+"Papaya Salad with Rice Noodle, Pickled Crab and Preserved Fish : ตำซั่วปูปลาร้า",70,,2,SomTum,0,10
+Papaya Salad with Horse Crab : ส้มตำปูม้า,85,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/48+%E0%B8%AA%E0%B9%89%E0%B8%A1%E0%B8%95%E0%B8%B3%E0%B8%9B%E0%B8%B9%E0%B8%A1%E0%B9%89%E0%B8%B2.JPG,2,SomTum,0,10
+Green Mango Salad with Horse Crab : ตำมะม่วงปูม้า,90,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/52+%E0%B8%AA%E0%B9%89%E0%B8%A1%E0%B8%95%E0%B8%B3%E0%B8%A1%E0%B8%B0%E0%B8%A1%E0%B9%88%E0%B8%A7%E0%B8%87%E0%B8%9B%E0%B8%B9%E0%B8%A1%E0%B9%89%E0%B8%B2.jpg,2,SomTum,0,10
+Green Mango Salad with Pickled Crab : ตำมะม่วงปูเค็ม,75,,2,SomTum,0,10
+Green Mango Salad : ตำมะม่วง,70,,2,SomTum,0,10
+Carrot Salad : ส้มตำแครอท,70,,2,SomTum,0,10
+Fried Papaya Salad : ส้มตำทอด,85,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/49+%E0%B8%AA%E0%B9%89%E0%B8%A1%E0%B8%95%E0%B8%B3%E0%B8%81%E0%B8%A3%E0%B8%AD%E0%B8%9A.JPG,2,SomTum,0,10
+Papaya Salad with Crispy Catfish : ส้มตำปลาดุกฟู,130,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/53+%E0%B8%AA%E0%B9%89%E0%B8%A1%E0%B8%95%E0%B8%B3%E0%B8%9B%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%B8%E0%B8%81%E0%B8%9F%E0%B8%B9.jpg,2,SomTum,0,10
+Yard Long Beans Salad with Pickled Crab : ตำถั่วฝักยาวปู/ปูปลาร้า,75,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/54+%E0%B8%95%E0%B8%B3%E0%B8%96%E0%B8%B1%E0%B9%88%E0%B8%A7.JPG,2,SomTum,0,10
+Corn Salad : ส้มตำข้าวโพด,75,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/51+%E0%B8%AA%E0%B9%89%E0%B8%A1%E0%B8%95%E0%B8%B3%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B9%82%E0%B8%9E%E0%B8%94+(%E0%B9%80%E0%B8%81%E0%B9%88%E0%B8%B2).JPG,2,SomTum,0,10
+Coconut Shoot Salad : ตำยอดมะพร้าว,75,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/50+%E0%B8%AA%E0%B9%89%E0%B8%A1%E0%B8%95%E0%B8%B3%E0%B8%A2%E0%B8%AD%E0%B8%94%E0%B8%A1%E0%B8%B0%E0%B8%9E%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%A7.JPG,2,SomTum,0,10
+Minced Pork/Chicken Spicy Salad : ลาบหมู/ไก่,75,,3,"Larb, Namtok",0,10
+Minced Duck Spicy Salad : ลาบเป็ด,90,,3,"Larb, Namtok",0,10
+Catfish Spicy Salad : ลาบปลาดุก,95,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/9.%E0%B8%A5%E0%B8%B2%E0%B8%9A%E0%B8%9B%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%B8%E0%B8%81.JPG,3,"Larb, Namtok",0,10
+Glass Noodle Spicy Salad : ลาบวุ้นเส้น,90,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/10.%E0%B8%A5%E0%B8%B2%E0%B8%9A%E0%B8%A7%E0%B8%B8%E0%B9%89%E0%B8%99%E0%B9%80%E0%B8%AA%E0%B9%89%E0%B8%99.JPG,3,"Larb, Namtok",0,10
+Yanagi Mushroom Spicy Salad : ลาบเห็ดโคน,100,,3,"Larb, Namtok",0,10
+Pork Liver Spicy Salad : ตับหวาน,85,,3,"Larb, Namtok",0,10
+Grilled Pork Neck Spicy Salad : หมูน้ำตก,80,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/28+%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%95%E0%B8%81%E0%B8%AB%E0%B8%A1%E0%B8%B9.JPG,3,"Larb, Namtok",0,10
+Grilled Beef Spicy Salad : เนื้อน้ำตก,95,,3,"Larb, Namtok",0,10
+Bamboo Shoot Spicy Salad : ซุปหน่อไม้,70,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/29+%E0%B8%8B%E0%B8%B8%E0%B8%9A%E0%B8%AB%E0%B8%99%E0%B9%88%E0%B8%AD%E0%B9%84%E0%B8%A1%E0%B9%89.JPG,3,"Larb, Namtok",0,10
+Stir-Fried Bamboo Shoot Wrapped in Banana Leaf : ห่อหมกหน่อไม้,70,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/30+%E0%B8%AB%E0%B8%A1%E0%B8%81%E0%B8%AB%E0%B8%99%E0%B9%88%E0%B8%AD%E0%B9%84%E0%B8%A1%E0%B9%89.jpg,3,"Larb, Namtok",1,10
+Fresh Raw Prawn Spicy Salad : กุ้งแช่น้ำปลา,130,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/31+%E0%B8%81%E0%B8%B8%E0%B9%89%E0%B8%87%E0%B9%81%E0%B8%8A%E0%B9%88%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%9B%E0%B8%A5%E0%B8%B2.JPG,3,"Larb, Namtok",0,10
+Crispy Catfish Spicy Salad : ยำปลาดุกฟู,130,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/32+%E0%B8%A2%E0%B8%B3%E0%B8%9B%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%B8%E0%B8%81%E0%B8%9F%E0%B8%B9.jpg,4,Yum,1,10
+Grilled Pork Neck and Coconut Shoot Spicy Salad : ยำหมูย่างยอดมะพร้าว,100,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/33+%E0%B8%A2%E0%B8%B3%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B8%A2%E0%B9%88%E0%B8%B2%E0%B8%87%E0%B8%A2%E0%B8%AD%E0%B8%94%E0%B8%A1%E0%B8%B0%E0%B8%9E%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%AD%E0%B9%88%E0%B8%AD%E0%B8%99.jpg,4,Yum,0,10
+Lemongrass Spicy Salad with Crispy Shrimp : ยำตะไคร้กุ้งกรอบ,130,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/34+%E0%B8%A2%E0%B8%B3%E0%B8%95%E0%B8%B0%E0%B9%84%E0%B8%84%E0%B8%A3%E0%B9%89%E0%B8%81%E0%B8%B8%E0%B9%89%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%AD%E0%B8%9A.jpg,4,Yum,0,10
+Deep-Fried Morning Glory Spicy Salad : ยำผักบุ้งกรอบ,130,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/35+%E0%B8%A2%E0%B8%B3%E0%B8%9C%E0%B8%B1%E0%B8%81%E0%B8%9A%E0%B8%B8%E0%B9%89%E0%B8%87%E0%B8%81%E0%B8%A3%E0%B8%AD%E0%B8%9A.JPG,4,Yum,0,10
+Glass Noodle Spicy Salad : ยำวุ้นเส้น,110,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/36+%E0%B8%A2%E0%B8%B3%E0%B8%A7%E0%B8%B8%E0%B9%89%E0%B8%99%E0%B9%80%E0%B8%AA%E0%B9%89%E0%B8%99.JPG,4,Yum,0,10
+Yanagi Mushroom and Shrimp Spicy Salad : ยำเห็ดโคนญี่ปุ่นกุ้ง,130,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/37+%E0%B8%A2%E0%B8%B3%E0%B9%80%E0%B8%AB%E0%B9%87%E0%B8%94%E0%B9%82%E0%B8%84%E0%B8%99%E0%B8%8D%E0%B8%B5%E0%B9%88%E0%B8%9B%E0%B8%B8%E0%B9%88%E0%B8%99%E0%B8%81%E0%B8%B8%E0%B9%89%E0%B8%87.JPG,4,Yum,0,10
+Yanagi Mushroom Spicy Salad : ยำเห็ดโคนญี่ปุ่น,110,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/37+%E0%B8%A2%E0%B8%B3%E0%B9%80%E0%B8%AB%E0%B9%87%E0%B8%94%E0%B9%82%E0%B8%84%E0%B8%99%E0%B8%8D%E0%B8%B5%E0%B9%88%E0%B8%9B%E0%B8%B8%E0%B9%88%E0%B8%99%E0%B8%81%E0%B8%B8%E0%B9%89%E0%B8%87.JPG,4,Yum,0,10
+Horse Crab Spicy Salad : ยำปูม้า,110,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/38+%E0%B8%A2%E0%B8%B3%E0%B8%9B%E0%B8%B9%E0%B8%A1%E0%B9%89%E0%B8%B2.jpg,4,Yum,0,10
+Ant Egg Spicy Salad : ยำไข่มดแดง,150,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/39+%E0%B8%A2%E0%B8%B3%E0%B9%84%E0%B8%82%E0%B9%88%E0%B8%A1%E0%B8%94%E0%B9%81%E0%B8%94%E0%B8%87.JPG,4,Yum,0,10
+Crispy Fish Maw Spicy Salad : ยำกระเพาะปลากรอบ,130,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/40+%E0%B8%A2%E0%B8%B3%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%9E%E0%B8%B2%E0%B8%B0%E0%B8%9B%E0%B8%A5%E0%B8%B2.jpg,4,Yum,0,10
+Deep-Fried Snapper with Sweet Fish Sauce : ปลากะพงทอดน้ำปลา,390,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/16+%E0%B8%9B%E0%B8%A5%E0%B8%B2%E0%B8%81%E0%B8%B0%E0%B8%9E%E0%B8%87%E0%B8%97%E0%B8%AD%E0%B8%94%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%9B%E0%B8%A5%E0%B8%B2.jpg,5,Fish,1,10
+Deep-Fried Snapper with Sweet Fish Sauce and Chilli : ปลากะพงทอดน้ำปลาพริกขี้หนูหอม,390,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/17+%E0%B8%9B%E0%B8%A5%E0%B8%B2%E0%B8%97%E0%B8%AD%E0%B8%94%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%9B%E0%B8%A5%E0%B8%B2%E0%B8%9E%E0%B8%A3%E0%B8%B4%E0%B8%81%E0%B8%82%E0%B8%B5%E0%B9%89%E0%B8%AB%E0%B8%99%E0%B8%B9%E0%B8%AB%E0%B8%AD%E0%B8%A1.JPG,5,Fish,0,10
+Deep-Fried Snapper with Crispy Fingerroot : ปลากะพงกระชายกรอบ,390,,5,Fish,0,10
+Deep-Fried Snapper with Fresh Herbs : ปลากะพงริมสวน,390,,5,Fish,0,10
+Deep-Fried Snapper with Northeastern Style Spicy Sauce : ปลากะพงน้ำตก,390,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/89+%E0%B8%9B%E0%B8%A5%E0%B8%B2%E0%B8%81%E0%B8%B0%E0%B8%9E%E0%B8%87%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%95%E0%B8%81.jpg,5,Fish,0,10
+Deep-Fried Snapper with Sweet and Sour Chilli Sauce : ปลากะพงราดพริก,390,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/19+%E0%B8%9B%E0%B8%A5%E0%B8%B2%E0%B8%81%E0%B8%B0%E0%B8%9E%E0%B8%87%E0%B8%A3%E0%B8%B2%E0%B8%94%E0%B8%9E%E0%B8%A3%E0%B8%B4%E0%B8%81.JPG,5,Fish,0,10
+Charcoal Grilled Serpent-Head Fish with Salt : ปลาช่อนเผาเกลือ,310,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/22+%E0%B8%9B%E0%B8%A5%E0%B8%B2%E0%B8%8A%E0%B9%88%E0%B8%AD%E0%B8%99%E0%B9%80%E0%B8%9C%E0%B8%B2%E0%B9%80%E0%B8%81%E0%B8%A5%E0%B8%B7%E0%B8%AD.JPG,5,Fish,0,10
+Deep-Fried Serpent-Head Fish with Fresh Herbs : ปลาช่อนริมสวน,310,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/20+%E0%B8%9B%E0%B8%A5%E0%B8%B2%E0%B8%8A%E0%B9%88%E0%B8%AD%E0%B8%99%E0%B8%A3%E0%B8%B4%E0%B8%A1%E0%B8%AA%E0%B8%A7%E0%B8%99.jpg,5,Fish,1,10
+Deep-Fried Serpent-Head Fish with Northeastern Style Spicy Sauce : ปลาช่อนน้ำตก,310,,5,Fish,0,10
+Deep-Fried Serpent-Head Fish with Sour Curry : แกงส้มแป๊ะซะปลาช่อน,310,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/88+%E0%B9%81%E0%B8%81%E0%B8%87%E0%B8%AA%E0%B9%89%E0%B8%A1%E0%B9%81%E0%B8%9B%E0%B8%B0%E0%B8%8B%E0%B8%B0.JPG,5,Fish,0,10
+Deep-Fried Red Tilapia Fish with Crispy Fingerroot : ปลาทับทิมกระชายกรอบ,320,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/21+%E0%B8%9B%E0%B8%A5%E0%B8%B2%E0%B8%97%E0%B8%B1%E0%B8%9A%E0%B8%97%E0%B8%B4%E0%B8%A1%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%8A%E0%B8%B2%E0%B8%A2%E0%B8%81%E0%B8%A3%E0%B8%AD%E0%B8%9A.JPG,5,Fish,0,10
+Grilled Chicken in Tom Yoong Soup : ต้มโย้งไก่ย่าง,140,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/12.%E0%B8%95%E0%B9%89%E0%B8%A1%E0%B9%82%E0%B8%A2%E0%B9%89%E0%B8%87%E0%B9%84%E0%B8%81%E0%B9%88%E0%B8%A2%E0%B9%88%E0%B8%B2%E0%B8%87.JPG,6,Soup,0,10
+Grilled Catfish in Tom Yoong Soup : ต้มโย้งปลาดุกย่าง,140,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/74+%E0%B8%95%E0%B9%89%E0%B8%A1%E0%B9%82%E0%B8%A2%E0%B9%89%E0%B8%87%E0%B8%9B%E0%B8%A5%E0%B8%B2%E0%B8%94%E0%B8%B8%E0%B8%81.JPG,6,Soup,0,10
+Pork Ribs in Tom Sab Soup : ต้มแซ่บโครงอ่อน,140,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/15.%E0%B8%95%E0%B9%89%E0%B8%A1%E0%B9%81%E0%B8%8B%E0%B8%9A%E0%B9%82%E0%B8%84%E0%B8%A3%E0%B8%87%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B8%AD%E0%B9%88%E0%B8%AD%E0%B8%99.JPG,6,Soup,1,10
+Minced Pork Ball in Tom Sab Soup : ต้มแซ่บหมูเด้ง,140,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/76+%E0%B8%95%E0%B9%89%E0%B8%A1%E0%B9%81%E0%B8%8B%E0%B8%9A%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B9%80%E0%B8%94%E0%B9%89%E0%B8%87.JPG,6,Soup,1,10
+Poh Mushroom and Ant Egg in Kang Lao Soup : แกงลาวเห็ดเผาะไข่มดแดง,170,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/77+%E0%B9%81%E0%B8%81%E0%B8%87%E0%B8%B2%E0%B8%A7%E0%B9%80%E0%B8%AB%E0%B9%87%E0%B8%94%E0%B9%80%E0%B8%9C%E0%B8%B2%E0%B8%B0%E0%B9%84%E0%B8%82%E0%B9%88%E0%B8%A1%E0%B8%94%E0%B9%81%E0%B8%94%E0%B8%87.JPG,6,Soup,1,10
+Poh Mushroom in Kang Lao Soup : แกงลาวเห็ดเผาะ,140,,6,Soup,0,10
+Ant Egg and Pak-Waan Vegetable in Kang Lao Soup : แกงลาวผักหวานไข่มดแดง,140,,6,Soup,0,10
+Poh Mushroom in Kang Kua Curry : แกงคั่วเห็ดเผาะ,110,,6,Soup,0,10
+Water Snail in Kang Kua Curry : แกงคั่วหอยขมใบชะพลู,110,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/78+%E0%B9%81%E0%B8%81%E0%B8%87%E0%B8%84%E0%B8%B1%E0%B9%88%E0%B8%A7%E0%B8%AB%E0%B8%AD%E0%B8%A2%E0%B8%82%E0%B8%A1.jpg,6,Soup,0,10
+Banana Blossom in Kang Kua Oom Curry : แกงคั่วอ่อมหัวปลี,100,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/80+%E0%B9%81%E0%B8%81%E0%B8%87%E0%B8%84%E0%B8%B1%E0%B9%88%E0%B8%A7%E0%B8%AD%E0%B9%88%E0%B8%AD%E0%B8%A1%E0%B8%AB%E0%B8%B1%E0%B8%A7%E0%B8%9B%E0%B8%A5%E0%B8%B5.JPG,6,Soup,0,10
+Chicken/Catfish in Kang Oom Curry : แกงอ่อมไก่/ปลาดุก,130,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/81+%E0%B9%81%E0%B8%81%E0%B8%87%E0%B8%AD%E0%B9%88%E0%B8%AD%E0%B8%A1%E0%B9%84%E0%B8%81%E0%B9%88.JPG,6,Soup,0,10
+Mixed Vegetables and Shrimp in Kang Liang Soup : แกงเลียงกุ้งสด,130,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/82+%E0%B9%81%E0%B8%81%E0%B8%87%E0%B9%80%E0%B8%A5%E0%B8%B5%E0%B8%A2%E0%B8%87.JPG,6,Soup,0,10
+Crispy Salid Fish in Tom Klong Soup : ต้มโคล้งปลาสลิด,140,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/13.%E0%B8%95%E0%B9%89%E0%B8%A1%E0%B9%82%E0%B8%84%E0%B8%A5%E0%B9%89%E0%B8%87%E0%B8%9B%E0%B8%A5%E0%B8%B2%E0%B8%AA%E0%B8%A5%E0%B8%B4%E0%B8%94.JPG,6,Soup,0,10
+Chicken/Fish Ball in Green Curry : แกงเขียวหวานไก่/ลูกชิ้นปลากราย,100,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/11.%E0%B9%81%E0%B8%81%E0%B8%87%E0%B9%80%E0%B8%82%E0%B8%B5%E0%B8%A2%E0%B8%A7%E0%B8%AB%E0%B8%A7%E0%B8%B2%E0%B8%99%E0%B8%A5%E0%B8%B9%E0%B8%81%E0%B8%8A%E0%B8%B4%E0%B9%89%E0%B8%99%E0%B8%9B%E0%B8%A5%E0%B8%B2%E0%B8%81%E0%B8%A3%E0%B8%B2%E0%B8%A2.JPG,6,Soup,0,10
+Bamboo Shoot in Kang Per Curry : แกงหน่อไม้ใบย่านาง (แกงเปอะ),110,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/83+%E0%B9%81%E0%B8%81%E0%B8%87%E0%B8%AB%E0%B8%99%E0%B9%88%E0%B8%AD%E0%B9%84%E0%B8%A1%E0%B9%89%E0%B9%83%E0%B8%9A%E0%B8%A2%E0%B9%88%E0%B8%B2%E0%B8%99%E0%B8%B2%E0%B8%87.JPG,6,Soup,0,10
+Fried Cha-Om Leaves and Shrimp in Sour Curry : แกงส้มชะอมทอด,130,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/87+%E0%B9%81%E0%B8%81%E0%B8%87%E0%B8%AA%E0%B9%89%E0%B8%A1%E0%B8%8A%E0%B8%B0%E0%B8%AD%E0%B8%A1%E0%B8%97%E0%B8%AD%E0%B8%94.jpg,6,Soup,0,10
+Mixed Vegetables and Shrimp in Sour Curry : แกงส้มผักรวมกุ้ง,130,,6,Soup,0,10
+Tom Yum Goong : ต้มยำกุ้ง,160,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/14.+%E0%B8%95%E0%B9%89%E0%B8%A1%E0%B8%A2%E0%B8%B3%E0%B8%81%E0%B8%B8%E0%B9%89%E0%B8%87.JPG,6,Soup,0,10
+Yanagi Mushroom and Shrimp in Spicy and Sour Soup : ต้มยำเห็ดโคนญี่ปุ่นกุ้ง,160,,6,Soup,0,10
+Yanagi Mushroom in Spicy and Sour Soup : ต้มยำเห็ดโคนญี่ปุ่น (มัง),130,,6,Soup,0,10
+Chicken in Kang Pa Soup : แกงป่าไก่,100,,6,Soup,0,10
+Fish Ball in Kang Pa Soup : แกงป่าลูกชิ้นปลากราย,110,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/86+%E0%B9%81%E0%B8%81%E0%B8%87%E0%B8%9B%E0%B9%88%E0%B8%B2%E0%B8%A5%E0%B8%B9%E0%B8%81%E0%B8%8A%E0%B8%B4%E0%B9%89%E0%B8%99%E0%B8%9B%E0%B8%A5%E0%B8%B2.JPG,6,Soup,0,10
+Minced Shrimp in Kang Pa Soup : แกงป่ากุ้งสับ,130,,6,Soup,0,10
+"Tofu, Minced Pork Ball and Seaweed Soup : แกงจืดเต้าหู้หมูสับสาหร่าย",110,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/85+%E0%B9%81%E0%B8%81%E0%B8%87%E0%B8%88%E0%B8%B7%E0%B8%94%E0%B9%80%E0%B8%95%E0%B9%89%E0%B8%B2%E0%B8%AB%E0%B8%B9%E0%B9%89%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B8%AA%E0%B8%B1%E0%B8%9A.JPG,6,Soup,0,10
+"""Khun Shine"" Fried Rice : ข้าวผัดคุณชาย",75,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/66+%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%9C%E0%B8%B1%E0%B8%94%E0%B8%84%E0%B8%B8%E0%B8%93%E0%B8%8A%E0%B8%B2%E0%B8%A2.JPG,7,Rice,0,10
+Crispy Salid Fish Fried Rice : ข้าวผัดปลาสลิด,75,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/67+%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%9C%E0%B8%B1%E0%B8%94%E0%B8%9B%E0%B8%A5%E0%B8%B2%E0%B8%AA%E0%B8%A5%E0%B8%B4%E0%B8%94.JPG,7,Rice,0,10
+Salted Fish Fried Rice : ข้าวผัดปลาเค็ม,75,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/68+%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%9C%E0%B8%B1%E0%B8%94%E0%B8%9B%E0%B8%A5%E0%B8%B2%E0%B9%80%E0%B8%84%E0%B9%87%E0%B8%A1.JPG,7,Rice,0,10
+Crab Meat Friec Rice : ข้าวผัดปู,75,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/69+%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%9C%E0%B8%B1%E0%B8%94%E0%B8%9B%E0%B8%B9.jpg,7,Rice,0,10
+Shrimp Fried Rice : ข้าวผัดกุ้ง,75,,7,Rice,0,10
+Jasmine Rice Topped with Stir Fried Pork/Chicken with Basil Leaves : ข้าวราดกระเพราหมู/ไก่,75,,7,Rice,0,10
+Jasmine Rice Topped with Stir Fried Minced Shrimp with Basil Leaves : ข้าวราดกระเพรากุ้งสับ,90,,7,Rice,0,10
+Thai Jasmine Rice (Small) : ข้าวหอมมะลิ (จาน),15,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%AA%E0%B8%A7%E0%B8%A2.JPG,7,Rice,0,10
+Thai Jasmine Rice (Big) : ข้าวหอมมะลิ (โถ),65,,7,Rice,0,10
+White Sitcky Rice : ข้าวเหนียวขาว,15,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B9%80%E0%B8%AB%E0%B8%99%E0%B8%B5%E0%B8%A2%E0%B8%A7%E0%B8%82%E0%B8%B2%E0%B8%A7.JPG,7,Rice,0,10
+Black Sitcky Rice : ข้าวเหนียวดำ,15,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B9%80%E0%B8%AB%E0%B8%99%E0%B8%B5%E0%B8%A2%E0%B8%A7%E0%B8%94%E0%B8%B3.JPG,7,Rice,0,10
+Rice Noodle : ขนมจีน,15,,7,Rice,0,10
+"""Khun Shine"" Omelet with Sweet Basil, Pickled Turnip and Chilli : ไข่คุณชาย",85,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/71+%E0%B9%84%E0%B8%82%E0%B9%88%E0%B8%84%E0%B8%B8%E0%B8%93%E0%B8%8A%E0%B8%B2%E0%B8%A2.JPG,8,Egg,0,10
+"""Mhom Yai"" Omelet with Shrimp, Yanagi Mushroom and Squid : ไข่หม่อมยาย",85,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/72+%E0%B9%84%E0%B8%82%E0%B9%88%E0%B9%80%E0%B8%88%E0%B8%B5%E0%B8%A2%E0%B8%A7%E0%B8%AB%E0%B8%A1%E0%B9%88%E0%B8%AD%E0%B8%A1%E0%B8%A2%E0%B8%B2%E0%B8%A2.JPG,8,Egg,0,10
+Omelet with Ant Egg : ไข่เจียวไข่มดแดง,130,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/73+%E0%B9%84%E0%B8%82%E0%B9%88%E0%B9%80%E0%B8%88%E0%B8%B5%E0%B8%A2%E0%B8%A7%E0%B9%84%E0%B8%82%E0%B9%88%E0%B8%A1%E0%B8%94%E0%B9%81%E0%B8%94%E0%B8%87.JPG,8,Egg,0,10
+Omelet with Minced Pork : ไข่เจียวหมูสับ,75,,8,Egg,0,10
+Omelet with Minced Shrimp : ไข่เจียวกุ้งสับ,100,,8,Egg,0,10
+Omelet : ไข่เจียว,50,,8,Egg,0,10
+Fried Egg : ไข่ดาว,15,,8,Egg,0,10
+Stir-Fried Cha-Om Leaves with Glass Noodle : ชะอมผัดวุ้นเส้น,80,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/56++%E0%B8%8A%E0%B8%B0%E0%B8%AD%E0%B8%A1%E0%B8%9C%E0%B8%B1%E0%B8%94%E0%B8%A7%E0%B8%B8%E0%B9%89%E0%B8%99%E0%B9%80%E0%B8%AA%E0%B9%89%E0%B8%99.JPG,9,Stir-Fried,1,10
+Stir-Fried Cabbage with Fish Sauce : กะหล่ำฉ่าน้ำปลา (มัง),75,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/55+%E0%B8%81%E0%B8%B0%E0%B8%AB%E0%B8%A5%E0%B9%88%E0%B8%B3%E0%B8%89%E0%B9%88%E0%B8%B2%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%9B%E0%B8%A5%E0%B8%B2.JPG,9,Stir-Fried,0,10
+Stir-Fried Sayote Vegetable with Oyster Sauce : ซาโยเต้ผัดน้ำมันหอย (มัง),75,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/57+%E0%B8%8A%E0%B8%B2%E0%B9%82%E0%B8%A2%E0%B9%80%E0%B8%95%E0%B9%89%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%A1%E0%B8%B1%E0%B8%99%E0%B8%AB%E0%B8%AD%E0%B8%A2.JPG,9,Stir-Fried,0,10
+Stir-Fried Yanahi Mushroom with Oyster Sauce : เห็ดโคนญี่ปุ่นผัดน้ำมันหอย (มัง),95,,9,Stir-Fried,0,10
+Stir-Fried Coconut Shoot with Shrimp : ยอดมะพร้าวผัดกุ้ง,100,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/58+%E0%B8%A2%E0%B8%AD%E0%B8%94%E0%B8%A1%E0%B8%B0%E0%B8%9E%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%A7%E0%B8%9C%E0%B8%B1%E0%B8%94%E0%B8%81%E0%B8%B8%E0%B9%89%E0%B8%87.JPG,9,Stir-Fried,0,10
+Stir-Fried Morning Glory with Oyster Sauce : ผักบุ้งผัดน้ำมันหอย (มัง),75,,9,Stir-Fried,0,10
+Stir-Fried Kale with Salted Fish : ผัดคะน้าปลาเค็ม,80,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/59+%E0%B8%9C%E0%B8%B1%E0%B8%94%E0%B8%84%E0%B8%B0%E0%B8%99%E0%B9%89%E0%B8%B2%E0%B8%9B%E0%B8%A5%E0%B8%B2%E0%B9%80%E0%B8%84%E0%B9%87%E0%B8%A1.JPG,9,Stir-Fried,0,10
+Stir-Fried Kale with Crispy Salid Fish : ผัดคะน้าปลาสลิด,85,,9,Stir-Fried,0,10
+Stir-Fried Kale with Oyster Sauce : ผัดคะน้าน้ำมันหอย (มัง),75,,9,Stir-Fried,0,10
+Stir-Fried Mixed Vegetables with Oyster Sauce : ผัดผักรวม (มัง),75,,9,Stir-Fried,0,10
+Stir-Fried Beef in Southern Style Curry : เนื้อคั่ว,130,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/60+%E0%B9%80%E0%B8%99%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%84%E0%B8%B1%E0%B9%88%E0%B8%A7.JPG,9,Stir-Fried,1,10
+Stir-Fried Pork in Southern Style Curry : หมูคั่ว,100,,9,Stir-Fried,0,10
+Casseroled Prawn with Glass Noodle : กุ้งอบวุ้นเส้น,235,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/65+%E0%B8%81%E0%B8%B8%E0%B9%89%E0%B8%87%E0%B8%AD%E0%B8%9A%E0%B8%A7%E0%B8%B8%E0%B9%89%E0%B8%99%E0%B9%80%E0%B8%AA%E0%B9%89%E0%B8%99.JPG,9,Stir-Fried,0,10
+Steamed Prawn with Salt : กุ้งอบเกลือ,235,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/61+%E0%B8%81%E0%B8%B8%E0%B9%89%E0%B8%87%E0%B8%AD%E0%B8%9A%E0%B9%80%E0%B8%81%E0%B8%A5%E0%B8%B7%E0%B8%AD.jpg,9,Stir-Fried,0,10
+Stir-Fried Grilled Pork Neck with Shrimp Paste : หมูย่างผัดกะปิ,85,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/63+%E0%B8%AB%E0%B8%A1%E0%B8%B9%E0%B8%A2%E0%B9%88%E0%B8%B2%E0%B8%87%E0%B8%9C%E0%B8%B1%E0%B8%94%E0%B8%81%E0%B8%B0%E0%B8%9B%E0%B8%B4.JPG,9,Stir-Fried,0,10
+Stir-Fried Pork/Chicken with Basil Leaves : ผัดกระเพราหมู/ไก่,85,,9,Stir-Fried,0,10
+Stir-Fried Minced Shrimp with Basil Leaves : ผัดกระเพรากุ้งสับ,140,,9,Stir-Fried,0,10
+Chrysanthemum Juice : น้ำเก๊กฮวย,25,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/98++%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B9%80%E0%B8%81%E0%B9%8A%E0%B8%81%E0%B8%AE%E0%B8%A7%E0%B8%A2.JPG,10,Drinks,0,10
+Roselle Juice : น้ำกระเจี๊ยบ,25,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/99+%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B9%80%E0%B8%88%E0%B8%B5%E0%B9%8A%E0%B8%A2%E0%B8%9A.JPG,10,Drinks,0,10
+Butterfly Pea and Lime Juice : น้ำอัญชันมะนาว,25,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/102+%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%AD%E0%B8%B1%E0%B8%8D%E0%B8%8A%E0%B8%B1%E0%B8%8D.JPG,10,Drinks,0,10
+Bael Juice : น้ำมะตูม,25,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/101+%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%A1%E0%B8%B0%E0%B8%95%E0%B8%B9%E0%B8%A1.JPG,10,Drinks,0,10
+Pandan Juice : น้ำใบเตย,25,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/100+%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B9%83%E0%B8%9A%E0%B9%80%E0%B8%95%E0%B8%A2.JPG,10,Drinks,0,10
+Lemongrass Juice : น้ำตะไคร้,25,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/104+%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B8%95%E0%B8%B0%E0%B9%84%E0%B8%84%E0%B8%A3%E0%B9%89.JPG,10,Drinks,0,10
+Fruit Punch Juice : น้ำพั้นซ์,40,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/103+%E0%B8%9E%E0%B8%B1%E0%B8%99%E0%B8%8B%E0%B9%8C%E0%B8%99%E0%B9%89%E0%B8%B3%E0%B9%81%E0%B8%94%E0%B8%87.JPG,10,Drinks,0,10
+Lod Chong in Coconut Milk : ลอดช่องไทยน้ำกะทิ ,35,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/92+%E0%B8%A5%E0%B8%AD%E0%B8%94%E0%B8%8A%E0%B9%88%E0%B8%AD%E0%B8%87%E0%B9%84%E0%B8%97%E0%B8%A2.JPG,11,Desserts,0,10
+Taro Ball in Coconut Milk : บัวลอยเผือก,30,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/90+%E0%B8%9A%E0%B8%B1%E0%B8%A7%E0%B8%A5%E0%B8%AD%E0%B8%A2%E0%B9%80%E0%B8%9C%E0%B8%B7%E0%B8%AD%E0%B8%81.JPG,11,Desserts,0,10
+Water Chestnut Wrapped with Jelly in Syrup : ทับทิมกรอบ,30,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/91+%E0%B8%97%E0%B8%B1%E0%B8%9A%E0%B8%97%E0%B8%B4%E0%B8%A1%E0%B8%81%E0%B8%A3%E0%B8%AD%E0%B8%9A.JPG,11,Desserts,0,10
+Lotus Seed and Red Bean in Syrup : ลูกบัว-ถั่วแดงเย็น,30,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/93+%E0%B8%A5%E0%B8%B9%E0%B8%81%E0%B8%9A%E0%B8%B1%E0%B8%A7%E0%B8%96%E0%B8%B1%E0%B9%88%E0%B8%A7%E0%B9%81%E0%B8%94%E0%B8%87.jpg,11,Desserts,0,10
+Sala Fruit in Syrup : สละลอยแก้ว,40,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/95+%E0%B8%AA%E0%B8%A5%E0%B8%B0%E0%B8%A5%E0%B8%AD%E0%B8%A2%E0%B9%81%E0%B8%81%E0%B9%89%E0%B8%A7.JPG,11,Desserts,0,10
+Santol Fruit in Syrup : กระท้อนลอยแก้ว,40,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Nittaya/94+%E0%B8%81%E0%B8%A3%E0%B8%B0%E0%B8%97%E0%B9%89%E0%B8%AD%E0%B8%99%E0%B8%A5%E0%B8%AD%E0%B8%A2%E0%B9%81%E0%B8%81%E0%B9%89%E0%B8%A7.JPG,11,Desserts,0,10
+Baby Coconut Pudding : พุดดิ้งมะพร้าวอ่อน,40,,11,Desserts,0,10
