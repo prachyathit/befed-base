@@ -18,6 +18,7 @@ module Api
 					m['price'] = menu.price.to_s
 					m['image_url'] = menu.image_url
 					m['recommend'] = menu.rec
+					m['appear'] = menu.appear
 					m['thai_name'] = menu.name.split(" : ")[1]
 					m['eng_name'] = menu.name.split(" : ")[0]
 					m['has_option'] = (menu.option_count > 0)
