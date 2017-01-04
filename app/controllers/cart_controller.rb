@@ -90,7 +90,11 @@ class CartController < ApplicationController
     # Submit order
     @user = current_user
     restaurant = Restaurant.find(session[:restaurant_id])
-    if restaurant.can_delivery_to_address?(current_user.latitude,current_user.longitude)
+    if params[:address_id]
+      address = @user.addresses.where(id: params[:address_id]).first
+    end
+    address ||= current_user.default_address
+    if restaurant.can_delivery_to_address?(address.latitude,address.longitude)
     # if true
       begin
         ActiveRecord::Base.transaction do
@@ -98,6 +102,7 @@ class CartController < ApplicationController
           @cart = session[:cart]
           @order = Order.process!(user: @user, cart: @cart, 
             payment_type: params[:payment_type], 
+            address_id: params[:address_id],
             rest_id: @rest_id)
           payment = create_new_payment!(@order)
           @order.create_order_food(@cart)

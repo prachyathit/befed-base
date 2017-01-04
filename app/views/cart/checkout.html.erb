@@ -75,6 +75,7 @@
                   Cash on delivery
                   <%= form_tag '/checkout/complete', class: 'form-horizontal', id: 'cash-payment' do %>
                     <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                    <%= hidden_field_tag :address_id, @address.id %>
                     <input type='hidden' name='payment_type' value='cash'>
                   <% end %>
                 </div>
@@ -84,6 +85,7 @@
               <!-- BEGIN: CREDIT CARD PAYMENT FORM -->
               <%= form_tag '/checkout/complete', class: 'form-horizontal', id: 'cc-payment' do %>
                 <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+                <%= hidden_field_tag :address_id, @address.id %>
                 <input type="hidden" name="token">
                 <input type='hidden' name='payment_type' value='credit_card'>
                   <div class="form-group">
