@@ -1,20 +1,24 @@
 class SaddressController < ApplicationController
   def new
     # @places = Place.all
-    unless session[:saddress]
-      session[:saddress] = {}
-    end
+    session[:saddress] ||= {}
+
     if logged_in?
       if session[:saddress].empty?
         default_address = current_user.default_address
-        session[:saddress][:raw] = default_address.attributes
-        session[:saddress][:faddress] = default_address.full_address_with_name
-        session[:saddress][:latitude] = default_address.latitude
-        session[:saddress][:longitude] = default_address.longitude
+        if default_address.present?
+          session[:saddress][:raw] = default_address.attributes
+          session[:saddress][:faddress] = default_address.full_address_with_name
+          session[:saddress][:latitude] = default_address.latitude
+          session[:saddress][:longitude] = default_address.longitude
+          redirect_to restaurants_url
+        end
+      else
+        redirect_to restaurants_url
       end
-      redirect_to restaurants_url
     end
   end
+
   def create
     unless params[:saddress].empty?
       address = Address.new(JSON.parse(params[:saddress][:address]))
