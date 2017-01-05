@@ -23,6 +23,12 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    
+    unless session[:saddress].present? and session[:saddress]["raw"].present?
+      flash[:danger] = "Please enter delivery location"
+      render template: 'sessions/new' and return
+    end
+    
     if @user.save
       address = Address.new(JSON.parse(session[:saddress]["raw"]))
       address.name ||= 'Default'
