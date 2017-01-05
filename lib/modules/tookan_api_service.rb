@@ -7,7 +7,13 @@ module TookanApiService
 			
 			restaurant = Restaurant.find(order.rest_id)
 			shipping_address = order.shipping_address
-			payment_type = order.payment_type ? "COD" : "Credit Card"
+			if order.payment_type == 0
+				payment_type = "COD"
+			elsif order.payment_type == 1
+				payment_type = "Credit Card"
+			else
+				payment_type = "Unknown"
+			end
 			dtime = restaurant.dtime
 			order_rows = "ออเดอร์หมายเลข #{order.id} \n"
 			

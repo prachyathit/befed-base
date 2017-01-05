@@ -2,6 +2,8 @@ User.create!( name: "Example User",
               email: "example@railstutorial.org",
               phone: "0819999999",
               address: "ซอย ลาดพร้าว 90 แขวง พลับพลา เขต วังทองหลาง กรุงเทพมหานคร 10312 ประเทศไทย",
+              latitude: 13.909736,
+              longitude: 100.549625,
               password: "foobar0898318806",
               password_confirmation: "foobar0898318806",
               admin: true )
@@ -29,9 +31,12 @@ User.create!( name: "Example User",
                 best as we always do for our family."
   image_url = "https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Salad+Factory/logo2.jpg"
   address = "Soi Mu Ban Mueang Thong Thani Khrongkan 6 Zone A, Tambon Ban Mai, Amphoe Pak Kret, Chang Wat Nonthaburi 11120, Thailand"
+
   min_order = 200
   Restaurant.create!( name: name,
                 desc: description,
+                latitude: 13.909736,
+                longitude: 100.549625,
                 image_url: image_url,
                 address: address,
                 min_order: min_order)
