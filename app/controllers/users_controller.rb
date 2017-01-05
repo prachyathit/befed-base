@@ -23,23 +23,17 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    
-    unless session[:saddress].present? and session[:saddress]["raw"].present?
-      flash[:danger] = "Please enter delivery location"
-      render template: 'sessions/new' and return
-    end
-    
     if @user.save
-      address = Address.new(JSON.parse(session[:saddress]["raw"]))
-      address.name ||= 'Default'
-      address.user_id = @user.id
-      address.latitude = user_params[:latitude]
-      address.longitude = user_params[:longitude]
-      address.save
-      session[:saddress] = {}
-
+      if session[:saddress].present? and session[:saddress]["raw"].present?
+        address = Address.new(JSON.parse(session[:saddress]["raw"]))
+        address.name ||= 'Default'
+        address.user_id = @user.id
+        address.latitude = session[:saddress]['latitude']
+        address.longitude = session[:saddress]['longitude']
+        address.save
+        flash[:success] = "Let's eat!"
+      end
       log_in @user
-      flash[:success] = "Let's eat!"
       
       redirect_back_or root_url
     else
