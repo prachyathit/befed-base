@@ -13,7 +13,7 @@ class Address < ActiveRecord::Base
 		address_params[:user_id] = user.id
 		address_params[:latitude] = params['latitude']
 		address_params[:longitude] = params['longitude']
-		address_params[:name] = name
+		address_params['name'] ||= name
 		address = self.create(address_params)
 		user.set_default_address(address)
 		address
