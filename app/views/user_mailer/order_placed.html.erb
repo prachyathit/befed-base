@@ -97,7 +97,7 @@ Order id: <%= @order.id %>
           <tr>
             <td width="70%"></td>
             <td width="10%"><b>Total</b></td>
-            <td width="20%"><b><%= total+@order.delivery_fee %> ฿</b></td>
+            <td width="20%"><b><%= total+@order.delivery_fee+@order.service_fee %> ฿</b></td>
           </tr>
       </tbody>
     </table>
