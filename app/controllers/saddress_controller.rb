@@ -2,7 +2,6 @@ class SaddressController < ApplicationController
   def new
     # @places = Place.all
     session[:saddress] ||= {}
-    # session[:saddress][:raw] ||= {}
 
     if logged_in?
       if session[:saddress].empty?

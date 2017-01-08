@@ -9,7 +9,8 @@ class Address < ActiveRecord::Base
 	before_destroy :prevent_default_address_from_deletion
 
 	def self.default_from_params user, name, params
-		address_params = JSON.parse(params["raw"])
+		address_params = params["raw"]
+		address_params = JSON.parse(address_params) if address_params.is_a?(String)
 		address_params[:user_id] = user.id
 		address_params['name'] ||= name
 		address = self.create(address_params)

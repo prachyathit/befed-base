@@ -31,6 +31,7 @@ class UsersController < ApplicationController
         address.latitude = session[:saddress]['raw']['latitude']
         address.longitude = session[:saddress]['raw']['longitude']
         address.save
+        session[:saddress] = {}
         flash[:success] = "Let's eat!"
       end
       log_in @user
