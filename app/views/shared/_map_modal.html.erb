@@ -97,10 +97,10 @@
     $("#map-modal").modal("show");
     $("#map-modal-edit").modal("show");
 
-    if ("<%= not session[:saddress].nil? and (session[:saddress][:latitude].present? && session[:saddress][:longitude].present?) %>" == 'true') {
+    if ("<%= not session[:saddress].nil? and not session[:saddress][:raw].nil? and (session[:saddress][:raw][:latitude].present? && session[:saddress][:raw][:longitude].present?) %>" == 'true') {
       currentPosition = { 
-        lat: parseFloat("<%= session[:saddress][:latitude] %>"), 
-        lng: parseFloat("<%= session[:saddress][:longitude] %>") };
+        lat: parseFloat("<%= session[:saddress][:raw][:latitude] if session[:saddress][:raw].present? %>"), 
+        lng: parseFloat("<%= session[:saddress][:raw][:longitude] if session[:saddress][:raw].present? %>") };
     }
   }
 

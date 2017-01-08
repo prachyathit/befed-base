@@ -11,8 +11,6 @@ class Address < ActiveRecord::Base
 	def self.default_from_params user, name, params
 		address_params = JSON.parse(params["raw"])
 		address_params[:user_id] = user.id
-		address_params[:latitude] = params['latitude']
-		address_params[:longitude] = params['longitude']
 		address_params['name'] ||= name
 		address = self.create(address_params)
 		user.set_default_address(address)

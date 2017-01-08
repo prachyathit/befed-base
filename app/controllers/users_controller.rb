@@ -25,11 +25,11 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       if session[:saddress].present? and session[:saddress]["raw"].present?
-        address = Address.new(JSON.parse(session[:saddress]["raw"]))
+        address = Address.new(session[:saddress]["raw"])
         address.name ||= 'Default'
         address.user_id = @user.id
-        address.latitude = session[:saddress]['latitude']
-        address.longitude = session[:saddress]['longitude']
+        address.latitude = session[:saddress]['raw']['latitude']
+        address.longitude = session[:saddress]['raw']['longitude']
         address.save
         flash[:success] = "Let's eat!"
       end
@@ -54,8 +54,9 @@ class UsersController < ApplicationController
     if @user.update_attributes(user_params)
       default_address = @user.default_address
       session[:saddress][:faddress] = default_address.full_address
-      session[:saddress][:latitude] = default_address.latitude
-      session[:saddress][:longitude] = default_address.longitude
+      session[:saddress][:raw] ||= {}
+      session[:saddress][:raw][:latitude] = default_address.latitude
+      session[:saddress][:raw][:longitude] = default_address.longitude
       # flash[:success] = "Profile updated"
       redirect_to edit_user_path(current_user)
     else

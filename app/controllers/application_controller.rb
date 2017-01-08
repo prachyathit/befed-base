@@ -17,7 +17,12 @@ class ApplicationController < ActionController::Base
   end
 
   def clear_old_session_address
-    if session[:saddress].present? and not session[:saddress]['raw'].present?
+    if session[:saddress].present? and (
+      not session[:saddress]['raw'].present? or (
+        session[:saddress]['raw'].present? and
+        not session[:saddress]['raw']['latitude'].present? and 
+        not session[:saddress]['raw']['longitude'].present?)
+      )
       session[:saddress] = {}
     end
   end
