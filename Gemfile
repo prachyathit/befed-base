@@ -29,6 +29,9 @@ gem 'omise', github: 'omise/omise-ruby'
 
 gem 'figaro'
 
+# for MemCache
+gem 'dalli'
+
 # for API
 gem 'rails-api'
 gem 'rails_param'
