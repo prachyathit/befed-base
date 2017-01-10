@@ -4,8 +4,9 @@ class SaddressController < ApplicationController
     session[:saddress] ||= {}
 
     if logged_in?
-      p "   SESSION   "
-      p session[:saddress]
+      logger = ActiveSupport::TaggedLogging.new(Logger.new(STDOUT))
+      logger.tagged("Test") { logger.info "SESSION" }
+      logger.tagged("Test") { logger.info session }
       if session[:saddress].empty?
         default_address = current_user.default_address
         if default_address.present?
