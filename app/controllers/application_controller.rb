@@ -19,7 +19,7 @@ class ApplicationController < ActionController::Base
   def clear_old_session_address
     logger = ActiveSupport::TaggedLogging.new(Logger.new(STDOUT))
     logger.tagged("Test") { logger.info "SESSION" }
-    logger.tagged("Test") { logger.info session }
+    logger.tagged("Test") { logger.info session.inspect }
     if session[:saddress].present? and (
       not session[:saddress]['raw'].present? or (
         session[:saddress]['raw'].present? and
