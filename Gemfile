@@ -31,6 +31,7 @@ gem 'figaro'
 
 # for MemCache
 gem 'dalli'
+gem 'connection_pool'
 
 # for API
 gem 'rails-api'
