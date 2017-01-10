@@ -39,6 +39,7 @@ class CartController < ApplicationController
     end
     if session[:cart]
       @cart = session[:cart]
+      @cart.deep_symbolize_keys!
     else
       @cart = {}
     end
@@ -57,6 +58,7 @@ class CartController < ApplicationController
     
     if session[:cart]
       @cart = session[:cart]
+      @cart.deep_symbolize_keys!
       @user = current_user
       unless session[:saddress].empty?
         unless session[:saddress].is_a?(Hash) and session[:saddress][:raw].present? and session[:saddress][:raw][:id].present?
