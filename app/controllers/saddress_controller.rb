@@ -6,7 +6,7 @@ class SaddressController < ApplicationController
     if logged_in?
       logger = ActiveSupport::TaggedLogging.new(Logger.new(STDOUT))
       logger.tagged("Test") { logger.info "SESSION" }
-      logger.tagged("Test") { logger.info session.inspect }
+      logger.tagged("Test") { logger.info session[:saddress].inspect }
       if session[:saddress].empty?
         default_address = current_user.default_address
         if default_address.present?
