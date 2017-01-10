@@ -4,15 +4,11 @@ class SaddressController < ApplicationController
     session[:saddress] ||= {}
 
     if logged_in?
-      logger = ActiveSupport::TaggedLogging.new(Logger.new(STDOUT))
-      
       if session[:saddress].empty?
         default_address = current_user.default_address
         if default_address.present?
           session[:saddress][:raw] = default_address.attributes.except(:created_at, :updated_at)
           session[:saddress][:faddress] = default_address.full_address_with_name
-          logger.tagged("Test") { logger.info "======SESSION" }
-          logger.tagged("Test") { logger.info session[:saddress].inspect }
           redirect_to restaurants_url
         end
       else

@@ -17,12 +17,8 @@ class ApplicationController < ActionController::Base
   end
 
   def clear_old_session_address
-    logger = ActiveSupport::TaggedLogging.new(Logger.new(STDOUT))
-    
     if session[:saddress].present?
       session[:saddress].deep_symbolize_keys!()
-      # logger.tagged("Test") { logger.info ">>>>>SESSION" }
-      # logger.tagged("Test") { logger.info session[:saddress].inspect }
       if not session[:saddress][:raw].present? or (
           session[:saddress][:raw].present? and
           not session[:saddress][:raw][:latitude].present? and 
