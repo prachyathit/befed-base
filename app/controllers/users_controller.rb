@@ -24,12 +24,12 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      if session[:saddress].present? and session[:saddress]["raw"].present?
-        address = Address.new(session[:saddress]["raw"])
+      if session[:saddress].present? and session[:saddress][:raw].present?
+        address = Address.new(session[:saddress][:raw])
         address.name ||= 'Default'
         address.user_id = @user.id
-        address.latitude = session[:saddress]['raw']['latitude']
-        address.longitude = session[:saddress]['raw']['longitude']
+        address.latitude = session[:saddress][:raw][:latitude]
+        address.longitude = session[:saddress][:raw][:longitude]
         address.save
         session[:saddress] = {}
         flash[:success] = "Let's eat!"

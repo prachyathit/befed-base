@@ -43,7 +43,7 @@
               <%= link_to "javascript:;", { class: "dropdown-toggle text-color", 'data-toggle'=> "dropdown" } do %>
                 <i class="fa fa-map-marker fa-lg theme-color"></i>
                 <% unless session[:saddress].nil? %>
-                  <div class="address_header text-color"><%= session[:saddress]["faddress"] %></div>
+                  <div class="address_header text-color"><%= session[:saddress][:faddress] %></div>
                 <% end %>
               <% end %>
               <ul class="dropdown-menu address-dropdown" aria-labelledby="allAddressDropdown">
@@ -66,7 +66,7 @@
               <%= link_to "#", { class: "showmap" } do %>
                 <i class="fa fa-map-marker fa-lg theme-color"></i>
                 <% unless session[:saddress].nil? %>
-                  <div class="address_header text-color"><%= session[:saddress]["faddress"] %></div>
+                  <div class="address_header text-color"><%= session[:saddress][:faddress] %></div>
                 <% end %>
               <% end %>
             </li>

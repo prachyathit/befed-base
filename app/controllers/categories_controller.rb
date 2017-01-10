@@ -83,6 +83,6 @@ class CategoriesController < ApplicationController
 
     # Get submitted address from session
     def submitted_address
-      session[:saddress]["faddress"]
+      session[:saddress][:faddress]
     end
 end
