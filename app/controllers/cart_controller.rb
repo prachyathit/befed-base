@@ -29,8 +29,9 @@ class CartController < ApplicationController
   def line_delete
     p '**********************'
     p session[:cart].inspect
-    session[:cart].symbolize_keys!
-    session[:cart].delete(params[:id].to_sym)
+    p session[:cart].keys.first.class.name
+    # session[:cart].symbolize_keys!
+    session[:cart].delete(params[:id].to_i)
     p '----------------------'
     p session[:cart].inspect
     redirect_to cart_path
