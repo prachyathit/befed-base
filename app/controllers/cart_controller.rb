@@ -15,6 +15,8 @@ class CartController < ApplicationController
     session[:cart][line_id][:quantity] = params[:cart][:quantity]
     session[:cart][line_id][:special] = params[:cart][:special]
     session[:cart][line_id][:options] = params[:value]
+    p '======================'
+    p session[:cart].inspect
     get_cart_size
 
   end
@@ -25,7 +27,12 @@ class CartController < ApplicationController
   end
 
   def line_delete
+    p '**********************'
+    p session[:cart].inspect
+    # session[:cart].deep_symbolize_keys!
     session[:cart].delete(params[:id].to_s)
+    p '----------------------'
+    p session[:cart].inspect
     redirect_to cart_path
   end
 
