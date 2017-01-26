@@ -24,9 +24,9 @@ module Api
 				error400("Address with id #{params[:address_id]} does not exists.") and return
 			end
 
-			unless in_delivery_time
-				error400("Sorry, our delivery hours is at 11:00 AM to 9:00 PM") and return
-			end
+			# unless in_delivery_time
+			# 	error400("Sorry, our delivery hours is at 11:00 AM to 9:00 PM") and return
+			# end
 			if restaurant.can_delivery_to_address?(address.latitude,address.longitude)
 				cart = {}
 				params[:items].each_with_index do |item, index|
