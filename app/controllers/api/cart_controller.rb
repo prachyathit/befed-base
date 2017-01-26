@@ -11,7 +11,7 @@ module Api
 				item.param! :special_request, String
 				item.param! :options, 				Array do |opt|
 					opt.param! :id,							Integer
-					opt.param! :value_ids,			Array
+					opt.param! :value_ids,			Array, default: []
 				end
 			end
 			param! :address_id,			Integer, required: true

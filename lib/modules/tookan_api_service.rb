@@ -24,31 +24,23 @@ module TookanApiService
 				special = order_info[:special]
 				options = order_info[:options]
 				order_rows += "#{index+1}) #{food.name} x#{quantity} \n"
-				#option start
+
 				unless options.nil? 
 			  	options.each do |option| 
 			    	option_value_id = option[1][:option_value_ids] 
-			      unless option_value_id.first.empty? 
-			
-				      # <!--Radio button-->
-				      if option_value_id.class == String 
-				      	option_value = OptionValue.find(option_value_id) 
-				      	order_rows += "\t- #{option_value.name} \n"
-				  
-				      # <!--Checkbox-->
-				      else 
-				      	option_value_id.each do |option_number| 
-				        	unless option_number.empty? 
-				          	option_value = OptionValue.find(option_number) 
-				          	order_rows += "\t- #{option_value.name} \n"
-				        	end 
-				        end 
-				      end 
-				      
-				  	end 
+			    	if option_value_id.is_a?(String) and option_value_id.present?
+			    		option_value = OptionValue.find(option_value_id) 
+			      	order_rows += "\t- #{option_value.name} \n"
+		    		elsif option_value_id.is_a?(Array) and option_value_id.size > 0
+		    			option_value_id.each do |option_number| 
+			        	if option_number.present? 
+			          	option_value = OptionValue.find(option_number) 
+			          	order_rows += "\t- #{option_value.name} \n"
+			        	end 
+			        end 
+		    		end
 			    end 
 			  end
-			  #option end
 
 		    unless special.empty?
 		    	order_rows += "\t- #{special} \n"

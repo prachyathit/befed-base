@@ -56,18 +56,16 @@ class Order < ActiveRecord::Base
       unless options.nil?
         options.each do |option|
           option_value_id = option[1][:option_value_ids]
-          unless option_value_id.first.empty?
-            if option_value_id.class == String
-              option_value = OptionValue.find(option_value_id)
-              food_price += option_value.price.to_i
-              option_string = option_string + ", " + option_value.name
-            else
-              option_value_id.each do |option_number|
-                unless option_number.empty?
-                  option_value = OptionValue.find(option_number)
-                  food_price += option_value.price.to_i
-                  option_string = option_string + ", " + option_value.name
-                end
+          if option_value_id.is_a?(String) and option_value_id.present?
+            option_value = OptionValue.find(option_value_id)
+            food_price += option_value.price.to_i
+            option_string = option_string + ", " + option_value.name
+          elsif option_value_id.is_a?(Array) and option_value_id.size > 0
+            option_value_id.each do |option_number|
+              if option_number.present?
+                option_value = OptionValue.find(option_number)
+                food_price += option_value.price.to_i
+                option_string = option_string + ", " + option_value.name
               end
             end
           end
@@ -104,16 +102,14 @@ class Order < ActiveRecord::Base
       unless options.nil?
         options.each do |option|
           option_value_id = option[1][:option_value_ids]
-          unless option_value_id.first.empty?
-            if option_value_id.class == String
-              option_value = OptionValue.find(option_value_id)
-              food_price += option_value.price.to_i
-            else
-              option_value_id.each do |option_number|
-                unless option_number.empty?
-                  option_value = OptionValue.find(option_number)
-                  food_price += option_value.price.to_i
-                end
+          if option_value_id.is_a?(String) and option_value_id.present?
+            option_value = OptionValue.find(option_value_id)
+            food_price += option_value.price.to_i
+          elsif option_value_id.is_a?(Array) and option_value_id.size > 0
+            option_value_id.each do |option_number|
+              if option_number.present?
+                option_value = OptionValue.find(option_number)
+                food_price += option_value.price.to_i
               end
             end
           end
