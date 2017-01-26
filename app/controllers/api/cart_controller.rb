@@ -4,8 +4,6 @@ module Api
 		before_action :authenticate_user!, only: [:checkout]
 
 		def checkout
-			params[:items].second[:options].first[:value_ids] = nil
-			p params
 			param! :restaurant_id, 	Integer, required: true
 			param! :items, 					Array, required: true do |item|
 				item.param!	:menu_id,					Integer, required: true
@@ -17,9 +15,6 @@ module Api
 				end
 			end
 			param! :address_id,			Integer, required: true
-
-			p '++++++++++++++'
-			p params
 
 			unless restaurant = Restaurant.where(id: params[:restaurant_id]).first
 				error400("Restaurant with id #{params[:restaurant_id]} does not exists.") and return
@@ -70,9 +65,8 @@ module Api
 	          render json: order and return
 					end
 				rescue Exception => e
-					Rails.logger.error(e.inspect)
-					raise e
-					# error500("Something went wrong, Please try again later.") and return
+					Rails.logger.error(e)
+					error500("Something went wrong, Please try again later.") and return
 				end
 			else
 				error400("The address is not in delivery region.") and return
