@@ -4,7 +4,7 @@ module Api
 		before_action :authenticate_user!, only: [:checkout]
 
 		def checkout
-			params[:items].first[:options].first[:value_ids] = nil
+			params[:items].second[:options].first[:value_ids] = nil
 			p params
 			param! :restaurant_id, 	Integer, required: true
 			param! :items, 					Array, required: true do |item|
