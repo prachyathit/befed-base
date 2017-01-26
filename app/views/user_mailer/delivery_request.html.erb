@@ -24,23 +24,23 @@
         <% unless options.nil? %>
           <% options.each do |option| %>
             <% option_value_id = option[1][:option_value_ids] %>
-              <% unless option_value_id.first.empty? %>
+              
+              <% if option_value_id.is_a?(String) and option_value_id.present? %>
 
                 <!--Radio button-->
-                <% if option_value_id.class == String %>
-                  <% option_value = OptionValue.find(option_value_id) %>
-                  <li><%= option_value.name %></li>
-                  <% food_price += option_value.price.to_i %>
-                <!--Checkbox-->
-                <% else %>
-                    <% option_value_id.each do |option_number| %>
-                      <% unless option_number.empty? %>
-                        <% option_value = OptionValue.find(option_number) %>
-                        <li><%= option_value.name %></li>
-                        <% food_price += option_value.price.to_i %>
-                      <% end %>
-                    <% end %>
+                <% option_value = OptionValue.find(option_value_id) %>
+                <li><%= option_value.name %></li>
+                <% food_price += option_value.price.to_i %>
 
+              <% elsif option_value_id.is_a?(Array) and option_value_id.size > 0 %>
+
+                <!--Checkbox-->
+                <% option_value_id.each do |option_number| %>
+                  <% unless option_number.empty? %>
+                    <% option_value = OptionValue.find(option_number) %>
+                    <li><%= option_value.name %></li>
+                    <% food_price += option_value.price.to_i %>
+                  <% end %>
                 <% end %>
 
               <% end %>
