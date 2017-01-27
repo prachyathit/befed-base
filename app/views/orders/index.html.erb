@@ -1,34 +1,83 @@
 <% provide(:title, 'All orders') %>
-<div class='container'>
+<div class='container container-admin'>
   <h1>All orders</h1>
 
   <%= will_paginate %>
 
   <table class="admin_table">
-    <tr>
-      <td width="15%">Order ID</td>
-      <td width="15%">Restaurant ID</td>
-      <td width="15%">User ID</td>
-      <td width="20%">Total</td>
-      <td width="20%">Payment Type</td>
-      <td width="15%">Notes</td>
+    <tr style="font-weight: bold;">
+      <td width="10%">Date</td>
+      <td width="10%">Order</td>
+      <td width="10%">Rest</td>
+      <td width="10%">User</td>
+      <td width="8%">Subtotal</td>
+      <td width="8%">Dfee</td>
+      <td width="8%">Sfee</td>
+      <td width="10%">Total</td>
+      <td width="10%">Payment</td>
+      <td width="10%">Agent</td>
+      <td width="3%"></td>
+      <td width="3%"></td>
     </tr>
     <% @orders.each do |order| %>
       <%= render order %>
+
     <% end %>
   </table>
 
   <%= will_paginate %>
   <div class="center">
-    <%= link_to order_path(:format => 'csv') do %>
+    <%= link_to orders_path(:format => 'csv') do %>
       <button type="button" class="btn btn-default">Download all as CSV</button>
     <% end %>
   </div>
   <p>Average order size: <%= @orders.average(:total) %></p>
   <p>Minimum order size: <%= @orders.minimum(:total) %></p>
   <p>Maximum order size: <%= @orders.maximum(:total) %></p>
-  <%= column_chart @orders.group_by_day(:created_at, format: "%B %d, %Y").count, discrete: true %>
-  
 
+  <div class="row">
+    <div class="col-xs-6">
+      <h1>Yesterday</h1>
+      <h2>Total Amount = <%= @totalyesterday %></h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Agent</th>
+            <th>Cash</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @cashbyagentyesterday.each do |agent, total| %>
+            <tr>
+              <td><%= agent %></td>
+              <td><%= total %></td>
+            </tr>
+          <% end %>            
+        </tbody>
+      </table>
+      
+    </div>
+    <div class="col-xs-6">
+      <h1>Today</h1>
+      <h2>Total Amount = <%= @totaltoday %></h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Agent</th>
+            <th>Cash</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @cashbyagenttoday.each do |agent, total| %>
+            <tr>
+              <td><%= agent %></td>
+              <td><%= total %></td>
+            </tr>
+          <% end %>            
+        </tbody>
+      </table>      
+    </div>
+  </div>
+  <%= column_chart @orders.group_by_day(:created_at, format: "%B %d, %Y").count, discrete: true %>
   <%= column_chart @orders.group_by_hour_of_day(:created_at, format: "%l %P").count, discrete: true %>
 </div>
