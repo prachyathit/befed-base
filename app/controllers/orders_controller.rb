@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
   def show
   end
   def index
-    @orders = Order.paginate(page: params[:page], :per_page => 10)
+    @orders = Order.order(created_at: :desc).paginate(page: params[:page], :per_page => 10)
     @ordersall = Order.all
     @cashtoday = Order.today.where(payment_type: 0)
     @cashyesterday = Order.yesterday.where(payment_type: 0)
