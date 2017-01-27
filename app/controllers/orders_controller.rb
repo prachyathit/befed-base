@@ -9,11 +9,11 @@ class OrdersController < ApplicationController
   def index
     @orders = Order.order(created_at: :desc).paginate(page: params[:page], :per_page => 10)
     @ordersall = Order.all
-    @cashtoday = Order.today.where(payment_type: 0)
-    @cashyesterday = Order.yesterday.where(payment_type: 0)
+    # @cashtoday = Order.today.where(payment_type: 0)
+    # @cashyesterday = Order.yesterday.where(payment_type: 0)
     # @orderscr = Order.today.where(payment_type: 1)
-    @cashbyagenttoday = @cashtoday.group(:agent).sum(:total)
-    @cashbyagentyesterday = @cashyesterday.group(:agent).sum(:total)
+    # @cashbyagenttoday = @cashtoday.group(:agent).sum(:total)
+    # @cashbyagentyesterday = @cashyesterday.group(:agent).sum(:total)
     @totaltoday = Order.today.sum(:total)
     @totalyesterday = Order.yesterday.sum(:total)
     

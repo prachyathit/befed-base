@@ -39,45 +39,14 @@
     <div class="col-xs-6">
       <h1>Yesterday</h1>
       <h2>Total Amount = <%= @totalyesterday %></h2>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Agent</th>
-            <th>Cash</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @cashbyagentyesterday.each do |agent, total| %>
-            <tr>
-              <td><%= agent %></td>
-              <td><%= total %></td>
-            </tr>
-          <% end %>            
-        </tbody>
-      </table>
+
       
     </div>
     <div class="col-xs-6">
       <h1>Today</h1>
       <h2>Total Amount = <%= @totaltoday %></h2>
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Agent</th>
-            <th>Cash</th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @cashbyagenttoday.each do |agent, total| %>
-            <tr>
-              <td><%= agent %></td>
-              <td><%= total %></td>
-            </tr>
-          <% end %>            
-        </tbody>
-      </table>      
+    
     </div>
   </div>
-  <%= column_chart @orders.group_by_day(:created_at, format: "%B %d, %Y").count, discrete: true %>
-  <%= column_chart @orders.group_by_hour_of_day(:created_at, format: "%l %P").count, discrete: true %>
+
 </div>
