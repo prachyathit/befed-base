@@ -1,5 +1,5 @@
 class Order < ActiveRecord::Base
-  default_scope -> { order(:id) }
+  default_scope -> { order(created_at: :desc) }
   # Flat rate for delivery
   # move flat rate to setting
   # FLAT_RATE = 50 # Bahts

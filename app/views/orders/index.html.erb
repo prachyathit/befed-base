@@ -4,25 +4,30 @@
 
   <%= will_paginate %>
 
-  <table class="admin_table">
-    <tr style="font-weight: bold;">
-      <td width="10%">Date</td>
-      <td width="10%">Order</td>
-      <td width="10%">Rest</td>
-      <td width="10%">User</td>
-      <td width="8%">Subtotal</td>
-      <td width="8%">Dfee</td>
-      <td width="8%">Sfee</td>
-      <td width="10%">Total</td>
-      <td width="10%">Payment</td>
-      <td width="10%">Agent</td>
-      <td width="3%"></td>
-      <td width="3%"></td>
-    </tr>
-    <% @orders.each do |order| %>
-      <%= render order %>
+  <table class="table admin_table">
+    <thead>
+      <tr>
+        <th width="10%">Date</th>
+        <th width="10%">Order</th>
+        <th width="10%">Rest</th>
+        <th width="10%">User</th>
+        <th width="8%">Subtotal</th>
+        <th width="8%">Dfee</th>
+        <th width="8%">Sfee</th>
+        <th width="10%">Total</th>
+        <th width="10%">Payment</th>
+        <th width="10%">Agent</th>
+        <th width="3%"></th>
+        <th width="3%"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @orders.each do |order| %>
+        <%= render order %>
+  
+      <% end %>      
+    </tbody>
 
-    <% end %>
   </table>
 
   <%= will_paginate %>

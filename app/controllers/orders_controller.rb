@@ -14,8 +14,8 @@ class OrdersController < ApplicationController
     # # @orderscr = Order.today.where(payment_type: 1)
     # @cashbyagenttoday = @cashtoday.group(:agent).sum(:total)
     # @cashbyagentyesterday = @cashyesterday.group(:agent).sum(:total)
-    # @totaltoday = Order.today.sum(:total)
-    # @totalyesterday = Order.yesterday.sum(:total)
+    @totaltoday = Order.today.sum(:total)
+    @totalyesterday = Order.yesterday.sum(:total)
     
     respond_to do |format|
       format.html
