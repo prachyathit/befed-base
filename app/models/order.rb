@@ -89,10 +89,10 @@ class Order < ActiveRecord::Base
   end
   
   def self.today
-    where("created_at >= ?", Time.zone.now.beginning_of_day)
+    where("created_at >= ?", Time.zone.now.beginning_of_day).select("DISTINCT(order_id)")
   end
   def self.yesterday
-    where("created_at >= ?", Time.zone.now.beginning_of_day - 1.day).where("created_at < ?", Time.zone.now.beginning_of_day)
+    where("created_at >= ?", Time.zone.now.beginning_of_day - 1.day).where("created_at < ?", Time.zone.now.beginning_of_day).select("DISTINCT(order_id)")
   end
 
   private
