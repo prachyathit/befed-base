@@ -16,6 +16,7 @@ class OrdersController < ApplicationController
     # @cashbyagentyesterday = @cashyesterday.group(:agent).sum(:total)
     @totaltoday = Order.today.sum(:total)
     @totalyesterday = Order.yesterday.sum(:total)
+    @totalthismonth = Order.thismonth.sum(:total)
     
     respond_to do |format|
       format.html
@@ -68,6 +69,6 @@ class OrdersController < ApplicationController
       redirect_to(root_url) unless current_user.admin?
     end
     def order_params
-      params.require(:order).permit(:sub_total, :delivery_fee, :service_fee, :total, :agent)
+      params.require(:order).permit(:sub_total, :delivery_fee, :service_fee, :total, :agent, :paid)
     end
 end

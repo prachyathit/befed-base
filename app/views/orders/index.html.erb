@@ -14,9 +14,10 @@
         <th width="8%">Subtotal</th>
         <th width="8%">Dfee</th>
         <th width="8%">Sfee</th>
-        <th width="10%">Total</th>
-        <th width="10%">Payment</th>
-        <th width="10%">Agent</th>
+        <th width="8%">Total</th>
+        <th width="8%">Payment</th>
+        <th width="8%">Agent</th>
+        <th width="6%">Paid?</th>
         <th width="3%"></th>
         <th width="3%"></th>
       </tr>
@@ -36,21 +37,34 @@
       <button type="button" class="btn btn-default">Download all as CSV</button>
     <% end %>
   </div>
-  <p>Average order size: <%= @orders.average(:total) %></p>
-  <p>Minimum order size: <%= @orders.minimum(:total) %></p>
-  <p>Maximum order size: <%= @orders.maximum(:total) %></p>
 
   <div class="row">
-    <div class="col-xs-6">
-      <h1>Yesterday</h1>
-      <h2>Total Amount = <%= @totalyesterday %></h2>
-
-      
+    <div class="col-xs-4">
+      <h2>Yesterday</h2>
+      <h1><%= @totalyesterday %></h1>
     </div>
-    <div class="col-xs-6">
-      <h1>Today</h1>
-      <h2>Total Amount = <%= @totaltoday %></h2>
-    
+    <div class="col-xs-4">
+      <h2>Today</h2>
+      <h1><%= @totaltoday %></h1>
+    </div>
+    <div class="col-xs-4">
+      <h2>This Month</h2>
+      <h1><%= @totalthismonth %></h1>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-4">
+      <h2>Min</h2>
+      <h1><%= @orders.minimum(:total) %></h1>
+    </div>
+    <div class="col-xs-4">
+      <h2>Max</h2>
+      <h1><%= @orders.maximum(:total) %></h1>
+    </div>
+    <div class="col-xs-4">
+      <h2>Avg</h2>
+      <h1><%= @orders.average(:total).round(1) %></h1>
     </div>
   </div>
   <%= column_chart @orders.group_by_day(:created_at, format: "%B %d, %Y").count, discrete: true %>

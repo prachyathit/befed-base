@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170127120231) do
+ActiveRecord::Schema.define(version: 20170130131624) do
 
   create_table "addresses", force: :cascade do |t|
     t.string   "name"
@@ -112,6 +112,7 @@ ActiveRecord::Schema.define(version: 20170127120231) do
     t.float    "service_fee",         default: 0.0
     t.float    "sub_total"
     t.string   "agent",               default: "Ray"
+    t.boolean  "paid",                default: false
   end
 
   create_table "payments", force: :cascade do |t|

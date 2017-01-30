@@ -94,6 +94,9 @@ class Order < ActiveRecord::Base
   def self.yesterday
     where("created_at >= ?", Time.zone.now.beginning_of_day - 1.day).where("created_at < ?", Time.zone.now.beginning_of_day).select("DISTINCT(order_id)")
   end
+  def self.thismonth
+    where("created_at >= ?", Time.zone.now.beginning_of_month).select("DISTINCT(order_id)")
+  end
 
   private
   # Probably need to store some details about this order such as
