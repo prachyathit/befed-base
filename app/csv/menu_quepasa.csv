@@ -1,0 +1,133 @@
+name,price,image_url,cat_id,cat,rec,restaurant_id
+"Lime, Strawberry, Peach, Raspberry : 1) Frozen Margarita",799,,1,Margarita,1,11
+On-the-Rocks : 2) Margarita,899,,1,Margarita,1,11
+"2 eggs topped w/ salsa, served w/ Spanish rice, refried beans tortillas : 3) Huevos Rancheros",299,,2,Mexican Breakfast,0,11
+"12-inch our tortilla filled w/ your choice of scrambled eggs & taco beef, chorizo, cheese and/or fried potatoes served w/salsa : 4) Breakfast Burrito",199,,2,Mexican Breakfast,0,11
+"3-egg omelet filled w/ your choice of taco beef, chorizo or avocado & bell peppers, onion & cheese topped w/ salsa & sour cream : 5) Mexican Omelet",219,,2,Mexican Breakfast,0,11
+"2 eggs (fried, poached or scrambled) & 2 buttered toast; 2 bacon, 1 ham or 1 sausage patty; hash browns or grits : 6) Basic Breakfast",249,,2,Mexican Breakfast,0,11
+"w/ 2 eggs, 2 toast & hash browns or grits : 7) Country-Fried Chicken Steak Breakfast",319,,2,Mexican Breakfast,0,11
+"w/ 2 eggs, 2 toast & hash browns or grits : 8) Country-Fried Beef Steak Breakfast",369,,2,Mexican Breakfast,0,11
+"2 or 3 eggs w/ 2 or 3 grilled breakfast steaks , served w/ home fried potatoes, grilled tomatoes and toast : 9) Steak & Eggs",369,,2,Mexican Breakfast,0,11
+ : ) ….BUILD-YOUR-OWN-BREAKFAST….,0,,2,Mexican Breakfast,0,11
+ : 29) Fries,199,,3,Appetizers,0,11
+ : 30) Wedge Fries,199,,3,Appetizers,0,11
+ : 31) Curly Fries,199,,3,Appetizers,0,11
+ : 32) Tater Tots,199,,3,Appetizers,0,11
+10 pcs : 33) Munchers,199,,3,Appetizers,0,11
+10 pcs : 40) Mozzarella Cheese Sticks,299,,3,Appetizers,0,11
+10 pcs : 41) Chicken or Fish Strips,299,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Quepasa/41.jpg,3,Appetizers,1,11
+32 pcs : 42) Chicken Wings,319,,3,Appetizers,0,11
+20 pcs : 43) Bacon-Wrapped Shrimp,429,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Quepasa/43.jpg,3,Appetizers,1,11
+Vegetarian : 44) Tortilla Soup,199,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Quepasa/44-45.jpg,4,Soups & Salads,1,11
+Meat & veggies : 45) Tortilla Soup,229,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Quepasa/44-45.jpg,4,Soups & Salads,1,11
+"Bacon, grilled shrimp or grilled chicken : 46) Caesar Salad",299,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Quepasa/46.jpg,4,Soups & Salads,1,11
+"Green salad w/ smoked chicken, ham, bacon, cheese & sliced eggs : 47) Chef Salad",329,,4,Soups & Salads,0,11
+"Cucumber, tomato, onion, olives & feta cheese : 48) Greek Salad",249,,4,Soups & Salads,0,11
+"Lettuce, cucumber, tomato, red onion, olives, roasted red bell pepper & feta cheese : 49) Mediterranean Salad",279,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Quepasa/49.jpg,4,Soups & Salads,1,11
+"Chilled pasta, 3 cheeses, meats & veggies : 50) Pasta Salad",299,,4,Soups & Salads,0,11
+"Green salad topped w/ taco meat, salsa, cheese, sour cream, jalapeños & chips : 51) Taco Salad",279,,4,Soups & Salads,0,11
+"Green salad topped w/ sliced fajita Chicken, Beef or Shrimp, onion, pepper, cheese, sour cream & chips : 52) Fajita Salad",279,,4,Soups & Salads,0,11
+"Green papaya salad w/ salsa, cilantro, peanuts & a touch of sugar, garlic & chili : 53) Som Dhum Mexican Salad",109,,4,Soups & Salads,0,11
+"Grilled & sautéed in salsa, peppers & onion : 57) Salsa Chicken or Fish",399,,5,Mexican Dinner Plates,0,11
+"Grilled & sautéed in salsa, peppers & onion : 58) Salsa Beef, Shrimp or Seafood",429,,5,Mexican Dinner Plates,0,11
+Grilled marinated chicken stir-fried w/ peppers & onion served w/ tortillas : 59) Fajita Chicken,469,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Quepasa/59.jpg,5,Mexican Dinner Plates,1,11
+"Marinated, grilled & stir-fried w/ peppers & onion : 60) Fajita Beef, Shrimp or Seafood Plate",489,,5,Mexican Dinner Plates,0,11
+"Chicken, shrimp or fish : 62) Enchilada Creamy",369,,5,Mexican Dinner Plates,0,11
+Choice of Meat or cheese : 63) Enchilada Red Sauce,369,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Quepasa/63.jpg,5,Mexican Dinner Plates,1,11
+Choice of Meat or cheese : 64) Enchilada Molé Sauce,399,,5,Mexican Dinner Plates,0,11
+w/ onion : 65) Enchilada Veggie Avocado,369,,5,Mexican Dinner Plates,0,11
+"Cheddar cheese, potato & spinach : 66) Enchilada Veggie Cheese",319,,5,Mexican Dinner Plates,0,11
+"Beef, chicken, chorizo or fish : 67) Taco Plate",319,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Quepasa/67.jpg,5,Mexican Dinner Plates,1,11
+Beef or chicken taquitos : 68) Taquitos Plate,319,,5,Mexican Dinner Plates,0,11
+"Beef, chicken or chorizo : 69) Chimichanga",319,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Quepasa/69.jpg,5,Mexican Dinner Plates,1,11
+Chips topped w/ cheese & jalapeños : 70) Nachos,219,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Quepasa/70.JPG,5,Mexican Dinner Plates,1,11
+"Taco chips topped w/ taco beef or chicken or chorizo, beans, cheese, salsa, sour cream & jalapeños : 71) Nachos Supreme",369,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Quepasa/71.jpg,5,Mexican Dinner Plates,1,11
+"Taco chips topped w/ cheese, salsa, guacamole, sour cream & jalapeños : 72) Nachos Veggie Supreme",299,,5,Mexican Dinner Plates,0,11
+"Fried corn tortilla, w/ meat or krapao meat : 73) Taco",89,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Quepasa/73%EF%80%A276.jpg,6,Tacos,1,11
+"Meat or avocado, w/ lettuce & cheese rolled in a 9” soft our tortilla : 74) Taco Soft",99,,6,Tacos,0,11
+"Fried corn tortilla w/ meat or fish, wrapped in a bean-covered flour tortilla : 75) Taco Grande",119,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Quepasa/75-78.jpg,6,Tacos,1,11
+"Fried corn tortilla w/ avocado, lettuce, cheese & salsa : 76) Taco Veggie",99,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Quepasa/73%EF%80%A276.jpg,6,Tacos,1,11
+"Avocado, lettuce, cheese & salsa, wrapped in a flour tortilla : 77) Taco Veggie Soft",119,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Quepasa/75-78.jpg,6,Tacos,1,11
+"Fried corn tortilla w/ avocado, lettuce, cheese & salsa, wrapped w/ a bean-covered flour tortilla : 78) Taco Veggie Grande",129,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Quepasa/75-78.jpg,6,Tacos,1,11
+3 beef or chicken taquitos : 79) Taquitos,159,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Quepasa/79.jpg,6,Tacos,1,11
+ : 80) Quesadilla – Cheese,99,,7,Quesadillas,0,11
+"Meat w/ cheese, salsa, sour cream : 81) Quesadilla",159,,7,Quesadillas,0,11
+"Meat w/ avocado, cheese & salsa : 82) Quesadilla Grande",169,,7,Quesadillas,0,11
+"Avocado, spinach, cheese, sour cream & salsa : 83) Quesadilla Veggie",169,,7,Quesadillas,0,11
+"Meat, refried beans & cheese : 84) Burrito",129,,8,Burritos & Chili Bowls,0,11
+Meat & cheese (no beans) : 85) Burrito,149,,8,Burritos & Chili Bowls,0,11
+"Meat & cheese (no beans inside) topped w/ chili beans, cheese, shredded lettuce & salsa : 86) Burrito Grande",219,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Quepasa/86.jpg,8,Burritos & Chili Bowls,1,11
+"Meat, refried beans, rice, lettuce, salsa, cheese & sour cream : 87) Burrito Supreme",199,,8,Burritos & Chili Bowls,0,11
+Refried beans & cheese : 88) Burrito Veggie,119,,8,Burritos & Chili Bowls,0,11
+"Avocado, refried beans, rice, lettuce, salsa, cheese & sour cream : 89) Burrito Veggie Supreme",199,,8,Burritos & Chili Bowls,0,11
+"w/ peppers, onion & cheese : 90) Burrito Fajita Chicken, Beef, or Shrimp",229,,8,Burritos & Chili Bowls,0,11
+"Fried w/ meat, cheese, sour cream & salsa : 91) Chimichanga",229,,8,Burritos & Chili Bowls,0,11
+"Topped w/ cheese, served w/ fried our tortilla chips : 92) Que Pasa’s Award-Winning “Full-of-Bull” Beef Chili",279,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Quepasa/92.jpg,8,Burritos & Chili Bowls,1,11
+"w/ taco Beef, topped w/ cheese, served w/ fried our tortilla chips : 93) Chili Beans",159,,8,Burritos & Chili Bowls,0,11
+"w/ cheese, served w/ fried our tortilla chips : 94) Chili Beans",129,,8,Burritos & Chili Bowls,0,11
+ : 95) Mexican Yellow Rice,59,,9,Mexican Extras,0,11
+ : 96) Mexican Rice w/ black beans,79,,9,Mexican Extras,0,11
+ : 97) Refried Beans,119,,9,Mexican Extras,0,11
+ : 98) Tortilla Chips,119,,9,Mexican Extras,0,11
+ : 99) Salsa,119,,9,Mexican Extras,0,11
+ : 100) Jalapeños,119,,9,Mexican Extras,0,11
+ : 101) Jalapeños “Smoked” Chipotle Sauce,179,,9,Mexican Extras,0,11
+ : 102) Guacamole,439,,9,Mexican Extras,0,11
+ : 103) Nacho Cheese Dip,219,,9,Mexican Extras,0,11
+Juicy 8 oz. beef patty smothered in black pepper gravy & saut?ed mushrooms & onions : 104) Ground Beef Steak Plate,359,,10,Western Dinner Plates,0,11
+"Tender beef steak floured & pan-fried, covered w/ white gravy : 105) Country-Fried Beef Steak",439,,10,Western Dinner Plates,0,11
+"Boneless chicken floured & pan-fried, covered w/ white gravy : 106) Country-Fried Chicken Steak",439,,10,Western Dinner Plates,0,11
+"Juicy, barbecue-grilled pork ribs, served w/ potato & coleslaw or green salad : 107) BBQ Rib Plate",489,,10,Western Dinner Plates,0,11
+w/ fries & coleslaw : 108) Fish & Chips,489,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Quepasa/108.jpg,10,Western Dinner Plates,1,11
+w/ fries & coleslaw : 109) Shrimp Basket,489,,10,Western Dinner Plates,0,11
+One quarter-pound beef patty w/ Fries : 110) QP-Burger,299,,11,Burgers,0,11
+One half-pound beef patty w/ steak fries : 111) QP-Burger Grande,369,,11,Burgers,0,11
+"Three quarter-pound beef patties w/ 2 slices of cheese, grilled onions & steak fries : 112) QP’s Uber-Burger",439,,11,Burgers,0,11
+"Salami, ham, lettuce, tomato, green olives and cheese w/ Marinara sauce (hot or cold) : 113) Italian Sub",249,,12,Sandwiches,0,11
+"White or wheat bread : 114) BLT (bacon, lettuce & tomato)",159,,12,Sandwiches,0,11
+"Sliced beef grilled w/ onions & bell peppers, topped w/ cheese : 115) Steak & Cheese",249,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Quepasa/115.jpg,12,Sandwiches,1,11
+"Sliced chicken grilled w/ onions & bell peppers, topped w/ cheese : 116) Chicken & Cheese",229,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Quepasa/116.jpg,12,Sandwiches,1,11
+"Spiced meatballs sautéed in Marinara sauce, topped w/ mozzarella cheese : 117) Meatball Sandwich",249,,12,Sandwiches,0,11
+"Triple-decker: BLT, ham & cheese, chicken & cheese : 118) Club Sandwich",249,,12,Sandwiches,0,11
+"Triple-decker: BLT, chicken & cheese, more BLT : 119) QP’s Uber Club Sandwich",249,,12,Sandwiches,0,11
+ : 120) Mediterranean Vegetarian Wrap,219,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Quepasa/120-126.jpg,13,Tortilla Wraps,1,11
+ : 121) Sliced Beef Wrap,219,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Quepasa/120-126.jpg,13,Tortilla Wraps,1,11
+ : 122) Avocado Salad Wrap,219,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Quepasa/120-126.jpg,13,Tortilla Wraps,1,11
+ : 123) BLT Wrap,219,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Quepasa/120-126.jpg,13,Tortilla Wraps,1,11
+ : 124) Tuna Wrap,219,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Quepasa/120-126.jpg,13,Tortilla Wraps,1,11
+ : 125) Smoked Chicken Wrap,219,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Quepasa/120-126.jpg,13,Tortilla Wraps,1,11
+ : 126) Club Wrap,219,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Quepasa/120-126.jpg,13,Tortilla Wraps,1,11
+ : 127) Steak & Cheese Wrap Chicken & Cheese Wrap,249,,13,Tortilla Wraps,0,11
+ : 128) Ham & Cheese Wrap,249,,13,Tortilla Wraps,0,11
+"Choice of lettuce, tomato, pickle or coleslaw w/ tartar sauce or horse relish : 129) Breaded Fish Wrap",249,,13,Tortilla Wraps,0,11
+ : 130) Cheese Pizza,489,,14,Pizza,0,11
+"w/ mushroom, bell peppers, onion & black olives : 131) Vegetarian Supreme Pizza",559,,14,Pizza,0,11
+"w/ spinach, onion, feta & mozzarella : 132) Vegetarian Gourmet Pizza",559,,14,Pizza,0,11
+ : 133) Pepperoni & Cheese Pizza,559,,14,Pizza,0,11
+ : 134) Canadian Bacon & Cheese Pizza,559,,14,Pizza,0,11
+"Canadian bacon, pineapple, onion & cheese : 135) Hawaiian Special Pizza",559,,14,Pizza,0,11
+ : 136) Sausage & Cheese Pizza,559,,14,Pizza,0,11
+"w/ mushroom, bell peppers, onion, black olives & cheese : 137) Sausage Supreme Pizza",559,,14,Pizza,0,11
+ : 138) Beef & Cheese Pizza,559,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Quepasa/Pizza.jpg,14,Pizza,1,11
+"w/ mushroom, bell peppers, onion, black olives & cheese : 139) Beef Supreme Pizza",559,,14,Pizza,0,11
+"Ground beef, grilled onion, pickles, mozzarella & cheddar : 140) Hamburger Special Pizza",559,,14,Pizza,0,11
+"w/ spinach, onion, mozzarella, feta & bacon : 141) Gourmet Delight Pizza",559,,14,Pizza,0,11
+w/ vegetables & choice of 3 meats : 142) Combo Meat Pizza,559,,14,Pizza,0,11
+ : 143) Seafood Pizza,559,,14,Pizza,0,11
+ : 144) Chicken or Beef Fajita Pizza,559,,14,Pizza,0,11
+"Stir-fried chicken, pork or beef w/ basil : 145) Pad Krapao Pizza",559,,14,Pizza,0,11
+ : 146) Spaghetti Vegetarian,229,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Quepasa/146-149.jpg,15,Pasta,1,11
+beef or pork w/ veggies & sauce : 147) Spaghetti Meatballs,359,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Quepasa/146-149.jpg,15,Pasta,1,11
+w/ vegetables & sauce : 148) Spaghetti Shrimp,359,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Quepasa/146-149.jpg,15,Pasta,1,11
+w/ veggies & sauce : 149) Spaghetti Mixed Grilled Seafood,359,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Quepasa/146-149.jpg,15,Pasta,1,11
+"w/ chicken, ham & mushroom, shrimp or seafood : 150) Spaghetti Alfredo",359,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Quepasa/150.jpg,15,Pasta,1,11
+"w/ chicken, shrimp, seafood or beef (spicy) Lasagna : 151) Spaghetti Black Pepper",359,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Quepasa/151.jpg,15,Pasta,1,11
+ : 152) Vegetarian,359,,15,Pasta,0,11
+ : 153) Lasagna Beef or Pork,359,,15,Pasta,0,11
+ : 154) Lasagna Three-Cheese,359,,15,Pasta,0,11
+ : 155) Baked Macaroni & Cheese w/ Bacon & Onions,359,,15,Pasta,0,11
+ : 156) Baked Macaroni & Cheese w/ Broccoli,359,,15,Pasta,0,11
+"w/ chicken, ham & mushroom, shrimp or seafood : 157) Fettuccine Alfredo",359,,15,Pasta,0,11
+w/ vegetables : 158) Fettuccine Alfredo,359,,15,Pasta,0,11
+ : 159) Garlic Bread,99,https://s3-ap-southeast-1.amazonaws.com/befed-alpha/Quepasa/159.jpg,16,Bread,1,11
+ : 160) Pizza Sticks,129,,16,Bread,0,11

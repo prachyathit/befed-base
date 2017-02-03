@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     resources :foods
   end
   get '/payment' => 'payments#index'
-  # get '/order' => 'orders#index'
+  # get '/orderstat' => 'orders#stat'
   get '/orderfood' => 'order_foods#index'
   get '/checkout' => 'cart#checkout'
   post '/checkout/complete' => 'cart#submit'

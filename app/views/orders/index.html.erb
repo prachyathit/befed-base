@@ -56,17 +56,17 @@
   <div class="row">
     <div class="col-xs-4">
       <h2>Min</h2>
-      <h1><%= @orders.minimum(:total) %></h1>
+      <h1><%= @ordersall.minimum(:total) %></h1>
     </div>
     <div class="col-xs-4">
       <h2>Max</h2>
-      <h1><%= @orders.maximum(:total) %></h1>
+      <h1><%= @ordersall.maximum(:total) %></h1>
     </div>
     <div class="col-xs-4">
       <h2>Avg</h2>
-      <h1><%= @orders.average(:total).round(1) %></h1>
+      <h1><%= @ordersall.average(:total).round(1) %></h1>
     </div>
   </div>
-  <%= column_chart @orders.group_by_day(:created_at, format: "%B %d, %Y").count, discrete: true %>
-  <%= column_chart @orders.group_by_hour_of_day(:created_at, format: "%l %P").count, discrete: true %>
+  <%= column_chart @ordersall.group_by_day(:created_at, format: "%B %d, %Y").count, discrete: true %>
+  <%= column_chart @ordersall.group_by_hour_of_day(:created_at, format: "%l %P").count, discrete: true %>
 </div>
