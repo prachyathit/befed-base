@@ -1,9 +1,9 @@
 User.create!( name: "Example User",
               email: "example@railstutorial.org",
               phone: "0819999999",
-              address: "ซอย ลาดพร้าว 90 แขวง พลับพลา เขต วังทองหลาง กรุงเทพมหานคร 10312 ประเทศไทย",
-              latitude: 13.909736,
-              longitude: 100.549625,
+              address: "BEEHIVE Lifestyle Mall Building, 50/1211, Popular Road, Banmai, Pakkred, Nonthaburi 11120",
+              latitude: 13.910518,
+              longitude: 100.539582,
               password: "foobar0898318806",
               password_confirmation: "foobar0898318806",
               admin: true )
@@ -39,6 +39,7 @@ User.create!( name: "Example User",
                 longitude: 100.549625,
                 image_url: image_url,
                 address: address,
+                dtime: 45,
                 min_order: min_order)
 
 # Branch 2

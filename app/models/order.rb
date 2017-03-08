@@ -1,5 +1,5 @@
 class Order < ActiveRecord::Base
-  default_scope -> { order(:id) }
+  default_scope -> { order(created_at: :desc) }
   # Flat rate for delivery
   # move flat rate to setting
   # FLAT_RATE = 50 # Bahts
@@ -78,7 +78,7 @@ class Order < ActiveRecord::Base
   end
   
   def self.to_csv
-    attributes = %w{id rest_id user_id total payment_type created_at note}
+    attributes = %w{created_at id rest_id user_id sub_total delivery_fee service_fee total payment_type agent}
     CSV.generate(headers: true) do |csv|
       csv << attributes
       
@@ -86,6 +86,16 @@ class Order < ActiveRecord::Base
         csv << order.attributes.values_at(*attributes)
       end
     end
+  end
+  
+  def self.today
+    where("created_at >= ?", Time.zone.now.beginning_of_day).select("DISTINCT(order_id)")
+  end
+  def self.yesterday
+    where("created_at >= ?", Time.zone.now.beginning_of_day - 1.day).where("created_at < ?", Time.zone.now.beginning_of_day).select("DISTINCT(order_id)")
+  end
+  def self.thismonth
+    where("created_at >= ?", Time.zone.now.beginning_of_month).select("DISTINCT(order_id)")
   end
 
   private

@@ -1,0 +1,26 @@
+<div class="container">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>ID:</strong>
+  <%= @order.id %>
+</p>
+
+<p>
+  <strong>Subtotal:</strong>
+  <%= @order.sub_total %>
+</p>
+
+<p>
+  <strong>Delivery Fee:</strong>
+  <%= @order.delivery_fee %>
+</p>
+
+<p>
+  <strong>Service Fee:</strong>
+  <%= @order.service_fee %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>
+</div>

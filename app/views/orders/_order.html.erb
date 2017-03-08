@@ -1,14 +1,25 @@
 <tr>
-  <td width="15%"><%= order.id %> </td>
-  <td width="15%"><%= order.rest_id %> </td>
-  <td width="15%"><%= order.user_id %></td>
-  <td width="20%"><%= order.total %></td>
-  <td width="20%">
+  <td width="10%"><%= order.created_at.strftime("%m/%d/%Y") %> </td>
+  <td width="10%"><%= order.id %> </td>
+  <td width="10%"><%= order.restaurant.name %> </td>
+  <td width="10%"><%= order.user.name %></td>
+  <td width="8%"><%= order.sub_total %></td>
+  <td width="8%"><%= order.delivery_fee %></td>
+  <td width="8%"><%= order.service_fee %></td>
+  <td width="8%"><%= order.total %></td>
+  <td width="8%">
     <% if order.payment_type == 1 %>
-      Credit Card
+      CR
     <% else %>
       Cash
     <% end %>
   </td>
-  <td width="15%"><%= order.note %></td>
+  <td width="8%"><%= order.agent %></td>
+  <td width="6%"><%= order.paid ? "Yes":"No" %></td>
+  <td width="3%">
+    <%= link_to ('<i class="fa fa-pencil"></i>').html_safe, edit_order_path(order) %>
+  </td>
+  <td width="3%">
+    <%= link_to ('<i class="fa fa-trash"></i>').html_safe, order, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </td>
 </tr>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :orders, only: [:index, :show, :edit, :update, :destroy]
   resources :places
   post '/submitsaddress' => 'saddress#create', :as => :submit_saddress
   get 'saddress/new'
@@ -13,7 +14,7 @@ Rails.application.routes.draw do
     resources :foods
   end
   get '/payment' => 'payments#index'
-  get '/order' => 'orders#index'
+  # get '/orderstat' => 'orders#stat'
   get '/orderfood' => 'order_foods#index'
   get '/checkout' => 'cart#checkout'
   post '/checkout/complete' => 'cart#submit'
