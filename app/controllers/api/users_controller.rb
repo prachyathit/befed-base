@@ -26,14 +26,18 @@ module Api
       param! :password, String, min_length: 6
       param! :name,			String
       # param! :phone_no,	String
-      param! :default_address_id, Integer
+      param! :default_address_id, Integer, required: true
 
       begin
         ActiveRecord::Base.transaction do
           current_user.update!(user_params)
           new_default_address = current_user.addresses.where(id: params["default_address_id"]).first
-          raise Error unless new_default_address.present?
-          current_user.set_default_address!(new_default_address)
+          # HOT FIXED not require address yet.
+          if new_default_address.present?
+            current_user.set_default_address!(new_default_address)
+          end
+          # raise Error unless new_default_address.present?
+          # current_user.set_default_address!(new_default_address)
         end
       rescue Exception => e
         Rails.logger.error(e)
