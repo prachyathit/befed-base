@@ -26,7 +26,7 @@ module Api
       param! :password, String, min_length: 6
       param! :name,			String
       # param! :phone_no,	String
-      param! :default_address_id, Integer, required: true
+      param! :default_address_id, Integer#, required: true
 
       begin
         ActiveRecord::Base.transaction do
